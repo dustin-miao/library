@@ -14,8 +14,8 @@ data:
     PROBLEM: https://judge.yosupo.jp/problem/unionfind
     links:
     - https://judge.yosupo.jp/problem/unionfind
-  bundledCode: "#line 1 \"verify/data-structure/yosupo-union-find.test.cpp\"\n#define\
-    \ PROBLEM \"https://judge.yosupo.jp/problem/unionfind\"\n\n#include <bits/stdc++.h>\n\
+  bundledCode: "#line 1 \"verify/data-structure/union-find/yosupo-unionfind.test.cpp\"\
+    \n#define PROBLEM \"https://judge.yosupo.jp/problem/unionfind\"\n\n#include <bits/stdc++.h>\n\
     using namespace std;\n\n#line 1 \"data-structure/union-find.hpp\"\nstruct UnionFind\
     \ {\n    vector<int> parent, setsize;\n\n    UnionFind() = default;\n\n    UnionFind(int\
     \ n) { init(n); }\n\n    void init(int n) {\n        parent.resize(n);\n     \
@@ -27,7 +27,7 @@ data:
     \ > setsize[v]) {\n            parent[v] = u;\n            setsize[u] += setsize[v];\n\
     \        } else {\n            parent[u] = v;\n            setsize[v] += setsize[u];\n\
     \        }\n        return true;\n    }\n\n    int size(int u) {\n        return\
-    \ setsize[find(u)];\n    }\n};\n#line 7 \"verify/data-structure/yosupo-union-find.test.cpp\"\
+    \ setsize[find(u)];\n    }\n};\n#line 7 \"verify/data-structure/union-find/yosupo-unionfind.test.cpp\"\
     \n\nconst int MAX = 2e5 + 5;\n\nint N, Q;\nUnionFind dsu(MAX);\n\nint main() {\n\
     \  cin >> N >> Q;\n  while (Q--) {\n    int t, u, v;\n    cin >> t >> u >> v;\n\
     \    if (t == 0)\n      dsu.merge(u, v);\n    else\n      cout << (dsu.find(u)\
@@ -41,15 +41,15 @@ data:
   dependsOn:
   - data-structure/union-find.hpp
   isVerificationFile: true
-  path: verify/data-structure/yosupo-union-find.test.cpp
+  path: verify/data-structure/union-find/yosupo-unionfind.test.cpp
   requiredBy: []
-  timestamp: '2021-12-29 23:18:17-08:00'
+  timestamp: '2021-12-30 08:21:06-08:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: verify/data-structure/yosupo-union-find.test.cpp
+documentation_of: verify/data-structure/union-find/yosupo-unionfind.test.cpp
 layout: document
 redirect_from:
-- /verify/verify/data-structure/yosupo-union-find.test.cpp
-- /verify/verify/data-structure/yosupo-union-find.test.cpp.html
-title: verify/data-structure/yosupo-union-find.test.cpp
+- /verify/verify/data-structure/union-find/yosupo-unionfind.test.cpp
+- /verify/verify/data-structure/union-find/yosupo-unionfind.test.cpp.html
+title: verify/data-structure/union-find/yosupo-unionfind.test.cpp
 ---
