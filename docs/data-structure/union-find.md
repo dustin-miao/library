@@ -7,9 +7,10 @@ documentation_of: //data-structure/union-find.hpp
 
 ### Summary
 
-Union Find is a data structure that maintains several disjoint sets. It can support the following operations:
+Union Find is a data structure that maintains several disjoint sets. It supports the following operations:
 - Given a vertex $u$, returns the root of the set of that contains $u$.
 - Given two vertices $u, v$, merge them into a single set, provided they are not already in the same set.
+
 The Union Find data structure supports both these operations in $\mathcal{O}(\alpha(n))$ time, where $n$ is the number of vertices maintained and $\alpha(n)$ is the inverse of the [Ackermann function](https://en.wikipedia.org/wiki/Ackermann_function). Note that $\alpha(n) \leq 6$ for all reasonable $n$ and can be regarded as a constant.
 
 ### Documentation
