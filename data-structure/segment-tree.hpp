@@ -15,6 +15,8 @@ public:
 
     SegmentTree(int _n, T _v = T()) : n(_n), dval(_v) {
         tree.assign(2 * n, dval);
+        for (int i = n - 1; i > 0; i--)
+            tree[i] = merge(tree[i << 1], tree[i << 1 | 1]);
     }
 
     template<typename Iterator>
