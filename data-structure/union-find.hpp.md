@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: verify/data-structure/yosupo-union-find.text.cpp
-    title: verify/data-structure/yosupo-union-find.text.cpp
-  _extendedVerifiedWith: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/data-structure/yosupo-union-find.test.cpp
+    title: verify/data-structure/yosupo-union-find.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"data-structure/union-find.hpp\"\nstruct UnionFind {\n  \
@@ -37,11 +37,11 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: data-structure/union-find.hpp
-  requiredBy:
-  - verify/data-structure/yosupo-union-find.text.cpp
+  requiredBy: []
   timestamp: '2021-12-29 22:06:41-08:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/data-structure/yosupo-union-find.test.cpp
 documentation_of: data-structure/union-find.hpp
 layout: document
 title: Union find
