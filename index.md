@@ -8,7 +8,7 @@ data:
       title: Binary Index Tree
     - icon: ':heavy_check_mark:'
       path: data-structure/segment-tree.hpp
-      title: data-structure/segment-tree.hpp
+      title: Segment Tree
     - icon: ':heavy_check_mark:'
       path: data-structure/union-find.hpp
       title: Union Find
