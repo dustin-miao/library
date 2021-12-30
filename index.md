@@ -6,6 +6,11 @@ data:
     - icon: ':warning:'
       path: data-structure/union-find.hpp
       title: Union find
+  - name: verify/data-structure
+    pages:
+    - icon: ':warning:'
+      path: verify/data-structure/yosupo-union-find.text.cpp
+      title: verify/data-structure/yosupo-union-find.text.cpp
   verificationCategories: []
 layout: toppage
 ---

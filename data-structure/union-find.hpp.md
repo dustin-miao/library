@@ -1,7 +1,10 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: verify/data-structure/yosupo-union-find.text.cpp
+    title: verify/data-structure/yosupo-union-find.text.cpp
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -34,7 +37,8 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: data-structure/union-find.hpp
-  requiredBy: []
+  requiredBy:
+  - verify/data-structure/yosupo-union-find.text.cpp
   timestamp: '2021-12-29 22:06:41-08:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
