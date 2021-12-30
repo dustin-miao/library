@@ -18,6 +18,6 @@ int main() {
     if (t == 0)
       dsu.merge(u, v);
     else
-      cout << (dsu.find(u) == dsu.find(v) ? 0 : 1) << '\n';
+      cout << (dsu.find(u) == dsu.find(v) ? 1 : 0) << '\n';
   }
 }
