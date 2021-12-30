@@ -3,7 +3,7 @@ data:
   libraryCategories:
   - name: data-structure
     pages:
-    - icon: ':warning:'
+    - icon: ':x:'
       path: data-structure/binary-index-tree.hpp
       title: Binary Index Tree
     - icon: ':heavy_check_mark:'
@@ -12,6 +12,9 @@ data:
   verificationCategories:
   - name: verify/data-structure
     pages:
+    - icon: ':x:'
+      path: verify/data-structure/binary-index-tree.test.cpp
+      title: verify/data-structure/binary-index-tree.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/data-structure/yosupo-union-find.test.cpp
       title: verify/data-structure/yosupo-union-find.test.cpp

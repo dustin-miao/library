@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: verify/data-structure/binary-index-tree.test.cpp
+    title: verify/data-structure/binary-index-tree.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"data-structure/binary-index-tree.hpp\"\ntemplate<typename\
@@ -33,8 +36,9 @@ data:
   path: data-structure/binary-index-tree.hpp
   requiredBy: []
   timestamp: '2021-12-30 07:57:40-08:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - verify/data-structure/binary-index-tree.test.cpp
 documentation_of: data-structure/binary-index-tree.hpp
 layout: document
 title: Binary Index Tree
