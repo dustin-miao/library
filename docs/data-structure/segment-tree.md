@@ -1,4 +1,9 @@
-### Segment Tree
+---
+title: Segment Tree
+documentation_of: //data-structure/segment-tree.hpp
+---
+
+## Segment Tree
 
 ### Summary
 
