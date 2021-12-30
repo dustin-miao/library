@@ -3,40 +3,41 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/data-structure/binary-index-tree.test.cpp
     title: verify/data-structure/binary-index-tree.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"data-structure/binary-index-tree.hpp\"\ntemplate<typename\
-    \ T> \nstruct FenwickTree {\n    int n;\n    vector<T> tree;\n\n    FenwickTree(int\
-    \ _n) : n(_n + 1) {\n        tree.assign(n, T());\n    }\n\n    template<class\
-    \ Iterator>\n    FenwickTree(Iterator begin, Iterator end) : n(distance(begin,\
-    \ end) + 1) {\n        tree.resize(n);\n        for (int i = 1; begin != end;\
-    \ i++, begin++)\n            update(i, *begin);\n    }\n\n    T query(int i) {\n\
-    \        T ret = 0;\n        for (; i; i -= i & -i)\n            ret += tree[i];\n\
-    \        return ret;\n    }\n\n    T query(int l, int r) {\n        return query(r)\
-    \ - query(l - 1);\n    }\n\n    void update(int i, T v) {\n        for (; i <=\
-    \ n; i += i & -i)\n            tree[i] += v;\n    }\n};\n"
-  code: "template<typename T> \nstruct FenwickTree {\n    int n;\n    vector<T> tree;\n\
-    \n    FenwickTree(int _n) : n(_n + 1) {\n        tree.assign(n, T());\n    }\n\
-    \n    template<class Iterator>\n    FenwickTree(Iterator begin, Iterator end)\
-    \ : n(distance(begin, end) + 1) {\n        tree.resize(n);\n        for (int i\
-    \ = 1; begin != end; i++, begin++)\n            update(i, *begin);\n    }\n\n\
-    \    T query(int i) {\n        T ret = 0;\n        for (; i; i -= i & -i)\n  \
-    \          ret += tree[i];\n        return ret;\n    }\n\n    T query(int l, int\
-    \ r) {\n        return query(r) - query(l - 1);\n    }\n\n    void update(int\
-    \ i, T v) {\n        for (; i <= n; i += i & -i)\n            tree[i] += v;\n\
-    \    }\n};\n"
+    \ T>\nstruct FenwickTree {\n    int n;\n    vector<T> tree;\n\n    FenwickTree()\
+    \ = default;\n\n    FenwickTree(int _n) : n(_n + 1) {\n        tree.assign(n,\
+    \ T());\n    }\n\n    template<class Iterator>\n    FenwickTree(Iterator begin,\
+    \ Iterator end) : n(distance(begin, end) + 1) {\n        tree.resize(n);\n   \
+    \     for (int i = 1; begin != end; i++, begin++)\n            update(i, *begin);\n\
+    \    }\n\n    T query(int i) {\n        T ret = 0;\n        for (; i; i -= i &\
+    \ -i)\n            ret += tree[i];\n        return ret;\n    }\n\n    T query(int\
+    \ l, int r) { return query(r) - query(l - 1); }\n\n    T operator[](int i) { return\
+    \ query(i, i); }\n\n    void update(int i, T v) {\n        for (; i <= n; i +=\
+    \ i & -i)\n            tree[i] += v;\n    }\n};\n"
+  code: "template<typename T>\nstruct FenwickTree {\n    int n;\n    vector<T> tree;\n\
+    \n    FenwickTree() = default;\n\n    FenwickTree(int _n) : n(_n + 1) {\n    \
+    \    tree.assign(n, T());\n    }\n\n    template<class Iterator>\n    FenwickTree(Iterator\
+    \ begin, Iterator end) : n(distance(begin, end) + 1) {\n        tree.resize(n);\n\
+    \        for (int i = 1; begin != end; i++, begin++)\n            update(i, *begin);\n\
+    \    }\n\n    T query(int i) {\n        T ret = 0;\n        for (; i; i -= i &\
+    \ -i)\n            ret += tree[i];\n        return ret;\n    }\n\n    T query(int\
+    \ l, int r) { return query(r) - query(l - 1); }\n\n    T operator[](int i) { return\
+    \ query(i, i); }\n\n    void update(int i, T v) {\n        for (; i <= n; i +=\
+    \ i & -i)\n            tree[i] += v;\n    }\n};\n"
   dependsOn: []
   isVerificationFile: false
   path: data-structure/binary-index-tree.hpp
   requiredBy: []
-  timestamp: '2021-12-30 07:57:40-08:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2021-12-30 08:13:25-08:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/data-structure/binary-index-tree.test.cpp
 documentation_of: data-structure/binary-index-tree.hpp
@@ -60,8 +61,10 @@ Binary index trees cannot support non-reversible queries. This almost completely
 
 ### Documentation
 
+- `FenwickTree()`: Constructs an empty binary index tree.
 - `FenwickTree(int n)`: Constructs a binary index tree object of size $n$ (meaning it can perform operations on the range $[1, n]$). Works in linear time.
 - `FenwickTree(Iterator begin, Iterator end)`: Constructs a binary index tree initialized with values specified by $\texttt{begin}$ and $\texttt{end}$. Works in linear time.
 - `T query(int i)`: Returns the value $\sum_{k = 1}^i a_k$. Works in $\mathcal{O}(\log n)$.
 - `T query(int l, int r)`: Returns the value $\sum_{k = l}^r a_k$. Works in $\mathcal{O}(\log n)$.
+- `T operator[](int i)`: Returns the value at index $i$ in $\mathcal{O}(\log n)$. 
 - `void update(int i, T v)`: Sets the value of $a_i$ to $v$. Works in $\mathcal{O}(\log n)$.
