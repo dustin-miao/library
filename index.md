@@ -1,6 +1,11 @@
 ---
 data:
   libraryCategories:
+  - name: .
+    pages:
+    - icon: ':warning:'
+      path: bundler.py
+      title: bundler.py
   - name: data-structure
     pages:
     - icon: ':warning:'
