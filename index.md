@@ -7,6 +7,9 @@ data:
       path: data-structure/binary-index-tree.hpp
       title: Binary Index Tree
     - icon: ':heavy_check_mark:'
+      path: data-structure/segment-tree.hpp
+      title: data-structure/segment-tree.hpp
+    - icon: ':heavy_check_mark:'
       path: data-structure/union-find.hpp
       title: Union Find
   verificationCategories:
@@ -15,6 +18,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/data-structure/binary-index-tree/yosupo-point-add-range-sum.test.cpp
       title: verify/data-structure/binary-index-tree/yosupo-point-add-range-sum.test.cpp
+  - name: verify/data-structure/segment-tree
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/data-structure/segment-tree/yosupo-point-add-range-sum.test.cpp
+      title: verify/data-structure/segment-tree/yosupo-point-add-range-sum.test.cpp
   - name: verify/data-structure/union-find
     pages:
     - icon: ':heavy_check_mark:'
