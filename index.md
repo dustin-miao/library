@@ -3,6 +3,9 @@ data:
   libraryCategories:
   - name: data-structure
     pages:
+    - icon: ':warning:'
+      path: data-structure/binary-index-tree.hpp
+      title: Binary Index Tree
     - icon: ':heavy_check_mark:'
       path: data-structure/union-find.hpp
       title: Union Find
