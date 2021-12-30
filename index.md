@@ -5,7 +5,7 @@ data:
     pages:
     - icon: ':warning:'
       path: data-structure/union-find.hpp
-      title: A container that supports the union of disjoint sets and the finding
+      title: Union find
   verificationCategories: []
 layout: toppage
 ---

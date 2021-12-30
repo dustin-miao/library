@@ -79,8 +79,7 @@ data:
   verifiedWith: []
 documentation_of: data-structure/union-find.hpp
 layout: document
-redirect_from:
-- /library/data-structure/union-find.hpp
-- /library/data-structure/union-find.hpp.html
-title: A container that supports the union of disjoint sets and the finding
+title: Union find
 ---
+
+Placeholder
