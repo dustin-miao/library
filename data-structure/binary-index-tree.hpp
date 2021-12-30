@@ -1,7 +1,9 @@
-template<typename T> 
+template<typename T>
 struct FenwickTree {
     int n;
     vector<T> tree;
+
+    FenwickTree() = default;
 
     FenwickTree(int _n) : n(_n + 1) {
         tree.assign(n, T());
@@ -21,9 +23,9 @@ struct FenwickTree {
         return ret;
     }
 
-    T query(int l, int r) {
-        return query(r) - query(l - 1);
-    }
+    T query(int l, int r) { return query(r) - query(l - 1); }
+
+    T operator[](int i) { return query(i, i); }
 
     void update(int i, T v) {
         for (; i <= n; i += i & -i)
