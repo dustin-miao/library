@@ -44,7 +44,7 @@ data:
   - verify/data-structure/yosupo-union-find.test.cpp
 documentation_of: data-structure/union-find.hpp
 layout: document
-title: Union find
+title: Union Find
 ---
 
 ## Union Find
