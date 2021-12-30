@@ -1,6 +1,11 @@
 ---
 data:
-  libraryCategories: []
+  libraryCategories:
+  - name: data-structure
+    pages:
+    - icon: ':warning:'
+      path: data-structure/union-find.hpp
+      title: A container that supports the union of disjoint sets and the finding
   verificationCategories: []
 layout: toppage
 ---
