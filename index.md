@@ -3,13 +3,13 @@ data:
   libraryCategories:
   - name: data-structure
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: data-structure/union-find.hpp
       title: Union find
   verificationCategories:
   - name: verify/data-structure
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/data-structure/yosupo-union-find.test.cpp
       title: verify/data-structure/yosupo-union-find.test.cpp
 layout: toppage

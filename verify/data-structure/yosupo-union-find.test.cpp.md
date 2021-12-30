@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: data-structure/union-find.hpp
     title: Union find
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/unionfind
@@ -31,20 +31,20 @@ data:
     \n\nconst int MAX = 2e5 + 5;\n\nint N, Q;\nUnionFind dsu(MAX);\n\nint main() {\n\
     \  cin >> N >> Q;\n  while (Q--) {\n    int t, u, v;\n    cin >> t >> u >> v;\n\
     \    if (t == 0)\n      dsu.merge(u, v);\n    else\n      cout << (dsu.find(u)\
-    \ == dsu.find(v) ? 1 : 0) << '\\n';\n  }\n}\n"
+    \ == dsu.find(v) ? 0 : 1) << '\\n';\n  }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/unionfind\"\n\n#include\
     \ <bits/stdc++.h>\nusing namespace std;\n\n#include \"data-structure/union-find.hpp\"\
     \n\nconst int MAX = 2e5 + 5;\n\nint N, Q;\nUnionFind dsu(MAX);\n\nint main() {\n\
     \  cin >> N >> Q;\n  while (Q--) {\n    int t, u, v;\n    cin >> t >> u >> v;\n\
     \    if (t == 0)\n      dsu.merge(u, v);\n    else\n      cout << (dsu.find(u)\
-    \ == dsu.find(v) ? 1 : 0) << '\\n';\n  }\n}\n"
+    \ == dsu.find(v) ? 0 : 1) << '\\n';\n  }\n}\n"
   dependsOn:
   - data-structure/union-find.hpp
   isVerificationFile: true
   path: verify/data-structure/yosupo-union-find.test.cpp
   requiredBy: []
-  timestamp: '2021-12-29 23:10:14-08:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2021-12-29 23:15:23-08:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/data-structure/yosupo-union-find.test.cpp
 layout: document
