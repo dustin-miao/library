@@ -74,7 +74,7 @@ Segment Trees are a general class of online data structures, represented by a co
 
 Both these operations are performed in $\mathcal{O}(\log n)$, where $n$ is the number of elements represented by the segment tree. The total space complexity is linear (more specifically, it allocates $2n$ memory). Note that all indices are zero-based. For a similar data structure, see the [binary index tree](https://dutinmeow.github.io/library/data-structure/binary-index-tree.hpp). 
 
-It is important to note that this version implements segment tree recusively, which incurs a higher runtime and a memory upperbound of $4n$ (as opposed to $2n$ from the iterative version). Alternatively, see the [iterative segment tree](https://dutinmeow.github.io/library/data-structure/segment-tree.hpp))
+It is important to note that this version implements segment tree recusively, which incurs a higher runtime and a memory upperbound of $4n$ (as opposed to $2n$ from the iterative version). Alternatively, see the [iterative segment tree](https://dutinmeow.github.io/library/data-structure/segment-tree.hpp).
 
 ### Documentation
 
