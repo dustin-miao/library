@@ -3,7 +3,7 @@ title: Recursive Segment Tree
 documentation_of: //data-structure/recursive-segment-tree.hpp
 ---
 
-## Segment Tree
+## Recursive Segment Tree
 
 ### Summary
 
