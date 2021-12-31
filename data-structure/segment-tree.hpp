@@ -1,5 +1,5 @@
 template<typename T>
-struct SegmentTree {
+struct segtree {
     int n;
     vector<T> tree;
 
@@ -11,16 +11,16 @@ protected:
     void apply(T &a, const T &b) { a = b; }
 
 public:
-    SegmentTree() = default;
+    segtree() = default;
 
-    SegmentTree(int _n, T _v = T()) : n(_n), dval(_v) {
+    segtree(int _n) : n(_n) {
         tree.assign(2 * n, dval);
         for (int i = n - 1; i > 0; i--)
             tree[i] = merge(tree[i << 1], tree[i << 1 | 1]);
     }
 
     template<typename Iterator>
-    SegmentTree(Iterator begin, Iterator end, T _v = T()) : n(distance(begin, end)), dval(_v) {
+    segtree(Iterator begin, Iterator end) : n(distance(begin, end)) {
 		tree.resize(2 * n);
         for (int i = n; i < 2 * n; i++, begin++)
             tree[i] = *begin;

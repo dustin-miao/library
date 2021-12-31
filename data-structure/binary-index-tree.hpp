@@ -1,16 +1,16 @@
 template<typename T>
-struct FenwickTree {
+struct fentree {
     int n;
     vector<T> tree;
 
-    FenwickTree() = default;
+    fentree() = default;
 
-    FenwickTree(int _n) : n(_n + 1) {
+    fentree(int _n) : n(_n + 1) {
         tree.assign(n, T());
     }
 
     template<class Iterator>
-    FenwickTree(Iterator begin, Iterator end) : n(distance(begin, end) + 1) {
+    fentree(Iterator begin, Iterator end) : n(distance(begin, end) + 1) {
         tree.resize(n);
         for (int i = 1; begin != end; i++, begin++)
             update(i, *begin);

@@ -15,9 +15,9 @@ Both these operations are performed in $\mathcal{O}(\log n)$, where $n$ is the n
 
 ### Documentation
 
-- `SegmentTree()`: Constructs an empty segment tree.
-- `SegmentTree(int n, T v)`: Constructs a segment tree of size $n$ initialized with default value $v$. This takes $\mathcal{O}(n)$ time.
-- `SegmentTree(Iterator begin, Iterator end, T v)`: Constructs a segment tree initialized with values specified by $\texttt{begin}$ and $\texttt{end}$. The default value is set to $v$. This runs in $\mathcal{O}(n)$ time.
+- `segtree()`: Constructs an empty segment tree.
+- `segtree(int n)`: Constructs a segment tree of size $n$. This takes $\mathcal{O}(n)$ time.
+- `segtree(Iterator begin, Iterator end)`: Constructs a segment tree initialized with values specified by $\texttt{begin}$ and $\texttt{end}$. This runs in $\mathcal{O}(n)$ time.
 - `T query(int l, int r)`: Returns $\sum_{k = l}^r a_k$. This runs in $\mathcal{O}(\log n)$ time.
 - `T operator[](int i)`: Returns $a_i$. This runs in $\mathcal{O}(1)$ time.
 - `void update(int i, T v)`: Assigns $a_i$ to value $v$. This runs in $\mathcal{O}(\log n)$. 

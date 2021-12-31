@@ -9,13 +9,13 @@ const int MAX = 5e5 + 5;
 
 int N, Q;
 long long A[MAX];
-FenwickTree<long long> bit;
+fentree<long long> bit;
 
 int main() {
   cin >> N >> Q;
   for (int i = 0; i < N; i++)
     cin >> A[i];
-  bit = FenwickTree<long long>(A, A + N);
+  bit = fentree<long long>(A, A + N);
   while (Q--) {
     int t; cin >> t;
     if (t == 0) {

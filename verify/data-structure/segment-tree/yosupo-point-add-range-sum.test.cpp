@@ -9,13 +9,13 @@ const int MAX = 5e5 + 5;
 
 int N, Q;
 long long A[MAX];
-SegmentTree<long long> sgt;
+segtree<long long> sgt;
 
 int main() {
   cin >> N >> Q;
   for (int i = 0; i < N; i++)
     cin >> A[i];
-  sgt = SegmentTree<long long>(A, A + N);
+  sgt = segtree<long long>(A, A + N);
   while (Q--) {
     int t; cin >> t;
     if (t == 0) {
