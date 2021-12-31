@@ -13,21 +13,17 @@ data:
       path: data-structure/union-find.hpp
       title: Union Find
   verificationCategories:
-  - name: verify/data-structure/binary-index-tree
+  - name: verify/data-structure
     pages:
     - icon: ':heavy_check_mark:'
-      path: verify/data-structure/binary-index-tree/yosupo-point-add-range-sum.test.cpp
-      title: verify/data-structure/binary-index-tree/yosupo-point-add-range-sum.test.cpp
-  - name: verify/data-structure/segment-tree
-    pages:
+      path: verify/data-structure/binary-index-tree.yosupo-point-add-range-sum.test.cpp
+      title: verify/data-structure/binary-index-tree.yosupo-point-add-range-sum.test.cpp
     - icon: ':heavy_check_mark:'
-      path: verify/data-structure/segment-tree/yosupo-point-add-range-sum.test.cpp
-      title: verify/data-structure/segment-tree/yosupo-point-add-range-sum.test.cpp
-  - name: verify/data-structure/union-find
-    pages:
+      path: verify/data-structure/segment-tree.yosupo-point-add-range-sum.test.cpp
+      title: verify/data-structure/segment-tree.yosupo-point-add-range-sum.test.cpp
     - icon: ':heavy_check_mark:'
-      path: verify/data-structure/union-find/yosupo-unionfind.test.cpp
-      title: verify/data-structure/union-find/yosupo-unionfind.test.cpp
+      path: verify/data-structure/union-find.yosupo-unionfind.test.cpp
+      title: verify/data-structure/union-find.yosupo-unionfind.test.cpp
 layout: toppage
 ---
 [![Dutinmeow](https://img.shields.io/endpoint?url=https%3A%2F%2Fatcoder-badges.now.sh%2Fapi%2Fatcoder%2Fjson%2FNyaan)](https://atcoder.jp/users/dutinmeow)

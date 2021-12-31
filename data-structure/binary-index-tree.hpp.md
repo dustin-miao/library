@@ -4,8 +4,8 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: verify/data-structure/binary-index-tree/yosupo-point-add-range-sum.test.cpp
-    title: verify/data-structure/binary-index-tree/yosupo-point-add-range-sum.test.cpp
+    path: verify/data-structure/binary-index-tree.yosupo-point-add-range-sum.test.cpp
+    title: verify/data-structure/binary-index-tree.yosupo-point-add-range-sum.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -39,7 +39,7 @@ data:
   timestamp: '2021-12-31 09:05:27-08:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/data-structure/binary-index-tree/yosupo-point-add-range-sum.test.cpp
+  - verify/data-structure/binary-index-tree.yosupo-point-add-range-sum.test.cpp
 documentation_of: data-structure/binary-index-tree.hpp
 layout: document
 title: Binary Index Tree

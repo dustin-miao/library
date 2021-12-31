@@ -14,7 +14,7 @@ data:
     PROBLEM: https://judge.yosupo.jp/problem/point_add_range_sum
     links:
     - https://judge.yosupo.jp/problem/point_add_range_sum
-  bundledCode: "#line 1 \"verify/data-structure/segment-tree/yosupo-point-add-range-sum.test.cpp\"\
+  bundledCode: "#line 1 \"verify/data-structure/segment-tree.yosupo-point-add-range-sum.test.cpp\"\
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/point_add_range_sum\"\n\n\
     #include <bits/stdc++.h>\nusing namespace std;\n\n#line 1 \"data-structure/segment-tree.hpp\"\
     \ntemplate<typename T>\nstruct segtree {\n    int n;\n    vector<T> tree;\n\n\
@@ -32,7 +32,7 @@ data:
     \ merge(ret, tree[--r]);\n        }\n        return ret;\n    }\n\n    T operator[](int\
     \ i) { return tree[i += n]; }\n\n    void update(int i, T v) {\n        for (apply(tree[i\
     \ += n], v); i > 1; i >>= 1)\n            tree[i >> 1] = merge(tree[i], tree[i\
-    \ ^ 1]);\n    }\n};\n#line 7 \"verify/data-structure/segment-tree/yosupo-point-add-range-sum.test.cpp\"\
+    \ ^ 1]);\n    }\n};\n#line 7 \"verify/data-structure/segment-tree.yosupo-point-add-range-sum.test.cpp\"\
     \n\nconst int MAX = 5e5 + 5;\n\nint N, Q;\nlong long A[MAX];\nsegtree<long long>\
     \ sgt;\n\nint main() {\n  cin >> N >> Q;\n  for (int i = 0; i < N; i++)\n    cin\
     \ >> A[i];\n  sgt = segtree<long long>(A, A + N);\n  while (Q--) {\n    int t;\
@@ -50,15 +50,15 @@ data:
   dependsOn:
   - data-structure/segment-tree.hpp
   isVerificationFile: true
-  path: verify/data-structure/segment-tree/yosupo-point-add-range-sum.test.cpp
+  path: verify/data-structure/segment-tree.yosupo-point-add-range-sum.test.cpp
   requiredBy: []
-  timestamp: '2021-12-31 09:05:27-08:00'
+  timestamp: '2021-12-31 09:10:59-08:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: verify/data-structure/segment-tree/yosupo-point-add-range-sum.test.cpp
+documentation_of: verify/data-structure/segment-tree.yosupo-point-add-range-sum.test.cpp
 layout: document
 redirect_from:
-- /verify/verify/data-structure/segment-tree/yosupo-point-add-range-sum.test.cpp
-- /verify/verify/data-structure/segment-tree/yosupo-point-add-range-sum.test.cpp.html
-title: verify/data-structure/segment-tree/yosupo-point-add-range-sum.test.cpp
+- /verify/verify/data-structure/segment-tree.yosupo-point-add-range-sum.test.cpp
+- /verify/verify/data-structure/segment-tree.yosupo-point-add-range-sum.test.cpp.html
+title: verify/data-structure/segment-tree.yosupo-point-add-range-sum.test.cpp
 ---
