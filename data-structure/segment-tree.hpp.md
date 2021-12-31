@@ -78,6 +78,6 @@ Both these operations are performed in $\mathcal{O}(\log n)$, where $n$ is the n
 
 Note that the following methods and variables are meant to be modified or overriden. 
 - `T dval`: This variable is the default value, which depends on the type of $T$ and $\texttt{merge}$ function. For any $v \neq \texttt{dval}$, $\texttt{dval}$ should satisfy $v = \texttt{merge}(v, \texttt{dval})$. For instance, a sum operator would mean that $\texttt{dval} = 0$, and a min operator would mean that $\texttt{dval} = \infty$. 
-- `T merge(T a, T b)`: Specifies how values are to be combined. It takes in two values and merges them into a single value. In this specific use case, this function must be commutative (ie $\texttt{merge}(a, b) = \texttt{merge}(b, a)$). For non-commutative merge functions, see the recursive implementation of segment tree. 
+- `T merge(T a, T b)`: Specifies how values are to be combined. It takes in two values and merges them into a single value. In this specific use case, this function must be commutative (ie $\texttt{merge}(a, b) = \texttt{merge}(b, a)$). For non-commutative merge functions, see the [recursive implementation of segment tree](https://dutinmeow.github.io/library/data-structure/recursive-segment-tree.hpp). 
 - `T apply(T &a, T b)`: Applies an update with value $b$ to a node with value $a$. This will most likely always be the `=` or `+=` operator. 
 
