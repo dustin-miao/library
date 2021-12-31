@@ -64,7 +64,7 @@ layout: document
 title: Recursive Segment Tree
 ---
 
-## Segment Tree
+## Recursive Segment Tree
 
 ### Summary
 

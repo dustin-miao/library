@@ -15,6 +15,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/union-find.hpp
       title: Union Find
+  - name: geometry
+    pages:
+    - icon: ':warning:'
+      path: geometry/line.hpp
+      title: Line
   verificationCategories:
   - name: verify/data-structure
     pages:
