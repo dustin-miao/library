@@ -6,15 +6,15 @@ data:
     title: Recursive Segment Tree
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/point_add_range_sum
     links:
     - https://judge.yosupo.jp/problem/point_add_range_sum
-  bundledCode: "#line 1 \"verify/data-structure/recursive-segment-tree.yosupo-point-add-range-sum.test.cpp\"\
+  bundledCode: "#line 1 \"verify/data-structure/recursive-segment-tree.yosupo-point-set-range-composite.test.cpp\"\
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/point_add_range_sum\"\n\n\
     #include <bits/stdc++.h>\nusing namespace std;\n\n#line 1 \"data-structure/recursive-segment-tree.hpp\"\
     \ntemplate<typename T>\nstruct segtree {\n    int n;\n    vector<T> tree;\n  \
@@ -36,33 +36,39 @@ data:
     \           update(i, *begin);\n    }\n\n    T query(int l, int r) {\n       \
     \ return query(l, r, 1, 0, n - 1);\n    }\n\n    T operator[](int i) { return\
     \ query(i, i); }\n\n    void update(int i, T v) {\n        update(i, v, 1, 0,\
-    \ n - 1);\n    }\n};\n#line 7 \"verify/data-structure/recursive-segment-tree.yosupo-point-add-range-sum.test.cpp\"\
-    \n\nconst int MAX = 5e5 + 5;\n\nint N, Q;\nlong long A[MAX];\nsegtree<long long>\
-    \ sgt;\n\nint main() {\n  cin >> N >> Q;\n  for (int i = 0; i < N; i++)\n    cin\
-    \ >> A[i];\n  sgt = segtree<long long>(A, A + N);\n  while (Q--) {\n    int t;\
-    \ cin >> t;\n    if (t == 0) {\n      int p; long long x;\n      cin >> p >> x;\n\
-    \      sgt.update(p, sgt[p] + x);\n    } else {\n      int l, r;\n      cin >>\
-    \ l >> r;\n      cout << sgt.query(l, r - 1) << '\\n';\n    }\n  }\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/point_add_range_sum\"\n\
-    \n#include <bits/stdc++.h>\nusing namespace std;\n\n#include \"data-structure/recursive-segment-tree.hpp\"\
-    \n\nconst int MAX = 5e5 + 5;\n\nint N, Q;\nlong long A[MAX];\nsegtree<long long>\
-    \ sgt;\n\nint main() {\n  cin >> N >> Q;\n  for (int i = 0; i < N; i++)\n    cin\
-    \ >> A[i];\n  sgt = segtree<long long>(A, A + N);\n  while (Q--) {\n    int t;\
-    \ cin >> t;\n    if (t == 0) {\n      int p; long long x;\n      cin >> p >> x;\n\
-    \      sgt.update(p, sgt[p] + x);\n    } else {\n      int l, r;\n      cin >>\
-    \ l >> r;\n      cout << sgt.query(l, r - 1) << '\\n';\n    }\n  }\n}"
+    \ n - 1);\n    }\n};\n#line 7 \"verify/data-structure/recursive-segment-tree.yosupo-point-set-range-composite.test.cpp\"\
+    \n\nconst int MAX = 5e5 + 5;\n\n\nstruct line {\n\n};\n"
+  code: '#define PROBLEM "https://judge.yosupo.jp/problem/point_add_range_sum"
+
+
+    #include <bits/stdc++.h>
+
+    using namespace std;
+
+
+    #include "data-structure/recursive-segment-tree.hpp"
+
+
+    const int MAX = 5e5 + 5;
+
+
+
+    struct line {
+
+
+    };'
   dependsOn:
   - data-structure/recursive-segment-tree.hpp
   isVerificationFile: true
-  path: verify/data-structure/recursive-segment-tree.yosupo-point-add-range-sum.test.cpp
+  path: verify/data-structure/recursive-segment-tree.yosupo-point-set-range-composite.test.cpp
   requiredBy: []
   timestamp: '2022-01-02 09:54:38-08:00'
-  verificationStatus: TEST_ACCEPTED
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
-documentation_of: verify/data-structure/recursive-segment-tree.yosupo-point-add-range-sum.test.cpp
+documentation_of: verify/data-structure/recursive-segment-tree.yosupo-point-set-range-composite.test.cpp
 layout: document
 redirect_from:
-- /verify/verify/data-structure/recursive-segment-tree.yosupo-point-add-range-sum.test.cpp
-- /verify/verify/data-structure/recursive-segment-tree.yosupo-point-add-range-sum.test.cpp.html
-title: verify/data-structure/recursive-segment-tree.yosupo-point-add-range-sum.test.cpp
+- /verify/verify/data-structure/recursive-segment-tree.yosupo-point-set-range-composite.test.cpp
+- /verify/verify/data-structure/recursive-segment-tree.yosupo-point-set-range-composite.test.cpp.html
+title: verify/data-structure/recursive-segment-tree.yosupo-point-set-range-composite.test.cpp
 ---

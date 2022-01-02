@@ -18,11 +18,11 @@ data:
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/point_add_range_sum\"\n\n\
     #include <bits/stdc++.h>\nusing namespace std;\n\n#line 1 \"data-structure/segment-tree.hpp\"\
     \ntemplate<typename T>\nstruct segtree {\n    int n;\n    vector<T> tree;\n\n\
-    protected:\n    T dval = T();\n\n    T merge(const T &a, const T &b) { return\
-    \ a + b; }\n\n    void apply(T &a, const T &b) { a = b; }\n\npublic:\n    segtree()\
-    \ = default;\n\n    segtree(int _n) : n(_n) {\n        tree.assign(2 * n, dval);\n\
-    \        for (int i = n - 1; i > 0; i--)\n            tree[i] = merge(tree[i <<\
-    \ 1], tree[i << 1 | 1]);\n    }\n\n    template<typename Iterator>\n    segtree(Iterator\
+    \    T dval = T();\n\n    T merge(const T &a, const T &b) { return a + b; }\n\n\
+    \    void apply(T &a, const T &b) { a = b; }\n\n    segtree() = default;\n\n \
+    \   segtree(int _n) : n(_n) {\n        tree.assign(2 * n, dval);\n        for\
+    \ (int i = n - 1; i > 0; i--)\n            tree[i] = merge(tree[i << 1], tree[i\
+    \ << 1 | 1]);\n    }\n\n    template<typename Iterator>\n    segtree(Iterator\
     \ begin, Iterator end) : n(distance(begin, end)) {\n\t\ttree.resize(2 * n);\n\
     \        for (int i = n; i < 2 * n; i++, begin++)\n            tree[i] = *begin;\n\
     \        for (int i = n - 1; i > 0; i--)\n            tree[i] = merge(tree[i <<\
@@ -52,7 +52,7 @@ data:
   isVerificationFile: true
   path: verify/data-structure/segment-tree.yosupo-point-add-range-sum.test.cpp
   requiredBy: []
-  timestamp: '2021-12-31 09:10:59-08:00'
+  timestamp: '2022-01-02 09:54:38-08:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/data-structure/segment-tree.yosupo-point-add-range-sum.test.cpp
