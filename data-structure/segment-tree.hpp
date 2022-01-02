@@ -3,14 +3,12 @@ struct segtree {
     int n;
     vector<T> tree;
 
-protected:
     T dval = T();
 
     T merge(const T &a, const T &b) { return a + b; }
 
     void apply(T &a, const T &b) { a = b; }
 
-public:
     segtree() = default;
 
     segtree(int _n) : n(_n) {

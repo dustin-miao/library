@@ -2,8 +2,7 @@ template<typename T>
 struct segtree {
     int n;
     vector<T> tree;
-
-protected:
+    
     T dval = T();
 
     T merge(const T &a, const T &b) { return a + b; }
