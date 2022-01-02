@@ -17,7 +17,7 @@ data:
       title: Union Find
   - name: geometry
     pages:
-    - icon: ':warning:'
+    - icon: ':x:'
       path: geometry/line.hpp
       title: Line
   verificationCategories:
