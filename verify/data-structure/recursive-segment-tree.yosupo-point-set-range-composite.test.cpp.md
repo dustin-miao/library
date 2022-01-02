@@ -1,25 +1,25 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/recursive-segment-tree.hpp
     title: Recursive Segment Tree
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: geometry/line.hpp
     title: Line
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.yosupo.jp/problem/point_add_range_sum
+    PROBLEM: https://judge.yosupo.jp/problem/point_set_range_composite
     links:
-    - https://judge.yosupo.jp/problem/point_add_range_sum
+    - https://judge.yosupo.jp/problem/point_set_range_composite
   bundledCode: "#line 1 \"verify/data-structure/recursive-segment-tree.yosupo-point-set-range-composite.test.cpp\"\
-    \n#define PROBLEM \"https://judge.yosupo.jp/problem/point_add_range_sum\"\n\n\
-    #include <bits/stdc++.h>\nusing namespace std;\n\n#line 1 \"geometry/line.hpp\"\
+    \n#define PROBLEM \"https://judge.yosupo.jp/problem/point_set_range_composite\"\
+    \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#line 1 \"geometry/line.hpp\"\
     \ntemplate<typename T>\nstruct line {\n    T m, b;\n\n    line() = default;\n\n\
     \    line(T _m, T _b) : m(_m), b(_b) {};\n\n    T operator()(T x) { return m *\
     \ x + b; }\n\n    friend double intersect(const line &l1, const line &l2) { \n\
@@ -59,8 +59,8 @@ data:
     \        int l, r;\n            long long x;\n            cin >> l >> r >> x;\n\
     \            cout << sgt.query(l, r - 1)(x) % MOD << '\\n';\n        }\n    }\n\
     }\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/point_add_range_sum\"\n\
-    \n#include <bits/stdc++.h>\nusing namespace std;\n\n#include \"geometry/line.hpp\"\
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/point_set_range_composite\"\
+    \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#include \"geometry/line.hpp\"\
     \n#include \"data-structure/recursive-segment-tree.hpp\"\n\nconst int MAX = 5e5\
     \ + 5;\nconst long long MOD = 998244353;\n\ntemplate<typename T>\nline<T> operator+(const\
     \ line<T> &l1, const line<T> &l2) { \n    return line<T>(l1.m * l2.m % MOD, (l1.b\
@@ -80,8 +80,8 @@ data:
   isVerificationFile: true
   path: verify/data-structure/recursive-segment-tree.yosupo-point-set-range-composite.test.cpp
   requiredBy: []
-  timestamp: '2022-01-02 09:57:58-08:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-01-02 10:03:07-08:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/data-structure/recursive-segment-tree.yosupo-point-set-range-composite.test.cpp
 layout: document

@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/data-structure/recursive-segment-tree.yosupo-point-set-range-composite.test.cpp
     title: verify/data-structure/recursive-segment-tree.yosupo-point-set-range-composite.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"geometry/line.hpp\"\ntemplate<typename T>\nstruct line {\n\
@@ -28,7 +28,7 @@ data:
   path: geometry/line.hpp
   requiredBy: []
   timestamp: '2021-12-31 10:27:42-08:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/data-structure/recursive-segment-tree.yosupo-point-set-range-composite.test.cpp
 documentation_of: geometry/line.hpp
