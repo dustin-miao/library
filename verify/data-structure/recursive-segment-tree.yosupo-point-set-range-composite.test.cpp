@@ -4,6 +4,7 @@
 using namespace std;
 
 #include "geometry/line.hpp"
+
 #include "data-structure/recursive-segment-tree.hpp"
 
 const int MAX = 5e5 + 5;
