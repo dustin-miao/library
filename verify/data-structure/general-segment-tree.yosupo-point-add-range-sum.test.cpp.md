@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/general-segment-tree.hpp
     title: Segment Tree
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/point_add_range_sum
@@ -34,29 +34,31 @@ data:
     \ i) { return tree[i += n]; }\n};\n#line 7 \"verify/data-structure/general-segment-tree.yosupo-point-add-range-sum.test.cpp\"\
     \n\nconst int MAX = 5e5 + 5;\n\nint N, Q;\nlong long A[MAX];\n\nauto sgt_merge\
     \ = [](long long a, long long b) { return a + b; };\nauto sgt_apply = [](long\
-    \ long &a, long long b) { return a += b; };\nsegtree<long long> sgt(sgt_merge,\
-    \ sgt_apply);\n\nint main() {\n\tcin >> N >> Q;\n\tfor (int i = 0; i < N; i++)\n\
-    \t\tcin >> A[i];\n\n\tsgt.init(A, A + N);\n\twhile (Q--) {\n\t\t\tint t; cin >>\
-    \ t;\n\t\t\tif (t == 0) {\n\t\t\t\tint p; long long x;\n\t\t\t\tcin >> p >> x;\n\
-    \t\t\t\tsgt.update(p, x);\n\t\t\t} else {\n\t\t\t\tint l, r;\n\t\t\t\tcin >> l\
-    \ >> r;\n\t\t\t\tcout << sgt.query(l, r - 1) << '\\n';\n\t\t\t}\n\t}\n}\n"
+    \ long &a, long long b) { return a += b; };\nsegtree<long long, decltype(sgt_merge),\
+    \ decltype(sgt_apply)> sgt(sgt_merge, sgt_apply);\n\nint main() {\n\tcin >> N\
+    \ >> Q;\n\tfor (int i = 0; i < N; i++)\n\t\tcin >> A[i];\n\n\tsgt.init(A, A +\
+    \ N);\n\twhile (Q--) {\n\t\t\tint t; cin >> t;\n\t\t\tif (t == 0) {\n\t\t\t\t\
+    int p; long long x;\n\t\t\t\tcin >> p >> x;\n\t\t\t\tsgt.update(p, x);\n\t\t\t\
+    } else {\n\t\t\t\tint l, r;\n\t\t\t\tcin >> l >> r;\n\t\t\t\tcout << sgt.query(l,\
+    \ r - 1) << '\\n';\n\t\t\t}\n\t}\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/point_add_range_sum\"\n\
     \n#include <bits/stdc++.h>\nusing namespace std;\n\n#include \"data-structure/general-segment-tree.hpp\"\
     \n\nconst int MAX = 5e5 + 5;\n\nint N, Q;\nlong long A[MAX];\n\nauto sgt_merge\
     \ = [](long long a, long long b) { return a + b; };\nauto sgt_apply = [](long\
-    \ long &a, long long b) { return a += b; };\nsegtree<long long> sgt(sgt_merge,\
-    \ sgt_apply);\n\nint main() {\n\tcin >> N >> Q;\n\tfor (int i = 0; i < N; i++)\n\
-    \t\tcin >> A[i];\n\n\tsgt.init(A, A + N);\n\twhile (Q--) {\n\t\t\tint t; cin >>\
-    \ t;\n\t\t\tif (t == 0) {\n\t\t\t\tint p; long long x;\n\t\t\t\tcin >> p >> x;\n\
-    \t\t\t\tsgt.update(p, x);\n\t\t\t} else {\n\t\t\t\tint l, r;\n\t\t\t\tcin >> l\
-    \ >> r;\n\t\t\t\tcout << sgt.query(l, r - 1) << '\\n';\n\t\t\t}\n\t}\n}"
+    \ long &a, long long b) { return a += b; };\nsegtree<long long, decltype(sgt_merge),\
+    \ decltype(sgt_apply)> sgt(sgt_merge, sgt_apply);\n\nint main() {\n\tcin >> N\
+    \ >> Q;\n\tfor (int i = 0; i < N; i++)\n\t\tcin >> A[i];\n\n\tsgt.init(A, A +\
+    \ N);\n\twhile (Q--) {\n\t\t\tint t; cin >> t;\n\t\t\tif (t == 0) {\n\t\t\t\t\
+    int p; long long x;\n\t\t\t\tcin >> p >> x;\n\t\t\t\tsgt.update(p, x);\n\t\t\t\
+    } else {\n\t\t\t\tint l, r;\n\t\t\t\tcin >> l >> r;\n\t\t\t\tcout << sgt.query(l,\
+    \ r - 1) << '\\n';\n\t\t\t}\n\t}\n}"
   dependsOn:
   - data-structure/general-segment-tree.hpp
   isVerificationFile: true
   path: verify/data-structure/general-segment-tree.yosupo-point-add-range-sum.test.cpp
   requiredBy: []
-  timestamp: '2022-01-05 09:21:24-08:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-01-05 10:52:14-08:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/data-structure/general-segment-tree.yosupo-point-add-range-sum.test.cpp
 layout: document

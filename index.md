@@ -6,7 +6,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/binary-index-tree.hpp
       title: Binary Index Tree
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/general-segment-tree.hpp
       title: Segment Tree
     - icon: ':question:'
@@ -29,7 +29,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/data-structure/binary-index-tree.yosupo-point-add-range-sum.test.cpp
       title: verify/data-structure/binary-index-tree.yosupo-point-add-range-sum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/data-structure/general-segment-tree.yosupo-point-add-range-sum.test.cpp
       title: verify/data-structure/general-segment-tree.yosupo-point-add-range-sum.test.cpp
     - icon: ':heavy_check_mark:'
