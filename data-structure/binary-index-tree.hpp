@@ -1,19 +1,25 @@
 template<typename T>
-struct fentree {
+class fentree {
     int n;
     vector<T> tree;
 
-    fentree() = default;
-
-    fentree(int _n) : n(_n + 1) {
+public:
+    void init(int _n) {
+        n = _n + 1;
         tree.assign(n, T());
     }
 
     template<class Iterator>
-    fentree(Iterator begin, Iterator end) : n(distance(begin, end) + 1) {
+    void init(Iterator begin, Iterator end) {
+        n = distance(begin, end) + 1;
         tree.resize(n);
         for (int i = 1; begin != end; i++, begin++)
             update(i, *begin);
+    }
+
+    void update(int i, T v) {
+        for (; i <= n; i += i & -i)
+            tree[i] += v;
     }
 
     T query(int i) {
@@ -26,9 +32,4 @@ struct fentree {
     T query(int l, int r) { return query(r) - query(l - 1); }
 
     T operator[](int i) { return query(i, i); }
-
-    void update(int i, T v) {
-        for (; i <= n; i += i & -i)
-            tree[i] += v;
-    }
 };
