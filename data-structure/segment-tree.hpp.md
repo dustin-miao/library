@@ -66,6 +66,8 @@ Both these operations are performed in $\mathcal{O}(\log n)$, where $n$ is the n
 
 ### Documentation
 
+#### Functions
+
 - `segtree()`: Constructs an empty segment tree.
 - `void init(int n)`: Initializes a segment tree of size $n$. This takes $\mathcal{O}(n)$ time.
 - `void init(Iterator begin, Iterator end)`: Initializes a segment tree with values specified by $\texttt{begin}$ and $\texttt{end}$. This runs in $\mathcal{O}(n)$ time.
@@ -73,7 +75,8 @@ Both these operations are performed in $\mathcal{O}(\log n)$, where $n$ is the n
 - `T query(int l, int r)`: Returns $\bigoplus_{k = l}^r a_k$, where "$\oplus$" is a commutative merge function (defined in `merge` – see below). This runs in $\mathcal{O}(\log n)$ time.
 - `T operator[](int i)`: Returns $a_i$. This runs in $\mathcal{O}(1)$ time.
 
-Note that the following methods and variables are meant to be modified or overriden. 
+#### Static 
+
 - `T`: Controls the type of the segment tree
 - `T dval`: This variable is the default value, which depends on the type of $T$ and $\texttt{merge}$ function. For any $v \neq \texttt{dval}$, $\texttt{dval}$ should satisfy $v = \texttt{merge}(v, \texttt{dval})$. For instance, a sum operator would mean that $\texttt{dval} = 0$, and a min operator would mean that $\texttt{dval} = \infty$. 
 - `T merge(T a, T b)`: Specifies how values are to be combined (essentially the "$\oplus$" operator). It takes in two values and merges them into a single value. In this specific use case, this function must be commutative (ie $\texttt{merge}(a, b) = \texttt{merge}(b, a)$). For non-commutative merge functions, see the [recursive implementation of segment tree](https://dutinmeow.github.io/library/data-structure/recursive-segment-tree.hpp). 
