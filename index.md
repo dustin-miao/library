@@ -9,7 +9,7 @@ data:
     - icon: ':warning:'
       path: data-structure/general-segment-tree.cpp
       title: data-structure/general-segment-tree.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: data-structure/recursive-segment-tree.hpp
       title: Recursive Segment Tree
     - icon: ':heavy_check_mark:'
@@ -20,7 +20,7 @@ data:
       title: Union Find
   - name: geometry
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: geometry/line.hpp
       title: Line
   verificationCategories:
@@ -29,10 +29,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/data-structure/binary-index-tree.yosupo-point-add-range-sum.test.cpp
       title: verify/data-structure/binary-index-tree.yosupo-point-add-range-sum.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/data-structure/recursive-segment-tree.yosupo-point-add-range-sum.test.cpp
       title: verify/data-structure/recursive-segment-tree.yosupo-point-add-range-sum.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/data-structure/recursive-segment-tree.yosupo-point-set-range-composite.test.cpp
       title: verify/data-structure/recursive-segment-tree.yosupo-point-set-range-composite.test.cpp
     - icon: ':heavy_check_mark:'
