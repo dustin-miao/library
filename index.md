@@ -6,6 +6,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/binary-index-tree.hpp
       title: Binary Index Tree
+    - icon: ':warning:'
+      path: data-structure/general-segment-tree.cpp
+      title: data-structure/general-segment-tree.cpp
     - icon: ':heavy_check_mark:'
       path: data-structure/recursive-segment-tree.hpp
       title: Recursive Segment Tree
