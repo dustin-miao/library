@@ -17,6 +17,8 @@ Binary index trees cannot support non-reversible queries. This almost completely
 
 ### Documentation
 
+#### Functions
+
 - `fentree()`: Constructs an empty binary index tree.
 - `void init(int n)`: Initializes a binary index tree object of size $n$ (meaning it can perform operations on the range $[1, n]$). Works in linear time.
 - `void init(Iterator begin, Iterator end)`: Initializes a binary index tree with values specified by $\texttt{begin}$ and $\texttt{end}$. Works in $\mathcal{O}(n \log n)$ time.
