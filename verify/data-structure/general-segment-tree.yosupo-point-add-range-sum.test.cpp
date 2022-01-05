@@ -12,7 +12,7 @@ long long A[MAX];
 
 auto sgt_merge = [](long long a, long long b) { return a + b; };
 auto sgt_apply = [](long long &a, long long b) { return a += b; };
-segtree<long long> sgt(sgt_merge, sgt_apply);
+segtree<long long, decltype(sgt_merge), decltype(sgt_apply)> sgt(sgt_merge, sgt_apply);
 
 int main() {
 	cin >> N >> Q;
