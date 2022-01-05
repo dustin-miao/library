@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':x:'
     path: data-structure/general-segment-tree.hpp
-    title: data-structure/general-segment-tree.hpp
+    title: Segment Tree
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: true

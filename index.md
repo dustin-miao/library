@@ -8,7 +8,7 @@ data:
       title: Binary Index Tree
     - icon: ':x:'
       path: data-structure/general-segment-tree.hpp
-      title: data-structure/general-segment-tree.hpp
+      title: Segment Tree
     - icon: ':question:'
       path: data-structure/recursive-segment-tree.hpp
       title: Recursive Segment Tree
