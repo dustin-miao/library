@@ -17,12 +17,16 @@ It is important to note that this version implements segment tree recusively, wh
 
 ### Documentation
 
+#### Functions
+
 - `segtree()`: Constructs an empty segment tree.
 - `void init(int n)`: Initializes a segment tree of size $n$. This takes $\mathcal{O}(n)$ time.
 - `void init(Iterator begin, Iterator end)`: Initializes a segment tree with values specified by $\texttt{begin}$ and $\texttt{end}$. This runs in $\mathcal{O}(n)$ time.
 - `void update(int i, T v)`: Assigns $a_i$ to value $v$. This runs in $\mathcal{O}(\log n)$. 
 - `T query(int l, int r)`: Returns $\bigoplus_{k = l}^r a_k$, where "$\oplus$" is a commutative merge function (defined in `merge` – see below). This runs in $\mathcal{O}(\log n)$ time.
 - `T operator[](int i)`: Returns $a_i$. This runs in $\mathcal{O}(1)$ time.
+
+#### Static
 
 Note that the following methods and variables are meant to be modified or overriden. 
 - `T`: Controls the type of the segment tree
