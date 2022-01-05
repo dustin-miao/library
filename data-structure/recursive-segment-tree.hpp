@@ -42,7 +42,7 @@ public:
     }
 
     template<typename Iterator>
-    segtree(Iterator begin, Iterator end) {
+    void init(Iterator begin, Iterator end) {
         n = distance(begin, end); 
 		tree.resize(4 * n);
         for (int i = 0; i < n; i++, begin++)
