@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: data-structure/recursive-segment-tree.hpp
     title: Recursive Segment Tree
   - icon: ':x:'
@@ -40,12 +40,13 @@ data:
     \ tr) >> 1;\n        return merge(query(l, r, t << 1, tl, tm), query(l, r, t <<\
     \ 1 | 1, tm + 1, tr));\n    }\n\npublic:\n    void init(int _n) {\n        n =\
     \ _n;\n        tree.resize(4 * n);\n        for (int i = 0; i < n; i++)\n    \
-    \        update(i, dval);\n    }\n\n    template<typename Iterator>\n    segtree(Iterator\
-    \ begin, Iterator end) {\n        n = distance(begin, end); \n\t\ttree.resize(4\
-    \ * n);\n        for (int i = 0; i < n; i++, begin++)\n            update(i, *begin);\n\
-    \    }\n\n    void update(int i, T v) {\n        update(i, v, 1, 0, n - 1);\n\
-    \    }\n\n    T query(int l, int r) {\n        return query(l, r, 1, 0, n - 1);\n\
-    \    }\n\n    T operator[](int i) { return query(i, i); }\n};\n#line 9 \"verify/data-structure/recursive-segment-tree.yosupo-point-set-range-composite.test.cpp\"\
+    \        update(i, dval);\n    }\n\n    template<typename Iterator>\n    void\
+    \ init(Iterator begin, Iterator end) {\n        n = distance(begin, end); \n\t\
+    \ttree.resize(4 * n);\n        for (int i = 0; i < n; i++, begin++)\n        \
+    \    update(i, *begin);\n    }\n\n    void update(int i, T v) {\n        update(i,\
+    \ v, 1, 0, n - 1);\n    }\n\n    T query(int l, int r) {\n        return query(l,\
+    \ r, 1, 0, n - 1);\n    }\n\n    T operator[](int i) { return query(i, i); }\n\
+    };\n#line 9 \"verify/data-structure/recursive-segment-tree.yosupo-point-set-range-composite.test.cpp\"\
     \n\nconst int MAX = 5e5 + 5;\nconst long long MOD = 998244353;\n\ntemplate<typename\
     \ T>\nline<T> operator+(const line<T> &l1, const line<T> &l2) { \n    return line<T>(l1.m\
     \ * l2.m % MOD, (l1.b * l2.m + l2.b) % MOD);\n}\n\nint N, Q;\nline<long long>\
@@ -81,7 +82,7 @@ data:
   isVerificationFile: true
   path: verify/data-structure/recursive-segment-tree.yosupo-point-set-range-composite.test.cpp
   requiredBy: []
-  timestamp: '2022-01-05 09:17:34-08:00'
+  timestamp: '2022-01-05 09:26:34-08:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/data-structure/recursive-segment-tree.yosupo-point-set-range-composite.test.cpp

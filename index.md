@@ -6,10 +6,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/binary-index-tree.hpp
       title: Binary Index Tree
-    - icon: ':warning:'
-      path: data-structure/general-segment-tree.cpp
-      title: data-structure/general-segment-tree.cpp
     - icon: ':x:'
+      path: data-structure/general-segment-tree.hpp
+      title: data-structure/general-segment-tree.hpp
+    - icon: ':question:'
       path: data-structure/recursive-segment-tree.hpp
       title: Recursive Segment Tree
     - icon: ':heavy_check_mark:'
@@ -30,6 +30,9 @@ data:
       path: verify/data-structure/binary-index-tree.yosupo-point-add-range-sum.test.cpp
       title: verify/data-structure/binary-index-tree.yosupo-point-add-range-sum.test.cpp
     - icon: ':x:'
+      path: verify/data-structure/general-segment-tree.yosupo-point-add-range-sum.test.cpp
+      title: verify/data-structure/general-segment-tree.yosupo-point-add-range-sum.test.cpp
+    - icon: ':heavy_check_mark:'
       path: verify/data-structure/recursive-segment-tree.yosupo-point-add-range-sum.test.cpp
       title: verify/data-structure/recursive-segment-tree.yosupo-point-add-range-sum.test.cpp
     - icon: ':x:'

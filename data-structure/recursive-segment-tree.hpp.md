@@ -3,7 +3,7 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/data-structure/recursive-segment-tree.yosupo-point-add-range-sum.test.cpp
     title: verify/data-structure/recursive-segment-tree.yosupo-point-add-range-sum.test.cpp
   - icon: ':x:'
@@ -11,7 +11,7 @@ data:
     title: verify/data-structure/recursive-segment-tree.yosupo-point-set-range-composite.test.cpp
   _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"data-structure/recursive-segment-tree.hpp\"\nclass segtree\
@@ -29,7 +29,7 @@ data:
     \ tm), query(l, r, t << 1 | 1, tm + 1, tr));\n    }\n\npublic:\n    void init(int\
     \ _n) {\n        n = _n;\n        tree.resize(4 * n);\n        for (int i = 0;\
     \ i < n; i++)\n            update(i, dval);\n    }\n\n    template<typename Iterator>\n\
-    \    segtree(Iterator begin, Iterator end) {\n        n = distance(begin, end);\
+    \    void init(Iterator begin, Iterator end) {\n        n = distance(begin, end);\
     \ \n\t\ttree.resize(4 * n);\n        for (int i = 0; i < n; i++, begin++)\n  \
     \          update(i, *begin);\n    }\n\n    void update(int i, T v) {\n      \
     \  update(i, v, 1, 0, n - 1);\n    }\n\n    T query(int l, int r) {\n        return\
@@ -49,7 +49,7 @@ data:
     \ tm), query(l, r, t << 1 | 1, tm + 1, tr));\n    }\n\npublic:\n    void init(int\
     \ _n) {\n        n = _n;\n        tree.resize(4 * n);\n        for (int i = 0;\
     \ i < n; i++)\n            update(i, dval);\n    }\n\n    template<typename Iterator>\n\
-    \    segtree(Iterator begin, Iterator end) {\n        n = distance(begin, end);\
+    \    void init(Iterator begin, Iterator end) {\n        n = distance(begin, end);\
     \ \n\t\ttree.resize(4 * n);\n        for (int i = 0; i < n; i++, begin++)\n  \
     \          update(i, *begin);\n    }\n\n    void update(int i, T v) {\n      \
     \  update(i, v, 1, 0, n - 1);\n    }\n\n    T query(int l, int r) {\n        return\
@@ -59,8 +59,8 @@ data:
   isVerificationFile: false
   path: data-structure/recursive-segment-tree.hpp
   requiredBy: []
-  timestamp: '2022-01-05 09:17:34-08:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2022-01-05 09:26:34-08:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/data-structure/recursive-segment-tree.yosupo-point-set-range-composite.test.cpp
   - verify/data-structure/recursive-segment-tree.yosupo-point-add-range-sum.test.cpp

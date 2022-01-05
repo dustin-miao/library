@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: data-structure/recursive-segment-tree.hpp
     title: Recursive Segment Tree
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/point_add_range_sum
@@ -31,33 +31,33 @@ data:
     \ tm), query(l, r, t << 1 | 1, tm + 1, tr));\n    }\n\npublic:\n    void init(int\
     \ _n) {\n        n = _n;\n        tree.resize(4 * n);\n        for (int i = 0;\
     \ i < n; i++)\n            update(i, dval);\n    }\n\n    template<typename Iterator>\n\
-    \    segtree(Iterator begin, Iterator end) {\n        n = distance(begin, end);\
+    \    void init(Iterator begin, Iterator end) {\n        n = distance(begin, end);\
     \ \n\t\ttree.resize(4 * n);\n        for (int i = 0; i < n; i++, begin++)\n  \
     \          update(i, *begin);\n    }\n\n    void update(int i, T v) {\n      \
     \  update(i, v, 1, 0, n - 1);\n    }\n\n    T query(int l, int r) {\n        return\
     \ query(l, r, 1, 0, n - 1);\n    }\n\n    T operator[](int i) { return query(i,\
     \ i); }\n};\n#line 7 \"verify/data-structure/recursive-segment-tree.yosupo-point-add-range-sum.test.cpp\"\
     \n\nconst int MAX = 5e5 + 5;\n\nint N, Q;\nlong long A[MAX];\nsegtree sgt;\n\n\
-    int main() {\n  cin >> N >> Q;\n  for (int i = 0; i < N; i++)\n    cin >> A[i];\n\
-    \  sgt.init(A, A + N);\n  while (Q--) {\n    int t; cin >> t;\n    if (t == 0)\
-    \ {\n      int p; long long x;\n      cin >> p >> x;\n      sgt.update(p, x);\n\
-    \    } else {\n      int l, r;\n      cin >> l >> r;\n      cout << sgt.query(l,\
-    \ r - 1) << '\\n';\n    }\n  }\n}\n"
+    int main() {\n\tcin >> N >> Q;\n\tfor (int i = 0; i < N; i++)\n\t\tcin >> A[i];\n\
+    \tsgt.init(A, A + N);\n\twhile (Q--) {\n\t\t\tint t; cin >> t;\n\t\t\tif (t ==\
+    \ 0) {\n\t\t\t\tint p; long long x;\n\t\t\t\tcin >> p >> x;\n\t\t\tsgt.update(p,\
+    \ x);\n\t\t\t} else {\n\t\t\t\tint l, r;\n\t\t\t\tcin >> l >> r;\n\t\t\t\tcout\
+    \ << sgt.query(l, r - 1) << '\\n';\n\t\t\t}\n\t}\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/point_add_range_sum\"\n\
     \n#include <bits/stdc++.h>\nusing namespace std;\n\n#include \"data-structure/recursive-segment-tree.hpp\"\
     \n\nconst int MAX = 5e5 + 5;\n\nint N, Q;\nlong long A[MAX];\nsegtree sgt;\n\n\
-    int main() {\n  cin >> N >> Q;\n  for (int i = 0; i < N; i++)\n    cin >> A[i];\n\
-    \  sgt.init(A, A + N);\n  while (Q--) {\n    int t; cin >> t;\n    if (t == 0)\
-    \ {\n      int p; long long x;\n      cin >> p >> x;\n      sgt.update(p, x);\n\
-    \    } else {\n      int l, r;\n      cin >> l >> r;\n      cout << sgt.query(l,\
-    \ r - 1) << '\\n';\n    }\n  }\n}"
+    int main() {\n\tcin >> N >> Q;\n\tfor (int i = 0; i < N; i++)\n\t\tcin >> A[i];\n\
+    \tsgt.init(A, A + N);\n\twhile (Q--) {\n\t\t\tint t; cin >> t;\n\t\t\tif (t ==\
+    \ 0) {\n\t\t\t\tint p; long long x;\n\t\t\t\tcin >> p >> x;\n\t\t\tsgt.update(p,\
+    \ x);\n\t\t\t} else {\n\t\t\t\tint l, r;\n\t\t\t\tcin >> l >> r;\n\t\t\t\tcout\
+    \ << sgt.query(l, r - 1) << '\\n';\n\t\t\t}\n\t}\n}"
   dependsOn:
   - data-structure/recursive-segment-tree.hpp
   isVerificationFile: true
   path: verify/data-structure/recursive-segment-tree.yosupo-point-add-range-sum.test.cpp
   requiredBy: []
-  timestamp: '2022-01-05 09:17:34-08:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-01-05 09:26:34-08:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/data-structure/recursive-segment-tree.yosupo-point-add-range-sum.test.cpp
 layout: document
