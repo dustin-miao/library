@@ -16,11 +16,11 @@ Both these operations are performed in $\mathcal{O}(\log n)$, where $n$ is the n
 ### Documentation
 
 - `segtree()`: Constructs an empty segment tree.
-- `segtree(int n)`: Constructs a segment tree of size $n$. This takes $\mathcal{O}(n)$ time.
-- `segtree(Iterator begin, Iterator end)`: Constructs a segment tree initialized with values specified by $\texttt{begin}$ and $\texttt{end}$. This runs in $\mathcal{O}(n)$ time.
+- `void init(int n)`: Initializes a segment tree of size $n$. This takes $\mathcal{O}(n)$ time.
+- `void init(Iterator begin, Iterator end)`: Initializes a segment tree with values specified by $\texttt{begin}$ and $\texttt{end}$. This runs in $\mathcal{O}(n)$ time.
+- `void update(int i, T v)`: Assigns $a_i$ to value $v$. This runs in $\mathcal{O}(\log n)$. 
 - `T query(int l, int r)`: Returns $\sum_{k = l}^r a_k$. This runs in $\mathcal{O}(\log n)$ time.
 - `T operator[](int i)`: Returns $a_i$. This runs in $\mathcal{O}(1)$ time.
-- `void update(int i, T v)`: Assigns $a_i$ to value $v$. This runs in $\mathcal{O}(\log n)$. 
 
 Note that the following methods and variables are meant to be modified or overriden. 
 - `T dval`: This variable is the default value, which depends on the type of $T$ and $\texttt{merge}$ function. For any $v \neq \texttt{dval}$, $\texttt{dval}$ should satisfy $v = \texttt{merge}(v, \texttt{dval})$. For instance, a sum operator would mean that $\texttt{dval} = 0$, and a min operator would mean that $\texttt{dval} = \infty$. 
