@@ -12,20 +12,20 @@ long long A[MAX];
 fentree<long long> bit;
 
 int main() {
-  cin >> N >> Q;
-  for (int i = 0; i < N; i++)
-    cin >> A[i];
-  bit.init(A, A + N);
-  while (Q--) {
-    int t; cin >> t;
-    if (t == 0) {
-      int p; long long x;
-      cin >> p >> x;
-      bit.update(p + 1, x);
-    } else {
-      int l, r;
-      cin >> l >> r;
-      cout << bit.query(l + 1, r) << '\n';
-    }
-  }
+  	cin >> N >> Q;
+  	for (int i = 0; i < N; i++)
+		cin >> A[i];
+  	bit.init(A, A + N);
+  	while (Q--) {
+		int t; cin >> t;
+		if (t == 0) {
+	  		int p; long long x;
+	  		cin >> p >> x;
+	  		bit.update(p + 1, x);
+		} else {
+	  		int l, r;
+	  		cin >> l >> r;
+	  		cout << bit.query(l + 1, r) << '\n';
+		}
+  	}
 }
