@@ -12,31 +12,29 @@ data:
   attributes:
     links: []
   bundledCode: "#line 1 \"data-structure/binary-index-tree.hpp\"\ntemplate<typename\
-    \ T>\nclass fentree {\n    int n;\n    vector<T> tree;\n\npublic:\n    void init(int\
-    \ _n) {\n        n = _n + 1;\n        tree.assign(n, T());\n    }\n\n    template<class\
-    \ Iterator>\n    void init(Iterator begin, Iterator end) {\n        n = distance(begin,\
-    \ end) + 1;\n        tree.resize(n);\n        for (int i = 1; begin != end; i++,\
-    \ begin++)\n            update(i, *begin);\n    }\n\n    void update(int i, T\
-    \ v) {\n        for (; i <= n; i += i & -i)\n            tree[i] += v;\n    }\n\
-    \n    T query(int i) {\n        T ret = 0;\n        for (; i; i -= i & -i)\n \
-    \           ret += tree[i];\n        return ret;\n    }\n\n    T query(int l,\
-    \ int r) { return query(r) - query(l - 1); }\n\n    T operator[](int i) { return\
+    \ T>\nclass fentree {\n\tint n;\n\tvector<T> tree;\n\npublic:\n\tvoid init(int\
+    \ _n) {\n\t\tn = _n;\n\t\ttree.assign(n + 1, T());\n\t}\n\n\ttemplate<class Iterator>\n\
+    \tvoid init(Iterator begin, Iterator end) {\n\t\tn = distance(begin, end);\n\t\
+    \ttree.resize(n + 1);\n\t\tfor (int i = 1; begin != end; i++, begin++)\n\t\t\t\
+    update(i, *begin);\n\t}\n\n\tvoid update(int i, T v) {\n\t\tfor (; i <= n; i +=\
+    \ i & -i)\n\t\t\ttree[i] += v;\n\t}\n\n\tT query(int i) {\n\t\tT ret = 0;\n\t\t\
+    for (; i; i -= i & -i)\n\t\t\tret += tree[i];\n\t\treturn ret;\n\t}\n\n\tT query(int\
+    \ l, int r) { return query(r) - query(l - 1); }\n\n\tT operator[](int i) { return\
     \ query(i, i); }\n};\n"
-  code: "template<typename T>\nclass fentree {\n    int n;\n    vector<T> tree;\n\n\
-    public:\n    void init(int _n) {\n        n = _n + 1;\n        tree.assign(n,\
-    \ T());\n    }\n\n    template<class Iterator>\n    void init(Iterator begin,\
-    \ Iterator end) {\n        n = distance(begin, end) + 1;\n        tree.resize(n);\n\
-    \        for (int i = 1; begin != end; i++, begin++)\n            update(i, *begin);\n\
-    \    }\n\n    void update(int i, T v) {\n        for (; i <= n; i += i & -i)\n\
-    \            tree[i] += v;\n    }\n\n    T query(int i) {\n        T ret = 0;\n\
-    \        for (; i; i -= i & -i)\n            ret += tree[i];\n        return ret;\n\
-    \    }\n\n    T query(int l, int r) { return query(r) - query(l - 1); }\n\n  \
-    \  T operator[](int i) { return query(i, i); }\n};\n"
+  code: "template<typename T>\nclass fentree {\n\tint n;\n\tvector<T> tree;\n\npublic:\n\
+    \tvoid init(int _n) {\n\t\tn = _n;\n\t\ttree.assign(n + 1, T());\n\t}\n\n\ttemplate<class\
+    \ Iterator>\n\tvoid init(Iterator begin, Iterator end) {\n\t\tn = distance(begin,\
+    \ end);\n\t\ttree.resize(n + 1);\n\t\tfor (int i = 1; begin != end; i++, begin++)\n\
+    \t\t\tupdate(i, *begin);\n\t}\n\n\tvoid update(int i, T v) {\n\t\tfor (; i <=\
+    \ n; i += i & -i)\n\t\t\ttree[i] += v;\n\t}\n\n\tT query(int i) {\n\t\tT ret =\
+    \ 0;\n\t\tfor (; i; i -= i & -i)\n\t\t\tret += tree[i];\n\t\treturn ret;\n\t}\n\
+    \n\tT query(int l, int r) { return query(r) - query(l - 1); }\n\n\tT operator[](int\
+    \ i) { return query(i, i); }\n};\n"
   dependsOn: []
   isVerificationFile: false
   path: data-structure/binary-index-tree.hpp
   requiredBy: []
-  timestamp: '2022-01-05 09:14:28-08:00'
+  timestamp: '2022-01-05 19:16:14-08:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/data-structure/binary-index-tree.yosupo-point-add-range-sum.test.cpp
