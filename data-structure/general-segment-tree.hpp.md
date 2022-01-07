@@ -6,9 +6,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/data-structure/general-segment-tree.yosupo-point-add-range-sum.test.cpp
     title: verify/data-structure/general-segment-tree.yosupo-point-add-range-sum.test.cpp
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: verify/data-structure/temp.yosupo-point-set-range-composite.test.cpp
+    title: verify/data-structure/temp.yosupo-point-set-range-composite.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"data-structure/general-segment-tree.hpp\"\ntemplate<typename\
@@ -47,15 +50,16 @@ data:
   path: data-structure/general-segment-tree.hpp
   requiredBy: []
   timestamp: '2022-01-05 09:21:24-08:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/data-structure/general-segment-tree.yosupo-point-add-range-sum.test.cpp
+  - verify/data-structure/temp.yosupo-point-set-range-composite.test.cpp
 documentation_of: data-structure/general-segment-tree.hpp
 layout: document
 title: Segment Tree
 ---
 
-## Segment Tree
+## Generalized Segment Tree
 
 ### Summary
 
