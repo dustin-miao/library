@@ -3,7 +3,7 @@ title: Segment Tree
 documentation_of: //data-structure/general-segment-tree.hpp
 ---
 
-## Segment Tree
+## Generalized Segment Tree
 
 ### Summary
 

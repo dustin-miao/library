@@ -2,9 +2,9 @@ template<typename T>
 struct line {
     T m, b;
 
-    line() = default;
+    constexpr line() = default;
 
-    line(T _m, T _b) : m(_m), b(_b) {};
+    constexpr line(T _m, T _b) : m(_m), b(_b) {};
 
     T operator()(T x) { return m * x + b; }
 

@@ -5,19 +5,20 @@ using namespace std;
 
 #include "geometry/line.hpp"
 
-#include "data-structure/recursive-segment-tree.hpp"
+#include "data-structure/general-segment-tree.hpp"
 
 const int MAX = 5e5 + 5;
 const long long MOD = 998244353;
 
-template<typename T>
-line<T> operator+(const line<T> &l1, const line<T> &l2) { 
-    return line<T>(l1.m * l2.m % MOD, (l1.b * l2.m + l2.b) % MOD);
-}
+auto merge = [](const line<long long> &l1, const line<long long> &l2) {
+    return line<long long>(l1.m * l2.m % MOD, (l1.b * l2.m + l2.b) % MOD);
+};
+
+auto apply = [](line<long long> &l1, const line<long long> &l2) { l1 = l2; }
 
 int N, Q;
 line<long long> A[MAX];
-segtree<line<long long>> sgt;
+segtree<line<long long>, decltype(merge), decltype(apply), line<long long>(1, 0)> sgt(merge, apply);
 
 int main() {
     cin >> N >> Q;
