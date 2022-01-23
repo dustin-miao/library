@@ -8,14 +8,15 @@ using namespace std;
 const int MAX = 5e5 + 5;
 
 int N, Q;
-long long A[MAX];
-fentree<long long> bit;
+Fentree<long long> bit;
 
 int main() {
   	cin >> N >> Q;
-  	for (int i = 0; i < N; i++)
-		cin >> A[i];
-  	bit.init(A, A + N);
+	bit.init(N);
+  	for (int i = 0; i < N; i++) {
+		long long a; cin >> a;
+		bit.update(i + 1, a);
+	}
   	while (Q--) {
 		int t; cin >> t;
 		if (t == 0) {

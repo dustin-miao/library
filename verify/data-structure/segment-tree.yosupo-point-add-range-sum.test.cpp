@@ -8,14 +8,26 @@ using namespace std;
 const int MAX = 5e5 + 5;
 
 int N, Q;
-long long A[MAX];
-segtree sgt;
+
+struct stinfo {
+	using T = long long;
+
+	const T dval = 0;
+
+	void apply(T &a, T b) { a += b; }
+
+	T merge(T a, T b) { return a + b; }
+};
+
+Segtree<stinfo> sgt;
 
 int main() {
 	cin >> N >> Q;
-	for (int i = 0; i < N; i++)
-		cin >> A[i];
-	sgt.init(A, A + N);
+	sgt.init(N);
+	for (int i = 0; i < N; i++) {
+		long long a; cin >> a;
+		sgt.update(i, a);
+	}
 	while (Q--) {
 		int t; cin >> t;
 		if (t == 0) {
