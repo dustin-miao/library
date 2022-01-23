@@ -3,12 +3,12 @@ data:
   libraryCategories:
   - name: data-structure
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: data-structure/binary-index-tree.hpp
       title: Binary Index Tree
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/general-segment-tree.hpp
-      title: Segment Tree
+      title: General Segment Tree
     - icon: ':heavy_check_mark:'
       path: data-structure/recursive-segment-tree.hpp
       title: Recursive Segment Tree
@@ -18,15 +18,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/union-find.hpp
       title: Union Find
-  - name: geometry
-    pages:
-    - icon: ':x:'
-      path: geometry/line.hpp
-      title: Line
   verificationCategories:
   - name: verify/data-structure
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/data-structure/binary-index-tree.yosupo-point-add-range-sum.test.cpp
       title: verify/data-structure/binary-index-tree.yosupo-point-add-range-sum.test.cpp
     - icon: ':heavy_check_mark:'
@@ -38,9 +33,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/data-structure/segment-tree.yosupo-point-add-range-sum.test.cpp
       title: verify/data-structure/segment-tree.yosupo-point-add-range-sum.test.cpp
-    - icon: ':x:'
-      path: verify/data-structure/temp.yosupo-point-set-range-composite.test.cpp
-      title: verify/data-structure/temp.yosupo-point-set-range-composite.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/data-structure/union-find.yosupo-unionfind.test.cpp
       title: verify/data-structure/union-find.yosupo-unionfind.test.cpp
