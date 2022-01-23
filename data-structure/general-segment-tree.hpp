@@ -8,7 +8,7 @@ class Segtree : public Base {
 public:
 	Segtree() = default;
 
-	Segtree(size_t _n) { init(n); }
+	Segtree(size_t _n) { init(_n); }
 
 	void init(size_t _n) {
 		for (n = 1; n < _n; n *= 2);
@@ -16,17 +16,18 @@ public:
 	}
 
 	void update(int i, node v) {
-		for (Base::apply(tree[i += n], v); i > 1; i >>= 1)
-			tree[i >> 1] = Base::merge(tree[i], tree[i ^ 1]);
+		Base::apply(tree[i += n], v);
+		for (i >>= 1; i > 1; i >>= 1)
+			tree[i] = Base::merge(tree[i << 1], tree[i << 1 | 1]);
 	}
 
 	node query(int l, int r) {
-		node ret = Base::dval;
+		node lret = Base::dval, rret = Base::dval;
 		for (l += n, r += n + 1; l < r; l >>= 1, r >>= 1) {
-			if (l & 1) ret = Base::merge(ret, tree[l++]);
-			if (r & 1) ret = Base::merge(ret, tree[--r]);
+			if (l & 1) lret = Base::merge(lret, tree[l++]);
+			if (r & 1) rret = Base::merge(tree[--r], rret);
 		}
-		return ret;
+		return Base::merge(lret, rret);
 	}
 
 	node operator[](int i) { return tree[i += n]; }

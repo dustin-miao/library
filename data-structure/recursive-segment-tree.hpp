@@ -30,7 +30,7 @@ class Segtree : public Base {
 public:
 	Segtree() = default;
 
-	Segtree(size_t _n) { init(n); }
+	Segtree(size_t _n) { init(_n); }
 
 	void init(size_t _n) {
 		n = _n;
