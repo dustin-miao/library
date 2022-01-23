@@ -16,8 +16,7 @@ public:
 	}
 
 	void update(int i, node v) {
-		Base::apply(tree[i += n], v);
-		for (i >>= 1; i > 1; i >>= 1)
+		for (Base::apply(tree[i += n], v); i >>= 1;)
 			tree[i] = Base::merge(tree[i << 1], tree[i << 1 | 1]);
 	}
 
