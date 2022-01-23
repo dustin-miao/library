@@ -14,13 +14,13 @@ public:
 	}
 
 	void update(int i, T v) {
-		for (i++; i <= n; i += i & -i)
+		for (; i <= n; i += i & -i)
 			tree[i] += v;
 	}
 
 	T query(int i) {
 		T ret = 0;
-		for (i++; i; i -= i & -i)
+		for (; i; i -= i & -i)
 			ret += tree[i];
 		return ret;
 	}
