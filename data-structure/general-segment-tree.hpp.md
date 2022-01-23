@@ -3,7 +3,7 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/general-segment-tree.yosupo-point-add-range-sum.test.cpp
     title: verify/general-segment-tree.yosupo-point-add-range-sum.test.cpp
   - icon: ':x:'
@@ -11,36 +11,38 @@ data:
     title: verify/general-segment-tree.yosupo-point-set-range-composite.test.cpp
   _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"data-structure/general-segment-tree.hpp\"\ntemplate<class\
     \ Base>\nclass Segtree : public Base {\n\tusing node = typename Base::T;\n\n\t\
     size_t n;\n\tvector<node> tree;\n\npublic:\n\tSegtree() = default;\n\n\tSegtree(size_t\
-    \ _n) { init(n); }\n\n\tvoid init(size_t _n) {\n\t\tfor (n = 1; n < _n; n *= 2);\n\
-    \t\ttree.assign(n * 2, Base::dval);\n\t}\n\n\tvoid update(int i, node v) {\n\t\
-    \tfor (Base::apply(tree[i += n], v); i > 1; i >>= 1)\n\t\t\ttree[i >> 1] = Base::merge(tree[i],\
-    \ tree[i ^ 1]);\n\t}\n\n\tnode query(int l, int r) {\n\t\tnode ret = Base::dval;\n\
-    \t\tfor (l += n, r += n + 1; l < r; l >>= 1, r >>= 1) {\n\t\t\tif (l & 1) ret\
-    \ = Base::merge(ret, tree[l++]);\n\t\t\tif (r & 1) ret = Base::merge(ret, tree[--r]);\n\
-    \t\t}\n\t\treturn ret;\n\t}\n\n\tnode operator[](int i) { return tree[i += n];\
-    \ }\n};\n"
+    \ _n) { init(_n); }\n\n\tvoid init(size_t _n) {\n\t\tfor (n = 1; n < _n; n *=\
+    \ 2);\n\t\ttree.assign(n * 2, Base::dval);\n\t}\n\n\tvoid update(int i, node v)\
+    \ {\n\t\tBase::apply(tree[i += n], v);\n\t\tfor (i >>= 1; i > 1; i >>= 1)\n\t\t\
+    \ttree[i] = Base::merge(tree[i << 1], tree[i << 1 | 1]);\n\t}\n\n\tnode query(int\
+    \ l, int r) {\n\t\tnode lret = Base::dval, rret = Base::dval;\n\t\tfor (l += n,\
+    \ r += n + 1; l < r; l >>= 1, r >>= 1) {\n\t\t\tif (l & 1) lret = Base::merge(lret,\
+    \ tree[l++]);\n\t\t\tif (r & 1) rret = Base::merge(tree[--r], rret);\n\t\t}\n\t\
+    \treturn Base::merge(lret, rret);\n\t}\n\n\tnode operator[](int i) { return tree[i\
+    \ += n]; }\n};\n"
   code: "template<class Base>\nclass Segtree : public Base {\n\tusing node = typename\
     \ Base::T;\n\n\tsize_t n;\n\tvector<node> tree;\n\npublic:\n\tSegtree() = default;\n\
-    \n\tSegtree(size_t _n) { init(n); }\n\n\tvoid init(size_t _n) {\n\t\tfor (n =\
+    \n\tSegtree(size_t _n) { init(_n); }\n\n\tvoid init(size_t _n) {\n\t\tfor (n =\
     \ 1; n < _n; n *= 2);\n\t\ttree.assign(n * 2, Base::dval);\n\t}\n\n\tvoid update(int\
-    \ i, node v) {\n\t\tfor (Base::apply(tree[i += n], v); i > 1; i >>= 1)\n\t\t\t\
-    tree[i >> 1] = Base::merge(tree[i], tree[i ^ 1]);\n\t}\n\n\tnode query(int l,\
-    \ int r) {\n\t\tnode ret = Base::dval;\n\t\tfor (l += n, r += n + 1; l < r; l\
-    \ >>= 1, r >>= 1) {\n\t\t\tif (l & 1) ret = Base::merge(ret, tree[l++]);\n\t\t\
-    \tif (r & 1) ret = Base::merge(ret, tree[--r]);\n\t\t}\n\t\treturn ret;\n\t}\n\
-    \n\tnode operator[](int i) { return tree[i += n]; }\n};"
+    \ i, node v) {\n\t\tBase::apply(tree[i += n], v);\n\t\tfor (i >>= 1; i > 1; i\
+    \ >>= 1)\n\t\t\ttree[i] = Base::merge(tree[i << 1], tree[i << 1 | 1]);\n\t}\n\n\
+    \tnode query(int l, int r) {\n\t\tnode lret = Base::dval, rret = Base::dval;\n\
+    \t\tfor (l += n, r += n + 1; l < r; l >>= 1, r >>= 1) {\n\t\t\tif (l & 1) lret\
+    \ = Base::merge(lret, tree[l++]);\n\t\t\tif (r & 1) rret = Base::merge(tree[--r],\
+    \ rret);\n\t\t}\n\t\treturn Base::merge(lret, rret);\n\t}\n\n\tnode operator[](int\
+    \ i) { return tree[i += n]; }\n};"
   dependsOn: []
   isVerificationFile: false
   path: data-structure/general-segment-tree.hpp
   requiredBy: []
-  timestamp: '2022-01-22 21:24:46-08:00'
-  verificationStatus: LIBRARY_SOME_WA
+  timestamp: '2022-01-22 23:50:20-08:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - verify/general-segment-tree.yosupo-point-add-range-sum.test.cpp
   - verify/general-segment-tree.yosupo-point-set-range-composite.test.cpp
