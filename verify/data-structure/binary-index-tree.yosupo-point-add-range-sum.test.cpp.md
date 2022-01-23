@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/binary-index-tree.hpp
     title: Binary Index Tree
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/point_add_range_sum
@@ -20,10 +20,10 @@ data:
     \ntemplate<typename T>\nclass Fentree {\n\tsize_t n;\n\tvector<T> tree;\n\npublic:\n\
     \tFentree() = default;\n\n\tFentree(size_t _n) { init(_n); }\n\n\tvoid init(size_t\
     \ _n) {\n\t\tn = _n;\n\t\ttree.assign(n + 1, T());\n\t}\n\n\tvoid update(int i,\
-    \ T v) {\n\t\tfor (i++; i <= n; i += i & -i)\n\t\t\ttree[i] += v;\n\t}\n\n\tT\
-    \ query(int i) {\n\t\tT ret = 0;\n\t\tfor (i++; i; i -= i & -i)\n\t\t\tret +=\
-    \ tree[i];\n\t\treturn ret;\n\t}\n\n\tT query(int l, int r) { return query(r)\
-    \ - query(l - 1); }\n};\n#line 7 \"verify/data-structure/binary-index-tree.yosupo-point-add-range-sum.test.cpp\"\
+    \ T v) {\n\t\tfor (; i <= n; i += i & -i)\n\t\t\ttree[i] += v;\n\t}\n\n\tT query(int\
+    \ i) {\n\t\tT ret = 0;\n\t\tfor (; i; i -= i & -i)\n\t\t\tret += tree[i];\n\t\t\
+    return ret;\n\t}\n\n\tT query(int l, int r) { return query(r) - query(l - 1);\
+    \ }\n};\n#line 7 \"verify/data-structure/binary-index-tree.yosupo-point-add-range-sum.test.cpp\"\
     \n\nconst int MAX = 5e5 + 5;\n\nint N, Q;\nFentree<long long> bit;\n\nint main()\
     \ {\n  \tcin >> N >> Q;\n\tbit.init(N);\n  \tfor (int i = 0; i < N; i++) {\n\t\
     \tlong long a; cin >> a;\n\t\tbit.update(i + 1, a);\n\t}\n  \twhile (Q--) {\n\t\
@@ -45,8 +45,8 @@ data:
   isVerificationFile: true
   path: verify/data-structure/binary-index-tree.yosupo-point-add-range-sum.test.cpp
   requiredBy: []
-  timestamp: '2022-01-22 21:24:46-08:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-01-22 21:43:04-08:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/data-structure/binary-index-tree.yosupo-point-add-range-sum.test.cpp
 layout: document

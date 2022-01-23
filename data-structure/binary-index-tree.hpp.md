@@ -3,35 +3,34 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/data-structure/binary-index-tree.yosupo-point-add-range-sum.test.cpp
     title: verify/data-structure/binary-index-tree.yosupo-point-add-range-sum.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"data-structure/binary-index-tree.hpp\"\ntemplate<typename\
     \ T>\nclass Fentree {\n\tsize_t n;\n\tvector<T> tree;\n\npublic:\n\tFentree()\
     \ = default;\n\n\tFentree(size_t _n) { init(_n); }\n\n\tvoid init(size_t _n) {\n\
     \t\tn = _n;\n\t\ttree.assign(n + 1, T());\n\t}\n\n\tvoid update(int i, T v) {\n\
-    \t\tfor (i++; i <= n; i += i & -i)\n\t\t\ttree[i] += v;\n\t}\n\n\tT query(int\
-    \ i) {\n\t\tT ret = 0;\n\t\tfor (i++; i; i -= i & -i)\n\t\t\tret += tree[i];\n\
-    \t\treturn ret;\n\t}\n\n\tT query(int l, int r) { return query(r) - query(l -\
-    \ 1); }\n};\n"
+    \t\tfor (; i <= n; i += i & -i)\n\t\t\ttree[i] += v;\n\t}\n\n\tT query(int i)\
+    \ {\n\t\tT ret = 0;\n\t\tfor (; i; i -= i & -i)\n\t\t\tret += tree[i];\n\t\treturn\
+    \ ret;\n\t}\n\n\tT query(int l, int r) { return query(r) - query(l - 1); }\n};\n"
   code: "template<typename T>\nclass Fentree {\n\tsize_t n;\n\tvector<T> tree;\n\n\
     public:\n\tFentree() = default;\n\n\tFentree(size_t _n) { init(_n); }\n\n\tvoid\
     \ init(size_t _n) {\n\t\tn = _n;\n\t\ttree.assign(n + 1, T());\n\t}\n\n\tvoid\
-    \ update(int i, T v) {\n\t\tfor (i++; i <= n; i += i & -i)\n\t\t\ttree[i] += v;\n\
-    \t}\n\n\tT query(int i) {\n\t\tT ret = 0;\n\t\tfor (i++; i; i -= i & -i)\n\t\t\
-    \tret += tree[i];\n\t\treturn ret;\n\t}\n\n\tT query(int l, int r) { return query(r)\
+    \ update(int i, T v) {\n\t\tfor (; i <= n; i += i & -i)\n\t\t\ttree[i] += v;\n\
+    \t}\n\n\tT query(int i) {\n\t\tT ret = 0;\n\t\tfor (; i; i -= i & -i)\n\t\t\t\
+    ret += tree[i];\n\t\treturn ret;\n\t}\n\n\tT query(int l, int r) { return query(r)\
     \ - query(l - 1); }\n};\n"
   dependsOn: []
   isVerificationFile: false
   path: data-structure/binary-index-tree.hpp
   requiredBy: []
-  timestamp: '2022-01-22 21:24:46-08:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2022-01-22 21:43:04-08:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/data-structure/binary-index-tree.yosupo-point-add-range-sum.test.cpp
 documentation_of: data-structure/binary-index-tree.hpp
