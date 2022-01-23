@@ -1,7 +1,7 @@
 {
-"verify/data-structure/binary-index-tree.yosupo-point-add-range-sum.test.cpp": "2022-01-22 21:43:04 -0800",
-"verify/data-structure/general-segment-tree.yosupo-point-add-range-sum.test.cpp": "2022-01-22 21:24:46 -0800",
-"verify/data-structure/recursive-segment-tree.yosupo-point-add-range-sum.test.cpp": "2022-01-22 21:24:46 -0800",
-"verify/data-structure/segment-tree.yosupo-point-add-range-sum.test.cpp": "2022-01-22 21:24:46 -0800",
-"verify/data-structure/union-find.yosupo-unionfind.test.cpp": "2021-12-31 09:10:59 -0800"
+"verify/binary-index-tree.yosupo-point-add-range-sum.test.cpp": "2022-01-22 21:46:52 -0800",
+"verify/general-segment-tree.yosupo-point-add-range-sum.test.cpp": "2022-01-22 21:46:52 -0800",
+"verify/recursive-segment-tree.yosupo-point-add-range-sum.test.cpp": "2022-01-22 21:46:52 -0800",
+"verify/segment-tree.yosupo-point-add-range-sum.test.cpp": "2022-01-22 21:46:52 -0800",
+"verify/union-find.yosupo-unionfind.test.cpp": "2022-01-22 21:46:52 -0800"
 }
