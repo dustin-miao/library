@@ -14,7 +14,7 @@ data:
     PROBLEM: https://judge.yosupo.jp/problem/point_add_range_sum
     links:
     - https://judge.yosupo.jp/problem/point_add_range_sum
-  bundledCode: "#line 1 \"verify/data-structure/binary-index-tree.yosupo-point-add-range-sum.test.cpp\"\
+  bundledCode: "#line 1 \"verify/binary-index-tree.yosupo-point-add-range-sum.test.cpp\"\
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/point_add_range_sum\"\n\n\
     #include <bits/stdc++.h>\nusing namespace std;\n\n#line 1 \"data-structure/binary-index-tree.hpp\"\
     \ntemplate<typename T>\nclass Fentree {\n\tsize_t n;\n\tvector<T> tree;\n\npublic:\n\
@@ -23,7 +23,7 @@ data:
     \ T v) {\n\t\tfor (; i <= n; i += i & -i)\n\t\t\ttree[i] += v;\n\t}\n\n\tT query(int\
     \ i) {\n\t\tT ret = 0;\n\t\tfor (; i; i -= i & -i)\n\t\t\tret += tree[i];\n\t\t\
     return ret;\n\t}\n\n\tT query(int l, int r) { return query(r) - query(l - 1);\
-    \ }\n};\n#line 7 \"verify/data-structure/binary-index-tree.yosupo-point-add-range-sum.test.cpp\"\
+    \ }\n};\n#line 7 \"verify/binary-index-tree.yosupo-point-add-range-sum.test.cpp\"\
     \n\nconst int MAX = 5e5 + 5;\n\nint N, Q;\nFentree<long long> bit;\n\nint main()\
     \ {\n  \tcin >> N >> Q;\n\tbit.init(N);\n  \tfor (int i = 0; i < N; i++) {\n\t\
     \tlong long a; cin >> a;\n\t\tbit.update(i + 1, a);\n\t}\n  \twhile (Q--) {\n\t\
@@ -43,15 +43,15 @@ data:
   dependsOn:
   - data-structure/binary-index-tree.hpp
   isVerificationFile: true
-  path: verify/data-structure/binary-index-tree.yosupo-point-add-range-sum.test.cpp
+  path: verify/binary-index-tree.yosupo-point-add-range-sum.test.cpp
   requiredBy: []
-  timestamp: '2022-01-22 21:43:04-08:00'
+  timestamp: '2022-01-22 21:46:52-08:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: verify/data-structure/binary-index-tree.yosupo-point-add-range-sum.test.cpp
+documentation_of: verify/binary-index-tree.yosupo-point-add-range-sum.test.cpp
 layout: document
 redirect_from:
-- /verify/verify/data-structure/binary-index-tree.yosupo-point-add-range-sum.test.cpp
-- /verify/verify/data-structure/binary-index-tree.yosupo-point-add-range-sum.test.cpp.html
-title: verify/data-structure/binary-index-tree.yosupo-point-add-range-sum.test.cpp
+- /verify/verify/binary-index-tree.yosupo-point-add-range-sum.test.cpp
+- /verify/verify/binary-index-tree.yosupo-point-add-range-sum.test.cpp.html
+title: verify/binary-index-tree.yosupo-point-add-range-sum.test.cpp
 ---

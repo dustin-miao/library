@@ -19,23 +19,23 @@ data:
       path: data-structure/union-find.hpp
       title: Union Find
   verificationCategories:
-  - name: verify/data-structure
+  - name: verify
     pages:
     - icon: ':heavy_check_mark:'
-      path: verify/data-structure/binary-index-tree.yosupo-point-add-range-sum.test.cpp
-      title: verify/data-structure/binary-index-tree.yosupo-point-add-range-sum.test.cpp
+      path: verify/binary-index-tree.yosupo-point-add-range-sum.test.cpp
+      title: verify/binary-index-tree.yosupo-point-add-range-sum.test.cpp
     - icon: ':heavy_check_mark:'
-      path: verify/data-structure/general-segment-tree.yosupo-point-add-range-sum.test.cpp
-      title: verify/data-structure/general-segment-tree.yosupo-point-add-range-sum.test.cpp
+      path: verify/general-segment-tree.yosupo-point-add-range-sum.test.cpp
+      title: verify/general-segment-tree.yosupo-point-add-range-sum.test.cpp
     - icon: ':heavy_check_mark:'
-      path: verify/data-structure/recursive-segment-tree.yosupo-point-add-range-sum.test.cpp
-      title: verify/data-structure/recursive-segment-tree.yosupo-point-add-range-sum.test.cpp
+      path: verify/recursive-segment-tree.yosupo-point-add-range-sum.test.cpp
+      title: verify/recursive-segment-tree.yosupo-point-add-range-sum.test.cpp
     - icon: ':heavy_check_mark:'
-      path: verify/data-structure/segment-tree.yosupo-point-add-range-sum.test.cpp
-      title: verify/data-structure/segment-tree.yosupo-point-add-range-sum.test.cpp
+      path: verify/segment-tree.yosupo-point-add-range-sum.test.cpp
+      title: verify/segment-tree.yosupo-point-add-range-sum.test.cpp
     - icon: ':heavy_check_mark:'
-      path: verify/data-structure/union-find.yosupo-unionfind.test.cpp
-      title: verify/data-structure/union-find.yosupo-unionfind.test.cpp
+      path: verify/union-find.yosupo-unionfind.test.cpp
+      title: verify/union-find.yosupo-unionfind.test.cpp
 layout: toppage
 ---
 [![Dutinmeow](https://img.shields.io/endpoint?url=https%3A%2F%2Fatcoder-badges.now.sh%2Fapi%2Fatcoder%2Fjson%2FNyaan)](https://atcoder.jp/users/dutinmeow)

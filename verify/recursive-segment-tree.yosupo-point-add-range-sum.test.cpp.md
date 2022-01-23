@@ -2,8 +2,8 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: data-structure/general-segment-tree.hpp
-    title: General Segment Tree
+    path: data-structure/recursive-segment-tree.hpp
+    title: Recursive Segment Tree
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -14,19 +14,23 @@ data:
     PROBLEM: https://judge.yosupo.jp/problem/point_add_range_sum
     links:
     - https://judge.yosupo.jp/problem/point_add_range_sum
-  bundledCode: "#line 1 \"verify/data-structure/general-segment-tree.yosupo-point-add-range-sum.test.cpp\"\
+  bundledCode: "#line 1 \"verify/recursive-segment-tree.yosupo-point-add-range-sum.test.cpp\"\
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/point_add_range_sum\"\n\n\
-    #include <bits/stdc++.h>\nusing namespace std;\n\n#line 1 \"data-structure/general-segment-tree.hpp\"\
+    #include <bits/stdc++.h>\nusing namespace std;\n\n#line 1 \"data-structure/recursive-segment-tree.hpp\"\
     \ntemplate<class Base>\nclass Segtree : public Base {\n\tusing node = typename\
-    \ Base::T;\n\n\tsize_t n;\n\tvector<node> tree;\n\npublic:\n\tSegtree() = default;\n\
-    \n\tSegtree(size_t _n) { init(n); }\n\n\tvoid init(size_t _n) {\n\t\tfor (n =\
-    \ 1; n < _n; n *= 2);\n\t\ttree.assign(n * 2, Base::dval);\n\t}\n\n\tvoid update(int\
-    \ i, node v) {\n\t\tfor (Base::apply(tree[i += n], v); i > 1; i >>= 1)\n\t\t\t\
-    tree[i >> 1] = Base::merge(tree[i], tree[i ^ 1]);\n\t}\n\n\tnode query(int l,\
-    \ int r) {\n\t\tnode ret = Base::dval;\n\t\tfor (l += n, r += n + 1; l < r; l\
-    \ >>= 1, r >>= 1) {\n\t\t\tif (l & 1) ret = Base::merge(ret, tree[l++]);\n\t\t\
-    \tif (r & 1) ret = Base::merge(ret, tree[--r]);\n\t\t}\n\t\treturn ret;\n\t}\n\
-    \n\tnode operator[](int i) { return tree[i += n]; }\n};\n#line 7 \"verify/data-structure/general-segment-tree.yosupo-point-add-range-sum.test.cpp\"\
+    \ Base::T;\n\n\tsize_t n;\n\tvector<node> tree;\n\n\tvoid update(int i, node v,\
+    \ int t, int tl, int tr) {\n\t\tif (tl == tr) {\n\t\t\tBase::apply(tree[t], v);\n\
+    \t\t\treturn;\n\t\t}\n\t\tint tm = (tl + tr) / 2;\n\t\tif (i <= tm)\n\t\t\tupdate(i,\
+    \ v, t * 2, tl, tm);\n\t\telse \n\t\t\tupdate(i, v, t * 2 + 1, tm + 1, tr);\n\t\
+    \ttree[t] = Base::merge(tree[t * 2], tree[t * 2 + 1]);\n\t}\n\n\tnode query(int\
+    \ l, int r, int t, int tl, int tr) {\n\t\tif (r < tl || tr < l)\n\t\t\treturn\
+    \ Base::dval;\n\t\tif (l <= tl && tr <= r)\n\t\t\treturn tree[t];\n\t\tint tm\
+    \ = (tl + tr) / 2;\n\t\treturn Base::merge(query(l, r, t * 2, tl, tm), query(l,\
+    \ r, t * 2 + 1, tm + 1, tr));\n\t}\n\npublic:\n\tSegtree() = default;\n\n\tSegtree(size_t\
+    \ _n) { init(n); }\n\n\tvoid init(size_t _n) {\n\t\tn = _n;\n\t\ttree.assign(n\
+    \ * 4, Base::dval);\n\t}\n\n\tvoid update(int i, node v) { update(i, v, 1, 0,\
+    \ n - 1); }\n\n\tnode query(int l, int r) { return query(l, r, 1, 0, n - 1); }\n\
+    };\n#line 7 \"verify/recursive-segment-tree.yosupo-point-add-range-sum.test.cpp\"\
     \n\nconst int MAX = 5e5 + 5;\n\nint N, Q;\n\nstruct stinfo {\n\tusing T = long\
     \ long;\n\n\tconst T dval = 0;\n\n\tvoid apply(T &a, T b) { a += b; }\n\n\tT merge(T\
     \ a, T b) { return a + b; }\n};\n\nSegtree<stinfo> sgt;\n\nint main() {\n\tcin\
@@ -36,7 +40,7 @@ data:
     \ x);\n\t\t} else {\n\t\t\tint l, r;\n\t\t\tcin >> l >> r;\n\t\t\tcout << sgt.query(l,\
     \ r - 1) << '\\n';\n\t\t}\n\t}\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/point_add_range_sum\"\n\
-    \n#include <bits/stdc++.h>\nusing namespace std;\n\n#include \"data-structure/general-segment-tree.hpp\"\
+    \n#include <bits/stdc++.h>\nusing namespace std;\n\n#include \"data-structure/recursive-segment-tree.hpp\"\
     \n\nconst int MAX = 5e5 + 5;\n\nint N, Q;\n\nstruct stinfo {\n\tusing T = long\
     \ long;\n\n\tconst T dval = 0;\n\n\tvoid apply(T &a, T b) { a += b; }\n\n\tT merge(T\
     \ a, T b) { return a + b; }\n};\n\nSegtree<stinfo> sgt;\n\nint main() {\n\tcin\
@@ -46,17 +50,17 @@ data:
     \ x);\n\t\t} else {\n\t\t\tint l, r;\n\t\t\tcin >> l >> r;\n\t\t\tcout << sgt.query(l,\
     \ r - 1) << '\\n';\n\t\t}\n\t}\n}\n"
   dependsOn:
-  - data-structure/general-segment-tree.hpp
+  - data-structure/recursive-segment-tree.hpp
   isVerificationFile: true
-  path: verify/data-structure/general-segment-tree.yosupo-point-add-range-sum.test.cpp
+  path: verify/recursive-segment-tree.yosupo-point-add-range-sum.test.cpp
   requiredBy: []
-  timestamp: '2022-01-22 21:24:46-08:00'
+  timestamp: '2022-01-22 21:46:52-08:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: verify/data-structure/general-segment-tree.yosupo-point-add-range-sum.test.cpp
+documentation_of: verify/recursive-segment-tree.yosupo-point-add-range-sum.test.cpp
 layout: document
 redirect_from:
-- /verify/verify/data-structure/general-segment-tree.yosupo-point-add-range-sum.test.cpp
-- /verify/verify/data-structure/general-segment-tree.yosupo-point-add-range-sum.test.cpp.html
-title: verify/data-structure/general-segment-tree.yosupo-point-add-range-sum.test.cpp
+- /verify/verify/recursive-segment-tree.yosupo-point-add-range-sum.test.cpp
+- /verify/verify/recursive-segment-tree.yosupo-point-add-range-sum.test.cpp.html
+title: verify/recursive-segment-tree.yosupo-point-add-range-sum.test.cpp
 ---
