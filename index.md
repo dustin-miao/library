@@ -10,6 +10,9 @@ data:
       path: data-structure/general-segment-tree.hpp
       title: General Segment Tree
     - icon: ':heavy_check_mark:'
+      path: data-structure/lazy-segment-tree.hpp
+      title: Lazy Segment Tree
+    - icon: ':heavy_check_mark:'
       path: data-structure/recursive-segment-tree.hpp
       title: Recursive Segment Tree
     - icon: ':heavy_check_mark:'
@@ -30,6 +33,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/general-segment-tree.yosupo-point-set-range-composite.test.cpp
       title: verify/general-segment-tree.yosupo-point-set-range-composite.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/lazy-segment-tree.yosupo-range-affine-range-sum.test.cpp
+      title: verify/lazy-segment-tree.yosupo-range-affine-range-sum.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/recursive-segment-tree.yosupo-point-add-range-sum.test.cpp
       title: verify/recursive-segment-tree.yosupo-point-add-range-sum.test.cpp
