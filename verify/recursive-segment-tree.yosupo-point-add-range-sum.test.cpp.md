@@ -18,19 +18,19 @@ data:
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/point_add_range_sum\"\n\n\
     #include <bits/stdc++.h>\nusing namespace std;\n\n#line 1 \"data-structure/recursive-segment-tree.hpp\"\
     \ntemplate<class Base>\nclass Segtree : public Base {\n\tusing node = typename\
-    \ Base::T;\n\n\tsize_t n;\n\tvector<node> tree;\n\n\tvoid update(int i, node v,\
-    \ int t, int tl, int tr) {\n\t\tif (tl == tr) {\n\t\t\tBase::apply(tree[t], v);\n\
-    \t\t\treturn;\n\t\t}\n\t\tint tm = (tl + tr) / 2;\n\t\tif (i <= tm)\n\t\t\tupdate(i,\
-    \ v, t * 2, tl, tm);\n\t\telse \n\t\t\tupdate(i, v, t * 2 + 1, tm + 1, tr);\n\t\
-    \ttree[t] = Base::merge(tree[t * 2], tree[t * 2 + 1]);\n\t}\n\n\tnode query(int\
-    \ l, int r, int t, int tl, int tr) {\n\t\tif (r < tl || tr < l)\n\t\t\treturn\
-    \ Base::dval;\n\t\tif (l <= tl && tr <= r)\n\t\t\treturn tree[t];\n\t\tint tm\
-    \ = (tl + tr) / 2;\n\t\treturn Base::merge(query(l, r, t * 2, tl, tm), query(l,\
-    \ r, t * 2 + 1, tm + 1, tr));\n\t}\n\npublic:\n\tSegtree() = default;\n\n\tSegtree(size_t\
-    \ _n) { init(_n); }\n\n\tvoid init(size_t _n) {\n\t\tn = _n;\n\t\ttree.assign(n\
-    \ * 4, Base::dval);\n\t}\n\n\tvoid update(int i, node v) { update(i, v, 1, 0,\
-    \ n - 1); }\n\n\tnode query(int l, int r) { return query(l, r, 1, 0, n - 1); }\n\
-    };\n#line 7 \"verify/recursive-segment-tree.yosupo-point-add-range-sum.test.cpp\"\
+    \ Base::T;\n\nprotected:\n\tsize_t n;\n\tvector<node> tree;\n\nprivate:\n\tvoid\
+    \ update(int i, node v, int t, int tl, int tr) {\n\t\tif (tl == tr) {\n\t\t\t\
+    Base::apply(tree[t], v);\n\t\t\treturn;\n\t\t}\n\t\tint tm = (tl + tr) / 2;\n\t\
+    \tif (i <= tm)\n\t\t\tupdate(i, v, t * 2, tl, tm);\n\t\telse \n\t\t\tupdate(i,\
+    \ v, t * 2 + 1, tm + 1, tr);\n\t\ttree[t] = Base::merge(tree[t * 2], tree[t *\
+    \ 2 + 1]);\n\t}\n\n\tnode query(int l, int r, int t, int tl, int tr) {\n\t\tif\
+    \ (r < tl || tr < l)\n\t\t\treturn Base::dval;\n\t\tif (l <= tl && tr <= r)\n\t\
+    \t\treturn tree[t];\n\t\tint tm = (tl + tr) / 2;\n\t\treturn Base::merge(query(l,\
+    \ r, t * 2, tl, tm), query(l, r, t * 2 + 1, tm + 1, tr));\n\t}\n\npublic:\n\t\
+    Segtree() = default;\n\n\tSegtree(size_t _n) { init(_n); }\n\n\tvoid init(size_t\
+    \ _n) {\n\t\tn = _n;\n\t\ttree.assign(n * 4, Base::dval);\n\t}\n\n\tvoid update(int\
+    \ i, node v) { update(i, v, 1, 0, n - 1); }\n\n\tnode query(int l, int r) { return\
+    \ query(l, r, 1, 0, n - 1); }\n};\n#line 7 \"verify/recursive-segment-tree.yosupo-point-add-range-sum.test.cpp\"\
     \n\nconst int MAX = 5e5 + 5;\n\nint N, Q;\n\nstruct stinfo {\n\tusing T = long\
     \ long;\n\n\tconst T dval = 0;\n\n\tvoid apply(T &a, T b) { a += b; }\n\n\tT merge(T\
     \ a, T b) { return a + b; }\n};\n\nSegtree<stinfo> sgt;\n\nint main() {\n\tcin\
@@ -54,7 +54,7 @@ data:
   isVerificationFile: true
   path: verify/recursive-segment-tree.yosupo-point-add-range-sum.test.cpp
   requiredBy: []
-  timestamp: '2022-01-22 23:50:20-08:00'
+  timestamp: '2022-01-23 16:08:53-08:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/recursive-segment-tree.yosupo-point-add-range-sum.test.cpp

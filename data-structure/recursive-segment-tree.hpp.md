@@ -15,23 +15,10 @@ data:
   attributes:
     links: []
   bundledCode: "#line 1 \"data-structure/recursive-segment-tree.hpp\"\ntemplate<class\
-    \ Base>\nclass Segtree : public Base {\n\tusing node = typename Base::T;\n\n\t\
-    size_t n;\n\tvector<node> tree;\n\n\tvoid update(int i, node v, int t, int tl,\
-    \ int tr) {\n\t\tif (tl == tr) {\n\t\t\tBase::apply(tree[t], v);\n\t\t\treturn;\n\
-    \t\t}\n\t\tint tm = (tl + tr) / 2;\n\t\tif (i <= tm)\n\t\t\tupdate(i, v, t * 2,\
-    \ tl, tm);\n\t\telse \n\t\t\tupdate(i, v, t * 2 + 1, tm + 1, tr);\n\t\ttree[t]\
-    \ = Base::merge(tree[t * 2], tree[t * 2 + 1]);\n\t}\n\n\tnode query(int l, int\
-    \ r, int t, int tl, int tr) {\n\t\tif (r < tl || tr < l)\n\t\t\treturn Base::dval;\n\
-    \t\tif (l <= tl && tr <= r)\n\t\t\treturn tree[t];\n\t\tint tm = (tl + tr) / 2;\n\
-    \t\treturn Base::merge(query(l, r, t * 2, tl, tm), query(l, r, t * 2 + 1, tm +\
-    \ 1, tr));\n\t}\n\npublic:\n\tSegtree() = default;\n\n\tSegtree(size_t _n) { init(_n);\
-    \ }\n\n\tvoid init(size_t _n) {\n\t\tn = _n;\n\t\ttree.assign(n * 4, Base::dval);\n\
-    \t}\n\n\tvoid update(int i, node v) { update(i, v, 1, 0, n - 1); }\n\n\tnode query(int\
-    \ l, int r) { return query(l, r, 1, 0, n - 1); }\n};\n"
-  code: "template<class Base>\nclass Segtree : public Base {\n\tusing node = typename\
-    \ Base::T;\n\n\tsize_t n;\n\tvector<node> tree;\n\n\tvoid update(int i, node v,\
-    \ int t, int tl, int tr) {\n\t\tif (tl == tr) {\n\t\t\tBase::apply(tree[t], v);\n\
-    \t\t\treturn;\n\t\t}\n\t\tint tm = (tl + tr) / 2;\n\t\tif (i <= tm)\n\t\t\tupdate(i,\
+    \ Base>\nclass Segtree : public Base {\n\tusing node = typename Base::T;\n\nprotected:\n\
+    \tsize_t n;\n\tvector<node> tree;\n\nprivate:\n\tvoid update(int i, node v, int\
+    \ t, int tl, int tr) {\n\t\tif (tl == tr) {\n\t\t\tBase::apply(tree[t], v);\n\t\
+    \t\treturn;\n\t\t}\n\t\tint tm = (tl + tr) / 2;\n\t\tif (i <= tm)\n\t\t\tupdate(i,\
     \ v, t * 2, tl, tm);\n\t\telse \n\t\t\tupdate(i, v, t * 2 + 1, tm + 1, tr);\n\t\
     \ttree[t] = Base::merge(tree[t * 2], tree[t * 2 + 1]);\n\t}\n\n\tnode query(int\
     \ l, int r, int t, int tl, int tr) {\n\t\tif (r < tl || tr < l)\n\t\t\treturn\
@@ -41,12 +28,26 @@ data:
     \ _n) { init(_n); }\n\n\tvoid init(size_t _n) {\n\t\tn = _n;\n\t\ttree.assign(n\
     \ * 4, Base::dval);\n\t}\n\n\tvoid update(int i, node v) { update(i, v, 1, 0,\
     \ n - 1); }\n\n\tnode query(int l, int r) { return query(l, r, 1, 0, n - 1); }\n\
-    };"
+    };\n"
+  code: "template<class Base>\nclass Segtree : public Base {\n\tusing node = typename\
+    \ Base::T;\n\nprotected:\n\tsize_t n;\n\tvector<node> tree;\n\nprivate:\n\tvoid\
+    \ update(int i, node v, int t, int tl, int tr) {\n\t\tif (tl == tr) {\n\t\t\t\
+    Base::apply(tree[t], v);\n\t\t\treturn;\n\t\t}\n\t\tint tm = (tl + tr) / 2;\n\t\
+    \tif (i <= tm)\n\t\t\tupdate(i, v, t * 2, tl, tm);\n\t\telse \n\t\t\tupdate(i,\
+    \ v, t * 2 + 1, tm + 1, tr);\n\t\ttree[t] = Base::merge(tree[t * 2], tree[t *\
+    \ 2 + 1]);\n\t}\n\n\tnode query(int l, int r, int t, int tl, int tr) {\n\t\tif\
+    \ (r < tl || tr < l)\n\t\t\treturn Base::dval;\n\t\tif (l <= tl && tr <= r)\n\t\
+    \t\treturn tree[t];\n\t\tint tm = (tl + tr) / 2;\n\t\treturn Base::merge(query(l,\
+    \ r, t * 2, tl, tm), query(l, r, t * 2 + 1, tm + 1, tr));\n\t}\n\npublic:\n\t\
+    Segtree() = default;\n\n\tSegtree(size_t _n) { init(_n); }\n\n\tvoid init(size_t\
+    \ _n) {\n\t\tn = _n;\n\t\ttree.assign(n * 4, Base::dval);\n\t}\n\n\tvoid update(int\
+    \ i, node v) { update(i, v, 1, 0, n - 1); }\n\n\tnode query(int l, int r) { return\
+    \ query(l, r, 1, 0, n - 1); }\n};"
   dependsOn: []
   isVerificationFile: false
   path: data-structure/recursive-segment-tree.hpp
   requiredBy: []
-  timestamp: '2022-01-22 23:50:20-08:00'
+  timestamp: '2022-01-23 16:08:53-08:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/recursive-segment-tree.yosupo-point-set-range-composite.test.cpp
