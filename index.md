@@ -26,6 +26,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/cycle-finding.hpp
       title: Cycle Finding
+    - icon: ':heavy_check_mark:'
+      path: graph/kruskal.hpp
+      title: Kruskal's Algorithm
   verificationCategories:
   - name: verify
     pages:
@@ -41,6 +44,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/general-segment-tree.yosupo-point-set-range-composite.test.cpp
       title: verify/general-segment-tree.yosupo-point-set-range-composite.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/kruskal.aizu-minimum-spanning-tree.test.cpp
+      title: verify/kruskal.aizu-minimum-spanning-tree.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/lazy-segment-tree.yosupo-range-affine-range-sum.test.cpp
       title: verify/lazy-segment-tree.yosupo-range-affine-range-sum.test.cpp
