@@ -21,12 +21,25 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/union-find.hpp
       title: Union Find
+  - name: docs/graph
+    pages:
+    - icon: ':warning:'
+      path: docs/graph/cycle-finding.hpp
+      title: docs/graph/cycle-finding.hpp
+  - name: graph
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: graph/cycle-finding.hpp
+      title: graph/cycle-finding.hpp
   verificationCategories:
   - name: verify
     pages:
     - icon: ':heavy_check_mark:'
       path: verify/binary-index-tree.yosupo-point-add-range-sum.test.cpp
       title: verify/binary-index-tree.yosupo-point-add-range-sum.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/cycle-finding.yosupo-cycle-detection.test.cpp
+      title: verify/cycle-finding.yosupo-cycle-detection.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/general-segment-tree.yosupo-point-add-range-sum.test.cpp
       title: verify/general-segment-tree.yosupo-point-add-range-sum.test.cpp
