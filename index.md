@@ -29,6 +29,14 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/kruskal.hpp
       title: Kruskal's Algorithm
+  - name: utility
+    pages:
+    - icon: ':warning:'
+      path: utility/chmax.hpp
+      title: Chmax
+    - icon: ':warning:'
+      path: utility/chmin.hpp
+      title: Chmin
   verificationCategories:
   - name: verify
     pages:
