@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: graph/cycle-finding.hpp
-    title: graph/cycle-finding.hpp
+    title: Cycle Finding
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false

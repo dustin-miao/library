@@ -21,16 +21,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/union-find.hpp
       title: Union Find
-  - name: docs/graph
-    pages:
-    - icon: ':warning:'
-      path: docs/graph/cycle-finding.hpp
-      title: docs/graph/cycle-finding.hpp
   - name: graph
     pages:
     - icon: ':heavy_check_mark:'
       path: graph/cycle-finding.hpp
-      title: graph/cycle-finding.hpp
+      title: Cycle Finding
   verificationCategories:
   - name: verify
     pages:
