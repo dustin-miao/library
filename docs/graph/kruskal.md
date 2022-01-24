@@ -11,4 +11,3 @@ Finds the minimum spanning tree of an undirected graph in $\mathcal{O}(\lvert E 
 
 ### Parameters
 - `std::vector<std::tuple<int, int, long long>> edges`: A list of undirected edges $(\texttt{node1}, \texttt{node2}, \texttt{weight})$. 
-
