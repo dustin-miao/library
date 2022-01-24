@@ -14,5 +14,10 @@ int main() {
 		cin >> u >> v >> w;
 		E.emplace_back(u, v, w);
 	}
-	cout << kruskal(N, E) << '\n';
+	auto T = kruskal(N, E);
+	long long ans = 0;
+	for (int u = 0; u < N; u++)
+		for (auto [v, w] : T[u])
+			ans += w;
+	cout << ans / 2 << '\n';
 }

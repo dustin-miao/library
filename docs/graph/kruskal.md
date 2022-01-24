@@ -7,7 +7,7 @@ documentation_of: //graph/kruskal.hpp
 
 ### Summary
 
-Finds the minimum spanning tree of an undirected graph if it exists in $\mathcal{O}(\lvert E \rvert \log \lvert E \rvert)$. Returns `LLONG_MAX` if no spanning tree exists
+Finds the minimum spanning tree of an undirected graph in $\mathcal{O}(\lvert E \rvert \log \lvert E \rvert)$. Returns the minimum spanning forest if a spanning tree doesn't exist
 
 ### Parameters
 - `std::vector<std::tuple<int, int, long long>> edges`: A list of undirected edges $(\texttt{node1}, \texttt{node2}, \texttt{weight})$. 
