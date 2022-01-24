@@ -1,5 +1,6 @@
 {
 "verify/binary-index-tree.yosupo-point-add-range-sum.test.cpp": "2022-01-22 21:46:52 -0800",
+"verify/cycle-finding.yosupo-cycle-detection.test.cpp": "2022-01-24 05:58:44 -0800",
 "verify/general-segment-tree.yosupo-point-add-range-sum.test.cpp": "2022-01-23 16:08:53 -0800",
 "verify/general-segment-tree.yosupo-point-set-range-composite.test.cpp": "2022-01-23 16:08:53 -0800",
 "verify/lazy-segment-tree.yosupo-range-affine-range-sum.test.cpp": "2022-01-23 17:49:10 -0800",
