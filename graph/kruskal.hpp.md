@@ -25,32 +25,28 @@ data:
     \ > setsize[v]) {\n            parent[v] = u;\n            setsize[u] += setsize[v];\n\
     \        } else {\n            parent[u] = v;\n            setsize[v] += setsize[u];\n\
     \        }\n        return true;\n    }\n\n    int size(int u) {\n        return\
-    \ setsize[find(u)];\n    }\n};\n#line 2 \"graph/kruskal.hpp\"\n\ntemplate<typename\
-    \ G>\nlong long kruskal(const G &graph) {\n\tvector<tuple<long long, int, int>>\
-    \ edges;\n\tfor (int u = 0; u < graph.size(); u++)\n\t\tfor (auto [v, w] : graph[u])\n\
-    \t\t\tedges.emplace_back(u, v, w);\n\treturn kruskal(graph.size(), edges);\n}\n\
-    \nlong long kruskal(int n, vector<tuple<int, int, long long>> edges) {\n\tUnionFind\
-    \ dsu(n);\n\tsort(edges.begin(), edges.end(), [](const tuple<int, int, long long>\
-    \ &a, const tuple<int, int, long long> &b) {\n\t\treturn get<2>(a) < get<2>(b);\
-    \ \n\t});\n\tlong long ret = 0;\n\tfor (auto [u, v, w] : edges) {\n\t\tif (dsu.merge(u,\
-    \ v))\n\t\t\tret += w;\n\t\tif (dsu.size(0) == n)\n\t\t\treturn ret;\n\t}\n\t\
-    return n <= 1 ? 0 : LLONG_MAX;\n}\n"
-  code: "#include \"data-structure/union-find.hpp\"\n\ntemplate<typename G>\nlong\
-    \ long kruskal(const G &graph) {\n\tvector<tuple<long long, int, int>> edges;\n\
-    \tfor (int u = 0; u < graph.size(); u++)\n\t\tfor (auto [v, w] : graph[u])\n\t\
-    \t\tedges.emplace_back(u, v, w);\n\treturn kruskal(graph.size(), edges);\n}\n\n\
-    long long kruskal(int n, vector<tuple<int, int, long long>> edges) {\n\tUnionFind\
-    \ dsu(n);\n\tsort(edges.begin(), edges.end(), [](const tuple<int, int, long long>\
-    \ &a, const tuple<int, int, long long> &b) {\n\t\treturn get<2>(a) < get<2>(b);\
-    \ \n\t});\n\tlong long ret = 0;\n\tfor (auto [u, v, w] : edges) {\n\t\tif (dsu.merge(u,\
-    \ v))\n\t\t\tret += w;\n\t\tif (dsu.size(0) == n)\n\t\t\treturn ret;\n\t}\n\t\
-    return n <= 1 ? 0 : LLONG_MAX;\n}"
+    \ setsize[find(u)];\n    }\n};\n#line 2 \"graph/kruskal.hpp\"\n\nvector<vector<pair<int,\
+    \ long long>>> kruskal(int n, vector<tuple<int, int, long long>> edges) {\n\t\
+    vector<vector<pair<int, long long>>> mst(n);\n\tif (n <= 1)\n\t\treturn mst;\n\
+    \tUnionFind dsu(n);\n\tsort(edges.begin(), edges.end(), [](const tuple<int, int,\
+    \ long long> &a, const tuple<int, int, long long> &b) { return get<2>(a) < get<2>(b);\
+    \ });\n\tfor (auto [u, v, w] : edges) {\n\t\tif (dsu.merge(u, v)) {\n\t\t\tmst[u].emplace_back(v,\
+    \ w);\n\t\t\tmst[v].emplace_back(u, w);\n\t\t}\n\t\tif (dsu.size(0) == n)\n\t\t\
+    \tbreak;\n\t}\n\treturn mst;\n}\n"
+  code: "#include \"data-structure/union-find.hpp\"\n\nvector<vector<pair<int, long\
+    \ long>>> kruskal(int n, vector<tuple<int, int, long long>> edges) {\n\tvector<vector<pair<int,\
+    \ long long>>> mst(n);\n\tif (n <= 1)\n\t\treturn mst;\n\tUnionFind dsu(n);\n\t\
+    sort(edges.begin(), edges.end(), [](const tuple<int, int, long long> &a, const\
+    \ tuple<int, int, long long> &b) { return get<2>(a) < get<2>(b); });\n\tfor (auto\
+    \ [u, v, w] : edges) {\n\t\tif (dsu.merge(u, v)) {\n\t\t\tmst[u].emplace_back(v,\
+    \ w);\n\t\t\tmst[v].emplace_back(u, w);\n\t\t}\n\t\tif (dsu.size(0) == n)\n\t\t\
+    \tbreak;\n\t}\n\treturn mst;\n}"
   dependsOn:
   - data-structure/union-find.hpp
   isVerificationFile: false
   path: graph/kruskal.hpp
   requiredBy: []
-  timestamp: '2022-01-24 07:06:40-08:00'
+  timestamp: '2022-01-24 09:06:47-08:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/kruskal.aizu-minimum-spanning-tree.test.cpp
@@ -63,7 +59,7 @@ title: Kruskal's Algorithm
 
 ### Summary
 
-Finds the minimum spanning tree of an undirected graph if it exists in $\mathcal{O}(\lvert E \rvert \log \lvert E \rvert)$. Returns `LLONG_MAX` if no spanning tree exists
+Finds the minimum spanning tree of an undirected graph in $\mathcal{O}(\lvert E \rvert \log \lvert E \rvert)$. Returns the minimum spanning forest if a spanning tree doesn't exist
 
 ### Parameters
 - `std::vector<std::tuple<int, int, long long>> edges`: A list of undirected edges $(\texttt{node1}, \texttt{node2}, \texttt{weight})$. 

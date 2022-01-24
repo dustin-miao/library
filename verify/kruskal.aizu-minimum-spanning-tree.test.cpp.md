@@ -30,33 +30,33 @@ data:
     \ > setsize[v]) {\n            parent[v] = u;\n            setsize[u] += setsize[v];\n\
     \        } else {\n            parent[u] = v;\n            setsize[v] += setsize[u];\n\
     \        }\n        return true;\n    }\n\n    int size(int u) {\n        return\
-    \ setsize[find(u)];\n    }\n};\n#line 2 \"graph/kruskal.hpp\"\n\ntemplate<typename\
-    \ G>\nlong long kruskal(const G &graph) {\n\tvector<tuple<long long, int, int>>\
-    \ edges;\n\tfor (int u = 0; u < graph.size(); u++)\n\t\tfor (auto [v, w] : graph[u])\n\
-    \t\t\tedges.emplace_back(u, v, w);\n\treturn kruskal(graph.size(), edges);\n}\n\
-    \nlong long kruskal(int n, vector<tuple<int, int, long long>> edges) {\n\tUnionFind\
-    \ dsu(n);\n\tsort(edges.begin(), edges.end(), [](const tuple<int, int, long long>\
-    \ &a, const tuple<int, int, long long> &b) {\n\t\treturn get<2>(a) < get<2>(b);\
-    \ \n\t});\n\tlong long ret = 0;\n\tfor (auto [u, v, w] : edges) {\n\t\tif (dsu.merge(u,\
-    \ v))\n\t\t\tret += w;\n\t\tif (dsu.size(0) == n)\n\t\t\treturn ret;\n\t}\n\t\
-    return n <= 1 ? 0 : LLONG_MAX;\n}\n#line 7 \"verify/kruskal.aizu-minimum-spanning-tree.test.cpp\"\
+    \ setsize[find(u)];\n    }\n};\n#line 2 \"graph/kruskal.hpp\"\n\nvector<vector<pair<int,\
+    \ long long>>> kruskal(int n, vector<tuple<int, int, long long>> edges) {\n\t\
+    vector<vector<pair<int, long long>>> mst(n);\n\tif (n <= 1)\n\t\treturn mst;\n\
+    \tUnionFind dsu(n);\n\tsort(edges.begin(), edges.end(), [](const tuple<int, int,\
+    \ long long> &a, const tuple<int, int, long long> &b) { return get<2>(a) < get<2>(b);\
+    \ });\n\tfor (auto [u, v, w] : edges) {\n\t\tif (dsu.merge(u, v)) {\n\t\t\tmst[u].emplace_back(v,\
+    \ w);\n\t\t\tmst[v].emplace_back(u, w);\n\t\t}\n\t\tif (dsu.size(0) == n)\n\t\t\
+    \tbreak;\n\t}\n\treturn mst;\n}\n#line 7 \"verify/kruskal.aizu-minimum-spanning-tree.test.cpp\"\
     \n\nint main() {\n\tint N, M;\n\tcin >> N >> M;\n\tvector<tuple<int, int, long\
     \ long>> E;\n\tfor (int i = 0; i < M; i++) {\n\t\tint u, v; long long w;\n\t\t\
-    cin >> u >> v >> w;\n\t\tE.emplace_back(u, v, w);\n\t}\n\tcout << kruskal(N, E)\
-    \ << '\\n';\n}\n"
+    cin >> u >> v >> w;\n\t\tE.emplace_back(u, v, w);\n\t}\n\tauto T = kruskal(N,\
+    \ E);\n\tlong long ans = 0;\n\tfor (int u = 0; u < N; u++)\n\t\tfor (auto [v,\
+    \ w] : T[u])\n\t\t\tans += w;\n\tcout << ans / 2 << '\\n';\n}\n"
   code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_A\"\
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#include \"graph/kruskal.hpp\"\
     \n\nint main() {\n\tint N, M;\n\tcin >> N >> M;\n\tvector<tuple<int, int, long\
     \ long>> E;\n\tfor (int i = 0; i < M; i++) {\n\t\tint u, v; long long w;\n\t\t\
-    cin >> u >> v >> w;\n\t\tE.emplace_back(u, v, w);\n\t}\n\tcout << kruskal(N, E)\
-    \ << '\\n';\n}"
+    cin >> u >> v >> w;\n\t\tE.emplace_back(u, v, w);\n\t}\n\tauto T = kruskal(N,\
+    \ E);\n\tlong long ans = 0;\n\tfor (int u = 0; u < N; u++)\n\t\tfor (auto [v,\
+    \ w] : T[u])\n\t\t\tans += w;\n\tcout << ans / 2 << '\\n';\n}"
   dependsOn:
   - graph/kruskal.hpp
   - data-structure/union-find.hpp
   isVerificationFile: true
   path: verify/kruskal.aizu-minimum-spanning-tree.test.cpp
   requiredBy: []
-  timestamp: '2022-01-24 07:06:40-08:00'
+  timestamp: '2022-01-24 09:06:47-08:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/kruskal.aizu-minimum-spanning-tree.test.cpp
