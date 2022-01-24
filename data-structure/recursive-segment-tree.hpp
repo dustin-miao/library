@@ -2,9 +2,11 @@ template<class Base>
 class Segtree : public Base {
 	using node = typename Base::T;
 
+protected:
 	size_t n;
 	vector<node> tree;
 
+private:
 	void update(int i, node v, int t, int tl, int tr) {
 		if (tl == tr) {
 			Base::apply(tree[t], v);

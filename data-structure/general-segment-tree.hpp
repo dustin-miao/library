@@ -2,6 +2,7 @@ template<class Base>
 class Segtree : public Base {
 	using node = typename Base::T;
 
+protected:
 	size_t n;
 	vector<node> tree;
 
