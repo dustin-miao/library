@@ -1,6 +1,8 @@
 {
 "verify/binary-index-tree.yosupo-point-add-range-sum.test.cpp": "2022-01-26 05:31:56 -0800",
 "verify/cycle-finding.yosupo-cycle-detection.test.cpp": "2022-01-24 05:58:44 -0800",
+"verify/dijkstra.aizu-shortest-path.test.cpp": "2022-01-26 06:14:01 -0800",
+"verify/dijkstra.aizu-single-source-shortest-path.test.cpp": "2022-01-26 06:14:01 -0800",
 "verify/general-segment-tree.yosupo-point-add-range-sum.test.cpp": "2022-01-26 05:31:56 -0800",
 "verify/general-segment-tree.yosupo-point-set-range-composite.test.cpp": "2022-01-26 05:51:23 -0800",
 "verify/kruskal.aizu-minimum-spanning-tree.test.cpp": "2022-01-24 09:06:47 -0800",
