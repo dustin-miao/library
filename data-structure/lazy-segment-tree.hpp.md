@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/lazy-segment-tree.yosupo-range-affine-range-sum.test.cpp
     title: verify/lazy-segment-tree.yosupo-range-affine-range-sum.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"data-structure/lazy-segment-tree.hpp\"\ntemplate<class Base>\n\
@@ -57,7 +57,7 @@ data:
   path: data-structure/lazy-segment-tree.hpp
   requiredBy: []
   timestamp: '2022-01-23 17:49:10-08:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/lazy-segment-tree.yosupo-range-affine-range-sum.test.cpp
 documentation_of: data-structure/lazy-segment-tree.hpp

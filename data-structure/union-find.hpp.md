@@ -10,6 +10,9 @@ data:
     path: verify/kruskal.aizu-minimum-spanning-tree.test.cpp
     title: verify/kruskal.aizu-minimum-spanning-tree.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/union-find.aizu-disjoint-union.test.cpp
+    title: verify/union-find.aizu-disjoint-union.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/union-find.yosupo-unionfind.test.cpp
     title: verify/union-find.yosupo-unionfind.test.cpp
   _isVerificationFailed: false
@@ -50,6 +53,7 @@ data:
   verifiedWith:
   - verify/kruskal.aizu-minimum-spanning-tree.test.cpp
   - verify/union-find.yosupo-unionfind.test.cpp
+  - verify/union-find.aizu-disjoint-union.test.cpp
 documentation_of: data-structure/union-find.hpp
 layout: document
 title: Union Find

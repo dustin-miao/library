@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/recursive-segment-tree.hpp
     title: Recursive Segment Tree
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: utility/addmod.hpp
     title: Addmod
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/point_set_range_composite
@@ -46,7 +46,7 @@ data:
     \t\tint p; long long c, d;\n\t\t\tcin >> p >> c >> d;\n\t\t\tsgt.update(p, {c,\
     \ d});\n\t\t} else {\n\t\t\tint l, r; long long x;\n\t\t\tcin >> l >> r >> x;\n\
     \t\t\tauto [a, b] = sgt.query(l, r - 1);\n\t\t\tcout << addmod(a * x % MOD, b,\
-    \ MOD << '\\n';\n\t\t}\n\t}\n}\n"
+    \ MOD) << '\\n';\n\t\t}\n\t}\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/point_set_range_composite\"\
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#include \"utility/addmod.hpp\"\
     \n#include \"data-structure/recursive-segment-tree.hpp\"\n\nconst int MAX = 5e5\
@@ -59,15 +59,15 @@ data:
     while (Q--) {\n\t\tint t; cin >> t;\n\t\tif (t == 0) {\n\t\t\tint p; long long\
     \ c, d;\n\t\t\tcin >> p >> c >> d;\n\t\t\tsgt.update(p, {c, d});\n\t\t} else {\n\
     \t\t\tint l, r; long long x;\n\t\t\tcin >> l >> r >> x;\n\t\t\tauto [a, b] = sgt.query(l,\
-    \ r - 1);\n\t\t\tcout << addmod(a * x % MOD, b, MOD << '\\n';\n\t\t}\n\t}\n}\n"
+    \ r - 1);\n\t\t\tcout << addmod(a * x % MOD, b, MOD) << '\\n';\n\t\t}\n\t}\n}\n"
   dependsOn:
   - utility/addmod.hpp
   - data-structure/recursive-segment-tree.hpp
   isVerificationFile: true
   path: verify/recursive-segment-tree.yosupo-point-set-range-composite.test.cpp
   requiredBy: []
-  timestamp: '2022-01-26 05:45:04-08:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-01-26 05:51:23-08:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/recursive-segment-tree.yosupo-point-set-range-composite.test.cpp
 layout: document

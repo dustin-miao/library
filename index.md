@@ -6,13 +6,13 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/binary-index-tree.hpp
       title: Binary Index Tree
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/general-segment-tree.hpp
       title: General Segment Tree
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/lazy-segment-tree.hpp
       title: Lazy Segment Tree
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/recursive-segment-tree.hpp
       title: Recursive Segment Tree
     - icon: ':heavy_check_mark:'
@@ -31,7 +31,7 @@ data:
       title: Kruskal's Algorithm
   - name: utility
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: utility/addmod.hpp
       title: Addmod
     - icon: ':warning:'
@@ -52,24 +52,27 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/general-segment-tree.yosupo-point-add-range-sum.test.cpp
       title: verify/general-segment-tree.yosupo-point-add-range-sum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/general-segment-tree.yosupo-point-set-range-composite.test.cpp
       title: verify/general-segment-tree.yosupo-point-set-range-composite.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/kruskal.aizu-minimum-spanning-tree.test.cpp
       title: verify/kruskal.aizu-minimum-spanning-tree.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/lazy-segment-tree.yosupo-range-affine-range-sum.test.cpp
       title: verify/lazy-segment-tree.yosupo-range-affine-range-sum.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/recursive-segment-tree.yosupo-point-add-range-sum.test.cpp
       title: verify/recursive-segment-tree.yosupo-point-add-range-sum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/recursive-segment-tree.yosupo-point-set-range-composite.test.cpp
       title: verify/recursive-segment-tree.yosupo-point-set-range-composite.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/segment-tree.yosupo-point-add-range-sum.test.cpp
       title: verify/segment-tree.yosupo-point-add-range-sum.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/union-find.aizu-disjoint-union.test.cpp
+      title: verify/union-find.aizu-disjoint-union.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/union-find.yosupo-unionfind.test.cpp
       title: verify/union-find.yosupo-unionfind.test.cpp

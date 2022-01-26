@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/lazy-segment-tree.hpp
     title: Lazy Segment Tree
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: utility/addmod.hpp
     title: Addmod
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/range_affine_range_sum
@@ -47,9 +47,9 @@ data:
     \t\tusing L = pair<long long, long long>;\n\n\t\tconst T Tdval = 0;\n\t\tconst\
     \ L Ldval = {1, 0};\n\n\t\tvoid apply(T &a, L &b, L c, int l, int r) {\n\t\t\t\
     a = addmod(c.first * a % MOD, c.second * (r - l + 1) % MOD, MOD);\n\t\t\tb = {c.first\
-    \ * b.first % MOD, addmod(c.first * b.second, c.second, MOD)};\n\t\t}\t\n\n\t\t\
-    T merge(T a, T b) { return addmod(a, b, MOD); }\n\t};\n\t\n\tSegtree<stinfo> sgt(N);\n\
-    \tfor (int i = 0; i < N; i++) {\n\t\tlong long a; cin >> a;\n\t\tsgt.update(i,\
+    \ * b.first % MOD, addmod(c.first * b.second % MOD, c.second, MOD)};\n\t\t}\t\n\
+    \n\t\tT merge(T a, T b) { return addmod(a, b, MOD); }\n\t};\n\t\n\tSegtree<stinfo>\
+    \ sgt(N);\n\tfor (int i = 0; i < N; i++) {\n\t\tlong long a; cin >> a;\n\t\tsgt.update(i,\
     \ i, {1, a});\n\t}\n\twhile (Q--) {\n\t\tint t; cin >> t;\n\t\tif (t == 0) {\n\
     \t\t\tint l, r; long long b, c;\n\t\t\tcin >> l >> r >> b >> c;\n\t\t\tsgt.update(l,\
     \ r - 1, {b, c});\n\t\t} else {\n\t\t\tint l, r;\n\t\t\tcin >> l >> r;\n\t\t\t\
@@ -62,21 +62,21 @@ data:
     \ long, long long>;\n\n\t\tconst T Tdval = 0;\n\t\tconst L Ldval = {1, 0};\n\n\
     \t\tvoid apply(T &a, L &b, L c, int l, int r) {\n\t\t\ta = addmod(c.first * a\
     \ % MOD, c.second * (r - l + 1) % MOD, MOD);\n\t\t\tb = {c.first * b.first % MOD,\
-    \ addmod(c.first * b.second, c.second, MOD)};\n\t\t}\t\n\n\t\tT merge(T a, T b)\
-    \ { return addmod(a, b, MOD); }\n\t};\n\t\n\tSegtree<stinfo> sgt(N);\n\tfor (int\
-    \ i = 0; i < N; i++) {\n\t\tlong long a; cin >> a;\n\t\tsgt.update(i, i, {1, a});\n\
-    \t}\n\twhile (Q--) {\n\t\tint t; cin >> t;\n\t\tif (t == 0) {\n\t\t\tint l, r;\
-    \ long long b, c;\n\t\t\tcin >> l >> r >> b >> c;\n\t\t\tsgt.update(l, r - 1,\
-    \ {b, c});\n\t\t} else {\n\t\t\tint l, r;\n\t\t\tcin >> l >> r;\n\t\t\tcout <<\
-    \ sgt.query(l, r - 1) << '\\n';\n\t\t}\n\t}\n}"
+    \ addmod(c.first * b.second % MOD, c.second, MOD)};\n\t\t}\t\n\n\t\tT merge(T\
+    \ a, T b) { return addmod(a, b, MOD); }\n\t};\n\t\n\tSegtree<stinfo> sgt(N);\n\
+    \tfor (int i = 0; i < N; i++) {\n\t\tlong long a; cin >> a;\n\t\tsgt.update(i,\
+    \ i, {1, a});\n\t}\n\twhile (Q--) {\n\t\tint t; cin >> t;\n\t\tif (t == 0) {\n\
+    \t\t\tint l, r; long long b, c;\n\t\t\tcin >> l >> r >> b >> c;\n\t\t\tsgt.update(l,\
+    \ r - 1, {b, c});\n\t\t} else {\n\t\t\tint l, r;\n\t\t\tcin >> l >> r;\n\t\t\t\
+    cout << sgt.query(l, r - 1) << '\\n';\n\t\t}\n\t}\n}"
   dependsOn:
   - utility/addmod.hpp
   - data-structure/lazy-segment-tree.hpp
   isVerificationFile: true
   path: verify/lazy-segment-tree.yosupo-range-affine-range-sum.test.cpp
   requiredBy: []
-  timestamp: '2022-01-26 05:45:04-08:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-01-26 05:51:23-08:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/lazy-segment-tree.yosupo-range-affine-range-sum.test.cpp
 layout: document
