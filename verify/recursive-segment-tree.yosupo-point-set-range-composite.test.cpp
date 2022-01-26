@@ -8,25 +8,23 @@ using namespace std;
 const int MAX = 5e5 + 5;
 const long long MOD = 998244353;
 
-int N, Q;
-
-struct stinfo {
-	struct node { long long a, b; };
-
-	using T = node;
-
-	const T dval = {1, 0};
-
-	void apply(T &a, T b) { a = b; }
-
-	T merge(T a, T b) { return {a.a * b.a % MOD, (b.a * a.b + b.b) % MOD}; }
-};
-
-Segtree<stinfo> sgt;
-
 int main() {
+	int N, Q;
 	cin >> N >> Q;
-	sgt.init(N);
+
+	struct stinfo {
+		struct node { long long a, b; };
+
+		using T = node;
+
+		const T dval = {1, 0};
+
+		void apply(T &a, T b) { a = b; }
+
+		T merge(T a, T b) { return {a.a * b.a % MOD, (b.a * a.b + b.b) % MOD}; }
+	};
+
+	Segtree<stinfo> sgt(N);
 	for (int i = 0; i < N; i++) {
 		long long a, b; 
 		cin >> a >> b;

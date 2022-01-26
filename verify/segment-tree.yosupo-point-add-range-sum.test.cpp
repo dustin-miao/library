@@ -7,23 +7,18 @@ using namespace std;
 
 const int MAX = 5e5 + 5;
 
-int N, Q;
-
-struct stinfo {
-	using T = long long;
-
-	const T dval = 0;
-
-	void apply(T &a, T b) { a += b; }
-
-	T merge(T a, T b) { return a + b; }
-};
-
-Segtree<stinfo> sgt;
-
 int main() {
+	int N, Q;
 	cin >> N >> Q;
-	sgt.init(N);
+
+	struct stinfo {
+		using T = long long;
+		const T dval = 0;
+		void apply(T &a, T b) { a += b; }
+		T merge(T a, T b) { return a + b; }
+	};
+
+	Segtree<stinfo> sgt(N);
 	for (int i = 0; i < N; i++) {
 		long long a; cin >> a;
 		sgt.update(i, a);

@@ -8,24 +8,25 @@ using namespace std;
 const int MAX = 5e5 + 5;
 const long long MOD = 998244353;
 
-struct stinfo {
-	using T = long long;
-	using L = pair<long long, long long>;
-
-	const T Tdval = 0;
-	const L Ldval = {1, 0};
-
-	void apply(T &a, L &b, L c, int l, int r) {
-		a = (c.first * a % MOD + c.second * (r - l + 1)) % MOD;
-		b = {c.first * b.first % MOD, (c.first * b.second + c.second) % MOD};
-	}	
-
-	T merge(T a, T b) { return (a + b) % MOD; }
-};
-
 int main() {
 	int N, Q; 
 	cin >> N >> Q;
+	
+	struct stinfo {
+		using T = long long;
+		using L = pair<long long, long long>;
+
+		const T Tdval = 0;
+		const L Ldval = {1, 0};
+
+		void apply(T &a, L &b, L c, int l, int r) {
+			a = (c.first * a % MOD + c.second * (r - l + 1)) % MOD;
+			b = {c.first * b.first % MOD, (c.first * b.second + c.second) % MOD};
+		}	
+
+		T merge(T a, T b) { return (a + b) % MOD; }
+	};
+	
 	Segtree<stinfo> sgt(N);
 	for (int i = 0; i < N; i++) {
 		long long a; cin >> a;

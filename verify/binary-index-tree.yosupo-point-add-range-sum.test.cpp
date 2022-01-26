@@ -7,12 +7,10 @@ using namespace std;
 
 const int MAX = 5e5 + 5;
 
-int N, Q;
-Fentree<long long> bit;
-
 int main() {
+	int N, Q;
   	cin >> N >> Q;
-	bit.init(N);
+	Fentree<long long> bit(N);
   	for (int i = 0; i < N; i++) {
 		long long a; cin >> a;
 		bit.update(i + 1, a);
