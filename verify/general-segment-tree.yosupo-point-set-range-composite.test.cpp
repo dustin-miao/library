@@ -38,7 +38,7 @@ int main() {
 			int l, r; long long x;
 			cin >> l >> r >> x;
 			auto [a, b] = sgt.query(l, r - 1);
-			cout << addmod(a * x % MOD, b, MOD << '\n';
+			cout << addmod(a * x % MOD, b, MOD) << '\n';
 		}
 	}
 }

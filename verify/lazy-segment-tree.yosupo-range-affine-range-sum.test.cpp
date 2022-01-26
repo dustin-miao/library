@@ -22,7 +22,7 @@ int main() {
 
 		void apply(T &a, L &b, L c, int l, int r) {
 			a = addmod(c.first * a % MOD, c.second * (r - l + 1) % MOD, MOD);
-			b = {c.first * b.first % MOD, addmod(c.first * b.second, c.second, MOD)};
+			b = {c.first * b.first % MOD, addmod(c.first * b.second % MOD, c.second, MOD)};
 		}	
 
 		T merge(T a, T b) { return addmod(a, b, MOD); }
