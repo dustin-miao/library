@@ -7,6 +7,9 @@ data:
     path: verify/segment-tree.aizu-range-minimum-query.test.cpp
     title: verify/segment-tree.aizu-range-minimum-query.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/segment-tree.aizu-range-sum-query.test.cpp
+    title: verify/segment-tree.aizu-range-sum-query.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/segment-tree.yosupo-point-add-range-sum.test.cpp
     title: verify/segment-tree.yosupo-point-add-range-sum.test.cpp
   _isVerificationFailed: false
@@ -42,6 +45,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/segment-tree.aizu-range-minimum-query.test.cpp
+  - verify/segment-tree.aizu-range-sum-query.test.cpp
   - verify/segment-tree.yosupo-point-add-range-sum.test.cpp
 documentation_of: data-structure/segment-tree.hpp
 layout: document

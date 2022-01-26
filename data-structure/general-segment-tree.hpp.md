@@ -7,6 +7,9 @@ data:
     path: verify/general-segment-tree.aizu-range-minimum-query.test.cpp
     title: verify/general-segment-tree.aizu-range-minimum-query.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/general-segment-tree.aizu-range-sum-query.test.cpp
+    title: verify/general-segment-tree.aizu-range-sum-query.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/general-segment-tree.yosupo-point-add-range-sum.test.cpp
     title: verify/general-segment-tree.yosupo-point-add-range-sum.test.cpp
   - icon: ':heavy_check_mark:'
@@ -46,6 +49,7 @@ data:
   timestamp: '2022-01-23 16:08:53-08:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/general-segment-tree.aizu-range-sum-query.test.cpp
   - verify/general-segment-tree.aizu-range-minimum-query.test.cpp
   - verify/general-segment-tree.yosupo-point-set-range-composite.test.cpp
   - verify/general-segment-tree.yosupo-point-add-range-sum.test.cpp

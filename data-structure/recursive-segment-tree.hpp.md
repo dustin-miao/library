@@ -7,6 +7,9 @@ data:
     path: verify/recursive-segment-tree.aizu-range-minimum-query.test.cpp
     title: verify/recursive-segment-tree.aizu-range-minimum-query.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/recursive-segment-tree.aizu-range-sum-query.test.cpp
+    title: verify/recursive-segment-tree.aizu-range-sum-query.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/recursive-segment-tree.yosupo-point-add-range-sum.test.cpp
     title: verify/recursive-segment-tree.yosupo-point-add-range-sum.test.cpp
   - icon: ':heavy_check_mark:'
@@ -55,6 +58,7 @@ data:
   verifiedWith:
   - verify/recursive-segment-tree.yosupo-point-set-range-composite.test.cpp
   - verify/recursive-segment-tree.yosupo-point-add-range-sum.test.cpp
+  - verify/recursive-segment-tree.aizu-range-sum-query.test.cpp
   - verify/recursive-segment-tree.aizu-range-minimum-query.test.cpp
 documentation_of: data-structure/recursive-segment-tree.hpp
 layout: document
