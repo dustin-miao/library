@@ -8,16 +8,16 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"utility/chmin.hpp\"\ntemplate<typename T>\nbool chmax(T\
+  bundledCode: "#line 1 \"utility/chmin.hpp\"\ntemplate<typename T>\nbool chmin(T\
     \ &a, T b) {\n\tif (a > b) {\n\t\ta = b;\n\t\treturn true;\n\t}\n\treturn false;\n\
     }\n"
-  code: "template<typename T>\nbool chmax(T &a, T b) {\n\tif (a > b) {\n\t\ta = b;\n\
+  code: "template<typename T>\nbool chmin(T &a, T b) {\n\tif (a > b) {\n\t\ta = b;\n\
     \t\treturn true;\n\t}\n\treturn false;\n}"
   dependsOn: []
   isVerificationFile: false
   path: utility/chmin.hpp
   requiredBy: []
-  timestamp: '2022-01-24 14:12:32-08:00'
+  timestamp: '2022-01-26 05:57:15-08:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: utility/chmin.hpp
