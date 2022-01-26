@@ -28,20 +28,20 @@ data:
     \ tree[l++]);\n\t\t\tif (r & 1) rret = Base::merge(tree[--r], rret);\n\t\t}\n\t\
     \treturn Base::merge(lret, rret);\n\t}\n\n\tnode operator[](int i) { return tree[i\
     \ += n]; }\n};\n#line 7 \"verify/general-segment-tree.yosupo-point-add-range-sum.test.cpp\"\
-    \n\nconst int MAX = 5e5 + 5;\n\nint N, Q;\n\nstruct stinfo {\n\tusing T = long\
-    \ long;\n\n\tconst T dval = 0;\n\n\tvoid apply(T &a, T b) { a += b; }\n\n\tT merge(T\
-    \ a, T b) { return a + b; }\n};\n\nSegtree<stinfo> sgt;\n\nint main() {\n\tcin\
-    \ >> N >> Q;\n\tsgt.init(N);\n\tfor (int i = 0; i < N; i++) {\n\t\tlong long a;\
+    \n\nconst int MAX = 5e5 + 5;\n\n\n\nint main() {\n\tint N, Q;\n\tcin >> N >> Q;\n\
+    \n\tstruct stinfo {\n\t\tusing T = long long;\n\t\tconst T dval = 0;\n\t\tvoid\
+    \ apply(T &a, T b) { a += b; }\n\t\tT merge(T a, T b) { return a + b; }\n\t};\n\
+    \n\tSegtree<stinfo> sgt(N);\n\tfor (int i = 0; i < N; i++) {\n\t\tlong long a;\
     \ cin >> a;\n\t\tsgt.update(i, a);\n\t}\n\twhile (Q--) {\n\t\tint t; cin >> t;\n\
     \t\tif (t == 0) {\n\t\t\tint p; long long x;\n\t\t\tcin >> p >> x;\n\t\t\tsgt.update(p,\
     \ x);\n\t\t} else {\n\t\t\tint l, r;\n\t\t\tcin >> l >> r;\n\t\t\tcout << sgt.query(l,\
     \ r - 1) << '\\n';\n\t\t}\n\t}\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/point_add_range_sum\"\n\
     \n#include <bits/stdc++.h>\nusing namespace std;\n\n#include \"data-structure/general-segment-tree.hpp\"\
-    \n\nconst int MAX = 5e5 + 5;\n\nint N, Q;\n\nstruct stinfo {\n\tusing T = long\
-    \ long;\n\n\tconst T dval = 0;\n\n\tvoid apply(T &a, T b) { a += b; }\n\n\tT merge(T\
-    \ a, T b) { return a + b; }\n};\n\nSegtree<stinfo> sgt;\n\nint main() {\n\tcin\
-    \ >> N >> Q;\n\tsgt.init(N);\n\tfor (int i = 0; i < N; i++) {\n\t\tlong long a;\
+    \n\nconst int MAX = 5e5 + 5;\n\n\n\nint main() {\n\tint N, Q;\n\tcin >> N >> Q;\n\
+    \n\tstruct stinfo {\n\t\tusing T = long long;\n\t\tconst T dval = 0;\n\t\tvoid\
+    \ apply(T &a, T b) { a += b; }\n\t\tT merge(T a, T b) { return a + b; }\n\t};\n\
+    \n\tSegtree<stinfo> sgt(N);\n\tfor (int i = 0; i < N; i++) {\n\t\tlong long a;\
     \ cin >> a;\n\t\tsgt.update(i, a);\n\t}\n\twhile (Q--) {\n\t\tint t; cin >> t;\n\
     \t\tif (t == 0) {\n\t\t\tint p; long long x;\n\t\t\tcin >> p >> x;\n\t\t\tsgt.update(p,\
     \ x);\n\t\t} else {\n\t\t\tint l, r;\n\t\t\tcin >> l >> r;\n\t\t\tcout << sgt.query(l,\
@@ -51,7 +51,7 @@ data:
   isVerificationFile: true
   path: verify/general-segment-tree.yosupo-point-add-range-sum.test.cpp
   requiredBy: []
-  timestamp: '2022-01-23 16:08:53-08:00'
+  timestamp: '2022-01-26 05:31:56-08:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/general-segment-tree.yosupo-point-add-range-sum.test.cpp

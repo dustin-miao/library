@@ -37,38 +37,38 @@ data:
     \t\tlazy.assign(4 * n, Base::Ldval);\n\t}\n\n\tvoid update(int l, int r, upd v)\
     \ { update(l, r, v, 1, 0, n - 1); }\n\n\tnode query(int l, int r) { return query(l,\
     \ r, 1, 0, n - 1); }\n};\n#line 7 \"verify/lazy-segment-tree.yosupo-range-affine-range-sum.test.cpp\"\
-    \n\nconst int MAX = 5e5 + 5;\nconst long long MOD = 998244353;\n\nstruct stinfo\
-    \ {\n\tusing T = long long;\n\tusing L = pair<long long, long long>;\n\n\tconst\
-    \ T Tdval = 0;\n\tconst L Ldval = {1, 0};\n\n\tvoid apply(T &a, L &b, L c, int\
-    \ l, int r) {\n\t\ta = (c.first * a % MOD + c.second * (r - l + 1)) % MOD;\n\t\
-    \tb = {c.first * b.first % MOD, (c.first * b.second + c.second) % MOD};\n\t}\t\
-    \n\n\tT merge(T a, T b) { return (a + b) % MOD; }\n};\n\nint main() {\n\tint N,\
-    \ Q; \n\tcin >> N >> Q;\n\tSegtree<stinfo> sgt(N);\n\tfor (int i = 0; i < N; i++)\
-    \ {\n\t\tlong long a; cin >> a;\n\t\tsgt.update(i, i, {1, a});\n\t}\n\twhile (Q--)\
-    \ {\n\t\tint t; cin >> t;\n\t\tif (t == 0) {\n\t\t\tint l, r; long long b, c;\n\
-    \t\t\tcin >> l >> r >> b >> c;\n\t\t\tsgt.update(l, r - 1, {b, c});\n\t\t} else\
-    \ {\n\t\t\tint l, r;\n\t\t\tcin >> l >> r;\n\t\t\tcout << sgt.query(l, r - 1)\
-    \ << '\\n';\n\t\t}\n\t}\n}\n"
+    \n\nconst int MAX = 5e5 + 5;\nconst long long MOD = 998244353;\n\nint main() {\n\
+    \tint N, Q; \n\tcin >> N >> Q;\n\t\n\tstruct stinfo {\n\t\tusing T = long long;\n\
+    \t\tusing L = pair<long long, long long>;\n\n\t\tconst T Tdval = 0;\n\t\tconst\
+    \ L Ldval = {1, 0};\n\n\t\tvoid apply(T &a, L &b, L c, int l, int r) {\n\t\t\t\
+    a = (c.first * a % MOD + c.second * (r - l + 1)) % MOD;\n\t\t\tb = {c.first *\
+    \ b.first % MOD, (c.first * b.second + c.second) % MOD};\n\t\t}\t\n\n\t\tT merge(T\
+    \ a, T b) { return (a + b) % MOD; }\n\t};\n\t\n\tSegtree<stinfo> sgt(N);\n\tfor\
+    \ (int i = 0; i < N; i++) {\n\t\tlong long a; cin >> a;\n\t\tsgt.update(i, i,\
+    \ {1, a});\n\t}\n\twhile (Q--) {\n\t\tint t; cin >> t;\n\t\tif (t == 0) {\n\t\t\
+    \tint l, r; long long b, c;\n\t\t\tcin >> l >> r >> b >> c;\n\t\t\tsgt.update(l,\
+    \ r - 1, {b, c});\n\t\t} else {\n\t\t\tint l, r;\n\t\t\tcin >> l >> r;\n\t\t\t\
+    cout << sgt.query(l, r - 1) << '\\n';\n\t\t}\n\t}\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/range_affine_range_sum\"\
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#include \"data-structure/lazy-segment-tree.hpp\"\
-    \n\nconst int MAX = 5e5 + 5;\nconst long long MOD = 998244353;\n\nstruct stinfo\
-    \ {\n\tusing T = long long;\n\tusing L = pair<long long, long long>;\n\n\tconst\
-    \ T Tdval = 0;\n\tconst L Ldval = {1, 0};\n\n\tvoid apply(T &a, L &b, L c, int\
-    \ l, int r) {\n\t\ta = (c.first * a % MOD + c.second * (r - l + 1)) % MOD;\n\t\
-    \tb = {c.first * b.first % MOD, (c.first * b.second + c.second) % MOD};\n\t}\t\
-    \n\n\tT merge(T a, T b) { return (a + b) % MOD; }\n};\n\nint main() {\n\tint N,\
-    \ Q; \n\tcin >> N >> Q;\n\tSegtree<stinfo> sgt(N);\n\tfor (int i = 0; i < N; i++)\
-    \ {\n\t\tlong long a; cin >> a;\n\t\tsgt.update(i, i, {1, a});\n\t}\n\twhile (Q--)\
-    \ {\n\t\tint t; cin >> t;\n\t\tif (t == 0) {\n\t\t\tint l, r; long long b, c;\n\
-    \t\t\tcin >> l >> r >> b >> c;\n\t\t\tsgt.update(l, r - 1, {b, c});\n\t\t} else\
-    \ {\n\t\t\tint l, r;\n\t\t\tcin >> l >> r;\n\t\t\tcout << sgt.query(l, r - 1)\
-    \ << '\\n';\n\t\t}\n\t}\n}"
+    \n\nconst int MAX = 5e5 + 5;\nconst long long MOD = 998244353;\n\nint main() {\n\
+    \tint N, Q; \n\tcin >> N >> Q;\n\t\n\tstruct stinfo {\n\t\tusing T = long long;\n\
+    \t\tusing L = pair<long long, long long>;\n\n\t\tconst T Tdval = 0;\n\t\tconst\
+    \ L Ldval = {1, 0};\n\n\t\tvoid apply(T &a, L &b, L c, int l, int r) {\n\t\t\t\
+    a = (c.first * a % MOD + c.second * (r - l + 1)) % MOD;\n\t\t\tb = {c.first *\
+    \ b.first % MOD, (c.first * b.second + c.second) % MOD};\n\t\t}\t\n\n\t\tT merge(T\
+    \ a, T b) { return (a + b) % MOD; }\n\t};\n\t\n\tSegtree<stinfo> sgt(N);\n\tfor\
+    \ (int i = 0; i < N; i++) {\n\t\tlong long a; cin >> a;\n\t\tsgt.update(i, i,\
+    \ {1, a});\n\t}\n\twhile (Q--) {\n\t\tint t; cin >> t;\n\t\tif (t == 0) {\n\t\t\
+    \tint l, r; long long b, c;\n\t\t\tcin >> l >> r >> b >> c;\n\t\t\tsgt.update(l,\
+    \ r - 1, {b, c});\n\t\t} else {\n\t\t\tint l, r;\n\t\t\tcin >> l >> r;\n\t\t\t\
+    cout << sgt.query(l, r - 1) << '\\n';\n\t\t}\n\t}\n}"
   dependsOn:
   - data-structure/lazy-segment-tree.hpp
   isVerificationFile: true
   path: verify/lazy-segment-tree.yosupo-range-affine-range-sum.test.cpp
   requiredBy: []
-  timestamp: '2022-01-23 17:49:10-08:00'
+  timestamp: '2022-01-26 05:31:56-08:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/lazy-segment-tree.yosupo-range-affine-range-sum.test.cpp

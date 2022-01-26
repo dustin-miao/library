@@ -28,26 +28,26 @@ data:
     \ tree[l++]);\n\t\t\tif (r & 1) rret = Base::merge(tree[--r], rret);\n\t\t}\n\t\
     \treturn Base::merge(lret, rret);\n\t}\n\n\tnode operator[](int i) { return tree[i\
     \ += n]; }\n};\n#line 7 \"verify/general-segment-tree.yosupo-point-set-range-composite.test.cpp\"\
-    \n\nconst int MAX = 5e5 + 5;\nconst long long MOD = 998244353;\n\nint N, Q;\n\n\
-    struct stinfo {\n\tstruct node { long long a, b; };\n\n\tusing T = node;\n\n\t\
-    const T dval = {1, 0};\n\n\tvoid apply(T &a, T b) { a = b; }\n\n\tT merge(T a,\
-    \ T b) { return {a.a * b.a % MOD, (b.a * a.b + b.b) % MOD}; }\n};\n\nSegtree<stinfo>\
-    \ sgt;\n\nint main() {\n\tcin >> N >> Q;\n\tsgt.init(N);\n\tfor (int i = 0; i\
+    \n\nconst int MAX = 5e5 + 5;\nconst long long MOD = 998244353;\n\nint main() {\n\
+    \tint N, Q;\n\tcin >> N >> Q;\n\n\tstruct stinfo {\n\t\tstruct node { long long\
+    \ a, b; };\n\t\tusing T = node;\n\t\tconst T dval = {1, 0};\n\t\tvoid apply(T\
+    \ &a, T b) { a = b; }\n\t\tT merge(T a, T b) { return {a.a * b.a % MOD, (b.a *\
+    \ a.b + b.b) % MOD}; }\n\t};\n\n\tSegtree<stinfo> sgt(N);\n\tfor (int i = 0; i\
     \ < N; i++) {\n\t\tlong long a, b; \n\t\tcin >> a >> b;\n\t\tsgt.update(i, {a,\
-    \ b});\n\t}\n\twhile (Q--) {\n\t\tint t; cin >> t;\n\t\tif (t == 0) {\n\t\t\t\
+    \ b});\n\t}\n\n\twhile (Q--) {\n\t\tint t; cin >> t;\n\t\tif (t == 0) {\n\t\t\t\
     int p; long long c, d;\n\t\t\tcin >> p >> c >> d;\n\t\t\tsgt.update(p, {c, d});\n\
     \t\t} else {\n\t\t\tint l, r; long long x;\n\t\t\tcin >> l >> r >> x;\n\t\t\t\
     auto [a, b] = sgt.query(l, r - 1);\n\t\t\tcout << (a * x + b) % MOD << '\\n';\n\
     \t\t}\n\t}\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/point_set_range_composite\"\
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#include \"data-structure/general-segment-tree.hpp\"\
-    \n\nconst int MAX = 5e5 + 5;\nconst long long MOD = 998244353;\n\nint N, Q;\n\n\
-    struct stinfo {\n\tstruct node { long long a, b; };\n\n\tusing T = node;\n\n\t\
-    const T dval = {1, 0};\n\n\tvoid apply(T &a, T b) { a = b; }\n\n\tT merge(T a,\
-    \ T b) { return {a.a * b.a % MOD, (b.a * a.b + b.b) % MOD}; }\n};\n\nSegtree<stinfo>\
-    \ sgt;\n\nint main() {\n\tcin >> N >> Q;\n\tsgt.init(N);\n\tfor (int i = 0; i\
+    \n\nconst int MAX = 5e5 + 5;\nconst long long MOD = 998244353;\n\nint main() {\n\
+    \tint N, Q;\n\tcin >> N >> Q;\n\n\tstruct stinfo {\n\t\tstruct node { long long\
+    \ a, b; };\n\t\tusing T = node;\n\t\tconst T dval = {1, 0};\n\t\tvoid apply(T\
+    \ &a, T b) { a = b; }\n\t\tT merge(T a, T b) { return {a.a * b.a % MOD, (b.a *\
+    \ a.b + b.b) % MOD}; }\n\t};\n\n\tSegtree<stinfo> sgt(N);\n\tfor (int i = 0; i\
     \ < N; i++) {\n\t\tlong long a, b; \n\t\tcin >> a >> b;\n\t\tsgt.update(i, {a,\
-    \ b});\n\t}\n\twhile (Q--) {\n\t\tint t; cin >> t;\n\t\tif (t == 0) {\n\t\t\t\
+    \ b});\n\t}\n\n\twhile (Q--) {\n\t\tint t; cin >> t;\n\t\tif (t == 0) {\n\t\t\t\
     int p; long long c, d;\n\t\t\tcin >> p >> c >> d;\n\t\t\tsgt.update(p, {c, d});\n\
     \t\t} else {\n\t\t\tint l, r; long long x;\n\t\t\tcin >> l >> r >> x;\n\t\t\t\
     auto [a, b] = sgt.query(l, r - 1);\n\t\t\tcout << (a * x + b) % MOD << '\\n';\n\
@@ -57,7 +57,7 @@ data:
   isVerificationFile: true
   path: verify/general-segment-tree.yosupo-point-set-range-composite.test.cpp
   requiredBy: []
-  timestamp: '2022-01-23 16:08:53-08:00'
+  timestamp: '2022-01-26 05:31:56-08:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/general-segment-tree.yosupo-point-set-range-composite.test.cpp

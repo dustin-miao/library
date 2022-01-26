@@ -24,28 +24,28 @@ data:
     \ i) {\n\t\tT ret = 0;\n\t\tfor (; i; i -= i & -i)\n\t\t\tret += tree[i];\n\t\t\
     return ret;\n\t}\n\n\tT query(int l, int r) { return query(r) - query(l - 1);\
     \ }\n};\n#line 7 \"verify/binary-index-tree.yosupo-point-add-range-sum.test.cpp\"\
-    \n\nconst int MAX = 5e5 + 5;\n\nint N, Q;\nFentree<long long> bit;\n\nint main()\
-    \ {\n  \tcin >> N >> Q;\n\tbit.init(N);\n  \tfor (int i = 0; i < N; i++) {\n\t\
-    \tlong long a; cin >> a;\n\t\tbit.update(i + 1, a);\n\t}\n  \twhile (Q--) {\n\t\
-    \tint t; cin >> t;\n\t\tif (t == 0) {\n\t  \t\tint p; long long x;\n\t  \t\tcin\
-    \ >> p >> x;\n\t  \t\tbit.update(p + 1, x);\n\t\t} else {\n\t  \t\tint l, r;\n\
-    \t  \t\tcin >> l >> r;\n\t  \t\tcout << bit.query(l + 1, r) << '\\n';\n\t\t}\n\
-    \  \t}\n}\n"
+    \n\nconst int MAX = 5e5 + 5;\n\nint main() {\n\tint N, Q;\n  \tcin >> N >> Q;\n\
+    \tFentree<long long> bit(N);\n  \tfor (int i = 0; i < N; i++) {\n\t\tlong long\
+    \ a; cin >> a;\n\t\tbit.update(i + 1, a);\n\t}\n  \twhile (Q--) {\n\t\tint t;\
+    \ cin >> t;\n\t\tif (t == 0) {\n\t  \t\tint p; long long x;\n\t  \t\tcin >> p\
+    \ >> x;\n\t  \t\tbit.update(p + 1, x);\n\t\t} else {\n\t  \t\tint l, r;\n\t  \t\
+    \tcin >> l >> r;\n\t  \t\tcout << bit.query(l + 1, r) << '\\n';\n\t\t}\n  \t}\n\
+    }\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/point_add_range_sum\"\n\
     \n#include <bits/stdc++.h>\nusing namespace std;\n\n#include \"data-structure/binary-index-tree.hpp\"\
-    \n\nconst int MAX = 5e5 + 5;\n\nint N, Q;\nFentree<long long> bit;\n\nint main()\
-    \ {\n  \tcin >> N >> Q;\n\tbit.init(N);\n  \tfor (int i = 0; i < N; i++) {\n\t\
-    \tlong long a; cin >> a;\n\t\tbit.update(i + 1, a);\n\t}\n  \twhile (Q--) {\n\t\
-    \tint t; cin >> t;\n\t\tif (t == 0) {\n\t  \t\tint p; long long x;\n\t  \t\tcin\
-    \ >> p >> x;\n\t  \t\tbit.update(p + 1, x);\n\t\t} else {\n\t  \t\tint l, r;\n\
-    \t  \t\tcin >> l >> r;\n\t  \t\tcout << bit.query(l + 1, r) << '\\n';\n\t\t}\n\
-    \  \t}\n}\n"
+    \n\nconst int MAX = 5e5 + 5;\n\nint main() {\n\tint N, Q;\n  \tcin >> N >> Q;\n\
+    \tFentree<long long> bit(N);\n  \tfor (int i = 0; i < N; i++) {\n\t\tlong long\
+    \ a; cin >> a;\n\t\tbit.update(i + 1, a);\n\t}\n  \twhile (Q--) {\n\t\tint t;\
+    \ cin >> t;\n\t\tif (t == 0) {\n\t  \t\tint p; long long x;\n\t  \t\tcin >> p\
+    \ >> x;\n\t  \t\tbit.update(p + 1, x);\n\t\t} else {\n\t  \t\tint l, r;\n\t  \t\
+    \tcin >> l >> r;\n\t  \t\tcout << bit.query(l + 1, r) << '\\n';\n\t\t}\n  \t}\n\
+    }\n"
   dependsOn:
   - data-structure/binary-index-tree.hpp
   isVerificationFile: true
   path: verify/binary-index-tree.yosupo-point-add-range-sum.test.cpp
   requiredBy: []
-  timestamp: '2022-01-22 21:46:52-08:00'
+  timestamp: '2022-01-26 05:31:56-08:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/binary-index-tree.yosupo-point-add-range-sum.test.cpp
