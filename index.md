@@ -6,13 +6,13 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/binary-index-tree.hpp
       title: Binary Index Tree
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: data-structure/general-segment-tree.hpp
       title: General Segment Tree
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: data-structure/lazy-segment-tree.hpp
       title: Lazy Segment Tree
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: data-structure/recursive-segment-tree.hpp
       title: Recursive Segment Tree
     - icon: ':heavy_check_mark:'
@@ -31,6 +31,9 @@ data:
       title: Kruskal's Algorithm
   - name: utility
     pages:
+    - icon: ':x:'
+      path: utility/addmod.hpp
+      title: Addmod
     - icon: ':warning:'
       path: utility/chmax.hpp
       title: Chmax
@@ -49,19 +52,19 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/general-segment-tree.yosupo-point-add-range-sum.test.cpp
       title: verify/general-segment-tree.yosupo-point-add-range-sum.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/general-segment-tree.yosupo-point-set-range-composite.test.cpp
       title: verify/general-segment-tree.yosupo-point-set-range-composite.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/kruskal.aizu-minimum-spanning-tree.test.cpp
       title: verify/kruskal.aizu-minimum-spanning-tree.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/lazy-segment-tree.yosupo-range-affine-range-sum.test.cpp
       title: verify/lazy-segment-tree.yosupo-range-affine-range-sum.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/recursive-segment-tree.yosupo-point-add-range-sum.test.cpp
       title: verify/recursive-segment-tree.yosupo-point-add-range-sum.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/recursive-segment-tree.yosupo-point-set-range-composite.test.cpp
       title: verify/recursive-segment-tree.yosupo-point-set-range-composite.test.cpp
     - icon: ':heavy_check_mark:'
