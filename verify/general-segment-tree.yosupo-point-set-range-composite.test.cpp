@@ -3,6 +3,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+#include "utility/addmod.hpp"
 #include "data-structure/general-segment-tree.hpp"
 
 const int MAX = 5e5 + 5;
@@ -17,7 +18,7 @@ int main() {
 		using T = node;
 		const T dval = {1, 0};
 		void apply(T &a, T b) { a = b; }
-		T merge(T a, T b) { return {a.a * b.a % MOD, (b.a * a.b + b.b) % MOD}; }
+		T merge(T a, T b) { return {a.a * b.a % MOD, addmod(b.a * a.b % MOD, b.b, MOD)}; }
 	};
 
 	Segtree<stinfo> sgt(N);
@@ -37,7 +38,7 @@ int main() {
 			int l, r; long long x;
 			cin >> l >> r >> x;
 			auto [a, b] = sgt.query(l, r - 1);
-			cout << (a * x + b) % MOD << '\n';
+			cout << addmod(a * x % MOD, b, MOD << '\n';
 		}
 	}
 }

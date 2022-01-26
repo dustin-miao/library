@@ -3,6 +3,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+#include "utility/addmod.hpp"
 #include "data-structure/lazy-segment-tree.hpp"
 
 const int MAX = 5e5 + 5;
@@ -20,11 +21,11 @@ int main() {
 		const L Ldval = {1, 0};
 
 		void apply(T &a, L &b, L c, int l, int r) {
-			a = (c.first * a % MOD + c.second * (r - l + 1)) % MOD;
-			b = {c.first * b.first % MOD, (c.first * b.second + c.second) % MOD};
+			a = addmod(c.first * a % MOD, c.second * (r - l + 1) % MOD, MOD);
+			b = {c.first * b.first % MOD, addmod(c.first * b.second, c.second, MOD)};
 		}	
 
-		T merge(T a, T b) { return (a + b) % MOD; }
+		T merge(T a, T b) { return addmod(a, b, MOD); }
 	};
 	
 	Segtree<stinfo> sgt(N);

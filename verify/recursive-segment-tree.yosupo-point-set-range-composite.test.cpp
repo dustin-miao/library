@@ -3,6 +3,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+#include "utility/addmod.hpp"
 #include "data-structure/recursive-segment-tree.hpp"
 
 const int MAX = 5e5 + 5;
@@ -14,14 +15,10 @@ int main() {
 
 	struct stinfo {
 		struct node { long long a, b; };
-
 		using T = node;
-
 		const T dval = {1, 0};
-
 		void apply(T &a, T b) { a = b; }
-
-		T merge(T a, T b) { return {a.a * b.a % MOD, (b.a * a.b + b.b) % MOD}; }
+		T merge(T a, T b) { return {a.a * b.a % MOD, addmod(b.a * a.b % MOD, b.b, MOD)}; }
 	};
 
 	Segtree<stinfo> sgt(N);
@@ -30,6 +27,7 @@ int main() {
 		cin >> a >> b;
 		sgt.update(i, {a, b});
 	}
+
 	while (Q--) {
 		int t; cin >> t;
 		if (t == 0) {
@@ -40,7 +38,7 @@ int main() {
 			int l, r; long long x;
 			cin >> l >> r >> x;
 			auto [a, b] = sgt.query(l, r - 1);
-			cout << (a * x + b) % MOD << '\n';
+			cout << addmod(a * x % MOD, b, MOD << '\n';
 		}
 	}
 }
