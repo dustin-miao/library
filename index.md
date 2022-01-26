@@ -30,6 +30,9 @@ data:
       path: graph/dijkstra.hpp
       title: Dijkstra's Algorithm
     - icon: ':heavy_check_mark:'
+      path: graph/floyd-warshall.hpp
+      title: Floyd-Warshall Algorithm
+    - icon: ':heavy_check_mark:'
       path: graph/kruskal.hpp
       title: Kruskal's Algorithm
   - name: utility
@@ -58,6 +61,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/dijkstra.aizu-single-source-shortest-path.test.cpp
       title: verify/dijkstra.aizu-single-source-shortest-path.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/floyd-warshall.all-pairs-shortest-path.test.cpp
+      title: verify/floyd-warshall.all-pairs-shortest-path.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/general-segment-tree.aizu-range-minimum-query.test.cpp
       title: verify/general-segment-tree.aizu-range-minimum-query.test.cpp
