@@ -4,6 +4,18 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: verify/lazy-segment-tree.aizu-RMQ-and-RAQ.test.cpp
+    title: verify/lazy-segment-tree.aizu-RMQ-and-RAQ.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/lazy-segment-tree.aizu-RMQ-and-RUQ.test.cpp
+    title: verify/lazy-segment-tree.aizu-RMQ-and-RUQ.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/lazy-segment-tree.aizu-RSQ-and-RAQ.test.cpp
+    title: verify/lazy-segment-tree.aizu-RSQ-and-RAQ.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/lazy-segment-tree.aizu-RSQ-and-RUQ.test.cpp
+    title: verify/lazy-segment-tree.aizu-RSQ-and-RUQ.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/lazy-segment-tree.yosupo-range-affine-range-sum.test.cpp
     title: verify/lazy-segment-tree.yosupo-range-affine-range-sum.test.cpp
   _isVerificationFailed: false
@@ -59,6 +71,10 @@ data:
   timestamp: '2022-01-23 17:49:10-08:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/lazy-segment-tree.aizu-RSQ-and-RAQ.test.cpp
+  - verify/lazy-segment-tree.aizu-RMQ-and-RUQ.test.cpp
+  - verify/lazy-segment-tree.aizu-RSQ-and-RUQ.test.cpp
+  - verify/lazy-segment-tree.aizu-RMQ-and-RAQ.test.cpp
   - verify/lazy-segment-tree.yosupo-range-affine-range-sum.test.cpp
 documentation_of: data-structure/lazy-segment-tree.hpp
 layout: document

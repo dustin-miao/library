@@ -68,6 +68,18 @@ data:
       path: verify/kruskal.aizu-minimum-spanning-tree.test.cpp
       title: verify/kruskal.aizu-minimum-spanning-tree.test.cpp
     - icon: ':heavy_check_mark:'
+      path: verify/lazy-segment-tree.aizu-RMQ-and-RAQ.test.cpp
+      title: verify/lazy-segment-tree.aizu-RMQ-and-RAQ.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/lazy-segment-tree.aizu-RMQ-and-RUQ.test.cpp
+      title: verify/lazy-segment-tree.aizu-RMQ-and-RUQ.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/lazy-segment-tree.aizu-RSQ-and-RAQ.test.cpp
+      title: verify/lazy-segment-tree.aizu-RSQ-and-RAQ.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/lazy-segment-tree.aizu-RSQ-and-RUQ.test.cpp
+      title: verify/lazy-segment-tree.aizu-RSQ-and-RUQ.test.cpp
+    - icon: ':heavy_check_mark:'
       path: verify/lazy-segment-tree.yosupo-range-affine-range-sum.test.cpp
       title: verify/lazy-segment-tree.yosupo-range-affine-range-sum.test.cpp
     - icon: ':heavy_check_mark:'
