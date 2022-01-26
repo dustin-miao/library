@@ -2,11 +2,8 @@
 "verify/binary-index-tree.yosupo-point-add-range-sum.test.cpp": "2022-01-26 05:31:56 -0800",
 "verify/cycle-finding.yosupo-cycle-detection.test.cpp": "2022-01-24 05:58:44 -0800",
 "verify/general-segment-tree.yosupo-point-add-range-sum.test.cpp": "2022-01-26 05:31:56 -0800",
-"verify/general-segment-tree.yosupo-point-set-range-composite.test.cpp": "2022-01-26 05:31:56 -0800",
 "verify/kruskal.aizu-minimum-spanning-tree.test.cpp": "2022-01-24 09:06:47 -0800",
-"verify/lazy-segment-tree.yosupo-range-affine-range-sum.test.cpp": "2022-01-26 05:31:56 -0800",
 "verify/recursive-segment-tree.yosupo-point-add-range-sum.test.cpp": "2022-01-26 05:31:56 -0800",
-"verify/recursive-segment-tree.yosupo-point-set-range-composite.test.cpp": "2022-01-26 05:31:56 -0800",
 "verify/segment-tree.yosupo-point-add-range-sum.test.cpp": "2022-01-26 05:31:56 -0800",
 "verify/union-find.yosupo-unionfind.test.cpp": "2022-01-22 21:46:52 -0800"
 }
