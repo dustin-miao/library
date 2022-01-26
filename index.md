@@ -27,6 +27,9 @@ data:
       path: graph/cycle-finding.hpp
       title: Cycle Finding
     - icon: ':heavy_check_mark:'
+      path: graph/dijkstra.hpp
+      title: Dijkstra's Algorithm
+    - icon: ':heavy_check_mark:'
       path: graph/kruskal.hpp
       title: Kruskal's Algorithm
   - name: utility
@@ -37,7 +40,7 @@ data:
     - icon: ':warning:'
       path: utility/chmax.hpp
       title: Chmax
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: utility/chmin.hpp
       title: Chmin
   verificationCategories:
@@ -49,6 +52,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/cycle-finding.yosupo-cycle-detection.test.cpp
       title: verify/cycle-finding.yosupo-cycle-detection.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/dijkstra.aizu-shortest-path.test.cpp
+      title: verify/dijkstra.aizu-shortest-path.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/dijkstra.aizu-single-source-shortest-path.test.cpp
+      title: verify/dijkstra.aizu-single-source-shortest-path.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/general-segment-tree.yosupo-point-add-range-sum.test.cpp
       title: verify/general-segment-tree.yosupo-point-add-range-sum.test.cpp

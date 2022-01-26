@@ -1,11 +1,20 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: graph/dijkstra.hpp
+    title: Dijkstra's Algorithm
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/dijkstra.aizu-shortest-path.test.cpp
+    title: verify/dijkstra.aizu-shortest-path.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/dijkstra.aizu-single-source-shortest-path.test.cpp
+    title: verify/dijkstra.aizu-single-source-shortest-path.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"utility/chmin.hpp\"\ntemplate<typename T>\nbool chmin(T\
@@ -16,10 +25,13 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: utility/chmin.hpp
-  requiredBy: []
+  requiredBy:
+  - graph/dijkstra.hpp
   timestamp: '2022-01-26 05:57:15-08:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/dijkstra.aizu-single-source-shortest-path.test.cpp
+  - verify/dijkstra.aizu-shortest-path.test.cpp
 documentation_of: utility/chmin.hpp
 layout: document
 title: Chmin
