@@ -50,6 +50,9 @@ data:
   - name: verify
     pages:
     - icon: ':heavy_check_mark:'
+      path: verify/binary-index-tree.aizu-range-sum-query.test.cpp
+      title: verify/binary-index-tree.aizu-range-sum-query.test.cpp
+    - icon: ':heavy_check_mark:'
       path: verify/binary-index-tree.yosupo-point-add-range-sum.test.cpp
       title: verify/binary-index-tree.yosupo-point-add-range-sum.test.cpp
     - icon: ':heavy_check_mark:'
