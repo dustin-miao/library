@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/cycle-finding.hpp
     title: Cycle Finding
   - icon: ':question:'
@@ -9,9 +9,9 @@ data:
     title: Graph Utility
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/cycle_detection
@@ -55,40 +55,39 @@ data:
     \tM[u][v] = w;\n\treturn M;\n}\n\ntemplate<typename T>\nmatgraph<T> to_matgraph(size_t\
     \ n, const edgelist<T> &E, const T dval) {\n\tmatgraph<T> M(n, vector<T>(n, dval));\n\
     \tfor (auto [u, v, w] : E)\n\t\tM[u][v] = w;\n\treturn M;\n}\n#line 2 \"graph/cycle-finding.hpp\"\
-    \n\ntemplate<typename T>\nvector<pair<int, int>> find_cycle(const u_graph<T> &G,\
-    \ const bool directed = true) {\n\tsize_t n = G.size();\n\tvector<int> idx(n,\
-    \ -1), vis(n, 0);\n\tvector<pair<int, int>> cycle;\n\tbool fin = 0;\n\n\tconst\
-    \ auto dfs = [&](const auto &self, int u, int id, int p) -> int {\n\t\tidx[u]\
-    \ = id, vis[u] = 1;\n\t\tfor (int v : G[u]) {\n\t\t\tif (fin)\n\t\t\t\treturn\
-    \ -1;\n\t\t\tif (!directed && v == p)\n\t\t\t\tcontinue;\n\t\t\tif (idx[u] ==\
-    \ idx[v]) {\n\t\t\t\tcycle.emplace_back(u, v);\n\t\t\t\treturn v;\n\t\t\t}\n\t\
-    \t\tif (vis[v])\n\t\t\t\tcontinue;\n\t\t\tint k = self(self, v, id, u);\n\t\t\t\
-    if (k != -1) {\n\t\t\t\tcycle.emplace_back(u, v);\n\t\t\t\tif (u == k) {\n\t\t\
-    \t\t\tfin = 1;\n\t\t\t\t\treturn -1;\n\t\t\t\t}\n\t\t\t\treturn k;\n\t\t\t}\n\t\
-    \t}\n\t\tidx[u] = -1;\n\t\treturn -1;\n\t};\n\n\tfor (int i = 0; i < n; i++) {\n\
-    \t\tif (vis[i])\n\t\t\tcontinue;\n\t\tdfs(dfs, i, i, -1);\n\t\tif (fin) {\n\t\t\
-    \treverse(cycle.begin(), cycle.end());\n\t\t\treturn cycle;\n\t\t}\n\t}\n\treturn\
-    \ vector<pair<int, int>>{};\n}\n\ntemplate<typename T>\nvector<pair<int, int>>\
-    \ find_cycle(const graph<T> &G, const bool directed = true) {\n\tsize_t n = G.size();\n\
-    \tvector<int> idx(n, -1), vis(n, 0);\n\tvector<pair<int, int>> cycle;\n\tbool\
-    \ fin = 0;\n\n\tconst auto dfs = [&](const auto &self, int u, int id, int p) ->\
-    \ int {\n\t\tidx[u] = id, vis[u] = 1;\n\t\tfor (auto [v, w] : G[u]) {\n\t\t\t\
-    if (fin)\n\t\t\t\treturn -1;\n\t\t\tif (!directed && v == p)\n\t\t\t\tcontinue;\n\
-    \t\t\tif (idx[u] == idx[v]) {\n\t\t\t\tcycle.emplace_back(u, v);\n\t\t\t\treturn\
-    \ v;\n\t\t\t}\n\t\t\tif (vis[v])\n\t\t\t\tcontinue;\n\t\t\tint k = self(self,\
-    \ v, id, u);\n\t\t\tif (k != -1) {\n\t\t\t\tcycle.emplace_back(u, v);\n\t\t\t\t\
-    if (u == k) {\n\t\t\t\t\tfin = 1;\n\t\t\t\t\treturn -1;\n\t\t\t\t}\n\t\t\t\treturn\
-    \ k;\n\t\t\t}\n\t\t}\n\t\tidx[u] = -1;\n\t\treturn -1;\n\t};\n\n\tfor (int i =\
-    \ 0; i < n; i++) {\n\t\tif (vis[i])\n\t\t\tcontinue;\n\t\tdfs(dfs, i, i, -1);\n\
-    \t\tif (fin) {\n\t\t\treverse(cycle.begin(), cycle.end());\n\t\t\treturn cycle;\n\
-    \t\t}\n\t}\n\treturn vector<pair<int, int>>{};\n}\n#line 7 \"verify/cycle-finding.yosupo-cycle-detection.test.cpp\"\
-    \n\nint main() {\n\tint N, M;\n\tcin >> N >> M;\n\tu_graph G(N);\n\tmap<pair<int,\
-    \ int>, vector<int>> id;\n\tfor (int i = 0; i < M; i++) {\n\t\tint u, v;\n\t\t\
-    cin >> u >> v;\n\t\tG[u].push_back(v);\n\t\tid[{u, v}].push_back(i);\n\t}\n\n\t\
-    auto cycle = find_cycle(G);\n\n\tif (cycle.empty()) {\n\t\tcout << -1 << '\\n';\n\
-    \t} else {\n\t\tcout << cycle.size() << '\\n';\n\t\tfor (auto [u, v] : cycle)\
-    \ {\n\t\t\tauto &vec = id[{u, v}];\n\t\t\tcout << vec.back() << '\\n';\n\t\t\t\
-    vec.pop_back();\n\t\t}\n\t}\n}\n"
+    \n\nvector<pair<int, int>> find_cycle(const u_graph &G, const bool directed =\
+    \ true) {\n\tsize_t n = G.size();\n\tvector<int> idx(n, -1), vis(n, 0);\n\tvector<pair<int,\
+    \ int>> cycle;\n\tbool fin = 0;\n\n\tconst auto dfs = [&](const auto &self, int\
+    \ u, int id, int p) -> int {\n\t\tidx[u] = id, vis[u] = 1;\n\t\tfor (int v : G[u])\
+    \ {\n\t\t\tif (fin)\n\t\t\t\treturn -1;\n\t\t\tif (!directed && v == p)\n\t\t\t\
+    \tcontinue;\n\t\t\tif (idx[u] == idx[v]) {\n\t\t\t\tcycle.emplace_back(u, v);\n\
+    \t\t\t\treturn v;\n\t\t\t}\n\t\t\tif (vis[v])\n\t\t\t\tcontinue;\n\t\t\tint k\
+    \ = self(self, v, id, u);\n\t\t\tif (k != -1) {\n\t\t\t\tcycle.emplace_back(u,\
+    \ v);\n\t\t\t\tif (u == k) {\n\t\t\t\t\tfin = 1;\n\t\t\t\t\treturn -1;\n\t\t\t\
+    \t}\n\t\t\t\treturn k;\n\t\t\t}\n\t\t}\n\t\tidx[u] = -1;\n\t\treturn -1;\n\t};\n\
+    \n\tfor (int i = 0; i < n; i++) {\n\t\tif (vis[i])\n\t\t\tcontinue;\n\t\tdfs(dfs,\
+    \ i, i, -1);\n\t\tif (fin) {\n\t\t\treverse(cycle.begin(), cycle.end());\n\t\t\
+    \treturn cycle;\n\t\t}\n\t}\n\treturn vector<pair<int, int>>{};\n}\n\ntemplate<typename\
+    \ T>\nvector<pair<int, int>> find_cycle(const graph<T> &G, const bool directed\
+    \ = true) {\n\tsize_t n = G.size();\n\tvector<int> idx(n, -1), vis(n, 0);\n\t\
+    vector<pair<int, int>> cycle;\n\tbool fin = 0;\n\n\tconst auto dfs = [&](const\
+    \ auto &self, int u, int id, int p) -> int {\n\t\tidx[u] = id, vis[u] = 1;\n\t\
+    \tfor (auto [v, w] : G[u]) {\n\t\t\tif (fin)\n\t\t\t\treturn -1;\n\t\t\tif (!directed\
+    \ && v == p)\n\t\t\t\tcontinue;\n\t\t\tif (idx[u] == idx[v]) {\n\t\t\t\tcycle.emplace_back(u,\
+    \ v);\n\t\t\t\treturn v;\n\t\t\t}\n\t\t\tif (vis[v])\n\t\t\t\tcontinue;\n\t\t\t\
+    int k = self(self, v, id, u);\n\t\t\tif (k != -1) {\n\t\t\t\tcycle.emplace_back(u,\
+    \ v);\n\t\t\t\tif (u == k) {\n\t\t\t\t\tfin = 1;\n\t\t\t\t\treturn -1;\n\t\t\t\
+    \t}\n\t\t\t\treturn k;\n\t\t\t}\n\t\t}\n\t\tidx[u] = -1;\n\t\treturn -1;\n\t};\n\
+    \n\tfor (int i = 0; i < n; i++) {\n\t\tif (vis[i])\n\t\t\tcontinue;\n\t\tdfs(dfs,\
+    \ i, i, -1);\n\t\tif (fin) {\n\t\t\treverse(cycle.begin(), cycle.end());\n\t\t\
+    \treturn cycle;\n\t\t}\n\t}\n\treturn vector<pair<int, int>>{};\n}\n#line 7 \"\
+    verify/cycle-finding.yosupo-cycle-detection.test.cpp\"\n\nint main() {\n\tint\
+    \ N, M;\n\tcin >> N >> M;\n\tu_graph G(N);\n\tmap<pair<int, int>, vector<int>>\
+    \ id;\n\tfor (int i = 0; i < M; i++) {\n\t\tint u, v;\n\t\tcin >> u >> v;\n\t\t\
+    G[u].push_back(v);\n\t\tid[{u, v}].push_back(i);\n\t}\n\n\tauto cycle = find_cycle(G);\n\
+    \n\tif (cycle.empty()) {\n\t\tcout << -1 << '\\n';\n\t} else {\n\t\tcout << cycle.size()\
+    \ << '\\n';\n\t\tfor (auto [u, v] : cycle) {\n\t\t\tauto &vec = id[{u, v}];\n\t\
+    \t\tcout << vec.back() << '\\n';\n\t\t\tvec.pop_back();\n\t\t}\n\t}\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/cycle_detection\"\n\n#include\
     \ <bits/stdc++.h>\nusing namespace std;\n\n#include \"graph/cycle-finding.hpp\"\
     \n\nint main() {\n\tint N, M;\n\tcin >> N >> M;\n\tu_graph G(N);\n\tmap<pair<int,\
@@ -104,8 +103,8 @@ data:
   isVerificationFile: true
   path: verify/cycle-finding.yosupo-cycle-detection.test.cpp
   requiredBy: []
-  timestamp: '2022-02-02 10:15:02-08:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-02-02 11:33:32-08:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/cycle-finding.yosupo-cycle-detection.test.cpp
 layout: document

@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/cycle-finding.hpp
     title: Cycle Finding
   - icon: ':heavy_check_mark:'
@@ -15,7 +15,7 @@ data:
     path: graph/kruskal.hpp
     title: Kruskal's Algorithm
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/cycle-finding.yosupo-cycle-detection.test.cpp
     title: verify/cycle-finding.yosupo-cycle-detection.test.cpp
   - icon: ':heavy_check_mark:'

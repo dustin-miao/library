@@ -23,7 +23,7 @@ data:
       title: Union Find
   - name: graph
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph/cycle-finding.hpp
       title: Cycle Finding
     - icon: ':heavy_check_mark:'
@@ -58,7 +58,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/binary-index-tree.yosupo-point-add-range-sum.test.cpp
       title: verify/binary-index-tree.yosupo-point-add-range-sum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/cycle-finding.yosupo-cycle-detection.test.cpp
       title: verify/cycle-finding.yosupo-cycle-detection.test.cpp
     - icon: ':heavy_check_mark:'
