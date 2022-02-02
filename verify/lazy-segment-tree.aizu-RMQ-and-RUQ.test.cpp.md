@@ -17,26 +17,26 @@ data:
   bundledCode: "#line 1 \"verify/lazy-segment-tree.aizu-RMQ-and-RUQ.test.cpp\"\n#define\
     \ PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_F\"\
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#line 1 \"data-structure/lazy-segment-tree.hpp\"\
-    \ntemplate<class Base>\nclass Segtree : public Base {\n\tusing node = typename\
-    \ Base::T;\n\tusing upd = typename Base::L;\n\nprotected:\n\tsize_t n;\n\tvector<node>\
-    \ tree;\n\tvector<upd> lazy;\n\nprivate:\n\tvoid pushdown(int t, int tl, int tr)\
-    \ {\n\t\tif (lazy[t] == Base::Ldval)\n\t\t\treturn;\n\t\tint tm = (tl + tr) /\
-    \ 2;\n\t\tBase::apply(tree[t * 2], lazy[t * 2], lazy[t], tl, tm);\n\t\tBase::apply(tree[t\
-    \ * 2 + 1], lazy[t * 2 + 1], lazy[t], tm + 1, tr);\n\t\tlazy[t] = Base::Ldval;\n\
-    \t}\n\n\tvoid update(int l, int r, upd v, int t, int tl, int tr) {\n\t\tif (r\
-    \ < tl || tr < l)\n\t\t\treturn;\n\t\tif (l <= tl && tr <= r) {\n\t\t\tBase::apply(tree[t],\
-    \ lazy[t], v, tl, tr);\n\t\t\treturn;\n\t\t}\n\t\tpushdown(t, tl, tr);\n\t\tint\
-    \ tm = (tl + tr) / 2;\n\t\tupdate(l, r, v, t * 2, tl, tm);\n\t\tupdate(l, r, v,\
-    \ t * 2 + 1, tm + 1, tr);\n\t\ttree[t] = Base::merge(tree[t * 2], tree[t * 2 +\
-    \ 1]);\n\t}\n\n\tnode query(int l, int r, int t, int tl, int tr) {\n\t\tif (r\
-    \ < tl || tr < l)\n\t\t\treturn Base::Tdval;\n\t\tif (l <= tl && tr <= r)\n\t\t\
-    \treturn tree[t];\n\t\tpushdown(t, tl, tr);\n\t\tint tm = (tl + tr) / 2;\n\t\t\
-    return Base::merge(query(l, r, t * 2, tl, tm), query(l, r, t * 2 + 1, tm + 1,\
-    \ tr));\n\t}\n\npublic:\n\tSegtree() = default;\n\n\tSegtree(size_t _n) { init(_n);\
-    \ }\n\n\tvoid init(size_t _n) {\n\t\tn = _n;\n\t\ttree.assign(4 * n, Base::Tdval);\n\
-    \t\tlazy.assign(4 * n, Base::Ldval);\n\t}\n\n\tvoid update(int l, int r, upd v)\
-    \ { update(l, r, v, 1, 0, n - 1); }\n\n\tnode query(int l, int r) { return query(l,\
-    \ r, 1, 0, n - 1); }\n};\n#line 7 \"verify/lazy-segment-tree.aizu-RMQ-and-RUQ.test.cpp\"\
+    \ntemplate<class Base>\nclass Segtree : public Base {\n\tusing T = typename Base::T;\n\
+    \tusing L = typename Base::L;\n\tusing Base::Tdval;\n\tusing Base::Ldval;\n\t\
+    using Base::merge;\n\tusing Base::apply;\n\nprotected:\n\tsize_t n;\n\tvector<T>\
+    \ tree;\n\tvector<L> lazy;\n\nprivate:\n\tvoid pushdown(int t, int tl, int tr)\
+    \ {\n\t\tif (lazy[t] == Ldval)\n\t\t\treturn;\n\t\tint tm = (tl + tr) / 2;\n\t\
+    \tapply(tree[t * 2], lazy[t * 2], lazy[t], tl, tm);\n\t\tapply(tree[t * 2 + 1],\
+    \ lazy[t * 2 + 1], lazy[t], tm + 1, tr);\n\t\tlazy[t] = Ldval;\n\t}\n\n\tvoid\
+    \ update(int l, int r, L v, int t, int tl, int tr) {\n\t\tif (r < tl || tr < l)\n\
+    \t\t\treturn;\n\t\tif (l <= tl && tr <= r) {\n\t\t\tapply(tree[t], lazy[t], v,\
+    \ tl, tr);\n\t\t\treturn;\n\t\t}\n\t\tpushdown(t, tl, tr);\n\t\tint tm = (tl +\
+    \ tr) / 2;\n\t\tupdate(l, r, v, t * 2, tl, tm);\n\t\tupdate(l, r, v, t * 2 + 1,\
+    \ tm + 1, tr);\n\t\ttree[t] = merge(tree[t * 2], tree[t * 2 + 1]);\n\t}\n\n\t\
+    T query(int l, int r, int t, int tl, int tr) {\n\t\tif (r < tl || tr < l)\n\t\t\
+    \treturn Tdval;\n\t\tif (l <= tl && tr <= r)\n\t\t\treturn tree[t];\n\t\tpushdown(t,\
+    \ tl, tr);\n\t\tint tm = (tl + tr) / 2;\n\t\treturn merge(query(l, r, t * 2, tl,\
+    \ tm), query(l, r, t * 2 + 1, tm + 1, tr));\n\t}\n\npublic:\n\tSegtree() = default;\n\
+    \n\tSegtree(size_t _n) { init(_n); }\n\n\tvoid init(size_t _n) {\n\t\tn = _n;\n\
+    \t\ttree.assign(4 * n, Tdval);\n\t\tlazy.assign(4 * n, Ldval);\n\t}\n\n\tvoid\
+    \ update(int l, int r, L v) { update(l, r, v, 1, 0, n - 1); }\n\n\tT query(int\
+    \ l, int r) { return query(l, r, 1, 0, n - 1); }\n};\n#line 7 \"verify/lazy-segment-tree.aizu-RMQ-and-RUQ.test.cpp\"\
     \n\nint main() {\n\tint N, Q;\n\tcin >> N >> Q;\n\n\tstruct stinfo {\n\t\tusing\
     \ T = long long;\n\t\tusing L = long long;\n\n\t\tconst T Tdval = LLONG_MAX;\n\
     \t\tconst L Ldval = LLONG_MAX;\n\n\t\tvoid apply(T &a, L &b, L c, int l, int r)\
@@ -62,7 +62,7 @@ data:
   isVerificationFile: true
   path: verify/lazy-segment-tree.aizu-RMQ-and-RUQ.test.cpp
   requiredBy: []
-  timestamp: '2022-01-26 06:50:04-08:00'
+  timestamp: '2022-02-02 15:19:45-08:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/lazy-segment-tree.aizu-RMQ-and-RUQ.test.cpp

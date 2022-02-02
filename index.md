@@ -12,7 +12,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/lazy-segment-tree.hpp
       title: Lazy Segment Tree
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: data-structure/recursive-segment-tree.hpp
       title: Recursive Segment Tree
     - icon: ':heavy_check_mark:'
@@ -40,7 +40,7 @@ data:
       title: Kruskal's Algorithm
   - name: utility
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: utility/addmod.hpp
       title: Addmod
     - icon: ':warning:'
@@ -100,16 +100,16 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/lazy-segment-tree.yosupo-range-affine-range-sum.test.cpp
       title: verify/lazy-segment-tree.yosupo-range-affine-range-sum.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/recursive-segment-tree.aizu-range-minimum-query.test.cpp
       title: verify/recursive-segment-tree.aizu-range-minimum-query.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/recursive-segment-tree.aizu-range-sum-query.test.cpp
       title: verify/recursive-segment-tree.aizu-range-sum-query.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/recursive-segment-tree.yosupo-point-add-range-sum.test.cpp
       title: verify/recursive-segment-tree.yosupo-point-add-range-sum.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/recursive-segment-tree.yosupo-point-set-range-composite.test.cpp
       title: verify/recursive-segment-tree.yosupo-point-set-range-composite.test.cpp
     - icon: ':heavy_check_mark:'

@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: data-structure/general-segment-tree.hpp
     title: General Segment Tree
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utility/addmod.hpp
     title: Addmod
   _extendedRequiredBy: []
@@ -22,16 +22,16 @@ data:
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#line 1 \"utility/addmod.hpp\"\
     \ntemplate<typename T>\nT addmod(T a, T b, long long MOD) {\n\tT t = a + b;\n\t\
     return t >= MOD ? t - MOD : t;\n}\n#line 1 \"data-structure/general-segment-tree.hpp\"\
-    \ntemplate<class Base>\nclass Segtree : public Base {\n\tusing node = typename\
-    \ Base::T;\n\nprotected:\n\tsize_t n;\n\tvector<node> tree;\n\npublic:\n\tSegtree()\
-    \ = default;\n\n\tSegtree(size_t _n) { init(_n); }\n\n\tvoid init(size_t _n) {\n\
-    \t\tfor (n = 1; n < _n; n *= 2);\n\t\ttree.assign(n * 2, Base::dval);\n\t}\n\n\
-    \tvoid update(int i, node v) {\n\t\tfor (Base::apply(tree[i += n], v); i >>= 1;)\n\
-    \t\t\ttree[i] = Base::merge(tree[i << 1], tree[i << 1 | 1]);\n\t}\n\n\tnode query(int\
-    \ l, int r) {\n\t\tnode lret = Base::dval, rret = Base::dval;\n\t\tfor (l += n,\
-    \ r += n + 1; l < r; l >>= 1, r >>= 1) {\n\t\t\tif (l & 1) lret = Base::merge(lret,\
-    \ tree[l++]);\n\t\t\tif (r & 1) rret = Base::merge(tree[--r], rret);\n\t\t}\n\t\
-    \treturn Base::merge(lret, rret);\n\t}\n\n\tnode operator[](int i) { return tree[i\
+    \ntemplate<class Base>\nclass Segtree : public Base {\n\tusing T = typename Base::T;\n\
+    \tusing Base::dval;\n\tusing Base::merge;\n\tusing Base::apply;\n\nprotected:\n\
+    \tsize_t n;\n\tvector<T> tree;\n\npublic:\n\tSegtree() = default;\n\n\tSegtree(size_t\
+    \ _n) { init(_n); }\n\n\tvoid init(size_t _n) {\n\t\tfor (n = 1; n < _n; n *=\
+    \ 2);\n\t\ttree.assign(n * 2, dval);\n\t}\n\n\tvoid update(int i, T v) {\n\t\t\
+    for (apply(tree[i += n], v); i >>= 1;)\n\t\t\ttree[i] = merge(tree[i << 1], tree[i\
+    \ << 1 | 1]);\n\t}\n\n\tT query(int l, int r) {\n\t\tT lret = dval, rret = dval;\n\
+    \t\tfor (l += n, r += n + 1; l < r; l >>= 1, r >>= 1) {\n\t\t\tif (l & 1) lret\
+    \ = merge(lret, tree[l++]);\n\t\t\tif (r & 1) rret = merge(tree[--r], rret);\n\
+    \t\t}\n\t\treturn merge(lret, rret);\n\t}\n\n\tT operator[](int i) { return tree[i\
     \ += n]; }\n};\n#line 8 \"verify/general-segment-tree.yosupo-point-set-range-composite.test.cpp\"\
     \n\nconst int MAX = 5e5 + 5;\nconst long long MOD = 998244353;\n\nint main() {\n\
     \tint N, Q;\n\tcin >> N >> Q;\n\n\tstruct stinfo {\n\t\tstruct node { long long\
@@ -63,7 +63,7 @@ data:
   isVerificationFile: true
   path: verify/general-segment-tree.yosupo-point-set-range-composite.test.cpp
   requiredBy: []
-  timestamp: '2022-01-26 05:51:23-08:00'
+  timestamp: '2022-02-02 15:19:45-08:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/general-segment-tree.yosupo-point-set-range-composite.test.cpp

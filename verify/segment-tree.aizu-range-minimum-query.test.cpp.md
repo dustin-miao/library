@@ -17,16 +17,16 @@ data:
   bundledCode: "#line 1 \"verify/segment-tree.aizu-range-minimum-query.test.cpp\"\n\
     #define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_A\"\
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#line 1 \"data-structure/segment-tree.hpp\"\
-    \ntemplate<class Base>\nclass Segtree : public Base {\n\tusing node = typename\
-    \ Base::T;\n\nprotected:\n\tsize_t n;\n\tvector<node> tree;\n\npublic:\n\tSegtree()\
-    \ = default;\n\n\tSegtree(size_t _n) { init(_n); }\n\n\tvoid init(size_t _n) {\n\
-    \t\tn = _n;\n\t\ttree.assign(n * 2, Base::dval);\n\t}\n\n\tvoid update(int i,\
-    \ node v) {\n\t\tfor (Base::apply(tree[i += n], v); i >>= 1;)\n\t\t\ttree[i] =\
-    \ Base::merge(tree[i << 1], tree[i << 1 | 1]);\n\t}\n\n\tnode query(int l, int\
-    \ r) {\n\t\tnode ret = Base::dval;\n\t\tfor (l += n, r += n + 1; l < r; l >>=\
-    \ 1, r >>= 1) {\n\t\t\tif (l & 1) ret = Base::merge(ret, tree[l++]);\n\t\t\tif\
-    \ (r & 1) ret = Base::merge(ret, tree[--r]);\n\t\t}\n\t\treturn ret;\n\t}\n\n\t\
-    node operator[](int i) { return tree[i += n]; }\n};\n#line 7 \"verify/segment-tree.aizu-range-minimum-query.test.cpp\"\
+    \ntemplate<class Base>\nclass Segtree : public Base {\n\tusing T = typename Base::T;\n\
+    \tusing Base::dval;\n\tusing Base::merge;\n\tusing Base::apply;\n\nprotected:\n\
+    \tsize_t n;\n\tvector<T> tree;\n\npublic:\n\tSegtree() = default;\n\n\tSegtree(size_t\
+    \ _n) { init(_n); }\n\n\tvoid init(size_t _n) {\n\t\tn = _n;\n\t\ttree.assign(n\
+    \ * 2, dval);\n\t}\n\n\tvoid update(int i, T v) {\n\t\tfor (apply(tree[i += n],\
+    \ v); i >>= 1;)\n\t\t\ttree[i] = merge(tree[i << 1], tree[i << 1 | 1]);\n\t}\n\
+    \n\tT query(int l, int r) {\n\t\tT ret = dval;\n\t\tfor (l += n, r += n + 1; l\
+    \ < r; l >>= 1, r >>= 1) {\n\t\t\tif (l & 1) ret = merge(ret, tree[l++]);\n\t\t\
+    \tif (r & 1) ret = merge(ret, tree[--r]);\n\t\t}\n\t\treturn ret;\n\t}\n\n\tT\
+    \ operator[](int i) { return tree[i += n]; }\n};\n#line 7 \"verify/segment-tree.aizu-range-minimum-query.test.cpp\"\
     \n\nint main() {\n\tint N, Q;\n\tcin >> N >> Q;\n\n\tstruct stinfo {\n\t\tusing\
     \ T = long long;\n\t\tconst T dval = LLONG_MAX;\n\t\tvoid apply(T &a, T b) { a\
     \ = b; }\n\t\tT merge(T a, T b) { return min(a, b); }\n\t};\n\n\tSegtree<stinfo>\
@@ -50,7 +50,7 @@ data:
   isVerificationFile: true
   path: verify/segment-tree.aizu-range-minimum-query.test.cpp
   requiredBy: []
-  timestamp: '2022-01-26 09:19:50-08:00'
+  timestamp: '2022-02-02 15:19:45-08:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/segment-tree.aizu-range-minimum-query.test.cpp
