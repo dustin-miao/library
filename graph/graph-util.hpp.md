@@ -11,7 +11,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/floyd-warshall.hpp
     title: Floyd-Warshall Algorithm
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/kruskal.hpp
     title: Kruskal's Algorithm
   _extendedVerifiedWith:
@@ -27,12 +27,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/floyd-warshall.all-pairs-shortest-path.test.cpp
     title: verify/floyd-warshall.all-pairs-shortest-path.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/kruskal.aizu-minimum-spanning-tree.test.cpp
     title: verify/kruskal.aizu-minimum-spanning-tree.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"graph/graph-util.hpp\"\nusing u_graph = vector<vector<int>>;\n\
@@ -115,7 +115,7 @@ data:
   - graph/cycle-finding.hpp
   - graph/dijkstra.hpp
   timestamp: '2022-02-02 10:15:02-08:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/kruskal.aizu-minimum-spanning-tree.test.cpp
   - verify/floyd-warshall.all-pairs-shortest-path.test.cpp

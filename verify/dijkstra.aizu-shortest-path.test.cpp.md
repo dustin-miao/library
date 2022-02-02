@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/dijkstra.hpp
     title: Dijkstra's Algorithm
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: graph/graph-util.hpp
     title: Graph Utility
   - icon: ':heavy_check_mark:'

@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/cycle-finding.hpp
     title: Cycle Finding
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: graph/graph-util.hpp
     title: Graph Utility
   _extendedRequiredBy: []

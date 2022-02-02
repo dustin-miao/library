@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/union-find.hpp
     title: Union Find
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: graph/graph-util.hpp
     title: Graph Utility
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/kruskal.hpp
     title: Kruskal's Algorithm
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_A
@@ -68,18 +68,17 @@ data:
     \tM[u][v] = w;\n\treturn M;\n}\n\ntemplate<typename T>\nmatgraph<T> to_matgraph(size_t\
     \ n, const edgelist<T> &E, const T dval) {\n\tmatgraph<T> M(n, vector<T>(n, dval));\n\
     \tfor (auto [u, v, w] : E)\n\t\tM[u][v] = w;\n\treturn M;\n}\n#line 3 \"graph/kruskal.hpp\"\
-    \n\ntemplate<typename T>\ngraph<T> kruskal(size_t n, const edgelist<T> &E) {\n\
-    \tgraph<T> mst(n);\n\tif (n <= 1)\n\t\treturn mst;\n\tUnionFind dsu(n);\n\tsort(edges.begin(),\
-    \ edges.end(), [](const tuple<int, int, T> &a, const tuple<int, int, T> &b) {\
-    \ return get<2>(a) < get<2>(b); });\n\tfor (auto [u, v, w] : edges) {\n\t\tif\
-    \ (dsu.merge(u, v)) {\n\t\t\tmst[u].emplace_back(v, w);\n\t\t\tmst[v].emplace_back(u,\
-    \ w);\n\t\t}\n\t\tif (dsu.size(0) == n)\n\t\t\tbreak;\n\t}\n\treturn mst;\n}\n\
-    #line 7 \"verify/kruskal.aizu-minimum-spanning-tree.test.cpp\"\n\nint main() {\n\
-    \tint N, M;\n\tcin >> N >> M;\n\tedgelist<long long> E;\n\tfor (int i = 0; i <\
-    \ M; i++) {\n\t\tint u, v; long long w;\n\t\tcin >> u >> v >> w;\n\t\tE.emplace_back(u,\
-    \ v, w);\n\t}\n\tauto T = kruskal(N, E);\n\tlong long ans = 0;\n\tfor (int u =\
-    \ 0; u < N; u++)\n\t\tfor (auto [v, w] : T[u])\n\t\t\tans += w;\n\tcout << ans\
-    \ / 2 << '\\n';\n}\n"
+    \n\ntemplate<typename T>\ngraph<T> kruskal(size_t n, edgelist<T> E) {\n\tgraph<T>\
+    \ mst(n);\n\tif (n <= 1)\n\t\treturn mst;\n\tUnionFind dsu(n);\n\tsort(E.begin(),\
+    \ E.end(), \n\t\t[](auto a, auto b) { \n\t\t\treturn get<2>(a) < get<2>(b); \n\
+    \t\t}\n\t);\n\tfor (auto [u, v, w] : E) {\n\t\tif (dsu.merge(u, v)) {\n\t\t\t\
+    mst[u].emplace_back(v, w);\n\t\t\tmst[v].emplace_back(u, w);\n\t\t}\n\t\tif (dsu.size(0)\
+    \ == n)\n\t\t\tbreak;\n\t}\n\treturn mst;\n}\n#line 7 \"verify/kruskal.aizu-minimum-spanning-tree.test.cpp\"\
+    \n\nint main() {\n\tint N, M;\n\tcin >> N >> M;\n\tedgelist<long long> E;\n\t\
+    for (int i = 0; i < M; i++) {\n\t\tint u, v; long long w;\n\t\tcin >> u >> v >>\
+    \ w;\n\t\tE.emplace_back(u, v, w);\n\t}\n\tauto T = kruskal(N, E);\n\tlong long\
+    \ ans = 0;\n\tfor (int u = 0; u < N; u++)\n\t\tfor (auto [v, w] : T[u])\n\t\t\t\
+    ans += w;\n\tcout << ans / 2 << '\\n';\n}\n"
   code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_A\"\
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#include \"graph/kruskal.hpp\"\
     \n\nint main() {\n\tint N, M;\n\tcin >> N >> M;\n\tedgelist<long long> E;\n\t\
@@ -94,8 +93,8 @@ data:
   isVerificationFile: true
   path: verify/kruskal.aizu-minimum-spanning-tree.test.cpp
   requiredBy: []
-  timestamp: '2022-02-02 10:15:02-08:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-02-02 11:52:42-08:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/kruskal.aizu-minimum-spanning-tree.test.cpp
 layout: document

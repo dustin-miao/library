@@ -2,11 +2,11 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/kruskal.hpp
     title: Kruskal's Algorithm
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/kruskal.aizu-minimum-spanning-tree.test.cpp
     title: verify/kruskal.aizu-minimum-spanning-tree.test.cpp
   - icon: ':heavy_check_mark:'
@@ -15,9 +15,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/union-find.yosupo-unionfind.test.cpp
     title: verify/union-find.yosupo-unionfind.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"data-structure/union-find.hpp\"\nstruct UnionFind {\n  \
@@ -47,7 +47,7 @@ data:
   requiredBy:
   - graph/kruskal.hpp
   timestamp: '2022-02-02 10:15:02-08:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/kruskal.aizu-minimum-spanning-tree.test.cpp
   - verify/union-find.yosupo-unionfind.test.cpp

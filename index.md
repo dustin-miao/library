@@ -18,7 +18,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/segment-tree.hpp
       title: Segment Tree
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/union-find.hpp
       title: Union Find
   - name: graph
@@ -32,10 +32,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/floyd-warshall.hpp
       title: Floyd-Warshall Algorithm
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: graph/graph-util.hpp
       title: Graph Utility
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph/kruskal.hpp
       title: Kruskal's Algorithm
   - name: utility
@@ -82,7 +82,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/general-segment-tree.yosupo-point-set-range-composite.test.cpp
       title: verify/general-segment-tree.yosupo-point-set-range-composite.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/kruskal.aizu-minimum-spanning-tree.test.cpp
       title: verify/kruskal.aizu-minimum-spanning-tree.test.cpp
     - icon: ':heavy_check_mark:'
