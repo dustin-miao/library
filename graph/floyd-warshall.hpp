@@ -1,16 +1,18 @@
 #include "utility/chmin.hpp"
+#include "graph/graph-util.hpp"
 
-template<typename G>
-void floyd_warshall(G &graph, const long long INF = LLONG_MAX) {
-	int n = graph.size();
+template<typename T>
+void floyd_warshall(matgraph<T> &G, const T dval) {
+	size_t n = G.size();
+	for (int i = 0; i < n; i++)
+		G[i][i] = 0;
 	for (int k = 0; k < n; k++)
 		for (int i = 0; i < n; i++)
 			for (int j = 0; j < n; j++)
-				if (graph[i][k] < INF && graph[k][j] < INF)
-					chmin(graph[i][j], graph[i][k] + graph[k][j]);
-	for (int i = 0; i < n; i++)
-		for (int j = 0; j < n; j++)
-			for (int k = 0; k < n; k++)
-				if (graph[i][k] < INF && graph[k][j] < INF && graph[k][k] < 0)
-					graph[i][j] = -INF;
+				if (G[i][k] != dval && G[k][j] != dval) {
+					if (G[i][j] == dval)
+						G[i][j] = G[i][k] + G[k][j];
+					else 
+						chmin(G[i][j], G[i][k] + G[k][j]);
+				}
 }
