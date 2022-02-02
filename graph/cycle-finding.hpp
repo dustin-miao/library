@@ -1,7 +1,6 @@
 #include "graph/graph-util.hpp"
 
-template<typename T>
-vector<pair<int, int>> find_cycle(const u_graph<T> &G, const bool directed = true) {
+vector<pair<int, int>> find_cycle(const u_graph &G, const bool directed = true) {
 	size_t n = G.size();
 	vector<int> idx(n, -1), vis(n, 0);
 	vector<pair<int, int>> cycle;
