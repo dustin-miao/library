@@ -1,53 +1,89 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: data-structure/union-find.hpp
     title: Union Find
+  - icon: ':question:'
+    path: graph/graph-util.hpp
+    title: Graph Utility
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/kruskal.aizu-minimum-spanning-tree.test.cpp
     title: verify/kruskal.aizu-minimum-spanning-tree.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"data-structure/union-find.hpp\"\nstruct UnionFind {\n  \
-    \  vector<int> parent, setsize;\n\n    UnionFind() = default;\n\n    UnionFind(int\
-    \ n) { init(n); }\n\n    void init(int n) {\n        parent.resize(n);\n     \
-    \   setsize.resize(n);\n        iota(parent.begin(), parent.end(), 0);\n     \
-    \   fill(setsize.begin(), setsize.end(), 1);\n    }\n\n    int find(int u) {\n\
-    \        if (u == parent[u])\n            return u;\n        return parent[u]\
-    \ = find(parent[u]);\n    }\n\n    bool merge(int u, int v) {\n        u = find(u),\
-    \ v = find(v);\n        if (u == v)\n            return false;\n        if (setsize[u]\
-    \ > setsize[v]) {\n            parent[v] = u;\n            setsize[u] += setsize[v];\n\
-    \        } else {\n            parent[u] = v;\n            setsize[v] += setsize[u];\n\
-    \        }\n        return true;\n    }\n\n    int size(int u) {\n        return\
-    \ setsize[find(u)];\n    }\n};\n#line 2 \"graph/kruskal.hpp\"\n\nvector<vector<pair<int,\
-    \ long long>>> kruskal(int n, vector<tuple<int, int, long long>> edges) {\n\t\
-    vector<vector<pair<int, long long>>> mst(n);\n\tif (n <= 1)\n\t\treturn mst;\n\
-    \tUnionFind dsu(n);\n\tsort(edges.begin(), edges.end(), [](const tuple<int, int,\
-    \ long long> &a, const tuple<int, int, long long> &b) { return get<2>(a) < get<2>(b);\
-    \ });\n\tfor (auto [u, v, w] : edges) {\n\t\tif (dsu.merge(u, v)) {\n\t\t\tmst[u].emplace_back(v,\
-    \ w);\n\t\t\tmst[v].emplace_back(u, w);\n\t\t}\n\t\tif (dsu.size(0) == n)\n\t\t\
-    \tbreak;\n\t}\n\treturn mst;\n}\n"
-  code: "#include \"data-structure/union-find.hpp\"\n\nvector<vector<pair<int, long\
-    \ long>>> kruskal(int n, vector<tuple<int, int, long long>> edges) {\n\tvector<vector<pair<int,\
-    \ long long>>> mst(n);\n\tif (n <= 1)\n\t\treturn mst;\n\tUnionFind dsu(n);\n\t\
-    sort(edges.begin(), edges.end(), [](const tuple<int, int, long long> &a, const\
-    \ tuple<int, int, long long> &b) { return get<2>(a) < get<2>(b); });\n\tfor (auto\
-    \ [u, v, w] : edges) {\n\t\tif (dsu.merge(u, v)) {\n\t\t\tmst[u].emplace_back(v,\
-    \ w);\n\t\t\tmst[v].emplace_back(u, w);\n\t\t}\n\t\tif (dsu.size(0) == n)\n\t\t\
-    \tbreak;\n\t}\n\treturn mst;\n}"
+    \  vector<int> par, siz;\n\n    UnionFind() = default;\n\n    UnionFind(int n)\
+    \ { init(n); }\n\n    void init(int n) {\n        par.resize(n);\n        siz.resize(n);\n\
+    \        iota(par.begin(), par.end(), 0);\n        fill(siz.begin(), siz.end(),\
+    \ 1);\n    }\n\n    int find(int u) {\n        if (u == par[u])\n            return\
+    \ u;\n        return par[u] = find(par[u]);\n    }\n\n    bool merge(int u, int\
+    \ v) {\n        u = find(u), v = find(v);\n        if (u == v)\n            return\
+    \ false;\n        if (siz[u] > siz[v]) {\n            par[v] = u;\n          \
+    \  siz[u] += siz[v];\n        } else {\n            par[u] = v;\n            siz[v]\
+    \ += siz[u];\n        }\n        return true;\n    }\n\n    int size(int u) {\
+    \ return siz[find(u)]; }\n};\n#line 1 \"graph/graph-util.hpp\"\nusing u_graph\
+    \ = vector<vector<int>>;\n\nusing u_edgelist = vector<pair<int, int>>;\n\nusing\
+    \ u_matgraph = vector<vector<bool>>;\n\nu_graph to_graph(size_t n, const u_edgelist\
+    \ &E) {\n\tu_graph G(n);\n\tfor (auto [u, v] : E)\n\t\tG[u].push_back(v);\n\t\
+    return G;\n}\n\nu_graph to_graph(const u_matgraph &M) {\n\tsize_t n = M.size();\n\
+    \tu_graph G(n);\n\tfor (int u = 0; u < n; u++)\n\t\tfor (int v = 0; v < n; v++)\n\
+    \t\t\tif (M[u][v])\n\t\t\t\tG[u].push_back(v);\n\treturn G;\n}\n\nu_edgelist to_edgelist(const\
+    \ u_graph &G) {\n\tsize_t n = G.size();\n\tu_edgelist E;\n\tfor (int u = 0; u\
+    \ < n; u++) \n\t\tfor (int v : G[u])\n\t\t\tE.emplace_back(u, v);\n\treturn E;\n\
+    }\n\nu_edgelist to_edgelist(const u_matgraph &M) {\n\tsize_t n = M.size();\n\t\
+    u_edgelist E;\n\tfor (int u = 0; u < n; u++)\n\t\tfor (int v = 0; v < n; v++)\n\
+    \t\t\tif (M[u][v])\n\t\t\t\tE.emplace_back(u, v);\n\treturn E;\n}\n\nu_matgraph\
+    \ to_matgraph(const u_graph &G) {\n\tint n = G.size();\n\tu_matgraph M(n, vector<bool>(n,\
+    \ false));\n\tfor (int u = 0; u < n; u++)\n\t\tfor (int v : G[u])\n\t\t\tM[u][v]\
+    \ = true;\n\treturn M;\n}\n\nu_matgraph to_matgraph(size_t n, const u_edgelist\
+    \ &E) {\n\tu_matgraph M(n, vector<bool>(n, false));\n\tfor (auto [u, v] : E)\n\
+    \t\tM[u][v] = true;\n\treturn M;\n}\n\ntemplate<typename T>\nusing graph = vector<vector<pair<int,\
+    \ T>>>;\n\ntemplate<typename T>\nusing edgelist = vector<tuple<int, int, T>>;\n\
+    \ntemplate<typename T>\nusing matgraph = vector<vector<T>>;\n\ntemplate<typename\
+    \ T>\ngraph<T> to_graph(size_t n, const edgelist<T> &E) {\n\tgraph<T> G(n);\n\t\
+    for (auto [u, v, w] : E)\n\t\tG[u].emplace_back(v, w);\n\treturn G;\n}\n\ntemplate<typename\
+    \ T>\ngraph<T> to_graph(const matgraph<T> &M, const T dval) {\n\tsize_t n = M.size();\n\
+    \tgraph<T> G(n);\n\tfor (int u = 0; u < n; u++)\n\t\tfor (int v = 0; v < n; v++)\n\
+    \t\t\tif (M[u][v] != dval)\n\t\t\t\tG[u].emplace_back(v, M[u][v]);\n\treturn G;\n\
+    }\n\ntemplate<typename T>\nedgelist<T> to_edgelist(const graph<T> &G) {\n\tsize_t\
+    \ n = G.size();\n\tedgelist<T> E;\n\tfor (int u = 0; u < n; u++)\n\t\tfor (auto\
+    \ [v, w] : G[u])\n\t\t\tE.emplace_back(u, v, w);\n\treturn E;\n}\n\ntemplate<typename\
+    \ T>\nedgelist<T> to_edgelist(const matgraph<T> &M, const T dval) {\n\tsize_t\
+    \ n = M.size();\n\tedgelist<T> E;\n\tfor (int u = 0; u < n; u++)\n\t\tfor (int\
+    \ v = 0; v < n; v++)\n\t\t\tif (M[u][v] != dval)\n\t\t\t\tE.emplace_back(u, v,\
+    \ M[u][v]);\n\treturn E;\n}\n\ntemplate<typename T>\nmatgraph<T> to_matgraph(const\
+    \ graph<T> &G, const T dval) {\n\tsize_t n = G.size();\n\tmatgraph<T> M(n, vector<T>(n,\
+    \ dval));\n\tfor (int u = 0; u < n; u++)\t\n\t\tfor (auto [v, w] : G[u])\n\t\t\
+    \tM[u][v] = w;\n\treturn M;\n}\n\ntemplate<typename T>\nmatgraph<T> to_matgraph(size_t\
+    \ n, const edgelist<T> &E, const T dval) {\n\tmatgraph<T> M(n, vector<T>(n, dval));\n\
+    \tfor (auto [u, v, w] : E)\n\t\tM[u][v] = w;\n\treturn M;\n}\n#line 3 \"graph/kruskal.hpp\"\
+    \n\ntemplate<typename T>\ngraph<T> kruskal(size_t n, const edgelist<T> &E) {\n\
+    \tgraph<T> mst(n);\n\tif (n <= 1)\n\t\treturn mst;\n\tUnionFind dsu(n);\n\tsort(edges.begin(),\
+    \ edges.end(), [](const tuple<int, int, T> &a, const tuple<int, int, T> &b) {\
+    \ return get<2>(a) < get<2>(b); });\n\tfor (auto [u, v, w] : edges) {\n\t\tif\
+    \ (dsu.merge(u, v)) {\n\t\t\tmst[u].emplace_back(v, w);\n\t\t\tmst[v].emplace_back(u,\
+    \ w);\n\t\t}\n\t\tif (dsu.size(0) == n)\n\t\t\tbreak;\n\t}\n\treturn mst;\n}\n"
+  code: "#include \"data-structure/union-find.hpp\"\n#include \"graph/graph-util.hpp\"\
+    \n\ntemplate<typename T>\ngraph<T> kruskal(size_t n, const edgelist<T> &E) {\n\
+    \tgraph<T> mst(n);\n\tif (n <= 1)\n\t\treturn mst;\n\tUnionFind dsu(n);\n\tsort(edges.begin(),\
+    \ edges.end(), [](const tuple<int, int, T> &a, const tuple<int, int, T> &b) {\
+    \ return get<2>(a) < get<2>(b); });\n\tfor (auto [u, v, w] : edges) {\n\t\tif\
+    \ (dsu.merge(u, v)) {\n\t\t\tmst[u].emplace_back(v, w);\n\t\t\tmst[v].emplace_back(u,\
+    \ w);\n\t\t}\n\t\tif (dsu.size(0) == n)\n\t\t\tbreak;\n\t}\n\treturn mst;\n}"
   dependsOn:
   - data-structure/union-find.hpp
+  - graph/graph-util.hpp
   isVerificationFile: false
   path: graph/kruskal.hpp
   requiredBy: []
-  timestamp: '2022-01-24 09:06:47-08:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2022-02-02 10:15:02-08:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - verify/kruskal.aizu-minimum-spanning-tree.test.cpp
 documentation_of: graph/kruskal.hpp

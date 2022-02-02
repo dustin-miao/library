@@ -2,11 +2,11 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/kruskal.hpp
     title: Kruskal's Algorithm
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/kruskal.aizu-minimum-spanning-tree.test.cpp
     title: verify/kruskal.aizu-minimum-spanning-tree.test.cpp
   - icon: ':heavy_check_mark:'
@@ -15,41 +15,39 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/union-find.yosupo-unionfind.test.cpp
     title: verify/union-find.yosupo-unionfind.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"data-structure/union-find.hpp\"\nstruct UnionFind {\n  \
-    \  vector<int> parent, setsize;\n\n    UnionFind() = default;\n\n    UnionFind(int\
-    \ n) { init(n); }\n\n    void init(int n) {\n        parent.resize(n);\n     \
-    \   setsize.resize(n);\n        iota(parent.begin(), parent.end(), 0);\n     \
-    \   fill(setsize.begin(), setsize.end(), 1);\n    }\n\n    int find(int u) {\n\
-    \        if (u == parent[u])\n            return u;\n        return parent[u]\
-    \ = find(parent[u]);\n    }\n\n    bool merge(int u, int v) {\n        u = find(u),\
-    \ v = find(v);\n        if (u == v)\n            return false;\n        if (setsize[u]\
-    \ > setsize[v]) {\n            parent[v] = u;\n            setsize[u] += setsize[v];\n\
-    \        } else {\n            parent[u] = v;\n            setsize[v] += setsize[u];\n\
-    \        }\n        return true;\n    }\n\n    int size(int u) {\n        return\
-    \ setsize[find(u)];\n    }\n};\n"
-  code: "struct UnionFind {\n    vector<int> parent, setsize;\n\n    UnionFind() =\
-    \ default;\n\n    UnionFind(int n) { init(n); }\n\n    void init(int n) {\n  \
-    \      parent.resize(n);\n        setsize.resize(n);\n        iota(parent.begin(),\
-    \ parent.end(), 0);\n        fill(setsize.begin(), setsize.end(), 1);\n    }\n\
-    \n    int find(int u) {\n        if (u == parent[u])\n            return u;\n\
-    \        return parent[u] = find(parent[u]);\n    }\n\n    bool merge(int u, int\
+    \  vector<int> par, siz;\n\n    UnionFind() = default;\n\n    UnionFind(int n)\
+    \ { init(n); }\n\n    void init(int n) {\n        par.resize(n);\n        siz.resize(n);\n\
+    \        iota(par.begin(), par.end(), 0);\n        fill(siz.begin(), siz.end(),\
+    \ 1);\n    }\n\n    int find(int u) {\n        if (u == par[u])\n            return\
+    \ u;\n        return par[u] = find(par[u]);\n    }\n\n    bool merge(int u, int\
     \ v) {\n        u = find(u), v = find(v);\n        if (u == v)\n            return\
-    \ false;\n        if (setsize[u] > setsize[v]) {\n            parent[v] = u;\n\
-    \            setsize[u] += setsize[v];\n        } else {\n            parent[u]\
-    \ = v;\n            setsize[v] += setsize[u];\n        }\n        return true;\n\
-    \    }\n\n    int size(int u) {\n        return setsize[find(u)];\n    }\n};\n"
+    \ false;\n        if (siz[u] > siz[v]) {\n            par[v] = u;\n          \
+    \  siz[u] += siz[v];\n        } else {\n            par[u] = v;\n            siz[v]\
+    \ += siz[u];\n        }\n        return true;\n    }\n\n    int size(int u) {\
+    \ return siz[find(u)]; }\n};\n"
+  code: "struct UnionFind {\n    vector<int> par, siz;\n\n    UnionFind() = default;\n\
+    \n    UnionFind(int n) { init(n); }\n\n    void init(int n) {\n        par.resize(n);\n\
+    \        siz.resize(n);\n        iota(par.begin(), par.end(), 0);\n        fill(siz.begin(),\
+    \ siz.end(), 1);\n    }\n\n    int find(int u) {\n        if (u == par[u])\n \
+    \           return u;\n        return par[u] = find(par[u]);\n    }\n\n    bool\
+    \ merge(int u, int v) {\n        u = find(u), v = find(v);\n        if (u == v)\n\
+    \            return false;\n        if (siz[u] > siz[v]) {\n            par[v]\
+    \ = u;\n            siz[u] += siz[v];\n        } else {\n            par[u] =\
+    \ v;\n            siz[v] += siz[u];\n        }\n        return true;\n    }\n\n\
+    \    int size(int u) { return siz[find(u)]; }\n};\n"
   dependsOn: []
   isVerificationFile: false
   path: data-structure/union-find.hpp
   requiredBy:
   - graph/kruskal.hpp
-  timestamp: '2021-12-29 22:06:41-08:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2022-02-02 10:15:02-08:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/kruskal.aizu-minimum-spanning-tree.test.cpp
   - verify/union-find.yosupo-unionfind.test.cpp

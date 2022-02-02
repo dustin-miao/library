@@ -18,12 +18,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/segment-tree.hpp
       title: Segment Tree
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: data-structure/union-find.hpp
       title: Union Find
   - name: graph
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: graph/cycle-finding.hpp
       title: Cycle Finding
     - icon: ':heavy_check_mark:'
@@ -32,7 +32,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/floyd-warshall.hpp
       title: Floyd-Warshall Algorithm
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
+      path: graph/graph-util.hpp
+      title: Graph Utility
+    - icon: ':x:'
       path: graph/kruskal.hpp
       title: Kruskal's Algorithm
   - name: utility
@@ -55,7 +58,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/binary-index-tree.yosupo-point-add-range-sum.test.cpp
       title: verify/binary-index-tree.yosupo-point-add-range-sum.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/cycle-finding.yosupo-cycle-detection.test.cpp
       title: verify/cycle-finding.yosupo-cycle-detection.test.cpp
     - icon: ':heavy_check_mark:'
@@ -79,7 +82,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/general-segment-tree.yosupo-point-set-range-composite.test.cpp
       title: verify/general-segment-tree.yosupo-point-set-range-composite.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/kruskal.aizu-minimum-spanning-tree.test.cpp
       title: verify/kruskal.aizu-minimum-spanning-tree.test.cpp
     - icon: ':heavy_check_mark:'
