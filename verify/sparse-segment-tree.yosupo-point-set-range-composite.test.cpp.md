@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/sparse-segment-tree.hpp
     title: Sparse Segment Tree
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utility/addmod.hpp
     title: Addmod
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/point_set_range_composite
@@ -22,16 +22,17 @@ data:
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#line 1 \"utility/addmod.hpp\"\
     \ntemplate<typename T>\nT addmod(T a, T b, long long MOD) {\n\tT t = a + b;\n\t\
     return t >= MOD ? t - MOD : t;\n}\n#line 1 \"data-structure/sparse-segment-tree.hpp\"\
-    \ntemplate<class Base>\nclass Segtree : public Base {\n\tusing T = Base::T;\n\t\
-    using Base::dval;\n\tusing Base::merge;\n\tusing Base::apply;\n\nprotected:\n\t\
-    size_t n;\n\n\tstruct node {\n\t\tT v;\n\t\tint l, r;\n\t};\n\n\tint root;\n\t\
-    vector<node> tree;\n\n\tsize_t new_node() {\n\t\ttree.emplace_back(dval, -1, -1);\n\
-    \t\treturn tree.size() - 1;\n\t}\n\nprivate:\n\tvoid update(int i, T v, int t,\
-    \ int tl, int tr) {\n\t\tif (tl == tr) {\n\t\t\tapply(tree[t].v, v);\n\t\t\treturn;\n\
-    \t\t}\n\t\tint tm = (tl + tr) / 2;\n\t\tif (i <= tm) {\n\t\t\tif (tree[t].l ==\
-    \ -1)\n\t\t\t\ttree[t].l = new_node();\n\t\t\tupdate(i, v, tree[t].l, tl, tm);\n\
-    \t\t} else {\n\t\t\tif (tree[t].r == -1)\n\t\t\t\ttree[t].r = new_node();\n\t\t\
-    \tupdate(i, v, tree[t].r, tm + 1, tr);\n\t\t}\n\t\ttree[t].v = merge(tree[t].l\
+    \ntemplate<class Base>\nclass Segtree : public Base {\n\tusing T = typename Base::T;\n\
+    \tusing Base::dval;\n\tusing Base::merge;\n\tusing Base::apply;\n\nprotected:\n\
+    \tsize_t n;\n\n\tstruct node {\n\t\tT v;\n\t\tint l, r;\n\t\tnode() = default;\n\
+    \t\tnode(T _v, int _l, int _r) : v(_v), l(_l), r(_r) {}\n\t};\n\n\tint root;\n\
+    \tvector<node> tree;\n\n\tsize_t new_node() {\n\t\ttree.emplace_back(dval, -1,\
+    \ -1);\n\t\treturn tree.size() - 1;\n\t}\n\nprivate:\n\tvoid update(int i, T v,\
+    \ int t, int tl, int tr) {\n\t\tif (tl == tr) {\n\t\t\tapply(tree[t].v, v);\n\t\
+    \t\treturn;\n\t\t}\n\t\tint tm = (tl + tr) / 2;\n\t\tif (i <= tm) {\n\t\t\tif\
+    \ (tree[t].l == -1)\n\t\t\t\ttree[t].l = new_node();\n\t\t\tupdate(i, v, tree[t].l,\
+    \ tl, tm);\n\t\t} else {\n\t\t\tif (tree[t].r == -1)\n\t\t\t\ttree[t].r = new_node();\n\
+    \t\t\tupdate(i, v, tree[t].r, tm + 1, tr);\n\t\t}\n\t\ttree[t].v = merge(tree[t].l\
     \ == -1 ? dval : tree[tree[t].l].v, tree[t].r == -1 ? dval : tree[tree[t].r].v);\n\
     \t}\n\n\tT query(int l, int r, int t, int tl, int tr) {\n\t\tif (r < tl || tr\
     \ < l)\n\t\t\treturn dval;\n\t\tif (l <= tl && tr <= r)\n\t\t\treturn tree[t].v;\n\
@@ -73,8 +74,8 @@ data:
   isVerificationFile: true
   path: verify/sparse-segment-tree.yosupo-point-set-range-composite.test.cpp
   requiredBy: []
-  timestamp: '2022-02-03 12:42:26-08:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-02-03 12:53:46-08:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/sparse-segment-tree.yosupo-point-set-range-composite.test.cpp
 layout: document
