@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/recursive-segment-tree.hpp
     title: Recursive Segment Tree
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/point_add_range_sum
@@ -27,9 +27,9 @@ data:
     \ int tl, int tr) {\n\t\tif (r < tl || tr < l)\n\t\t\treturn dval;\n\t\tif (l\
     \ <= tl && tr <= r)\n\t\t\treturn tree[t];\n\t\tint tm = (tl + tr) / 2;\n\t\t\
     return merge(query(l, r, t * 2, tl, tm), query(l, r, t * 2 + 1, tm + 1, tr));\n\
-    \t}\n\npublic:\n\tSegtree() = default;\n\n\tSegtree(size_t _n) { init(n); }\n\n\
-    \tvoid init(size_t _n) {\n\t\tn = _n;\n\t\ttree.assign(n * 4, dval);\n\t}\n\n\t\
-    void update(int i, T v) { update(i, v, 1, 0, n - 1); }\n\n\tT query(int l, int\
+    \t}\n\npublic:\n\tSegtree() = default;\n\n\tSegtree(size_t _n) { init(_n); }\n\
+    \n\tvoid init(size_t _n) {\n\t\tn = _n;\n\t\ttree.assign(n * 4, dval);\n\t}\n\n\
+    \tvoid update(int i, T v) { update(i, v, 1, 0, n - 1); }\n\n\tT query(int l, int\
     \ r) { return query(l, r, 1, 0, n - 1); }\n};\n#line 7 \"verify/recursive-segment-tree.yosupo-point-add-range-sum.test.cpp\"\
     \n\nconst int MAX = 5e5 + 5;\n\nint main() {\n\tint N, Q;\n\tcin >> N >> Q;\n\n\
     \tstruct stinfo {\n\t\tusing T = long long;\n\n\t\tconst T dval = 0;\n\n\t\tvoid\
@@ -54,8 +54,8 @@ data:
   isVerificationFile: true
   path: verify/recursive-segment-tree.yosupo-point-add-range-sum.test.cpp
   requiredBy: []
-  timestamp: '2022-02-02 15:19:45-08:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-02-02 18:18:31-08:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/recursive-segment-tree.yosupo-point-add-range-sum.test.cpp
 layout: document

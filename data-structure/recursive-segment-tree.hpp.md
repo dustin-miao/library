@@ -3,21 +3,21 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/recursive-segment-tree.aizu-range-minimum-query.test.cpp
     title: verify/recursive-segment-tree.aizu-range-minimum-query.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/recursive-segment-tree.aizu-range-sum-query.test.cpp
     title: verify/recursive-segment-tree.aizu-range-sum-query.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/recursive-segment-tree.yosupo-point-add-range-sum.test.cpp
     title: verify/recursive-segment-tree.yosupo-point-add-range-sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/recursive-segment-tree.yosupo-point-set-range-composite.test.cpp
     title: verify/recursive-segment-tree.yosupo-point-set-range-composite.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"data-structure/recursive-segment-tree.hpp\"\ntemplate<class\
@@ -31,7 +31,7 @@ data:
     \ {\n\t\tif (r < tl || tr < l)\n\t\t\treturn dval;\n\t\tif (l <= tl && tr <= r)\n\
     \t\t\treturn tree[t];\n\t\tint tm = (tl + tr) / 2;\n\t\treturn merge(query(l,\
     \ r, t * 2, tl, tm), query(l, r, t * 2 + 1, tm + 1, tr));\n\t}\n\npublic:\n\t\
-    Segtree() = default;\n\n\tSegtree(size_t _n) { init(n); }\n\n\tvoid init(size_t\
+    Segtree() = default;\n\n\tSegtree(size_t _n) { init(_n); }\n\n\tvoid init(size_t\
     \ _n) {\n\t\tn = _n;\n\t\ttree.assign(n * 4, dval);\n\t}\n\n\tvoid update(int\
     \ i, T v) { update(i, v, 1, 0, n - 1); }\n\n\tT query(int l, int r) { return query(l,\
     \ r, 1, 0, n - 1); }\n};\n"
@@ -45,16 +45,16 @@ data:
     \ r, int t, int tl, int tr) {\n\t\tif (r < tl || tr < l)\n\t\t\treturn dval;\n\
     \t\tif (l <= tl && tr <= r)\n\t\t\treturn tree[t];\n\t\tint tm = (tl + tr) / 2;\n\
     \t\treturn merge(query(l, r, t * 2, tl, tm), query(l, r, t * 2 + 1, tm + 1, tr));\n\
-    \t}\n\npublic:\n\tSegtree() = default;\n\n\tSegtree(size_t _n) { init(n); }\n\n\
-    \tvoid init(size_t _n) {\n\t\tn = _n;\n\t\ttree.assign(n * 4, dval);\n\t}\n\n\t\
-    void update(int i, T v) { update(i, v, 1, 0, n - 1); }\n\n\tT query(int l, int\
+    \t}\n\npublic:\n\tSegtree() = default;\n\n\tSegtree(size_t _n) { init(_n); }\n\
+    \n\tvoid init(size_t _n) {\n\t\tn = _n;\n\t\ttree.assign(n * 4, dval);\n\t}\n\n\
+    \tvoid update(int i, T v) { update(i, v, 1, 0, n - 1); }\n\n\tT query(int l, int\
     \ r) { return query(l, r, 1, 0, n - 1); }\n};"
   dependsOn: []
   isVerificationFile: false
   path: data-structure/recursive-segment-tree.hpp
   requiredBy: []
-  timestamp: '2022-02-02 15:19:45-08:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2022-02-02 18:18:31-08:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/recursive-segment-tree.yosupo-point-set-range-composite.test.cpp
   - verify/recursive-segment-tree.yosupo-point-add-range-sum.test.cpp
