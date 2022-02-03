@@ -5,4 +5,5 @@ documentation_of: //graph/graph-util.hpp
 
 ## Graph Utility
 
-[Placeholder]
+### Summary
+
