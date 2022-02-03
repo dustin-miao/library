@@ -18,6 +18,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/segment-tree.hpp
       title: Segment Tree
+    - icon: ':x:'
+      path: data-structure/sparse-segent-tree.hpp
+      title: data-structure/sparse-segent-tree.hpp
     - icon: ':heavy_check_mark:'
       path: data-structure/union-find.hpp
       title: Union Find
@@ -121,6 +124,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/segment-tree.yosupo-point-add-range-sum.test.cpp
       title: verify/segment-tree.yosupo-point-add-range-sum.test.cpp
+    - icon: ':x:'
+      path: verify/sparse-segment-tree.yosupo-point-add-range-sum.test.cpp
+      title: verify/sparse-segment-tree.yosupo-point-add-range-sum.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/union-find.aizu-disjoint-union.test.cpp
       title: verify/union-find.aizu-disjoint-union.test.cpp
