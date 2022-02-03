@@ -110,18 +110,18 @@ data:
   isVerificationFile: false
   path: graph/graph-util.hpp
   requiredBy:
-  - graph/floyd-warshall.hpp
-  - graph/kruskal.hpp
   - graph/cycle-finding.hpp
+  - graph/kruskal.hpp
+  - graph/floyd-warshall.hpp
   - graph/dijkstra.hpp
   timestamp: '2022-02-02 10:15:02-08:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/cycle-finding.yosupo-cycle-detection.test.cpp
+  - verify/dijkstra.aizu-shortest-path.test.cpp
   - verify/kruskal.aizu-minimum-spanning-tree.test.cpp
   - verify/floyd-warshall.all-pairs-shortest-path.test.cpp
   - verify/dijkstra.aizu-single-source-shortest-path.test.cpp
-  - verify/dijkstra.aizu-shortest-path.test.cpp
-  - verify/cycle-finding.yosupo-cycle-detection.test.cpp
 documentation_of: graph/graph-util.hpp
 layout: document
 title: Graph Utility
@@ -129,4 +129,5 @@ title: Graph Utility
 
 ## Graph Utility
 
-[Placeholder]
+### Summary
+

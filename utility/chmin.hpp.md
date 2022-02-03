@@ -37,9 +37,9 @@ data:
   timestamp: '2022-01-26 05:57:15-08:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/dijkstra.aizu-shortest-path.test.cpp
   - verify/floyd-warshall.all-pairs-shortest-path.test.cpp
   - verify/dijkstra.aizu-single-source-shortest-path.test.cpp
-  - verify/dijkstra.aizu-shortest-path.test.cpp
 documentation_of: utility/chmin.hpp
 layout: document
 title: Chmin

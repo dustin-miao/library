@@ -71,11 +71,11 @@ data:
   timestamp: '2022-02-02 15:19:45-08:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/lazy-segment-tree.aizu-RSQ-and-RAQ.test.cpp
-  - verify/lazy-segment-tree.aizu-RMQ-and-RUQ.test.cpp
+  - verify/lazy-segment-tree.yosupo-range-affine-range-sum.test.cpp
   - verify/lazy-segment-tree.aizu-RSQ-and-RUQ.test.cpp
   - verify/lazy-segment-tree.aizu-RMQ-and-RAQ.test.cpp
-  - verify/lazy-segment-tree.yosupo-range-affine-range-sum.test.cpp
+  - verify/lazy-segment-tree.aizu-RMQ-and-RUQ.test.cpp
+  - verify/lazy-segment-tree.aizu-RSQ-and-RAQ.test.cpp
 documentation_of: data-structure/lazy-segment-tree.hpp
 layout: document
 title: Lazy Segment Tree

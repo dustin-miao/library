@@ -56,9 +56,9 @@ data:
   timestamp: '2022-02-02 18:18:31-08:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/recursive-segment-tree.aizu-range-sum-query.test.cpp
   - verify/recursive-segment-tree.yosupo-point-set-range-composite.test.cpp
   - verify/recursive-segment-tree.yosupo-point-add-range-sum.test.cpp
-  - verify/recursive-segment-tree.aizu-range-sum-query.test.cpp
   - verify/recursive-segment-tree.aizu-range-minimum-query.test.cpp
 documentation_of: data-structure/recursive-segment-tree.hpp
 layout: document

@@ -50,10 +50,10 @@ data:
   timestamp: '2022-02-02 15:19:45-08:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/general-segment-tree.aizu-range-sum-query.test.cpp
-  - verify/general-segment-tree.aizu-range-minimum-query.test.cpp
   - verify/general-segment-tree.yosupo-point-set-range-composite.test.cpp
+  - verify/general-segment-tree.aizu-range-minimum-query.test.cpp
   - verify/general-segment-tree.yosupo-point-add-range-sum.test.cpp
+  - verify/general-segment-tree.aizu-range-sum-query.test.cpp
 documentation_of: data-structure/general-segment-tree.hpp
 layout: document
 title: General Segment Tree

@@ -35,8 +35,8 @@ data:
   timestamp: '2022-01-22 21:43:04-08:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/binary-index-tree.aizu-range-sum-query.test.cpp
   - verify/binary-index-tree.yosupo-point-add-range-sum.test.cpp
+  - verify/binary-index-tree.aizu-range-sum-query.test.cpp
 documentation_of: data-structure/binary-index-tree.hpp
 layout: document
 title: Binary Index Tree
