@@ -12,9 +12,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/recursive-segment-tree.yosupo-point-set-range-composite.test.cpp
     title: verify/recursive-segment-tree.yosupo-point-set-range-composite.test.cpp
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: verify/sparse-segment-tree.yosupo-point-set-range-composite.test.cpp
+    title: verify/sparse-segment-tree.yosupo-point-set-range-composite.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"utility/addmod.hpp\"\ntemplate<typename T>\nT addmod(T a,\
@@ -26,10 +29,11 @@ data:
   path: utility/addmod.hpp
   requiredBy: []
   timestamp: '2022-01-26 05:45:04-08:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/recursive-segment-tree.yosupo-point-set-range-composite.test.cpp
   - verify/lazy-segment-tree.yosupo-range-affine-range-sum.test.cpp
+  - verify/sparse-segment-tree.yosupo-point-set-range-composite.test.cpp
   - verify/general-segment-tree.yosupo-point-set-range-composite.test.cpp
 documentation_of: utility/addmod.hpp
 layout: document

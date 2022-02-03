@@ -19,8 +19,8 @@ data:
       path: data-structure/segment-tree.hpp
       title: Segment Tree
     - icon: ':x:'
-      path: data-structure/sparse-segent-tree.hpp
-      title: data-structure/sparse-segent-tree.hpp
+      path: data-structure/sparse-segment-tree.hpp
+      title: Sparse Segment Tree
     - icon: ':heavy_check_mark:'
       path: data-structure/union-find.hpp
       title: Union Find
@@ -43,7 +43,7 @@ data:
       title: Kruskal's Algorithm
   - name: utility
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: utility/addmod.hpp
       title: Addmod
     - icon: ':warning:'

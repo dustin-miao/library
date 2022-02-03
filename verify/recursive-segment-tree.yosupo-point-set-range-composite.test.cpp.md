@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: data-structure/recursive-segment-tree.hpp
     title: Recursive Segment Tree
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utility/addmod.hpp
     title: Addmod
   _extendedRequiredBy: []

@@ -4,14 +4,23 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':x:'
+    path: verify/sparse-segment-tree.aizu-range-minimum-query.test.cpp
+    title: verify/sparse-segment-tree.aizu-range-minimum-query.test.cpp
+  - icon: ':x:'
+    path: verify/sparse-segment-tree.aizu-range-sum-query.test.cpp
+    title: verify/sparse-segment-tree.aizu-range-sum-query.test.cpp
+  - icon: ':x:'
     path: verify/sparse-segment-tree.yosupo-point-add-range-sum.test.cpp
     title: verify/sparse-segment-tree.yosupo-point-add-range-sum.test.cpp
+  - icon: ':x:'
+    path: verify/sparse-segment-tree.yosupo-point-set-range-composite.test.cpp
+    title: verify/sparse-segment-tree.yosupo-point-set-range-composite.test.cpp
   _isVerificationFailed: true
   _pathExtension: hpp
   _verificationStatusIcon: ':x:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"data-structure/sparse-segent-tree.hpp\"\ntemplate<class\
+  bundledCode: "#line 1 \"data-structure/sparse-segment-tree.hpp\"\ntemplate<class\
     \ Base>\nclass Segtree : public Base {\n\tusing T = Base::T;\n\tusing Base::dval;\n\
     \tusing Base::merge;\n\tusing Base::apply;\n\nprotected:\n\tsize_t n;\n\n\tstruct\
     \ node {\n\t\tT v;\n\t\tint l, r;\n\t};\n\n\tint root;\n\tvector<node> tree;\n\
@@ -54,16 +63,20 @@ data:
     \ l, int r) { return query(l, r, root, 0, n - 1); }\n};"
   dependsOn: []
   isVerificationFile: false
-  path: data-structure/sparse-segent-tree.hpp
+  path: data-structure/sparse-segment-tree.hpp
   requiredBy: []
-  timestamp: '2022-02-03 12:35:34-08:00'
+  timestamp: '2022-02-03 12:42:26-08:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
+  - verify/sparse-segment-tree.aizu-range-sum-query.test.cpp
+  - verify/sparse-segment-tree.aizu-range-minimum-query.test.cpp
   - verify/sparse-segment-tree.yosupo-point-add-range-sum.test.cpp
-documentation_of: data-structure/sparse-segent-tree.hpp
+  - verify/sparse-segment-tree.yosupo-point-set-range-composite.test.cpp
+documentation_of: data-structure/sparse-segment-tree.hpp
 layout: document
-redirect_from:
-- /library/data-structure/sparse-segent-tree.hpp
-- /library/data-structure/sparse-segent-tree.hpp.html
-title: data-structure/sparse-segent-tree.hpp
+title: Sparse Segment Tree
 ---
+
+## Sparse Segment Tree
+
+[Placeholder]
