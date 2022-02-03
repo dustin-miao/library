@@ -1,6 +1,6 @@
 template<class Base>
 class Segtree : public Base {
-	using T = Base::T;
+	using T = typename Base::T;
 	using Base::dval;
 	using Base::merge;
 	using Base::apply;
@@ -11,6 +11,8 @@ protected:
 	struct node {
 		T v;
 		int l, r;
+		node() = default;
+		node(T _v, int _l, int _r) : v(_v), l(_l), r(_r) {}
 	};
 
 	int root;
