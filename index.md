@@ -125,8 +125,17 @@ data:
       path: verify/segment-tree.yosupo-point-add-range-sum.test.cpp
       title: verify/segment-tree.yosupo-point-add-range-sum.test.cpp
     - icon: ':x:'
+      path: verify/sparse-segment-tree.aizu-range-minimum-query.test.cpp
+      title: verify/sparse-segment-tree.aizu-range-minimum-query.test.cpp
+    - icon: ':x:'
+      path: verify/sparse-segment-tree.aizu-range-sum-query.test.cpp
+      title: verify/sparse-segment-tree.aizu-range-sum-query.test.cpp
+    - icon: ':x:'
       path: verify/sparse-segment-tree.yosupo-point-add-range-sum.test.cpp
       title: verify/sparse-segment-tree.yosupo-point-add-range-sum.test.cpp
+    - icon: ':x:'
+      path: verify/sparse-segment-tree.yosupo-point-set-range-composite.test.cpp
+      title: verify/sparse-segment-tree.yosupo-point-set-range-composite.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/union-find.aizu-disjoint-union.test.cpp
       title: verify/union-find.aizu-disjoint-union.test.cpp

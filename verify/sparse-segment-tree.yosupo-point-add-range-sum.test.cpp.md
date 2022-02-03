@@ -40,7 +40,7 @@ data:
     \n\nconst int MAX = 5e5 + 5;\n\nint main() {\n\tint N, Q;\n\tcin >> N >> Q;\n\n\
     \tstruct stinfo {\n\t\tusing T = long long;\n\t\tconst T dval = 0;\n\t\tvoid apply(T\
     \ &a, T b) { a += b; }\n\t\tT merge(T a, T b) { return a + b; }\n\t};\n\n\tSegtree<stinfo>\
-    \ sgt(N);\n\tsgt.reserve(N * 2);\n\tfor (int i = 0; i < N; i++) {\n\t\tlong long\
+    \ sgt(N);\n\tsgt.reserve(N * 24);\n\tfor (int i = 0; i < N; i++) {\n\t\tlong long\
     \ a; cin >> a;\n\t\tsgt.update(i, a);\n\t}\n\twhile (Q--) {\n\t\tint t; cin >>\
     \ t;\n\t\tif (t == 0) {\n\t\t\tint p; long long x;\n\t\t\tcin >> p >> x;\n\t\t\
     \tsgt.update(p, x);\n\t\t} else {\n\t\t\tint l, r;\n\t\t\tcin >> l >> r;\n\t\t\
@@ -50,7 +50,7 @@ data:
     \n\nconst int MAX = 5e5 + 5;\n\nint main() {\n\tint N, Q;\n\tcin >> N >> Q;\n\n\
     \tstruct stinfo {\n\t\tusing T = long long;\n\t\tconst T dval = 0;\n\t\tvoid apply(T\
     \ &a, T b) { a += b; }\n\t\tT merge(T a, T b) { return a + b; }\n\t};\n\n\tSegtree<stinfo>\
-    \ sgt(N);\n\tsgt.reserve(N * 2);\n\tfor (int i = 0; i < N; i++) {\n\t\tlong long\
+    \ sgt(N);\n\tsgt.reserve(N * 24);\n\tfor (int i = 0; i < N; i++) {\n\t\tlong long\
     \ a; cin >> a;\n\t\tsgt.update(i, a);\n\t}\n\twhile (Q--) {\n\t\tint t; cin >>\
     \ t;\n\t\tif (t == 0) {\n\t\t\tint p; long long x;\n\t\t\tcin >> p >> x;\n\t\t\
     \tsgt.update(p, x);\n\t\t} else {\n\t\t\tint l, r;\n\t\t\tcin >> l >> r;\n\t\t\
@@ -60,7 +60,7 @@ data:
   isVerificationFile: true
   path: verify/sparse-segment-tree.yosupo-point-add-range-sum.test.cpp
   requiredBy: []
-  timestamp: '2022-02-03 12:35:34-08:00'
+  timestamp: '2022-02-03 12:38:12-08:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/sparse-segment-tree.yosupo-point-add-range-sum.test.cpp
