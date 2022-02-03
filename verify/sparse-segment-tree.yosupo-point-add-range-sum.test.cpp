@@ -3,7 +3,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "data-structure/sparse-segent-tree.hpp"
+#include "data-structure/sparse-segment-tree.hpp"
 
 const int MAX = 5e5 + 5;
 
@@ -19,7 +19,7 @@ int main() {
 	};
 
 	Segtree<stinfo> sgt(N);
-	sgt.reserve(N * 24);
+	sgt.reserve(N * 4);
 	for (int i = 0; i < N; i++) {
 		long long a; cin >> a;
 		sgt.update(i, a);
