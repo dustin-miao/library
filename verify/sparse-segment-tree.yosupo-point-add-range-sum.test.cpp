@@ -19,7 +19,7 @@ int main() {
 	};
 
 	Segtree<stinfo> sgt(N);
-	sgt.reserve(N * 2);
+	sgt.reserve(N * 24);
 	for (int i = 0; i < N; i++) {
 		long long a; cin >> a;
 		sgt.update(i, a);
