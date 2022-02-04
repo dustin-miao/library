@@ -131,6 +131,9 @@ data:
       path: verify/sparse-segment-tree.aizu-range-sum-query.test.cpp
       title: verify/sparse-segment-tree.aizu-range-sum-query.test.cpp
     - icon: ':heavy_check_mark:'
+      path: verify/sparse-segment-tree.aizu-the-number-of-inversions.test.cpp
+      title: verify/sparse-segment-tree.aizu-the-number-of-inversions.test.cpp
+    - icon: ':heavy_check_mark:'
       path: verify/sparse-segment-tree.yosupo-point-add-range-sum.test.cpp
       title: verify/sparse-segment-tree.yosupo-point-add-range-sum.test.cpp
     - icon: ':heavy_check_mark:'
