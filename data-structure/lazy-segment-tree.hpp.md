@@ -85,28 +85,26 @@ title: Lazy Segment Tree
 
 ### Summary
 
-A data structure built on monoids $(S \; \cdot : S \times S \rightarrow S, e \in S)$ i.e., the algebraic structure that satisfies the following properties:
-- Associativity: $(a \cdot b) \cdot c = a \cdot (b \cdot c)$ for all $a, b, c \in S$
-- Identity: there exists some element $e$ such that $a \cdot e = e \cdot a = a$ for all $a \in S$
+The lazy segment tree is an online range query range update data structure that supports the following operations:
+- Given some indicies $l, r$ such that $l \leq r$, returns the value $\Pi_{i = l}^r a_i$, where "$\cdot$" is an associative function.
+- Given some indicies $l, r$ such that $l \leq r$ and a value $v$, applies an update of $v$ to $a_i \forall i \in [l, r]$. 
 
-For an array of size $n$, it can process the following operations in $\mathcal{O}(\log n)$ time:
-- Update a range of elements
-- Query an interval
+Both these operations are performed in $\mathcal{O}(\log n)$ time, where $n$ is the number of elements represented by the segment tree. The space complexity is $\mathcal{O}(q \log n)$, where $q$ is the number of update operations performed. All indices are 0-based. 
 
 ### Preconditions
 
 - `B` is a class with the following defined:
   - `T`: The node type.
   - `L`: The update type.
-  - `const T Tdval`: The identity element for T.
-  - `const L Ldval`: The identity element for L. 
-  - `void apply(T &a, L &b, L c, int l, int r)`: Applies an update of value `c` spanning from `l` to `r` inclusive to a node with value `a` and lazy value `b`. 
-  - `T merge(T a, T b)`: Merges two nodes with values `a` and `b`. 
+  - `const T Tdval`: The identity node type, such that for any element $a$ it satisfies $a \cdot dval = dval \cdot a = a$.
+  - `const L Ldval`: The identity update type, such that any update $v$ applied to some node with lazy value $Ldval$ returns $v$. 
+  - `T merge(T a, T b)`: Merges two nodes with values $a$ and $b$. 
+  - `void apply(T &a, L &b, L c, int l, int r)`: Applies an update with value $c$ to a node with node value $a$, lazy value $b$ and spans a range from $l$ to $r$. 
 
 ### Methods
 
 - `SegTree()`: Constructs an empty `Segtree` object.
-- `SegTree(size_t _n)`: Constructs a `Segtree` object with initial capacity `_n` filled with the default node value.
-- `void init(int _n)`: Initializes a `Segtree` object with capacity `_n` filled with the default node value. 
-- `void update(int l, int r, L v)`: Updates indicies `l` to `r` inclusive with value `v`.
-- `T query(int l, int r)`: Queries the range from `l` to `r` inclusive. 
+- `SegTree(size_t _n)`: Constructs a `Segtree` object with initial capacity $n$ filled with the default value.
+- `void init(int _n)`: Initializes a `Segtree` object with capacity $n$ filled with the default value in linear time. 
+- `void update(int l, int r, T v)`: Applies an update of $v$ to $a_i \forall i \in [l, r]$ in logarithmic time. 
+- `T query(int l, int r)`: Returns $\Pi_{i = l}^r a_i$ in logarithmic time. 
