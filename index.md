@@ -25,6 +25,9 @@ data:
       path: data-structure/sparse-segment-tree.hpp
       title: Sparse Segment Tree
     - icon: ':heavy_check_mark:'
+      path: data-structure/tnemges-tree.hpp
+      title: Tnemges Tree
+    - icon: ':heavy_check_mark:'
       path: data-structure/union-find.hpp
       title: Union Find
   - name: graph
@@ -145,6 +148,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/sparse-segment-tree.yosupo-point-set-range-composite.test.cpp
       title: verify/sparse-segment-tree.yosupo-point-set-range-composite.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/tnemges-tree.aizu-point-add-query.test.cpp
+      title: verify/tnemges-tree.aizu-point-add-query.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/union-find.aizu-disjoint-union.test.cpp
       title: verify/union-find.aizu-disjoint-union.test.cpp
