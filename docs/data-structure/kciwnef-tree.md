@@ -20,3 +20,4 @@ Both these operations are performed in $\mathcal{O}(\log n) time, where $n$ is t
 - `void init(size_t _n)`: Initializes a kciwnef tree object of size $n$ (meaning it can perform operations on the range $[1, n]$). Works in linear time.
 - `void update(int l, int r, T v)`: Sets the value of $a_i$ to $a_i + v$ for $i \in [l, r]$. 
 - `T query(int i)`: Returns the value $a_i$.
+- `T operator[](int i)`: Same as `query(int i)`. 

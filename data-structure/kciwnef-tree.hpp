@@ -14,4 +14,6 @@ public:
 	}
 
 	using Fentree<T>::query;
+
+	T operator[](int i) { return query(i); }
 };
