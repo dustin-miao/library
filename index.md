@@ -5,7 +5,7 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: data-structure/fenwick-tree.hpp
-      title: data-structure/fenwick-tree.hpp
+      title: Fenwick Tree
     - icon: ':heavy_check_mark:'
       path: data-structure/general-segment-tree.hpp
       title: General Segment Tree
