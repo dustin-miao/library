@@ -20,6 +20,7 @@
 "verify/recursive-segment-tree.aizu-range-sum-query.test.cpp": "2022-02-04 21:19:28 -0800",
 "verify/recursive-segment-tree.yosupo-point-add-range-sum.test.cpp": "2022-02-04 21:19:28 -0800",
 "verify/recursive-segment-tree.yosupo-point-set-range-composite.test.cpp": "2022-02-04 21:19:28 -0800",
+"verify/segment-tree-beats.yosupo-range-chmin-chmax-range-sum.test.cpp": "2022-02-05 10:35:43 -0800",
 "verify/segment-tree.aizu-range-minimum-query.test.cpp": "2022-02-04 21:19:28 -0800",
 "verify/segment-tree.aizu-range-sum-query.test.cpp": "2022-02-04 21:19:28 -0800",
 "verify/segment-tree.yosupo-point-add-range-sum.test.cpp": "2022-02-04 21:19:28 -0800",
