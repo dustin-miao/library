@@ -3,7 +3,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "data-structure/binary-index-tree.hpp"
+#include "data-structure/fenwick-tree.hpp"
 
 int main() {
 	int N, Q;
