@@ -2,30 +2,28 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: graph/dijkstra.hpp
-    title: Dijkstra's Algorithm
-  - icon: ':heavy_check_mark:'
     path: graph/graph-util.hpp
     title: Graph Utility
   - icon: ':heavy_check_mark:'
     path: utility/chmin.hpp
     title: Chmin
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/dijkstra.aizu-shortest-path.test.cpp
+    title: verify/dijkstra.aizu-shortest-path.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/dijkstra.aizu-single-source-shortest-path.test.cpp
+    title: verify/dijkstra.aizu-single-source-shortest-path.test.cpp
   _isVerificationFailed: false
-  _pathExtension: cpp
+  _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.yosupo.jp/problem/shortest_path
-    links:
-    - https://judge.yosupo.jp/problem/shortest_path
-  bundledCode: "#line 1 \"verify/dijkstra.aizu-shortest-path.test.cpp\"\n#define PROBLEM\
-    \ \"https://judge.yosupo.jp/problem/shortest_path\"\n\n#include <bits/stdc++.h>\n\
-    using namespace std;\n\n#line 1 \"utility/chmin.hpp\"\ntemplate<typename T>\n\
-    bool chmin(T &a, T b) {\n\tif (a > b) {\n\t\ta = b;\n\t\treturn true;\n\t}\n\t\
-    return false;\n}\n#line 1 \"graph/graph-util.hpp\"\nusing u_graph = vector<vector<int>>;\n\
-    \nusing u_edgelist = vector<pair<int, int>>;\n\nusing u_matgraph = vector<vector<bool>>;\n\
+    links: []
+  bundledCode: "#line 1 \"utility/chmin.hpp\"\ntemplate<typename T>\nbool chmin(T\
+    \ &a, T b) {\n\tif (a > b) {\n\t\ta = b;\n\t\treturn true;\n\t}\n\treturn false;\n\
+    }\n#line 1 \"graph/graph-util.hpp\"\nusing u_graph = vector<vector<int>>;\n\n\
+    using u_edgelist = vector<pair<int, int>>;\n\nusing u_matgraph = vector<vector<bool>>;\n\
     \nu_graph to_graph(size_t n, const u_edgelist &E) {\n\tu_graph G(n);\n\tfor (auto\
     \ [u, v] : E)\n\t\tG[u].push_back(v);\n\treturn G;\n}\n\nu_graph to_graph(const\
     \ u_matgraph &M) {\n\tsize_t n = M.size();\n\tu_graph G(n);\n\tfor (int u = 0;\
@@ -67,39 +65,38 @@ data:
     \twhile (!pq.empty()) {\n\t\tauto [d, u] = pq.top(); pq.pop();\n\t\tif (d != dis[u])\n\
     \t\t\tcontinue;\n\t\tfor (auto [v, w] : G[u])\n\t\t\tif (chmin(dis[v], d + w))\
     \ {\n\t\t\t\tpar[v] = u;\n\t\t\t\tpq.emplace(dis[v], v);\n\t\t\t}\n\t}\n\treturn\
-    \ {dis, par};\n}\n#line 7 \"verify/dijkstra.aizu-shortest-path.test.cpp\"\n\n\
-    int main() {\n\tint N, M, S, T;\n\tcin >> N >> M >> S >> T;\n\tgraph<long long>\
-    \ G(N);\n\tfor (int i = 0; i < M; i++) {\n\t\tint u, v; long long w;\n\t\tcin\
-    \ >> u >> v >> w;\n\t\tG[u].emplace_back(v, w);\n\t}\n\t\n\tauto [dis, par] =\
-    \ dijkstra(G, S);\n\n\tif (par[T] == -1) {\n\t\tcout << -1 << '\\n';\n\t\treturn\
-    \ 0;\n\t}\n\n\tvector<int> path;\n\tfor (int u = T; u != S; u = par[u])\n\t\t\
-    path.push_back(u);\n\tpath.push_back(S);\n\treverse(path.begin(), path.end());\n\
-    \n\tcout << dis[T] << ' ' << path.size() - 1 << '\\n';\n\tfor (int i = 1; i <\
-    \ path.size(); i++)\n\t\tcout << path[i - 1] << ' ' << path[i] << '\\n';\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/shortest_path\"\n\n#include\
-    \ <bits/stdc++.h>\nusing namespace std;\n\n#include \"graph/dijkstra.hpp\"\n\n\
-    int main() {\n\tint N, M, S, T;\n\tcin >> N >> M >> S >> T;\n\tgraph<long long>\
-    \ G(N);\n\tfor (int i = 0; i < M; i++) {\n\t\tint u, v; long long w;\n\t\tcin\
-    \ >> u >> v >> w;\n\t\tG[u].emplace_back(v, w);\n\t}\n\t\n\tauto [dis, par] =\
-    \ dijkstra(G, S);\n\n\tif (par[T] == -1) {\n\t\tcout << -1 << '\\n';\n\t\treturn\
-    \ 0;\n\t}\n\n\tvector<int> path;\n\tfor (int u = T; u != S; u = par[u])\n\t\t\
-    path.push_back(u);\n\tpath.push_back(S);\n\treverse(path.begin(), path.end());\n\
-    \n\tcout << dis[T] << ' ' << path.size() - 1 << '\\n';\n\tfor (int i = 1; i <\
-    \ path.size(); i++)\n\t\tcout << path[i - 1] << ' ' << path[i] << '\\n';\n}"
+    \ {dis, par};\n}\n"
+  code: "#include \"utility/chmin.hpp\"\n#include \"graph/graph-util.hpp\"\n\ntemplate<typename\
+    \ T>\npair<vector<long long>, vector<int>> dijkstra(const graph<T> &G, int s)\
+    \ {\n\tsize_t n = G.size();\n\tpriority_queue<pair<T, int>, vector<pair<T, int>>,\
+    \ greater<pair<T, int>>> pq;\n\tvector<T> dis(n, numeric_limits<T>::max());\n\t\
+    vector<int> par(n, -1);\n\n\tpq.emplace(0, s);\n\tdis[s] = 0;\n\tpar[s] = s;\n\
+    \twhile (!pq.empty()) {\n\t\tauto [d, u] = pq.top(); pq.pop();\n\t\tif (d != dis[u])\n\
+    \t\t\tcontinue;\n\t\tfor (auto [v, w] : G[u])\n\t\t\tif (chmin(dis[v], d + w))\
+    \ {\n\t\t\t\tpar[v] = u;\n\t\t\t\tpq.emplace(dis[v], v);\n\t\t\t}\n\t}\n\treturn\
+    \ {dis, par};\n}"
   dependsOn:
-  - graph/dijkstra.hpp
   - utility/chmin.hpp
   - graph/graph-util.hpp
-  isVerificationFile: true
-  path: verify/dijkstra.aizu-shortest-path.test.cpp
+  isVerificationFile: false
+  path: graph/dijkstra.hpp
   requiredBy: []
   timestamp: '2022-02-04 21:19:28-08:00'
-  verificationStatus: TEST_ACCEPTED
-  verifiedWith: []
-documentation_of: verify/dijkstra.aizu-shortest-path.test.cpp
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/dijkstra.aizu-shortest-path.test.cpp
+  - verify/dijkstra.aizu-single-source-shortest-path.test.cpp
+documentation_of: graph/dijkstra.hpp
 layout: document
-redirect_from:
-- /verify/verify/dijkstra.aizu-shortest-path.test.cpp
-- /verify/verify/dijkstra.aizu-shortest-path.test.cpp.html
-title: verify/dijkstra.aizu-shortest-path.test.cpp
+title: Dijkstra's Algorithm
 ---
+
+## Dijkstra's Algorithm
+
+### Summary
+
+Finds the shortest path from a source $S$ in a directed or undirected weighted graph. Returns both the distance to each node as well as the shortest path tree. 
+
+### Parameters
+- `const G& graph`: A `std::vector<T>` that describes the graph, where `T` is an iterable data structure containing integers.
+- `int S`: The source vertex, `S` must be in `graph`. 

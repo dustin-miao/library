@@ -1,14 +1,41 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: graph/cycle-finding.hpp
+    title: Cycle Finding
+  - icon: ':heavy_check_mark:'
+    path: graph/dijkstra.hpp
+    title: Dijkstra's Algorithm
+  - icon: ':heavy_check_mark:'
+    path: graph/floyd-warshall.hpp
+    title: Floyd-Warshall Algorithm
+  - icon: ':heavy_check_mark:'
+    path: graph/kruskal.hpp
+    title: Kruskal's Algorithm
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/cycle-finding.yosupo-cycle-detection.test.cpp
+    title: verify/cycle-finding.yosupo-cycle-detection.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/dijkstra.aizu-shortest-path.test.cpp
+    title: verify/dijkstra.aizu-shortest-path.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/dijkstra.aizu-single-source-shortest-path.test.cpp
+    title: verify/dijkstra.aizu-single-source-shortest-path.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/floyd-warshall.all-pairs-shortest-path.test.cpp
+    title: verify/floyd-warshall.all-pairs-shortest-path.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/kruskal.aizu-minimum-spanning-tree.test.cpp
+    title: verify/kruskal.aizu-minimum-spanning-tree.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"templates/graph/graph-util.hpp\"\nusing u_graph = vector<vector<int>>;\n\
+  bundledCode: "#line 1 \"graph/graph-util.hpp\"\nusing u_graph = vector<vector<int>>;\n\
     \nusing u_edgelist = vector<pair<int, int>>;\n\nusing u_matgraph = vector<vector<bool>>;\n\
     \nu_graph to_graph(size_t n, const u_edgelist &E) {\n\tu_graph G(n);\n\tfor (auto\
     \ [u, v] : E)\n\t\tG[u].push_back(v);\n\treturn G;\n}\n\nu_graph to_graph(const\
@@ -81,15 +108,26 @@ data:
     \tfor (auto [u, v, w] : E)\n\t\tM[u][v] = w;\n\treturn M;\n}"
   dependsOn: []
   isVerificationFile: false
-  path: templates/graph/graph-util.hpp
-  requiredBy: []
-  timestamp: '2022-02-04 20:52:31-08:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
-documentation_of: templates/graph/graph-util.hpp
+  path: graph/graph-util.hpp
+  requiredBy:
+  - graph/cycle-finding.hpp
+  - graph/kruskal.hpp
+  - graph/floyd-warshall.hpp
+  - graph/dijkstra.hpp
+  timestamp: '2022-02-04 21:19:28-08:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/cycle-finding.yosupo-cycle-detection.test.cpp
+  - verify/dijkstra.aizu-shortest-path.test.cpp
+  - verify/kruskal.aizu-minimum-spanning-tree.test.cpp
+  - verify/floyd-warshall.all-pairs-shortest-path.test.cpp
+  - verify/dijkstra.aizu-single-source-shortest-path.test.cpp
+documentation_of: graph/graph-util.hpp
 layout: document
-redirect_from:
-- /library/templates/graph/graph-util.hpp
-- /library/templates/graph/graph-util.hpp.html
-title: templates/graph/graph-util.hpp
+title: Graph Utility
 ---
+
+## Graph Utility
+
+[Placeholder]
+
