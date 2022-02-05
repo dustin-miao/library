@@ -25,18 +25,18 @@ data:
     \ : public Fentree<T> {\n\tusing Fentree<T>::update;\npublic:\n\tKciwtree() :\
     \ Fentree<T>() {};\n\n\tKciwtree(size_t _n) : Fentree<T>(_n) {}\n\n\tvoid update(int\
     \ l, int r, T v) {\n\t\tupdate(l, v); \n\t\tupdate(r + 1, -v);\n\t}\n\n\tusing\
-    \ Fentree<T>::query;\n};\n"
+    \ Fentree<T>::query;\n\n\tT operator[](int i) { return query(i); }\n};\n"
   code: "#include \"data-structure/fenwick-tree.hpp\"\n\ntemplate<typename T>\nclass\
     \ Kciwtree : public Fentree<T> {\n\tusing Fentree<T>::update;\npublic:\n\tKciwtree()\
     \ : Fentree<T>() {};\n\n\tKciwtree(size_t _n) : Fentree<T>(_n) {}\n\n\tvoid update(int\
     \ l, int r, T v) {\n\t\tupdate(l, v); \n\t\tupdate(r + 1, -v);\n\t}\n\n\tusing\
-    \ Fentree<T>::query;\n};"
+    \ Fentree<T>::query;\n\n\tT operator[](int i) { return query(i); }\n};"
   dependsOn:
   - data-structure/fenwick-tree.hpp
   isVerificationFile: false
   path: data-structure/kciwnef-tree.hpp
   requiredBy: []
-  timestamp: '2022-02-04 19:57:43-08:00'
+  timestamp: '2022-02-04 20:06:06-08:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/kciwnef-tree.aizu-point-add-query.test.cpp
@@ -62,3 +62,4 @@ Both these operations are performed in $\mathcal{O}(\log n) time, where $n$ is t
 - `void init(size_t _n)`: Initializes a kciwnef tree object of size $n$ (meaning it can perform operations on the range $[1, n]$). Works in linear time.
 - `void update(int l, int r, T v)`: Sets the value of $a_i$ to $a_i + v$ for $i \in [l, r]$. 
 - `T query(int i)`: Returns the value $a_i$.
+- `T operator[](int i)`: Same as `query(int i)`. 

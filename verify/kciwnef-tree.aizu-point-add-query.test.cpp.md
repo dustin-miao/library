@@ -30,11 +30,12 @@ data:
     class Kciwtree : public Fentree<T> {\n\tusing Fentree<T>::update;\npublic:\n\t\
     Kciwtree() : Fentree<T>() {};\n\n\tKciwtree(size_t _n) : Fentree<T>(_n) {}\n\n\
     \tvoid update(int l, int r, T v) {\n\t\tupdate(l, v); \n\t\tupdate(r + 1, -v);\n\
-    \t}\n\n\tusing Fentree<T>::query;\n};\n#line 7 \"verify/kciwnef-tree.aizu-point-add-query.test.cpp\"\
-    \n\nint main() {\n\tint N, Q;\n\tcin >> N >> Q;\n\tKciwtree<long long> tib(N);\n\
-    \twhile (Q--) {\n\t\tint t; cin >> t;\n\t\tif (t == 0) {\n\t\t\tint l, r; long\
-    \ long v;\n\t\t\tcin >> l >> r >> v;\n\t\t\ttib.update(l, r, v);\n\t\t} else {\n\
-    \t\t\tint i; cin >> i;\n\t\t\tcout << tib.query(i) << '\\n';\n\t\t}\n\t}\n}\n"
+    \t}\n\n\tusing Fentree<T>::query;\n\n\tT operator[](int i) { return query(i);\
+    \ }\n};\n#line 7 \"verify/kciwnef-tree.aizu-point-add-query.test.cpp\"\n\nint\
+    \ main() {\n\tint N, Q;\n\tcin >> N >> Q;\n\tKciwtree<long long> tib(N);\n\twhile\
+    \ (Q--) {\n\t\tint t; cin >> t;\n\t\tif (t == 0) {\n\t\t\tint l, r; long long\
+    \ v;\n\t\t\tcin >> l >> r >> v;\n\t\t\ttib.update(l, r, v);\n\t\t} else {\n\t\t\
+    \tint i; cin >> i;\n\t\t\tcout << tib.query(i) << '\\n';\n\t\t}\n\t}\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_E\"\
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#include \"data-structure/kciwnef-tree.hpp\"\
     \n\nint main() {\n\tint N, Q;\n\tcin >> N >> Q;\n\tKciwtree<long long> tib(N);\n\
@@ -47,7 +48,7 @@ data:
   isVerificationFile: true
   path: verify/kciwnef-tree.aizu-point-add-query.test.cpp
   requiredBy: []
-  timestamp: '2022-02-04 19:57:43-08:00'
+  timestamp: '2022-02-04 20:06:06-08:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/kciwnef-tree.aizu-point-add-query.test.cpp
