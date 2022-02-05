@@ -28,6 +28,7 @@
 "verify/sparse-segment-tree.aizu-the-number-of-inversions.test.cpp": "2022-02-04 21:19:28 -0800",
 "verify/sparse-segment-tree.yosupo-point-add-range-sum.test.cpp": "2022-02-04 21:19:28 -0800",
 "verify/sparse-segment-tree.yosupo-point-set-range-composite.test.cpp": "2022-02-04 21:19:28 -0800",
+"verify/sparse-table.yosupo-static-rmq.test.cpp": "2022-02-05 09:55:16 -0800",
 "verify/tnemges-tree.aizu-point-add-query.test.cpp": "2022-02-04 21:19:28 -0800",
 "verify/union-find.aizu-disjoint-union.test.cpp": "2022-02-04 21:19:28 -0800",
 "verify/union-find.yosupo-unionfind.test.cpp": "2022-02-04 21:19:28 -0800"
