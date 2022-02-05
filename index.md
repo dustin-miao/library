@@ -4,8 +4,8 @@ data:
   - name: data-structure
     pages:
     - icon: ':heavy_check_mark:'
-      path: data-structure/binary-index-tree.hpp
-      title: Binary Index Tree
+      path: data-structure/fenwick-tree.hpp
+      title: data-structure/fenwick-tree.hpp
     - icon: ':heavy_check_mark:'
       path: data-structure/general-segment-tree.hpp
       title: General Segment Tree
@@ -56,12 +56,6 @@ data:
   - name: verify
     pages:
     - icon: ':heavy_check_mark:'
-      path: verify/binary-index-tree.aizu-range-sum-query.test.cpp
-      title: verify/binary-index-tree.aizu-range-sum-query.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: verify/binary-index-tree.yosupo-point-add-range-sum.test.cpp
-      title: verify/binary-index-tree.yosupo-point-add-range-sum.test.cpp
-    - icon: ':heavy_check_mark:'
       path: verify/cycle-finding.yosupo-cycle-detection.test.cpp
       title: verify/cycle-finding.yosupo-cycle-detection.test.cpp
     - icon: ':heavy_check_mark:'
@@ -70,6 +64,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/dijkstra.aizu-single-source-shortest-path.test.cpp
       title: verify/dijkstra.aizu-single-source-shortest-path.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/fenwick-tree.aizu-range-sum-query.test.cpp
+      title: verify/fenwick-tree.aizu-range-sum-query.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/fenwick-tree.yosupo-point-add-range-sum.test.cpp
+      title: verify/fenwick-tree.yosupo-point-add-range-sum.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/floyd-warshall.all-pairs-shortest-path.test.cpp
       title: verify/floyd-warshall.all-pairs-shortest-path.test.cpp
