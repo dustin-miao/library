@@ -2,28 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: verify/sparse-segment-tree.aizu-range-minimum-query.test.cpp
-    title: verify/sparse-segment-tree.aizu-range-minimum-query.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/sparse-segment-tree.aizu-range-sum-query.test.cpp
-    title: verify/sparse-segment-tree.aizu-range-sum-query.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/sparse-segment-tree.aizu-the-number-of-inversions.test.cpp
-    title: verify/sparse-segment-tree.aizu-the-number-of-inversions.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/sparse-segment-tree.yosupo-point-add-range-sum.test.cpp
-    title: verify/sparse-segment-tree.yosupo-point-add-range-sum.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/sparse-segment-tree.yosupo-point-set-range-composite.test.cpp
-    title: verify/sparse-segment-tree.yosupo-point-set-range-composite.test.cpp
+  _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"data-structure/sparse-segment-tree.hpp\"\ntemplate<class\
+  bundledCode: "#line 1 \"templates/data-structure/sparse-segment-tree.hpp\"\ntemplate<class\
     \ Base>\nclass Segtree : public Base {\n\tusing T = typename Base::T;\n\tusing\
     \ Base::dval;\n\tusing Base::merge;\n\tusing Base::apply;\n\nprotected:\n\tsize_t\
     \ n;\n\n\tstruct node {\n\t\tT v;\n\t\tint l, r;\n\t\tnode() = default;\n\t\t\
@@ -68,43 +53,15 @@ data:
     \ l, int r) { return query(l, r, root, 0, n - 1); }\n};"
   dependsOn: []
   isVerificationFile: false
-  path: data-structure/sparse-segment-tree.hpp
+  path: templates/data-structure/sparse-segment-tree.hpp
   requiredBy: []
-  timestamp: '2022-02-03 12:53:46-08:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - verify/sparse-segment-tree.aizu-the-number-of-inversions.test.cpp
-  - verify/sparse-segment-tree.aizu-range-sum-query.test.cpp
-  - verify/sparse-segment-tree.aizu-range-minimum-query.test.cpp
-  - verify/sparse-segment-tree.yosupo-point-add-range-sum.test.cpp
-  - verify/sparse-segment-tree.yosupo-point-set-range-composite.test.cpp
-documentation_of: data-structure/sparse-segment-tree.hpp
+  timestamp: '2022-02-04 20:52:31-08:00'
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
+documentation_of: templates/data-structure/sparse-segment-tree.hpp
 layout: document
-title: Sparse Segment Tree
+redirect_from:
+- /library/templates/data-structure/sparse-segment-tree.hpp
+- /library/templates/data-structure/sparse-segment-tree.hpp.html
+title: templates/data-structure/sparse-segment-tree.hpp
 ---
-
-## Sparse Segment Tree
-
-### Summary
-
-The segment tree is an online range query point update data structure that supports the following operations:
-- Given some indicies $l, r$ such that $l \leq r$, returns the value $\Pi_{i = l}^r a_i$, where "$\cdot$" is an associative function.
-- Given an index $i$ and a value $v$, applies an update of $v$ to $a_i$. 
-
-Both these operations are performed in $\mathcal{O}(\log n)$ time, where $n$ is the number of elements represented by the segment tree. The space complexity is $\mathcal{O}(q \log n)$, where $q$ is the number of update operations performed. All indices are 0-based. 
-
-### Preconditions
-
-- `B` is a class with the following defined:
-  - `T`: The node type.
-  - `const T dval`: The identity element, such that for any element $a$ it satisfies $a \cdot dval = dval \cdot a = a$.
-  - `T merge(T a, T b)`: Merges two nodes with values $a$ and $b$. 
-  - `void apply(T &a, T b)`: Applies an update of value $b$ to a node with value $a$. 
-
-### Methods
-
-- `SegTree()`: Constructs an empty `Segtree` object.
-- `SegTree(size_t _n)`: Constructs a `Segtree` object with initial capacity $n$ filled with the default value.
-- `void init(int _n)`: Initializes a `Segtree` object with capacity $n$ filled with the default value in linear time. 
-- `void update(int i, T v)`: Applies an update of $v$ to $a_i$ in logarithmic time. 
-- `T query(int l, int r)`: Returns $\Pi_{i = l}^r a_i$ in logarithmic time. 

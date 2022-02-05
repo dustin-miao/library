@@ -3,10 +3,11 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
-  _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
-  attributes: {}
+  _isVerificationFailed: false
+  _pathExtension: hpp
+  _verificationStatusIcon: ':warning:'
+  attributes:
+    links: []
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.2/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
     \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.10.2/x64/lib/python3.10/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
@@ -16,24 +17,22 @@ data:
     , line 260, in _resolve\n    raise BundleErrorAt(path, -1, \"no such header\"\
     )\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: data-structure/fenwick-tree.hpp:\
     \ line -1: no such header\n"
-  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B\"\
-    \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#include \"data-structure/fenwick-tree.hpp\"\
-    \n\nint main() {\n\tint N, Q;\n\tcin >> N >> Q;\n\tFentree<long long> bit(N);\n\
-    \twhile (Q--) {\n\t\tint t; cin >> t;\n\t\tif (t == 0) {\n\t\t\tint i; long long\
-    \ v;\n\t\t\tcin >> i >> v;\n\t\t\tbit.update(i, v);\n\t\t} else if (t == 1) {\n\
-    \t\t\tint l, r;\n\t\t\tcin >> l >> r;\n\t\t\tcout << bit.query(l, r) << '\\n';\n\
-    \t\t}\n\t}\n}"
+  code: "#include \"data-structure/fenwick-tree.hpp\"\n\ntemplate<typename T>\nclass\
+    \ Kciwtree : public Fentree<T> {\n\tusing Fentree<T>::update;\npublic:\n\tKciwtree()\
+    \ : Fentree<T>() {};\n\n\tKciwtree(size_t _n) : Fentree<T>(_n) {}\n\n\tvoid update(int\
+    \ l, int r, T v) {\n\t\tupdate(l, v); \n\t\tupdate(r + 1, -v);\n\t}\n\n\tusing\
+    \ Fentree<T>::query;\n\n\tT operator[](int i) { return query(i); }\n};"
   dependsOn: []
-  isVerificationFile: true
-  path: verify/fenwick-tree.aizu-range-sum-query.test.cpp
+  isVerificationFile: false
+  path: templates/data-structure/kciwnef-tree.hpp
   requiredBy: []
   timestamp: '1970-01-01 00:00:00+00:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: verify/fenwick-tree.aizu-range-sum-query.test.cpp
+documentation_of: templates/data-structure/kciwnef-tree.hpp
 layout: document
 redirect_from:
-- /verify/verify/fenwick-tree.aizu-range-sum-query.test.cpp
-- /verify/verify/fenwick-tree.aizu-range-sum-query.test.cpp.html
-title: verify/fenwick-tree.aizu-range-sum-query.test.cpp
+- /library/templates/data-structure/kciwnef-tree.hpp
+- /library/templates/data-structure/kciwnef-tree.hpp.html
+title: templates/data-structure/kciwnef-tree.hpp
 ---

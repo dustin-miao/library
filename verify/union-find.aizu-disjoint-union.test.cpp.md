@@ -1,49 +1,33 @@
 ---
 data:
-  _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: data-structure/union-find.hpp
-    title: Union Find
+  _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
-  attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A
-    links:
-    - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A
-  bundledCode: "#line 1 \"verify/union-find.aizu-disjoint-union.test.cpp\"\n#define\
-    \ PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A\"\
-    \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#line 1 \"data-structure/union-find.hpp\"\
-    \nstruct UnionFind {\n    vector<int> par, siz;\n\n    UnionFind() = default;\n\
-    \n    UnionFind(int n) { init(n); }\n\n    void init(int n) {\n        par.resize(n);\n\
-    \        siz.resize(n);\n        iota(par.begin(), par.end(), 0);\n        fill(siz.begin(),\
-    \ siz.end(), 1);\n    }\n\n    int find(int u) {\n        if (u == par[u])\n \
-    \           return u;\n        return par[u] = find(par[u]);\n    }\n\n    bool\
-    \ merge(int u, int v) {\n        u = find(u), v = find(v);\n        if (u == v)\n\
-    \            return false;\n        if (siz[u] > siz[v]) {\n            par[v]\
-    \ = u;\n            siz[u] += siz[v];\n        } else {\n            par[u] =\
-    \ v;\n            siz[v] += siz[u];\n        }\n        return true;\n    }\n\n\
-    \    int size(int u) { return siz[find(u)]; }\n};\n#line 7 \"verify/union-find.aizu-disjoint-union.test.cpp\"\
-    \n\nint main() {\n\tint N, Q;\n  \tcin >> N >> Q;\n\tUnionFind dsu(N);\n  \twhile\
-    \ (Q--) {\n    \tint t, u, v;\n    \tcin >> t >> u >> v;\n\t\tif (t == 0)\n\t\
-    \      \tdsu.merge(u, v);\n    \telse\n      \t\tcout << (dsu.find(u) == dsu.find(v)\
-    \ ? 1 : 0) << '\\n';\n  \t}\n}\n"
+  _verificationStatusIcon: ':x:'
+  attributes: {}
+  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.2/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
+    , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
+    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.10.2/x64/lib/python3.10/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
+    , line 187, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.10.2/x64/lib/python3.10/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
+    , line 401, in update\n    self.update(self._resolve(pathlib.Path(included), included_from=path))\n\
+    \  File \"/opt/hostedtoolcache/Python/3.10.2/x64/lib/python3.10/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
+    , line 260, in _resolve\n    raise BundleErrorAt(path, -1, \"no such header\"\
+    )\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: data-structure/union-find.hpp:\
+    \ line -1: no such header\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A\"\
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#include \"data-structure/union-find.hpp\"\
     \n\nint main() {\n\tint N, Q;\n  \tcin >> N >> Q;\n\tUnionFind dsu(N);\n  \twhile\
     \ (Q--) {\n    \tint t, u, v;\n    \tcin >> t >> u >> v;\n\t\tif (t == 0)\n\t\
     \      \tdsu.merge(u, v);\n    \telse\n      \t\tcout << (dsu.find(u) == dsu.find(v)\
     \ ? 1 : 0) << '\\n';\n  \t}\n}\n"
-  dependsOn:
-  - data-structure/union-find.hpp
+  dependsOn: []
   isVerificationFile: true
   path: verify/union-find.aizu-disjoint-union.test.cpp
   requiredBy: []
-  timestamp: '2022-02-02 10:15:02-08:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '1970-01-01 00:00:00+00:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/union-find.aizu-disjoint-union.test.cpp
 layout: document
