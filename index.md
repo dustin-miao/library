@@ -19,6 +19,9 @@ data:
       path: data-structure/recursive-segment-tree.hpp
       title: Recursive Segment Tree
     - icon: ':heavy_check_mark:'
+      path: data-structure/segment-tree-beats.hpp
+      title: Segment Tree Beats
+    - icon: ':heavy_check_mark:'
       path: data-structure/segment-tree.hpp
       title: Segment Tree
     - icon: ':heavy_check_mark:'
@@ -127,6 +130,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/recursive-segment-tree.yosupo-point-set-range-composite.test.cpp
       title: verify/recursive-segment-tree.yosupo-point-set-range-composite.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/segment-tree-beats.yosupo-range-chmin-chmax-range-sum.test.cpp
+      title: verify/segment-tree-beats.yosupo-range-chmin-chmax-range-sum.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/segment-tree.aizu-range-minimum-query.test.cpp
       title: verify/segment-tree.aizu-range-minimum-query.test.cpp
