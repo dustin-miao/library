@@ -1,9 +1,9 @@
 {
-"verify/binary-index-tree.aizu-range-sum-query.test.cpp": "2022-01-27 09:03:11 -0800",
-"verify/binary-index-tree.yosupo-point-add-range-sum.test.cpp": "2022-01-26 05:31:56 -0800",
 "verify/cycle-finding.yosupo-cycle-detection.test.cpp": "2022-02-02 11:33:32 -0800",
 "verify/dijkstra.aizu-shortest-path.test.cpp": "2022-02-02 10:15:02 -0800",
 "verify/dijkstra.aizu-single-source-shortest-path.test.cpp": "2022-02-02 10:15:02 -0800",
+"verify/fenwick-tree.aizu-range-sum-query.test.cpp": "2022-02-04 19:46:21 -0800",
+"verify/fenwick-tree.yosupo-point-add-range-sum.test.cpp": "2022-02-04 19:46:21 -0800",
 "verify/floyd-warshall.all-pairs-shortest-path.test.cpp": "2022-02-02 10:15:02 -0800",
 "verify/general-segment-tree.aizu-range-minimum-query.test.cpp": "2022-02-02 15:19:45 -0800",
 "verify/general-segment-tree.aizu-range-sum-query.test.cpp": "2022-02-02 15:19:45 -0800",
