@@ -44,13 +44,16 @@ title: Addmod
 
 ### Summary
 
-An addition operator under modulo. 
+The addition operator under modulo. 
 
 ### Preconditions
 
-- `T`'s addition, subtraction, and comparison operators are defined
+- `T` is an integral type which has addition, subtraction, comparison, and modulo operators predefined. 
 
 ### Parameters
 - `T a`: A non-negative value less than `MOD`
 - `T b`: A non-negative value less than `MOD`
-- `T MOD`: : A positive value
+- `T MOD`: A positive value
+
+### Return
+- $ a + b \mod \text{MOD}$. 
