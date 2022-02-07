@@ -6,7 +6,6 @@ documentation_of: //utility/addmod.hpp
 ## Addmod
 
 ### Summary
-
 The addition operator under modulo. 
 
 ### Parameters
