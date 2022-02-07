@@ -16,6 +16,9 @@ data:
       path: data-structure/lazy-segment-tree.hpp
       title: Lazy Segment Tree
     - icon: ':heavy_check_mark:'
+      path: data-structure/line-container.hpp
+      title: Line Container
+    - icon: ':heavy_check_mark:'
       path: data-structure/recursive-segment-tree.hpp
       title: Recursive Segment Tree
     - icon: ':heavy_check_mark:'
@@ -59,11 +62,17 @@ data:
       path: utility/addmod.hpp
       title: Addmod
     - icon: ':warning:'
+      path: utility/ceil-div.hpp
+      title: Ceil Division
+    - icon: ':warning:'
       path: utility/chmax.hpp
       title: Chmax
     - icon: ':heavy_check_mark:'
       path: utility/chmin.hpp
       title: Chmin
+    - icon: ':heavy_check_mark:'
+      path: utility/floor-div.hpp
+      title: Floor Division
   verificationCategories:
   - name: verify
     pages:
@@ -118,6 +127,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/lazy-segment-tree.yosupo-range-affine-range-sum.test.cpp
       title: verify/lazy-segment-tree.yosupo-range-affine-range-sum.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/line-container.yosupo-line-add-get-min.test.cpp
+      title: verify/line-container.yosupo-line-add-get-min.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/recursive-segment-tree.aizu-range-minimum-query.test.cpp
       title: verify/recursive-segment-tree.aizu-range-minimum-query.test.cpp
