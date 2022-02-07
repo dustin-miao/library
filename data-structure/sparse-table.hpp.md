@@ -46,11 +46,9 @@ title: Sparse Table
 ## Sparse Table
 
 ### Summary
-
 The sparse table is an online data structure that supports range min and max queries in constant time. The space used is $\mathcal{O}(n \log n)$. All indices are 0-indexed.
 
 ### Methods
-
 - `SparseTable()`: Constructs an empty sparse table.
 - `Fentree(I l, I r)`: Constructs a sparse table with elements specified by iterators $[l, r)$.
 - `void init(I l, I r)`: Initializes a sparse table with elements specified by iterators $[l, r)$ in $\mathcal{O}(n \log n)$ time, where $n$ is the number of elements between $l$ and $r$. .

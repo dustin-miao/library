@@ -59,7 +59,6 @@ title: Line Container
 ## Line Container
 
 ## Summary
-
 The line container is an online set of lines that supports the following operations:
 - Given some linear function $f(x) = mx + b$, inserts it into the set.
 - Given some location $x$, returns the maximum of $f(x)$ for all functions $f$ in the set. 
