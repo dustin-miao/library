@@ -16,6 +16,7 @@
 "verify/lazy-segment-tree.aizu-RSQ-and-RAQ.test.cpp": "2022-02-04 21:19:28 -0800",
 "verify/lazy-segment-tree.aizu-RSQ-and-RUQ.test.cpp": "2022-02-04 21:19:28 -0800",
 "verify/lazy-segment-tree.yosupo-range-affine-range-sum.test.cpp": "2022-02-04 21:19:28 -0800",
+"verify/line-container.yosupo-line-add-get-min.test.cpp": "2022-02-06 21:17:29 -0800",
 "verify/recursive-segment-tree.aizu-range-minimum-query.test.cpp": "2022-02-04 21:19:28 -0800",
 "verify/recursive-segment-tree.aizu-range-sum-query.test.cpp": "2022-02-04 21:19:28 -0800",
 "verify/recursive-segment-tree.yosupo-point-add-range-sum.test.cpp": "2022-02-04 21:19:28 -0800",
