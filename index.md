@@ -70,6 +70,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: utility/chmin.hpp
       title: Chmin
+    - icon: ':warning:'
+      path: utility/fast-pow.hpp
+      title: Binary Exponentiation
     - icon: ':heavy_check_mark:'
       path: utility/floor-div.hpp
       title: Floor Division
