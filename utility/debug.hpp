@@ -2,13 +2,34 @@
 #ifndef NDEBUG
 template<typename T1, typename T2>
 ostream &operator<<(ostream &os, const pair<T1, T2> &p) {
-	return os << '(' << p.FF << ", " << p.SS << ')';
+	return os << '(' << p.first << ", " << p.second << ')';
+}
+
+template<typename T1, typename T2, typename T3>
+ostream &operator<<(ostream &os, const tuple<T1, T2, T3> &p) {
+	return os << '(' << get<0>(p) << ", " << get<1>(p) << ", " << get<2>(p) << ')';
+}
+
+template<typename T1, typename T2, typename T3, typename T4>
+ostream &operator<<(ostream &os, const pair<T1, T2> &p) {
+	return os << '(' << get<0>(p) << ", " << get<1>(p) << ", " << get<2>(p) << ", " << get<3>(p) << ')';
 }
 
 template<typename T>
 ostream &operator<<(ostream &os, const vector<T> &v) {
 	os << '[';
 	if (v.size()) {
+		os << *v.begin();
+		for (auto i = ++v.begin(); i != v.end(); i++)
+			os << ", " << (*i);
+	}
+	return os << ']';
+}
+
+template<typename T, size_t N>
+ostream &operator<<(ostream &os, const array<T, N> &v) {
+	os << '[';
+	if (N) {
 		os << *v.begin();
 		for (auto i = ++v.begin(); i != v.end(); i++)
 			os << ", " << (*i);
