@@ -25,14 +25,14 @@ data:
     \  siz[u] += siz[v];\n        } else {\n            par[u] = v;\n            siz[v]\
     \ += siz[u];\n        }\n        return true;\n    }\n\n    int size(int u) {\
     \ return siz[find(u)]; }\n};\n#line 2 \"graph/kruskal.hpp\"\n\ntemplate<class\
-    \ graph>\nvector<vector<T>> kruskal(int n, vector<tuple<T, int, int>> E) {\n\t\
+    \ graph>\nvector<vector<T>> kruskal(int n, vector<tuple<int, int, T>> E) {\n\t\
     graph<T> mst(n);\n\tif (n <= 1)\n\t\treturn mst;\n\tUnionFind dsu(n);\n\tsort(E.begin(),\
     \ E.end(), \n\t\t[](auto a, auto b) { \n\t\t\treturn get<2>(a) < get<2>(b); \n\
     \t\t}\n\t);\n\tfor (auto [u, v, w] : E) {\n\t\tif (dsu.merge(u, v)) {\n\t\t\t\
     mst[u].emplace_back(v, w);\n\t\t\tmst[v].emplace_back(u, w);\n\t\t}\n\t\tif (dsu.size(0)\
     \ == n)\n\t\t\tbreak;\n\t}\n\treturn mst;\n}\n"
   code: "#include \"data-structure/union-find.hpp\"\n\ntemplate<class graph>\nvector<vector<T>>\
-    \ kruskal(int n, vector<tuple<T, int, int>> E) {\n\tgraph<T> mst(n);\n\tif (n\
+    \ kruskal(int n, vector<tuple<int, int, T>> E) {\n\tgraph<T> mst(n);\n\tif (n\
     \ <= 1)\n\t\treturn mst;\n\tUnionFind dsu(n);\n\tsort(E.begin(), E.end(), \n\t\
     \t[](auto a, auto b) { \n\t\t\treturn get<2>(a) < get<2>(b); \n\t\t}\n\t);\n\t\
     for (auto [u, v, w] : E) {\n\t\tif (dsu.merge(u, v)) {\n\t\t\tmst[u].emplace_back(v,\
@@ -43,7 +43,7 @@ data:
   isVerificationFile: false
   path: graph/kruskal.hpp
   requiredBy: []
-  timestamp: '2022-03-29 12:51:37-07:00'
+  timestamp: '2022-03-29 13:08:57-07:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - verify/kruskal.aizu-minimum-spanning-tree.test.cpp

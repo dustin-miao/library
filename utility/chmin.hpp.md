@@ -5,7 +5,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/dijkstra.hpp
     title: Dijkstra's Algorithm
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/floyd-warshall.hpp
     title: Floyd-Warshall Algorithm
   _extendedVerifiedWith:
@@ -15,12 +15,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/dijkstra.aizu-single-source-shortest-path.test.cpp
     title: verify/dijkstra.aizu-single-source-shortest-path.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/floyd-warshall.all-pairs-shortest-path.test.cpp
     title: verify/floyd-warshall.all-pairs-shortest-path.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"utility/chmin.hpp\"\ntemplate<typename T>\nbool chmin(T\
@@ -35,7 +35,7 @@ data:
   - graph/floyd-warshall.hpp
   - graph/dijkstra.hpp
   timestamp: '2022-02-04 21:19:28-08:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/dijkstra.aizu-shortest-path.test.cpp
   - verify/floyd-warshall.all-pairs-shortest-path.test.cpp

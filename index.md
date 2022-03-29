@@ -41,13 +41,13 @@ data:
       title: Union Find
   - name: graph
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph/cycle-finding.hpp
       title: Cycle Finding
     - icon: ':heavy_check_mark:'
       path: graph/dijkstra.hpp
       title: Dijkstra's Algorithm
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph/floyd-warshall.hpp
       title: Floyd-Warshall Algorithm
     - icon: ':warning:'
@@ -67,7 +67,7 @@ data:
     - icon: ':warning:'
       path: utility/chmax.hpp
       title: Chmax
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: utility/chmin.hpp
       title: Chmin
     - icon: ':warning:'
@@ -82,7 +82,7 @@ data:
   verificationCategories:
   - name: verify
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/cycle-finding.yosupo-cycle-detection.test.cpp
       title: verify/cycle-finding.yosupo-cycle-detection.test.cpp
     - icon: ':heavy_check_mark:'
@@ -97,7 +97,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/fenwick-tree.yosupo-point-add-range-sum.test.cpp
       title: verify/fenwick-tree.yosupo-point-add-range-sum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/floyd-warshall.all-pairs-shortest-path.test.cpp
       title: verify/floyd-warshall.all-pairs-shortest-path.test.cpp
     - icon: ':heavy_check_mark:'
