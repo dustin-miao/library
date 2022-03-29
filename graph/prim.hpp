@@ -1,7 +1,7 @@
 #include "utility/chmin.hpp"
 
 template<class T>
-vector<vector<pair<int, T>>> prim(vector<vector<pair<int, T>>> &G) {
+vector<vector<pair<int, T>>> prim(const vector<vector<pair<int, T>>> &G) {
 	int n = G.size();
 	vector<vector<pair<int, T>>> mst(n);
 	if (n <= 1)
