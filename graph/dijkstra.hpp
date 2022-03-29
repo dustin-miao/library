@@ -1,9 +1,8 @@
 #include "utility/chmin.hpp"
-#include "graph/graph-util.hpp"
 
 template<typename T>
-pair<vector<long long>, vector<int>> dijkstra(const graph<T> &G, int s) {
-	size_t n = G.size();
+pair<vector<long long>, vector<int>> dijkstra(const vector<vector<pair<int, T>>> &G, int s) {
+	int n = G.size();
 	priority_queue<pair<T, int>, vector<pair<T, int>>, greater<pair<T, int>>> pq;
 	vector<T> dis(n, numeric_limits<T>::max());
 	vector<int> par(n, -1);

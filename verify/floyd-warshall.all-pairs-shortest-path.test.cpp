@@ -8,7 +8,7 @@ using namespace std;
 int main() {
 	int N, M;
 	cin >> N >> M;
-	matgraph<long long> G(N, vector<long long>(N, LLONG_MAX));
+	vector<vector<long long>> G(N, vector<long long>(N, LLONG_MAX));
 	for (int i = 0; i < M; i++) {
 		int u, v; long long w;
 		cin >> u >> v >> w;

@@ -8,7 +8,7 @@ using namespace std;
 int main() {
 	int N, M, S, T;
 	cin >> N >> M >> S >> T;
-	graph<long long> G(N);
+	vector<vector<pair<int, long long>>> G(N);
 	for (int i = 0; i < M; i++) {
 		int u, v; long long w;
 		cin >> u >> v >> w;

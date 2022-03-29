@@ -8,7 +8,7 @@ using namespace std;
 int main() {
 	int N, M;
 	cin >> N >> M;
-	u_graph G(N);
+	vector<vector<int>> G(N);
 	map<pair<int, int>, vector<int>> id;
 	for (int i = 0; i < M; i++) {
 		int u, v;
