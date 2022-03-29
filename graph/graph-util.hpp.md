@@ -1,38 +1,11 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
-    path: graph/cycle-finding.hpp
-    title: Cycle Finding
-  - icon: ':heavy_check_mark:'
-    path: graph/dijkstra.hpp
-    title: Dijkstra's Algorithm
-  - icon: ':heavy_check_mark:'
-    path: graph/floyd-warshall.hpp
-    title: Floyd-Warshall Algorithm
-  - icon: ':heavy_check_mark:'
-    path: graph/kruskal.hpp
-    title: Kruskal's Algorithm
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: verify/cycle-finding.yosupo-cycle-detection.test.cpp
-    title: verify/cycle-finding.yosupo-cycle-detection.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/dijkstra.aizu-shortest-path.test.cpp
-    title: verify/dijkstra.aizu-shortest-path.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/dijkstra.aizu-single-source-shortest-path.test.cpp
-    title: verify/dijkstra.aizu-single-source-shortest-path.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/floyd-warshall.all-pairs-shortest-path.test.cpp
-    title: verify/floyd-warshall.all-pairs-shortest-path.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/kruskal.aizu-minimum-spanning-tree.test.cpp
-    title: verify/kruskal.aizu-minimum-spanning-tree.test.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
   bundledCode: "#line 1 \"graph/graph-util.hpp\"\nusing u_graph = vector<vector<int>>;\n\
@@ -109,25 +82,13 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: graph/graph-util.hpp
-  requiredBy:
-  - graph/cycle-finding.hpp
-  - graph/kruskal.hpp
-  - graph/floyd-warshall.hpp
-  - graph/dijkstra.hpp
+  requiredBy: []
   timestamp: '2022-02-04 21:19:28-08:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - verify/cycle-finding.yosupo-cycle-detection.test.cpp
-  - verify/dijkstra.aizu-shortest-path.test.cpp
-  - verify/kruskal.aizu-minimum-spanning-tree.test.cpp
-  - verify/floyd-warshall.all-pairs-shortest-path.test.cpp
-  - verify/dijkstra.aizu-single-source-shortest-path.test.cpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: graph/graph-util.hpp
 layout: document
 title: Graph Utility
 ---
 
 ## Graph Utility
-
-[Placeholder]
-

@@ -32,5 +32,3 @@ title: Binary Exponentiation
 ---
 
 ## Binary Exponentiation
-
-[Placeholder]

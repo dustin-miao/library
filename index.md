@@ -36,24 +36,24 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/tnemges-tree.hpp
       title: Tnemges Tree
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: data-structure/union-find.hpp
       title: Union Find
   - name: graph
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: graph/cycle-finding.hpp
       title: Cycle Finding
     - icon: ':heavy_check_mark:'
       path: graph/dijkstra.hpp
       title: Dijkstra's Algorithm
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: graph/floyd-warshall.hpp
       title: Floyd-Warshall Algorithm
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: graph/graph-util.hpp
       title: Graph Utility
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: graph/kruskal.hpp
       title: Kruskal's Algorithm
   - name: utility
@@ -67,7 +67,7 @@ data:
     - icon: ':warning:'
       path: utility/chmax.hpp
       title: Chmax
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: utility/chmin.hpp
       title: Chmin
     - icon: ':warning:'
@@ -82,7 +82,7 @@ data:
   verificationCategories:
   - name: verify
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/cycle-finding.yosupo-cycle-detection.test.cpp
       title: verify/cycle-finding.yosupo-cycle-detection.test.cpp
     - icon: ':heavy_check_mark:'
@@ -97,7 +97,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/fenwick-tree.yosupo-point-add-range-sum.test.cpp
       title: verify/fenwick-tree.yosupo-point-add-range-sum.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/floyd-warshall.all-pairs-shortest-path.test.cpp
       title: verify/floyd-warshall.all-pairs-shortest-path.test.cpp
     - icon: ':heavy_check_mark:'
@@ -115,7 +115,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/kciwnef-tree.aizu-point-add-query.test.cpp
       title: verify/kciwnef-tree.aizu-point-add-query.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/kruskal.aizu-minimum-spanning-tree.test.cpp
       title: verify/kruskal.aizu-minimum-spanning-tree.test.cpp
     - icon: ':heavy_check_mark:'
