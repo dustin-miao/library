@@ -22,9 +22,9 @@ data:
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#line 1 \"utility/chmin.hpp\"\
     \ntemplate<typename T>\nbool chmin(T &a, T b) {\n\tif (a > b) {\n\t\ta = b;\n\t\
     \treturn true;\n\t}\n\treturn false;\n}\n#line 2 \"graph/prim.hpp\"\n\ntemplate<class\
-    \ T>\nvector<vector<pair<int, T>>> prim(vector<vector<pair<int, T>>> &G) {\n\t\
-    int n = G.size();\n\tvector<vector<pair<int, T>>> mst(n);\n\tif (n <= 1)\n\t\t\
-    return mst;\n\tpriority_queue<pair<T, int>, vector<pair<T, int>>, greater<pair<T,\
+    \ T>\nvector<vector<pair<int, T>>> prim(const vector<vector<pair<int, T>>> &G)\
+    \ {\n\tint n = G.size();\n\tvector<vector<pair<int, T>>> mst(n);\n\tif (n <= 1)\n\
+    \t\treturn mst;\n\tpriority_queue<pair<T, int>, vector<pair<T, int>>, greater<pair<T,\
     \ int>>> pq;\n\tvector<T> dis(n, numeric_limits<T>::max());\n\tvector<int> par(n,\
     \ -1);\n\tvector<bool> vis(n, false);\n\n\tpq.emplace(0, 0);\n\tdis[0] = 0;\n\t\
     par[0] = 0;\n\twhile (!pq.empty()) {\n\t\tauto [d, u] = pq.top(); pq.pop();\n\t\
@@ -52,7 +52,7 @@ data:
   isVerificationFile: true
   path: verify/prim.aizu-minimum-spanning-tree.test.cpp
   requiredBy: []
-  timestamp: '2022-03-29 14:23:18-07:00'
+  timestamp: '2022-03-29 14:42:43-07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/prim.aizu-minimum-spanning-tree.test.cpp

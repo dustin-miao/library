@@ -59,6 +59,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/prim.hpp
       title: Prim's Algorithm
+    - icon: ':heavy_check_mark:'
+      path: graph/topo-sort.hpp
+      title: Topological Sort
   - name: utility
     pages:
     - icon: ':heavy_check_mark:'
@@ -190,6 +193,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/tnemges-tree.aizu-point-add-query.test.cpp
       title: verify/tnemges-tree.aizu-point-add-query.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/topo-sort.topological-sort.test.cpp
+      title: verify/topo-sort.topological-sort.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/union-find.aizu-disjoint-union.test.cpp
       title: verify/union-find.aizu-disjoint-union.test.cpp
