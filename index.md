@@ -72,7 +72,7 @@ data:
       title: Chmin
     - icon: ':warning:'
       path: utility/debug.hpp
-      title: utility/debug.hpp
+      title: Debug
     - icon: ':warning:'
       path: utility/fast-pow.hpp
       title: Binary Exponentiation
