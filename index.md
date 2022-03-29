@@ -36,7 +36,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/tnemges-tree.hpp
       title: Tnemges Tree
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/union-find.hpp
       title: Union Find
   - name: graph
@@ -53,7 +53,7 @@ data:
     - icon: ':warning:'
       path: graph/graph-util.hpp
       title: Graph Utility
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph/kruskal.hpp
       title: Kruskal's Algorithm
   - name: utility
@@ -118,7 +118,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/kciwnef-tree.aizu-point-add-query.test.cpp
       title: verify/kciwnef-tree.aizu-point-add-query.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/kruskal.aizu-minimum-spanning-tree.test.cpp
       title: verify/kruskal.aizu-minimum-spanning-tree.test.cpp
     - icon: ':heavy_check_mark:'
