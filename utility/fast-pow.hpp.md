@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/fast-pow.aizu-power.test.cpp
+    title: verify/fast-pow.aizu-power.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"utility/fast-pow.hpp\"\ntemplate<typename T>\nT fast_pow(T\
@@ -24,8 +27,9 @@ data:
   path: utility/fast-pow.hpp
   requiredBy: []
   timestamp: '2022-02-18 14:02:10-08:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/fast-pow.aizu-power.test.cpp
 documentation_of: utility/fast-pow.hpp
 layout: document
 title: Binary Exponentiation

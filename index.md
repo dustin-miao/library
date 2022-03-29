@@ -73,7 +73,7 @@ data:
     - icon: ':warning:'
       path: utility/debug.hpp
       title: Debug
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: utility/fast-pow.hpp
       title: Binary Exponentiation
     - icon: ':heavy_check_mark:'
@@ -91,6 +91,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/dijkstra.aizu-single-source-shortest-path.test.cpp
       title: verify/dijkstra.aizu-single-source-shortest-path.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/fast-pow.aizu-power.test.cpp
+      title: verify/fast-pow.aizu-power.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/fenwick-tree.aizu-range-sum-query.test.cpp
       title: verify/fenwick-tree.aizu-range-sum-query.test.cpp
