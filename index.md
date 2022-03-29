@@ -56,6 +56,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/kruskal.hpp
       title: Kruskal's Algorithm
+    - icon: ':heavy_check_mark:'
+      path: graph/prim.hpp
+      title: Prim's Algorithm
   - name: utility
     pages:
     - icon: ':heavy_check_mark:'
@@ -139,6 +142,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/line-container.yosupo-line-add-get-min.test.cpp
       title: verify/line-container.yosupo-line-add-get-min.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/prim.aizu-minimum-spanning-tree.test.cpp
+      title: verify/prim.aizu-minimum-spanning-tree.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/recursive-segment-tree.aizu-range-minimum-query.test.cpp
       title: verify/recursive-segment-tree.aizu-range-minimum-query.test.cpp
