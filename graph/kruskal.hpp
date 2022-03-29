@@ -1,8 +1,8 @@
 #include "data-structure/union-find.hpp"
 
-template<class graph>
+template<class T>
 vector<vector<T>> kruskal(int n, vector<tuple<int, int, T>> E) {
-	graph<T> mst(n);
+	vector<vector<T>> mst(n);
 	if (n <= 1)
 		return mst;
 	UnionFind dsu(n);
