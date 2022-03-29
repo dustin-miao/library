@@ -1,7 +1,7 @@
 #include "utility/chmin.hpp"
 
 template<typename T>
-void floyd_warshall(vector<T> &G, const T dval) {
+void floyd_warshall(vector<vector<T>> &G, const T dval) {
 	int n = G.size();
 	for (int i = 0; i < n; i++)
 		G[i][i] = 0;

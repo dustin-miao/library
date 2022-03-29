@@ -1,7 +1,7 @@
 #include "data-structure/union-find.hpp"
 
 template<class graph>
-vector<vector<T>> kruskal(int n, vector<tuple<T, int, int>> E) {
+vector<vector<T>> kruskal(int n, vector<tuple<int, int, T>> E) {
 	graph<T> mst(n);
 	if (n <= 1)
 		return mst;

@@ -14,17 +14,17 @@ int main() {
 		int u, v;
 		cin >> u >> v;
 		G[u].push_back(v);
-		id[{u, v}].push_back(i);
+		id[make_pair(u, v)].push_back(i);
 	}
 
-	auto cycle = find_cycle(G);
+	auto cycle = find_cycle(G, true);
 
 	if (cycle.empty()) {
 		cout << -1 << '\n';
 	} else {
 		cout << cycle.size() << '\n';
 		for (auto [u, v] : cycle) {
-			auto &vec = id[{u, v}];
+			auto &vec = id[make_pair(u, v)];
 			cout << vec.back() << '\n';
 			vec.pop_back();
 		}
