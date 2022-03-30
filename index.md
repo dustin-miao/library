@@ -39,6 +39,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/union-find.hpp
       title: Union Find
+  - name: geometry
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: geometry/point.hpp
+      title: geometry/point.hpp
   - name: graph
     pages:
     - icon: ':heavy_check_mark:'
@@ -145,6 +150,15 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/line-container.yosupo-line-add-get-min.test.cpp
       title: verify/line-container.yosupo-line-add-get-min.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/point.aizu-counter-clockwise.test.cpp
+      title: verify/point.aizu-counter-clockwise.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/point.aizu-parallel-orthagonal.test.cpp
+      title: verify/point.aizu-parallel-orthagonal.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/point.aizu-projection.test.cpp
+      title: verify/point.aizu-projection.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/prim.aizu-minimum-spanning-tree.test.cpp
       title: verify/prim.aizu-minimum-spanning-tree.test.cpp
