@@ -37,6 +37,9 @@ data:
       path: data-structure/tnemges-tree.hpp
       title: Tnemges Tree
     - icon: ':heavy_check_mark:'
+      path: data-structure/union-find-2d.hpp
+      title: Union Find 2d
+    - icon: ':heavy_check_mark:'
       path: data-structure/union-find.hpp
       title: Union Find
   - name: geometry
@@ -210,6 +213,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/topo-sort.topological-sort.test.cpp
       title: verify/topo-sort.topological-sort.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/union-find-2d.aizu-disjoint-union.test.cpp
+      title: verify/union-find-2d.aizu-disjoint-union.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/union-find-2d.yosupo-unionfind.test.cpp
+      title: verify/union-find-2d.yosupo-unionfind.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/union-find.aizu-disjoint-union.test.cpp
       title: verify/union-find.aizu-disjoint-union.test.cpp
