@@ -38,6 +38,8 @@
 "verify/sparse-table.yosupo-static-rmq.test.cpp": "2022-02-05 09:55:16 -0800",
 "verify/tnemges-tree.aizu-point-add-query.test.cpp": "2022-02-04 21:19:28 -0800",
 "verify/topo-sort.topological-sort.test.cpp": "2022-03-29 14:42:43 -0700",
+"verify/union-find-2d.aizu-disjoint-union.test.cpp": "2022-03-31 14:26:29 -0700",
+"verify/union-find-2d.yosupo-unionfind.test.cpp": "2022-03-31 14:26:29 -0700",
 "verify/union-find.aizu-disjoint-union.test.cpp": "2022-02-04 21:19:28 -0800",
 "verify/union-find.yosupo-unionfind.test.cpp": "2022-02-04 21:19:28 -0800"
 }
