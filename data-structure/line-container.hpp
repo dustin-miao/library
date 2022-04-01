@@ -7,16 +7,16 @@ struct Line {
 };
 
 class LineContainer : multiset<Line, less<>> {
-    // (for doubles, use inf = 1/.0, div(a,b) = a/b)
-    static const long long inf = INT_MAX;
+    // for doubles, use inf = 1/.0
+    static const long long INF = LLONG_MAX;
 
     bool isect(iterator x, iterator y) {
         if (y == end()) {
-			x->p = inf;
+			x->p = INF;
 			return false;
 		}
         if (x->m == y->m)
-            x->p = x->b > y->b ? inf : -inf;
+            x->p = x->b > y->b ? INF : -INF;
         else
             x->p = floor_div(y->b - x->b, x->m - y->m);
         return x->p >= y->p;
