@@ -18,39 +18,39 @@ data:
     \ a, T b) { \n\treturn a / b - ((a ^ b) < 0 && a % b); \n}\n#line 2 \"data-structure/line-container.hpp\"\
     \n\nstruct Line {\n    mutable long long m, b, p;\n    bool operator<(const Line\
     \ &o) const { return m < o.m; }\n    bool operator<(long long x) const { return\
-    \ p < x; }\n};\n\nclass LineContainer : multiset<Line, less<>> {\n    // (for\
-    \ doubles, use inf = 1/.0, div(a,b) = a/b)\n    static const long long inf = INT_MAX;\n\
-    \n    bool isect(iterator x, iterator y) {\n        if (y == end()) {\n\t\t\t\
-    x->p = inf;\n\t\t\treturn false;\n\t\t}\n        if (x->m == y->m)\n         \
-    \   x->p = x->b > y->b ? inf : -inf;\n        else\n            x->p = floor_div(y->b\
-    \ - x->b, x->m - y->m);\n        return x->p >= y->p;\n    }\n\npublic:\n    void\
-    \ add(long long m, long long b) {\n        auto z = insert({m, b, 0}), y = z++,\
-    \ x = y;\n        while (isect(y, z)) \n            z = erase(z);\n        if\
-    \ (x != begin() && isect(--x, y)) \n            isect(x, y = erase(y));\n    \
-    \    while ((y = x) != begin() && (--x)->p >= y->p) \n            isect(x, erase(y));\n\
-    \    }\n\n    long long query(long long x) {\n        assert(!empty());\n    \
-    \    auto l = *lower_bound(x);\n        return l.m * x + l.b;\n    }\n};\n"
+    \ p < x; }\n};\n\nclass LineContainer : multiset<Line, less<>> {\n    // for doubles,\
+    \ use inf = 1/.0\n    static const long long INF = LLONG_MAX;\n\n    bool isect(iterator\
+    \ x, iterator y) {\n        if (y == end()) {\n\t\t\tx->p = INF;\n\t\t\treturn\
+    \ false;\n\t\t}\n        if (x->m == y->m)\n            x->p = x->b > y->b ? INF\
+    \ : -INF;\n        else\n            x->p = floor_div(y->b - x->b, x->m - y->m);\n\
+    \        return x->p >= y->p;\n    }\n\npublic:\n    void add(long long m, long\
+    \ long b) {\n        auto z = insert({m, b, 0}), y = z++, x = y;\n        while\
+    \ (isect(y, z)) \n            z = erase(z);\n        if (x != begin() && isect(--x,\
+    \ y)) \n            isect(x, y = erase(y));\n        while ((y = x) != begin()\
+    \ && (--x)->p >= y->p) \n            isect(x, erase(y));\n    }\n\n    long long\
+    \ query(long long x) {\n        assert(!empty());\n        auto l = *lower_bound(x);\n\
+    \        return l.m * x + l.b;\n    }\n};\n"
   code: "#include \"utility/floor-div.hpp\"\n\nstruct Line {\n    mutable long long\
     \ m, b, p;\n    bool operator<(const Line &o) const { return m < o.m; }\n    bool\
     \ operator<(long long x) const { return p < x; }\n};\n\nclass LineContainer :\
-    \ multiset<Line, less<>> {\n    // (for doubles, use inf = 1/.0, div(a,b) = a/b)\n\
-    \    static const long long inf = INT_MAX;\n\n    bool isect(iterator x, iterator\
-    \ y) {\n        if (y == end()) {\n\t\t\tx->p = inf;\n\t\t\treturn false;\n\t\t\
-    }\n        if (x->m == y->m)\n            x->p = x->b > y->b ? inf : -inf;\n \
-    \       else\n            x->p = floor_div(y->b - x->b, x->m - y->m);\n      \
-    \  return x->p >= y->p;\n    }\n\npublic:\n    void add(long long m, long long\
-    \ b) {\n        auto z = insert({m, b, 0}), y = z++, x = y;\n        while (isect(y,\
-    \ z)) \n            z = erase(z);\n        if (x != begin() && isect(--x, y))\
-    \ \n            isect(x, y = erase(y));\n        while ((y = x) != begin() &&\
-    \ (--x)->p >= y->p) \n            isect(x, erase(y));\n    }\n\n    long long\
-    \ query(long long x) {\n        assert(!empty());\n        auto l = *lower_bound(x);\n\
-    \        return l.m * x + l.b;\n    }\n};"
+    \ multiset<Line, less<>> {\n    // for doubles, use inf = 1/.0\n    static const\
+    \ long long INF = LLONG_MAX;\n\n    bool isect(iterator x, iterator y) {\n   \
+    \     if (y == end()) {\n\t\t\tx->p = INF;\n\t\t\treturn false;\n\t\t}\n     \
+    \   if (x->m == y->m)\n            x->p = x->b > y->b ? INF : -INF;\n        else\n\
+    \            x->p = floor_div(y->b - x->b, x->m - y->m);\n        return x->p\
+    \ >= y->p;\n    }\n\npublic:\n    void add(long long m, long long b) {\n     \
+    \   auto z = insert({m, b, 0}), y = z++, x = y;\n        while (isect(y, z)) \n\
+    \            z = erase(z);\n        if (x != begin() && isect(--x, y)) \n    \
+    \        isect(x, y = erase(y));\n        while ((y = x) != begin() && (--x)->p\
+    \ >= y->p) \n            isect(x, erase(y));\n    }\n\n    long long query(long\
+    \ long x) {\n        assert(!empty());\n        auto l = *lower_bound(x);\n  \
+    \      return l.m * x + l.b;\n    }\n};"
   dependsOn:
   - utility/floor-div.hpp
   isVerificationFile: false
   path: data-structure/line-container.hpp
   requiredBy: []
-  timestamp: '2022-04-01 11:39:27-07:00'
+  timestamp: '2022-04-01 12:45:42-07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/line-container.yosupo-line-add-get-min.test.cpp
