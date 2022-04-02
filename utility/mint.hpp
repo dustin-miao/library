@@ -12,11 +12,9 @@ T inverse(T a, T m) {
 
 template<typename T>
 class Modular {
-	using Type = typename decay<decltype(T::value)>::type;
-
-	Type value;
-	
 public:
+	using Type = typename decay<decltype(T::value)>::type;
+	
 	constexpr Modular() : value() {}
 
 	template<typename U>
@@ -76,12 +74,12 @@ public:
 	}
 
 	Modular operator-() const { return Modular(-value); }
-	
+
 	template<typename U = T>
-	typename enable_if<is_same<typename Modular<U>::Type, int>::value, Modular>::Type 
-	&operator*=(const Modular &a) {
+	typename enable_if<is_same<typename Modular<U>::Type, int>::value, Modular>::type
+	&operator*=(const Modular& rhs) {
 #ifdef _WIN32
-		uint64_t x = static_cast<int64_t>(value) * static_cast<int64_t>(a.value);
+		uint64_t x = static_cast<int64_t>(value) * static_cast<int64_t>(rhs.value);
 		uint32_t xh = static_cast<uint32_t>(x >> 32), xl = static_cast<uint32_t>(x), d, m;
 		asm(
 			"divl %4; \n\t"
@@ -90,23 +88,23 @@ public:
 		);
 		value = m;
 #else
-		value = normalize(static_cast<int64_t>(value) * static_cast<int64_t>(a.value));
+		value = normalize(static_cast<int64_t>(value) * static_cast<int64_t>(rhs.value));
 #endif
 		return *this;
 	}
-
-	template<typename U = T>
-	typename enable_if<is_same<typename Modular<U>::Type, int64_t>::value, Modular>::Type 
-	&operator*=(const Modular &a) {
-		int64_t q = static_cast<int64_t>(static_cast<long double>(value) * a.value / mod());
-		value = normalize(value * a.value - q * mod());
+	
+	template <typename U = T>
+	typename enable_if<is_same<typename Modular<U>::Type, int64_t>::value, Modular>::type
+	&operator*=(const Modular& rhs) {
+		int64_t q = static_cast<int64_t>(static_cast<long double>(value) * rhs.value / mod());
+		value = normalize(value * rhs.value - q * mod());
 		return *this;
 	}
 
-	template<typename U = T>
-	typename enable_if<!is_integral<typename Modular<U>::Type>::value, Modular>::Type 
-	&operator*=(const Modular &a) {
-		value = normalize(value * a.value);
+	template <typename U = T>
+	typename enable_if<!is_integral<typename Modular<U>::Type>::value, Modular>::type 
+	&operator*=(const Modular& rhs) {
+		value = normalize(value * rhs.value);
 		return *this;
 	}
 
@@ -120,6 +118,9 @@ public:
 
 	template<typename U>
 	friend istream &operator>>(istream &is, Modular<U> &a);
+
+private:
+	Type value;
 };
 
 template<typename T> 
@@ -200,13 +201,13 @@ ostream &operator<<(ostream &os, const Modular<T> &a) { return os << a(); }
 
 template<typename T>
 istream &operator>>(istream &is, Modular<T> &a) {
-	typename common_type<typename Modular<T>::Type, int64_t>::type x;
+	typename common_type<typename Modular<T>::Type, long long>::type x;
 	is >> x;
 	a.value = Modular<T>::normalize(x);
 	return is;
 }
 
-using ModType = long long;
+using ModType = int;
 
 struct VarMod { static ModType value; };
 
