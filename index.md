@@ -93,7 +93,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: utility/floor-div.hpp
       title: Floor Division
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: utility/mint.hpp
       title: Modular Int
   verificationCategories:
@@ -156,6 +156,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/line-container.yosupo-line-add-get-min.test.cpp
       title: verify/line-container.yosupo-line-add-get-min.test.cpp
+    - icon: ':x:'
+      path: verify/mint.power.test.cpp
+      title: verify/mint.power.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/mint.yosupo-A+B.test.cpp
       title: verify/mint.yosupo-A+B.test.cpp
