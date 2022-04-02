@@ -76,9 +76,6 @@ data:
   - name: utility
     pages:
     - icon: ':warning:'
-      path: utility/addmod.hpp
-      title: Addmod
-    - icon: ':warning:'
       path: utility/ceil-div.hpp
       title: Ceil Division
     - icon: ':warning:'
