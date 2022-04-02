@@ -18,6 +18,7 @@
 "verify/lazy-segment-tree.aizu-RSQ-and-RUQ.test.cpp": "2022-02-04 21:19:28 -0800",
 "verify/lazy-segment-tree.yosupo-range-affine-range-sum.test.cpp": "2022-04-02 13:43:15 -0700",
 "verify/line-container.yosupo-line-add-get-min.test.cpp": "2022-04-01 12:45:42 -0700",
+"verify/mint.power.test.cpp": "2022-04-02 15:48:42 -0700",
 "verify/mint.yosupo-A+B.test.cpp": "2022-04-02 13:43:15 -0700",
 "verify/point.aizu-counter-clockwise.test.cpp": "2022-03-30 15:29:04 -0700",
 "verify/point.aizu-parallel-orthagonal.test.cpp": "2022-03-30 15:29:04 -0700",
