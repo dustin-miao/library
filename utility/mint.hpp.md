@@ -46,29 +46,29 @@ data:
     \n\tModular operator--(int) { \n\t\tModular result(*this);\n\t\t*this -= 1; \n\
     \t\treturn result; \n\t}\n\n\tModular operator-() const { return Modular(-value);\
     \ }\n\n\ttemplate<typename U = T>\n\ttypename enable_if<is_same<typename Modular<U>::Type,\
-    \ int>::value, Modular>::type\n\t&operator*=(const Modular& rhs) {\n#ifdef _WIN32\n\
-    \t\tuint64_t x = static_cast<int64_t>(value) * static_cast<int64_t>(rhs.value);\n\
+    \ int>::value, Modular>::type\n\t&operator*=(const Modular &a) {\n#ifdef _WIN32\n\
+    \t\tuint64_t x = static_cast<int64_t>(value) * static_cast<int64_t>(a.value);\n\
     \t\tuint32_t xh = static_cast<uint32_t>(x >> 32), xl = static_cast<uint32_t>(x),\
     \ d, m;\n\t\tasm(\n\t\t\t\"divl %4; \\n\\t\"\n\t\t\t: \"=a\" (d), \"=d\" (m)\n\
     \t\t\t: \"d\" (xh), \"a\" (xl), \"r\" (mod())\n\t\t);\n\t\tvalue = m;\n#else\n\
-    \t\tvalue = normalize(static_cast<int64_t>(value) * static_cast<int64_t>(rhs.value));\n\
+    \t\tvalue = normalize(static_cast<int64_t>(value) * static_cast<int64_t>(a.value));\n\
     #endif\n\t\treturn *this;\n\t}\n\t\n\ttemplate <typename U = T>\n\ttypename enable_if<is_same<typename\
-    \ Modular<U>::Type, int64_t>::value, Modular>::type\n\t&operator*=(const Modular&\
-    \ rhs) {\n\t\tint64_t q = static_cast<int64_t>(static_cast<long double>(value)\
-    \ * rhs.value / mod());\n\t\tvalue = normalize(value * rhs.value - q * mod());\n\
-    \t\treturn *this;\n\t}\n\n\ttemplate <typename U = T>\n\ttypename enable_if<!is_integral<typename\
-    \ Modular<U>::Type>::value, Modular>::type \n\t&operator*=(const Modular& rhs)\
-    \ {\n\t\tvalue = normalize(value * rhs.value);\n\t\treturn *this;\n\t}\n\n\tModular\
-    \ &operator/=(const Modular &other) { return *this *= Modular(inverse(other.value,\
-    \ mod())); }\n\n\ttemplate<typename U>\n\tfriend bool operator==(const Modular<U>&\
-    \ a, const Modular<U>& b);\n\n\ttemplate<typename U>\n\tfriend bool operator<(const\
-    \ Modular<U>& a, const Modular<U>& b);\n\n\ttemplate<typename U>\n\tfriend istream\
-    \ &operator>>(istream &is, Modular<U> &a);\n\nprivate:\n\tType value;\n};\n\n\
-    template<typename T> \nbool operator==(const Modular<T> &a, const Modular<T> &b)\
-    \ { return a.value == b.value; }\n\ntemplate<typename T, typename U> \nbool operator==(const\
-    \ Modular<T> &a, U b) { return a == Modular<T>(b); }\n\ntemplate<typename T, typename\
-    \ U> \nbool operator==(U a, const Modular<T> &b) { return Modular<T>(a) == b;\
-    \ }\n\ntemplate<typename T> \nbool operator!=(const Modular<T> &a, const Modular<T>\
+    \ Modular<U>::Type, int64_t>::value, Modular>::type\n\t&operator*=(const Modular\
+    \ &a) {\n\t\tint64_t q = static_cast<int64_t>(static_cast<long double>(value)\
+    \ * a.value / mod());\n\t\tvalue = normalize(value * a.value - q * mod());\n\t\
+    \treturn *this;\n\t}\n\n\ttemplate <typename U = T>\n\ttypename enable_if<!is_integral<typename\
+    \ Modular<U>::Type>::value, Modular>::type \n\t&operator*=(const Modular &a) {\n\
+    \t\tvalue = normalize(value * a.value);\n\t\treturn *this;\n\t}\n\n\tModular &operator/=(const\
+    \ Modular &other) { return *this *= Modular(inverse(other.value, mod())); }\n\n\
+    \ttemplate<typename U>\n\tfriend bool operator==(const Modular<U>& a, const Modular<U>&\
+    \ b);\n\n\ttemplate<typename U>\n\tfriend bool operator<(const Modular<U>& a,\
+    \ const Modular<U>& b);\n\n\ttemplate<typename U>\n\tfriend istream &operator>>(istream\
+    \ &is, Modular<U> &a);\n\nprivate:\n\tType value;\n};\n\ntemplate<typename T>\
+    \ \nbool operator==(const Modular<T> &a, const Modular<T> &b) { return a.value\
+    \ == b.value; }\n\ntemplate<typename T, typename U> \nbool operator==(const Modular<T>\
+    \ &a, U b) { return a == Modular<T>(b); }\n\ntemplate<typename T, typename U>\
+    \ \nbool operator==(U a, const Modular<T> &b) { return Modular<T>(a) == b; }\n\
+    \ntemplate<typename T> \nbool operator!=(const Modular<T> &a, const Modular<T>\
     \ &b) { return !(a == b); }\n\ntemplate<typename T, typename U> \nbool operator!=(const\
     \ Modular<T> &a, U b) { return !(a == b); }\n\ntemplate<typename T, typename U>\
     \ \nbool operator!=(U a, const Modular<T> &b) { return !(a == b); }\n\ntemplate<typename\
@@ -125,29 +125,29 @@ data:
     \ result; \n\t}\n\n\tModular operator--(int) { \n\t\tModular result(*this);\n\t\
     \t*this -= 1; \n\t\treturn result; \n\t}\n\n\tModular operator-() const { return\
     \ Modular(-value); }\n\n\ttemplate<typename U = T>\n\ttypename enable_if<is_same<typename\
-    \ Modular<U>::Type, int>::value, Modular>::type\n\t&operator*=(const Modular&\
-    \ rhs) {\n#ifdef _WIN32\n\t\tuint64_t x = static_cast<int64_t>(value) * static_cast<int64_t>(rhs.value);\n\
+    \ Modular<U>::Type, int>::value, Modular>::type\n\t&operator*=(const Modular &a)\
+    \ {\n#ifdef _WIN32\n\t\tuint64_t x = static_cast<int64_t>(value) * static_cast<int64_t>(a.value);\n\
     \t\tuint32_t xh = static_cast<uint32_t>(x >> 32), xl = static_cast<uint32_t>(x),\
     \ d, m;\n\t\tasm(\n\t\t\t\"divl %4; \\n\\t\"\n\t\t\t: \"=a\" (d), \"=d\" (m)\n\
     \t\t\t: \"d\" (xh), \"a\" (xl), \"r\" (mod())\n\t\t);\n\t\tvalue = m;\n#else\n\
-    \t\tvalue = normalize(static_cast<int64_t>(value) * static_cast<int64_t>(rhs.value));\n\
+    \t\tvalue = normalize(static_cast<int64_t>(value) * static_cast<int64_t>(a.value));\n\
     #endif\n\t\treturn *this;\n\t}\n\t\n\ttemplate <typename U = T>\n\ttypename enable_if<is_same<typename\
-    \ Modular<U>::Type, int64_t>::value, Modular>::type\n\t&operator*=(const Modular&\
-    \ rhs) {\n\t\tint64_t q = static_cast<int64_t>(static_cast<long double>(value)\
-    \ * rhs.value / mod());\n\t\tvalue = normalize(value * rhs.value - q * mod());\n\
-    \t\treturn *this;\n\t}\n\n\ttemplate <typename U = T>\n\ttypename enable_if<!is_integral<typename\
-    \ Modular<U>::Type>::value, Modular>::type \n\t&operator*=(const Modular& rhs)\
-    \ {\n\t\tvalue = normalize(value * rhs.value);\n\t\treturn *this;\n\t}\n\n\tModular\
-    \ &operator/=(const Modular &other) { return *this *= Modular(inverse(other.value,\
-    \ mod())); }\n\n\ttemplate<typename U>\n\tfriend bool operator==(const Modular<U>&\
-    \ a, const Modular<U>& b);\n\n\ttemplate<typename U>\n\tfriend bool operator<(const\
-    \ Modular<U>& a, const Modular<U>& b);\n\n\ttemplate<typename U>\n\tfriend istream\
-    \ &operator>>(istream &is, Modular<U> &a);\n\nprivate:\n\tType value;\n};\n\n\
-    template<typename T> \nbool operator==(const Modular<T> &a, const Modular<T> &b)\
-    \ { return a.value == b.value; }\n\ntemplate<typename T, typename U> \nbool operator==(const\
-    \ Modular<T> &a, U b) { return a == Modular<T>(b); }\n\ntemplate<typename T, typename\
-    \ U> \nbool operator==(U a, const Modular<T> &b) { return Modular<T>(a) == b;\
-    \ }\n\ntemplate<typename T> \nbool operator!=(const Modular<T> &a, const Modular<T>\
+    \ Modular<U>::Type, int64_t>::value, Modular>::type\n\t&operator*=(const Modular\
+    \ &a) {\n\t\tint64_t q = static_cast<int64_t>(static_cast<long double>(value)\
+    \ * a.value / mod());\n\t\tvalue = normalize(value * a.value - q * mod());\n\t\
+    \treturn *this;\n\t}\n\n\ttemplate <typename U = T>\n\ttypename enable_if<!is_integral<typename\
+    \ Modular<U>::Type>::value, Modular>::type \n\t&operator*=(const Modular &a) {\n\
+    \t\tvalue = normalize(value * a.value);\n\t\treturn *this;\n\t}\n\n\tModular &operator/=(const\
+    \ Modular &other) { return *this *= Modular(inverse(other.value, mod())); }\n\n\
+    \ttemplate<typename U>\n\tfriend bool operator==(const Modular<U>& a, const Modular<U>&\
+    \ b);\n\n\ttemplate<typename U>\n\tfriend bool operator<(const Modular<U>& a,\
+    \ const Modular<U>& b);\n\n\ttemplate<typename U>\n\tfriend istream &operator>>(istream\
+    \ &is, Modular<U> &a);\n\nprivate:\n\tType value;\n};\n\ntemplate<typename T>\
+    \ \nbool operator==(const Modular<T> &a, const Modular<T> &b) { return a.value\
+    \ == b.value; }\n\ntemplate<typename T, typename U> \nbool operator==(const Modular<T>\
+    \ &a, U b) { return a == Modular<T>(b); }\n\ntemplate<typename T, typename U>\
+    \ \nbool operator==(U a, const Modular<T> &b) { return Modular<T>(a) == b; }\n\
+    \ntemplate<typename T> \nbool operator!=(const Modular<T> &a, const Modular<T>\
     \ &b) { return !(a == b); }\n\ntemplate<typename T, typename U> \nbool operator!=(const\
     \ Modular<T> &a, U b) { return !(a == b); }\n\ntemplate<typename T, typename U>\
     \ \nbool operator!=(U a, const Modular<T> &b) { return !(a == b); }\n\ntemplate<typename\
@@ -186,7 +186,7 @@ data:
   isVerificationFile: false
   path: utility/mint.hpp
   requiredBy: []
-  timestamp: '2022-04-02 13:34:24-07:00'
+  timestamp: '2022-04-02 13:43:15-07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/recursive-segment-tree.yosupo-point-set-range-composite.test.cpp
