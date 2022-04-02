@@ -77,9 +77,9 @@ public:
 
 	template<typename U = T>
 	typename enable_if<is_same<typename Modular<U>::Type, int>::value, Modular>::type
-	&operator*=(const Modular& rhs) {
+	&operator*=(const Modular &a) {
 #ifdef _WIN32
-		uint64_t x = static_cast<int64_t>(value) * static_cast<int64_t>(rhs.value);
+		uint64_t x = static_cast<int64_t>(value) * static_cast<int64_t>(a.value);
 		uint32_t xh = static_cast<uint32_t>(x >> 32), xl = static_cast<uint32_t>(x), d, m;
 		asm(
 			"divl %4; \n\t"
@@ -88,23 +88,23 @@ public:
 		);
 		value = m;
 #else
-		value = normalize(static_cast<int64_t>(value) * static_cast<int64_t>(rhs.value));
+		value = normalize(static_cast<int64_t>(value) * static_cast<int64_t>(a.value));
 #endif
 		return *this;
 	}
 	
 	template <typename U = T>
 	typename enable_if<is_same<typename Modular<U>::Type, int64_t>::value, Modular>::type
-	&operator*=(const Modular& rhs) {
-		int64_t q = static_cast<int64_t>(static_cast<long double>(value) * rhs.value / mod());
-		value = normalize(value * rhs.value - q * mod());
+	&operator*=(const Modular &a) {
+		int64_t q = static_cast<int64_t>(static_cast<long double>(value) * a.value / mod());
+		value = normalize(value * a.value - q * mod());
 		return *this;
 	}
 
 	template <typename U = T>
 	typename enable_if<!is_integral<typename Modular<U>::Type>::value, Modular>::type 
-	&operator*=(const Modular& rhs) {
-		value = normalize(value * rhs.value);
+	&operator*=(const Modular &a) {
+		value = normalize(value * a.value);
 		return *this;
 	}
 
