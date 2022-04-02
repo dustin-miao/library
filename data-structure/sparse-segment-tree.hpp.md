@@ -15,12 +15,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/sparse-segment-tree.yosupo-point-add-range-sum.test.cpp
     title: verify/sparse-segment-tree.yosupo-point-add-range-sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/sparse-segment-tree.yosupo-point-set-range-composite.test.cpp
     title: verify/sparse-segment-tree.yosupo-point-set-range-composite.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"data-structure/sparse-segment-tree.hpp\"\ntemplate<class\
@@ -71,7 +71,7 @@ data:
   path: data-structure/sparse-segment-tree.hpp
   requiredBy: []
   timestamp: '2022-02-04 21:19:28-08:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/sparse-segment-tree.aizu-the-number-of-inversions.test.cpp
   - verify/sparse-segment-tree.aizu-range-sum-query.test.cpp

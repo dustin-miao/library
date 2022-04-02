@@ -6,19 +6,19 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/fenwick-tree.hpp
       title: Fenwick Tree
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/general-segment-tree.hpp
       title: General Segment Tree
     - icon: ':heavy_check_mark:'
       path: data-structure/kciwnef-tree.hpp
       title: Kciwnef Tree
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/lazy-segment-tree.hpp
       title: Lazy Segment Tree
     - icon: ':heavy_check_mark:'
       path: data-structure/line-container.hpp
       title: Line Container
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/recursive-segment-tree.hpp
       title: Recursive Segment Tree
     - icon: ':heavy_check_mark:'
@@ -27,7 +27,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/segment-tree.hpp
       title: Segment Tree
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/sparse-segment-tree.hpp
       title: Sparse Segment Tree
     - icon: ':heavy_check_mark:'
@@ -96,7 +96,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: utility/floor-div.hpp
       title: Floor Division
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: utility/mint.hpp
       title: Modular Int
   verificationCategories:
@@ -132,7 +132,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/general-segment-tree.yosupo-point-add-range-sum.test.cpp
       title: verify/general-segment-tree.yosupo-point-add-range-sum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/general-segment-tree.yosupo-point-set-range-composite.test.cpp
       title: verify/general-segment-tree.yosupo-point-set-range-composite.test.cpp
     - icon: ':heavy_check_mark:'
@@ -153,7 +153,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/lazy-segment-tree.aizu-RSQ-and-RUQ.test.cpp
       title: verify/lazy-segment-tree.aizu-RSQ-and-RUQ.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/lazy-segment-tree.yosupo-range-affine-range-sum.test.cpp
       title: verify/lazy-segment-tree.yosupo-range-affine-range-sum.test.cpp
     - icon: ':heavy_check_mark:'
@@ -183,7 +183,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/recursive-segment-tree.yosupo-point-add-range-sum.test.cpp
       title: verify/recursive-segment-tree.yosupo-point-add-range-sum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/recursive-segment-tree.yosupo-point-set-range-composite.test.cpp
       title: verify/recursive-segment-tree.yosupo-point-set-range-composite.test.cpp
     - icon: ':heavy_check_mark:'
@@ -210,7 +210,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/sparse-segment-tree.yosupo-point-add-range-sum.test.cpp
       title: verify/sparse-segment-tree.yosupo-point-add-range-sum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/sparse-segment-tree.yosupo-point-set-range-composite.test.cpp
       title: verify/sparse-segment-tree.yosupo-point-set-range-composite.test.cpp
     - icon: ':heavy_check_mark:'
