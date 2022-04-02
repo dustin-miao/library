@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: geometry/point.hpp
-    title: geometry/point.hpp
+    title: Point
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -11,9 +11,9 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"geometry/convex-hull.hpp\"\n#include <bits/stdc++.h>\nusing\
-    \ namespace std;\n\n#line 1 \"geometry/point.hpp\"\nnamespace geo {\n\tconst double\
-    \ EPS = 1e-9;\n\n\ttemplate<typename T>\n\tclass point {\n\t\tstatic_assert(is_arithmetic<T>::value,\
+  bundledCode: "#line 1 \"geometry/convex-hull.hpp\"\n// unfinished\n\n#include <bits/stdc++.h>\n\
+    using namespace std;\n\n#line 1 \"geometry/point.hpp\"\nnamespace geo {\n\tconst\
+    \ double EPS = 1e-9;\n\n\ttemplate<typename T>\n\tclass point {\n\t\tstatic_assert(is_arithmetic<T>::value,\
     \ \"T must be an arithmetic type\");\n\n\tpublic:\n\t\tT x, y;\n\n\t\tpoint()\
     \ : x(T{}), y(T{}) {}\n\n\t\tpoint(const T &_x, const T &_y) : x(_x), y(_y) {}\n\
     \n\t\ttemplate<typename S> \n\t\toperator point<S>() const { return point<S>(static_cast<S>(x),\
@@ -61,32 +61,34 @@ data:
     \ T>\n\tT dis2(const point<T> &p, const point<T> &q) { return abs(q - p); }\n\n\
     \ttemplate<typename T>\n\tdouble dis(const point<T> &p, const point<T> &q) { return\
     \ norm(q - p); }\n\n\ttemplate<typename T>\n\tauto bisector(const point<T> &p,\
-    \ const point<T> &q) { return p * norm(q) + norm(p) * q; }\n}\n#line 5 \"geometry/convex-hull.hpp\"\
+    \ const point<T> &q) { return p * norm(q) + norm(p) * q; }\n}\n#line 7 \"geometry/convex-hull.hpp\"\
     \n\nnamespace geo {\n\ttemplate<typename T>\n\tvector<point<T>> convex_hull(vector<point<T>>\
     \ poly) {\n\t\tif (poly.size() < 2)\n\t\t\treturn poly;\n\t\tint n = poly.size();\n\
     \t\tvector<point<T>> hull;\n\t\tsort(poly.begin(), poly.end());\n\t\thull.push_back(poly[0]);\n\
     \t\tfor (int i = 1; i < n; i++) {\n\t\t\tauto p = poly[i];\n\t\t\twhile (ret.size()\
     \ >= 2 && (ret[ret.size() - 1] - ret[ret.size() - 2]) ^ (poly[i] - ret[ret.ize()\
     \ - 2]) < 0)\n\t\t}\n\t}\n}\n\nint main() {\n\n}\n"
-  code: "#include <bits/stdc++.h>\nusing namespace std;\n\n#include \"geometry/point.hpp\"\
-    \n\nnamespace geo {\n\ttemplate<typename T>\n\tvector<point<T>> convex_hull(vector<point<T>>\
-    \ poly) {\n\t\tif (poly.size() < 2)\n\t\t\treturn poly;\n\t\tint n = poly.size();\n\
-    \t\tvector<point<T>> hull;\n\t\tsort(poly.begin(), poly.end());\n\t\thull.push_back(poly[0]);\n\
-    \t\tfor (int i = 1; i < n; i++) {\n\t\t\tauto p = poly[i];\n\t\t\twhile (ret.size()\
-    \ >= 2 && (ret[ret.size() - 1] - ret[ret.size() - 2]) ^ (poly[i] - ret[ret.ize()\
-    \ - 2]) < 0)\n\t\t}\n\t}\n}\n\nint main() {\n\n}"
+  code: "// unfinished\n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#include\
+    \ \"geometry/point.hpp\"\n\nnamespace geo {\n\ttemplate<typename T>\n\tvector<point<T>>\
+    \ convex_hull(vector<point<T>> poly) {\n\t\tif (poly.size() < 2)\n\t\t\treturn\
+    \ poly;\n\t\tint n = poly.size();\n\t\tvector<point<T>> hull;\n\t\tsort(poly.begin(),\
+    \ poly.end());\n\t\thull.push_back(poly[0]);\n\t\tfor (int i = 1; i < n; i++)\
+    \ {\n\t\t\tauto p = poly[i];\n\t\t\twhile (ret.size() >= 2 && (ret[ret.size()\
+    \ - 1] - ret[ret.size() - 2]) ^ (poly[i] - ret[ret.ize() - 2]) < 0)\n\t\t}\n\t\
+    }\n}\n\nint main() {\n\n}"
   dependsOn:
   - geometry/point.hpp
   isVerificationFile: false
   path: geometry/convex-hull.hpp
   requiredBy: []
-  timestamp: '2022-04-01 11:39:27-07:00'
+  timestamp: '2022-04-02 11:54:43-07:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: geometry/convex-hull.hpp
 layout: document
-redirect_from:
-- /library/geometry/convex-hull.hpp
-- /library/geometry/convex-hull.hpp.html
-title: geometry/convex-hull.hpp
+title: Convex Hull
 ---
+
+## Convex Hull
+
+Note: Unfinished

@@ -4,7 +4,7 @@ data:
   _extendedRequiredBy:
   - icon: ':warning:'
     path: geometry/convex-hull.hpp
-    title: geometry/convex-hull.hpp
+    title: Convex Hull
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/point.aizu-counter-clockwise.test.cpp
@@ -133,8 +133,7 @@ data:
   - verify/point.aizu-parallel-orthagonal.test.cpp
 documentation_of: geometry/point.hpp
 layout: document
-redirect_from:
-- /library/geometry/point.hpp
-- /library/geometry/point.hpp.html
-title: geometry/point.hpp
+title: Point
 ---
+
+## Point

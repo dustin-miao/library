@@ -46,10 +46,10 @@ data:
     pages:
     - icon: ':warning:'
       path: geometry/convex-hull.hpp
-      title: geometry/convex-hull.hpp
+      title: Convex Hull
     - icon: ':heavy_check_mark:'
       path: geometry/point.hpp
-      title: geometry/point.hpp
+      title: Point
   - name: graph
     pages:
     - icon: ':heavy_check_mark:'

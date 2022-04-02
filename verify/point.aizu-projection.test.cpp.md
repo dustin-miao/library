@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: geometry/point.hpp
-    title: geometry/point.hpp
+    title: Point
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
