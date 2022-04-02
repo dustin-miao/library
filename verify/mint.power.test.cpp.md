@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utility/mint.hpp
     title: Modular Int
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_B
@@ -95,18 +95,19 @@ data:
     \nModType &MOD = VarMod::value;\n\nusing mint = Modular<VarMod>;\n\n/*\nconstexpr\
     \ int MOD = @@HERE@@;\n\nusing mint = Modular<integral_constant<decay<decltype(MOD)>::type,\
     \ md>>;\n*/\n#line 7 \"verify/mint.power.test.cpp\"\n\nint main() {\n\tMOD = 1e9\
-    \ + 7;\n\n\tmint N; int M;\n\tcin >> N >> M;\n\tcout << fast_pow(N, M);\n}\n"
+    \ + 7;\n\n\tmint N; int M;\n\tcin >> N >> M;\n\tcout << fast_pow(N, M) << '\\\
+    n';\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_B\"\
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#include \"utility/mint.hpp\"\
     \n\nint main() {\n\tMOD = 1e9 + 7;\n\n\tmint N; int M;\n\tcin >> N >> M;\n\tcout\
-    \ << fast_pow(N, M);\n}"
+    \ << fast_pow(N, M) << '\\n';\n}"
   dependsOn:
   - utility/mint.hpp
   isVerificationFile: true
   path: verify/mint.power.test.cpp
   requiredBy: []
-  timestamp: '2022-04-02 13:50:59-07:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-04-02 15:48:42-07:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/mint.power.test.cpp
 layout: document

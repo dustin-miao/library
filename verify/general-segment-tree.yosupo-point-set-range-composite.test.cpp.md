@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: data-structure/general-segment-tree.hpp
     title: General Segment Tree
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utility/mint.hpp
     title: Modular Int
   _extendedRequiredBy: []
