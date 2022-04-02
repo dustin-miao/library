@@ -1,6 +1,11 @@
 ---
 data:
   libraryCategories:
+  - name: combo
+    pages:
+    - icon: ':warning:'
+      path: combo/binom-coef.hpp
+      title: Binomial Coefficients ($5 \cdot 10^3 < N \leq 10^6$)
   - name: data-structure
     pages:
     - icon: ':heavy_check_mark:'
