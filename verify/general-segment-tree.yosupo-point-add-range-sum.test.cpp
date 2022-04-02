@@ -5,10 +5,6 @@ using namespace std;
 
 #include "data-structure/general-segment-tree.hpp"
 
-const int MAX = 5e5 + 5;
-
-
-
 int main() {
 	int N, Q;
 	cin >> N >> Q;
