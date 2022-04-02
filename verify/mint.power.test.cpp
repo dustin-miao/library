@@ -10,5 +10,5 @@ int main() {
 
 	mint N; int M;
 	cin >> N >> M;
-	cout << fast_pow(N, M);
+	cout << fast_pow(N, M) << '\n';
 }
