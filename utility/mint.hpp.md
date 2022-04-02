@@ -4,11 +4,23 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':x:'
+    path: verify/general-segment-tree.yosupo-point-set-range-composite.test.cpp
+    title: verify/general-segment-tree.yosupo-point-set-range-composite.test.cpp
+  - icon: ':x:'
+    path: verify/lazy-segment-tree.yosupo-range-affine-range-sum.test.cpp
+    title: verify/lazy-segment-tree.yosupo-range-affine-range-sum.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/mint.yosupo-A+B.test.cpp
     title: verify/mint.yosupo-A+B.test.cpp
+  - icon: ':x:'
+    path: verify/recursive-segment-tree.yosupo-point-set-range-composite.test.cpp
+    title: verify/recursive-segment-tree.yosupo-point-set-range-composite.test.cpp
+  - icon: ':x:'
+    path: verify/sparse-segment-tree.yosupo-point-set-range-composite.test.cpp
+    title: verify/sparse-segment-tree.yosupo-point-set-range-composite.test.cpp
   _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"utility/mint.hpp\"\ntemplate<typename T>\nT inverse(T a,\
@@ -174,9 +186,13 @@ data:
   path: utility/mint.hpp
   requiredBy: []
   timestamp: '2022-04-02 12:27:42-07:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
+  - verify/recursive-segment-tree.yosupo-point-set-range-composite.test.cpp
   - verify/mint.yosupo-A+B.test.cpp
+  - verify/lazy-segment-tree.yosupo-range-affine-range-sum.test.cpp
+  - verify/sparse-segment-tree.yosupo-point-set-range-composite.test.cpp
+  - verify/general-segment-tree.yosupo-point-set-range-composite.test.cpp
 documentation_of: utility/mint.hpp
 layout: document
 title: Modular Int

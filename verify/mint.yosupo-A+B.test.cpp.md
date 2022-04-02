@@ -1,43 +1,46 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: utility/mint.hpp
     title: Modular Int
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    links: []
-  bundledCode: "#line 1 \"verify/mint.yosupo-A+B.test.cpp\"\n#include <bits/stdc++.h>\n\
-    using namespace std;\n\n#line 1 \"utility/mint.hpp\"\ntemplate<typename T>\nT\
-    \ inverse(T a, T m) {\n\tT u = 0, v = 1;\n\twhile (a != 0) {\n\t\tT t = m / a;\n\
-    \t\tm -= t * a; swap(a, m);\n\t\tu -= t * v; swap(u, v);\n\t}\n\tassert(m == 1);\n\
-    \treturn u;\n}\n\ntemplate<typename T>\nclass Modular {\n\tusing Type = typename\
-    \ decay<decltype(T::value)>::type;\n\n\tType value;\n\t\npublic:\n\tconstexpr\
-    \ Modular() : value() {}\n\n\ttemplate<typename U>\n\tModular(const U &x) { value\
-    \ = normalize(x); }\n\n\ttemplate<typename U>\n\tstatic Type normalize(const U\
-    \ &x) {\n\t\tType v;\n\t\tif (-mod() <= x && x < mod()) \n\t\t\tv = static_cast<Type>(x);\n\
-    \t\telse \n\t\t\tv = static_cast<Type>(x % mod());\n\t\tif (v < 0) \n\t\t\tv +=\
-    \ mod();\n\t\treturn v;\n\t}\n\n\tconst Type &operator()() const { return value;\
-    \ }\n\n\ttemplate<typename U>\n\texplicit operator U() const { return static_cast<U>(value);\
-    \ }\n\n\tconstexpr static Type mod() { return T::value; }\n\n\tModular &operator+=(const\
-    \ Modular &a) { \n\t\tif ((value += a.value) >= mod()) \n\t\t\tvalue -= mod();\
-    \ \n\t\treturn *this; \n\t}\n\n\tModular &operator-=(const Modular &a) { \n\t\t\
-    if ((value -= a.value) < 0) \n\t\t\tvalue += mod(); \n\t\treturn *this; \n\t}\n\
-    \n\ttemplate<typename U> \n\tModular &operator+=(const U &other) { return *this\
-    \ += Modular(other); }\n\n\ttemplate<typename U> \n\tModular &operator-=(const\
-    \ U &other) { return *this -= Modular(other); }\n\n\tModular &operator++() { return\
-    \ *this += 1; }\n\n\tModular &operator--() { return *this -= 1; }\n\n\tModular\
-    \ operator++(int) { \n\t\tModular result(*this); \n\t\t*this += 1; \n\t\treturn\
-    \ result; \n\t}\n\n\tModular operator--(int) { \n\t\tModular result(*this);\n\t\
-    \t*this -= 1; \n\t\treturn result; \n\t}\n\n\tModular operator-() const { return\
-    \ Modular(-value); }\n\t\n\ttemplate<typename U = T>\n\ttypename enable_if<is_same<typename\
-    \ Modular<U>::Type, int>::value, Modular>::Type \n\t&operator*=(const Modular\
-    \ &a) {\n#ifdef _WIN32\n\t\tuint64_t x = static_cast<int64_t>(value) * static_cast<int64_t>(a.value);\n\
+    PROBLEM: https://judge.yosupo.jp/problem/aplusb
+    links:
+    - https://judge.yosupo.jp/problem/aplusb
+  bundledCode: "#line 1 \"verify/mint.yosupo-A+B.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/aplusb\"\
+    \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#line 1 \"utility/mint.hpp\"\
+    \ntemplate<typename T>\nT inverse(T a, T m) {\n\tT u = 0, v = 1;\n\twhile (a !=\
+    \ 0) {\n\t\tT t = m / a;\n\t\tm -= t * a; swap(a, m);\n\t\tu -= t * v; swap(u,\
+    \ v);\n\t}\n\tassert(m == 1);\n\treturn u;\n}\n\ntemplate<typename T>\nclass Modular\
+    \ {\n\tusing Type = typename decay<decltype(T::value)>::type;\n\n\tType value;\n\
+    \t\npublic:\n\tconstexpr Modular() : value() {}\n\n\ttemplate<typename U>\n\t\
+    Modular(const U &x) { value = normalize(x); }\n\n\ttemplate<typename U>\n\tstatic\
+    \ Type normalize(const U &x) {\n\t\tType v;\n\t\tif (-mod() <= x && x < mod())\
+    \ \n\t\t\tv = static_cast<Type>(x);\n\t\telse \n\t\t\tv = static_cast<Type>(x\
+    \ % mod());\n\t\tif (v < 0) \n\t\t\tv += mod();\n\t\treturn v;\n\t}\n\n\tconst\
+    \ Type &operator()() const { return value; }\n\n\ttemplate<typename U>\n\texplicit\
+    \ operator U() const { return static_cast<U>(value); }\n\n\tconstexpr static Type\
+    \ mod() { return T::value; }\n\n\tModular &operator+=(const Modular &a) { \n\t\
+    \tif ((value += a.value) >= mod()) \n\t\t\tvalue -= mod(); \n\t\treturn *this;\
+    \ \n\t}\n\n\tModular &operator-=(const Modular &a) { \n\t\tif ((value -= a.value)\
+    \ < 0) \n\t\t\tvalue += mod(); \n\t\treturn *this; \n\t}\n\n\ttemplate<typename\
+    \ U> \n\tModular &operator+=(const U &other) { return *this += Modular(other);\
+    \ }\n\n\ttemplate<typename U> \n\tModular &operator-=(const U &other) { return\
+    \ *this -= Modular(other); }\n\n\tModular &operator++() { return *this += 1; }\n\
+    \n\tModular &operator--() { return *this -= 1; }\n\n\tModular operator++(int)\
+    \ { \n\t\tModular result(*this); \n\t\t*this += 1; \n\t\treturn result; \n\t}\n\
+    \n\tModular operator--(int) { \n\t\tModular result(*this);\n\t\t*this -= 1; \n\
+    \t\treturn result; \n\t}\n\n\tModular operator-() const { return Modular(-value);\
+    \ }\n\t\n\ttemplate<typename U = T>\n\ttypename enable_if<is_same<typename Modular<U>::Type,\
+    \ int>::value, Modular>::Type \n\t&operator*=(const Modular &a) {\n#ifdef _WIN32\n\
+    \t\tuint64_t x = static_cast<int64_t>(value) * static_cast<int64_t>(a.value);\n\
     \t\tuint32_t xh = static_cast<uint32_t>(x >> 32), xl = static_cast<uint32_t>(x),\
     \ d, m;\n\t\tasm(\n\t\t\t\"divl %4; \\n\\t\"\n\t\t\t: \"=a\" (d), \"=d\" (m)\n\
     \t\t\t: \"d\" (xh), \"a\" (xl), \"r\" (mod())\n\t\t);\n\t\tvalue = m;\n#else\n\
@@ -91,18 +94,18 @@ data:
     \ is;\n}\n\nusing ModType = long long;\n\nstruct VarMod { static ModType value;\
     \ };\n\nModType VarMod::value;\n\nModType &MOD = VarMod::value;\n\nusing mint\
     \ = Modular<VarMod>;\n\n/*\nconstexpr int MOD = @@HERE@@;\n\nusing mint = Modular<integral_constant<decay<decltype(MOD)>::type,\
-    \ md>>;\n*/\n#line 5 \"verify/mint.yosupo-A+B.test.cpp\"\n\nint main() {\n\tMOD\
+    \ md>>;\n*/\n#line 7 \"verify/mint.yosupo-A+B.test.cpp\"\n\nint main() {\n\tMOD\
     \ = 2e9 + 1;\n\tmint a, b;\n\tcin >> a >> b;\n\tcout << a + b << '\\n';\n}\n"
-  code: "#include <bits/stdc++.h>\nusing namespace std;\n\n#include \"utility/mint.hpp\"\
-    \n\nint main() {\n\tMOD = 2e9 + 1;\n\tmint a, b;\n\tcin >> a >> b;\n\tcout <<\
-    \ a + b << '\\n';\n}"
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/aplusb\"\n\n#include <bits/stdc++.h>\n\
+    using namespace std;\n\n#include \"utility/mint.hpp\"\n\nint main() {\n\tMOD =\
+    \ 2e9 + 1;\n\tmint a, b;\n\tcin >> a >> b;\n\tcout << a + b << '\\n';\n}"
   dependsOn:
   - utility/mint.hpp
   isVerificationFile: true
   path: verify/mint.yosupo-A+B.test.cpp
   requiredBy: []
-  timestamp: '2022-04-02 12:27:42-07:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-04-02 12:35:37-07:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/mint.yosupo-A+B.test.cpp
 layout: document

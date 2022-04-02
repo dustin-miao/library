@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: data-structure/sparse-segment-tree.hpp
     title: Sparse Segment Tree
   _extendedRequiredBy: []
@@ -38,30 +38,30 @@ data:
     void reserve(size_t _n) { tree.reserve(_n); }\n\n\tvoid clear() { tree.clear();\
     \ }\n\n\tvoid update(int i, T v) { update(i, v, root, 0, n - 1); }\n\n\tT query(int\
     \ l, int r) { return query(l, r, root, 0, n - 1); }\n};\n#line 7 \"verify/sparse-segment-tree.yosupo-point-add-range-sum.test.cpp\"\
-    \n\nconst int MAX = 5e5 + 5;\n\nint main() {\n\tint N, Q;\n\tcin >> N >> Q;\n\n\
-    \tstruct stinfo {\n\t\tusing T = long long;\n\t\tconst T dval = 0;\n\t\tvoid apply(T\
-    \ &a, T b) { a += b; }\n\t\tT merge(T a, T b) { return a + b; }\n\t};\n\n\tSegtree<stinfo>\
-    \ sgt(N);\n\tsgt.reserve(N * 4);\n\tfor (int i = 0; i < N; i++) {\n\t\tlong long\
-    \ a; cin >> a;\n\t\tsgt.update(i, a);\n\t}\n\twhile (Q--) {\n\t\tint t; cin >>\
-    \ t;\n\t\tif (t == 0) {\n\t\t\tint p; long long x;\n\t\t\tcin >> p >> x;\n\t\t\
-    \tsgt.update(p, x);\n\t\t} else {\n\t\t\tint l, r;\n\t\t\tcin >> l >> r;\n\t\t\
-    \tcout << sgt.query(l, r - 1) << '\\n';\n\t\t}\n\t}\n}\n"
+    \n\nint main() {\n\tint N, Q;\n\tcin >> N >> Q;\n\n\tstruct stinfo {\n\t\tusing\
+    \ T = long long;\n\t\tconst T dval = 0;\n\t\tvoid apply(T &a, T b) { a += b; }\n\
+    \t\tT merge(T a, T b) { return a + b; }\n\t};\n\n\tSegtree<stinfo> sgt(N);\n\t\
+    sgt.reserve(N * 4);\n\tfor (int i = 0; i < N; i++) {\n\t\tlong long a; cin >>\
+    \ a;\n\t\tsgt.update(i, a);\n\t}\n\twhile (Q--) {\n\t\tint t; cin >> t;\n\t\t\
+    if (t == 0) {\n\t\t\tint p; long long x;\n\t\t\tcin >> p >> x;\n\t\t\tsgt.update(p,\
+    \ x);\n\t\t} else {\n\t\t\tint l, r;\n\t\t\tcin >> l >> r;\n\t\t\tcout << sgt.query(l,\
+    \ r - 1) << '\\n';\n\t\t}\n\t}\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/point_add_range_sum\"\n\
     \n#include <bits/stdc++.h>\nusing namespace std;\n\n#include \"data-structure/sparse-segment-tree.hpp\"\
-    \n\nconst int MAX = 5e5 + 5;\n\nint main() {\n\tint N, Q;\n\tcin >> N >> Q;\n\n\
-    \tstruct stinfo {\n\t\tusing T = long long;\n\t\tconst T dval = 0;\n\t\tvoid apply(T\
-    \ &a, T b) { a += b; }\n\t\tT merge(T a, T b) { return a + b; }\n\t};\n\n\tSegtree<stinfo>\
-    \ sgt(N);\n\tsgt.reserve(N * 4);\n\tfor (int i = 0; i < N; i++) {\n\t\tlong long\
-    \ a; cin >> a;\n\t\tsgt.update(i, a);\n\t}\n\twhile (Q--) {\n\t\tint t; cin >>\
-    \ t;\n\t\tif (t == 0) {\n\t\t\tint p; long long x;\n\t\t\tcin >> p >> x;\n\t\t\
-    \tsgt.update(p, x);\n\t\t} else {\n\t\t\tint l, r;\n\t\t\tcin >> l >> r;\n\t\t\
-    \tcout << sgt.query(l, r - 1) << '\\n';\n\t\t}\n\t}\n}"
+    \n\nint main() {\n\tint N, Q;\n\tcin >> N >> Q;\n\n\tstruct stinfo {\n\t\tusing\
+    \ T = long long;\n\t\tconst T dval = 0;\n\t\tvoid apply(T &a, T b) { a += b; }\n\
+    \t\tT merge(T a, T b) { return a + b; }\n\t};\n\n\tSegtree<stinfo> sgt(N);\n\t\
+    sgt.reserve(N * 4);\n\tfor (int i = 0; i < N; i++) {\n\t\tlong long a; cin >>\
+    \ a;\n\t\tsgt.update(i, a);\n\t}\n\twhile (Q--) {\n\t\tint t; cin >> t;\n\t\t\
+    if (t == 0) {\n\t\t\tint p; long long x;\n\t\t\tcin >> p >> x;\n\t\t\tsgt.update(p,\
+    \ x);\n\t\t} else {\n\t\t\tint l, r;\n\t\t\tcin >> l >> r;\n\t\t\tcout << sgt.query(l,\
+    \ r - 1) << '\\n';\n\t\t}\n\t}\n}"
   dependsOn:
   - data-structure/sparse-segment-tree.hpp
   isVerificationFile: true
   path: verify/sparse-segment-tree.yosupo-point-add-range-sum.test.cpp
   requiredBy: []
-  timestamp: '2022-02-04 21:19:28-08:00'
+  timestamp: '2022-04-02 12:35:37-07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/sparse-segment-tree.yosupo-point-add-range-sum.test.cpp
