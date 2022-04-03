@@ -90,29 +90,34 @@ data:
     \ = int;\n\nstruct VarMod { static ModType value; };\n\nModType VarMod::value;\n\
     \nModType &MOD = VarMod::value;\n\nusing mint = Modular<VarMod>;\n\n/*\nconstexpr\
     \ int MOD = @@HERE@@;\n\nusing mint = Modular<integral_constant<decay<decltype(MOD)>::type,\
-    \ md>>;\n*/\n#line 2 \"combo/binom-coef.hpp\"\n\nstruct binom_coef {\n\tvector<mint>\
+    \ md>>;\n*/\n#line 2 \"math/binom-coef.hpp\"\n\nstruct binom_coef {\n\tvector<mint>\
     \ fact, inv_fact;\n\n\tbinom_coef() = default;\n\n\tbinom_coef(int n) { init(n);\
     \ }\n\n\tvoid init(int n) {\n\t\tfact.resize(n + 1);\n\t\tfact[0] = 1;\n\t\tinv_fact.resize(n\
     \ + 1);\n\t\tinv_fact[0] = 1;\n\t\tfor (int i = 1; i <= n; i++) {\n\t\t\tfact[i]\
     \ = fact[i - 1] * i;\n\t\t\tinv_fact[i] = 1 / fact[i];\n\t\t}\n\t}\n\n\tmint operator()(int\
-    \ n, int k) { return fact[n] * inv_fact[k] * inv_fact[n - k]; }\n};\n"
+    \ n, int k) { return fact[n] * inv_fact[k] * inv_fact[n - k]; }\n};\n\nstruct\
+    \ bcoef_base {\n\tvirtual bcoef_base();\n\n\tvirtual bcoef_base() { init(n); }\n\
+    \n\tvirtual void init();\n\n\tvirtual mint operator()(int n, int k);\n}\n"
   code: "#include \"utility/mint.hpp\"\n\nstruct binom_coef {\n\tvector<mint> fact,\
     \ inv_fact;\n\n\tbinom_coef() = default;\n\n\tbinom_coef(int n) { init(n); }\n\
     \n\tvoid init(int n) {\n\t\tfact.resize(n + 1);\n\t\tfact[0] = 1;\n\t\tinv_fact.resize(n\
     \ + 1);\n\t\tinv_fact[0] = 1;\n\t\tfor (int i = 1; i <= n; i++) {\n\t\t\tfact[i]\
     \ = fact[i - 1] * i;\n\t\t\tinv_fact[i] = 1 / fact[i];\n\t\t}\n\t}\n\n\tmint operator()(int\
-    \ n, int k) { return fact[n] * inv_fact[k] * inv_fact[n - k]; }\n};"
+    \ n, int k) { return fact[n] * inv_fact[k] * inv_fact[n - k]; }\n};\n\nstruct\
+    \ bcoef_base {\n\tvirtual bcoef_base();\n\n\tvirtual bcoef_base() { init(n); }\n\
+    \n\tvirtual void init();\n\n\tvirtual mint operator()(int n, int k);\n}"
   dependsOn:
   - utility/mint.hpp
   isVerificationFile: false
-  path: combo/binom-coef.hpp
+  path: math/binom-coef.hpp
   requiredBy: []
-  timestamp: '2022-04-02 16:08:08-07:00'
+  timestamp: '2022-04-03 13:56:35-07:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: combo/binom-coef.hpp
+documentation_of: math/binom-coef.hpp
 layout: document
-title: Binomial Coefficients ($5 \cdot 10^3 < N \leq 10^6$)
+redirect_from:
+- /library/math/binom-coef.hpp
+- /library/math/binom-coef.hpp.html
+title: math/binom-coef.hpp
 ---
-
-## Binomial Coefficients

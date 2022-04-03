@@ -1,11 +1,6 @@
 ---
 data:
   libraryCategories:
-  - name: combo
-    pages:
-    - icon: ':warning:'
-      path: combo/binom-coef.hpp
-      title: Binomial Coefficients ($5 \cdot 10^3 < N \leq 10^6$)
   - name: data-structure
     pages:
     - icon: ':heavy_check_mark:'
@@ -78,6 +73,14 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/topo-sort.hpp
       title: Topological Sort
+  - name: math
+    pages:
+    - icon: ':warning:'
+      path: math/binom-coef.hpp
+      title: math/binom-coef.hpp
+    - icon: ':warning:'
+      path: math/ext-gcd.hpp
+      title: math/ext-gcd.hpp
   - name: utility
     pages:
     - icon: ':warning:'
