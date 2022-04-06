@@ -1,6 +1,6 @@
 ---
 title: Extended GCD
-documentation_of: //combo/ext-gcd.hpp
+documentation_of: //math/ext-gcd.hpp
 ---
 
 ## Extended GCD
