@@ -18,5 +18,7 @@ struct binom_coef {
 		}
 	}
 
-	mint operator()(int n, int k) { return fact[n] * inv_fact[k] * inv_fact[n - k]; }
+	mint operator()(int n, int k) { 
+		return (0 <= K && K <= N ? fact[n] * inv_fact[k] * inv_fact[n - k] : 0); 
+	}
 };
