@@ -16,12 +16,12 @@ data:
     - https://judge.yosupo.jp/problem/aplusb
   bundledCode: "#line 1 \"verify/mint.yosupo-A+B.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/aplusb\"\
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#line 1 \"utility/mint.hpp\"\
-    \ntemplate<typename T>\nT inverse(T a, T m) {\n\tT u = 0, v = 1;\n\twhile (a !=\
-    \ 0) {\n\t\tT t = m / a;\n\t\tm -= t * a; swap(a, m);\n\t\tu -= t * v; swap(u,\
-    \ v);\n\t}\n\tassert(m == 1);\n\treturn u;\n}\n\ntemplate<typename T>\nclass Modular\
-    \ {\npublic:\n\tusing Type = typename decay<decltype(T::value)>::type;\n\t\n\t\
-    constexpr Modular() : value() {}\n\n\ttemplate<typename U>\n\tModular(const U\
-    \ &x) { value = normalize(x); }\n\n\ttemplate<typename U>\n\tstatic Type normalize(const\
+    \n#pragma region mint\n\ntemplate<typename T>\nT inverse(T a, T m) {\n\tT u =\
+    \ 0, v = 1;\n\twhile (a != 0) {\n\t\tT t = m / a;\n\t\tm -= t * a; swap(a, m);\n\
+    \t\tu -= t * v; swap(u, v);\n\t}\n\tassert(m == 1);\n\treturn u;\n}\n\ntemplate<typename\
+    \ T>\nclass Modular {\npublic:\n\tusing Type = typename decay<decltype(T::value)>::type;\n\
+    \t\n\tconstexpr Modular() : value() {}\n\n\ttemplate<typename U>\n\tModular(const\
+    \ U &x) { value = normalize(x); }\n\n\ttemplate<typename U>\n\tstatic Type normalize(const\
     \ U &x) {\n\t\tType v;\n\t\tif (-mod() <= x && x < mod()) \n\t\t\tv = static_cast<Type>(x);\n\
     \t\telse \n\t\t\tv = static_cast<Type>(x % mod());\n\t\tif (v < 0) \n\t\t\tv +=\
     \ mod();\n\t\treturn v;\n\t}\n\n\tconst Type &operator()() const { return value;\
@@ -90,12 +90,13 @@ data:
     \ T>\nostream &operator<<(ostream &os, const Modular<T> &a) { return os << a();\
     \ }\n\ntemplate<typename T>\nistream &operator>>(istream &is, Modular<T> &a) {\n\
     \ttypename common_type<typename Modular<T>::Type, long long>::type x;\n\tis >>\
-    \ x;\n\ta.value = Modular<T>::normalize(x);\n\treturn is;\n}\n\nusing ModType\
+    \ x;\n\ta.value = Modular<T>::normalize(x);\n\treturn is;\n}\n\n// /*\nusing ModType\
     \ = int;\n\nstruct VarMod { static ModType value; };\n\nModType VarMod::value;\n\
-    \nModType &MOD = VarMod::value;\n\nusing mint = Modular<VarMod>;\n\n/*\nconstexpr\
-    \ int MOD = @@HERE@@;\n\nusing mint = Modular<integral_constant<decay<decltype(MOD)>::type,\
-    \ md>>;\n*/\n#line 7 \"verify/mint.yosupo-A+B.test.cpp\"\n\nint main() {\n\tMOD\
-    \ = 2e9 + 1;\n\tmint a, b;\n\tcin >> a >> b;\n\tcout << a + b << '\\n';\n}\n"
+    \nModType &MOD = VarMod::value;\n\nusing mint = Modular<VarMod>;\n// */\n\n/*\n\
+    constexpr int MOD = @@HERE@@;\n\nusing mint = Modular<integral_constant<decay<decltype(MOD)>::type,\
+    \ MOD>>;\n*/\n\n#pragma endregion mint\n#line 7 \"verify/mint.yosupo-A+B.test.cpp\"\
+    \n\nint main() {\n\tMOD = 2e9 + 1;\n\tmint a, b;\n\tcin >> a >> b;\n\tcout <<\
+    \ a + b << '\\n';\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/aplusb\"\n\n#include <bits/stdc++.h>\n\
     using namespace std;\n\n#include \"utility/mint.hpp\"\n\nint main() {\n\tMOD =\
     \ 2e9 + 1;\n\tmint a, b;\n\tcin >> a >> b;\n\tcout << a + b << '\\n';\n}"
@@ -104,7 +105,7 @@ data:
   isVerificationFile: true
   path: verify/mint.yosupo-A+B.test.cpp
   requiredBy: []
-  timestamp: '2022-04-02 13:43:15-07:00'
+  timestamp: '2022-04-08 11:14:33-07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/mint.yosupo-A+B.test.cpp

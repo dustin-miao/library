@@ -29,31 +29,31 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"utility/mint.hpp\"\ntemplate<typename T>\nT inverse(T a,\
-    \ T m) {\n\tT u = 0, v = 1;\n\twhile (a != 0) {\n\t\tT t = m / a;\n\t\tm -= t\
-    \ * a; swap(a, m);\n\t\tu -= t * v; swap(u, v);\n\t}\n\tassert(m == 1);\n\treturn\
-    \ u;\n}\n\ntemplate<typename T>\nclass Modular {\npublic:\n\tusing Type = typename\
-    \ decay<decltype(T::value)>::type;\n\t\n\tconstexpr Modular() : value() {}\n\n\
-    \ttemplate<typename U>\n\tModular(const U &x) { value = normalize(x); }\n\n\t\
-    template<typename U>\n\tstatic Type normalize(const U &x) {\n\t\tType v;\n\t\t\
-    if (-mod() <= x && x < mod()) \n\t\t\tv = static_cast<Type>(x);\n\t\telse \n\t\
-    \t\tv = static_cast<Type>(x % mod());\n\t\tif (v < 0) \n\t\t\tv += mod();\n\t\t\
-    return v;\n\t}\n\n\tconst Type &operator()() const { return value; }\n\n\ttemplate<typename\
-    \ U>\n\texplicit operator U() const { return static_cast<U>(value); }\n\n\tconstexpr\
-    \ static Type mod() { return T::value; }\n\n\tModular &operator+=(const Modular\
-    \ &a) { \n\t\tif ((value += a.value) >= mod()) \n\t\t\tvalue -= mod(); \n\t\t\
-    return *this; \n\t}\n\n\tModular &operator-=(const Modular &a) { \n\t\tif ((value\
-    \ -= a.value) < 0) \n\t\t\tvalue += mod(); \n\t\treturn *this; \n\t}\n\n\ttemplate<typename\
-    \ U> \n\tModular &operator+=(const U &other) { return *this += Modular(other);\
-    \ }\n\n\ttemplate<typename U> \n\tModular &operator-=(const U &other) { return\
-    \ *this -= Modular(other); }\n\n\tModular &operator++() { return *this += 1; }\n\
-    \n\tModular &operator--() { return *this -= 1; }\n\n\tModular operator++(int)\
-    \ { \n\t\tModular result(*this); \n\t\t*this += 1; \n\t\treturn result; \n\t}\n\
-    \n\tModular operator--(int) { \n\t\tModular result(*this);\n\t\t*this -= 1; \n\
-    \t\treturn result; \n\t}\n\n\tModular operator-() const { return Modular(-value);\
-    \ }\n\n\ttemplate<typename U = T>\n\ttypename enable_if<is_same<typename Modular<U>::Type,\
-    \ int>::value, Modular>::type\n\t&operator*=(const Modular &a) {\n#ifdef _WIN32\n\
-    \t\tuint64_t x = static_cast<int64_t>(value) * static_cast<int64_t>(a.value);\n\
+  bundledCode: "#line 1 \"utility/mint.hpp\"\n#pragma region mint\n\ntemplate<typename\
+    \ T>\nT inverse(T a, T m) {\n\tT u = 0, v = 1;\n\twhile (a != 0) {\n\t\tT t =\
+    \ m / a;\n\t\tm -= t * a; swap(a, m);\n\t\tu -= t * v; swap(u, v);\n\t}\n\tassert(m\
+    \ == 1);\n\treturn u;\n}\n\ntemplate<typename T>\nclass Modular {\npublic:\n\t\
+    using Type = typename decay<decltype(T::value)>::type;\n\t\n\tconstexpr Modular()\
+    \ : value() {}\n\n\ttemplate<typename U>\n\tModular(const U &x) { value = normalize(x);\
+    \ }\n\n\ttemplate<typename U>\n\tstatic Type normalize(const U &x) {\n\t\tType\
+    \ v;\n\t\tif (-mod() <= x && x < mod()) \n\t\t\tv = static_cast<Type>(x);\n\t\t\
+    else \n\t\t\tv = static_cast<Type>(x % mod());\n\t\tif (v < 0) \n\t\t\tv += mod();\n\
+    \t\treturn v;\n\t}\n\n\tconst Type &operator()() const { return value; }\n\n\t\
+    template<typename U>\n\texplicit operator U() const { return static_cast<U>(value);\
+    \ }\n\n\tconstexpr static Type mod() { return T::value; }\n\n\tModular &operator+=(const\
+    \ Modular &a) { \n\t\tif ((value += a.value) >= mod()) \n\t\t\tvalue -= mod();\
+    \ \n\t\treturn *this; \n\t}\n\n\tModular &operator-=(const Modular &a) { \n\t\t\
+    if ((value -= a.value) < 0) \n\t\t\tvalue += mod(); \n\t\treturn *this; \n\t}\n\
+    \n\ttemplate<typename U> \n\tModular &operator+=(const U &other) { return *this\
+    \ += Modular(other); }\n\n\ttemplate<typename U> \n\tModular &operator-=(const\
+    \ U &other) { return *this -= Modular(other); }\n\n\tModular &operator++() { return\
+    \ *this += 1; }\n\n\tModular &operator--() { return *this -= 1; }\n\n\tModular\
+    \ operator++(int) { \n\t\tModular result(*this); \n\t\t*this += 1; \n\t\treturn\
+    \ result; \n\t}\n\n\tModular operator--(int) { \n\t\tModular result(*this);\n\t\
+    \t*this -= 1; \n\t\treturn result; \n\t}\n\n\tModular operator-() const { return\
+    \ Modular(-value); }\n\n\ttemplate<typename U = T>\n\ttypename enable_if<is_same<typename\
+    \ Modular<U>::Type, int>::value, Modular>::type\n\t&operator*=(const Modular &a)\
+    \ {\n#ifdef _WIN32\n\t\tuint64_t x = static_cast<int64_t>(value) * static_cast<int64_t>(a.value);\n\
     \t\tuint32_t xh = static_cast<uint32_t>(x >> 32), xl = static_cast<uint32_t>(x),\
     \ d, m;\n\t\tasm(\n\t\t\t\"divl %4; \\n\\t\"\n\t\t\t: \"=a\" (d), \"=d\" (m)\n\
     \t\t\t: \"d\" (xh), \"a\" (xl), \"r\" (mod())\n\t\t);\n\t\tvalue = m;\n#else\n\
@@ -104,17 +104,17 @@ data:
     \ T>\nostream &operator<<(ostream &os, const Modular<T> &a) { return os << a();\
     \ }\n\ntemplate<typename T>\nistream &operator>>(istream &is, Modular<T> &a) {\n\
     \ttypename common_type<typename Modular<T>::Type, long long>::type x;\n\tis >>\
-    \ x;\n\ta.value = Modular<T>::normalize(x);\n\treturn is;\n}\n\nusing ModType\
+    \ x;\n\ta.value = Modular<T>::normalize(x);\n\treturn is;\n}\n\n// /*\nusing ModType\
     \ = int;\n\nstruct VarMod { static ModType value; };\n\nModType VarMod::value;\n\
-    \nModType &MOD = VarMod::value;\n\nusing mint = Modular<VarMod>;\n\n/*\nconstexpr\
-    \ int MOD = @@HERE@@;\n\nusing mint = Modular<integral_constant<decay<decltype(MOD)>::type,\
-    \ md>>;\n*/\n"
-  code: "template<typename T>\nT inverse(T a, T m) {\n\tT u = 0, v = 1;\n\twhile (a\
-    \ != 0) {\n\t\tT t = m / a;\n\t\tm -= t * a; swap(a, m);\n\t\tu -= t * v; swap(u,\
-    \ v);\n\t}\n\tassert(m == 1);\n\treturn u;\n}\n\ntemplate<typename T>\nclass Modular\
-    \ {\npublic:\n\tusing Type = typename decay<decltype(T::value)>::type;\n\t\n\t\
-    constexpr Modular() : value() {}\n\n\ttemplate<typename U>\n\tModular(const U\
-    \ &x) { value = normalize(x); }\n\n\ttemplate<typename U>\n\tstatic Type normalize(const\
+    \nModType &MOD = VarMod::value;\n\nusing mint = Modular<VarMod>;\n// */\n\n/*\n\
+    constexpr int MOD = @@HERE@@;\n\nusing mint = Modular<integral_constant<decay<decltype(MOD)>::type,\
+    \ MOD>>;\n*/\n\n#pragma endregion mint\n"
+  code: "#pragma region mint\n\ntemplate<typename T>\nT inverse(T a, T m) {\n\tT u\
+    \ = 0, v = 1;\n\twhile (a != 0) {\n\t\tT t = m / a;\n\t\tm -= t * a; swap(a, m);\n\
+    \t\tu -= t * v; swap(u, v);\n\t}\n\tassert(m == 1);\n\treturn u;\n}\n\ntemplate<typename\
+    \ T>\nclass Modular {\npublic:\n\tusing Type = typename decay<decltype(T::value)>::type;\n\
+    \t\n\tconstexpr Modular() : value() {}\n\n\ttemplate<typename U>\n\tModular(const\
+    \ U &x) { value = normalize(x); }\n\n\ttemplate<typename U>\n\tstatic Type normalize(const\
     \ U &x) {\n\t\tType v;\n\t\tif (-mod() <= x && x < mod()) \n\t\t\tv = static_cast<Type>(x);\n\
     \t\telse \n\t\t\tv = static_cast<Type>(x % mod());\n\t\tif (v < 0) \n\t\t\tv +=\
     \ mod();\n\t\treturn v;\n\t}\n\n\tconst Type &operator()() const { return value;\
@@ -183,17 +183,17 @@ data:
     \ T>\nostream &operator<<(ostream &os, const Modular<T> &a) { return os << a();\
     \ }\n\ntemplate<typename T>\nistream &operator>>(istream &is, Modular<T> &a) {\n\
     \ttypename common_type<typename Modular<T>::Type, long long>::type x;\n\tis >>\
-    \ x;\n\ta.value = Modular<T>::normalize(x);\n\treturn is;\n}\n\nusing ModType\
+    \ x;\n\ta.value = Modular<T>::normalize(x);\n\treturn is;\n}\n\n// /*\nusing ModType\
     \ = int;\n\nstruct VarMod { static ModType value; };\n\nModType VarMod::value;\n\
-    \nModType &MOD = VarMod::value;\n\nusing mint = Modular<VarMod>;\n\n/*\nconstexpr\
-    \ int MOD = @@HERE@@;\n\nusing mint = Modular<integral_constant<decay<decltype(MOD)>::type,\
-    \ md>>;\n*/"
+    \nModType &MOD = VarMod::value;\n\nusing mint = Modular<VarMod>;\n// */\n\n/*\n\
+    constexpr int MOD = @@HERE@@;\n\nusing mint = Modular<integral_constant<decay<decltype(MOD)>::type,\
+    \ MOD>>;\n*/\n\n#pragma endregion mint\n"
   dependsOn: []
   isVerificationFile: false
   path: utility/mint.hpp
   requiredBy:
   - math/binom-coef.hpp
-  timestamp: '2022-04-02 13:43:15-07:00'
+  timestamp: '2022-04-08 11:14:33-07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/mint.power.test.cpp
