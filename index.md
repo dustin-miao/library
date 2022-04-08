@@ -90,6 +90,9 @@ data:
     - icon: ':warning:'
       path: math/ext-gcd.hpp
       title: Extended GCD
+    - icon: ':warning:'
+      path: math/linear-sieve.hpp
+      title: Linear Sieve
   - name: utility
     pages:
     - icon: ':warning:'
