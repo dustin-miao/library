@@ -36,7 +36,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/sparse-table.hpp
       title: Sparse Table
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/static-segment-tree.hpp
       title: Static Segment Tree
     - icon: ':heavy_check_mark:'
@@ -230,7 +230,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/sparse-table.yosupo-static-rmq.test.cpp
       title: verify/sparse-table.yosupo-static-rmq.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/static-segment-tree.yosupo-point-add-range-sum.test.cpp
       title: verify/static-segment-tree.yosupo-point-add-range-sum.test.cpp
     - icon: ':heavy_check_mark:'
