@@ -38,6 +38,7 @@
 "verify/sparse-segment-tree.yosupo-point-add-range-sum.test.cpp": "2022-04-02 12:35:37 -0700",
 "verify/sparse-segment-tree.yosupo-point-set-range-composite.test.cpp": "2022-04-02 13:43:15 -0700",
 "verify/sparse-table.yosupo-static-rmq.test.cpp": "2022-02-05 09:55:16 -0800",
+"verify/static-general-segment-tree.yosupo-point-add-range-sum.test.cpp": "2022-04-08 08:56:40 -0700",
 "verify/static-segment-tree.yosupo-point-add-range-sum.test.cpp": "2022-04-08 08:46:33 -0700",
 "verify/tnemges-tree.aizu-point-add-query.test.cpp": "2022-02-04 21:19:28 -0800",
 "verify/topo-sort.topological-sort.test.cpp": "2022-03-29 14:42:43 -0700",
