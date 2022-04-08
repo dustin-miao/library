@@ -20,13 +20,3 @@ struct binom_coef {
 
 	mint operator()(int n, int k) { return fact[n] * inv_fact[k] * inv_fact[n - k]; }
 };
-
-struct bcoef_base {
-	virtual bcoef_base();
-
-	virtual bcoef_base() { init(n); }
-
-	virtual void init();
-
-	virtual mint operator()(int n, int k);
-}
