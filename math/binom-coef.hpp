@@ -1,11 +1,11 @@
 #include "utility/mint.hpp"
 
-struct binom_coef {
+struct BinomCoef {
 	vector<mint> fact, inv_fact;
 
-	binom_coef() = default;
+	BinomCoef() = default;
 
-	binom_coef(int n) { init(n); }
+	BinomCoef(int n) { init(n); }
 
 	void init(int n) {
 		fact.resize(n + 1);
@@ -18,7 +18,7 @@ struct binom_coef {
 		}
 	}
 
-	mint operator()(int n, int k) { 
-		return (0 <= K && K <= N ? fact[n] * inv_fact[k] * inv_fact[n - k] : 0); 
-	}
+	mint query(int n, int k) { return (0 <= K && K <= N ? fact[n] * inv_fact[k] * inv_fact[n - k] : 0); }
+
+	mint operator()(int n, int k) { return query(n, k); }
 };
