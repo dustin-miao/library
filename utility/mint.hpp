@@ -1,3 +1,5 @@
+#pragma region mint
+
 template<typename T>
 T inverse(T a, T m) {
 	T u = 0, v = 1;
@@ -224,3 +226,5 @@ constexpr int MOD = @@HERE@@;
 
 using mint = Modular<integral_constant<decay<decltype(MOD)>::type, MOD>>;
 */
+
+#pragma endregion mint
