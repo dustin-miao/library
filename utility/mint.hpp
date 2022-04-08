@@ -207,6 +207,7 @@ istream &operator>>(istream &is, Modular<T> &a) {
 	return is;
 }
 
+// /*
 using ModType = int;
 
 struct VarMod { static ModType value; };
@@ -216,9 +217,10 @@ ModType VarMod::value;
 ModType &MOD = VarMod::value;
 
 using mint = Modular<VarMod>;
+// */
 
 /*
 constexpr int MOD = @@HERE@@;
 
-using mint = Modular<integral_constant<decay<decltype(MOD)>::type, md>>;
+using mint = Modular<integral_constant<decay<decltype(MOD)>::type, MOD>>;
 */
