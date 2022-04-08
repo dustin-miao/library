@@ -3,9 +3,9 @@ data:
   libraryCategories:
   - name: data-structure
     pages:
-    - icon: ':warning:'
-      path: data-structure/const-lca.hpp
-      title: Constant Time LCA
+    - icon: ':heavy_check_mark:'
+      path: data-structure/fast-lca.hpp
+      title: Fast Lowest Common Ancestor
     - icon: ':heavy_check_mark:'
       path: data-structure/fenwick-tree.hpp
       title: Fenwick Tree
@@ -125,6 +125,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/dijkstra.aizu-single-source-shortest-path.test.cpp
       title: verify/dijkstra.aizu-single-source-shortest-path.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/fast-lca.yosupo-lowest-common-ancestor.test.cpp
+      title: verify/fast-lca.yosupo-lowest-common-ancestor.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/fast-pow.aizu-power.test.cpp
       title: verify/fast-pow.aizu-power.test.cpp

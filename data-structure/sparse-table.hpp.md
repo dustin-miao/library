@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':warning:'
-    path: data-structure/const-lca.hpp
-    title: Constant Time LCA
+  - icon: ':heavy_check_mark:'
+    path: data-structure/fast-lca.hpp
+    title: Fast Lowest Common Ancestor
   _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/fast-lca.yosupo-lowest-common-ancestor.test.cpp
+    title: verify/fast-lca.yosupo-lowest-common-ancestor.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/sparse-table.yosupo-static-rmq.test.cpp
     title: verify/sparse-table.yosupo-static-rmq.test.cpp
@@ -37,10 +40,11 @@ data:
   isVerificationFile: false
   path: data-structure/sparse-table.hpp
   requiredBy:
-  - data-structure/const-lca.hpp
+  - data-structure/fast-lca.hpp
   timestamp: '2022-02-05 09:55:16-08:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/fast-lca.yosupo-lowest-common-ancestor.test.cpp
   - verify/sparse-table.yosupo-static-rmq.test.cpp
 documentation_of: data-structure/sparse-table.hpp
 layout: document
