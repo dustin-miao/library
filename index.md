@@ -93,6 +93,9 @@ data:
     - icon: ':warning:'
       path: math/linear-sieve.hpp
       title: Linear Sieve
+    - icon: ':warning:'
+      path: math/matrix.hpp
+      title: math/matrix.hpp
   - name: utility
     pages:
     - icon: ':warning:'
@@ -107,7 +110,7 @@ data:
     - icon: ':warning:'
       path: utility/debug.hpp
       title: Debug
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: utility/fast-pow.hpp
       title: Binary Exponentiation
     - icon: ':heavy_check_mark:'
@@ -131,9 +134,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/fast-lca.yosupo-lowest-common-ancestor.test.cpp
       title: verify/fast-lca.yosupo-lowest-common-ancestor.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: verify/fast-pow.aizu-power.test.cpp
-      title: verify/fast-pow.aizu-power.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/fenwick-tree.aizu-range-sum-query.test.cpp
       title: verify/fenwick-tree.aizu-range-sum-query.test.cpp

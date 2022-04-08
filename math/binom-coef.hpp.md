@@ -80,8 +80,8 @@ data:
     \ /= b; }\n\ntemplate<typename T, typename U> \nModular<T> operator/(U a, const\
     \ Modular<T> &b) { return Modular<T>(a) /= b; }\n\ntemplate<typename T, typename\
     \ U>\nModular<T> fast_pow(const Modular<T> &a, const U &b) {\n\tassert(b >= 0);\n\
-    \tModular<T> x = a, res = 1;\n\tU p = b;\n\twhile (p > 0) {\n\t\tif (p & 1) res\
-    \ *= x;\n\t\tx *= x;\n\t\tp >>= 1;\n\t}\n\treturn res;\n}\n\ntemplate<typename\
+    \tModular<T> x = a, res = 1;\n\tU p = b;\n\twhile (p > 0) {\n\t\tif (p & 1) \n\
+    \t\t\tres *= x;\n\t\tx *= x;\n\t\tp /= 2;\n\t}\n\treturn res;\n}\n\ntemplate<typename\
     \ T>\nstring to_string(const Modular<T> &a) { return to_string(a()); }\n\ntemplate<typename\
     \ T>\nostream &operator<<(ostream &os, const Modular<T> &a) { return os << a();\
     \ }\n\ntemplate<typename T>\nistream &operator>>(istream &is, Modular<T> &a) {\n\
@@ -90,27 +90,29 @@ data:
     \ = int;\n\nstruct VarMod { static ModType value; };\n\nModType VarMod::value;\n\
     \nModType &MOD = VarMod::value;\n\nusing mint = Modular<VarMod>;\n// */\n\n/*\n\
     constexpr int MOD = @@HERE@@;\n\nusing mint = Modular<integral_constant<decay<decltype(MOD)>::type,\
-    \ MOD>>;\n*/\n\n#pragma endregion mint\n#line 2 \"math/binom-coef.hpp\"\n\nstruct\
-    \ BinomCoef {\n\tvector<mint> fact, inv_fact;\n\n\tBinomCoef() = default;\n\n\t\
-    BinomCoef(int n) { init(n); }\n\n\tvoid init(int n) {\n\t\tfact.resize(n + 1);\n\
-    \t\tfact[0] = 1;\n\t\tinv_fact.resize(n + 1);\n\t\tinv_fact[0] = 1;\n\t\tfor (int\
-    \ i = 1; i <= n; i++) {\n\t\t\tfact[i] = fact[i - 1] * i;\n\t\t\tinv_fact[i] =\
-    \ 1 / fact[i];\n\t\t}\n\t}\n\n\tmint query(int n, int k) { return (0 <= K && K\
-    \ <= N ? fact[n] * inv_fact[k] * inv_fact[n - k] : 0); }\n\n\tmint operator()(int\
-    \ n, int k) { return query(n, k); }\n};\n"
-  code: "#include \"utility/mint.hpp\"\n\nstruct BinomCoef {\n\tvector<mint> fact,\
-    \ inv_fact;\n\n\tBinomCoef() = default;\n\n\tBinomCoef(int n) { init(n); }\n\n\
-    \tvoid init(int n) {\n\t\tfact.resize(n + 1);\n\t\tfact[0] = 1;\n\t\tinv_fact.resize(n\
-    \ + 1);\n\t\tinv_fact[0] = 1;\n\t\tfor (int i = 1; i <= n; i++) {\n\t\t\tfact[i]\
-    \ = fact[i - 1] * i;\n\t\t\tinv_fact[i] = 1 / fact[i];\n\t\t}\n\t}\n\n\tmint query(int\
-    \ n, int k) { return (0 <= K && K <= N ? fact[n] * inv_fact[k] * inv_fact[n -\
-    \ k] : 0); }\n\n\tmint operator()(int n, int k) { return query(n, k); }\n};\n"
+    \ MOD>>;\n*/\n\n#pragma endregion mint\n#line 2 \"math/binom-coef.hpp\"\n\nnamespace\
+    \ math {\n\tstruct BinomCoef {\n\t\tvector<mint> fact, inv_fact;\n\n\t\tBinomCoef()\
+    \ = default;\n\n\t\tBinomCoef(int n) { init(n); }\n\n\t\tvoid init(int n) {\n\t\
+    \t\tfact.resize(n + 1);\n\t\t\tfact[0] = 1;\n\t\t\tinv_fact.resize(n + 1);\n\t\
+    \t\tinv_fact[0] = 1;\n\t\t\tfor (int i = 1; i <= n; i++) {\n\t\t\t\tfact[i] =\
+    \ fact[i - 1] * i;\n\t\t\t\tinv_fact[i] = 1 / fact[i];\n\t\t\t}\n\t\t}\n\n\t\t\
+    mint query(int n, int k) { return (0 <= K && K <= N ? fact[n] * inv_fact[k] *\
+    \ inv_fact[n - k] : 0); }\n\n\t\tmint operator()(int n, int k) { return query(n,\
+    \ k); }\n\t};\n}\n"
+  code: "#include \"utility/mint.hpp\"\n\nnamespace math {\n\tstruct BinomCoef {\n\
+    \t\tvector<mint> fact, inv_fact;\n\n\t\tBinomCoef() = default;\n\n\t\tBinomCoef(int\
+    \ n) { init(n); }\n\n\t\tvoid init(int n) {\n\t\t\tfact.resize(n + 1);\n\t\t\t\
+    fact[0] = 1;\n\t\t\tinv_fact.resize(n + 1);\n\t\t\tinv_fact[0] = 1;\n\t\t\tfor\
+    \ (int i = 1; i <= n; i++) {\n\t\t\t\tfact[i] = fact[i - 1] * i;\n\t\t\t\tinv_fact[i]\
+    \ = 1 / fact[i];\n\t\t\t}\n\t\t}\n\n\t\tmint query(int n, int k) { return (0 <=\
+    \ K && K <= N ? fact[n] * inv_fact[k] * inv_fact[n - k] : 0); }\n\n\t\tmint operator()(int\
+    \ n, int k) { return query(n, k); }\n\t};\n}"
   dependsOn:
   - utility/mint.hpp
   isVerificationFile: false
   path: math/binom-coef.hpp
   requiredBy: []
-  timestamp: '2022-04-08 11:27:19-07:00'
+  timestamp: '2022-04-08 16:00:08-07:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: math/binom-coef.hpp

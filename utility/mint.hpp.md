@@ -98,8 +98,8 @@ data:
     \ /= b; }\n\ntemplate<typename T, typename U> \nModular<T> operator/(U a, const\
     \ Modular<T> &b) { return Modular<T>(a) /= b; }\n\ntemplate<typename T, typename\
     \ U>\nModular<T> fast_pow(const Modular<T> &a, const U &b) {\n\tassert(b >= 0);\n\
-    \tModular<T> x = a, res = 1;\n\tU p = b;\n\twhile (p > 0) {\n\t\tif (p & 1) res\
-    \ *= x;\n\t\tx *= x;\n\t\tp >>= 1;\n\t}\n\treturn res;\n}\n\ntemplate<typename\
+    \tModular<T> x = a, res = 1;\n\tU p = b;\n\twhile (p > 0) {\n\t\tif (p & 1) \n\
+    \t\t\tres *= x;\n\t\tx *= x;\n\t\tp /= 2;\n\t}\n\treturn res;\n}\n\ntemplate<typename\
     \ T>\nstring to_string(const Modular<T> &a) { return to_string(a()); }\n\ntemplate<typename\
     \ T>\nostream &operator<<(ostream &os, const Modular<T> &a) { return os << a();\
     \ }\n\ntemplate<typename T>\nistream &operator>>(istream &is, Modular<T> &a) {\n\
@@ -177,8 +177,8 @@ data:
     \ /= b; }\n\ntemplate<typename T, typename U> \nModular<T> operator/(U a, const\
     \ Modular<T> &b) { return Modular<T>(a) /= b; }\n\ntemplate<typename T, typename\
     \ U>\nModular<T> fast_pow(const Modular<T> &a, const U &b) {\n\tassert(b >= 0);\n\
-    \tModular<T> x = a, res = 1;\n\tU p = b;\n\twhile (p > 0) {\n\t\tif (p & 1) res\
-    \ *= x;\n\t\tx *= x;\n\t\tp >>= 1;\n\t}\n\treturn res;\n}\n\ntemplate<typename\
+    \tModular<T> x = a, res = 1;\n\tU p = b;\n\twhile (p > 0) {\n\t\tif (p & 1) \n\
+    \t\t\tres *= x;\n\t\tx *= x;\n\t\tp /= 2;\n\t}\n\treturn res;\n}\n\ntemplate<typename\
     \ T>\nstring to_string(const Modular<T> &a) { return to_string(a()); }\n\ntemplate<typename\
     \ T>\nostream &operator<<(ostream &os, const Modular<T> &a) { return os << a();\
     \ }\n\ntemplate<typename T>\nistream &operator>>(istream &is, Modular<T> &a) {\n\
@@ -193,7 +193,7 @@ data:
   path: utility/mint.hpp
   requiredBy:
   - math/binom-coef.hpp
-  timestamp: '2022-04-08 11:14:33-07:00'
+  timestamp: '2022-04-08 16:00:08-07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/mint.power.test.cpp
