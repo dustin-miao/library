@@ -27,8 +27,7 @@ data:
   verifiedWith: []
 documentation_of: math/ext-gcd.hpp
 layout: document
-redirect_from:
-- /library/math/ext-gcd.hpp
-- /library/math/ext-gcd.hpp.html
-title: math/ext-gcd.hpp
+title: Extended GCD
 ---
+
+## Extended GCD

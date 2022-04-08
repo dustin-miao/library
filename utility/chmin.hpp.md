@@ -38,16 +38,16 @@ data:
   isVerificationFile: false
   path: utility/chmin.hpp
   requiredBy:
+  - graph/dijkstra.hpp
   - graph/floyd-warshall.hpp
   - graph/prim.hpp
-  - graph/dijkstra.hpp
   timestamp: '2022-02-04 21:19:28-08:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/dijkstra.aizu-single-source-shortest-path.test.cpp
+  - verify/floyd-warshall.all-pairs-shortest-path.test.cpp
   - verify/dijkstra.aizu-shortest-path.test.cpp
   - verify/prim.aizu-minimum-spanning-tree.test.cpp
-  - verify/floyd-warshall.all-pairs-shortest-path.test.cpp
-  - verify/dijkstra.aizu-single-source-shortest-path.test.cpp
 documentation_of: utility/chmin.hpp
 layout: document
 title: Chmin

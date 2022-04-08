@@ -128,9 +128,9 @@ data:
   timestamp: '2022-03-30 15:29:04-07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/point.aizu-counter-clockwise.test.cpp
   - verify/point.aizu-projection.test.cpp
   - verify/point.aizu-parallel-orthagonal.test.cpp
+  - verify/point.aizu-counter-clockwise.test.cpp
 documentation_of: geometry/point.hpp
 layout: document
 title: Point

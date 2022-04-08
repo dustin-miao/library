@@ -43,8 +43,8 @@ data:
   timestamp: '2022-03-29 12:51:37-07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/dijkstra.aizu-shortest-path.test.cpp
   - verify/dijkstra.aizu-single-source-shortest-path.test.cpp
+  - verify/dijkstra.aizu-shortest-path.test.cpp
 documentation_of: graph/dijkstra.hpp
 layout: document
 title: Dijkstra's Algorithm

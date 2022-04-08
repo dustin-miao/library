@@ -3,6 +3,9 @@ data:
   libraryCategories:
   - name: data-structure
     pages:
+    - icon: ':warning:'
+      path: data-structure/const-lca.hpp
+      title: Constant Time LCA
     - icon: ':heavy_check_mark:'
       path: data-structure/fenwick-tree.hpp
       title: Fenwick Tree
@@ -33,6 +36,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/sparse-table.hpp
       title: Sparse Table
+    - icon: ':warning:'
+      path: data-structure/static-segment-tree.hpp
+      title: Static Segment Tree
     - icon: ':heavy_check_mark:'
       path: data-structure/tnemges-tree.hpp
       title: Tnemges Tree
@@ -77,10 +83,10 @@ data:
     pages:
     - icon: ':warning:'
       path: math/binom-coef.hpp
-      title: math/binom-coef.hpp
+      title: Binomial Coefficients ($5 \cdot 10^3 < N \leq 10^6$)
     - icon: ':warning:'
       path: math/ext-gcd.hpp
-      title: math/ext-gcd.hpp
+      title: Extended GCD
   - name: utility
     pages:
     - icon: ':warning:'
@@ -224,6 +230,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/sparse-table.yosupo-static-rmq.test.cpp
       title: verify/sparse-table.yosupo-static-rmq.test.cpp
+    - icon: ':x:'
+      path: verify/static-segment-tree.yosupo-point-add-range-sum.test.cpp
+      title: verify/static-segment-tree.yosupo-point-add-range-sum.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/tnemges-tree.aizu-point-add-query.test.cpp
       title: verify/tnemges-tree.aizu-point-add-query.test.cpp

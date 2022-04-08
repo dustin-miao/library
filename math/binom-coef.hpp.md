@@ -116,8 +116,7 @@ data:
   verifiedWith: []
 documentation_of: math/binom-coef.hpp
 layout: document
-redirect_from:
-- /library/math/binom-coef.hpp
-- /library/math/binom-coef.hpp.html
-title: math/binom-coef.hpp
+title: Binomial Coefficients ($5 \cdot 10^3 < N \leq 10^6$)
 ---
+
+## Binomial Coefficients
