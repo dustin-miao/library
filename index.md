@@ -86,7 +86,7 @@ data:
     pages:
     - icon: ':warning:'
       path: math/binom-coef.hpp
-      title: Binomial Coefficients ($5 \cdot 10^3 < N \leq 10^6$)
+      title: Binomial Coefficients
     - icon: ':warning:'
       path: math/ext-gcd.hpp
       title: Extended GCD

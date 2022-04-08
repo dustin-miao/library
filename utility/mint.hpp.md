@@ -4,7 +4,7 @@ data:
   _extendedRequiredBy:
   - icon: ':warning:'
     path: math/binom-coef.hpp
-    title: Binomial Coefficients ($5 \cdot 10^3 < N \leq 10^6$)
+    title: Binomial Coefficients
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/general-segment-tree.yosupo-point-set-range-composite.test.cpp
