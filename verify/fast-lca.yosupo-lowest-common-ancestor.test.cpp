@@ -3,7 +3,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "data-structure/const-lca.hpp"
+#include "data-structure/fast-lca.hpp"
 
 int main() {
 	int N, Q;
