@@ -3,7 +3,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "data-structure/static-segment-tree.hpp
+#include "data-structure/static-segment-tree.hpp"
 
 int main() {
 	int N, Q;
