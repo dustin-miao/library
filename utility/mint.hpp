@@ -188,9 +188,10 @@ Modular<T> fast_pow(const Modular<T> &a, const U &b) {
 	Modular<T> x = a, res = 1;
 	U p = b;
 	while (p > 0) {
-		if (p & 1) res *= x;
+		if (p & 1) 
+			res *= x;
 		x *= x;
-		p >>= 1;
+		p /= 2;
 	}
 	return res;
 }
