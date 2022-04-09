@@ -9,22 +9,21 @@ int main() {
 	int N, Q;
 	cin >> N >> Q;
 
-	struct stinfo {
-		using T = long long;
-		using L = long long;
+	struct segment_tree_template {
+		using node_type = long long;
+		using lazy_type = long long;
+		const node_type node_default_value = LLONG_MAX;
+		const lazy_type lazy_default_value = 0;
 
-		const T Tdval = LLONG_MAX;
-		const L Ldval = 0;
-
-		void apply(T &a, L &b, L c, int l, int r) {
+		void apply(node_type &a, lazy_type &b, lazy_type c, int l, int r) {
 			a += c;
 			b += c;
 		}
 
-		T merge(T a, T b) { return min(a, b); }
+		node_type merge(node_type a, node_type b) { return min(a, b); }
 	};
 
-	Segtree<stinfo> sgt(N);
+	lazy_segment_tree<segment_tree_template> sgt(N);
 	for (int i = 0; i < N; i++) 
 		sgt.update(i, i, -LLONG_MAX);
 	while (Q--) {

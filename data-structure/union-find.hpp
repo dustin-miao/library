@@ -1,9 +1,9 @@
-struct UnionFind {
+struct union_find {
     vector<int> par, siz;
 
-    UnionFind() = default;
+    union_find() = default;
 
-    UnionFind(int n) { init(n); }
+    union_find(int n) { init(n); }
 
     void init(int n) {
         par.resize(n);

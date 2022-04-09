@@ -8,7 +8,7 @@ using namespace std;
 int main() {
 	int N, Q;
   	cin >> N >> Q;
-	UnionFind dsu(N);
+	union_find dsu(N);
   	while (Q--) {
     	int t, u, v;
     	cin >> t >> u >> v;

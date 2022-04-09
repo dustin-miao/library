@@ -9,14 +9,14 @@ int main() {
 	int N, Q;
 	cin >> N >> Q;
 
-	struct stinfo {
-		using T = long long;
-		const T dval = 0;
-		void apply(T &a, T b) { a += b; }
-		T merge(T a, T b) { return a + b; }
+	struct segment_tree_template {
+		using type = long long;
+		const type default_value = 0;
+		void apply(type &a, type b) { a += b; }
+		type merge(type a, type b) { return a + b; }
 	};
 
-	Segtree<stinfo> sgt(N);
+	gen_segment_tree<segment_tree_template> sgt(N);
 	for (int i = 0; i < N; i++) {
 		long long a; cin >> a;
 		sgt.update(i, a);

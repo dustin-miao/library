@@ -9,14 +9,14 @@ int main() {
 	int N, Q;
 	cin >> N >> Q;
 
-	struct stinfo {
-		using T = long long;
-		const T dval = LLONG_MAX;
-		void apply(T &a, T b) { a = b; }
-		T merge(T a, T b) { return min(a, b); }
+	struct segment_tree_template {
+		using type = long long;
+		const type default_value = LLONG_MAX;
+		void apply(type &a, type b) { a = b; }
+		type merge(type a, type b) { return min(a, b); }
 	};
 
-	Segtree<stinfo> sgt(N);
+	recursive_segment_tree<segment_tree_template> sgt(N);
 	for (int i = 0; i < N; i++)
 		sgt.update(i, INT_MAX);
 	while (Q--) {

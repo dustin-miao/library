@@ -8,7 +8,7 @@ using namespace std;
 int main() {
 	int N, Q;
 	cin >> N >> Q;
-	Tnettree<long long> tib(N + 1);
+	tnemges_tree<long long> tib(N + 1);
 	while (Q--) {
 		int t; cin >> t;
 		if (t == 0) {

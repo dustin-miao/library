@@ -12,22 +12,21 @@ int main() {
 	int N, Q;
 	cin >> N >> Q;
 
-	struct stinfo {
+	struct segment_tree_template {
 		struct node { mint a, b; };
-		using T = node;
-		const T dval = {1, 0};
-		void apply(T &a, T b) { a = b; }
-		T merge(T a, T b) { return {a.a * b.a, b.a * a.b + b.b}; }
+		using type = node;
+		const type default_value = {1, 0};
+		void apply(type &a, type b) { a = b; }
+		type merge(type a, type b) { return {a.a * b.a, b.a * a.b + b.b}; }
 	};
 
-	Segtree<stinfo> sgt(N);
+	sparse_segment_tree<segment_tree_template> sgt(N);
 	sgt.reserve(N * 4);
 	for (int i = 0; i < N; i++) {
 		long long a, b; 
 		cin >> a >> b;
 		sgt.update(i, {a, b});
 	}
-
 	while (Q--) {
 		int t; cin >> t;
 		if (t == 0) {

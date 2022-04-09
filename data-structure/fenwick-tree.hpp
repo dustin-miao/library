@@ -1,26 +1,26 @@
 template<typename T>
-class Fentree {
-	size_t n;
+class fenwick_tree {
+	int n;
 	vector<T> tree;
 
 public:
-	Fentree() = default;
+	fenwick_tree() = default;
 
-	Fentree(size_t _n) { init(_n); }
+	fenwick_tree(int _n) { init(_n); }
 
-	void init(size_t _n) {
+	void init(int _n) {
 		n = _n;
 		tree.assign(n + 1, T());
 	}
 
 	void update(int i, T v) {
-		for (; i <= n; i += i & -i)
+		for (i++; i <= n; i += i & -i)
 			tree[i] += v;
 	}
 
 	T query(int i) {
-		T ret = 0;
-		for (; i; i -= i & -i)
+		T ret = T();
+		for (i++; i; i -= i & -i)
 			ret += tree[i];
 		return ret;
 	}

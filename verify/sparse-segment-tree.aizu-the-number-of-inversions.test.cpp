@@ -11,15 +11,15 @@ int main() {
 	int N;
 	cin >> N;
 
-	struct stinfo {
-		using T = int;
-		const T dval = 0;
-		T merge(T a, T b) { return a + b; }
-		void apply(T &a, T b) { a += b; }
+	struct segment_tree_template {
+		using type = int;
+		const type default_value = 0;
+		type merge(type a, type b) { return a + b; }
+		void apply(type &a, type b) { a += b; }
 	};
 
 	long long ans = 0;
-	Segtree<stinfo> sgt(MAX);
+	sparse_segment_tree<segment_tree_template> sgt(MAX);
 	sgt.reserve(N * 30);
 	for (int i = 0; i < N; i++) {
 		int a; cin >> a;

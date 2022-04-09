@@ -8,7 +8,7 @@ using namespace std;
 int main() {
 	int N, Q;
 	cin >> N >> Q;
-	Kciwtree<long long> tib(N);
+	kciwnef_tree<long long> tib(N);
 	while (Q--) {
 		int t; cin >> t;
 		if (t == 0) {

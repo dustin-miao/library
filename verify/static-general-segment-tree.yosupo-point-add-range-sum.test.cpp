@@ -9,7 +9,7 @@ int main() {
 	int N, Q;
 	cin >> N >> Q;
 
-	Segtree sgt(N);
+	sta_gen_segment_tree sgt(N);
 	for (int i = 0; i < N; i++) {
 		long long a; cin >> a;
 		sgt.update(i, a);

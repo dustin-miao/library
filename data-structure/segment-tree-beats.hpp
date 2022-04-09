@@ -1,8 +1,11 @@
-class SegtreeBeats {
+class segment_tree_beats {
 protected:
-	size_t n;
+	int n;
 
-	struct node { long long sum, max1, max2, maxc, min1, min2, minc, lazy; };
+	struct node { 
+		long long sum, max1, max2, maxc, min1, min2, minc, lazy; 
+	};
+
 	vector<node> tree;
 
 private:
@@ -187,11 +190,11 @@ private:
 	}
 
 public:
-	SegtreeBeats() = default;
+	segment_tree_beats() = default;
 
-	SegtreeBeats(size_t _n) { init(_n); }
+	segment_tree_beats(int _n) { init(_n); }
 
-	void init(size_t _n) {
+	void init(int _n) {
 		n = _n;
 		tree.resize(n * 4);
 		build();

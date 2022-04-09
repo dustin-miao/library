@@ -1,17 +1,18 @@
 template<typename T>
-class SparseTable {
-	size_t n, logn;
+class sparse_table {
+	int n, logn;
 	vector<vector<T>> table;
 
 public:
-	SparseTable() = default;
+	sparse_table() = default;
 
 	template<typename I>
-	SparseTable(I l, I r) { init(l, r); }
+	sparse_table(I l, I r) { init(l, r); }
 
 	template<typename I>
 	void init(I l, I r) {
-		n = distance(l, r), logn = 32 - __builtin_clz(n);
+		n = distance(l, r);
+		logn = 31 - __builtin_clz(n);
 		table.assign(logn, vector<T>(n));
 		copy(l, r, table[0].begin());
 		for (int k = 1; k < logn; k++)

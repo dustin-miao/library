@@ -1,7 +1,7 @@
-class Segtree {
+class sta_segment_tree {
 	using T = long long;
 
-	const T dval = 0;
+	static constexpr T default_value = 0;
 
 	static void apply(T &a, T b) { a += b; }
 
@@ -12,9 +12,9 @@ protected:
 	vector<T> tree;
 
 public:
-	Segtree() = default;
+	sta_segment_tree() = default;
 
-	Segtree(int _n) { init(_n); }
+	sta_segment_tree(int _n) { init(_n); }
 
 	void init(int _n) {
 		n = _n;
@@ -29,11 +29,13 @@ public:
 	T query(int l, int r) {
 		T ret = Segtree::dval;
 		for (l += n, r += n + 1; l < r; l >>= 1, r >>= 1) {
-			if (l & 1) ret = merge(ret, tree[l++]);
-			if (r & 1) ret = merge(ret, tree[--r]);
+			if (l & 1) 
+				ret = merge(ret, tree[l++]);
+			if (r & 1) 
+				ret = merge(ret, tree[--r]);
 		}
 		return ret;
 	}
 
-	T operator[](int i) { return tree[i += n]; }
+	T operator[](int i) { return tree[i + n]; }
 };

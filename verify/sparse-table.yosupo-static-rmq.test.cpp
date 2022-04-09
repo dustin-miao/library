@@ -11,7 +11,7 @@ int main() {
 	vector<int> A(N);
 	for (int i = 0; i < N; i++)
 		cin >> A[i];
-	SparseTable<int> st(A.begin(), A.end());
+	sparse_table<int> st(A.begin(), A.end());
 	while (Q--) {
 		int l, r;
 		cin >> l >> r;

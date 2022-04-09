@@ -1,12 +1,12 @@
-template<class Base>
-class Segtree : public Base {
-	using T = typename Base::T;
-	using Base::dval;
-	using Base::merge;
-	using Base::apply;
+template<class segment_tree_template>
+class recursive_segment_tree : public segment_tree_template {
+	using T = typename segment_tree_template::type;
+	using segment_tree_template::default_value;
+	using segment_tree_template::merge;
+	using segment_tree_template::apply;
 
 protected:
-	size_t n;
+	int n;
 	vector<T> tree;
 
 private:
@@ -25,7 +25,7 @@ private:
 
 	T query(int l, int r, int t, int tl, int tr) {
 		if (r < tl || tr < l)
-			return dval;
+			return default_value;
 		if (l <= tl && tr <= r)
 			return tree[t];
 		int tm = (tl + tr) / 2;
@@ -33,13 +33,13 @@ private:
 	}
 
 public:
-	Segtree() = default;
+	recursive_segment_tree() = default;
 
-	Segtree(size_t _n) { init(_n); }
+	recursive_segment_tree(int _n) { init(_n); }
 
-	void init(size_t _n) {
+	void init(int _n) {
 		n = _n;
-		tree.assign(n * 4, dval);
+		tree.assign(n * 4, default_value);
 	}
 
 	void update(int i, T v) { update(i, v, 1, 0, n - 1); }

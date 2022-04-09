@@ -8,7 +8,7 @@ using namespace std;
 int main() {
 	int N, Q;
 	cin >> N >> Q;
-	LineContainer lc;
+	line_container lc;
 	for (int i = 0; i < N; i++) {
 		long long m, b;
 		cin >> m >> b;

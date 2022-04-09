@@ -8,7 +8,7 @@ using namespace std;
 int main() {
 	int N, Q;
 	cin >> N >> Q;
-	Fentree<long long> bit(N);
+	fenwick_tree<long long> bit(N);
 	while (Q--) {
 		int t; cin >> t;
 		if (t == 0) {

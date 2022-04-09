@@ -1,12 +1,12 @@
 #include "data-structure/union-find.hpp"
 
-struct UnionFind2d {
+struct union_find_2d {
 	int n, m;
-	UnionFind dsu;
+	union_find dsu;
 
-	UnionFind2d() = default;
+	union_find_2d() = default;
 
-	UnionFind2d(int _n, int _m) { init(_n, _m); }
+	union_find_2d(int _n, int _m) { init(_n, _m); }
 
 	void init(int _n, int _m) { 
 		n = _n, m = _m;

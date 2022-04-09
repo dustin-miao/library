@@ -10,7 +10,7 @@ const int MAX = 5e5 + 5;
 int main() {
 	int N, Q;
   	cin >> N >> Q;
-	Fentree<long long> bit(N);
+	fenwick_tree<long long> bit(N);
   	for (int i = 0; i < N; i++) {
 		long long a; cin >> a;
 		bit.update(i + 1, a);

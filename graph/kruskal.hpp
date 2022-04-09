@@ -5,7 +5,7 @@ vector<vector<pair<int, T>>> kruskal(int n, vector<tuple<int, int, T>> E) {
 	vector<vector<pair<int, T>>> mst(n);
 	if (n <= 1)
 		return mst;
-	UnionFind dsu(n);
+	union_find dsu(n);
 	sort(E.begin(), E.end(), 
 		[](auto a, auto b) { 
 			return get<2>(a) < get<2>(b); 

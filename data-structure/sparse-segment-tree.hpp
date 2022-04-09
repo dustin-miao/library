@@ -1,12 +1,12 @@
-template<class Base>
-class Segtree : public Base {
-	using T = typename Base::T;
-	using Base::dval;
-	using Base::merge;
-	using Base::apply;
+template<class segment_tree_template>
+class sparse_segment_tree : public segment_tree_template {
+	using T = typename segment_tree_template::type;
+	using segment_tree_template::default_value;
+	using segment_tree_template::merge;
+	using segment_tree_template::apply;
 
 protected:
-	size_t n;
+	int n;
 
 	struct node {
 		T v;
@@ -18,8 +18,8 @@ protected:
 	int root;
 	vector<node> tree;
 
-	size_t new_node() {
-		tree.emplace_back(dval, -1, -1);
+	int new_node() {
+		tree.emplace_back(default_value, -1, -1);
 		return tree.size() - 1;
 	}
 
@@ -39,29 +39,31 @@ private:
 				tree[t].r = new_node();
 			update(i, v, tree[t].r, tm + 1, tr);
 		}
-		tree[t].v = merge(tree[t].l == -1 ? dval : tree[tree[t].l].v, tree[t].r == -1 ? dval : tree[tree[t].r].v);
+		tree[t].v = merge(tree[t].l == -1 ? default_value : tree[tree[t].l].v, 
+			tree[t].r == -1 ? default_value : tree[tree[t].r].v);
 	}
 
 	T query(int l, int r, int t, int tl, int tr) {
 		if (r < tl || tr < l)
-			return dval;
+			return default_value;
 		if (l <= tl && tr <= r)
 			return tree[t].v;
 		int tm = (tl + tr) / 2;
-		return merge(tree[t].l == -1 ? dval : query(l, r, tree[t].l, tl, tm), tree[t].r == -1 ? dval : query(l, r, tree[t].r, tm + 1, tr));
+		return merge(tree[t].l == -1 ? default_value : query(l, r, tree[t].l, tl, tm), 
+			tree[t].r == -1 ? default_value : query(l, r, tree[t].r, tm + 1, tr));
 	}
 
 public:
 	Segtree() = default;
 
-	Segtree(size_t _n) { init(_n); }
+	Segtree(int _n) { init(_n); }
 
-	void init(size_t _n) {
+	void init(int _n) {
 		n = _n;
 		root = new_node();
 	}
 
-	void reserve(size_t _n) { tree.reserve(_n); }
+	void reserve(int _n) { tree.reserve(_n); }
 
 	void clear() { tree.clear(); }
 

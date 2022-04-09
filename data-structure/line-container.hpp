@@ -1,12 +1,12 @@
 #include "utility/floor-div.hpp"
 
-struct Line {
+struct line_container_line {
     mutable long long m, b, p;
     bool operator<(const Line &o) const { return m < o.m; }
     bool operator<(long long x) const { return p < x; }
 };
 
-class LineContainer : multiset<Line, less<>> {
+class line_container : multiset<Line, less<>> {
     // for doubles, use inf = 1/.0
     static const long long INF = LLONG_MAX;
 

@@ -1,25 +1,25 @@
-template<class Base>
-class Segtree : public Base {
-	using T = typename Base::T;
-	using L = typename Base::L;
-	using Base::Tdval;
-	using Base::Ldval;
-	using Base::merge;
-	using Base::apply;
+template<class segment_tree_template>
+class lazy_segment_tree : public segment_tree_template {
+	using T = typename segment_tree_template::node_type;
+	using L = typename segment_tree_template::lazy_type;
+	using segment_tree_template::node_default_value;
+	using segment_tree_template::lazy_default_value;
+	using segment_tree_template::merge;
+	using segment_tree_template::apply;
 
 protected:
-	size_t n;
+	int n;
 	vector<T> tree;
 	vector<L> lazy;
 
 private:
 	void pushdown(int t, int tl, int tr) {
-		if (lazy[t] == Ldval)
+		if (lazy[t] == lazy_default_value)
 			return;
 		int tm = (tl + tr) / 2;
 		apply(tree[t * 2], lazy[t * 2], lazy[t], tl, tm);
 		apply(tree[t * 2 + 1], lazy[t * 2 + 1], lazy[t], tm + 1, tr);
-		lazy[t] = Ldval;
+		lazy[t] = lazy_default_value;
 	}
 
 	void update(int l, int r, L v, int t, int tl, int tr) {
@@ -38,7 +38,7 @@ private:
 
 	T query(int l, int r, int t, int tl, int tr) {
 		if (r < tl || tr < l)
-			return Tdval;
+			return node_default_value;
 		if (l <= tl && tr <= r)
 			return tree[t];
 		pushdown(t, tl, tr);
@@ -47,14 +47,14 @@ private:
 	}
 
 public:
-	Segtree() = default;
+	lazy_segment_tree() = default;
 
-	Segtree(size_t _n) { init(_n); }
+	lazy_segment_tree(int _n) { init(_n); }
 
-	void init(size_t _n) {
+	void init(int _n) {
 		n = _n;
-		tree.assign(4 * n, Tdval);
-		lazy.assign(4 * n, Ldval);
+		tree.assign(4 * n, node_default_value);
+		lazy.assign(4 * n, lazy_default_value);
 	}
 
 	void update(int l, int r, L v) { update(l, r, v, 1, 0, n - 1); }
