@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: data-structure/line-container.hpp
     title: Line Container
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: utility/floor-div.hpp
     title: Floor Division
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/line_add_get_min
@@ -21,10 +21,10 @@ data:
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/line_add_get_min\"\n\n#include\
     \ <bits/stdc++.h>\nusing namespace std;\n\n#line 1 \"utility/floor-div.hpp\"\n\
     template<typename T>\nT floor_div(T a, T b) { \n\treturn a / b - ((a ^ b) < 0\
-    \ && a % b); \n}\n#line 2 \"data-structure/line-container.hpp\"\n\nstruct Line\
+    \ && a % b); \n}\n#line 2 \"data-structure/line-container.hpp\"\n\nstruct line_container_line\
     \ {\n    mutable long long m, b, p;\n    bool operator<(const Line &o) const {\
     \ return m < o.m; }\n    bool operator<(long long x) const { return p < x; }\n\
-    };\n\nclass LineContainer : multiset<Line, less<>> {\n    // for doubles, use\
+    };\n\nclass line_container : multiset<Line, less<>> {\n    // for doubles, use\
     \ inf = 1/.0\n    static const long long INF = LLONG_MAX;\n\n    bool isect(iterator\
     \ x, iterator y) {\n        if (y == end()) {\n\t\t\tx->p = INF;\n\t\t\treturn\
     \ false;\n\t\t}\n        if (x->m == y->m)\n            x->p = x->b > y->b ? INF\
@@ -36,7 +36,7 @@ data:
     \ && (--x)->p >= y->p) \n            isect(x, erase(y));\n    }\n\n    long long\
     \ query(long long x) {\n        assert(!empty());\n        auto l = *lower_bound(x);\n\
     \        return l.m * x + l.b;\n    }\n};\n#line 7 \"verify/line-container.yosupo-line-add-get-min.test.cpp\"\
-    \n\nint main() {\n\tint N, Q;\n\tcin >> N >> Q;\n\tLineContainer lc;\n\tfor (int\
+    \n\nint main() {\n\tint N, Q;\n\tcin >> N >> Q;\n\tline_container lc;\n\tfor (int\
     \ i = 0; i < N; i++) {\n\t\tlong long m, b;\n\t\tcin >> m >> b;\n\t\tlc.add(-m,\
     \ -b);\n\t}\n\twhile (Q--) {\n\t\tint t; cin >> t;\n\t\tif (t == 0) {\n\t\t\t\
     long long m, b;\n\t\t\tcin >> m >> b;\n\t\t\tlc.add(-m, -b);\n\t\t} else if (t\
@@ -44,7 +44,7 @@ data:
     \ '\\n';\n\t\t}\n\t}\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/line_add_get_min\"\n\n\
     #include <bits/stdc++.h>\nusing namespace std;\n\n#include \"data-structure/line-container.hpp\"\
-    \n\nint main() {\n\tint N, Q;\n\tcin >> N >> Q;\n\tLineContainer lc;\n\tfor (int\
+    \n\nint main() {\n\tint N, Q;\n\tcin >> N >> Q;\n\tline_container lc;\n\tfor (int\
     \ i = 0; i < N; i++) {\n\t\tlong long m, b;\n\t\tcin >> m >> b;\n\t\tlc.add(-m,\
     \ -b);\n\t}\n\twhile (Q--) {\n\t\tint t; cin >> t;\n\t\tif (t == 0) {\n\t\t\t\
     long long m, b;\n\t\t\tcin >> m >> b;\n\t\t\tlc.add(-m, -b);\n\t\t} else if (t\
@@ -56,8 +56,8 @@ data:
   isVerificationFile: true
   path: verify/line-container.yosupo-line-add-get-min.test.cpp
   requiredBy: []
-  timestamp: '2022-04-01 12:45:42-07:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-04-09 15:55:38-07:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/line-container.yosupo-line-add-get-min.test.cpp
 layout: document

@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: data-structure/recursive-segment-tree.hpp
     title: Recursive Segment Tree
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utility/mint.hpp
     title: Modular Int
   _extendedRequiredBy: []
@@ -99,50 +99,53 @@ data:
     \nModType &MOD = VarMod::value;\n\nusing mint = Modular<VarMod>;\n// */\n\n/*\n\
     constexpr int MOD = @@HERE@@;\n\nusing mint = Modular<integral_constant<decay<decltype(MOD)>::type,\
     \ MOD>>;\n*/\n\n#pragma endregion mint\n#line 1 \"data-structure/recursive-segment-tree.hpp\"\
-    \ntemplate<class Base>\nclass Segtree : public Base {\n\tusing T = typename Base::T;\n\
-    \tusing Base::dval;\n\tusing Base::merge;\n\tusing Base::apply;\n\nprotected:\n\
-    \tsize_t n;\n\tvector<T> tree;\n\nprivate:\n\tvoid update(int i, T v, int t, int\
-    \ tl, int tr) {\n\t\tif (tl == tr) {\n\t\t\tapply(tree[t], v);\n\t\t\treturn;\n\
-    \t\t}\n\t\tint tm = (tl + tr) / 2;\n\t\tif (i <= tm)\n\t\t\tupdate(i, v, t * 2,\
-    \ tl, tm);\n\t\telse \n\t\t\tupdate(i, v, t * 2 + 1, tm + 1, tr);\n\t\ttree[t]\
-    \ = merge(tree[t * 2], tree[t * 2 + 1]);\n\t}\n\n\tT query(int l, int r, int t,\
-    \ int tl, int tr) {\n\t\tif (r < tl || tr < l)\n\t\t\treturn dval;\n\t\tif (l\
-    \ <= tl && tr <= r)\n\t\t\treturn tree[t];\n\t\tint tm = (tl + tr) / 2;\n\t\t\
-    return merge(query(l, r, t * 2, tl, tm), query(l, r, t * 2 + 1, tm + 1, tr));\n\
-    \t}\n\npublic:\n\tSegtree() = default;\n\n\tSegtree(size_t _n) { init(_n); }\n\
-    \n\tvoid init(size_t _n) {\n\t\tn = _n;\n\t\ttree.assign(n * 4, dval);\n\t}\n\n\
-    \tvoid update(int i, T v) { update(i, v, 1, 0, n - 1); }\n\n\tT query(int l, int\
-    \ r) { return query(l, r, 1, 0, n - 1); }\n};\n#line 8 \"verify/recursive-segment-tree.yosupo-point-set-range-composite.test.cpp\"\
+    \ntemplate<class segment_tree_template>\nclass recursive_segment_tree : public\
+    \ segment_tree_template {\n\tusing T = typename segment_tree_template::type;\n\
+    \tusing segment_tree_template::default_value;\n\tusing segment_tree_template::merge;\n\
+    \tusing segment_tree_template::apply;\n\nprotected:\n\tint n;\n\tvector<T> tree;\n\
+    \nprivate:\n\tvoid update(int i, T v, int t, int tl, int tr) {\n\t\tif (tl ==\
+    \ tr) {\n\t\t\tapply(tree[t], v);\n\t\t\treturn;\n\t\t}\n\t\tint tm = (tl + tr)\
+    \ / 2;\n\t\tif (i <= tm)\n\t\t\tupdate(i, v, t * 2, tl, tm);\n\t\telse \n\t\t\t\
+    update(i, v, t * 2 + 1, tm + 1, tr);\n\t\ttree[t] = merge(tree[t * 2], tree[t\
+    \ * 2 + 1]);\n\t}\n\n\tT query(int l, int r, int t, int tl, int tr) {\n\t\tif\
+    \ (r < tl || tr < l)\n\t\t\treturn default_value;\n\t\tif (l <= tl && tr <= r)\n\
+    \t\t\treturn tree[t];\n\t\tint tm = (tl + tr) / 2;\n\t\treturn merge(query(l,\
+    \ r, t * 2, tl, tm), query(l, r, t * 2 + 1, tm + 1, tr));\n\t}\n\npublic:\n\t\
+    recursive_segment_tree() = default;\n\n\trecursive_segment_tree(int _n) { init(_n);\
+    \ }\n\n\tvoid init(int _n) {\n\t\tn = _n;\n\t\ttree.assign(n * 4, default_value);\n\
+    \t}\n\n\tvoid update(int i, T v) { update(i, v, 1, 0, n - 1); }\n\n\tT query(int\
+    \ l, int r) { return query(l, r, 1, 0, n - 1); }\n};\n#line 8 \"verify/recursive-segment-tree.yosupo-point-set-range-composite.test.cpp\"\
     \n\nint main() {\n\tMOD = 998244353;\n\n\tint N, Q;\n\tcin >> N >> Q;\n\n\tstruct\
-    \ stinfo {\n\t\tstruct node { mint a, b; };\n\t\tusing T = node;\n\t\tconst T\
-    \ dval = {1, 0};\n\t\tvoid apply(T &a, T b) { a = b; }\n\t\tT merge(T a, T b)\
-    \ { return {a.a * b.a, b.a * a.b + b.b}; }\n\t};\n\n\tSegtree<stinfo> sgt(N);\n\
-    \tfor (int i = 0; i < N; i++) {\n\t\tlong long a, b; \n\t\tcin >> a >> b;\n\t\t\
-    sgt.update(i, {a, b});\n\t}\n\n\twhile (Q--) {\n\t\tint t; cin >> t;\n\t\tif (t\
-    \ == 0) {\n\t\t\tint p; long long c, d;\n\t\t\tcin >> p >> c >> d;\n\t\t\tsgt.update(p,\
-    \ {c, d});\n\t\t} else {\n\t\t\tint l, r; long long x;\n\t\t\tcin >> l >> r >>\
-    \ x;\n\t\t\tauto [a, b] = sgt.query(l, r - 1);\n\t\t\tcout << a * x + b << '\\\
-    n';\n\t\t}\n\t}\n}\n"
+    \ segment_tree_template {\n\t\tstruct node { mint a, b; };\n\t\tusing type = node;\n\
+    \t\tconst type default_value = {1, 0};\n\t\tvoid apply(type &a, type b) { a =\
+    \ b; }\n\t\ttype merge(type a, type b) { return {a.a * b.a, b.a * a.b + b.b};\
+    \ }\n\t};\n\n\trecursive_segment_tree<segment_tree_template> sgt(N);\n\tfor (int\
+    \ i = 0; i < N; i++) {\n\t\tlong long a, b; \n\t\tcin >> a >> b;\n\t\tsgt.update(i,\
+    \ {a, b});\n\t}\n\n\twhile (Q--) {\n\t\tint t; cin >> t;\n\t\tif (t == 0) {\n\t\
+    \t\tint p; long long c, d;\n\t\t\tcin >> p >> c >> d;\n\t\t\tsgt.update(p, {c,\
+    \ d});\n\t\t} else {\n\t\t\tint l, r; long long x;\n\t\t\tcin >> l >> r >> x;\n\
+    \t\t\tauto [a, b] = sgt.query(l, r - 1);\n\t\t\tcout << a * x + b << '\\n';\n\t\
+    \t}\n\t}\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/point_set_range_composite\"\
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#include \"utility/mint.hpp\"\
     \n#include \"data-structure/recursive-segment-tree.hpp\"\n\nint main() {\n\tMOD\
-    \ = 998244353;\n\n\tint N, Q;\n\tcin >> N >> Q;\n\n\tstruct stinfo {\n\t\tstruct\
-    \ node { mint a, b; };\n\t\tusing T = node;\n\t\tconst T dval = {1, 0};\n\t\t\
-    void apply(T &a, T b) { a = b; }\n\t\tT merge(T a, T b) { return {a.a * b.a, b.a\
-    \ * a.b + b.b}; }\n\t};\n\n\tSegtree<stinfo> sgt(N);\n\tfor (int i = 0; i < N;\
-    \ i++) {\n\t\tlong long a, b; \n\t\tcin >> a >> b;\n\t\tsgt.update(i, {a, b});\n\
-    \t}\n\n\twhile (Q--) {\n\t\tint t; cin >> t;\n\t\tif (t == 0) {\n\t\t\tint p;\
-    \ long long c, d;\n\t\t\tcin >> p >> c >> d;\n\t\t\tsgt.update(p, {c, d});\n\t\
-    \t} else {\n\t\t\tint l, r; long long x;\n\t\t\tcin >> l >> r >> x;\n\t\t\tauto\
-    \ [a, b] = sgt.query(l, r - 1);\n\t\t\tcout << a * x + b << '\\n';\n\t\t}\n\t\
-    }\n}"
+    \ = 998244353;\n\n\tint N, Q;\n\tcin >> N >> Q;\n\n\tstruct segment_tree_template\
+    \ {\n\t\tstruct node { mint a, b; };\n\t\tusing type = node;\n\t\tconst type default_value\
+    \ = {1, 0};\n\t\tvoid apply(type &a, type b) { a = b; }\n\t\ttype merge(type a,\
+    \ type b) { return {a.a * b.a, b.a * a.b + b.b}; }\n\t};\n\n\trecursive_segment_tree<segment_tree_template>\
+    \ sgt(N);\n\tfor (int i = 0; i < N; i++) {\n\t\tlong long a, b; \n\t\tcin >> a\
+    \ >> b;\n\t\tsgt.update(i, {a, b});\n\t}\n\n\twhile (Q--) {\n\t\tint t; cin >>\
+    \ t;\n\t\tif (t == 0) {\n\t\t\tint p; long long c, d;\n\t\t\tcin >> p >> c >>\
+    \ d;\n\t\t\tsgt.update(p, {c, d});\n\t\t} else {\n\t\t\tint l, r; long long x;\n\
+    \t\t\tcin >> l >> r >> x;\n\t\t\tauto [a, b] = sgt.query(l, r - 1);\n\t\t\tcout\
+    \ << a * x + b << '\\n';\n\t\t}\n\t}\n}"
   dependsOn:
   - utility/mint.hpp
   - data-structure/recursive-segment-tree.hpp
   isVerificationFile: true
   path: verify/recursive-segment-tree.yosupo-point-set-range-composite.test.cpp
   requiredBy: []
-  timestamp: '2022-04-08 16:00:08-07:00'
+  timestamp: '2022-04-09 15:55:38-07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/recursive-segment-tree.yosupo-point-set-range-composite.test.cpp

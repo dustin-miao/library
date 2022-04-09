@@ -3,52 +3,52 @@ data:
   libraryCategories:
   - name: data-structure
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: data-structure/fast-lca.hpp
       title: Fast Lowest Common Ancestor
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: data-structure/fenwick-tree.hpp
       title: Fenwick Tree
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: data-structure/general-segment-tree.hpp
       title: General Segment Tree
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: data-structure/kciwnef-tree.hpp
       title: Kciwnef Tree
     - icon: ':heavy_check_mark:'
       path: data-structure/lazy-segment-tree.hpp
       title: Lazy Segment Tree
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: data-structure/line-container.hpp
       title: Line Container
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: data-structure/recursive-segment-tree.hpp
       title: Recursive Segment Tree
     - icon: ':heavy_check_mark:'
       path: data-structure/segment-tree-beats.hpp
       title: Segment Tree Beats
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: data-structure/segment-tree.hpp
       title: Segment Tree
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: data-structure/sparse-segment-tree.hpp
       title: Sparse Segment Tree
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: data-structure/sparse-table.hpp
       title: Sparse Table
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: data-structure/static-general-segment-tree.hpp
       title: Static General Segment Tree
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: data-structure/static-segment-tree.hpp
       title: Static Segment Tree
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: data-structure/tnemges-tree.hpp
       title: Tnemges Tree
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: data-structure/union-find-2d.hpp
       title: Union Find 2d
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: data-structure/union-find.hpp
       title: Union Find
   - name: geometry
@@ -116,10 +116,10 @@ data:
     - icon: ':warning:'
       path: utility/fast-pow.hpp
       title: Binary Exponentiation
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: utility/floor-div.hpp
       title: Floor Division
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: utility/mint.hpp
       title: Modular Int
   verificationCategories:
@@ -134,31 +134,31 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/dijkstra.aizu-single-source-shortest-path.test.cpp
       title: verify/dijkstra.aizu-single-source-shortest-path.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/fast-lca.yosupo-lowest-common-ancestor.test.cpp
       title: verify/fast-lca.yosupo-lowest-common-ancestor.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/fenwick-tree.aizu-range-sum-query.test.cpp
       title: verify/fenwick-tree.aizu-range-sum-query.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/fenwick-tree.yosupo-point-add-range-sum.test.cpp
       title: verify/fenwick-tree.yosupo-point-add-range-sum.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/floyd-warshall.all-pairs-shortest-path.test.cpp
       title: verify/floyd-warshall.all-pairs-shortest-path.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/general-segment-tree.aizu-range-minimum-query.test.cpp
       title: verify/general-segment-tree.aizu-range-minimum-query.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/general-segment-tree.aizu-range-sum-query.test.cpp
       title: verify/general-segment-tree.aizu-range-sum-query.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/general-segment-tree.yosupo-point-add-range-sum.test.cpp
       title: verify/general-segment-tree.yosupo-point-add-range-sum.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/general-segment-tree.yosupo-point-set-range-composite.test.cpp
       title: verify/general-segment-tree.yosupo-point-set-range-composite.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/kciwnef-tree.aizu-point-add-query.test.cpp
       title: verify/kciwnef-tree.aizu-point-add-query.test.cpp
     - icon: ':heavy_check_mark:'
@@ -179,7 +179,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/lazy-segment-tree.yosupo-range-affine-range-sum.test.cpp
       title: verify/lazy-segment-tree.yosupo-range-affine-range-sum.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/line-container.yosupo-line-add-get-min.test.cpp
       title: verify/line-container.yosupo-line-add-get-min.test.cpp
     - icon: ':heavy_check_mark:'
@@ -203,7 +203,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/recursive-segment-tree.aizu-range-minimum-query.test.cpp
       title: verify/recursive-segment-tree.aizu-range-minimum-query.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/recursive-segment-tree.aizu-range-sum-query.test.cpp
       title: verify/recursive-segment-tree.aizu-range-sum-query.test.cpp
     - icon: ':heavy_check_mark:'
@@ -218,52 +218,52 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/segment-tree.aizu-range-minimum-query.test.cpp
       title: verify/segment-tree.aizu-range-minimum-query.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/segment-tree.aizu-range-sum-query.test.cpp
       title: verify/segment-tree.aizu-range-sum-query.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/segment-tree.yosupo-point-add-range-sum.test.cpp
       title: verify/segment-tree.yosupo-point-add-range-sum.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/sparse-segment-tree.aizu-range-minimum-query.test.cpp
       title: verify/sparse-segment-tree.aizu-range-minimum-query.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/sparse-segment-tree.aizu-range-sum-query.test.cpp
       title: verify/sparse-segment-tree.aizu-range-sum-query.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/sparse-segment-tree.aizu-the-number-of-inversions.test.cpp
       title: verify/sparse-segment-tree.aizu-the-number-of-inversions.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/sparse-segment-tree.yosupo-point-add-range-sum.test.cpp
       title: verify/sparse-segment-tree.yosupo-point-add-range-sum.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/sparse-segment-tree.yosupo-point-set-range-composite.test.cpp
       title: verify/sparse-segment-tree.yosupo-point-set-range-composite.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/sparse-table.yosupo-static-rmq.test.cpp
       title: verify/sparse-table.yosupo-static-rmq.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/static-general-segment-tree.yosupo-point-add-range-sum.test.cpp
       title: verify/static-general-segment-tree.yosupo-point-add-range-sum.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/static-segment-tree.yosupo-point-add-range-sum.test.cpp
       title: verify/static-segment-tree.yosupo-point-add-range-sum.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/tnemges-tree.aizu-point-add-query.test.cpp
       title: verify/tnemges-tree.aizu-point-add-query.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/topo-sort.topological-sort.test.cpp
       title: verify/topo-sort.topological-sort.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/union-find-2d.aizu-disjoint-union.test.cpp
       title: verify/union-find-2d.aizu-disjoint-union.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/union-find-2d.yosupo-unionfind.test.cpp
       title: verify/union-find-2d.yosupo-unionfind.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/union-find.aizu-disjoint-union.test.cpp
       title: verify/union-find.aizu-disjoint-union.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/union-find.yosupo-unionfind.test.cpp
       title: verify/union-find.yosupo-unionfind.test.cpp
 layout: toppage

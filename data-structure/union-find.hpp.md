@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: data-structure/union-find-2d.hpp
     title: Union Find 2d
   - icon: ':heavy_check_mark:'
@@ -12,26 +12,26 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/kruskal.aizu-minimum-spanning-tree.test.cpp
     title: verify/kruskal.aizu-minimum-spanning-tree.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/union-find-2d.aizu-disjoint-union.test.cpp
     title: verify/union-find-2d.aizu-disjoint-union.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/union-find-2d.yosupo-unionfind.test.cpp
     title: verify/union-find-2d.yosupo-unionfind.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/union-find.aizu-disjoint-union.test.cpp
     title: verify/union-find.aizu-disjoint-union.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/union-find.yosupo-unionfind.test.cpp
     title: verify/union-find.yosupo-unionfind.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"data-structure/union-find.hpp\"\nstruct UnionFind {\n  \
-    \  vector<int> par, siz;\n\n    UnionFind() = default;\n\n    UnionFind(int n)\
-    \ { init(n); }\n\n    void init(int n) {\n        par.resize(n);\n        siz.resize(n);\n\
+  bundledCode: "#line 1 \"data-structure/union-find.hpp\"\nstruct union_find {\n \
+    \   vector<int> par, siz;\n\n    union_find() = default;\n\n    union_find(int\
+    \ n) { init(n); }\n\n    void init(int n) {\n        par.resize(n);\n        siz.resize(n);\n\
     \        iota(par.begin(), par.end(), 0);\n        fill(siz.begin(), siz.end(),\
     \ 1);\n    }\n\n    int find(int u) {\n        if (u == par[u])\n            return\
     \ u;\n        return par[u] = find(par[u]);\n    }\n\n    bool merge(int u, int\
@@ -40,8 +40,8 @@ data:
     \  siz[u] += siz[v];\n        } else {\n            par[u] = v;\n            siz[v]\
     \ += siz[u];\n        }\n        return true;\n    }\n\n    int size(int u) {\
     \ return siz[find(u)]; }\n};\n"
-  code: "struct UnionFind {\n    vector<int> par, siz;\n\n    UnionFind() = default;\n\
-    \n    UnionFind(int n) { init(n); }\n\n    void init(int n) {\n        par.resize(n);\n\
+  code: "struct union_find {\n    vector<int> par, siz;\n\n    union_find() = default;\n\
+    \n    union_find(int n) { init(n); }\n\n    void init(int n) {\n        par.resize(n);\n\
     \        siz.resize(n);\n        iota(par.begin(), par.end(), 0);\n        fill(siz.begin(),\
     \ siz.end(), 1);\n    }\n\n    int find(int u) {\n        if (u == par[u])\n \
     \           return u;\n        return par[u] = find(par[u]);\n    }\n\n    bool\
@@ -56,8 +56,8 @@ data:
   requiredBy:
   - data-structure/union-find-2d.hpp
   - graph/kruskal.hpp
-  timestamp: '2022-02-04 21:19:28-08:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2022-04-09 15:55:38-07:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/union-find.yosupo-unionfind.test.cpp
   - verify/union-find.aizu-disjoint-union.test.cpp
@@ -78,11 +78,3 @@ Union-Find is an online data structure that maintains several disjoint sets, and
 - Determine the size of the set in which $u$ is contained. 
 
 These operations are performed in amortized $\mathcal{O}(\alpha(n))$ time, where $n$ is the number of vertices maintained and $\alpha(n)$ is the inverse of the [Ackermann function](https://en.wikipedia.org/wiki/Ackermann_function). The data structure has a linear space complexity.
-
-### Methods
-- `UnionFind()`: Constructs an empty `UnionFind` object. 
-- `UnionFind(int n)`: Constructs a `UnionFind` object with $n$ disjoint sets.
-- `void init(int n)`: Initializes the object such that it can store $n$ disjoing sets in linear time$.  
-- `int find(int u)`: Returns the root of the set in which $u$ is contained.
-- `bool merge(int u, int v)`: Merges the sets containing $u$ and $v$ into a single set, provided that they start out in different sets. Returns a boolean value indicating whether this operation was successful.
-- `int size(int u)`: Returns the size of the set that contains $u$.

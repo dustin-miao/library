@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: data-structure/lazy-segment-tree.hpp
     title: Lazy Segment Tree
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utility/mint.hpp
     title: Modular Int
   _extendedRequiredBy: []
@@ -99,58 +99,64 @@ data:
     \nModType &MOD = VarMod::value;\n\nusing mint = Modular<VarMod>;\n// */\n\n/*\n\
     constexpr int MOD = @@HERE@@;\n\nusing mint = Modular<integral_constant<decay<decltype(MOD)>::type,\
     \ MOD>>;\n*/\n\n#pragma endregion mint\n#line 1 \"data-structure/lazy-segment-tree.hpp\"\
-    \ntemplate<class Base>\nclass Segtree : public Base {\n\tusing T = typename Base::T;\n\
-    \tusing L = typename Base::L;\n\tusing Base::Tdval;\n\tusing Base::Ldval;\n\t\
-    using Base::merge;\n\tusing Base::apply;\n\nprotected:\n\tsize_t n;\n\tvector<T>\
-    \ tree;\n\tvector<L> lazy;\n\nprivate:\n\tvoid pushdown(int t, int tl, int tr)\
-    \ {\n\t\tif (lazy[t] == Ldval)\n\t\t\treturn;\n\t\tint tm = (tl + tr) / 2;\n\t\
-    \tapply(tree[t * 2], lazy[t * 2], lazy[t], tl, tm);\n\t\tapply(tree[t * 2 + 1],\
-    \ lazy[t * 2 + 1], lazy[t], tm + 1, tr);\n\t\tlazy[t] = Ldval;\n\t}\n\n\tvoid\
-    \ update(int l, int r, L v, int t, int tl, int tr) {\n\t\tif (r < tl || tr < l)\n\
-    \t\t\treturn;\n\t\tif (l <= tl && tr <= r) {\n\t\t\tapply(tree[t], lazy[t], v,\
-    \ tl, tr);\n\t\t\treturn;\n\t\t}\n\t\tpushdown(t, tl, tr);\n\t\tint tm = (tl +\
-    \ tr) / 2;\n\t\tupdate(l, r, v, t * 2, tl, tm);\n\t\tupdate(l, r, v, t * 2 + 1,\
-    \ tm + 1, tr);\n\t\ttree[t] = merge(tree[t * 2], tree[t * 2 + 1]);\n\t}\n\n\t\
-    T query(int l, int r, int t, int tl, int tr) {\n\t\tif (r < tl || tr < l)\n\t\t\
-    \treturn Tdval;\n\t\tif (l <= tl && tr <= r)\n\t\t\treturn tree[t];\n\t\tpushdown(t,\
-    \ tl, tr);\n\t\tint tm = (tl + tr) / 2;\n\t\treturn merge(query(l, r, t * 2, tl,\
-    \ tm), query(l, r, t * 2 + 1, tm + 1, tr));\n\t}\n\npublic:\n\tSegtree() = default;\n\
-    \n\tSegtree(size_t _n) { init(_n); }\n\n\tvoid init(size_t _n) {\n\t\tn = _n;\n\
-    \t\ttree.assign(4 * n, Tdval);\n\t\tlazy.assign(4 * n, Ldval);\n\t}\n\n\tvoid\
-    \ update(int l, int r, L v) { update(l, r, v, 1, 0, n - 1); }\n\n\tT query(int\
-    \ l, int r) { return query(l, r, 1, 0, n - 1); }\n};\n#line 8 \"verify/lazy-segment-tree.yosupo-range-affine-range-sum.test.cpp\"\
+    \ntemplate<class segment_tree_template>\nclass lazy_segment_tree : public segment_tree_template\
+    \ {\n\tusing T = typename segment_tree_template::node_type;\n\tusing L = typename\
+    \ segment_tree_template::lazy_type;\n\tusing segment_tree_template::node_default_value;\n\
+    \tusing segment_tree_template::lazy_default_value;\n\tusing segment_tree_template::merge;\n\
+    \tusing segment_tree_template::apply;\n\nprotected:\n\tint n;\n\tvector<T> tree;\n\
+    \tvector<L> lazy;\n\nprivate:\n\tvoid pushdown(int t, int tl, int tr) {\n\t\t\
+    if (lazy[t] == lazy_default_value)\n\t\t\treturn;\n\t\tint tm = (tl + tr) / 2;\n\
+    \t\tapply(tree[t * 2], lazy[t * 2], lazy[t], tl, tm);\n\t\tapply(tree[t * 2 +\
+    \ 1], lazy[t * 2 + 1], lazy[t], tm + 1, tr);\n\t\tlazy[t] = lazy_default_value;\n\
+    \t}\n\n\tvoid update(int l, int r, L v, int t, int tl, int tr) {\n\t\tif (r <\
+    \ tl || tr < l)\n\t\t\treturn;\n\t\tif (l <= tl && tr <= r) {\n\t\t\tapply(tree[t],\
+    \ lazy[t], v, tl, tr);\n\t\t\treturn;\n\t\t}\n\t\tpushdown(t, tl, tr);\n\t\tint\
+    \ tm = (tl + tr) / 2;\n\t\tupdate(l, r, v, t * 2, tl, tm);\n\t\tupdate(l, r, v,\
+    \ t * 2 + 1, tm + 1, tr);\n\t\ttree[t] = merge(tree[t * 2], tree[t * 2 + 1]);\n\
+    \t}\n\n\tT query(int l, int r, int t, int tl, int tr) {\n\t\tif (r < tl || tr\
+    \ < l)\n\t\t\treturn node_default_value;\n\t\tif (l <= tl && tr <= r)\n\t\t\t\
+    return tree[t];\n\t\tpushdown(t, tl, tr);\n\t\tint tm = (tl + tr) / 2;\n\t\treturn\
+    \ merge(query(l, r, t * 2, tl, tm), query(l, r, t * 2 + 1, tm + 1, tr));\n\t}\n\
+    \npublic:\n\tlazy_segment_tree() = default;\n\n\tlazy_segment_tree(int _n) { init(_n);\
+    \ }\n\n\tvoid init(int _n) {\n\t\tn = _n;\n\t\ttree.assign(4 * n, node_default_value);\n\
+    \t\tlazy.assign(4 * n, lazy_default_value);\n\t}\n\n\tvoid update(int l, int r,\
+    \ L v) { update(l, r, v, 1, 0, n - 1); }\n\n\tT query(int l, int r) { return query(l,\
+    \ r, 1, 0, n - 1); }\n};\n#line 8 \"verify/lazy-segment-tree.yosupo-range-affine-range-sum.test.cpp\"\
     \n\nint main() {\n\tMOD = 998244353;\n\n\tint N, Q; \n\tcin >> N >> Q;\n\t\n\t\
-    struct stinfo {\n\t\tusing T = mint;\n\t\tusing L = pair<mint, mint>;\n\n\t\t\
-    const T Tdval = 0;\n\t\tconst L Ldval = {1, 0};\n\n\t\tvoid apply(T &a, L &b,\
-    \ L c, int l, int r) {\n\t\t\ta = c.first * a + c.second * (r - l + 1);\n\t\t\t\
-    b = {c.first * b.first, c.first * b.second + c.second};\n\t\t}\t\n\n\t\tT merge(T\
-    \ a, T b) { return a + b; }\n\t};\n\t\n\tSegtree<stinfo> sgt(N);\n\tfor (int i\
-    \ = 0; i < N; i++) {\n\t\tlong long a; cin >> a;\n\t\tsgt.update(i, i, {1, a});\n\
-    \t}\n\twhile (Q--) {\n\t\tint t; cin >> t;\n\t\tif (t == 0) {\n\t\t\tint l, r;\
-    \ long long b, c;\n\t\t\tcin >> l >> r >> b >> c;\n\t\t\tsgt.update(l, r - 1,\
-    \ {b, c});\n\t\t} else {\n\t\t\tint l, r;\n\t\t\tcin >> l >> r;\n\t\t\tcout <<\
-    \ sgt.query(l, r - 1) << '\\n';\n\t\t}\n\t}\n}\n"
+    struct segment_tree_template {\n\t\tusing node_type = mint;\n\t\tusing lazy_type\
+    \ = pair<mint, mint>;\n\n\t\tconst node_type node_default_value = 0;\n\t\tconst\
+    \ lazy_type lazy_default_value = {1, 0};\n\n\t\tvoid apply(node_type &a, lazy_type\
+    \ &b, lazy_type c, int l, int r) {\n\t\t\ta = c.first * a + c.second * (r - l\
+    \ + 1);\n\t\t\tb = {c.first * b.first, c.first * b.second + c.second};\n\t\t}\t\
+    \n\n\t\tnode_type merge(node_type a, node_type b) { return a + b; }\n\t};\n\t\n\
+    \tlazy_segment_tree<segment_tree_template> sgt(N);\n\tfor (int i = 0; i < N; i++)\
+    \ {\n\t\tlong long a; cin >> a;\n\t\tsgt.update(i, i, {1, a});\n\t}\n\twhile (Q--)\
+    \ {\n\t\tint t; cin >> t;\n\t\tif (t == 0) {\n\t\t\tint l, r; long long b, c;\n\
+    \t\t\tcin >> l >> r >> b >> c;\n\t\t\tsgt.update(l, r - 1, {b, c});\n\t\t} else\
+    \ {\n\t\t\tint l, r;\n\t\t\tcin >> l >> r;\n\t\t\tcout << sgt.query(l, r - 1)\
+    \ << '\\n';\n\t\t}\n\t}\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/range_affine_range_sum\"\
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#include \"utility/mint.hpp\"\
     \n#include \"data-structure/lazy-segment-tree.hpp\"\n\nint main() {\n\tMOD = 998244353;\n\
-    \n\tint N, Q; \n\tcin >> N >> Q;\n\t\n\tstruct stinfo {\n\t\tusing T = mint;\n\
-    \t\tusing L = pair<mint, mint>;\n\n\t\tconst T Tdval = 0;\n\t\tconst L Ldval =\
-    \ {1, 0};\n\n\t\tvoid apply(T &a, L &b, L c, int l, int r) {\n\t\t\ta = c.first\
-    \ * a + c.second * (r - l + 1);\n\t\t\tb = {c.first * b.first, c.first * b.second\
-    \ + c.second};\n\t\t}\t\n\n\t\tT merge(T a, T b) { return a + b; }\n\t};\n\t\n\
-    \tSegtree<stinfo> sgt(N);\n\tfor (int i = 0; i < N; i++) {\n\t\tlong long a; cin\
-    \ >> a;\n\t\tsgt.update(i, i, {1, a});\n\t}\n\twhile (Q--) {\n\t\tint t; cin >>\
-    \ t;\n\t\tif (t == 0) {\n\t\t\tint l, r; long long b, c;\n\t\t\tcin >> l >> r\
-    \ >> b >> c;\n\t\t\tsgt.update(l, r - 1, {b, c});\n\t\t} else {\n\t\t\tint l,\
-    \ r;\n\t\t\tcin >> l >> r;\n\t\t\tcout << sgt.query(l, r - 1) << '\\n';\n\t\t\
-    }\n\t}\n}"
+    \n\tint N, Q; \n\tcin >> N >> Q;\n\t\n\tstruct segment_tree_template {\n\t\tusing\
+    \ node_type = mint;\n\t\tusing lazy_type = pair<mint, mint>;\n\n\t\tconst node_type\
+    \ node_default_value = 0;\n\t\tconst lazy_type lazy_default_value = {1, 0};\n\n\
+    \t\tvoid apply(node_type &a, lazy_type &b, lazy_type c, int l, int r) {\n\t\t\t\
+    a = c.first * a + c.second * (r - l + 1);\n\t\t\tb = {c.first * b.first, c.first\
+    \ * b.second + c.second};\n\t\t}\t\n\n\t\tnode_type merge(node_type a, node_type\
+    \ b) { return a + b; }\n\t};\n\t\n\tlazy_segment_tree<segment_tree_template> sgt(N);\n\
+    \tfor (int i = 0; i < N; i++) {\n\t\tlong long a; cin >> a;\n\t\tsgt.update(i,\
+    \ i, {1, a});\n\t}\n\twhile (Q--) {\n\t\tint t; cin >> t;\n\t\tif (t == 0) {\n\
+    \t\t\tint l, r; long long b, c;\n\t\t\tcin >> l >> r >> b >> c;\n\t\t\tsgt.update(l,\
+    \ r - 1, {b, c});\n\t\t} else {\n\t\t\tint l, r;\n\t\t\tcin >> l >> r;\n\t\t\t\
+    cout << sgt.query(l, r - 1) << '\\n';\n\t\t}\n\t}\n}"
   dependsOn:
   - utility/mint.hpp
   - data-structure/lazy-segment-tree.hpp
   isVerificationFile: true
   path: verify/lazy-segment-tree.yosupo-range-affine-range-sum.test.cpp
   requiredBy: []
-  timestamp: '2022-04-08 16:00:08-07:00'
+  timestamp: '2022-04-09 15:55:38-07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/lazy-segment-tree.yosupo-range-affine-range-sum.test.cpp

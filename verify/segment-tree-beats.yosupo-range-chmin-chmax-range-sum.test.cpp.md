@@ -17,29 +17,29 @@ data:
   bundledCode: "#line 1 \"verify/segment-tree-beats.yosupo-range-chmin-chmax-range-sum.test.cpp\"\
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/range_chmin_chmax_add_range_sum\"\
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#line 1 \"data-structure/segment-tree-beats.hpp\"\
-    \nclass SegtreeBeats {\nprotected:\n\tsize_t n;\n\n\tstruct node { long long sum,\
-    \ max1, max2, maxc, min1, min2, minc, lazy; };\n\tvector<node> tree;\n\nprivate:\n\
-    \tvoid merge(int t) {\n\t\t// sum\n\t\ttree[t].sum = tree[t * 2].sum + tree[t\
-    \ * 2 + 1].sum;\n\n\t\t// max\n\t\tif (tree[t * 2].max1 == tree[t * 2 + 1].max1)\
-    \ {\n\t\t\ttree[t].max1 = tree[t * 2].max1;\n\t\t\ttree[t].max2 = max(tree[t *\
-    \ 2].max2, tree[t * 2 + 1].max2);\n\t\t\ttree[t].maxc = tree[t * 2].maxc + tree[t\
-    \ * 2 + 1].maxc;\n\t\t}\n\t\telse {\n\t\t\tif (tree[t * 2].max1 > tree[t * 2 +\
-    \ 1].max1) {\n\t\t\t\ttree[t].max1 = tree[t * 2].max1;\n\t\t\t\ttree[t].max2 =\
-    \ max(tree[t * 2].max2, tree[t * 2 + 1].max1);\n\t\t\t\ttree[t].maxc = tree[t\
-    \ * 2].maxc;\n\t\t\t}\n\t\t\telse {\n\t\t\t\ttree[t].max1 = tree[t * 2 + 1].max1;\n\
-    \t\t\t\ttree[t].max2 = max(tree[t * 2].max1, tree[t * 2 + 1].max2);\n\t\t\t\t\
-    tree[t].maxc = tree[t * 2 + 1].maxc;\n\t\t\t}\n\t\t}\n\n\t\t// min\n\t\tif (tree[t\
-    \ * 2].min1 == tree[t * 2 + 1].min1) {\n\t\t\ttree[t].min1 = tree[t * 2].min1;\n\
-    \t\t\ttree[t].min2 = min(tree[t * 2].min2, tree[t * 2 + 1].min2);\n\t\t\ttree[t].minc\
-    \ = tree[t * 2].minc + tree[t * 2 + 1].minc;\n\t\t}\n\t\telse {\n\t\t\tif (tree[t\
-    \ * 2].min1 < tree[t * 2 + 1].min1) {\n\t\t\t\ttree[t].min1 = tree[t * 2].min1;\n\
-    \t\t\t\ttree[t].min2 = min(tree[t * 2].min2, tree[t * 2 + 1].min1);\n\t\t\t\t\
-    tree[t].minc = tree[t * 2].minc;\n\t\t\t}\n\t\t\telse {\n\t\t\t\ttree[t].min1\
-    \ = tree[t * 2 + 1].min1;\n\t\t\t\ttree[t].min2 = min(tree[t * 2].min1, tree[t\
-    \ * 2 + 1].min2);\n\t\t\t\ttree[t].minc = tree[t * 2 + 1].minc;\n\t\t\t}\n\t\t\
-    }\n\t}\n\n\tvoid push_add(int t, int tl, int tr, long long v) {\n\t\tif (v ==\
-    \ 0)\n\t\t\treturn;\n\t\ttree[t].sum += (tr - tl + 1) *v;\n\t\ttree[t].max1 +=\
-    \ v;\n\t\tif (tree[t].max2 != LLONG_MIN)\n\t\t\ttree[t].max2 += v;\n\t\ttree[t].min1\
+    \nclass segment_tree_beats {\nprotected:\n\tint n;\n\n\tstruct node { \n\t\tlong\
+    \ long sum, max1, max2, maxc, min1, min2, minc, lazy; \n\t};\n\n\tvector<node>\
+    \ tree;\n\nprivate:\n\tvoid merge(int t) {\n\t\t// sum\n\t\ttree[t].sum = tree[t\
+    \ * 2].sum + tree[t * 2 + 1].sum;\n\n\t\t// max\n\t\tif (tree[t * 2].max1 == tree[t\
+    \ * 2 + 1].max1) {\n\t\t\ttree[t].max1 = tree[t * 2].max1;\n\t\t\ttree[t].max2\
+    \ = max(tree[t * 2].max2, tree[t * 2 + 1].max2);\n\t\t\ttree[t].maxc = tree[t\
+    \ * 2].maxc + tree[t * 2 + 1].maxc;\n\t\t}\n\t\telse {\n\t\t\tif (tree[t * 2].max1\
+    \ > tree[t * 2 + 1].max1) {\n\t\t\t\ttree[t].max1 = tree[t * 2].max1;\n\t\t\t\t\
+    tree[t].max2 = max(tree[t * 2].max2, tree[t * 2 + 1].max1);\n\t\t\t\ttree[t].maxc\
+    \ = tree[t * 2].maxc;\n\t\t\t}\n\t\t\telse {\n\t\t\t\ttree[t].max1 = tree[t *\
+    \ 2 + 1].max1;\n\t\t\t\ttree[t].max2 = max(tree[t * 2].max1, tree[t * 2 + 1].max2);\n\
+    \t\t\t\ttree[t].maxc = tree[t * 2 + 1].maxc;\n\t\t\t}\n\t\t}\n\n\t\t// min\n\t\
+    \tif (tree[t * 2].min1 == tree[t * 2 + 1].min1) {\n\t\t\ttree[t].min1 = tree[t\
+    \ * 2].min1;\n\t\t\ttree[t].min2 = min(tree[t * 2].min2, tree[t * 2 + 1].min2);\n\
+    \t\t\ttree[t].minc = tree[t * 2].minc + tree[t * 2 + 1].minc;\n\t\t}\n\t\telse\
+    \ {\n\t\t\tif (tree[t * 2].min1 < tree[t * 2 + 1].min1) {\n\t\t\t\ttree[t].min1\
+    \ = tree[t * 2].min1;\n\t\t\t\ttree[t].min2 = min(tree[t * 2].min2, tree[t * 2\
+    \ + 1].min1);\n\t\t\t\ttree[t].minc = tree[t * 2].minc;\n\t\t\t}\n\t\t\telse {\n\
+    \t\t\t\ttree[t].min1 = tree[t * 2 + 1].min1;\n\t\t\t\ttree[t].min2 = min(tree[t\
+    \ * 2].min1, tree[t * 2 + 1].min2);\n\t\t\t\ttree[t].minc = tree[t * 2 + 1].minc;\n\
+    \t\t\t}\n\t\t}\n\t}\n\n\tvoid push_add(int t, int tl, int tr, long long v) {\n\
+    \t\tif (v == 0)\n\t\t\treturn;\n\t\ttree[t].sum += (tr - tl + 1) *v;\n\t\ttree[t].max1\
+    \ += v;\n\t\tif (tree[t].max2 != LLONG_MIN)\n\t\t\ttree[t].max2 += v;\n\t\ttree[t].min1\
     \ += v;\n\t\tif (tree[t].min2 != LLONG_MAX)\n\t\t\ttree[t].min2 += v;\n\t\ttree[t].lazy\
     \ += v;\n\t}\n\n\t// corresponds to a chmin update\n\tvoid push_max(int t, long\
     \ long v, bool l) {\n\t\tif (v >= tree[t].max1)\n\t\t\treturn;\n\t\ttree[t].sum\
@@ -81,16 +81,16 @@ data:
     \ long query(int l, int r, int t, int tl, int tr) {\n\t\tif (r < tl || tr < l)\n\
     \t\t\treturn 0;\n\t\tif (l <= tl && tr <= r)\n\t\t\treturn tree[t].sum;\n\t\t\
     pushdown(t, tl, tr);\n\n\t\tint tm = (tl + tr) / 2;\n\t\treturn query(l, r, t\
-    \ * 2, tl, tm) + query(l, r, t * 2 + 1, tm + 1, tr);\n\t}\n\npublic:\n\tSegtreeBeats()\
-    \ = default;\n\n\tSegtreeBeats(size_t _n) { init(_n); }\n\n\tvoid init(size_t\
+    \ * 2, tl, tm) + query(l, r, t * 2 + 1, tm + 1, tr);\n\t}\n\npublic:\n\tsegment_tree_beats()\
+    \ = default;\n\n\tsegment_tree_beats(int _n) { init(_n); }\n\n\tvoid init(int\
     \ _n) {\n\t\tn = _n;\n\t\ttree.resize(n * 4);\n\t\tbuild();\n\t}\n\n\tvoid build()\
     \ { build(1, 0, n - 1); }\n\n\tvoid update_add(int l, int r, long long v) { update_add(l,\
     \ r, v, 1, 0, n - 1); }\n\n\tvoid update_chmin(int l, int r, long long v) { update_chmin(l,\
     \ r, v, 1, 0, n - 1); }\n\n\tvoid update_chmax(int l, int r, long long v) { update_chmax(l,\
     \ r, v, 1, 0, n - 1); }\n\n\tlong long query(int l, int r) { return query(l, r,\
     \ 1, 0, n - 1); }\n};\n#line 7 \"verify/segment-tree-beats.yosupo-range-chmin-chmax-range-sum.test.cpp\"\
-    \n\nint main() {\n\tint N, Q;\n\tcin >> N >> Q;\n\tSegtreeBeats stb(N);\n\tfor\
-    \ (int i = 0; i < N; i++) {\n\t\tlong long a; cin >> a;\n\t\tstb.update_add(i,\
+    \n\nint main() {\n\tint N, Q;\n\tcin >> N >> Q;\n\tsegment_tree_beats stb(N);\n\
+    \tfor (int i = 0; i < N; i++) {\n\t\tlong long a; cin >> a;\n\t\tstb.update_add(i,\
     \ i, a);\n\t}\n\twhile (Q--) {\n\t\tint t; cin >> t;\n\t\tif (t == 0) {\n\t\t\t\
     int l, r; long long v;\n\t\t\tcin >> l >> r >> v;\n\t\t\tstb.update_chmin(l, r\
     \ - 1, v);\n\t\t} else if (t == 1) {\n\t\t\tint l, r; long long v;\n\t\t\tcin\
@@ -100,8 +100,8 @@ data:
     \t\t\tcout << stb.query(l, r - 1) << '\\n';\n\t\t}\t\n\t}\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/range_chmin_chmax_add_range_sum\"\
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#include \"data-structure/segment-tree-beats.hpp\"\
-    \n\nint main() {\n\tint N, Q;\n\tcin >> N >> Q;\n\tSegtreeBeats stb(N);\n\tfor\
-    \ (int i = 0; i < N; i++) {\n\t\tlong long a; cin >> a;\n\t\tstb.update_add(i,\
+    \n\nint main() {\n\tint N, Q;\n\tcin >> N >> Q;\n\tsegment_tree_beats stb(N);\n\
+    \tfor (int i = 0; i < N; i++) {\n\t\tlong long a; cin >> a;\n\t\tstb.update_add(i,\
     \ i, a);\n\t}\n\twhile (Q--) {\n\t\tint t; cin >> t;\n\t\tif (t == 0) {\n\t\t\t\
     int l, r; long long v;\n\t\t\tcin >> l >> r >> v;\n\t\t\tstb.update_chmin(l, r\
     \ - 1, v);\n\t\t} else if (t == 1) {\n\t\t\tint l, r; long long v;\n\t\t\tcin\
@@ -114,7 +114,7 @@ data:
   isVerificationFile: true
   path: verify/segment-tree-beats.yosupo-range-chmin-chmax-range-sum.test.cpp
   requiredBy: []
-  timestamp: '2022-02-05 10:35:43-08:00'
+  timestamp: '2022-04-09 15:55:38-07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/segment-tree-beats.yosupo-range-chmin-chmax-range-sum.test.cpp

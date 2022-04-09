@@ -3,37 +3,37 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/tnemges-tree.aizu-point-add-query.test.cpp
     title: verify/tnemges-tree.aizu-point-add-query.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"data-structure/tnemges-tree.hpp\"\ntemplate<typename T>\n\
-    class Tnettree {\nprotected:\n\tsize_t n;\n\tvector<T> tree;\n\npublic:\n\tTnettree()\
-    \ = default;\n\n\tTnettree(size_t _n) { init(_n); }\n\n\tvoid init(size_t _n)\
-    \ {\n\t\tn = _n;\n\t\ttree.assign(2 * n, 0);\n\t}\n\n\tvoid update(int l, int\
-    \ r, T v) {\n\t\tfor (l += n, r += n + 1; l < r; l >>= 1, r >>= 1) {\n\t\t\tif\
-    \ (l & 1) tree[l++] += v;\n\t\t\tif (r & 1) tree[--r] += v;\n\t\t}\n\t}\n\n\t\
-    T query(int i) {\n\t\tT ret = 0;\n\t\tfor (i += n; i > 0; i >>= 1)\n\t\t\tret\
-    \ += tree[i];\n\t\treturn ret;\n\t}\n\n\tT operator[](int i) { return query(i);\
-    \ }\n};\n"
-  code: "template<typename T>\nclass Tnettree {\nprotected:\n\tsize_t n;\n\tvector<T>\
-    \ tree;\n\npublic:\n\tTnettree() = default;\n\n\tTnettree(size_t _n) { init(_n);\
-    \ }\n\n\tvoid init(size_t _n) {\n\t\tn = _n;\n\t\ttree.assign(2 * n, 0);\n\t}\n\
-    \n\tvoid update(int l, int r, T v) {\n\t\tfor (l += n, r += n + 1; l < r; l >>=\
-    \ 1, r >>= 1) {\n\t\t\tif (l & 1) tree[l++] += v;\n\t\t\tif (r & 1) tree[--r]\
-    \ += v;\n\t\t}\n\t}\n\n\tT query(int i) {\n\t\tT ret = 0;\n\t\tfor (i += n; i\
-    \ > 0; i >>= 1)\n\t\t\tret += tree[i];\n\t\treturn ret;\n\t}\n\n\tT operator[](int\
-    \ i) { return query(i); }\n};"
+    class tnemges_tree {\nprotected:\n\tint n;\n\tvector<T> tree;\n\npublic:\n\ttnemges_tree()\
+    \ = default;\n\n\ttnemges_tree(int _n) { init(_n); }\n\n\tvoid init(int _n) {\n\
+    \t\tn = _n;\n\t\ttree.assign(2 * n, 0);\n\t}\n\n\tvoid update(int l, int r, T\
+    \ v) {\n\t\tfor (l += n, r += n + 1; l < r; l >>= 1, r >>= 1) {\n\t\t\tif (l &\
+    \ 1) \n\t\t\t\ttree[l++] += v;\n\t\t\tif (r & 1) \n\t\t\t\ttree[--r] += v;\n\t\
+    \t}\n\t}\n\n\tT query(int i) {\n\t\tT ret = 0;\n\t\tfor (i += n; i > 0; i >>=\
+    \ 1)\n\t\t\tret += tree[i];\n\t\treturn ret;\n\t}\n\n\tT operator[](int i) { return\
+    \ query(i); }\n};\n"
+  code: "template<typename T>\nclass tnemges_tree {\nprotected:\n\tint n;\n\tvector<T>\
+    \ tree;\n\npublic:\n\ttnemges_tree() = default;\n\n\ttnemges_tree(int _n) { init(_n);\
+    \ }\n\n\tvoid init(int _n) {\n\t\tn = _n;\n\t\ttree.assign(2 * n, 0);\n\t}\n\n\
+    \tvoid update(int l, int r, T v) {\n\t\tfor (l += n, r += n + 1; l < r; l >>=\
+    \ 1, r >>= 1) {\n\t\t\tif (l & 1) \n\t\t\t\ttree[l++] += v;\n\t\t\tif (r & 1)\
+    \ \n\t\t\t\ttree[--r] += v;\n\t\t}\n\t}\n\n\tT query(int i) {\n\t\tT ret = 0;\n\
+    \t\tfor (i += n; i > 0; i >>= 1)\n\t\t\tret += tree[i];\n\t\treturn ret;\n\t}\n\
+    \n\tT operator[](int i) { return query(i); }\n};"
   dependsOn: []
   isVerificationFile: false
   path: data-structure/tnemges-tree.hpp
   requiredBy: []
-  timestamp: '2022-02-04 21:19:28-08:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2022-04-09 15:55:38-07:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - verify/tnemges-tree.aizu-point-add-query.test.cpp
 documentation_of: data-structure/tnemges-tree.hpp
@@ -49,11 +49,3 @@ The tnemges tree is an online point query range update data structure that suppo
 - Given some indicies $l, r$ such that $l \leq r$ and a value $v$, assigns $a_i$ to $a_i + v$ for $i \in [l, r]$
 
 Both these operations are performed in $\mathcal{O}(\log n) time, where $n$ is the number of elements represented by the tnemges tree. The total space used is $2 * n$. All indices represented in a tnemges tree are zero-indexed.
-
-### Methods
-- `Tnemtree()`: Constructs an empty tnemges tree.
-- `Tnemtree(size_t _n)`: Constructs a tnemges tree with initial size $n$.
-- `void init(size_t _n)`: Initializes a tnemges tree object of size $n$ (meaning it can perform operations on the range $[1, n]$). Works in linear time.
-- `void update(int l, int r, T v)`: Sets the value of $a_i$ to $a_i + v$ for $i \in [l, r]$. 
-- `T query(int i)`: Returns the value $a_i$.
-- `T operator[](int i)`: Same as `query(int i)`. 

@@ -9,7 +9,7 @@ data:
     path: math/discrete-log.hpp
     title: Discrete Logarithm
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/general-segment-tree.yosupo-point-set-range-composite.test.cpp
     title: verify/general-segment-tree.yosupo-point-set-range-composite.test.cpp
   - icon: ':heavy_check_mark:'
@@ -24,12 +24,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/recursive-segment-tree.yosupo-point-set-range-composite.test.cpp
     title: verify/recursive-segment-tree.yosupo-point-set-range-composite.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/sparse-segment-tree.yosupo-point-set-range-composite.test.cpp
     title: verify/sparse-segment-tree.yosupo-point-set-range-composite.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"utility/mint.hpp\"\n#pragma region mint\n\ntemplate<typename\
@@ -198,7 +198,7 @@ data:
   - math/discrete-log.hpp
   - math/binom-coef.hpp
   timestamp: '2022-04-08 16:00:08-07:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/mint.power.test.cpp
   - verify/mint.yosupo-A+B.test.cpp
