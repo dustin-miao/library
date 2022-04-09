@@ -14,10 +14,10 @@ int main() {
 		if (t == 0) {
 			int l, r; long long v;
 			cin >> l >> r >> v;
-			tib.update(l, r, v);
+			tib.update(l - 1, r - 1, v);
 		} else {
 			int i; cin >> i;
-			cout << tib.query(i) << '\n';
+			cout << tib.query(i - 1) << '\n';
 		}
 	}
 }

@@ -11,7 +11,7 @@ int main() {
 
 	struct segment_tree_template {
 		using type = long long;
-		const type defautl_value = 0;
+		const type default_value = 0;
 		void apply(type &a, type b) { a += b; }
 		type merge(type a, type b) { return a + b; }
 	};

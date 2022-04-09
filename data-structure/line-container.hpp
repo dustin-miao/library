@@ -6,7 +6,7 @@ struct line_container_line {
     bool operator<(long long x) const { return p < x; }
 };
 
-class line_container : multiset<Line, less<>> {
+class line_container : multiset<line_container_line, less<>> {
     // for doubles, use inf = 1/.0
     static const long long INF = LLONG_MAX;
 

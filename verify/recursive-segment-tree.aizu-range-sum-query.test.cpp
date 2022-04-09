@@ -16,7 +16,7 @@ int main() {
 		type merge(type a, type b) { return a + b; }
 	};
 
-	Segtree<segment_tree_template> sgt(N + 1);
+	recursive_segment_tree<segment_tree_template> sgt(N + 1);
 	while (Q--) {
 		int t; cin >> t;
 		if (t == 0) {
