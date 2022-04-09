@@ -88,6 +88,9 @@ data:
       path: math/binom-coef.hpp
       title: Binomial Coefficients
     - icon: ':warning:'
+      path: math/discrete-log.hpp
+      title: Discrete Logarithm
+    - icon: ':warning:'
       path: math/ext-gcd.hpp
       title: Extended GCD
     - icon: ':warning:'

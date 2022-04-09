@@ -5,6 +5,9 @@ data:
   - icon: ':warning:'
     path: math/binom-coef.hpp
     title: Binomial Coefficients
+  - icon: ':warning:'
+    path: math/discrete-log.hpp
+    title: Discrete Logarithm
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/general-segment-tree.yosupo-point-set-range-composite.test.cpp
@@ -192,6 +195,7 @@ data:
   isVerificationFile: false
   path: utility/mint.hpp
   requiredBy:
+  - math/discrete-log.hpp
   - math/binom-coef.hpp
   timestamp: '2022-04-08 16:00:08-07:00'
   verificationStatus: LIBRARY_ALL_AC
