@@ -16,7 +16,7 @@ public:
 
 	void init(int _n) {
 		for (n = 1; n < _n; n *= 2);
-		tree.assign(n * 2, dval);
+		tree.assign(n * 2, default_value);
 	}
 
 	void update(int i, T v) {
