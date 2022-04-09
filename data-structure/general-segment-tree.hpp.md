@@ -3,13 +3,13 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/general-segment-tree.aizu-range-minimum-query.test.cpp
     title: verify/general-segment-tree.aizu-range-minimum-query.test.cpp
   - icon: ':x:'
     path: verify/general-segment-tree.aizu-range-sum-query.test.cpp
     title: verify/general-segment-tree.aizu-range-sum-query.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/general-segment-tree.yosupo-point-add-range-sum.test.cpp
     title: verify/general-segment-tree.yosupo-point-add-range-sum.test.cpp
   - icon: ':x:'
@@ -17,7 +17,7 @@ data:
     title: verify/general-segment-tree.yosupo-point-set-range-composite.test.cpp
   _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"data-structure/general-segment-tree.hpp\"\ntemplate<class\
@@ -26,31 +26,31 @@ data:
     \tusing segment_tree_template::merge;\n\tusing segment_tree_template::apply;\n\
     \nprotected:\n\tint n;\n\tvector<T> tree;\n\npublic:\n\tgen_segment_tree() = default;\n\
     \n\tgen_segment_tree(int _n) { init(_n); }\n\n\tvoid init(int _n) {\n\t\tfor (n\
-    \ = 1; n < _n; n *= 2);\n\t\ttree.assign(n * 2, dval);\n\t}\n\n\tvoid update(int\
-    \ i, T v) {\n\t\tfor (apply(tree[i += n], v); i >>= 1;)\n\t\t\ttree[i] = merge(tree[i\
-    \ << 1], tree[i << 1 | 1]);\n\t}\n\n\tT query(int l, int r) {\n\t\tT lret = default_value,\
-    \ rret = default_value;\n\t\tfor (l += n, r += n + 1; l < r; l >>= 1, r >>= 1)\
-    \ {\n\t\t\tif (l & 1) \n\t\t\t\tlret = merge(lret, tree[l++]);\n\t\t\tif (r &\
-    \ 1) \n\t\t\t\trret = merge(tree[--r], rret);\n\t\t}\n\t\treturn merge(lret, rret);\n\
-    \t}\n\n\tT operator[](int i) { return tree[i + n]; }\n};\n"
+    \ = 1; n < _n; n *= 2);\n\t\ttree.assign(n * 2, default_value);\n\t}\n\n\tvoid\
+    \ update(int i, T v) {\n\t\tfor (apply(tree[i += n], v); i >>= 1;)\n\t\t\ttree[i]\
+    \ = merge(tree[i << 1], tree[i << 1 | 1]);\n\t}\n\n\tT query(int l, int r) {\n\
+    \t\tT lret = default_value, rret = default_value;\n\t\tfor (l += n, r += n + 1;\
+    \ l < r; l >>= 1, r >>= 1) {\n\t\t\tif (l & 1) \n\t\t\t\tlret = merge(lret, tree[l++]);\n\
+    \t\t\tif (r & 1) \n\t\t\t\trret = merge(tree[--r], rret);\n\t\t}\n\t\treturn merge(lret,\
+    \ rret);\n\t}\n\n\tT operator[](int i) { return tree[i + n]; }\n};\n"
   code: "template<class segment_tree_template>\nclass gen_segment_tree : public segment_tree_template\
     \ {\n\tusing T = typename segment_tree_template::type;\n\tusing segment_tree_template::default_value;\n\
     \tusing segment_tree_template::merge;\n\tusing segment_tree_template::apply;\n\
     \nprotected:\n\tint n;\n\tvector<T> tree;\n\npublic:\n\tgen_segment_tree() = default;\n\
     \n\tgen_segment_tree(int _n) { init(_n); }\n\n\tvoid init(int _n) {\n\t\tfor (n\
-    \ = 1; n < _n; n *= 2);\n\t\ttree.assign(n * 2, dval);\n\t}\n\n\tvoid update(int\
-    \ i, T v) {\n\t\tfor (apply(tree[i += n], v); i >>= 1;)\n\t\t\ttree[i] = merge(tree[i\
-    \ << 1], tree[i << 1 | 1]);\n\t}\n\n\tT query(int l, int r) {\n\t\tT lret = default_value,\
-    \ rret = default_value;\n\t\tfor (l += n, r += n + 1; l < r; l >>= 1, r >>= 1)\
-    \ {\n\t\t\tif (l & 1) \n\t\t\t\tlret = merge(lret, tree[l++]);\n\t\t\tif (r &\
-    \ 1) \n\t\t\t\trret = merge(tree[--r], rret);\n\t\t}\n\t\treturn merge(lret, rret);\n\
-    \t}\n\n\tT operator[](int i) { return tree[i + n]; }\n};"
+    \ = 1; n < _n; n *= 2);\n\t\ttree.assign(n * 2, default_value);\n\t}\n\n\tvoid\
+    \ update(int i, T v) {\n\t\tfor (apply(tree[i += n], v); i >>= 1;)\n\t\t\ttree[i]\
+    \ = merge(tree[i << 1], tree[i << 1 | 1]);\n\t}\n\n\tT query(int l, int r) {\n\
+    \t\tT lret = default_value, rret = default_value;\n\t\tfor (l += n, r += n + 1;\
+    \ l < r; l >>= 1, r >>= 1) {\n\t\t\tif (l & 1) \n\t\t\t\tlret = merge(lret, tree[l++]);\n\
+    \t\t\tif (r & 1) \n\t\t\t\trret = merge(tree[--r], rret);\n\t\t}\n\t\treturn merge(lret,\
+    \ rret);\n\t}\n\n\tT operator[](int i) { return tree[i + n]; }\n};"
   dependsOn: []
   isVerificationFile: false
   path: data-structure/general-segment-tree.hpp
   requiredBy: []
-  timestamp: '2022-04-09 15:55:38-07:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2022-04-09 16:29:10-07:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/general-segment-tree.yosupo-point-add-range-sum.test.cpp
   - verify/general-segment-tree.aizu-range-minimum-query.test.cpp

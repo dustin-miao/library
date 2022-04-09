@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: data-structure/fenwick-tree.hpp
     title: Fenwick Tree
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B
@@ -26,23 +26,23 @@ data:
     \ query(r) - query(l - 1); }\n};\n#line 7 \"verify/fenwick-tree.aizu-range-sum-query.test.cpp\"\
     \n\nint main() {\n\tint N, Q;\n\tcin >> N >> Q;\n\tfenwick_tree<long long> bit(N);\n\
     \twhile (Q--) {\n\t\tint t; cin >> t;\n\t\tif (t == 0) {\n\t\t\tint i; long long\
-    \ v;\n\t\t\tcin >> i >> v;\n\t\t\tbit.update(i, v);\n\t\t} else if (t == 1) {\n\
-    \t\t\tint l, r;\n\t\t\tcin >> l >> r;\n\t\t\tcout << bit.query(l, r) << '\\n';\n\
-    \t\t}\n\t}\n}\n"
+    \ v;\n\t\t\tcin >> i >> v;\n\t\t\tbit.update(i - 1, v);\n\t\t} else if (t == 1)\
+    \ {\n\t\t\tint l, r;\n\t\t\tcin >> l >> r;\n\t\t\tcout << bit.query(l - 1, r -\
+    \ 1) << '\\n';\n\t\t}\n\t}\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B\"\
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#include \"data-structure/fenwick-tree.hpp\"\
     \n\nint main() {\n\tint N, Q;\n\tcin >> N >> Q;\n\tfenwick_tree<long long> bit(N);\n\
     \twhile (Q--) {\n\t\tint t; cin >> t;\n\t\tif (t == 0) {\n\t\t\tint i; long long\
-    \ v;\n\t\t\tcin >> i >> v;\n\t\t\tbit.update(i, v);\n\t\t} else if (t == 1) {\n\
-    \t\t\tint l, r;\n\t\t\tcin >> l >> r;\n\t\t\tcout << bit.query(l, r) << '\\n';\n\
-    \t\t}\n\t}\n}"
+    \ v;\n\t\t\tcin >> i >> v;\n\t\t\tbit.update(i - 1, v);\n\t\t} else if (t == 1)\
+    \ {\n\t\t\tint l, r;\n\t\t\tcin >> l >> r;\n\t\t\tcout << bit.query(l - 1, r -\
+    \ 1) << '\\n';\n\t\t}\n\t}\n}"
   dependsOn:
   - data-structure/fenwick-tree.hpp
   isVerificationFile: true
   path: verify/fenwick-tree.aizu-range-sum-query.test.cpp
   requiredBy: []
-  timestamp: '2022-04-09 15:55:38-07:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-04-09 16:28:08-07:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/fenwick-tree.aizu-range-sum-query.test.cpp
 layout: document

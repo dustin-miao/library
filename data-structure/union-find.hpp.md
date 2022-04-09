@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/union-find-2d.hpp
     title: Union Find 2d
   - icon: ':heavy_check_mark:'
@@ -12,21 +12,21 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/kruskal.aizu-minimum-spanning-tree.test.cpp
     title: verify/kruskal.aizu-minimum-spanning-tree.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/union-find-2d.aizu-disjoint-union.test.cpp
     title: verify/union-find-2d.aizu-disjoint-union.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/union-find-2d.yosupo-unionfind.test.cpp
     title: verify/union-find-2d.yosupo-unionfind.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/union-find.aizu-disjoint-union.test.cpp
     title: verify/union-find.aizu-disjoint-union.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/union-find.yosupo-unionfind.test.cpp
     title: verify/union-find.yosupo-unionfind.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"data-structure/union-find.hpp\"\nstruct union_find {\n \
@@ -57,7 +57,7 @@ data:
   - data-structure/union-find-2d.hpp
   - graph/kruskal.hpp
   timestamp: '2022-04-09 15:55:38-07:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/union-find.yosupo-unionfind.test.cpp
   - verify/union-find.aizu-disjoint-union.test.cpp

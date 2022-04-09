@@ -46,21 +46,21 @@ data:
     \ v) { return query(u, v); }\n};\n#line 7 \"verify/fast-lca.yosupo-lowest-common-ancestor.test.cpp\"\
     \n\nint main() {\n\tint N, Q;\n\tcin >> N >> Q;\n\tvector<vector<int>> T(N);\n\
     \tfor (int i = 1; i < N; i++) {\n\t\tint p;\n\t\tcin >> p;\n\t\tT[p].push_back(i);\n\
-    \t}\n\tLowestCommonAncestor lca(T);\n\twhile (Q--) {\n\t\tint u, v;\n\t\tcin >>\
-    \ u >> v;\n\t\tcout << lca(u, v) << '\\n';\n\t}\n}\n"
+    \t}\n\tfast_lca lca(T);\n\twhile (Q--) {\n\t\tint u, v;\n\t\tcin >> u >> v;\n\t\
+    \tcout << lca(u, v) << '\\n';\n\t}\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/lca\"\n\n#include <bits/stdc++.h>\n\
     using namespace std;\n\n#include \"data-structure/fast-lca.hpp\"\n\nint main()\
     \ {\n\tint N, Q;\n\tcin >> N >> Q;\n\tvector<vector<int>> T(N);\n\tfor (int i\
     \ = 1; i < N; i++) {\n\t\tint p;\n\t\tcin >> p;\n\t\tT[p].push_back(i);\n\t}\n\
-    \tLowestCommonAncestor lca(T);\n\twhile (Q--) {\n\t\tint u, v;\n\t\tcin >> u >>\
-    \ v;\n\t\tcout << lca(u, v) << '\\n';\n\t}\n}"
+    \tfast_lca lca(T);\n\twhile (Q--) {\n\t\tint u, v;\n\t\tcin >> u >> v;\n\t\tcout\
+    \ << lca(u, v) << '\\n';\n\t}\n}"
   dependsOn:
   - data-structure/fast-lca.hpp
   - data-structure/sparse-table.hpp
   isVerificationFile: true
   path: verify/fast-lca.yosupo-lowest-common-ancestor.test.cpp
   requiredBy: []
-  timestamp: '2022-04-09 15:55:38-07:00'
+  timestamp: '2022-04-09 16:28:08-07:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/fast-lca.yosupo-lowest-common-ancestor.test.cpp

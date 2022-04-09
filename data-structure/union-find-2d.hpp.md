@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/union-find.hpp
     title: Union Find
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/union-find-2d.aizu-disjoint-union.test.cpp
     title: verify/union-find-2d.aizu-disjoint-union.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/union-find-2d.yosupo-unionfind.test.cpp
     title: verify/union-find-2d.yosupo-unionfind.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"data-structure/union-find.hpp\"\nstruct union_find {\n \
@@ -45,7 +45,7 @@ data:
   path: data-structure/union-find-2d.hpp
   requiredBy: []
   timestamp: '2022-04-09 15:55:38-07:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/union-find-2d.yosupo-unionfind.test.cpp
   - verify/union-find-2d.aizu-disjoint-union.test.cpp

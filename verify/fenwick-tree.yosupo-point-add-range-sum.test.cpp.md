@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: data-structure/fenwick-tree.hpp
     title: Fenwick Tree
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/point_add_range_sum
@@ -26,27 +26,27 @@ data:
     \ query(r) - query(l - 1); }\n};\n#line 7 \"verify/fenwick-tree.yosupo-point-add-range-sum.test.cpp\"\
     \n\nconst int MAX = 5e5 + 5;\n\nint main() {\n\tint N, Q;\n  \tcin >> N >> Q;\n\
     \tfenwick_tree<long long> bit(N);\n  \tfor (int i = 0; i < N; i++) {\n\t\tlong\
-    \ long a; cin >> a;\n\t\tbit.update(i + 1, a);\n\t}\n  \twhile (Q--) {\n\t\tint\
-    \ t; cin >> t;\n\t\tif (t == 0) {\n\t  \t\tint p; long long x;\n\t  \t\tcin >>\
-    \ p >> x;\n\t  \t\tbit.update(p + 1, x);\n\t\t} else {\n\t  \t\tint l, r;\n\t\
-    \  \t\tcin >> l >> r;\n\t  \t\tcout << bit.query(l + 1, r) << '\\n';\n\t\t}\n\
-    \  \t}\n}\n"
+    \ long a; cin >> a;\n\t\tbit.update(i, a);\n\t}\n  \twhile (Q--) {\n\t\tint t;\
+    \ cin >> t;\n\t\tif (t == 0) {\n\t  \t\tint p; long long x;\n\t  \t\tcin >> p\
+    \ >> x;\n\t  \t\tbit.update(p, x);\n\t\t} else {\n\t  \t\tint l, r;\n\t  \t\t\
+    cin >> l >> r;\n\t  \t\tcout << bit.query(l, r - 1) << '\\n';\n\t\t}\n  \t}\n\
+    }\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/point_add_range_sum\"\n\
     \n#include <bits/stdc++.h>\nusing namespace std;\n\n#include \"data-structure/fenwick-tree.hpp\"\
     \n\nconst int MAX = 5e5 + 5;\n\nint main() {\n\tint N, Q;\n  \tcin >> N >> Q;\n\
     \tfenwick_tree<long long> bit(N);\n  \tfor (int i = 0; i < N; i++) {\n\t\tlong\
-    \ long a; cin >> a;\n\t\tbit.update(i + 1, a);\n\t}\n  \twhile (Q--) {\n\t\tint\
-    \ t; cin >> t;\n\t\tif (t == 0) {\n\t  \t\tint p; long long x;\n\t  \t\tcin >>\
-    \ p >> x;\n\t  \t\tbit.update(p + 1, x);\n\t\t} else {\n\t  \t\tint l, r;\n\t\
-    \  \t\tcin >> l >> r;\n\t  \t\tcout << bit.query(l + 1, r) << '\\n';\n\t\t}\n\
-    \  \t}\n}\n"
+    \ long a; cin >> a;\n\t\tbit.update(i, a);\n\t}\n  \twhile (Q--) {\n\t\tint t;\
+    \ cin >> t;\n\t\tif (t == 0) {\n\t  \t\tint p; long long x;\n\t  \t\tcin >> p\
+    \ >> x;\n\t  \t\tbit.update(p, x);\n\t\t} else {\n\t  \t\tint l, r;\n\t  \t\t\
+    cin >> l >> r;\n\t  \t\tcout << bit.query(l, r - 1) << '\\n';\n\t\t}\n  \t}\n\
+    }\n"
   dependsOn:
   - data-structure/fenwick-tree.hpp
   isVerificationFile: true
   path: verify/fenwick-tree.yosupo-point-add-range-sum.test.cpp
   requiredBy: []
-  timestamp: '2022-04-09 15:55:38-07:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-04-09 16:28:08-07:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/fenwick-tree.yosupo-point-add-range-sum.test.cpp
 layout: document
