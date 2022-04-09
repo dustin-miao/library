@@ -13,18 +13,18 @@ int main() {
 	fenwick_tree<long long> bit(N);
   	for (int i = 0; i < N; i++) {
 		long long a; cin >> a;
-		bit.update(i + 1, a);
+		bit.update(i, a);
 	}
   	while (Q--) {
 		int t; cin >> t;
 		if (t == 0) {
 	  		int p; long long x;
 	  		cin >> p >> x;
-	  		bit.update(p + 1, x);
+	  		bit.update(p, x);
 		} else {
 	  		int l, r;
 	  		cin >> l >> r;
-	  		cout << bit.query(l + 1, r) << '\n';
+	  		cout << bit.query(l, r - 1) << '\n';
 		}
   	}
 }

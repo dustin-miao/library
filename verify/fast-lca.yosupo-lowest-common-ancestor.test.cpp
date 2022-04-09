@@ -14,7 +14,7 @@ int main() {
 		cin >> p;
 		T[p].push_back(i);
 	}
-	LowestCommonAncestor lca(T);
+	fast_lca lca(T);
 	while (Q--) {
 		int u, v;
 		cin >> u >> v;

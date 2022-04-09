@@ -14,11 +14,11 @@ int main() {
 		if (t == 0) {
 			int i; long long v;
 			cin >> i >> v;
-			bit.update(i, v);
+			bit.update(i - 1, v);
 		} else if (t == 1) {
 			int l, r;
 			cin >> l >> r;
-			cout << bit.query(l, r) << '\n';
+			cout << bit.query(l - 1, r - 1) << '\n';
 		}
 	}
 }
