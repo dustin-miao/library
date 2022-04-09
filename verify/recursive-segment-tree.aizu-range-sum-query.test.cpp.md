@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/recursive-segment-tree.hpp
     title: Recursive Segment Tree
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B
@@ -36,28 +36,28 @@ data:
     \n\nint main() {\n\tint N, Q;\n\tcin >> N >> Q;\n\n\tstruct segment_tree_template\
     \ {\n\t\tusing type = long long;\n\t\tconst type default_value = 0;\n\t\tvoid\
     \ apply(type &a, type b) { a += b; }\n\t\ttype merge(type a, type b) { return\
-    \ a + b; }\n\t};\n\n\tSegtree<segment_tree_template> sgt(N + 1);\n\twhile (Q--)\
-    \ {\n\t\tint t; cin >> t;\n\t\tif (t == 0) {\n\t\t\tint i; long long v;\n\t\t\t\
-    cin >> i >> v;\n\t\t\tsgt.update(i, v);\n\t\t} else if (t == 1) {\n\t\t\tint l,\
-    \ r;\n\t\t\tcin >> l >> r;\n\t\t\tcout << sgt.query(l, r) << '\\n';\n\t\t}\n\t\
-    }\n}\n"
+    \ a + b; }\n\t};\n\n\trecursive_segment_tree<segment_tree_template> sgt(N + 1);\n\
+    \twhile (Q--) {\n\t\tint t; cin >> t;\n\t\tif (t == 0) {\n\t\t\tint i; long long\
+    \ v;\n\t\t\tcin >> i >> v;\n\t\t\tsgt.update(i, v);\n\t\t} else if (t == 1) {\n\
+    \t\t\tint l, r;\n\t\t\tcin >> l >> r;\n\t\t\tcout << sgt.query(l, r) << '\\n';\n\
+    \t\t}\n\t}\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B\"\
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#include \"data-structure/recursive-segment-tree.hpp\"\
     \n\nint main() {\n\tint N, Q;\n\tcin >> N >> Q;\n\n\tstruct segment_tree_template\
     \ {\n\t\tusing type = long long;\n\t\tconst type default_value = 0;\n\t\tvoid\
     \ apply(type &a, type b) { a += b; }\n\t\ttype merge(type a, type b) { return\
-    \ a + b; }\n\t};\n\n\tSegtree<segment_tree_template> sgt(N + 1);\n\twhile (Q--)\
-    \ {\n\t\tint t; cin >> t;\n\t\tif (t == 0) {\n\t\t\tint i; long long v;\n\t\t\t\
-    cin >> i >> v;\n\t\t\tsgt.update(i, v);\n\t\t} else if (t == 1) {\n\t\t\tint l,\
-    \ r;\n\t\t\tcin >> l >> r;\n\t\t\tcout << sgt.query(l, r) << '\\n';\n\t\t}\n\t\
-    }\n}"
+    \ a + b; }\n\t};\n\n\trecursive_segment_tree<segment_tree_template> sgt(N + 1);\n\
+    \twhile (Q--) {\n\t\tint t; cin >> t;\n\t\tif (t == 0) {\n\t\t\tint i; long long\
+    \ v;\n\t\t\tcin >> i >> v;\n\t\t\tsgt.update(i, v);\n\t\t} else if (t == 1) {\n\
+    \t\t\tint l, r;\n\t\t\tcin >> l >> r;\n\t\t\tcout << sgt.query(l, r) << '\\n';\n\
+    \t\t}\n\t}\n}"
   dependsOn:
   - data-structure/recursive-segment-tree.hpp
   isVerificationFile: true
   path: verify/recursive-segment-tree.aizu-range-sum-query.test.cpp
   requiredBy: []
-  timestamp: '2022-04-09 15:55:38-07:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-04-09 16:38:19-07:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/recursive-segment-tree.aizu-range-sum-query.test.cpp
 layout: document

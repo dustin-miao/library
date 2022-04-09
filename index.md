@@ -6,13 +6,13 @@ data:
     - icon: ':x:'
       path: data-structure/fast-lca.hpp
       title: Fast Lowest Common Ancestor
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/fenwick-tree.hpp
       title: Fenwick Tree
     - icon: ':question:'
       path: data-structure/general-segment-tree.hpp
       title: General Segment Tree
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/kciwnef-tree.hpp
       title: Kciwnef Tree
     - icon: ':heavy_check_mark:'
@@ -21,13 +21,13 @@ data:
     - icon: ':x:'
       path: data-structure/line-container.hpp
       title: Line Container
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/recursive-segment-tree.hpp
       title: Recursive Segment Tree
     - icon: ':heavy_check_mark:'
       path: data-structure/segment-tree-beats.hpp
       title: Segment Tree Beats
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/segment-tree.hpp
       title: Segment Tree
     - icon: ':x:'
@@ -158,7 +158,7 @@ data:
     - icon: ':x:'
       path: verify/general-segment-tree.yosupo-point-set-range-composite.test.cpp
       title: verify/general-segment-tree.yosupo-point-set-range-composite.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/kciwnef-tree.aizu-point-add-query.test.cpp
       title: verify/kciwnef-tree.aizu-point-add-query.test.cpp
     - icon: ':heavy_check_mark:'
@@ -203,7 +203,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/recursive-segment-tree.aizu-range-minimum-query.test.cpp
       title: verify/recursive-segment-tree.aizu-range-minimum-query.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/recursive-segment-tree.aizu-range-sum-query.test.cpp
       title: verify/recursive-segment-tree.aizu-range-sum-query.test.cpp
     - icon: ':heavy_check_mark:'
@@ -218,7 +218,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/segment-tree.aizu-range-minimum-query.test.cpp
       title: verify/segment-tree.aizu-range-minimum-query.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/segment-tree.aizu-range-sum-query.test.cpp
       title: verify/segment-tree.aizu-range-sum-query.test.cpp
     - icon: ':heavy_check_mark:'

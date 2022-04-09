@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/recursive-segment-tree.hpp
     title: Recursive Segment Tree
   _extendedRequiredBy: []

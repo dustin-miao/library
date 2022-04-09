@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/fenwick-tree.hpp
     title: Fenwick Tree
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/kciwnef-tree.hpp
     title: Kciwnef Tree
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_E
@@ -34,22 +34,24 @@ data:
     \n\tT operator[](int i) { return query(i); }\n};\n#line 7 \"verify/kciwnef-tree.aizu-point-add-query.test.cpp\"\
     \n\nint main() {\n\tint N, Q;\n\tcin >> N >> Q;\n\tkciwnef_tree<long long> tib(N);\n\
     \twhile (Q--) {\n\t\tint t; cin >> t;\n\t\tif (t == 0) {\n\t\t\tint l, r; long\
-    \ long v;\n\t\t\tcin >> l >> r >> v;\n\t\t\ttib.update(l, r, v);\n\t\t} else {\n\
-    \t\t\tint i; cin >> i;\n\t\t\tcout << tib.query(i) << '\\n';\n\t\t}\n\t}\n}\n"
+    \ long v;\n\t\t\tcin >> l >> r >> v;\n\t\t\ttib.update(l - 1, r - 1, v);\n\t\t\
+    } else {\n\t\t\tint i; cin >> i;\n\t\t\tcout << tib.query(i - 1) << '\\n';\n\t\
+    \t}\n\t}\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_E\"\
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#include \"data-structure/kciwnef-tree.hpp\"\
     \n\nint main() {\n\tint N, Q;\n\tcin >> N >> Q;\n\tkciwnef_tree<long long> tib(N);\n\
     \twhile (Q--) {\n\t\tint t; cin >> t;\n\t\tif (t == 0) {\n\t\t\tint l, r; long\
-    \ long v;\n\t\t\tcin >> l >> r >> v;\n\t\t\ttib.update(l, r, v);\n\t\t} else {\n\
-    \t\t\tint i; cin >> i;\n\t\t\tcout << tib.query(i) << '\\n';\n\t\t}\n\t}\n}"
+    \ long v;\n\t\t\tcin >> l >> r >> v;\n\t\t\ttib.update(l - 1, r - 1, v);\n\t\t\
+    } else {\n\t\t\tint i; cin >> i;\n\t\t\tcout << tib.query(i - 1) << '\\n';\n\t\
+    \t}\n\t}\n}"
   dependsOn:
   - data-structure/kciwnef-tree.hpp
   - data-structure/fenwick-tree.hpp
   isVerificationFile: true
   path: verify/kciwnef-tree.aizu-point-add-query.test.cpp
   requiredBy: []
-  timestamp: '2022-04-09 15:55:38-07:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-04-09 16:38:19-07:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/kciwnef-tree.aizu-point-add-query.test.cpp
 layout: document

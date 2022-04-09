@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/kciwnef-tree.hpp
     title: Kciwnef Tree
   _extendedVerifiedWith:
@@ -12,12 +12,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/fenwick-tree.yosupo-point-add-range-sum.test.cpp
     title: verify/fenwick-tree.yosupo-point-add-range-sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/kciwnef-tree.aizu-point-add-query.test.cpp
     title: verify/kciwnef-tree.aizu-point-add-query.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"data-structure/fenwick-tree.hpp\"\ntemplate<typename T>\n\
@@ -41,7 +41,7 @@ data:
   requiredBy:
   - data-structure/kciwnef-tree.hpp
   timestamp: '2022-04-09 15:55:38-07:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/kciwnef-tree.aizu-point-add-query.test.cpp
   - verify/fenwick-tree.yosupo-point-add-range-sum.test.cpp
