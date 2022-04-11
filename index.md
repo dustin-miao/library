@@ -56,6 +56,9 @@ data:
     - icon: ':warning:'
       path: geometry/convex-hull.hpp
       title: Convex Hull
+    - icon: ':warning:'
+      path: geometry/monotonic-dp-hull.hpp
+      title: geometry/monotonic-dp-hull.hpp
     - icon: ':heavy_check_mark:'
       path: geometry/point.hpp
       title: Point

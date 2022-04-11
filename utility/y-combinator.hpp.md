@@ -38,4 +38,4 @@ title: Y Combinator
 
 ## Y Combinator
 
-Copied from [http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0200r0.html](open std). 
+Copied from [Open STD](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0200r0.html). 

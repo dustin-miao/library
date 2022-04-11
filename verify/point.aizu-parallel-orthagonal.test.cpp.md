@@ -17,11 +17,11 @@ data:
   bundledCode: "#line 1 \"verify/point.aizu-parallel-orthagonal.test.cpp\"\n#define\
     \ PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_A\"\
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#line 1 \"geometry/point.hpp\"\
-    \nnamespace geo {\n\tconst double EPS = 1e-9;\n\n\ttemplate<typename T>\n\tclass\
-    \ point {\n\t\tstatic_assert(is_arithmetic<T>::value, \"T must be an arithmetic\
-    \ type\");\n\n\tpublic:\n\t\tT x, y;\n\n\t\tpoint() : x(T{}), y(T{}) {}\n\n\t\t\
-    point(const T &_x, const T &_y) : x(_x), y(_y) {}\n\n\t\ttemplate<typename S>\
-    \ \n\t\toperator point<S>() const { return point<S>(static_cast<S>(x), static_cast<S>(y));\
+    \n#pragma region point\n\nnamespace geo {\n\tconst double EPS = 1e-9;\n\n\ttemplate<typename\
+    \ T>\n\tclass point {\n\t\tstatic_assert(is_arithmetic<T>::value, \"T must be\
+    \ an arithmetic type\");\n\n\tpublic:\n\t\tT x, y;\n\n\t\tpoint() : x(T{}), y(T{})\
+    \ {}\n\n\t\tpoint(const T &_x, const T &_y) : x(_x), y(_y) {}\n\n\t\ttemplate<typename\
+    \ S> \n\t\toperator point<S>() const { return point<S>(static_cast<S>(x), static_cast<S>(y));\
     \ }\n\n\t\ttemplate<typename S>\n\t\tpoint &operator=(const point<S> &p) { x =\
     \ p.x; y = p.y; return *this; }\n\n\t\tpoint &operator+=(const point &p) { x +=\
     \ p.x; y += p.y; return *this; }\n\n\t\tpoint &operator-=(const point &p) { x\
@@ -66,12 +66,13 @@ data:
     \ T>\n\tT dis2(const point<T> &p, const point<T> &q) { return abs(q - p); }\n\n\
     \ttemplate<typename T>\n\tdouble dis(const point<T> &p, const point<T> &q) { return\
     \ norm(q - p); }\n\n\ttemplate<typename T>\n\tauto bisector(const point<T> &p,\
-    \ const point<T> &q) { return p * norm(q) + norm(p) * q; }\n}\n#line 7 \"verify/point.aizu-parallel-orthagonal.test.cpp\"\
-    \n\nusing namespace geo;\n\nint main() {\n\tint Q;\n\tcin >> Q;\n\twhile (Q--)\
-    \ {\n\t\tpoint<double> p1, p2, q1, q2;\n\t\tcin >> p1.x >> p1.y >> p2.x >> p2.y\
-    \ >> q1.x >> q1.y >> q2.x >> q2.y;\n\t\tauto p = p2 - p1, q = q2 - q1;\n\t\tif\
-    \ (abs(p ^ q) <= EPS)\n\t\t\tcout << 2 << '\\n';\n\t\telse if (abs(p * q) <= EPS)\n\
-    \t\t\tcout << 1 << '\\n';\n\t\telse \n\t\t\tcout << 0 << '\\n';\n\t}\n}\n"
+    \ const point<T> &q) { return p * norm(q) + norm(p) * q; }\n}\n\n#pragma endregion\
+    \ point\n#line 7 \"verify/point.aizu-parallel-orthagonal.test.cpp\"\n\nusing namespace\
+    \ geo;\n\nint main() {\n\tint Q;\n\tcin >> Q;\n\twhile (Q--) {\n\t\tpoint<double>\
+    \ p1, p2, q1, q2;\n\t\tcin >> p1.x >> p1.y >> p2.x >> p2.y >> q1.x >> q1.y >>\
+    \ q2.x >> q2.y;\n\t\tauto p = p2 - p1, q = q2 - q1;\n\t\tif (abs(p ^ q) <= EPS)\n\
+    \t\t\tcout << 2 << '\\n';\n\t\telse if (abs(p * q) <= EPS)\n\t\t\tcout << 1 <<\
+    \ '\\n';\n\t\telse \n\t\t\tcout << 0 << '\\n';\n\t}\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_A\"\
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#include \"geometry/point.hpp\"\
     \n\nusing namespace geo;\n\nint main() {\n\tint Q;\n\tcin >> Q;\n\twhile (Q--)\
@@ -84,7 +85,7 @@ data:
   isVerificationFile: true
   path: verify/point.aizu-parallel-orthagonal.test.cpp
   requiredBy: []
-  timestamp: '2022-03-30 15:29:04-07:00'
+  timestamp: '2022-04-11 13:05:03-07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/point.aizu-parallel-orthagonal.test.cpp
