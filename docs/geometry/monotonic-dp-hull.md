@@ -1,6 +1,6 @@
 ---
-title: Convex Hull
-documentation_of: //geometry/convex-hull.hpp
+title: Monotonic DP Hull
+documentation_of: //geometry/monotonic-dp-hull.hpp
 ---
 
 ## Monotonic DP Hull
