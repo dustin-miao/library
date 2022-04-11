@@ -6,8 +6,11 @@ data:
     path: geometry/convex-hull.hpp
     title: Convex Hull
   - icon: ':warning:'
+    path: geometry/monotonic-dp-hull-minkowski-sum.hpp
+    title: Minkowski Sum for Monotonic DP Hull
+  - icon: ':warning:'
     path: geometry/monotonic-dp-hull.hpp
-    title: geometry/monotonic-dp-hull.hpp
+    title: Monotonic DP Hull
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/point.aizu-counter-clockwise.test.cpp
@@ -130,6 +133,7 @@ data:
   path: geometry/point.hpp
   requiredBy:
   - geometry/monotonic-dp-hull.hpp
+  - geometry/monotonic-dp-hull-minkowski-sum.hpp
   - geometry/convex-hull.hpp
   timestamp: '2022-04-11 13:05:03-07:00'
   verificationStatus: LIBRARY_ALL_AC

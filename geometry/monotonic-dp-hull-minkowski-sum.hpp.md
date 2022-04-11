@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
+  - icon: ':warning:'
+    path: geometry/monotonic-dp-hull.hpp
+    title: Monotonic DP Hull
   - icon: ':heavy_check_mark:'
     path: geometry/point.hpp
     title: Point
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: geometry/monotonic-dp-hull-minkowski-sum.hpp
-    title: Minkowski Sum for Monotonic DP Hull
+  _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -78,35 +78,40 @@ data:
     \ >= 2 && x * (points[1].x - points[0].x) >= (points[0].y - points[1].y) * y)\n\
     \t\t\tpoints.pop_front();\n\t\treturn points[0].x * x + points[0].y * y;\n\t}\n\
     \n\tvoid clear() { points.clear(); prev_x = LLONG_MIN, prev_y = 1; }\n\n\tint\
-    \ size() const { return points.size(); }\n};\n"
-  code: "#include \"geometry/point.hpp\"\n\nstruct monotonic_dp_hull {\n\tlong long\
-    \ prev_x = LLONG_MIN, prev_y = 1;\n\tdeque<geo::point<long long>> points;\n \n\
-    \tvoid insert(const geo::point<long long> &p) {\n\t\tassert(points.empty() ||\
-    \ p.x >= points.back().x);\n\t\tif (!points.empty() && p.x == points.back().x)\
-    \ {\n\t\t\tif (p.y <= points.back().y)\n\t\t\t\treturn;\n\t\t\tpoints.pop_back();\n\
-    \t\t}\n\t\twhile (size() >= 2 && ((points.back() - p) ^ (points[size() - 2] -\
-    \ points.back())) <= 0)\n\t\t\tpoints.pop_back();\n\t\tpoints.push_back(p);\n\t\
-    }\n\n\tvoid insert(long long a, long long b) { insert(geo::point(a, b)); }\n\n\
-    \tlong long query(long long x, long long y = 1) {\n\t\tassert(size() > 0);\n\t\
-    \tassert(prev_x == LLONG_MIN || x * prev_y >= prev_x * y);\n\t\tprev_x = x, prev_y\
-    \ = y;\n\t\twhile (size() >= 2 && x * (points[1].x - points[0].x) >= (points[0].y\
-    \ - points[1].y) * y)\n\t\t\tpoints.pop_front();\n\t\treturn points[0].x * x +\
-    \ points[0].y * y;\n\t}\n\n\tvoid clear() { points.clear(); prev_x = LLONG_MIN,\
-    \ prev_y = 1; }\n\n\tint size() const { return points.size(); }\n};"
+    \ size() const { return points.size(); }\n};\n#line 2 \"geometry/monotonic-dp-hull-minkowski-sum.hpp\"\
+    \n\nmonotonic_dp_hull minkowski_sum(const monotonic_dp_hull &h1, const monotonic_dp_hull\
+    \ &h2) {\n    assert(h1.size() > 0 && h2.size() > 0);\n    monotonic_dp_hull sum;\n\
+    \    for (int i = 0, j = 0; i < h1.size() - 1 || j < h2.size() - 1;) {\n\t\tcout\
+    \ << i << ' ' << j << '\\n';\n        sum.insert(h1.points[i] + h2.points[j]);\n\
+    \        if (i == h1.size() - 1) {\n            j++;\n            continue;\n\
+    \        }\n        if (j == h2.size() - 1) {\n            i++;\n            continue;\n\
+    \        }\n \n        auto d1 = h1.points[i + 1] - h1.points[i];\n        auto\
+    \ d2 = h2.points[j + 1] - h2.points[j];\n        if ((d2 ^ d1) > 0)\n        \
+    \    i++;\n        else\n            j++;\n    }\n    sum.insert(h1.points.back()\
+    \ + h2.points.back());\n    return sum;\n}\n"
+  code: "#include \"geometry/monotonic-dp-hull.hpp\"\n\nmonotonic_dp_hull minkowski_sum(const\
+    \ monotonic_dp_hull &h1, const monotonic_dp_hull &h2) {\n    assert(h1.size()\
+    \ > 0 && h2.size() > 0);\n    monotonic_dp_hull sum;\n    for (int i = 0, j =\
+    \ 0; i < h1.size() - 1 || j < h2.size() - 1;) {\n\t\tcout << i << ' ' << j <<\
+    \ '\\n';\n        sum.insert(h1.points[i] + h2.points[j]);\n        if (i == h1.size()\
+    \ - 1) {\n            j++;\n            continue;\n        }\n        if (j ==\
+    \ h2.size() - 1) {\n            i++;\n            continue;\n        }\n \n  \
+    \      auto d1 = h1.points[i + 1] - h1.points[i];\n        auto d2 = h2.points[j\
+    \ + 1] - h2.points[j];\n        if ((d2 ^ d1) > 0)\n            i++;\n       \
+    \ else\n            j++;\n    }\n    sum.insert(h1.points.back() + h2.points.back());\n\
+    \    return sum;\n}"
   dependsOn:
+  - geometry/monotonic-dp-hull.hpp
   - geometry/point.hpp
   isVerificationFile: false
-  path: geometry/monotonic-dp-hull.hpp
-  requiredBy:
-  - geometry/monotonic-dp-hull-minkowski-sum.hpp
+  path: geometry/monotonic-dp-hull-minkowski-sum.hpp
+  requiredBy: []
   timestamp: '2022-04-11 14:16:34-07:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: geometry/monotonic-dp-hull.hpp
+documentation_of: geometry/monotonic-dp-hull-minkowski-sum.hpp
 layout: document
-title: Monotonic DP Hull
+title: Minkowski Sum for Monotonic DP Hull
 ---
 
-## Monotonic DP Hull
-
-Verified with [CSES - Monster Game I](https://cses.fi/problemset/task/2084/). [Working code](https://cses.fi/paste/9d47222cb4a2db1f3a24a7/).
+## Minkowski Sum for Monotonic DP Hull

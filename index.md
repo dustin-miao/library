@@ -57,8 +57,11 @@ data:
       path: geometry/convex-hull.hpp
       title: Convex Hull
     - icon: ':warning:'
+      path: geometry/monotonic-dp-hull-minkowski-sum.hpp
+      title: Minkowski Sum for Monotonic DP Hull
+    - icon: ':warning:'
       path: geometry/monotonic-dp-hull.hpp
-      title: geometry/monotonic-dp-hull.hpp
+      title: Monotonic DP Hull
     - icon: ':heavy_check_mark:'
       path: geometry/point.hpp
       title: Point
