@@ -2,7 +2,7 @@
 
 struct line_container_line {
     mutable long long m, b, p;
-    bool operator<(const Line &o) const { return m < o.m; }
+    bool operator<(const line_container_line &o) const { return m < o.m; }
     bool operator<(long long x) const { return p < x; }
 };
 
