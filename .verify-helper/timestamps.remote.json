@@ -1,4 +1,7 @@
 {
+"verify/ceil-div.yosupo-many-a+b.test.cpp": "2022-04-11 09:42:09 -0700",
+"verify/chmax.aizu-min-max-sum.test.cpp": "2022-04-11 09:18:41 -0700",
+"verify/chmin.aizu-min-max-sum.test.cpp": "2022-04-11 09:18:41 -0700",
 "verify/cycle-finding.yosupo-cycle-detection.test.cpp": "2022-03-29 13:08:57 -0700",
 "verify/dijkstra.aizu-shortest-path.test.cpp": "2022-03-29 12:51:37 -0700",
 "verify/dijkstra.aizu-single-source-shortest-path.test.cpp": "2022-03-29 12:51:37 -0700",
@@ -6,6 +9,7 @@
 "verify/fast-pow.aizu-power.test.cpp": "2022-04-11 09:09:09 -0700",
 "verify/fenwick-tree.aizu-range-sum-query.test.cpp": "2022-04-09 16:28:08 -0700",
 "verify/fenwick-tree.yosupo-point-add-range-sum.test.cpp": "2022-04-09 16:28:08 -0700",
+"verify/floor_div.yosupo-many-a+b.test.cpp": "2022-04-11 09:42:09 -0700",
 "verify/floyd-warshall.all-pairs-shortest-path.test.cpp": "2022-03-29 13:08:57 -0700",
 "verify/general-segment-tree.aizu-range-minimum-query.test.cpp": "2022-04-09 16:29:10 -0700",
 "verify/general-segment-tree.aizu-range-sum-query.test.cpp": "2022-04-11 07:57:26 -0700",
