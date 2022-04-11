@@ -29,7 +29,7 @@ data:
     \ table[k - 1][i + (1 << (k - 1))]);\n\t}\n\n\tT query(int l, int r) {\n\t\tint\
     \ k = 31 - __builtin_clz(r - l + 1);\n\t\treturn min(table[k][l], table[k][r -\
     \ (1 << k) + 1]);\n\t}\n};\n#line 2 \"data-structure/fast-lca.hpp\"\n\nclass fast_lca\
-    \ {\n\tSparseTable<pair<int, int>> st;\n\tvector<int> pos;\n\npublic:\n\tfast_lca()\
+    \ {\n\tsparse_table<pair<int, int>> st;\n\tvector<int> pos;\n\npublic:\n\tfast_lca()\
     \ = default;\n\n\tfast_lca(const vector<vector<int>> &tree) { init(tree); }\n\n\
     \ttemplate<typename T>\n\tfast_lca(const vector<vector<pair<int, T>>> &tree) {\
     \ \n\t\tint n = tree.size();\n\t\tvector<vector<int>> _tree(n);\n\t\tfor (int\
@@ -60,7 +60,7 @@ data:
   isVerificationFile: true
   path: verify/fast-lca.yosupo-lowest-common-ancestor.test.cpp
   requiredBy: []
-  timestamp: '2022-04-09 16:28:08-07:00'
+  timestamp: '2022-04-11 07:56:19-07:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/fast-lca.yosupo-lowest-common-ancestor.test.cpp

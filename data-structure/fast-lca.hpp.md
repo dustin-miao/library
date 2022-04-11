@@ -24,7 +24,7 @@ data:
     \ table[k - 1][i + (1 << (k - 1))]);\n\t}\n\n\tT query(int l, int r) {\n\t\tint\
     \ k = 31 - __builtin_clz(r - l + 1);\n\t\treturn min(table[k][l], table[k][r -\
     \ (1 << k) + 1]);\n\t}\n};\n#line 2 \"data-structure/fast-lca.hpp\"\n\nclass fast_lca\
-    \ {\n\tSparseTable<pair<int, int>> st;\n\tvector<int> pos;\n\npublic:\n\tfast_lca()\
+    \ {\n\tsparse_table<pair<int, int>> st;\n\tvector<int> pos;\n\npublic:\n\tfast_lca()\
     \ = default;\n\n\tfast_lca(const vector<vector<int>> &tree) { init(tree); }\n\n\
     \ttemplate<typename T>\n\tfast_lca(const vector<vector<pair<int, T>>> &tree) {\
     \ \n\t\tint n = tree.size();\n\t\tvector<vector<int>> _tree(n);\n\t\tfor (int\
@@ -39,7 +39,7 @@ data:
     \ u, int v) {\n\t\tif (pos[u] > pos[v])\n\t\t\tswap(u, v);\n\t\tauto [d, a] =\
     \ st.query(pos[u], pos[v]);\n\t\treturn a;\n\t}\n\n\tint operator()(int u, int\
     \ v) { return query(u, v); }\n};\n"
-  code: "#include \"data-structure/sparse-table.hpp\"\n\nclass fast_lca {\n\tSparseTable<pair<int,\
+  code: "#include \"data-structure/sparse-table.hpp\"\n\nclass fast_lca {\n\tsparse_table<pair<int,\
     \ int>> st;\n\tvector<int> pos;\n\npublic:\n\tfast_lca() = default;\n\n\tfast_lca(const\
     \ vector<vector<int>> &tree) { init(tree); }\n\n\ttemplate<typename T>\n\tfast_lca(const\
     \ vector<vector<pair<int, T>>> &tree) { \n\t\tint n = tree.size();\n\t\tvector<vector<int>>\
@@ -59,7 +59,7 @@ data:
   isVerificationFile: false
   path: data-structure/fast-lca.hpp
   requiredBy: []
-  timestamp: '2022-04-09 15:55:38-07:00'
+  timestamp: '2022-04-11 07:56:19-07:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - verify/fast-lca.yosupo-lowest-common-ancestor.test.cpp
