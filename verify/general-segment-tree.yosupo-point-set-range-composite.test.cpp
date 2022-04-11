@@ -15,7 +15,7 @@ int main() {
 	struct segment_tree_template {
 		struct node { mint a, b; };
 		using type = node;
-		const type dval = {1, 0};
+		const type default_value = {1, 0};
 		void apply(type &a, type b) { a = b; }
 		type merge(type a, type b) { return {a.a * b.a, b.a * a.b + b.b}; }
 	};
