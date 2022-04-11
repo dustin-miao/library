@@ -122,6 +122,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: utility/mint.hpp
       title: Modular Int
+    - icon: ':warning:'
+      path: utility/y-combinator.hpp
+      title: Y Combinator
   verificationCategories:
   - name: verify
     pages:
