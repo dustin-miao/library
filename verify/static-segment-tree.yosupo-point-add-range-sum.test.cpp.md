@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/static-segment-tree.hpp
     title: Static Segment Tree
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/point_add_range_sum
@@ -21,10 +21,10 @@ data:
     \ = 0;\n\n\tstatic void apply(T &a, T b) { a += b; }\n\n\tstatic T merge(T a,\
     \ T b) { return a + b; }\n\nprotected:\n\tint n;\n\tvector<T> tree;\n\npublic:\n\
     \tsta_segment_tree() = default;\n\n\tsta_segment_tree(int _n) { init(_n); }\n\n\
-    \tvoid init(int _n) {\n\t\tn = _n;\n\t\ttree.assign(n * 2, Segtree::dval);\n\t\
+    \tvoid init(int _n) {\n\t\tn = _n;\n\t\ttree.assign(n * 2, default_value);\n\t\
     }\n\n\tvoid update(int i, T v) {\n\t\tfor (apply(tree[i += n], v); i >>= 1;)\n\
     \t\t\ttree[i] = merge(tree[i << 1], tree[i << 1 | 1]);\n\t}\n\n\tT query(int l,\
-    \ int r) {\n\t\tT ret = Segtree::dval;\n\t\tfor (l += n, r += n + 1; l < r; l\
+    \ int r) {\n\t\tT ret = default_value;\n\t\tfor (l += n, r += n + 1; l < r; l\
     \ >>= 1, r >>= 1) {\n\t\t\tif (l & 1) \n\t\t\t\tret = merge(ret, tree[l++]);\n\
     \t\t\tif (r & 1) \n\t\t\t\tret = merge(ret, tree[--r]);\n\t\t}\n\t\treturn ret;\n\
     \t}\n\n\tT operator[](int i) { return tree[i + n]; }\n};\n#line 7 \"verify/static-segment-tree.yosupo-point-add-range-sum.test.cpp\"\
@@ -47,8 +47,8 @@ data:
   isVerificationFile: true
   path: verify/static-segment-tree.yosupo-point-add-range-sum.test.cpp
   requiredBy: []
-  timestamp: '2022-04-09 15:55:38-07:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-04-11 09:03:00-07:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/static-segment-tree.yosupo-point-add-range-sum.test.cpp
 layout: document
