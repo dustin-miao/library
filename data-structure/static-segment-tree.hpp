@@ -18,7 +18,7 @@ public:
 
 	void init(int _n) {
 		n = _n;
-		tree.assign(n * 2, Segtree::dval);
+		tree.assign(n * 2, default_value);
 	}
 
 	void update(int i, T v) {
@@ -27,7 +27,7 @@ public:
 	}
 
 	T query(int l, int r) {
-		T ret = Segtree::dval;
+		T ret = default_value;
 		for (l += n, r += n + 1; l < r; l >>= 1, r >>= 1) {
 			if (l & 1) 
 				ret = merge(ret, tree[l++]);
