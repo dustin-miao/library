@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/general-segment-tree.hpp
     title: General Segment Tree
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utility/mint.hpp
     title: Modular Int
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/point_set_range_composite
@@ -113,7 +113,7 @@ data:
     \ rret);\n\t}\n\n\tT operator[](int i) { return tree[i + n]; }\n};\n#line 8 \"\
     verify/general-segment-tree.yosupo-point-set-range-composite.test.cpp\"\n\nint\
     \ main() {\n\tMOD = 998244353;\n\n\tint N, Q;\n\tcin >> N >> Q;\n\n\tstruct segment_tree_template\
-    \ {\n\t\tstruct node { mint a, b; };\n\t\tusing type = node;\n\t\tconst type dval\
+    \ {\n\t\tstruct node { mint a, b; };\n\t\tusing type = node;\n\t\tconst type default_value\
     \ = {1, 0};\n\t\tvoid apply(type &a, type b) { a = b; }\n\t\ttype merge(type a,\
     \ type b) { return {a.a * b.a, b.a * a.b + b.b}; }\n\t};\n\n\tgen_segment_tree<segment_tree_template>\
     \ sgt(N);\n\tfor (int i = 0; i < N; i++) {\n\t\tlong long a, b; \n\t\tcin >> a\
@@ -126,7 +126,7 @@ data:
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#include \"utility/mint.hpp\"\
     \n#include \"data-structure/general-segment-tree.hpp\"\n\nint main() {\n\tMOD\
     \ = 998244353;\n\n\tint N, Q;\n\tcin >> N >> Q;\n\n\tstruct segment_tree_template\
-    \ {\n\t\tstruct node { mint a, b; };\n\t\tusing type = node;\n\t\tconst type dval\
+    \ {\n\t\tstruct node { mint a, b; };\n\t\tusing type = node;\n\t\tconst type default_value\
     \ = {1, 0};\n\t\tvoid apply(type &a, type b) { a = b; }\n\t\ttype merge(type a,\
     \ type b) { return {a.a * b.a, b.a * a.b + b.b}; }\n\t};\n\n\tgen_segment_tree<segment_tree_template>\
     \ sgt(N);\n\tfor (int i = 0; i < N; i++) {\n\t\tlong long a, b; \n\t\tcin >> a\
@@ -141,8 +141,8 @@ data:
   isVerificationFile: true
   path: verify/general-segment-tree.yosupo-point-set-range-composite.test.cpp
   requiredBy: []
-  timestamp: '2022-04-09 16:29:10-07:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-04-11 07:57:26-07:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/general-segment-tree.yosupo-point-set-range-composite.test.cpp
 layout: document

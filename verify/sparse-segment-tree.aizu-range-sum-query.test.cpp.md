@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/sparse-segment-tree.hpp
     title: Sparse Segment Tree
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B
@@ -35,11 +35,11 @@ data:
     \ tr <= r)\n\t\t\treturn tree[t].v;\n\t\tint tm = (tl + tr) / 2;\n\t\treturn merge(tree[t].l\
     \ == -1 ? default_value : query(l, r, tree[t].l, tl, tm), \n\t\t\ttree[t].r ==\
     \ -1 ? default_value : query(l, r, tree[t].r, tm + 1, tr));\n\t}\n\npublic:\n\t\
-    Segtree() = default;\n\n\tSegtree(int _n) { init(_n); }\n\n\tvoid init(int _n)\
-    \ {\n\t\tn = _n;\n\t\troot = new_node();\n\t}\n\n\tvoid reserve(int _n) { tree.reserve(_n);\
-    \ }\n\n\tvoid clear() { tree.clear(); }\n\n\tvoid update(int i, T v) { update(i,\
-    \ v, root, 0, n - 1); }\n\n\tT query(int l, int r) { return query(l, r, root,\
-    \ 0, n - 1); }\n};\n#line 7 \"verify/sparse-segment-tree.aizu-range-sum-query.test.cpp\"\
+    sparse_segment_tree() = default;\n\n\tsparse_segment_tree(int _n) { init(_n);\
+    \ }\n\n\tvoid init(int _n) {\n\t\tn = _n;\n\t\troot = new_node();\n\t}\n\n\tvoid\
+    \ reserve(int _n) { tree.reserve(_n); }\n\n\tvoid clear() { tree.clear(); }\n\n\
+    \tvoid update(int i, T v) { update(i, v, root, 0, n - 1); }\n\n\tT query(int l,\
+    \ int r) { return query(l, r, root, 0, n - 1); }\n};\n#line 7 \"verify/sparse-segment-tree.aizu-range-sum-query.test.cpp\"\
     \n\nint main() {\n\tint N, Q;\n\tcin >> N >> Q;\n\n\tstruct segment_tree_template\
     \ {\n\t\tusing type = long long;\n\t\tconst type default_value = 0;\n\t\tvoid\
     \ apply(type &a, type b) { a += b; }\n\t\ttype merge(type a, type b) { return\
@@ -63,8 +63,8 @@ data:
   isVerificationFile: true
   path: verify/sparse-segment-tree.aizu-range-sum-query.test.cpp
   requiredBy: []
-  timestamp: '2022-04-09 15:55:38-07:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-04-11 08:59:21-07:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/sparse-segment-tree.aizu-range-sum-query.test.cpp
 layout: document

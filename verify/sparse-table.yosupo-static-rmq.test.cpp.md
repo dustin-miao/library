@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/sparse-table.hpp
     title: Sparse Table
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/staticrmq
@@ -20,7 +20,7 @@ data:
     \ T>\nclass sparse_table {\n\tint n, logn;\n\tvector<vector<T>> table;\n\npublic:\n\
     \tsparse_table() = default;\n\n\ttemplate<typename I>\n\tsparse_table(I l, I r)\
     \ { init(l, r); }\n\n\ttemplate<typename I>\n\tvoid init(I l, I r) {\n\t\tn =\
-    \ distance(l, r);\n\t\tlogn = 31 - __builtin_clz(n);\n\t\ttable.assign(logn, vector<T>(n));\n\
+    \ distance(l, r);\n\t\tlogn = 32 - __builtin_clz(n);\n\t\ttable.assign(logn, vector<T>(n));\n\
     \t\tcopy(l, r, table[0].begin());\n\t\tfor (int k = 1; k < logn; k++)\n\t\t\t\
     for (int i = 0; i + (1 << k) <= n; i++)\n\t\t\t\ttable[k][i] = min(table[k - 1][i],\
     \ table[k - 1][i + (1 << (k - 1))]);\n\t}\n\n\tT query(int l, int r) {\n\t\tint\
@@ -41,8 +41,8 @@ data:
   isVerificationFile: true
   path: verify/sparse-table.yosupo-static-rmq.test.cpp
   requiredBy: []
-  timestamp: '2022-04-09 15:55:38-07:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-04-11 08:59:21-07:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/sparse-table.yosupo-static-rmq.test.cpp
 layout: document

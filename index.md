@@ -3,13 +3,13 @@ data:
   libraryCategories:
   - name: data-structure
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/fast-lca.hpp
       title: Fast Lowest Common Ancestor
     - icon: ':heavy_check_mark:'
       path: data-structure/fenwick-tree.hpp
       title: Fenwick Tree
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/general-segment-tree.hpp
       title: General Segment Tree
     - icon: ':heavy_check_mark:'
@@ -18,7 +18,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/lazy-segment-tree.hpp
       title: Lazy Segment Tree
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/line-container.hpp
       title: Line Container
     - icon: ':heavy_check_mark:'
@@ -30,10 +30,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/segment-tree.hpp
       title: Segment Tree
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/sparse-segment-tree.hpp
       title: Sparse Segment Tree
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/sparse-table.hpp
       title: Sparse Table
     - icon: ':heavy_check_mark:'
@@ -116,10 +116,10 @@ data:
     - icon: ':warning:'
       path: utility/fast-pow.hpp
       title: Binary Exponentiation
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: utility/floor-div.hpp
       title: Floor Division
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: utility/mint.hpp
       title: Modular Int
   verificationCategories:
@@ -134,7 +134,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/dijkstra.aizu-single-source-shortest-path.test.cpp
       title: verify/dijkstra.aizu-single-source-shortest-path.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/fast-lca.yosupo-lowest-common-ancestor.test.cpp
       title: verify/fast-lca.yosupo-lowest-common-ancestor.test.cpp
     - icon: ':heavy_check_mark:'
@@ -149,13 +149,13 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/general-segment-tree.aizu-range-minimum-query.test.cpp
       title: verify/general-segment-tree.aizu-range-minimum-query.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/general-segment-tree.aizu-range-sum-query.test.cpp
       title: verify/general-segment-tree.aizu-range-sum-query.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/general-segment-tree.yosupo-point-add-range-sum.test.cpp
       title: verify/general-segment-tree.yosupo-point-add-range-sum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/general-segment-tree.yosupo-point-set-range-composite.test.cpp
       title: verify/general-segment-tree.yosupo-point-set-range-composite.test.cpp
     - icon: ':heavy_check_mark:'
@@ -179,7 +179,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/lazy-segment-tree.yosupo-range-affine-range-sum.test.cpp
       title: verify/lazy-segment-tree.yosupo-range-affine-range-sum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/line-container.yosupo-line-add-get-min.test.cpp
       title: verify/line-container.yosupo-line-add-get-min.test.cpp
     - icon: ':heavy_check_mark:'
@@ -224,22 +224,22 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/segment-tree.yosupo-point-add-range-sum.test.cpp
       title: verify/segment-tree.yosupo-point-add-range-sum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/sparse-segment-tree.aizu-range-minimum-query.test.cpp
       title: verify/sparse-segment-tree.aizu-range-minimum-query.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/sparse-segment-tree.aizu-range-sum-query.test.cpp
       title: verify/sparse-segment-tree.aizu-range-sum-query.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/sparse-segment-tree.aizu-the-number-of-inversions.test.cpp
       title: verify/sparse-segment-tree.aizu-the-number-of-inversions.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/sparse-segment-tree.yosupo-point-add-range-sum.test.cpp
       title: verify/sparse-segment-tree.yosupo-point-add-range-sum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/sparse-segment-tree.yosupo-point-set-range-composite.test.cpp
       title: verify/sparse-segment-tree.yosupo-point-set-range-composite.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/sparse-table.yosupo-static-rmq.test.cpp
       title: verify/sparse-table.yosupo-static-rmq.test.cpp
     - icon: ':heavy_check_mark:'

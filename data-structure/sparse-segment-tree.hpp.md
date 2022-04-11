@@ -3,24 +3,24 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/sparse-segment-tree.aizu-range-minimum-query.test.cpp
     title: verify/sparse-segment-tree.aizu-range-minimum-query.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/sparse-segment-tree.aizu-range-sum-query.test.cpp
     title: verify/sparse-segment-tree.aizu-range-sum-query.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/sparse-segment-tree.aizu-the-number-of-inversions.test.cpp
     title: verify/sparse-segment-tree.aizu-the-number-of-inversions.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/sparse-segment-tree.yosupo-point-add-range-sum.test.cpp
     title: verify/sparse-segment-tree.yosupo-point-add-range-sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/sparse-segment-tree.yosupo-point-set-range-composite.test.cpp
     title: verify/sparse-segment-tree.yosupo-point-set-range-composite.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"data-structure/sparse-segment-tree.hpp\"\ntemplate<class\
@@ -42,11 +42,11 @@ data:
     \ tr <= r)\n\t\t\treturn tree[t].v;\n\t\tint tm = (tl + tr) / 2;\n\t\treturn merge(tree[t].l\
     \ == -1 ? default_value : query(l, r, tree[t].l, tl, tm), \n\t\t\ttree[t].r ==\
     \ -1 ? default_value : query(l, r, tree[t].r, tm + 1, tr));\n\t}\n\npublic:\n\t\
-    Segtree() = default;\n\n\tSegtree(int _n) { init(_n); }\n\n\tvoid init(int _n)\
-    \ {\n\t\tn = _n;\n\t\troot = new_node();\n\t}\n\n\tvoid reserve(int _n) { tree.reserve(_n);\
-    \ }\n\n\tvoid clear() { tree.clear(); }\n\n\tvoid update(int i, T v) { update(i,\
-    \ v, root, 0, n - 1); }\n\n\tT query(int l, int r) { return query(l, r, root,\
-    \ 0, n - 1); }\n};\n"
+    sparse_segment_tree() = default;\n\n\tsparse_segment_tree(int _n) { init(_n);\
+    \ }\n\n\tvoid init(int _n) {\n\t\tn = _n;\n\t\troot = new_node();\n\t}\n\n\tvoid\
+    \ reserve(int _n) { tree.reserve(_n); }\n\n\tvoid clear() { tree.clear(); }\n\n\
+    \tvoid update(int i, T v) { update(i, v, root, 0, n - 1); }\n\n\tT query(int l,\
+    \ int r) { return query(l, r, root, 0, n - 1); }\n};\n"
   code: "template<class segment_tree_template>\nclass sparse_segment_tree : public\
     \ segment_tree_template {\n\tusing T = typename segment_tree_template::type;\n\
     \tusing segment_tree_template::default_value;\n\tusing segment_tree_template::merge;\n\
@@ -65,18 +65,18 @@ data:
     \ < l)\n\t\t\treturn default_value;\n\t\tif (l <= tl && tr <= r)\n\t\t\treturn\
     \ tree[t].v;\n\t\tint tm = (tl + tr) / 2;\n\t\treturn merge(tree[t].l == -1 ?\
     \ default_value : query(l, r, tree[t].l, tl, tm), \n\t\t\ttree[t].r == -1 ? default_value\
-    \ : query(l, r, tree[t].r, tm + 1, tr));\n\t}\n\npublic:\n\tSegtree() = default;\n\
-    \n\tSegtree(int _n) { init(_n); }\n\n\tvoid init(int _n) {\n\t\tn = _n;\n\t\t\
-    root = new_node();\n\t}\n\n\tvoid reserve(int _n) { tree.reserve(_n); }\n\n\t\
-    void clear() { tree.clear(); }\n\n\tvoid update(int i, T v) { update(i, v, root,\
-    \ 0, n - 1); }\n\n\tT query(int l, int r) { return query(l, r, root, 0, n - 1);\
-    \ }\n};"
+    \ : query(l, r, tree[t].r, tm + 1, tr));\n\t}\n\npublic:\n\tsparse_segment_tree()\
+    \ = default;\n\n\tsparse_segment_tree(int _n) { init(_n); }\n\n\tvoid init(int\
+    \ _n) {\n\t\tn = _n;\n\t\troot = new_node();\n\t}\n\n\tvoid reserve(int _n) {\
+    \ tree.reserve(_n); }\n\n\tvoid clear() { tree.clear(); }\n\n\tvoid update(int\
+    \ i, T v) { update(i, v, root, 0, n - 1); }\n\n\tT query(int l, int r) { return\
+    \ query(l, r, root, 0, n - 1); }\n};"
   dependsOn: []
   isVerificationFile: false
   path: data-structure/sparse-segment-tree.hpp
   requiredBy: []
-  timestamp: '2022-04-09 15:55:38-07:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2022-04-11 08:59:21-07:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/sparse-segment-tree.aizu-the-number-of-inversions.test.cpp
   - verify/sparse-segment-tree.aizu-range-sum-query.test.cpp

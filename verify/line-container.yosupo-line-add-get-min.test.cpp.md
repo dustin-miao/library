@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/line-container.hpp
     title: Line Container
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: utility/floor-div.hpp
     title: Floor Division
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/line_add_get_min
@@ -22,13 +22,13 @@ data:
     \ <bits/stdc++.h>\nusing namespace std;\n\n#line 1 \"utility/floor-div.hpp\"\n\
     template<typename T>\nT floor_div(T a, T b) { \n\treturn a / b - ((a ^ b) < 0\
     \ && a % b); \n}\n#line 2 \"data-structure/line-container.hpp\"\n\nstruct line_container_line\
-    \ {\n    mutable long long m, b, p;\n    bool operator<(const Line &o) const {\
-    \ return m < o.m; }\n    bool operator<(long long x) const { return p < x; }\n\
-    };\n\nclass line_container : multiset<line_container_line, less<>> {\n    // for\
-    \ doubles, use inf = 1/.0\n    static const long long INF = LLONG_MAX;\n\n   \
-    \ bool isect(iterator x, iterator y) {\n        if (y == end()) {\n\t\t\tx->p\
-    \ = INF;\n\t\t\treturn false;\n\t\t}\n        if (x->m == y->m)\n            x->p\
-    \ = x->b > y->b ? INF : -INF;\n        else\n            x->p = floor_div(y->b\
+    \ {\n    mutable long long m, b, p;\n    bool operator<(const line_container_line\
+    \ &o) const { return m < o.m; }\n    bool operator<(long long x) const { return\
+    \ p < x; }\n};\n\nclass line_container : multiset<line_container_line, less<>>\
+    \ {\n    // for doubles, use inf = 1/.0\n    static const long long INF = LLONG_MAX;\n\
+    \n    bool isect(iterator x, iterator y) {\n        if (y == end()) {\n\t\t\t\
+    x->p = INF;\n\t\t\treturn false;\n\t\t}\n        if (x->m == y->m)\n         \
+    \   x->p = x->b > y->b ? INF : -INF;\n        else\n            x->p = floor_div(y->b\
     \ - x->b, x->m - y->m);\n        return x->p >= y->p;\n    }\n\npublic:\n    void\
     \ add(long long m, long long b) {\n        auto z = insert({m, b, 0}), y = z++,\
     \ x = y;\n        while (isect(y, z)) \n            z = erase(z);\n        if\
@@ -57,8 +57,8 @@ data:
   isVerificationFile: true
   path: verify/line-container.yosupo-line-add-get-min.test.cpp
   requiredBy: []
-  timestamp: '2022-04-09 16:38:19-07:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-04-11 07:58:42-07:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/line-container.yosupo-line-add-get-min.test.cpp
 layout: document
