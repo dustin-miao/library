@@ -13,6 +13,12 @@ data:
     title: Prim's Algorithm
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: verify/chmax.aizu-min-max-sum.test.cpp
+    title: verify/chmax.aizu-min-max-sum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/chmin.aizu-min-max-sum.test.cpp
+    title: verify/chmin.aizu-min-max-sum.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/dijkstra.aizu-shortest-path.test.cpp
     title: verify/dijkstra.aizu-shortest-path.test.cpp
   - icon: ':heavy_check_mark:'
@@ -47,7 +53,9 @@ data:
   - verify/dijkstra.aizu-single-source-shortest-path.test.cpp
   - verify/floyd-warshall.all-pairs-shortest-path.test.cpp
   - verify/dijkstra.aizu-shortest-path.test.cpp
+  - verify/chmin.aizu-min-max-sum.test.cpp
   - verify/prim.aizu-minimum-spanning-tree.test.cpp
+  - verify/chmax.aizu-min-max-sum.test.cpp
 documentation_of: utility/chmin.hpp
 layout: document
 title: Chmin

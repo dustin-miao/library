@@ -101,10 +101,10 @@ data:
       title: Matrix
   - name: utility
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: utility/ceil-div.hpp
       title: Ceil Division
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: utility/chmax.hpp
       title: Chmax
     - icon: ':heavy_check_mark:'
@@ -126,6 +126,15 @@ data:
   - name: verify
     pages:
     - icon: ':heavy_check_mark:'
+      path: verify/ceil-div.yosupo-many-a+b.test.cpp
+      title: verify/ceil-div.yosupo-many-a+b.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/chmax.aizu-min-max-sum.test.cpp
+      title: verify/chmax.aizu-min-max-sum.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/chmin.aizu-min-max-sum.test.cpp
+      title: verify/chmin.aizu-min-max-sum.test.cpp
+    - icon: ':heavy_check_mark:'
       path: verify/cycle-finding.yosupo-cycle-detection.test.cpp
       title: verify/cycle-finding.yosupo-cycle-detection.test.cpp
     - icon: ':heavy_check_mark:'
@@ -146,6 +155,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/fenwick-tree.yosupo-point-add-range-sum.test.cpp
       title: verify/fenwick-tree.yosupo-point-add-range-sum.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/floor_div.yosupo-many-a+b.test.cpp
+      title: verify/floor_div.yosupo-many-a+b.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/floyd-warshall.all-pairs-shortest-path.test.cpp
       title: verify/floyd-warshall.all-pairs-shortest-path.test.cpp
