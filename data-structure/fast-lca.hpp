@@ -1,7 +1,7 @@
 #include "data-structure/sparse-table.hpp"
 
 class fast_lca {
-	SparseTable<pair<int, int>> st;
+	sparse_table<pair<int, int>> st;
 	vector<int> pos;
 
 public:
