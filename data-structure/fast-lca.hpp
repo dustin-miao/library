@@ -7,19 +7,19 @@ class fast_lca {
 public:
 	fast_lca() = default;
 
-	fast_lca(const vector<vector<int>> &tree) { init(tree); }
+	fast_lca(const vector<vector<int>> &tree, int s = 0) { init(tree, s); }
 
 	template<typename T>
-	fast_lca(const vector<vector<pair<int, T>>> &tree) { 
+	fast_lca(const vector<vector<pair<int, T>>> &tree, int s = 0) { 
 		int n = tree.size();
 		vector<vector<int>> _tree(n);
 		for (int u = 0; u < n; u++)
 			for (auto [v, w] : tree)
 				_tree[u].push_back(v);
-		init(_tree); 
+		init(_tree, s); 
 	}
 
-	void init(const vector<vector<int>> &tree) {
+	void init(const vector<vector<int>> &tree, int s = 0) {
 		int n = tree.size();
 		pos.resize(n);
 		vector<pair<int, int>> A;
@@ -36,7 +36,7 @@ public:
 			}
 		};
 
-		dfs(dfs, 0);
+		dfs(dfs, s);
 
 		st.init(A.begin(), A.end());
 	}

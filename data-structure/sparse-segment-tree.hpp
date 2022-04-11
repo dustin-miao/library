@@ -54,9 +54,9 @@ private:
 	}
 
 public:
-	Segtree() = default;
+	sparse_segment_tree() = default;
 
-	Segtree(int _n) { init(_n); }
+	sparse_segment_tree(int _n) { init(_n); }
 
 	void init(int _n) {
 		n = _n;

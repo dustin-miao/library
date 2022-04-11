@@ -12,7 +12,7 @@ public:
 	template<typename I>
 	void init(I l, I r) {
 		n = distance(l, r);
-		logn = 31 - __builtin_clz(n);
+		logn = 32 - __builtin_clz(n);
 		table.assign(logn, vector<T>(n));
 		copy(l, r, table[0].begin());
 		for (int k = 1; k < logn; k++)
