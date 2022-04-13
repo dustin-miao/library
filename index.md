@@ -3,10 +3,10 @@ data:
   libraryCategories:
   - name: convolution
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: convolution/convolution.hpp
       title: Convolution
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: convolution/fast-fourier-transform.hpp
       title: Fast Fourier Transform
   - name: data-structure
@@ -136,6 +136,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: utility/mint.hpp
       title: Modular Int
+    - icon: ':heavy_check_mark:'
+      path: utility/pi.hpp
+      title: Pi
     - icon: ':warning:'
       path: utility/y-combinator.hpp
       title: Y Combinator
@@ -151,6 +154,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/chmin.aizu-min-max-sum.test.cpp
       title: verify/chmin.aizu-min-max-sum.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/convolution.yosupo-frequency-table-of-tree-distances.test.cpp
+      title: verify/convolution.yosupo-frequency-table-of-tree-distances.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/cycle-finding.yosupo-cycle-detection.test.cpp
       title: verify/cycle-finding.yosupo-cycle-detection.test.cpp
