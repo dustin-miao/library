@@ -1,6 +1,14 @@
 ---
 data:
   libraryCategories:
+  - name: convolution
+    pages:
+    - icon: ':warning:'
+      path: convolution/convolution.hpp
+      title: Convolution
+    - icon: ':warning:'
+      path: convolution/fast-fourier-transform.hpp
+      title: Fast Fourier Transform
   - name: data-structure
     pages:
     - icon: ':heavy_check_mark:'
