@@ -1,24 +1,12 @@
 #include "utility/pi.hpp"
+#include "convolution/reverse-bit-radix-sort.hpp"
 
 namespace conv {
-	template<typename T>
-	void reverse_bit_sort(vector<T> &a) {
-		int n = a.size();
-		for (int i = 1, j = 0; i < n; i++) {
-			int t = n >> 1;
-			for (; t & j; t >>= 1)
-				j ^= t;
-			j ^= t;
-			if (i < j)
-				swap(a[i], a[j]);
-		}
-	}
-
 	template<typename T> 
 	typename enable_if<is_floating_point<T>::value, void>::type
 	fast_fourier_transform(vector<complex<T>> &a) {
 		int n = a.size();
-		reverse_bit_sort(a);
+		reverse_bit_radix_sort(a);
 		for (int l = 2; l <= n; l <<= 1) {
 			T theta = 2 * PI / l;
 			complex<T> dw(cos(theta), sin(theta));
@@ -38,7 +26,7 @@ namespace conv {
 	typename enable_if<is_floating_point<T>::value, void>::type
 	inverse_fast_fourier_transform(vector<complex<T>> &a) {
 		int n = a.size();
-		reverse_bit_sort(a);
+		reverse_bit_radix_sort(a);
 		for (int l = 2; l <= n; l <<= 1) {
 			T theta = -2 * PI / l;
 			complex<T> dw(cos(theta), sin(theta));
