@@ -6,8 +6,8 @@ data:
     title: Fast Fourier Transform
   - icon: ':heavy_check_mark:'
     path: convolution/reverse-bit-radix-sort.hpp
-    title: convolution/reverse-bit-radix-sort.hpp
-  - icon: ':heavy_check_mark:'
+    title: Reverse Bit Radix Sort
+  - icon: ':question:'
     path: utility/pi.hpp
     title: Pi
   _extendedRequiredBy: []

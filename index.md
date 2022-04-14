@@ -3,22 +3,22 @@ data:
   libraryCategories:
   - name: convolution
     pages:
-    - icon: ':warning:'
+    - icon: ':x:'
       path: convolution/convolution-mod.hpp
       title: Convolution under Modulo
     - icon: ':heavy_check_mark:'
       path: convolution/convolution.hpp
       title: Convolution
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: convolution/fast-convolution.hpp
-      title: convolution/fast-convolution.hpp
+      title: Fast Convolution
     - icon: ':heavy_check_mark:'
       path: convolution/fast-fourier-transform.hpp
       title: Fast Fourier Transform
     - icon: ':heavy_check_mark:'
       path: convolution/reverse-bit-radix-sort.hpp
-      title: convolution/reverse-bit-radix-sort.hpp
-    - icon: ':heavy_check_mark:'
+      title: Reverse Bit Radix Sort
+    - icon: ':x:'
       path: convolution/ultra-fast-fourier-transform.hpp
       title: Ultra Fast Fourier Transform
   - name: data-structure
@@ -148,7 +148,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: utility/mint.hpp
       title: Modular Int
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: utility/pi.hpp
       title: Pi
     - icon: ':warning:'
@@ -166,6 +166,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/chmin.aizu-min-max-sum.test.cpp
       title: verify/chmin.aizu-min-max-sum.test.cpp
+    - icon: ':x:'
+      path: verify/convolution-mod.yosupo-convolution-mod-1000000007.test.cpp
+      title: verify/convolution-mod.yosupo-convolution-mod-1000000007.test.cpp
+    - icon: ':x:'
+      path: verify/convolution-mod.yosupo-convolution.test.cpp
+      title: verify/convolution-mod.yosupo-convolution.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/convolution.yosupo-frequency-table-of-tree-distances.test.cpp
       title: verify/convolution.yosupo-frequency-table-of-tree-distances.test.cpp
@@ -178,7 +184,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/dijkstra.aizu-single-source-shortest-path.test.cpp
       title: verify/dijkstra.aizu-single-source-shortest-path.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/fast-convolution.yosupo-frequency-table-of-tree-distances.test.cpp
       title: verify/fast-convolution.yosupo-frequency-table-of-tree-distances.test.cpp
     - icon: ':heavy_check_mark:'

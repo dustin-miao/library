@@ -3,14 +3,11 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: convolution/reverse-bit-radix-sort.hpp
-    title: convolution/reverse-bit-radix-sort.hpp
-  - icon: ':heavy_check_mark:'
+    title: Reverse Bit Radix Sort
+  - icon: ':question:'
     path: utility/pi.hpp
     title: Pi
   _extendedRequiredBy:
-  - icon: ':warning:'
-    path: convolution/convolution-mod.hpp
-    title: Convolution under Modulo
   - icon: ':heavy_check_mark:'
     path: convolution/convolution.hpp
     title: Convolution
@@ -67,7 +64,6 @@ data:
   isVerificationFile: false
   path: convolution/fast-fourier-transform.hpp
   requiredBy:
-  - convolution/convolution-mod.hpp
   - convolution/convolution.hpp
   timestamp: '2022-04-14 09:16:54-07:00'
   verificationStatus: LIBRARY_ALL_AC

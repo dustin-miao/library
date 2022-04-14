@@ -2,9 +2,6 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':warning:'
-    path: convolution/convolution-mod.hpp
-    title: Convolution under Modulo
   - icon: ':heavy_check_mark:'
     path: convolution/convolution.hpp
     title: Convolution
@@ -33,7 +30,6 @@ data:
   isVerificationFile: false
   path: convolution/reverse-bit-radix-sort.hpp
   requiredBy:
-  - convolution/convolution-mod.hpp
   - convolution/convolution.hpp
   - convolution/fast-fourier-transform.hpp
   timestamp: '2022-04-14 09:16:54-07:00'
@@ -42,8 +38,7 @@ data:
   - verify/convolution.yosupo-frequency-table-of-tree-distances.test.cpp
 documentation_of: convolution/reverse-bit-radix-sort.hpp
 layout: document
-redirect_from:
-- /library/convolution/reverse-bit-radix-sort.hpp
-- /library/convolution/reverse-bit-radix-sort.hpp.html
-title: convolution/reverse-bit-radix-sort.hpp
+title: Reverse Bit Radix Sort
 ---
+
+## Reverse Bit Radix Sort
