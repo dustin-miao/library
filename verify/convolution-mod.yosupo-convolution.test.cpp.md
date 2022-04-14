@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: convolution/convolution-mod.hpp
     title: Convolution under Modulo
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: convolution/fast-fourier-transform.hpp
     title: Fast Fourier Transform
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utility/pi.hpp
     title: Pi
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/convolution_mod
@@ -23,21 +23,21 @@ data:
   bundledCode: "#line 1 \"verify/convolution-mod.yosupo-convolution.test.cpp\"\n#define\
     \ PROBLEM \"https://judge.yosupo.jp/problem/convolution_mod\"\n\n#include <bits/stdc++.h>\n\
     using namespace std;\n\n#line 1 \"utility/pi.hpp\"\nconst double PI = acos(-1);\n\
-    #line 2 \"convolution/fast-fourier-transform.hpp\"\n\nusing namespace conv {\n\
-    \ttemplate<typename T>\n\tvoid fast_fourier_transform(vector<complex<T>> &a) {\n\
-    \t\tint n = a.size(), logn = 31 - __builtin_clz(n);\n\n\t\tvector<int> rev(n);\n\
-    \t\trev[0] = 0;\n\t\tfor (int i = 1; i < n; i++) {\n\t\t\trev[i] = (rev[i >> 1]\
-    \ >> 1) + ((i & 1) << (logn - 1));\n\t\t\tif (i < rev[i])\n\t\t\t\tswap(a[i],\
-    \ a[rev[i]]);\n\t\t}\n\n\t\tvector<complex<T>> root(n);\n\t\troot[1] = {1, 0};\n\
-    \t\tfor (int k = 1; k < logn; k++) {\n\t\t\tT the = 2 * PI / (1 << (k + 1));\n\
-    \t\t\tcomplex<T> z = {cos(the), sin(the)};\n\t\t\tfor (int i = (1 << (k - 1));\
-    \ i < (1 << k); i++) {\n\t\t\t\troot[i << 1] = root[i];\n\t\t\t\troot[i << 1 |\
-    \ 1] = root[i] * z;\n\t\t\t}\n\t\t}\n\n\t\tfor (int l = 1; l < n; l <<= 1) {\n\
-    \t\t\tfor (int i = 0; i < n; i += (l << 1)) {\n\t\t\t\tfor (int j = 0; j < l;\
-    \ j++) {\n\t\t\t\t\tauto z = root[j + l] * a[i + j + l];\n\t\t\t\t\ta[i + j +\
-    \ l] = a[i + j] - z;\n\t\t\t\t\ta[i + j] += z;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\
-    }\n}\n#line 2 \"convolution/convolution-mod.hpp\"\n\nnamespace conv {\n\ttemplate<typename\
-    \ T, typename U = double>\n\tvector<T> convolution_mod(const vector<T> &a, const\
+    #line 2 \"convolution/fast-fourier-transform.hpp\"\n\nnamespace conv {\n\ttemplate<typename\
+    \ T>\n\tvoid fast_fourier_transform(vector<complex<T>> &a) {\n\t\tint n = a.size(),\
+    \ logn = 31 - __builtin_clz(n);\n\n\t\tvector<int> rev(n);\n\t\trev[0] = 0;\n\t\
+    \tfor (int i = 1; i < n; i++) {\n\t\t\trev[i] = (rev[i >> 1] >> 1) + ((i & 1)\
+    \ << (logn - 1));\n\t\t\tif (i < rev[i])\n\t\t\t\tswap(a[i], a[rev[i]]);\n\t\t\
+    }\n\n\t\tvector<complex<T>> root(n);\n\t\troot[1] = {1, 0};\n\t\tfor (int k =\
+    \ 1; k < logn; k++) {\n\t\t\tT the = 2 * PI / (1 << (k + 1));\n\t\t\tcomplex<T>\
+    \ z = {cos(the), sin(the)};\n\t\t\tfor (int i = (1 << (k - 1)); i < (1 << k);\
+    \ i++) {\n\t\t\t\troot[i << 1] = root[i];\n\t\t\t\troot[i << 1 | 1] = root[i]\
+    \ * z;\n\t\t\t}\n\t\t}\n\n\t\tfor (int l = 1; l < n; l <<= 1) {\n\t\t\tfor (int\
+    \ i = 0; i < n; i += (l << 1)) {\n\t\t\t\tfor (int j = 0; j < l; j++) {\n\t\t\t\
+    \t\tauto z = root[j + l] * a[i + j + l];\n\t\t\t\t\ta[i + j + l] = a[i + j] -\
+    \ z;\n\t\t\t\t\ta[i + j] += z;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}\n#line 2 \"\
+    convolution/convolution-mod.hpp\"\n\nnamespace conv {\n\ttemplate<typename T,\
+    \ typename U = double>\n\tvector<T> convolution_mod(const vector<T> &a, const\
     \ vector<T> &b, int mod) {\n\t\tint n = 1;\n\t\twhile (n < a.size() + b.size())\
     \ \n\t\t\tn <<= 1;\n\n\t\tint c = sqrt(mod);\n\t\tvector<complex<U>> aa(n), bb(n);\n\
     \t\tfor (int i = 0; i < a.size(); i++) \n\t\t\taa[i] = complex<U>(int(a[i]) /\
@@ -69,8 +69,8 @@ data:
   isVerificationFile: true
   path: verify/convolution-mod.yosupo-convolution.test.cpp
   requiredBy: []
-  timestamp: '2022-04-14 13:47:28-07:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-04-14 14:20:47-07:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/convolution-mod.yosupo-convolution.test.cpp
 layout: document

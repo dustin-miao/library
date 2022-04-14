@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: convolution/convolution-mod.hpp
     title: Convolution under Modulo
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: convolution/fast-fourier-transform.hpp
     title: Fast Fourier Transform
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utility/pi.hpp
     title: Pi
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/convolution_mod_1000000007
@@ -24,7 +24,7 @@ data:
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/convolution_mod_1000000007\"\
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#line 1 \"utility/pi.hpp\"\
     \nconst double PI = acos(-1);\n#line 2 \"convolution/fast-fourier-transform.hpp\"\
-    \n\nusing namespace conv {\n\ttemplate<typename T>\n\tvoid fast_fourier_transform(vector<complex<T>>\
+    \n\nnamespace conv {\n\ttemplate<typename T>\n\tvoid fast_fourier_transform(vector<complex<T>>\
     \ &a) {\n\t\tint n = a.size(), logn = 31 - __builtin_clz(n);\n\n\t\tvector<int>\
     \ rev(n);\n\t\trev[0] = 0;\n\t\tfor (int i = 1; i < n; i++) {\n\t\t\trev[i] =\
     \ (rev[i >> 1] >> 1) + ((i & 1) << (logn - 1));\n\t\t\tif (i < rev[i])\n\t\t\t\
@@ -69,8 +69,8 @@ data:
   isVerificationFile: true
   path: verify/convolution-mod.yosupo-convolution-mod-1000000007.test.cpp
   requiredBy: []
-  timestamp: '2022-04-14 13:47:28-07:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-04-14 14:20:47-07:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/convolution-mod.yosupo-convolution-mod-1000000007.test.cpp
 layout: document

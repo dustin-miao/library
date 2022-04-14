@@ -1,33 +1,33 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utility/pi.hpp
     title: Pi
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: convolution/convolution-mod.hpp
     title: Convolution under Modulo
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: convolution/convolution.hpp
     title: Convolution
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/convolution-mod.yosupo-convolution-mod-1000000007.test.cpp
     title: verify/convolution-mod.yosupo-convolution-mod-1000000007.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/convolution-mod.yosupo-convolution.test.cpp
     title: verify/convolution-mod.yosupo-convolution.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/convolution.yosupo-frequency-table-of-tree-distances.test.cpp
     title: verify/convolution.yosupo-frequency-table-of-tree-distances.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"utility/pi.hpp\"\nconst double PI = acos(-1);\n#line 2 \"\
-    convolution/fast-fourier-transform.hpp\"\n\nusing namespace conv {\n\ttemplate<typename\
+    convolution/fast-fourier-transform.hpp\"\n\nnamespace conv {\n\ttemplate<typename\
     \ T>\n\tvoid fast_fourier_transform(vector<complex<T>> &a) {\n\t\tint n = a.size(),\
     \ logn = 31 - __builtin_clz(n);\n\n\t\tvector<int> rev(n);\n\t\trev[0] = 0;\n\t\
     \tfor (int i = 1; i < n; i++) {\n\t\t\trev[i] = (rev[i >> 1] >> 1) + ((i & 1)\
@@ -40,8 +40,8 @@ data:
     \ i = 0; i < n; i += (l << 1)) {\n\t\t\t\tfor (int j = 0; j < l; j++) {\n\t\t\t\
     \t\tauto z = root[j + l] * a[i + j + l];\n\t\t\t\t\ta[i + j + l] = a[i + j] -\
     \ z;\n\t\t\t\t\ta[i + j] += z;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}\n"
-  code: "#include \"utility/pi.hpp\"\n\nusing namespace conv {\n\ttemplate<typename\
-    \ T>\n\tvoid fast_fourier_transform(vector<complex<T>> &a) {\n\t\tint n = a.size(),\
+  code: "#include \"utility/pi.hpp\"\n\nnamespace conv {\n\ttemplate<typename T>\n\
+    \tvoid fast_fourier_transform(vector<complex<T>> &a) {\n\t\tint n = a.size(),\
     \ logn = 31 - __builtin_clz(n);\n\n\t\tvector<int> rev(n);\n\t\trev[0] = 0;\n\t\
     \tfor (int i = 1; i < n; i++) {\n\t\t\trev[i] = (rev[i >> 1] >> 1) + ((i & 1)\
     \ << (logn - 1));\n\t\t\tif (i < rev[i])\n\t\t\t\tswap(a[i], a[rev[i]]);\n\t\t\
@@ -60,8 +60,8 @@ data:
   requiredBy:
   - convolution/convolution-mod.hpp
   - convolution/convolution.hpp
-  timestamp: '2022-04-14 13:47:28-07:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2022-04-14 14:20:47-07:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/convolution.yosupo-frequency-table-of-tree-distances.test.cpp
   - verify/convolution-mod.yosupo-convolution-mod-1000000007.test.cpp

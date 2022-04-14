@@ -1,24 +1,24 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: convolution/fast-fourier-transform.hpp
     title: Fast Fourier Transform
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utility/pi.hpp
     title: Pi
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/convolution.yosupo-frequency-table-of-tree-distances.test.cpp
     title: verify/convolution.yosupo-frequency-table-of-tree-distances.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"utility/pi.hpp\"\nconst double PI = acos(-1);\n#line 2 \"\
-    convolution/fast-fourier-transform.hpp\"\n\nusing namespace conv {\n\ttemplate<typename\
+    convolution/fast-fourier-transform.hpp\"\n\nnamespace conv {\n\ttemplate<typename\
     \ T>\n\tvoid fast_fourier_transform(vector<complex<T>> &a) {\n\t\tint n = a.size(),\
     \ logn = 31 - __builtin_clz(n);\n\n\t\tvector<int> rev(n);\n\t\trev[0] = 0;\n\t\
     \tfor (int i = 1; i < n; i++) {\n\t\t\trev[i] = (rev[i >> 1] >> 1) + ((i & 1)\
@@ -59,8 +59,8 @@ data:
   isVerificationFile: false
   path: convolution/convolution.hpp
   requiredBy: []
-  timestamp: '2022-04-14 13:47:28-07:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2022-04-14 14:20:47-07:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/convolution.yosupo-frequency-table-of-tree-distances.test.cpp
 documentation_of: convolution/convolution.hpp

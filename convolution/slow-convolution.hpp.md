@@ -7,7 +7,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: convolution/slow-fast-fourier-transform.hpp
     title: convolution/slow-fast-fourier-transform.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utility/pi.hpp
     title: Pi
   _extendedRequiredBy: []

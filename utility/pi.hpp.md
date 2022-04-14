@@ -2,13 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: convolution/convolution-mod.hpp
     title: Convolution under Modulo
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: convolution/convolution.hpp
     title: Convolution
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: convolution/fast-fourier-transform.hpp
     title: Fast Fourier Transform
   - icon: ':heavy_check_mark:'
@@ -18,21 +18,21 @@ data:
     path: convolution/slow-fast-fourier-transform.hpp
     title: convolution/slow-fast-fourier-transform.hpp
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/convolution-mod.yosupo-convolution-mod-1000000007.test.cpp
     title: verify/convolution-mod.yosupo-convolution-mod-1000000007.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/convolution-mod.yosupo-convolution.test.cpp
     title: verify/convolution-mod.yosupo-convolution.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/convolution.yosupo-frequency-table-of-tree-distances.test.cpp
     title: verify/convolution.yosupo-frequency-table-of-tree-distances.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/slow-convolution.yosupo-frequency-table-of-tree-distances.test.cpp
     title: verify/slow-convolution.yosupo-frequency-table-of-tree-distances.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: '#line 1 "utility/pi.hpp"
@@ -51,7 +51,7 @@ data:
   - convolution/slow-fast-fourier-transform.hpp
   - convolution/slow-convolution.hpp
   timestamp: '2022-04-13 15:39:55-07:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/convolution.yosupo-frequency-table-of-tree-distances.test.cpp
   - verify/slow-convolution.yosupo-frequency-table-of-tree-distances.test.cpp
