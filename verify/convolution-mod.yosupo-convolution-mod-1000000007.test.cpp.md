@@ -5,9 +5,9 @@ data:
     path: convolution/convolution-mod.hpp
     title: Convolution under Modulo
   - icon: ':x:'
-    path: convolution/ultra-fast-fourier-transform.hpp
-    title: Ultra Fast Fourier Transform
-  - icon: ':question:'
+    path: convolution/fast-fourier-transform.hpp
+    title: Fast Fourier Transform
+  - icon: ':x:'
     path: utility/pi.hpp
     title: Pi
   _extendedRequiredBy: []
@@ -23,8 +23,8 @@ data:
   bundledCode: "#line 1 \"verify/convolution-mod.yosupo-convolution-mod-1000000007.test.cpp\"\
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/convolution_mod_1000000007\"\
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#line 1 \"utility/pi.hpp\"\
-    \nconst double PI = acos(-1);\n#line 2 \"convolution/ultra-fast-fourier-transform.hpp\"\
-    \n\nusing namespace conv {\n\ttemplate<typename T>\n\tvoid ultra_fast_fourier_transform(vector<complex<T>>\
+    \nconst double PI = acos(-1);\n#line 2 \"convolution/fast-fourier-transform.hpp\"\
+    \n\nusing namespace conv {\n\ttemplate<typename T>\n\tvoid fast_fourier_transform(vector<complex<T>>\
     \ &a) {\n\t\tint n = a.size(), logn = 31 - __builtin_clz(n);\n\n\t\tvector<int>\
     \ rev(n);\n\t\trev[0] = 0;\n\t\tfor (int i = 1; i < n; i++) {\n\t\t\trev[i] =\
     \ (rev[i >> 1] >> 1) + ((i & 1) << (logn - 1));\n\t\t\tif (i < rev[i])\n\t\t\t\
@@ -42,17 +42,16 @@ data:
     \ a.size() + b.size()) \n\t\t\tn <<= 1;\n\n\t\tint c = sqrt(mod);\n\t\tvector<complex<U>>\
     \ aa(n), bb(n);\n\t\tfor (int i = 0; i < a.size(); i++) \n\t\t\taa[i] = complex<U>(int(a[i])\
     \ / c, int(a[i]) % c);\n\t\tfor (int i = 0; i < b.size(); i++)\n\t\t\tbb[i] =\
-    \ complex<U>(int(b[i]) / c, int(b[i]) % c);\n\t\tultra_fast_fourier_transform(aa);\n\
-    \t\tultra_fast_fourier_transform(bb);\n\n\t\tvector<complex<U>> pa(n), pb(n);\n\
-    \t\tfor (int i = 0; i < n; i++) {\n\t\t\tint j = -i & (n - 1);\n\t\t\tpa[j] =\
-    \ (aa[i] + conj(aa[j])) * bb[i] / static_cast<U>(2.0 * n);\n\t\t\tpb[j] = (aa[i]\
-    \ - conj(aa[j])) * bb[i] / static_cast<U>(2.0 * n) / complex<U>(0, 1);\n\t\t}\n\
-    \t\tultra_fast_fourier_transform(pa);\n\t\tultra_fast_fourier_transform(pb);\n\
-    \n\t\tn = a.size() + b.size() - 1;\n\t\tvector<T> ret(n);\n\t\tfor (int i = 0;\
-    \ i < n; i++) {\n\t\t\tT av = static_cast<T>(real(pa[i]) + 0.5), cv = static_cast<T>(imag(pb[i])\
-    \ + 0.5);\n\t\t\tT bv = static_cast<T>(imag(pa[i]) + 0.5) + static_cast<T>(real(pb[i])\
-    \ + 0.5);\n\t\t\tret[i] = ((av % mod * c + bv) % mod * c + cv) % mod;\n\t\t}\n\
-    \t\treturn ret;\n\t}\n}\n#line 7 \"verify/convolution-mod.yosupo-convolution-mod-1000000007.test.cpp\"\
+    \ complex<U>(int(b[i]) / c, int(b[i]) % c);\n\t\tfast_fourier_transform(aa);\n\
+    \t\tfast_fourier_transform(bb);\n\n\t\tvector<complex<U>> pa(n), pb(n);\n\t\t\
+    for (int i = 0; i < n; i++) {\n\t\t\tint j = -i & (n - 1);\n\t\t\tpa[j] = (aa[i]\
+    \ + conj(aa[j])) * bb[i] / static_cast<U>(2.0 * n);\n\t\t\tpb[j] = (aa[i] - conj(aa[j]))\
+    \ * bb[i] / static_cast<U>(2.0 * n) / complex<U>(0, 1);\n\t\t}\n\t\tfast_fourier_transform(pa);\n\
+    \t\tfast_fourier_transform(pb);\n\n\t\tn = a.size() + b.size() - 1;\n\t\tvector<T>\
+    \ ret(n);\n\t\tfor (int i = 0; i < n; i++) {\n\t\t\tT av = static_cast<T>(real(pa[i])\
+    \ + 0.5), cv = static_cast<T>(imag(pb[i]) + 0.5);\n\t\t\tT bv = static_cast<T>(imag(pa[i])\
+    \ + 0.5) + static_cast<T>(real(pb[i]) + 0.5);\n\t\t\tret[i] = ((av % mod * c +\
+    \ bv) % mod * c + cv) % mod;\n\t\t}\n\t\treturn ret;\n\t}\n}\n#line 7 \"verify/convolution-mod.yosupo-convolution-mod-1000000007.test.cpp\"\
     \n\nint main() {\n\tint N, M;\n\tcin >> N >> M;\n\tvector<long long> A(N), B(M);\n\
     \tfor (long long &a : A)\n\t\tcin >> a;\n\tfor (long long &b : B)\n\t\tcin >>\
     \ b;\n\tauto C = conv::convolution_mod<long long, long double>(A, B, 1000000007);\n\
@@ -65,12 +64,12 @@ data:
     \tfor (long long c : C)\n\t\tcout << c << ' ';\n\tcout << '\\n';\n}"
   dependsOn:
   - convolution/convolution-mod.hpp
-  - convolution/ultra-fast-fourier-transform.hpp
+  - convolution/fast-fourier-transform.hpp
   - utility/pi.hpp
   isVerificationFile: true
   path: verify/convolution-mod.yosupo-convolution-mod-1000000007.test.cpp
   requiredBy: []
-  timestamp: '2022-04-14 13:24:49-07:00'
+  timestamp: '2022-04-14 13:47:28-07:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/convolution-mod.yosupo-convolution-mod-1000000007.test.cpp
