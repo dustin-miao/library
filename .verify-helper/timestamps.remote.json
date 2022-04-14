@@ -6,7 +6,6 @@
 "verify/cycle-finding.yosupo-cycle-detection.test.cpp": "2022-03-29 13:08:57 -0700",
 "verify/dijkstra.aizu-shortest-path.test.cpp": "2022-03-29 12:51:37 -0700",
 "verify/dijkstra.aizu-single-source-shortest-path.test.cpp": "2022-03-29 12:51:37 -0700",
-"verify/fast-convolution.yosupo-frequency-table-of-tree-distances.test.cpp": "2022-04-14 13:16:36 -0700",
 "verify/fast-lca.yosupo-lowest-common-ancestor.test.cpp": "2022-04-11 08:59:21 -0700",
 "verify/fast-pow.aizu-power.test.cpp": "2022-04-11 09:09:09 -0700",
 "verify/fenwick-tree.aizu-range-sum-query.test.cpp": "2022-04-09 16:28:08 -0700",
