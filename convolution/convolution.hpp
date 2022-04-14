@@ -18,7 +18,7 @@ namespace conv {
 		n = a.size() + b.size() - 1;
 		vector<T> ret(n);
 		for (int i = 0; i < n; i++)
-			ret[i] = round(pa[i].real());
+			ret[i] = static_cast<T>(pa[i].real() + 0.5);
 		return ret;
 	}
 }
