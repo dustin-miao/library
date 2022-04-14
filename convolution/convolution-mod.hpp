@@ -1,4 +1,4 @@
-#include "convolution/ultra-fast-fourier-transform.hpp"
+#include "convolution/fast-fourier-transform.hpp"
 
 namespace conv {
 	template<typename T, typename U = double>
@@ -13,8 +13,8 @@ namespace conv {
 			aa[i] = complex<U>(int(a[i]) / c, int(a[i]) % c);
 		for (int i = 0; i < b.size(); i++)
 			bb[i] = complex<U>(int(b[i]) / c, int(b[i]) % c);
-		ultra_fast_fourier_transform(aa);
-		ultra_fast_fourier_transform(bb);
+		fast_fourier_transform(aa);
+		fast_fourier_transform(bb);
 
 		vector<complex<U>> pa(n), pb(n);
 		for (int i = 0; i < n; i++) {
@@ -22,8 +22,8 @@ namespace conv {
 			pa[j] = (aa[i] + conj(aa[j])) * bb[i] / static_cast<U>(2.0 * n);
 			pb[j] = (aa[i] - conj(aa[j])) * bb[i] / static_cast<U>(2.0 * n) / complex<U>(0, 1);
 		}
-		ultra_fast_fourier_transform(pa);
-		ultra_fast_fourier_transform(pb);
+		fast_fourier_transform(pa);
+		fast_fourier_transform(pb);
 
 		n = a.size() + b.size() - 1;
 		vector<T> ret(n);

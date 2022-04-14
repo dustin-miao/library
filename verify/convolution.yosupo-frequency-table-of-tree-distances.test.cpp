@@ -75,7 +75,7 @@ int main() {
 				continue;
 			fill(cen_cur.begin(), cen_cur.end(), 0);
 			dfs_child(dfs_child, v, u, 1);
-			auto tem = conv::convolution(cen_dis, cen_cur);
+			auto tem = conv::fast_convolution(cen_dis, cen_cur);
 			for (int i = 0; i < tem.size(); i++)
 				ans[i] += tem[i];
 			for (int i = 0; i < n; i++)
