@@ -6,7 +6,7 @@ data:
     title: Reverse Bit Radix Sort
   - icon: ':heavy_check_mark:'
     path: convolution/slow-fast-fourier-transform.hpp
-    title: convolution/slow-fast-fourier-transform.hpp
+    title: Slow Fast Fourier Transform
   - icon: ':heavy_check_mark:'
     path: utility/pi.hpp
     title: Pi
@@ -72,8 +72,7 @@ data:
   - verify/slow-convolution.yosupo-frequency-table-of-tree-distances.test.cpp
 documentation_of: convolution/slow-convolution.hpp
 layout: document
-redirect_from:
-- /library/convolution/slow-convolution.hpp
-- /library/convolution/slow-convolution.hpp.html
-title: convolution/slow-convolution.hpp
+title: Slow Convolution
 ---
+
+## Slow Convolution

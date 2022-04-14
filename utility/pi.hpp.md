@@ -13,10 +13,10 @@ data:
     title: Fast Fourier Transform
   - icon: ':heavy_check_mark:'
     path: convolution/slow-convolution.hpp
-    title: convolution/slow-convolution.hpp
+    title: Slow Convolution
   - icon: ':heavy_check_mark:'
     path: convolution/slow-fast-fourier-transform.hpp
-    title: convolution/slow-fast-fourier-transform.hpp
+    title: Slow Fast Fourier Transform
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/convolution-mod.yosupo-convolution-mod-1000000007.test.cpp

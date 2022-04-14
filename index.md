@@ -17,10 +17,10 @@ data:
       title: Reverse Bit Radix Sort
     - icon: ':heavy_check_mark:'
       path: convolution/slow-convolution.hpp
-      title: convolution/slow-convolution.hpp
+      title: Slow Convolution
     - icon: ':heavy_check_mark:'
       path: convolution/slow-fast-fourier-transform.hpp
-      title: convolution/slow-fast-fourier-transform.hpp
+      title: Slow Fast Fourier Transform
   - name: data-structure
     pages:
     - icon: ':heavy_check_mark:'

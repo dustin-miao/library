@@ -10,7 +10,7 @@ data:
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: convolution/slow-convolution.hpp
-    title: convolution/slow-convolution.hpp
+    title: Slow Convolution
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/slow-convolution.yosupo-frequency-table-of-tree-distances.test.cpp
@@ -71,8 +71,7 @@ data:
   - verify/slow-convolution.yosupo-frequency-table-of-tree-distances.test.cpp
 documentation_of: convolution/slow-fast-fourier-transform.hpp
 layout: document
-redirect_from:
-- /library/convolution/slow-fast-fourier-transform.hpp
-- /library/convolution/slow-fast-fourier-transform.hpp.html
-title: convolution/slow-fast-fourier-transform.hpp
+title: Slow Fast Fourier Transform
 ---
+
+## Slow Fast Fourier Transform
