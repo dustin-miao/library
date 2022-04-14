@@ -8,6 +8,9 @@ data:
     path: convolution/fast-fourier-transform.hpp
     title: Fast Fourier Transform
   - icon: ':heavy_check_mark:'
+    path: convolution/reverse-bit-radix-sort.hpp
+    title: convolution/reverse-bit-radix-sort.hpp
+  - icon: ':heavy_check_mark:'
     path: utility/pi.hpp
     title: Pi
   _extendedRequiredBy: []
@@ -23,35 +26,36 @@ data:
   bundledCode: "#line 1 \"verify/convolution.yosupo-frequency-table-of-tree-distances.test.cpp\"\
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/frequency_table_of_tree_distance\"\
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#line 1 \"utility/pi.hpp\"\
-    \nconst double PI = acos(-1);\n#line 2 \"convolution/fast-fourier-transform.hpp\"\
-    \n\nnamespace conv {\n\ttemplate<typename T>\n\tvoid reverse_bit_sort(vector<T>\
-    \ &a) {\n\t\tint n = a.size();\n\t\tfor (int i = 1, j = 0; i < n; i++) {\n\t\t\
-    \tint t = n >> 1;\n\t\t\tfor (; t & j; t >>= 1)\n\t\t\t\tj ^= t;\n\t\t\tj ^= t;\n\
-    \t\t\tif (i < j)\n\t\t\t\tswap(a[i], a[j]);\n\t\t}\n\t}\n\n\ttemplate<typename\
-    \ T> \n\ttypename enable_if<is_floating_point<T>::value, void>::type\n\tfast_fourier_transform(vector<complex<T>>\
-    \ &a) {\n\t\tint n = a.size();\n\t\treverse_bit_sort(a);\n\t\tfor (int l = 2;\
-    \ l <= n; l <<= 1) {\n\t\t\tT theta = 2 * PI / l;\n\t\t\tcomplex<T> dw(cos(theta),\
+    \nconst double PI = acos(-1);\n#line 1 \"convolution/reverse-bit-radix-sort.hpp\"\
+    \ntemplate<typename T>\nvoid reverse_bit_radix_sort(vector<T> &a) {\n\tint n =\
+    \ a.size();\n\tfor (int i = 1, j = 0; i < n; i++) {\n\t\tint t = n >> 1;\n\t\t\
+    for (; t & j; t >>= 1)\n\t\t\tj ^= t;\n\t\tj ^= t;\n\t\tif (i < j)\n\t\t\tswap(a[i],\
+    \ a[j]);\n\t}\n}\n#line 3 \"convolution/fast-fourier-transform.hpp\"\n\nnamespace\
+    \ conv {\n\ttemplate<typename T> \n\ttypename enable_if<is_floating_point<T>::value,\
+    \ void>::type\n\tfast_fourier_transform(vector<complex<T>> &a) {\n\t\tint n =\
+    \ a.size();\n\t\treverse_bit_radix_sort(a);\n\t\tfor (int l = 2; l <= n; l <<=\
+    \ 1) {\n\t\t\tT theta = 2 * PI / l;\n\t\t\tcomplex<T> dw(cos(theta), sin(theta));\n\
+    \t\t\tfor (int i = 0; i < n; i += l) {\n\t\t\t\tcomplex<T> w = 1;\n\t\t\t\tfor\
+    \ (int j = 0; j < l / 2; j++) {\n\t\t\t\t\tauto t1 = a[i + j], t2 = a[i + j +\
+    \ l / 2] * w;\n\t\t\t\t\ta[i + j] = t1 + t2;\n\t\t\t\t\ta[i + j + l / 2] = t1\
+    \ - t2;\n\t\t\t\t\tw *= dw;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\n\ttemplate<typename\
+    \ T> \n\ttypename enable_if<is_floating_point<T>::value, void>::type\n\tinverse_fast_fourier_transform(vector<complex<T>>\
+    \ &a) {\n\t\tint n = a.size();\n\t\treverse_bit_radix_sort(a);\n\t\tfor (int l\
+    \ = 2; l <= n; l <<= 1) {\n\t\t\tT theta = -2 * PI / l;\n\t\t\tcomplex<T> dw(cos(theta),\
     \ sin(theta));\n\t\t\tfor (int i = 0; i < n; i += l) {\n\t\t\t\tcomplex<T> w =\
     \ 1;\n\t\t\t\tfor (int j = 0; j < l / 2; j++) {\n\t\t\t\t\tauto t1 = a[i + j],\
     \ t2 = a[i + j + l / 2] * w;\n\t\t\t\t\ta[i + j] = t1 + t2;\n\t\t\t\t\ta[i + j\
-    \ + l / 2] = t1 - t2;\n\t\t\t\t\tw *= dw;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\n\t\
-    template<typename T> \n\ttypename enable_if<is_floating_point<T>::value, void>::type\n\
-    \tinverse_fast_fourier_transform(vector<complex<T>> &a) {\n\t\tint n = a.size();\n\
-    \t\treverse_bit_sort(a);\n\t\tfor (int l = 2; l <= n; l <<= 1) {\n\t\t\tT theta\
-    \ = -2 * PI / l;\n\t\t\tcomplex<T> dw(cos(theta), sin(theta));\n\t\t\tfor (int\
-    \ i = 0; i < n; i += l) {\n\t\t\t\tcomplex<T> w = 1;\n\t\t\t\tfor (int j = 0;\
-    \ j < l / 2; j++) {\n\t\t\t\t\tauto t1 = a[i + j], t2 = a[i + j + l / 2] * w;\n\
-    \t\t\t\t\ta[i + j] = t1 + t2;\n\t\t\t\t\ta[i + j + l / 2] = t1 - t2;\n\t\t\t\t\
-    \tw *= dw;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\tfor (int i = 0; i < n; i++)\n\t\t\t\
-    a[i] /= n;\n\t}\n}\n#line 2 \"convolution/convolution.hpp\"\n\nnamespace conv\
-    \ {\n\ttemplate<typename T, typename U = double>\n\tvector<T> convolution(const\
-    \ vector<T> &a, const vector<T> &b) {\n\t\tvector<complex<U>> pa(a.begin(), a.end()),\
-    \ pb(b.begin(), b.end());\n\t\tint n = 1;\n\t\twhile (n < a.size() + b.size())\
-    \ \n\t\t\tn <<= 1;\n\t\tpa.resize(n), pb.resize(n);\n\n\t\tfast_fourier_transform(pa);\n\
-    \t\tfast_fourier_transform(pb);\n\t\tfor (int i = 0; i < n; i++)\n\t\t\tpa[i]\
-    \ *= pb[i];\n\t\tinverse_fast_fourier_transform(pa);\n\n\t\tn = a.size() + b.size()\
-    \ - 1;\n\t\tvector<T> ret(n);\n\t\tfor (int i = 0; i < n; i++)\n\t\t\tret[i] =\
-    \ round(pa[i].real());\n\t\treturn ret;\n\t}\n}\n#line 7 \"verify/convolution.yosupo-frequency-table-of-tree-distances.test.cpp\"\
+    \ + l / 2] = t1 - t2;\n\t\t\t\t\tw *= dw;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\tfor\
+    \ (int i = 0; i < n; i++)\n\t\t\ta[i] /= n;\n\t}\n}\n#line 2 \"convolution/convolution.hpp\"\
+    \n\nnamespace conv {\n\ttemplate<typename T, typename U = double>\n\tvector<T>\
+    \ convolution(const vector<T> &a, const vector<T> &b) {\n\t\tvector<complex<U>>\
+    \ pa(a.begin(), a.end()), pb(b.begin(), b.end());\n\t\tint n = 1;\n\t\twhile (n\
+    \ < a.size() + b.size()) \n\t\t\tn <<= 1;\n\t\tpa.resize(n), pb.resize(n);\n\n\
+    \t\tfast_fourier_transform(pa);\n\t\tfast_fourier_transform(pb);\n\t\tfor (int\
+    \ i = 0; i < n; i++)\n\t\t\tpa[i] *= pb[i];\n\t\tinverse_fast_fourier_transform(pa);\n\
+    \n\t\tn = a.size() + b.size() - 1;\n\t\tvector<T> ret(n);\n\t\tfor (int i = 0;\
+    \ i < n; i++)\n\t\t\tret[i] = round(pa[i].real());\n\t\treturn ret;\n\t}\n}\n\
+    #line 7 \"verify/convolution.yosupo-frequency-table-of-tree-distances.test.cpp\"\
     \n\nint main() {\n\tint N;\n\tcin >> N;\n\tvector<vector<int>> T(N);\n\tfor (int\
     \ i = 1; i < N; i++) {\n\t\tint u, v;\n\t\tcin >> u >> v;\n\t\tT[u].push_back(v);\n\
     \t\tT[v].push_back(u);\n\t}\n\n\tvector<long long> weight(N), ans(2 * N, 0);\n\
@@ -112,10 +116,11 @@ data:
   - convolution/convolution.hpp
   - convolution/fast-fourier-transform.hpp
   - utility/pi.hpp
+  - convolution/reverse-bit-radix-sort.hpp
   isVerificationFile: true
   path: verify/convolution.yosupo-frequency-table-of-tree-distances.test.cpp
   requiredBy: []
-  timestamp: '2022-04-13 15:39:55-07:00'
+  timestamp: '2022-04-14 09:16:54-07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/convolution.yosupo-frequency-table-of-tree-distances.test.cpp

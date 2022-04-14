@@ -9,6 +9,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: convolution/fast-fourier-transform.hpp
       title: Fast Fourier Transform
+    - icon: ':heavy_check_mark:'
+      path: convolution/reverse-bit-radix-sort.hpp
+      title: convolution/reverse-bit-radix-sort.hpp
   - name: data-structure
     pages:
     - icon: ':heavy_check_mark:'
