@@ -12,13 +12,13 @@ data:
     - icon: ':x:'
       path: convolution/fast-fourier-transform.hpp
       title: Fast Fourier Transform
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: convolution/reverse-bit-radix-sort.hpp
       title: Reverse Bit Radix Sort
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: convolution/slow-convolution.hpp
       title: convolution/slow-convolution.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: convolution/slow-fast-fourier-transform.hpp
       title: convolution/slow-fast-fourier-transform.hpp
   - name: data-structure
@@ -148,7 +148,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: utility/mint.hpp
       title: Modular Int
-    - icon: ':x:'
+    - icon: ':question:'
       path: utility/pi.hpp
       title: Pi
     - icon: ':warning:'
@@ -280,7 +280,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/segment-tree.yosupo-point-add-range-sum.test.cpp
       title: verify/segment-tree.yosupo-point-add-range-sum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/slow-convolution.yosupo-frequency-table-of-tree-distances.test.cpp
       title: verify/slow-convolution.yosupo-frequency-table-of-tree-distances.test.cpp
     - icon: ':heavy_check_mark:'

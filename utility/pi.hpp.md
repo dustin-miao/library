@@ -11,10 +11,10 @@ data:
   - icon: ':x:'
     path: convolution/fast-fourier-transform.hpp
     title: Fast Fourier Transform
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: convolution/slow-convolution.hpp
     title: convolution/slow-convolution.hpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: convolution/slow-fast-fourier-transform.hpp
     title: convolution/slow-fast-fourier-transform.hpp
   _extendedVerifiedWith:
@@ -27,9 +27,12 @@ data:
   - icon: ':x:'
     path: verify/convolution.yosupo-frequency-table-of-tree-distances.test.cpp
     title: verify/convolution.yosupo-frequency-table-of-tree-distances.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/slow-convolution.yosupo-frequency-table-of-tree-distances.test.cpp
+    title: verify/slow-convolution.yosupo-frequency-table-of-tree-distances.test.cpp
   _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: '#line 1 "utility/pi.hpp"
@@ -48,9 +51,10 @@ data:
   - convolution/slow-fast-fourier-transform.hpp
   - convolution/slow-convolution.hpp
   timestamp: '2022-04-13 15:39:55-07:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/convolution.yosupo-frequency-table-of-tree-distances.test.cpp
+  - verify/slow-convolution.yosupo-frequency-table-of-tree-distances.test.cpp
   - verify/convolution-mod.yosupo-convolution-mod-1000000007.test.cpp
   - verify/convolution-mod.yosupo-convolution.test.cpp
 documentation_of: utility/pi.hpp

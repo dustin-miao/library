@@ -2,16 +2,19 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: convolution/slow-convolution.hpp
     title: convolution/slow-convolution.hpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: convolution/slow-fast-fourier-transform.hpp
     title: convolution/slow-fast-fourier-transform.hpp
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/slow-convolution.yosupo-frequency-table-of-tree-distances.test.cpp
+    title: verify/slow-convolution.yosupo-frequency-table-of-tree-distances.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"convolution/reverse-bit-radix-sort.hpp\"\ntemplate<typename\
@@ -30,8 +33,9 @@ data:
   - convolution/slow-fast-fourier-transform.hpp
   - convolution/slow-convolution.hpp
   timestamp: '2022-04-14 09:16:54-07:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/slow-convolution.yosupo-frequency-table-of-tree-distances.test.cpp
 documentation_of: convolution/reverse-bit-radix-sort.hpp
 layout: document
 title: Reverse Bit Radix Sort

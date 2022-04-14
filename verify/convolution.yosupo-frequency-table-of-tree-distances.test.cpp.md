@@ -7,7 +7,7 @@ data:
   - icon: ':x:'
     path: convolution/fast-fourier-transform.hpp
     title: Fast Fourier Transform
-  - icon: ':x:'
+  - icon: ':question:'
     path: utility/pi.hpp
     title: Pi
   _extendedRequiredBy: []
@@ -68,7 +68,7 @@ data:
     \ init_weights(init_weights, u), u);\n\t\tint n = get_max_depth(get_max_depth,\
     \ u);\n\n\t\tcen_dis.assign(n, 0);\n\t\tcen_cur.resize(n);\n\t\tcen_dis[0]++;\n\
     \t\tfor (int v : T[u]) {\n\t\t\tif (block[v])\n\t\t\t\tcontinue;\n\t\t\tfill(cen_cur.begin(),\
-    \ cen_cur.end(), 0);\n\t\t\tdfs_child(dfs_child, v, u, 1);\n\t\t\tauto tem = conv::fast_convolution(cen_dis,\
+    \ cen_cur.end(), 0);\n\t\t\tdfs_child(dfs_child, v, u, 1);\n\t\t\tauto tem = conv::convolution(cen_dis,\
     \ cen_cur);\n\t\t\tfor (int i = 0; i < tem.size(); i++)\n\t\t\t\tans[i] += tem[i];\n\
     \t\t\tfor (int i = 0; i < n; i++)\n\t\t\t\tcen_dis[i] += cen_cur[i];\n\t\t}\n\
     \ \n\t\tblock[u] = true;\n\t\tfor (int v : T[u]) \n\t\t\tif (!block[v]) \n\t\t\
@@ -97,7 +97,7 @@ data:
     \ init_weights(init_weights, u), u);\n\t\tint n = get_max_depth(get_max_depth,\
     \ u);\n\n\t\tcen_dis.assign(n, 0);\n\t\tcen_cur.resize(n);\n\t\tcen_dis[0]++;\n\
     \t\tfor (int v : T[u]) {\n\t\t\tif (block[v])\n\t\t\t\tcontinue;\n\t\t\tfill(cen_cur.begin(),\
-    \ cen_cur.end(), 0);\n\t\t\tdfs_child(dfs_child, v, u, 1);\n\t\t\tauto tem = conv::fast_convolution(cen_dis,\
+    \ cen_cur.end(), 0);\n\t\t\tdfs_child(dfs_child, v, u, 1);\n\t\t\tauto tem = conv::convolution(cen_dis,\
     \ cen_cur);\n\t\t\tfor (int i = 0; i < tem.size(); i++)\n\t\t\t\tans[i] += tem[i];\n\
     \t\t\tfor (int i = 0; i < n; i++)\n\t\t\t\tcen_dis[i] += cen_cur[i];\n\t\t}\n\
     \ \n\t\tblock[u] = true;\n\t\tfor (int v : T[u]) \n\t\t\tif (!block[v]) \n\t\t\
@@ -110,7 +110,7 @@ data:
   isVerificationFile: true
   path: verify/convolution.yosupo-frequency-table-of-tree-distances.test.cpp
   requiredBy: []
-  timestamp: '2022-04-14 13:47:28-07:00'
+  timestamp: '2022-04-14 13:53:15-07:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/convolution.yosupo-frequency-table-of-tree-distances.test.cpp
