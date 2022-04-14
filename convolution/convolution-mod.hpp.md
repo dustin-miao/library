@@ -11,13 +11,10 @@ data:
     path: utility/pi.hpp
     title: Pi
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: verify/convolution.yosupo-frequency-table-of-tree-distances.test.cpp
-    title: verify/convolution.yosupo-frequency-table-of-tree-distances.test.cpp
+  _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
   bundledCode: "#line 1 \"utility/pi.hpp\"\nconst double PI = acos(-1);\n#line 1 \"\
@@ -40,39 +37,49 @@ data:
     \ 1;\n\t\t\t\tfor (int j = 0; j < l / 2; j++) {\n\t\t\t\t\tauto t1 = a[i + j],\
     \ t2 = a[i + j + l / 2] * w;\n\t\t\t\t\ta[i + j] = t1 + t2;\n\t\t\t\t\ta[i + j\
     \ + l / 2] = t1 - t2;\n\t\t\t\t\tw *= dw;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\tfor\
-    \ (int i = 0; i < n; i++)\n\t\t\ta[i] /= n;\n\t}\n}\n#line 2 \"convolution/convolution.hpp\"\
+    \ (int i = 0; i < n; i++)\n\t\t\ta[i] /= n;\n\t}\n}\n#line 2 \"convolution/convolution-mod.hpp\"\
     \n\nnamespace conv {\n\ttemplate<typename T, typename U = double>\n\tvector<T>\
-    \ convolution(const vector<T> &a, const vector<T> &b) {\n\t\tvector<complex<U>>\
-    \ pa(a.begin(), a.end()), pb(b.begin(), b.end());\n\t\tint n = 1;\n\t\twhile (n\
-    \ < a.size() + b.size()) \n\t\t\tn <<= 1;\n\t\tpa.resize(n), pb.resize(n);\n\n\
-    \t\tfast_fourier_transform(pa);\n\t\tfast_fourier_transform(pb);\n\t\tfor (int\
-    \ i = 0; i < n; i++)\n\t\t\tpa[i] *= pb[i];\n\t\tinverse_fast_fourier_transform(pa);\n\
-    \n\t\tn = a.size() + b.size() - 1;\n\t\tvector<T> ret(n);\n\t\tfor (int i = 0;\
-    \ i < n; i++)\n\t\t\tret[i] = static_cast<T>(pa[i].real() + 0.5);\n\t\treturn\
-    \ ret;\n\t}\n}\n"
+    \ convolution(const vector<T> &a, const vector<T> &b, T mod) {\n\t\tint n = 1;\n\
+    \t\twhile (n < a.size() + b.size()) \n\t\t\tn <<= 1;\n\n\t\tU c = sqrt(mod);\n\
+    \t\tvector<complex<U>> aa(n), bb(n);\n\t\tfor (int i = 0; i < a.size(); i++) {\n\
+    \t\t\taa[i] = complex<U>(a[i] / c, a[i] % c);\n\t\t\tbb[i] = complex<U>(a[i] /\
+    \ c, a[i] % c);\n\t\t}\n\t\tfast_fourier_transform(aa);\n\t\tfast_fourier_transform(bb);\n\
+    \n\t\tvector<complex<U>> pa(n), pb(n);\n\t\tfor (int i = 0; i < n; i++) {\n\t\t\
+    \tint j = -i & (n - 1);\n\t\t\tpa[j] = (aa[i] + conj(aa[j])) * bb[i] / (2.0 *\
+    \ n);\n\t\t\tpb[j] = (aa[i] - conj(aa[j])) * bb[i] / (2.0 * n) / 1i;\n\t\t}\n\t\
+    \tfast_fourier_transform(pa);\n\t\tfast_fourier_transform(pb);\n\n\t\tn = a.size()\
+    \ + b.size() - 1;\n\t\tvector<T> ret(n);\n\t\tfor (int i = 0; i < n; i++) {\n\t\
+    \t\tT av = round(real(pa[i])), cv = round(imag(pb[i]));\n\t\t\tT bv = round(imag(pa[i]))\
+    \ + round(real(ob[i]));\n\t\t\tres[i] = ((av % mod * c + bv) % mod * c + cv) %\
+    \ mod;\n\t\t}\n\t\treturn ret;\n\t}\n}\n"
   code: "#include \"convolution/fast-fourier-transform.hpp\"\n\nnamespace conv {\n\
     \ttemplate<typename T, typename U = double>\n\tvector<T> convolution(const vector<T>\
-    \ &a, const vector<T> &b) {\n\t\tvector<complex<U>> pa(a.begin(), a.end()), pb(b.begin(),\
-    \ b.end());\n\t\tint n = 1;\n\t\twhile (n < a.size() + b.size()) \n\t\t\tn <<=\
-    \ 1;\n\t\tpa.resize(n), pb.resize(n);\n\n\t\tfast_fourier_transform(pa);\n\t\t\
-    fast_fourier_transform(pb);\n\t\tfor (int i = 0; i < n; i++)\n\t\t\tpa[i] *= pb[i];\n\
-    \t\tinverse_fast_fourier_transform(pa);\n\n\t\tn = a.size() + b.size() - 1;\n\t\
-    \tvector<T> ret(n);\n\t\tfor (int i = 0; i < n; i++)\n\t\t\tret[i] = static_cast<T>(pa[i].real()\
-    \ + 0.5);\n\t\treturn ret;\n\t}\n}"
+    \ &a, const vector<T> &b, T mod) {\n\t\tint n = 1;\n\t\twhile (n < a.size() +\
+    \ b.size()) \n\t\t\tn <<= 1;\n\n\t\tU c = sqrt(mod);\n\t\tvector<complex<U>> aa(n),\
+    \ bb(n);\n\t\tfor (int i = 0; i < a.size(); i++) {\n\t\t\taa[i] = complex<U>(a[i]\
+    \ / c, a[i] % c);\n\t\t\tbb[i] = complex<U>(a[i] / c, a[i] % c);\n\t\t}\n\t\t\
+    fast_fourier_transform(aa);\n\t\tfast_fourier_transform(bb);\n\n\t\tvector<complex<U>>\
+    \ pa(n), pb(n);\n\t\tfor (int i = 0; i < n; i++) {\n\t\t\tint j = -i & (n - 1);\n\
+    \t\t\tpa[j] = (aa[i] + conj(aa[j])) * bb[i] / (2.0 * n);\n\t\t\tpb[j] = (aa[i]\
+    \ - conj(aa[j])) * bb[i] / (2.0 * n) / 1i;\n\t\t}\n\t\tfast_fourier_transform(pa);\n\
+    \t\tfast_fourier_transform(pb);\n\n\t\tn = a.size() + b.size() - 1;\n\t\tvector<T>\
+    \ ret(n);\n\t\tfor (int i = 0; i < n; i++) {\n\t\t\tT av = round(real(pa[i])),\
+    \ cv = round(imag(pb[i]));\n\t\t\tT bv = round(imag(pa[i])) + round(real(ob[i]));\n\
+    \t\t\tres[i] = ((av % mod * c + bv) % mod * c + cv) % mod;\n\t\t}\n\t\treturn\
+    \ ret;\n\t}\n}"
   dependsOn:
   - convolution/fast-fourier-transform.hpp
   - utility/pi.hpp
   - convolution/reverse-bit-radix-sort.hpp
   isVerificationFile: false
-  path: convolution/convolution.hpp
+  path: convolution/convolution-mod.hpp
   requiredBy: []
   timestamp: '2022-04-14 13:16:36-07:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - verify/convolution.yosupo-frequency-table-of-tree-distances.test.cpp
-documentation_of: convolution/convolution.hpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
+documentation_of: convolution/convolution-mod.hpp
 layout: document
-title: Convolution
+title: Convolution under Modulo
 ---
 
-## Convolution
+## Convolution under Modulo
