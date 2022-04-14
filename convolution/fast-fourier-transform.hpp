@@ -1,6 +1,6 @@
 #include "utility/pi.hpp"
 
-using namespace conv {
+namespace conv {
 	template<typename T>
 	void fast_fourier_transform(vector<complex<T>> &a) {
 		int n = a.size(), logn = 31 - __builtin_clz(n);
