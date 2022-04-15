@@ -15,6 +15,5 @@ int main() {
 		S.insert(a);
 	}
 	for (int a : S)
-		cout << a << ' ';
-	cout << '\n';
+		cout << a << " \n"[a == *prev(S.end())];
 }
