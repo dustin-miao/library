@@ -44,7 +44,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/line-container.hpp
       title: Line Container
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: data-structure/ordered-set.hpp
       title: Ordered Set
     - icon: ':heavy_check_mark:'
@@ -259,6 +259,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/ordered-set.aizu-the-number-of-inversions.test.cpp
       title: verify/ordered-set.aizu-the-number-of-inversions.test.cpp
+    - icon: ':x:'
+      path: verify/ordered-set.aizu-unique.test.cpp
+      title: verify/ordered-set.aizu-unique.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/point.aizu-counter-clockwise.test.cpp
       title: verify/point.aizu-counter-clockwise.test.cpp
