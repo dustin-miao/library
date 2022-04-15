@@ -2,7 +2,8 @@
 
 namespace conv {
 	template<typename T>
-	void fast_fourier_transform(vector<complex<T>> &a) {
+	typename enable_if<is_floating_point<T>::value, void>::type
+	fast_fourier_transform(vector<complex<T>> &a) {
 		int n = a.size(), logn = 31 - __builtin_clz(n);
 
 		vector<int> rev(n);
