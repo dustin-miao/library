@@ -2,22 +2,19 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
+    path: convolution/convolution.hpp
+    title: Convolution
+  - icon: ':heavy_check_mark:'
     path: convolution/fast-fourier-transform.hpp
     title: Fast Fourier Transform
   - icon: ':heavy_check_mark:'
     path: utility/pi.hpp
     title: Pi
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: convolution/cyclic-product.hpp
-    title: Cyclic Product
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: verify/convolution.yosupo-frequency-table-of-tree-distances.test.cpp
-    title: verify/convolution.yosupo-frequency-table-of-tree-distances.test.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
   bundledCode: "#line 1 \"utility/pi.hpp\"\nconst double PI = acos(-1);\n#line 2 \"\
@@ -44,32 +41,32 @@ data:
     \ = (n - i) & (n - 1);\n\t\t\td[i] = (c[j] * c[j] - conj(c[i] * c[i])) * complex<U>{0,\
     \ -0.25 / n};\n\t\t}\n\t\tfast_fourier_transform(d);\n\n\t\tn = a.size() + b.size()\
     \ - 1;\n\t\tvector<T> ret(n);\n\t\tfor (int i = 0; i < n; i++)\n\t\t\tret[i] =\
-    \ static_cast<T>(d[i].real() + 0.5);\n\t\treturn ret;\n\t}\n}\n"
-  code: "#include \"convolution/fast-fourier-transform.hpp\"\n\nnamespace conv {\n\
-    \ttemplate<typename T, typename U = double>\n\tvector<T> convolution(const vector<T>\
-    \ &a, const vector<T> &b) {\n\t\tint n = 1;\n\t\twhile (n < a.size() + b.size())\
-    \ \n\t\t\tn <<= 1;\n\t\tvector<complex<U>> c(n);\n\t\tfor (int i = 0; i < a.size();\
-    \ i++)\n\t\t\tc[i] = static_cast<U>(a[i]);\n\t\tfor (int i = 0; i < b.size();\
-    \ i++)\n\t\t\tc[i] = {c[i].real(), static_cast<U>(b[i])};\n\t\tfast_fourier_transform(c);\n\
-    \n\t\tvector<complex<U>> d(n);\n\t\tfor (int i = 0, j; i < n; i++) {\n\t\t\tj\
-    \ = (n - i) & (n - 1);\n\t\t\td[i] = (c[j] * c[j] - conj(c[i] * c[i])) * complex<U>{0,\
-    \ -0.25 / n};\n\t\t}\n\t\tfast_fourier_transform(d);\n\n\t\tn = a.size() + b.size()\
-    \ - 1;\n\t\tvector<T> ret(n);\n\t\tfor (int i = 0; i < n; i++)\n\t\t\tret[i] =\
-    \ static_cast<T>(d[i].real() + 0.5);\n\t\treturn ret;\n\t}\n}"
+    \ static_cast<T>(d[i].real() + 0.5);\n\t\treturn ret;\n\t}\n}\n#line 2 \"convolution/cyclic-product.hpp\"\
+    \n\nnamespace conv {\n\ttemplate<typename T, typename U = double>\n\tvector<T>\
+    \ cyclic_product(vector<T> a, vector<T> b) {\n\t\tassert(a.size() == b.size());\n\
+    \t\tint n = a.size();\n\t\treverse(a.begin(), a.end());\n\t\ta.resize(2 * n);\n\
+    \t\tb.insert(b.end(), b.begin(), b.end());\n\t\tauto c = convolution<T, U>(a,\
+    \ b);\n\t\tvector<T> ret(n);\n\t\tfor (int i = 0; i < n; i++)\n\t\t\tret[i] =\
+    \ c[i + n - 1];\n\t\treturn ret;\n\t}\n}\n"
+  code: "#include \"convolution/convolution.hpp\"\n\nnamespace conv {\n\ttemplate<typename\
+    \ T, typename U = double>\n\tvector<T> cyclic_product(vector<T> a, vector<T> b)\
+    \ {\n\t\tassert(a.size() == b.size());\n\t\tint n = a.size();\n\t\treverse(a.begin(),\
+    \ a.end());\n\t\ta.resize(2 * n);\n\t\tb.insert(b.end(), b.begin(), b.end());\n\
+    \t\tauto c = convolution<T, U>(a, b);\n\t\tvector<T> ret(n);\n\t\tfor (int i =\
+    \ 0; i < n; i++)\n\t\t\tret[i] = c[i + n - 1];\n\t\treturn ret;\n\t}\n}"
   dependsOn:
+  - convolution/convolution.hpp
   - convolution/fast-fourier-transform.hpp
   - utility/pi.hpp
   isVerificationFile: false
-  path: convolution/convolution.hpp
-  requiredBy:
-  - convolution/cyclic-product.hpp
+  path: convolution/cyclic-product.hpp
+  requiredBy: []
   timestamp: '2022-04-14 22:02:35-07:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - verify/convolution.yosupo-frequency-table-of-tree-distances.test.cpp
-documentation_of: convolution/convolution.hpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
+documentation_of: convolution/cyclic-product.hpp
 layout: document
-title: Convolution
+title: Cyclic Product
 ---
 
-## Convolution
+## Cyclic Product

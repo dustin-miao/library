@@ -8,6 +8,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: convolution/convolution.hpp
     title: Convolution
+  - icon: ':warning:'
+    path: convolution/cyclic-product.hpp
+    title: Cyclic Product
   - icon: ':heavy_check_mark:'
     path: convolution/fast-fourier-transform.hpp
     title: Fast Fourier Transform
@@ -50,6 +53,7 @@ data:
   - convolution/fast-fourier-transform.hpp
   - convolution/slow-fast-fourier-transform.hpp
   - convolution/slow-convolution.hpp
+  - convolution/cyclic-product.hpp
   timestamp: '2022-04-13 15:39:55-07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

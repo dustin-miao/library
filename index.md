@@ -9,6 +9,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: convolution/convolution.hpp
       title: Convolution
+    - icon: ':warning:'
+      path: convolution/cyclic-product.hpp
+      title: Cyclic Product
     - icon: ':heavy_check_mark:'
       path: convolution/fast-fourier-transform.hpp
       title: Fast Fourier Transform
