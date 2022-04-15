@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/ext-gcd.aizu-extended-euclid-algorithm.test.cpp
+    title: verify/ext-gcd.aizu-extended-euclid-algorithm.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"math/ext-gcd.hpp\"\nnamespace math {\n\ttemplate<typename\
@@ -24,8 +27,9 @@ data:
   path: math/ext-gcd.hpp
   requiredBy: []
   timestamp: '2022-04-08 16:00:08-07:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/ext-gcd.aizu-extended-euclid-algorithm.test.cpp
 documentation_of: math/ext-gcd.hpp
 layout: document
 title: Extended GCD

@@ -119,7 +119,7 @@ data:
     - icon: ':warning:'
       path: math/discrete-log.hpp
       title: Discrete Logarithm
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: math/ext-gcd.hpp
       title: Extended GCD
     - icon: ':warning:'
@@ -187,6 +187,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/dijkstra.aizu-single-source-shortest-path.test.cpp
       title: verify/dijkstra.aizu-single-source-shortest-path.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/ext-gcd.aizu-extended-euclid-algorithm.test.cpp
+      title: verify/ext-gcd.aizu-extended-euclid-algorithm.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/fast-lca.yosupo-lowest-common-ancestor.test.cpp
       title: verify/fast-lca.yosupo-lowest-common-ancestor.test.cpp
