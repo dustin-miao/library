@@ -3,7 +3,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "utility/ordered-set.hpp"
+#include "data-structure/ordered-set.hpp"
 
 int main() {
 	int N;
