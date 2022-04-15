@@ -4,6 +4,9 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: verify/ordered-set.aizu-K-average-ranges.test.cpp
+    title: verify/ordered-set.aizu-K-average-ranges.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/ordered-set.aizu-the-number-of-inversions.test.cpp
     title: verify/ordered-set.aizu-the-number-of-inversions.test.cpp
   _isVerificationFailed: false
@@ -11,7 +14,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: '#line 1 "utility/ordered-set.hpp"
+  bundledCode: '#line 1 "data-structure/ordered-set.hpp"
 
     #include <ext/pb_ds/assoc_container.hpp>
 
@@ -47,16 +50,16 @@ data:
     using ordered_set = ordered_map<K, null_type>;'
   dependsOn: []
   isVerificationFile: false
-  path: utility/ordered-set.hpp
+  path: data-structure/ordered-set.hpp
   requiredBy: []
-  timestamp: '2022-04-15 10:18:13-07:00'
+  timestamp: '2022-04-15 10:43:39-07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/ordered-set.aizu-the-number-of-inversions.test.cpp
-documentation_of: utility/ordered-set.hpp
+  - verify/ordered-set.aizu-K-average-ranges.test.cpp
+documentation_of: data-structure/ordered-set.hpp
 layout: document
-redirect_from:
-- /library/utility/ordered-set.hpp
-- /library/utility/ordered-set.hpp.html
-title: utility/ordered-set.hpp
+title: Ordered Set
 ---
+
+## Ordered Set

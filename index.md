@@ -45,6 +45,9 @@ data:
       path: data-structure/line-container.hpp
       title: Line Container
     - icon: ':heavy_check_mark:'
+      path: data-structure/ordered-set.hpp
+      title: Ordered Set
+    - icon: ':heavy_check_mark:'
       path: data-structure/recursive-segment-tree.hpp
       title: Recursive Segment Tree
     - icon: ':heavy_check_mark:'
@@ -152,9 +155,6 @@ data:
       path: utility/mint.hpp
       title: Modular Int
     - icon: ':heavy_check_mark:'
-      path: utility/ordered-set.hpp
-      title: utility/ordered-set.hpp
-    - icon: ':heavy_check_mark:'
       path: utility/pi.hpp
       title: Pi
     - icon: ':warning:'
@@ -253,6 +253,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/mint.yosupo-A+B.test.cpp
       title: verify/mint.yosupo-A+B.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/ordered-set.aizu-K-average-ranges.test.cpp
+      title: verify/ordered-set.aizu-K-average-ranges.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/ordered-set.aizu-the-number-of-inversions.test.cpp
       title: verify/ordered-set.aizu-the-number-of-inversions.test.cpp
