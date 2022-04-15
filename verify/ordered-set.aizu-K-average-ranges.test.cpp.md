@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/ordered-set.hpp
     title: Ordered Set
   _extendedRequiredBy: []
