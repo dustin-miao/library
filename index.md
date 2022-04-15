@@ -156,7 +156,7 @@ data:
       title: Pi
     - icon: ':warning:'
       path: utility/y-combinator.hpp
-      title: Y Combinator
+      title: Y-Combinator
   verificationCategories:
   - name: verify
     pages:

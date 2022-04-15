@@ -33,9 +33,9 @@ data:
   verifiedWith: []
 documentation_of: utility/y-combinator.hpp
 layout: document
-title: Y Combinator
+title: Y-Combinator
 ---
 
-## Y Combinator
+## Y-Combinator
 
 Copied from [Open STD](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0200r0.html). 
