@@ -31,6 +31,7 @@
 "verify/mint.yosupo-A+B.test.cpp": "2022-04-08 16:00:08 -0700",
 "verify/ordered-set.aizu-K-average-ranges.test.cpp": "2022-04-15 10:43:39 -0700",
 "verify/ordered-set.aizu-the-number-of-inversions.test.cpp": "2022-04-15 10:43:39 -0700",
+"verify/ordered-set.aizu-unique.test.cpp": "2022-04-15 13:52:19 -0700",
 "verify/point.aizu-counter-clockwise.test.cpp": "2022-04-11 13:05:03 -0700",
 "verify/point.aizu-parallel-orthagonal.test.cpp": "2022-04-11 13:05:03 -0700",
 "verify/point.aizu-projection.test.cpp": "2022-04-11 13:05:03 -0700",
