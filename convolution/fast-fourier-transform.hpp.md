@@ -6,6 +6,9 @@ data:
     title: Pi
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
+    path: convolution/complex-convolution.hpp
+    title: Complex Convolution
+  - icon: ':heavy_check_mark:'
     path: convolution/convolution-mod.hpp
     title: Convolution under Modulo
   - icon: ':heavy_check_mark:'
@@ -15,6 +18,9 @@ data:
     path: convolution/cyclic-product.hpp
     title: Cyclic Product
   _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/complex-convolution.yosupo-frequency-table-of-tree-distances.test.cpp
+    title: verify/complex-convolution.yosupo-frequency-table-of-tree-distances.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/convolution-mod.yosupo-convolution-mod-1000000007.test.cpp
     title: verify/convolution-mod.yosupo-convolution-mod-1000000007.test.cpp
@@ -64,6 +70,7 @@ data:
   path: convolution/fast-fourier-transform.hpp
   requiredBy:
   - convolution/convolution-mod.hpp
+  - convolution/complex-convolution.hpp
   - convolution/convolution.hpp
   - convolution/cyclic-product.hpp
   timestamp: '2022-04-14 22:02:35-07:00'
@@ -71,6 +78,7 @@ data:
   verifiedWith:
   - verify/convolution.yosupo-frequency-table-of-tree-distances.test.cpp
   - verify/convolution-mod.yosupo-convolution-mod-1000000007.test.cpp
+  - verify/complex-convolution.yosupo-frequency-table-of-tree-distances.test.cpp
   - verify/convolution-mod.yosupo-convolution.test.cpp
 documentation_of: convolution/fast-fourier-transform.hpp
 layout: document
