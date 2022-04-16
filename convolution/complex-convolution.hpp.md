@@ -9,13 +9,13 @@ data:
     title: Pi
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/complex-convolution.aizu-naive-string-search.test.cpp
     title: verify/complex-convolution.aizu-naive-string-search.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/complex-convolution.aizu-string-search.test.cpp
     title: verify/complex-convolution.aizu-string-search.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/complex-convolution.yosupo-frequency-table-of-tree-distances.test.cpp
     title: verify/complex-convolution.yosupo-frequency-table-of-tree-distances.test.cpp
   _isVerificationFailed: true
@@ -46,7 +46,9 @@ data:
     \ b[i].imag());\n\n\t\tfast_fourier_transform(pa);\n\t\tfast_fourier_transform(pb);\n\
     \t\tvector<complex<U>> c(n);\n\t\tfor (int i = 0; i < n; i++) \n\t\t\tc[i] = pa[i]\
     \ * pb[i] / static_cast<U>(n);\n\t\treverse(c.begin() + 1, c.end());\n\t\tfast_fourier_transform(c);\n\
-    \n\t\tn = a.size() + b.size() - 1;\n\t\tc.resize(n);\n\t\treturn c;\n\t}\n}\n"
+    \n\t\tn = a.size() + b.size() - 1;\n\t\tvector<complex<T>> ret(n);\n\t\tfor (int\
+    \ i = 0; i < n; i++)\n\t\t\tret[i] = complex<T>(static_cast<T>(c[i].real() + 0.5),\
+    \ static_cast<T>(c[i].imag() + 0.5));\n\t\treturn ret;\n\t}\n}\n"
   code: "#include \"convolution/fast-fourier-transform.hpp\"\n\nnamespace conv {\n\
     \ttemplate<typename T, typename U = double>\n\tvector<complex<T>> complex_convolution(const\
     \ vector<complex<T>> &a, const vector<complex<T>> &b) {\n\t\tint n = 1;\n\t\t\
@@ -56,14 +58,16 @@ data:
     \ b[i].imag());\n\n\t\tfast_fourier_transform(pa);\n\t\tfast_fourier_transform(pb);\n\
     \t\tvector<complex<U>> c(n);\n\t\tfor (int i = 0; i < n; i++) \n\t\t\tc[i] = pa[i]\
     \ * pb[i] / static_cast<U>(n);\n\t\treverse(c.begin() + 1, c.end());\n\t\tfast_fourier_transform(c);\n\
-    \n\t\tn = a.size() + b.size() - 1;\n\t\tc.resize(n);\n\t\treturn c;\n\t}\n}"
+    \n\t\tn = a.size() + b.size() - 1;\n\t\tvector<complex<T>> ret(n);\n\t\tfor (int\
+    \ i = 0; i < n; i++)\n\t\t\tret[i] = complex<T>(static_cast<T>(c[i].real() + 0.5),\
+    \ static_cast<T>(c[i].imag() + 0.5));\n\t\treturn ret;\n\t}\n}"
   dependsOn:
   - convolution/fast-fourier-transform.hpp
   - utility/pi.hpp
   isVerificationFile: false
   path: convolution/complex-convolution.hpp
   requiredBy: []
-  timestamp: '2022-04-16 10:31:55-07:00'
+  timestamp: '2022-04-16 10:42:05-07:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/complex-convolution.aizu-naive-string-search.test.cpp

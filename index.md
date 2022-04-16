@@ -175,13 +175,13 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/chmin.aizu-min-max-sum.test.cpp
       title: verify/chmin.aizu-min-max-sum.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/complex-convolution.aizu-naive-string-search.test.cpp
       title: verify/complex-convolution.aizu-naive-string-search.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/complex-convolution.aizu-string-search.test.cpp
       title: verify/complex-convolution.aizu-string-search.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/complex-convolution.yosupo-frequency-table-of-tree-distances.test.cpp
       title: verify/complex-convolution.yosupo-frequency-table-of-tree-distances.test.cpp
     - icon: ':heavy_check_mark:'

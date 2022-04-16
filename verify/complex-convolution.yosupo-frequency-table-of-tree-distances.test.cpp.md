@@ -12,9 +12,9 @@ data:
     title: Pi
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/frequency_table_of_tree_distance
@@ -46,8 +46,9 @@ data:
     \ b[i].imag());\n\n\t\tfast_fourier_transform(pa);\n\t\tfast_fourier_transform(pb);\n\
     \t\tvector<complex<U>> c(n);\n\t\tfor (int i = 0; i < n; i++) \n\t\t\tc[i] = pa[i]\
     \ * pb[i] / static_cast<U>(n);\n\t\treverse(c.begin() + 1, c.end());\n\t\tfast_fourier_transform(c);\n\
-    \n\t\tn = a.size() + b.size() - 1;\n\t\tc.resize(n);\n\t\treturn c;\n\t}\n}\n\
-    #line 7 \"verify/complex-convolution.yosupo-frequency-table-of-tree-distances.test.cpp\"\
+    \n\t\tn = a.size() + b.size() - 1;\n\t\tvector<complex<T>> ret(n);\n\t\tfor (int\
+    \ i = 0; i < n; i++)\n\t\t\tret[i] = complex<T>(static_cast<T>(c[i].real() + 0.5),\
+    \ static_cast<T>(c[i].imag() + 0.5));\n\t\treturn ret;\n\t}\n}\n#line 7 \"verify/complex-convolution.yosupo-frequency-table-of-tree-distances.test.cpp\"\
     \n\nint main() {\n\tint N;\n\tcin >> N;\n\tvector<vector<int>> T(N);\n\tfor (int\
     \ i = 1; i < N; i++) {\n\t\tint u, v;\n\t\tcin >> u >> v;\n\t\tT[u].push_back(v);\n\
     \t\tT[v].push_back(u);\n\t}\n\n\tvector<long long> weight(N), ans(2 * N, 0);\n\
@@ -120,8 +121,8 @@ data:
   isVerificationFile: true
   path: verify/complex-convolution.yosupo-frequency-table-of-tree-distances.test.cpp
   requiredBy: []
-  timestamp: '2022-04-16 10:31:55-07:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-04-16 10:42:05-07:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/complex-convolution.yosupo-frequency-table-of-tree-distances.test.cpp
 layout: document

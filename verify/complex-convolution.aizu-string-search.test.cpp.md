@@ -12,9 +12,9 @@ data:
     title: Pi
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_B
@@ -46,17 +46,19 @@ data:
     \ b[i].imag());\n\n\t\tfast_fourier_transform(pa);\n\t\tfast_fourier_transform(pb);\n\
     \t\tvector<complex<U>> c(n);\n\t\tfor (int i = 0; i < n; i++) \n\t\t\tc[i] = pa[i]\
     \ * pb[i] / static_cast<U>(n);\n\t\treverse(c.begin() + 1, c.end());\n\t\tfast_fourier_transform(c);\n\
-    \n\t\tn = a.size() + b.size() - 1;\n\t\tc.resize(n);\n\t\treturn c;\n\t}\n}\n\
-    #line 7 \"verify/complex-convolution.aizu-string-search.test.cpp\"\n\nconst double\
-    \ EPS = 0.005;\n\nint main() {\n\tstring P, T;\n\tcin >> T >> P;\n\tint n = T.size(),\
-    \ m = P.size();\n\tvector<complex<double>> a(n), b(m);\n\tfor (int i = 0; i <\
-    \ n; i++) {\n\t\tchar c = T[i];\n\t\tdouble the = 2 * PI * ('0' <= c <= '9' ?\
-    \ c - '0' : c - 'a' + 10) / 36;\n\t\ta[i] = complex<double>(cos(the), sin(the));\n\
-    \t}\n\tfor (int i = 0; i < m; i++) {\n\t\tchar c = P[m - i - 1];\n\t\tdouble the\
-    \ = 2 * PI * ('0' <= c <= '9' ? c - '0' : c - 'a' + 10) / 36;\n\t\tb[i] = complex<double>(cos(the),\
-    \ -sin(the));\n\t}\n\tauto c = conv::complex_convolution(a, b);\n\tfor (int i\
-    \ = 0; i < n; i++)  {\n\t\tif (abs(c[m - 1 + i].real() - m) <= EPS && abs(c[m\
-    \ - 1 + i].imag()) <= EPS) {\n\t\t\tcout << i << '\\n';\n\t\t}\n\t}\n}\n"
+    \n\t\tn = a.size() + b.size() - 1;\n\t\tvector<complex<T>> ret(n);\n\t\tfor (int\
+    \ i = 0; i < n; i++)\n\t\t\tret[i] = complex<T>(static_cast<T>(c[i].real() + 0.5),\
+    \ static_cast<T>(c[i].imag() + 0.5));\n\t\treturn ret;\n\t}\n}\n#line 7 \"verify/complex-convolution.aizu-string-search.test.cpp\"\
+    \n\nconst double EPS = 0.005;\n\nint main() {\n\tstring P, T;\n\tcin >> T >> P;\n\
+    \tint n = T.size(), m = P.size();\n\tvector<complex<double>> a(n), b(m);\n\tfor\
+    \ (int i = 0; i < n; i++) {\n\t\tchar c = T[i];\n\t\tdouble the = 2 * PI * ('0'\
+    \ <= c <= '9' ? c - '0' : c - 'a' + 10) / 36;\n\t\ta[i] = complex<double>(cos(the),\
+    \ sin(the));\n\t}\n\tfor (int i = 0; i < m; i++) {\n\t\tchar c = P[m - i - 1];\n\
+    \t\tdouble the = 2 * PI * ('0' <= c <= '9' ? c - '0' : c - 'a' + 10) / 36;\n\t\
+    \tb[i] = complex<double>(cos(the), -sin(the));\n\t}\n\tauto c = conv::complex_convolution(a,\
+    \ b);\n\tfor (int i = 0; i < n; i++)  {\n\t\tif (abs(c[m - 1 + i].real() - m)\
+    \ <= EPS && abs(c[m - 1 + i].imag()) <= EPS) {\n\t\t\tcout << i << '\\n';\n\t\t\
+    }\n\t}\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_B\"\
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#include \"convolution/complex-convolution.hpp\"\
     \n\nconst double EPS = 0.005;\n\nint main() {\n\tstring P, T;\n\tcin >> T >> P;\n\
@@ -76,8 +78,8 @@ data:
   isVerificationFile: true
   path: verify/complex-convolution.aizu-string-search.test.cpp
   requiredBy: []
-  timestamp: '2022-04-16 10:31:55-07:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-04-16 10:42:05-07:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/complex-convolution.aizu-string-search.test.cpp
 layout: document
