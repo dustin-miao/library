@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: convolution/complex-convolution.hpp
     title: Complex Convolution
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: convolution/fast-fourier-transform.hpp
     title: Fast Fourier Transform
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utility/pi.hpp
     title: Pi
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_B
@@ -38,17 +38,18 @@ data:
     \t\tauto z = root[j + l] * a[i + j + l];\n\t\t\t\t\ta[i + j + l] = a[i + j] -\
     \ z;\n\t\t\t\t\ta[i + j] += z;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}\n#line 2 \"\
     convolution/complex-convolution.hpp\"\n\nnamespace conv {\n\ttemplate<typename\
-    \ T, typename U = double>\n\tvector<complex<T>> complex_convolution(const vector<complex<T>>\
-    \ &a, const vector<complex<T>> &b) {\n\t\tint n = 1;\n\t\twhile (n < a.size()\
-    \ + b.size()) \n\t\t\tn <<= 1;\n\t\tvector<complex<U>> pa(n), pb(n);\n\t\tfor\
-    \ (int i = 0; i < a.size(); i++)\n\t\t\tpa[i] = complex<U>(a[i].real(), a[i].imag());\n\
-    \t\tfor (int i = 0; i < b.size(); i++)\n\t\t\tpb[i] = complex<U>(b[i].real(),\
-    \ b[i].imag());\n\n\t\tfast_fourier_transform(pa);\n\t\tfast_fourier_transform(pb);\n\
-    \t\tvector<complex<U>> c(n);\n\t\tfor (int i = 0; i < n; i++) \n\t\t\tc[i] = pa[i]\
-    \ * pb[i] / static_cast<U>(n);\n\t\treverse(c.begin() + 1, c.end());\n\t\tfast_fourier_transform(c);\n\
-    \n\t\tn = a.size() + b.size() - 1;\n\t\tvector<complex<T>> ret(n);\n\t\tfor (int\
-    \ i = 0; i < n; i++)\n\t\t\tret[i] = complex<T>(static_cast<T>(c[i].real() + 0.5),\
-    \ static_cast<T>(c[i].imag() + 0.5));\n\t\treturn ret;\n\t}\n}\n#line 7 \"verify/complex-convolution.aizu-string-search.test.cpp\"\
+    \ T, typename U = double>\n\ttypename enable_if<is_floating_point<T>::value, vector<complex<T>>>::type\n\
+    \tcomplex_convolution(const vector<complex<T>> &a, const vector<complex<T>> &b)\
+    \ {\n\t\tint n = 1;\n\t\twhile (n < a.size() + b.size()) \n\t\t\tn <<= 1;\n\t\t\
+    vector<complex<U>> pa(n), pb(n);\n\t\tfor (int i = 0; i < a.size(); i++)\n\t\t\
+    \tpa[i] = complex<U>(a[i].real(), a[i].imag());\n\t\tfor (int i = 0; i < b.size();\
+    \ i++)\n\t\t\tpb[i] = complex<U>(b[i].real(), b[i].imag());\n\n\t\tfast_fourier_transform(pa);\n\
+    \t\tfast_fourier_transform(pb);\n\t\tvector<complex<U>> c(n);\n\t\tfor (int i\
+    \ = 0; i < n; i++) \n\t\t\tc[i] = pa[i] * pb[i] / static_cast<U>(n);\n\t\treverse(c.begin()\
+    \ + 1, c.end());\n\t\tfast_fourier_transform(c);\n\n\t\tn = a.size() + b.size()\
+    \ - 1;\n\t\tvector<complex<T>> ret(n);\n\t\tfor (int i = 0; i < n; i++)\n\t\t\t\
+    ret[i] = complex<T>(static_cast<T>(c[i].real()), static_cast<T>(c[i].imag()));\n\
+    \t\treturn ret;\n\t}\n}\n#line 7 \"verify/complex-convolution.aizu-string-search.test.cpp\"\
     \n\nconst double EPS = 0.005;\n\nint main() {\n\tstring P, T;\n\tcin >> T >> P;\n\
     \tint n = T.size(), m = P.size();\n\tvector<complex<double>> a(n), b(m);\n\tfor\
     \ (int i = 0; i < n; i++) {\n\t\tchar c = T[i];\n\t\tdouble the = 2 * PI * ('0'\
@@ -78,8 +79,8 @@ data:
   isVerificationFile: true
   path: verify/complex-convolution.aizu-string-search.test.cpp
   requiredBy: []
-  timestamp: '2022-04-16 10:42:05-07:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-04-16 15:04:12-07:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/complex-convolution.aizu-string-search.test.cpp
 layout: document

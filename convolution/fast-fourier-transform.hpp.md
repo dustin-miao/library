@@ -1,11 +1,11 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utility/pi.hpp
     title: Pi
   _extendedRequiredBy:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: convolution/complex-convolution.hpp
     title: Complex Convolution
   - icon: ':heavy_check_mark:'
@@ -18,15 +18,12 @@ data:
     path: convolution/cyclic-product.hpp
     title: Cyclic Product
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/complex-convolution.aizu-naive-string-search.test.cpp
     title: verify/complex-convolution.aizu-naive-string-search.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/complex-convolution.aizu-string-search.test.cpp
     title: verify/complex-convolution.aizu-string-search.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/complex-convolution.yosupo-frequency-table-of-tree-distances.test.cpp
-    title: verify/complex-convolution.yosupo-frequency-table-of-tree-distances.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/convolution-mod.yosupo-convolution-mod-1000000007.test.cpp
     title: verify/convolution-mod.yosupo-convolution-mod-1000000007.test.cpp
@@ -36,9 +33,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/convolution.yosupo-frequency-table-of-tree-distances.test.cpp
     title: verify/convolution.yosupo-frequency-table-of-tree-distances.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"utility/pi.hpp\"\nconst double PI = acos(-1);\n#line 2 \"\
@@ -80,12 +77,11 @@ data:
   - convolution/convolution.hpp
   - convolution/cyclic-product.hpp
   timestamp: '2022-04-14 22:02:35-07:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/convolution.yosupo-frequency-table-of-tree-distances.test.cpp
   - verify/complex-convolution.aizu-naive-string-search.test.cpp
   - verify/convolution-mod.yosupo-convolution-mod-1000000007.test.cpp
-  - verify/complex-convolution.yosupo-frequency-table-of-tree-distances.test.cpp
   - verify/convolution-mod.yosupo-convolution.test.cpp
   - verify/complex-convolution.aizu-string-search.test.cpp
 documentation_of: convolution/fast-fourier-transform.hpp
