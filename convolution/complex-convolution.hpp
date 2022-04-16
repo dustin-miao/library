@@ -21,7 +21,9 @@ namespace conv {
 		fast_fourier_transform(c);
 
 		n = a.size() + b.size() - 1;
-		c.resize(n);
-		return c;
+		vector<complex<T>> ret(n);
+		for (int i = 0; i < n; i++)
+			ret[i] = complex<T>(static_cast<T>(c[i].real() + 0.5), static_cast<T>(c[i].imag() + 0.5));
+		return ret;
 	}
 }
