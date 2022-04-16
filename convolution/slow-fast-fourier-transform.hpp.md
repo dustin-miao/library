@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: convolution/reverse-bit-radix-sort.hpp
     title: Reverse Bit Radix Sort
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utility/pi.hpp
     title: Pi
   _extendedRequiredBy:

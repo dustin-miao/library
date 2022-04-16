@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: convolution/complex-convolution.hpp
     title: Complex Convolution
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: convolution/fast-fourier-transform.hpp
     title: Fast Fourier Transform
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utility/pi.hpp
     title: Pi
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/frequency_table_of_tree_distance
@@ -38,7 +38,7 @@ data:
     \t\tauto z = root[j + l] * a[i + j + l];\n\t\t\t\t\ta[i + j + l] = a[i + j] -\
     \ z;\n\t\t\t\t\ta[i + j] += z;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}\n#line 2 \"\
     convolution/complex-convolution.hpp\"\n\nnamespace conv {\n\ttemplate<typename\
-    \ T, typename U = double>\n\tvector<T> complex_convolution(const vector<complex<T>>\
+    \ T, typename U = double>\n\tvector<complex<T>> complex_convolution(const vector<complex<T>>\
     \ &a, const vector<complex<T>> &b) {\n\t\tint n = 1;\n\t\twhile (n < a.size()\
     \ + b.size()) \n\t\t\tn <<= 1;\n\t\tvector<complex<U>> pa(n), pb(n);\n\t\tfor\
     \ (int i = 0; i < a.size(); i++)\n\t\t\tpa[i] = complex<U>(a[i].real(), a[i].imag());\n\
@@ -46,9 +46,8 @@ data:
     \ b[i].imag());\n\n\t\tfast_fourier_transform(pa);\n\t\tfast_fourier_transform(pb);\n\
     \t\tvector<complex<U>> c(n);\n\t\tfor (int i = 0; i < n; i++) \n\t\t\tc[i] = pa[i]\
     \ * pb[i] / static_cast<U>(n);\n\t\treverse(c.begin() + 1, c.end());\n\t\tfast_fourier_transform(c);\n\
-    \n\t\tn = a.size() + b.size() - 1;\n\t\tvector<T> ret(n);\n\t\tfor (int i = 0;\
-    \ i < n; i++)\n\t\t\tret[i] = static_cast<T>(c[i].real() + 0.5);\n\t\treturn ret;\n\
-    \t}\n}\n#line 7 \"verify/complex-convolution.yosupo-frequency-table-of-tree-distances.test.cpp\"\
+    \n\t\tn = a.size() + b.size() - 1;\n\t\tc.resize(n);\n\t\treturn c;\n\t}\n}\n\
+    #line 7 \"verify/complex-convolution.yosupo-frequency-table-of-tree-distances.test.cpp\"\
     \n\nint main() {\n\tint N;\n\tcin >> N;\n\tvector<vector<int>> T(N);\n\tfor (int\
     \ i = 1; i < N; i++) {\n\t\tint u, v;\n\t\tcin >> u >> v;\n\t\tT[u].push_back(v);\n\
     \t\tT[v].push_back(u);\n\t}\n\n\tvector<long long> weight(N), ans(2 * N, 0);\n\
@@ -75,11 +74,12 @@ data:
     \ i++) {\n\t\t\t\tcomplex_cen_dis[i] = complex<long long>(cen_dis[i], 0);\n\t\t\
     \t\tcomplex_cen_cur[i] = complex<long long>(cen_cur[i], 0);\n\t\t\t}\n\t\t\tauto\
     \ tem = conv::complex_convolution(complex_cen_dis, complex_cen_cur);\n\t\t\tfor\
-    \ (int i = 0; i < tem.size(); i++)\n\t\t\t\tans[i] += tem[i];\n\t\t\tfor (int\
-    \ i = 0; i < n; i++)\n\t\t\t\tcen_dis[i] += cen_cur[i];\n\t\t}\n \n\t\tblock[u]\
-    \ = true;\n\t\tfor (int v : T[u]) \n\t\t\tif (!block[v]) \n\t\t\t\tself(self,\
-    \ v);\n\t};\n\n\tcentroid_decomp(centroid_decomp, 0);\n\n\tfor (int i = 1; i <\
-    \ N; i++)\n\t\tcout << ans[i] << ' ';\n\tcout << '\\n';\n}\n"
+    \ (int i = 0; i < tem.size(); i++)\n\t\t\t\tans[i] += static_cast<long long>(tem[i].real()\
+    \ + 0.5);\n\t\t\tfor (int i = 0; i < n; i++)\n\t\t\t\tcen_dis[i] += cen_cur[i];\n\
+    \t\t}\n \n\t\tblock[u] = true;\n\t\tfor (int v : T[u]) \n\t\t\tif (!block[v])\
+    \ \n\t\t\t\tself(self, v);\n\t};\n\n\tcentroid_decomp(centroid_decomp, 0);\n\n\
+    \tfor (int i = 1; i < N; i++)\n\t\tcout << ans[i] << ' ';\n\tcout << '\\n';\n\
+    }\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/frequency_table_of_tree_distance\"\
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#include \"convolution/complex-convolution.hpp\"\
     \n\nint main() {\n\tint N;\n\tcin >> N;\n\tvector<vector<int>> T(N);\n\tfor (int\
@@ -108,11 +108,11 @@ data:
     \ i++) {\n\t\t\t\tcomplex_cen_dis[i] = complex<long long>(cen_dis[i], 0);\n\t\t\
     \t\tcomplex_cen_cur[i] = complex<long long>(cen_cur[i], 0);\n\t\t\t}\n\t\t\tauto\
     \ tem = conv::complex_convolution(complex_cen_dis, complex_cen_cur);\n\t\t\tfor\
-    \ (int i = 0; i < tem.size(); i++)\n\t\t\t\tans[i] += tem[i];\n\t\t\tfor (int\
-    \ i = 0; i < n; i++)\n\t\t\t\tcen_dis[i] += cen_cur[i];\n\t\t}\n \n\t\tblock[u]\
-    \ = true;\n\t\tfor (int v : T[u]) \n\t\t\tif (!block[v]) \n\t\t\t\tself(self,\
-    \ v);\n\t};\n\n\tcentroid_decomp(centroid_decomp, 0);\n\n\tfor (int i = 1; i <\
-    \ N; i++)\n\t\tcout << ans[i] << ' ';\n\tcout << '\\n';\n}"
+    \ (int i = 0; i < tem.size(); i++)\n\t\t\t\tans[i] += static_cast<long long>(tem[i].real()\
+    \ + 0.5);\n\t\t\tfor (int i = 0; i < n; i++)\n\t\t\t\tcen_dis[i] += cen_cur[i];\n\
+    \t\t}\n \n\t\tblock[u] = true;\n\t\tfor (int v : T[u]) \n\t\t\tif (!block[v])\
+    \ \n\t\t\t\tself(self, v);\n\t};\n\n\tcentroid_decomp(centroid_decomp, 0);\n\n\
+    \tfor (int i = 1; i < N; i++)\n\t\tcout << ans[i] << ' ';\n\tcout << '\\n';\n}"
   dependsOn:
   - convolution/complex-convolution.hpp
   - convolution/fast-fourier-transform.hpp
@@ -120,8 +120,8 @@ data:
   isVerificationFile: true
   path: verify/complex-convolution.yosupo-frequency-table-of-tree-distances.test.cpp
   requiredBy: []
-  timestamp: '2022-04-16 09:52:29-07:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-04-16 10:31:55-07:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/complex-convolution.yosupo-frequency-table-of-tree-distances.test.cpp
 layout: document

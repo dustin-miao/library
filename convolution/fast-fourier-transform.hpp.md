@@ -1,11 +1,11 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utility/pi.hpp
     title: Pi
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: convolution/complex-convolution.hpp
     title: Complex Convolution
   - icon: ':heavy_check_mark:'
@@ -19,6 +19,12 @@ data:
     title: Cyclic Product
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: verify/complex-convolution.aizu-naive-string-search.test.cpp
+    title: verify/complex-convolution.aizu-naive-string-search.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/complex-convolution.aizu-string-search.test.cpp
+    title: verify/complex-convolution.aizu-string-search.test.cpp
+  - icon: ':x:'
     path: verify/complex-convolution.yosupo-frequency-table-of-tree-distances.test.cpp
     title: verify/complex-convolution.yosupo-frequency-table-of-tree-distances.test.cpp
   - icon: ':heavy_check_mark:'
@@ -30,9 +36,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/convolution.yosupo-frequency-table-of-tree-distances.test.cpp
     title: verify/convolution.yosupo-frequency-table-of-tree-distances.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"utility/pi.hpp\"\nconst double PI = acos(-1);\n#line 2 \"\
@@ -74,12 +80,14 @@ data:
   - convolution/convolution.hpp
   - convolution/cyclic-product.hpp
   timestamp: '2022-04-14 22:02:35-07:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/convolution.yosupo-frequency-table-of-tree-distances.test.cpp
+  - verify/complex-convolution.aizu-naive-string-search.test.cpp
   - verify/convolution-mod.yosupo-convolution-mod-1000000007.test.cpp
   - verify/complex-convolution.yosupo-frequency-table-of-tree-distances.test.cpp
   - verify/convolution-mod.yosupo-convolution.test.cpp
+  - verify/complex-convolution.aizu-string-search.test.cpp
 documentation_of: convolution/fast-fourier-transform.hpp
 layout: document
 title: Fast Fourier Transform
