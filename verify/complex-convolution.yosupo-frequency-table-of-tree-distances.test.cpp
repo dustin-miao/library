@@ -83,7 +83,7 @@ int main() {
 			}
 			auto tem = conv::complex_convolution(complex_cen_dis, complex_cen_cur);
 			for (int i = 0; i < tem.size(); i++)
-				ans[i] += tem[i];
+				ans[i] += static_cast<long long>(tem[i].real() + 0.5);
 			for (int i = 0; i < n; i++)
 				cen_dis[i] += cen_cur[i];
 		}

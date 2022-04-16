@@ -2,7 +2,7 @@
 
 namespace conv {
 	template<typename T, typename U = double>
-	vector<T> complex_convolution(const vector<complex<T>> &a, const vector<complex<T>> &b) {
+	vector<complex<T>> complex_convolution(const vector<complex<T>> &a, const vector<complex<T>> &b) {
 		int n = 1;
 		while (n < a.size() + b.size()) 
 			n <<= 1;
@@ -21,9 +21,7 @@ namespace conv {
 		fast_fourier_transform(c);
 
 		n = a.size() + b.size() - 1;
-		vector<T> ret(n);
-		for (int i = 0; i < n; i++)
-			ret[i] = static_cast<T>(c[i].real() + 0.5);
-		return ret;
+		c.resize(n);
+		return c;
 	}
 }
