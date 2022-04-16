@@ -2,7 +2,8 @@
 
 namespace conv {
 	template<typename T, typename U = double>
-	vector<complex<T>> complex_convolution(const vector<complex<T>> &a, const vector<complex<T>> &b) {
+	typename enable_if<is_floating_point<T>::value, vector<complex<T>>>::type
+	complex_convolution(const vector<complex<T>> &a, const vector<complex<T>> &b) {
 		int n = 1;
 		while (n < a.size() + b.size()) 
 			n <<= 1;
@@ -23,7 +24,7 @@ namespace conv {
 		n = a.size() + b.size() - 1;
 		vector<complex<T>> ret(n);
 		for (int i = 0; i < n; i++)
-			ret[i] = complex<T>(static_cast<T>(c[i].real() + 0.5), static_cast<T>(c[i].imag() + 0.5));
+			ret[i] = complex<T>(static_cast<T>(c[i].real()), static_cast<T>(c[i].imag()));
 		return ret;
 	}
 }
