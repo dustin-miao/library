@@ -123,6 +123,9 @@ data:
       path: math/binom-coef.hpp
       title: Binomial Coefficients
     - icon: ':warning:'
+      path: math/crt.hpp
+      title: Chinese Remainder Theorem
+    - icon: ':warning:'
       path: math/discrete-log.hpp
       title: Discrete Logarithm
     - icon: ':heavy_check_mark:'
