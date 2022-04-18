@@ -134,7 +134,7 @@ data:
     - icon: ':warning:'
       path: math/linear-sieve.hpp
       title: Linear Sieve
-    - icon: ':warning:'
+    - icon: ':x:'
       path: math/matrix.hpp
       title: Matrix
   - name: utility
@@ -259,6 +259,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/line-container.yosupo-line-add-get-min.test.cpp
       title: verify/line-container.yosupo-line-add-get-min.test.cpp
+    - icon: ':x:'
+      path: verify/matrix.aizu-fibonacci-number.test.cpp
+      title: verify/matrix.aizu-fibonacci-number.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/mint.power.test.cpp
       title: verify/mint.power.test.cpp
