@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/matrix.aizu-fibonacci-number.test.cpp
     title: verify/matrix.aizu-fibonacci-number.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"math/matrix.hpp\"\n#pragma region matrix\n\ntemplate<typename\
@@ -93,7 +93,7 @@ data:
   path: math/matrix.hpp
   requiredBy: []
   timestamp: '2022-04-17 17:41:50-07:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/matrix.aizu-fibonacci-number.test.cpp
 documentation_of: math/matrix.hpp
