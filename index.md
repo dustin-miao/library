@@ -33,6 +33,9 @@ data:
       path: data-structure/fast-lca.hpp
       title: Fast Lowest Common Ancestor
     - icon: ':heavy_check_mark:'
+      path: data-structure/fast-set.hpp
+      title: data-structure/fast-set.hpp
+    - icon: ':heavy_check_mark:'
       path: data-structure/fenwick-tree.hpp
       title: Fenwick Tree
     - icon: ':heavy_check_mark:'
