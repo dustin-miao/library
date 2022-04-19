@@ -1,21 +1,36 @@
-#include "utility/mint.hpp"
+#include "math/inverse.hpp"
 
 namespace math {
-	int discrete_log(mint a, mint b) {
-		int n = sqrt(MOD) + 1;
-
-		mint an = fast_pow(a, n);
-		map<mint, int> vals;
-		mint cur = b;
-		for (int q = 0; q <= n; q++) { 
-			vals[cur] = q;
-			cur *= a;
+	template<typename T = long long>
+	T discrete_log(T a, T b, T mod) {
+		if ((a %= mod) < 0) 
+			a += mod;
+		if ((b %= mod) < 0) 
+			b += mod;
+		T f, g, r = 1 % mod;
+		for (f = 0; (g = __gcd(a, mod)) > 1; f++) {
+			if (b % g) 
+				return (r == b) ? f : -1;
+			b /= g;
+			mod /= g;
+			r = r * (a / g) % mod;
 		}
-		cur = 1;
-		for (int p = 1; p <= n; p++) {
-			cur *= int(an);
-			if (vals.find(cur) != vals.end()) 
-				return int(n * p - vals[cur]);
+		if (mod == 1) 
+			return f;
+		T ir = inverse(r, mod);
+		b = b * ir % mod;
+		T k = 0, ak = 1;
+		map<T, T> baby;
+		for (; k * k < mod; k++) {
+			if (baby.find(ak) == baby.end()) 
+				baby[ak] = k;
+			ak = ak * a % mod;
+		}
+		T iak = inverse(ak, mod);
+		for (T i = 0; i < k; i++) {
+			if (baby.find(b) != baby.end()) 
+				return f + i * k + baby[b];
+			b = b * iak % mod;
 		}
 		return -1;
 	}
