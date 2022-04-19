@@ -63,5 +63,6 @@
 "verify/union-find-2d.aizu-disjoint-union.test.cpp": "2022-04-09 15:55:38 -0700",
 "verify/union-find-2d.yosupo-unionfind.test.cpp": "2022-04-09 15:55:38 -0700",
 "verify/union-find.aizu-disjoint-union.test.cpp": "2022-04-09 15:55:38 -0700",
-"verify/union-find.yosupo-unionfind.test.cpp": "2022-04-09 15:55:38 -0700"
+"verify/union-find.yosupo-unionfind.test.cpp": "2022-04-09 15:55:38 -0700",
+"verify/y-combinator.aizu-greatest-common-denominator.test.cpp": "2022-04-19 13:02:09 -0700"
 }
