@@ -1,6 +1,6 @@
 ---
 title: Binomial Coefficients
-documentation_of: //math/binom-coef.hpp
+documentation_of: //math/binomial-coefficients.hpp
 ---
 
 ## Binomial Coefficients
