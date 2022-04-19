@@ -62,8 +62,7 @@ data:
   - verify/cycle-finding.yosupo-cycle-detection.test.cpp
 documentation_of: data-structure/fast-set.hpp
 layout: document
-redirect_from:
-- /library/data-structure/fast-set.hpp
-- /library/data-structure/fast-set.hpp.html
-title: data-structure/fast-set.hpp
+title: Fast Set
 ---
+
+## Fast Set

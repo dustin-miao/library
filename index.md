@@ -34,7 +34,7 @@ data:
       title: Fast Lowest Common Ancestor
     - icon: ':heavy_check_mark:'
       path: data-structure/fast-set.hpp
-      title: data-structure/fast-set.hpp
+      title: Fast Set
     - icon: ':heavy_check_mark:'
       path: data-structure/fenwick-tree.hpp
       title: Fenwick Tree
@@ -123,7 +123,7 @@ data:
   - name: math
     pages:
     - icon: ':warning:'
-      path: math/binom-coef.hpp
+      path: math/binomial-coefficients.hpp
       title: Binomial Coefficients
     - icon: ':warning:'
       path: math/crt.hpp

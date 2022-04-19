@@ -6,7 +6,7 @@ data:
     title: Modulo Inverse
   _extendedRequiredBy:
   - icon: ':warning:'
-    path: math/binom-coef.hpp
+    path: math/binomial-coefficients.hpp
     title: Binomial Coefficients
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
@@ -195,7 +195,7 @@ data:
   isVerificationFile: false
   path: utility/mint.hpp
   requiredBy:
-  - math/binom-coef.hpp
+  - math/binomial-coefficients.hpp
   timestamp: '2022-04-19 10:05:32-07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

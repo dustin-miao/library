@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: data-structure/fast-set.hpp
-    title: data-structure/fast-set.hpp
+    title: Fast Set
   - icon: ':heavy_check_mark:'
     path: math/inverse.hpp
     title: Modulo Inverse

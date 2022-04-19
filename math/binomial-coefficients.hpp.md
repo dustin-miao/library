@@ -94,12 +94,12 @@ data:
     \ = int;\n\nstruct VarMod { static ModType value; };\n\nModType VarMod::value;\n\
     \nModType &MOD = VarMod::value;\n\nusing mint = Modular<VarMod>;\n// */\n\n/*\n\
     constexpr int MOD = @@HERE@@;\n\nusing mint = Modular<integral_constant<decay<decltype(MOD)>::type,\
-    \ MOD>>;\n*/\n\n#pragma endregion mint\n#line 2 \"math/binom-coef.hpp\"\n\nnamespace\
-    \ math {\n\tstruct binomial_coefficients {\n\t\tvector<mint> fact, inv_fact;\n\
-    \n\t\tbinomial_coefficients() = default;\n\n\t\tbinomial_coefficients(int n) {\
-    \ init(n); }\n\n\t\tvoid init(int n) {\n\t\t\tfact.resize(n + 1);\n\t\t\tfact[0]\
-    \ = 1;\n\t\t\tinv_fact.resize(n + 1);\n\t\t\tinv_fact[0] = 1;\n\t\t\tfor (int\
-    \ i = 1; i <= n; i++) {\n\t\t\t\tfact[i] = fact[i - 1] * i;\n\t\t\t\tinv_fact[i]\
+    \ MOD>>;\n*/\n\n#pragma endregion mint\n#line 2 \"math/binomial-coefficients.hpp\"\
+    \n\nnamespace math {\n\tstruct binomial_coefficients {\n\t\tvector<mint> fact,\
+    \ inv_fact;\n\n\t\tbinomial_coefficients() = default;\n\n\t\tbinomial_coefficients(int\
+    \ n) { init(n); }\n\n\t\tvoid init(int n) {\n\t\t\tfact.resize(n + 1);\n\t\t\t\
+    fact[0] = 1;\n\t\t\tinv_fact.resize(n + 1);\n\t\t\tinv_fact[0] = 1;\n\t\t\tfor\
+    \ (int i = 1; i <= n; i++) {\n\t\t\t\tfact[i] = fact[i - 1] * i;\n\t\t\t\tinv_fact[i]\
     \ = 1 / fact[i];\n\t\t\t}\n\t\t}\n\n\t\tmint query(int n, int k) { return (0 <=\
     \ K && K <= N ? fact[n] * inv_fact[k] * inv_fact[n - k] : 0); }\n\n\t\tmint operator()(int\
     \ n, int k) { return query(n, k); }\n\t};\n}\n"
@@ -116,12 +116,12 @@ data:
   - utility/mint.hpp
   - math/inverse.hpp
   isVerificationFile: false
-  path: math/binom-coef.hpp
+  path: math/binomial-coefficients.hpp
   requiredBy: []
-  timestamp: '2022-04-19 10:09:24-07:00'
+  timestamp: '2022-04-19 10:30:14-07:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: math/binom-coef.hpp
+documentation_of: math/binomial-coefficients.hpp
 layout: document
 title: Binomial Coefficients
 ---
