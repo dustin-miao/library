@@ -149,8 +149,8 @@ data:
   - name: random
     pages:
     - icon: ':warning:'
-      path: random/mersenne_twister.cpp
-      title: random/mersenne_twister.cpp
+      path: random/mersenne_twister.hpp
+      title: Mersenne Twister
   - name: utility
     pages:
     - icon: ':heavy_check_mark:'
@@ -177,7 +177,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: utility/pi.hpp
       title: Pi
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: utility/y-combinator.hpp
       title: Y-Combinator
   verificationCategories:
@@ -384,6 +384,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/union-find.yosupo-unionfind.test.cpp
       title: verify/union-find.yosupo-unionfind.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/y-combinator.aizu-greatest-common-denominator.test.cpp
+      title: verify/y-combinator.aizu-greatest-common-denominator.test.cpp
 layout: toppage
 ---
 [![Dutinmeow](https://img.shields.io/endpoint?url=https%3A%2F%2Fatcoder-badges.now.sh%2Fapi%2Fatcoder%2Fjson%2FNyaan)](https://atcoder.jp/users/dutinmeow)

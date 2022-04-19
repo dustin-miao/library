@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/y-combinator.aizu-greatest-common-denominator.test.cpp
+    title: verify/y-combinator.aizu-greatest-common-denominator.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links:
     - http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0200r0.html
@@ -29,8 +32,9 @@ data:
   path: utility/y-combinator.hpp
   requiredBy: []
   timestamp: '2022-04-11 10:08:28-07:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/y-combinator.aizu-greatest-common-denominator.test.cpp
 documentation_of: utility/y-combinator.hpp
 layout: document
 title: Y-Combinator
