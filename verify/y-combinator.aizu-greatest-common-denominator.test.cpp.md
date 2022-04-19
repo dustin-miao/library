@@ -25,20 +25,20 @@ data:
     \t};\n\n\ttemplate<class Fun>\n\tdecltype(auto) y_combinator(Fun &&fun) {\n\t\t\
     return y_combinator_result<std::decay_t<Fun>>(std::forward<Fun>(fun));\n\t}\n\
     }\n#line 7 \"verify/y-combinator.aizu-greatest-common-denominator.test.cpp\"\n\
-    \nint main() {\n\tlong long A, B;\n\tcin >> A >> B;\n\n    auto gcd_test = y_combinator([](auto\
+    \nint main() {\n\tlong long A, B;\n\tcin >> A >> B;\n\n\tauto gcd_test = y_combinator([](auto\
     \ gcd_test, long long a, long long b) -> long long { \n\t\treturn b == 0 ? a :\
-    \ gcd_test(b, a % b); \n\t});\n\t\n    cout << gcd_test(A, B) << endl;\n}\n"
+    \ gcd_test(b, a % b); \n\t});\n\t\n\tcout << gcd_test(A, B) << endl;\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_B\"\
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#include \"utility/y-combinator.hpp\"\
-    \n\nint main() {\n\tlong long A, B;\n\tcin >> A >> B;\n\n    auto gcd_test = y_combinator([](auto\
+    \n\nint main() {\n\tlong long A, B;\n\tcin >> A >> B;\n\n\tauto gcd_test = y_combinator([](auto\
     \ gcd_test, long long a, long long b) -> long long { \n\t\treturn b == 0 ? a :\
-    \ gcd_test(b, a % b); \n\t});\n\t\n    cout << gcd_test(A, B) << endl;\n}"
+    \ gcd_test(b, a % b); \n\t});\n\t\n\tcout << gcd_test(A, B) << endl;\n}"
   dependsOn:
   - utility/y-combinator.hpp
   isVerificationFile: true
   path: verify/y-combinator.aizu-greatest-common-denominator.test.cpp
   requiredBy: []
-  timestamp: '2022-04-19 13:02:09-07:00'
+  timestamp: '2022-04-19 13:38:39-07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/y-combinator.aizu-greatest-common-denominator.test.cpp
