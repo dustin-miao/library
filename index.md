@@ -146,6 +146,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/matrix.hpp
       title: Matrix
+  - name: random
+    pages:
+    - icon: ':warning:'
+      path: random/mersenne_twister.cpp
+      title: random/mersenne_twister.cpp
   - name: utility
     pages:
     - icon: ':heavy_check_mark:'
