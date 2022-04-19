@@ -3,13 +3,14 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+#include "data-structure/fast-set.hpp"
 #include "graph/cycle-finding.hpp"
 
 int main() {
 	int N, M;
 	cin >> N >> M;
 	vector<vector<int>> G(N);
-	map<pair<int, int>, vector<int>> id;
+	fast_map<pair<int, int>, vector<int>> id;
 	for (int i = 0; i < M; i++) {
 		int u, v;
 		cin >> u >> v;

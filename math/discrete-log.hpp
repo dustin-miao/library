@@ -1,3 +1,4 @@
+#include "data-structure/fast-set.hpp"
 #include "math/inverse.hpp"
 
 namespace math {
@@ -20,7 +21,7 @@ namespace math {
 		T ir = inverse(r, mod);
 		b = b * ir % mod;
 		T k = 0, ak = 1;
-		map<T, T> baby;
+		fast_map<T, T> baby;
 		for (; k * k < mod; k++) {
 			if (baby.find(ak) == baby.end()) 
 				baby[ak] = k;
