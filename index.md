@@ -225,6 +225,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/ext-gcd.aizu-extended-euclid-algorithm.test.cpp
       title: verify/ext-gcd.aizu-extended-euclid-algorithm.test.cpp
+    - icon: ':x:'
+      path: verify/ext-gcd.aizu-greatest-common-divisor.test.cpp
+      title: verify/ext-gcd.aizu-greatest-common-divisor.test.cpp
+    - icon: ':x:'
+      path: verify/ext-gcd.yosupo-a+b.test.cpp
+      title: verify/ext-gcd.yosupo-a+b.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/fast-lca.yosupo-lowest-common-ancestor.test.cpp
       title: verify/fast-lca.yosupo-lowest-common-ancestor.test.cpp
