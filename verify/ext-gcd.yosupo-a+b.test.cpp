@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_B"
+#define PROBLEM "https://judge.yosupo.jp/problem/aplusb"
 
 #include <bits/stdc++.h>
 using namespace std;
