@@ -125,12 +125,15 @@ data:
     - icon: ':warning:'
       path: math/crt.hpp
       title: Chinese Remainder Theorem
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: math/discrete-log.hpp
       title: Discrete Logarithm
     - icon: ':heavy_check_mark:'
       path: math/ext-gcd.hpp
       title: Extended GCD
+    - icon: ':heavy_check_mark:'
+      path: math/inverse.hpp
+      title: Modulo Inverse
     - icon: ':warning:'
       path: math/linear-sieve.hpp
       title: Linear Sieve
@@ -202,6 +205,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/dijkstra.aizu-single-source-shortest-path.test.cpp
       title: verify/dijkstra.aizu-single-source-shortest-path.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/discrete-log.yosupo-discrete-logarithm.test.cpp
+      title: verify/discrete-log.yosupo-discrete-logarithm.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/ext-gcd.aizu-extended-euclid-algorithm.test.cpp
       title: verify/ext-gcd.aizu-extended-euclid-algorithm.test.cpp

@@ -5,6 +5,9 @@ data:
     path: data-structure/lazy-segment-tree.hpp
     title: Lazy Segment Tree
   - icon: ':heavy_check_mark:'
+    path: math/inverse.hpp
+    title: Modulo Inverse
+  - icon: ':heavy_check_mark:'
     path: utility/mint.hpp
     title: Modular Int
   _extendedRequiredBy: []
@@ -19,11 +22,12 @@ data:
     - https://judge.yosupo.jp/problem/range_affine_range_sum
   bundledCode: "#line 1 \"verify/lazy-segment-tree.yosupo-range-affine-range-sum.test.cpp\"\
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/range_affine_range_sum\"\n\
-    \n#include <bits/stdc++.h>\nusing namespace std;\n\n#line 1 \"utility/mint.hpp\"\
-    \n#pragma region mint\n\ntemplate<typename T>\nT inverse(T a, T m) {\n\tT u =\
-    \ 0, v = 1;\n\twhile (a != 0) {\n\t\tT t = m / a;\n\t\tm -= t * a; swap(a, m);\n\
-    \t\tu -= t * v; swap(u, v);\n\t}\n\tassert(m == 1);\n\treturn u;\n}\n\ntemplate<typename\
-    \ T>\nclass Modular {\npublic:\n\tusing Type = typename decay<decltype(T::value)>::type;\n\
+    \n#include <bits/stdc++.h>\nusing namespace std;\n\n#line 1 \"math/inverse.hpp\"\
+    \nnamespace math {\n\ttemplate <typename T>\n\tT inverse(T a, T p) {\n\t\tT b\
+    \ = p, x = 1, y = 0;\n\t\twhile (a) {\n\t\t\tT q = b / a;\n\t\t\tswap(a, b %=\
+    \ a);\n\t\t\tswap(x, y -= q * x);\n\t\t}\n\t\tassert(b == 1);\n\t\treturn y <\
+    \ 0 ? y + p : y;\n\t}\n}\n#line 2 \"utility/mint.hpp\"\n\n#pragma region mint\n\
+    \ntemplate<typename T>\nclass Modular {\npublic:\n\tusing Type = typename decay<decltype(T::value)>::type;\n\
     \t\n\tconstexpr Modular() : value() {}\n\n\ttemplate<typename U>\n\tModular(const\
     \ U &x) { value = normalize(x); }\n\n\ttemplate<typename U>\n\tstatic Type normalize(const\
     \ U &x) {\n\t\tType v;\n\t\tif (-mod() <= x && x < mod()) \n\t\t\tv = static_cast<Type>(x);\n\
@@ -152,11 +156,12 @@ data:
     cout << sgt.query(l, r - 1) << '\\n';\n\t\t}\n\t}\n}"
   dependsOn:
   - utility/mint.hpp
+  - math/inverse.hpp
   - data-structure/lazy-segment-tree.hpp
   isVerificationFile: true
   path: verify/lazy-segment-tree.yosupo-range-affine-range-sum.test.cpp
   requiredBy: []
-  timestamp: '2022-04-09 15:55:38-07:00'
+  timestamp: '2022-04-19 10:05:32-07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/lazy-segment-tree.yosupo-range-affine-range-sum.test.cpp
