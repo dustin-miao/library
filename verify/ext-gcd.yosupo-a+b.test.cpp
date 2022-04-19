@@ -4,7 +4,7 @@
 using namespace std;
 
 #include "math/ext-gcd.hpp"
-#include "random/mersenne_twister.md"
+#include "random/mersenne_twister.hpp"
 
 int main() {
 	int T = 2e5;
