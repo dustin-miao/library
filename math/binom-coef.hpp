@@ -1,12 +1,12 @@
 #include "utility/mint.hpp"
 
 namespace math {
-	struct BinomCoef {
+	struct binomial_coefficients {
 		vector<mint> fact, inv_fact;
 
-		BinomCoef() = default;
+		binomial_coefficients() = default;
 
-		BinomCoef(int n) { init(n); }
+		binomial_coefficients(int n) { init(n); }
 
 		void init(int n) {
 			fact.resize(n + 1);
