@@ -132,6 +132,9 @@ data:
       path: math/discrete-log.hpp
       title: Discrete Logarithm
     - icon: ':heavy_check_mark:'
+      path: math/discrete-sqrt.hpp
+      title: Discrete Square Root
+    - icon: ':heavy_check_mark:'
       path: math/ext-gcd.hpp
       title: Extended GCD
     - icon: ':heavy_check_mark:'
@@ -211,6 +214,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/discrete-log.yosupo-discrete-logarithm.test.cpp
       title: verify/discrete-log.yosupo-discrete-logarithm.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/discrete-sqrt.yosupo-sqrt-mod.test.cpp
+      title: verify/discrete-sqrt.yosupo-sqrt-mod.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/ext-gcd.aizu-extended-euclid-algorithm.test.cpp
       title: verify/ext-gcd.aizu-extended-euclid-algorithm.test.cpp

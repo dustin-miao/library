@@ -8,7 +8,13 @@ data:
   - icon: ':warning:'
     path: math/binomial-coefficients.hpp
     title: Binomial Coefficients
+  - icon: ':heavy_check_mark:'
+    path: math/discrete-sqrt.hpp
+    title: Discrete Square Root
   _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/discrete-sqrt.yosupo-sqrt-mod.test.cpp
+    title: verify/discrete-sqrt.yosupo-sqrt-mod.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/general-segment-tree.yosupo-point-set-range-composite.test.cpp
     title: verify/general-segment-tree.yosupo-point-set-range-composite.test.cpp
@@ -196,6 +202,7 @@ data:
   path: utility/mint.hpp
   requiredBy:
   - math/binomial-coefficients.hpp
+  - math/discrete-sqrt.hpp
   timestamp: '2022-04-19 10:05:32-07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
@@ -204,6 +211,7 @@ data:
   - verify/lazy-segment-tree.yosupo-range-affine-range-sum.test.cpp
   - verify/sparse-segment-tree.yosupo-point-set-range-composite.test.cpp
   - verify/recursive-segment-tree.yosupo-point-set-range-composite.test.cpp
+  - verify/discrete-sqrt.yosupo-sqrt-mod.test.cpp
   - verify/general-segment-tree.yosupo-point-set-range-composite.test.cpp
 documentation_of: utility/mint.hpp
 layout: document

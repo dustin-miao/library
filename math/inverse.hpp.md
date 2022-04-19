@@ -9,12 +9,18 @@ data:
     path: math/discrete-log.hpp
     title: Discrete Logarithm
   - icon: ':heavy_check_mark:'
+    path: math/discrete-sqrt.hpp
+    title: Discrete Square Root
+  - icon: ':heavy_check_mark:'
     path: utility/mint.hpp
     title: Modular Int
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/discrete-log.yosupo-discrete-logarithm.test.cpp
     title: verify/discrete-log.yosupo-discrete-logarithm.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/discrete-sqrt.yosupo-sqrt-mod.test.cpp
+    title: verify/discrete-sqrt.yosupo-sqrt-mod.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/general-segment-tree.yosupo-point-set-range-composite.test.cpp
     title: verify/general-segment-tree.yosupo-point-set-range-composite.test.cpp
@@ -52,6 +58,7 @@ data:
   requiredBy:
   - math/discrete-log.hpp
   - math/binomial-coefficients.hpp
+  - math/discrete-sqrt.hpp
   - utility/mint.hpp
   timestamp: '2022-04-19 10:05:32-07:00'
   verificationStatus: LIBRARY_ALL_AC
@@ -62,6 +69,7 @@ data:
   - verify/discrete-log.yosupo-discrete-logarithm.test.cpp
   - verify/sparse-segment-tree.yosupo-point-set-range-composite.test.cpp
   - verify/recursive-segment-tree.yosupo-point-set-range-composite.test.cpp
+  - verify/discrete-sqrt.yosupo-sqrt-mod.test.cpp
   - verify/general-segment-tree.yosupo-point-set-range-composite.test.cpp
 documentation_of: math/inverse.hpp
 layout: document
