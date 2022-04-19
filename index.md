@@ -134,7 +134,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/discrete-sqrt.hpp
       title: Discrete Square Root
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: math/ext-gcd.hpp
       title: Extended GCD
     - icon: ':heavy_check_mark:'
@@ -148,7 +148,7 @@ data:
       title: Matrix
   - name: random
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: random/mersenne_twister.hpp
       title: Mersenne Twister
   - name: utility
@@ -228,7 +228,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/ext-gcd.aizu-greatest-common-divisor.test.cpp
       title: verify/ext-gcd.aizu-greatest-common-divisor.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/ext-gcd.yosupo-a+b.test.cpp
       title: verify/ext-gcd.yosupo-a+b.test.cpp
     - icon: ':heavy_check_mark:'
