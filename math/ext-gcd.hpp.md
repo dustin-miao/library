@@ -9,9 +9,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/ext-gcd.aizu-extended-euclid-algorithm.test.cpp
     title: verify/ext-gcd.aizu-extended-euclid-algorithm.test.cpp
-  _isVerificationFailed: false
+  - icon: ':heavy_check_mark:'
+    path: verify/ext-gcd.aizu-greatest-common-divisor.test.cpp
+    title: verify/ext-gcd.aizu-greatest-common-divisor.test.cpp
+  - icon: ':x:'
+    path: verify/ext-gcd.yosupo-a+b.test.cpp
+    title: verify/ext-gcd.yosupo-a+b.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"math/ext-gcd.hpp\"\nnamespace math {\n\ttemplate<typename\
@@ -31,9 +37,11 @@ data:
   requiredBy:
   - math/crt.hpp
   timestamp: '2022-04-16 16:23:30-07:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/ext-gcd.aizu-extended-euclid-algorithm.test.cpp
+  - verify/ext-gcd.yosupo-a+b.test.cpp
+  - verify/ext-gcd.aizu-greatest-common-divisor.test.cpp
 documentation_of: math/ext-gcd.hpp
 layout: document
 title: Extended GCD
