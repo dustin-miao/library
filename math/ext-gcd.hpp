@@ -1,3 +1,5 @@
+#pragma region extended gcd
+
 namespace math {
 	template<typename T>
 	T ext_gcd(T a, T b, T &x, T &y) {
@@ -12,3 +14,5 @@ namespace math {
 		return a1;
 	}
 }
+
+#pragma endregion extended gcd

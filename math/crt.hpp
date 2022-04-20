@@ -1,5 +1,7 @@
 #include "math/ext-gcd.hpp"
 
+#pragma region chinese remainder theorem
+
 namespace math {
 	template<typename T>
 	T crt(const pair<T, T> &p1, const pair<T, T> &p2) {
@@ -16,3 +18,5 @@ namespace math {
 		return (n1 * (a2 - a1) / g % (m2 / g) * m1 + a1 + l) % l;
 	}
 }
+
+#pragma endregion chinese remainder theorem

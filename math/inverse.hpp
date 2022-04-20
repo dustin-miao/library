@@ -1,3 +1,5 @@
+#pragma region modulo inverse
+
 namespace math {
 	template <typename T>
 	T inverse(T a, T p) {
@@ -11,3 +13,5 @@ namespace math {
 		return y < 0 ? y + p : y;
 	}
 }
+
+#pragma endregion modulo inverse

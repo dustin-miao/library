@@ -1,5 +1,7 @@
 #include "utility/mint.hpp"
 
+#pragma region discrete sqrt
+
 namespace math {
 	template<typename T = long long>
 	T discrete_sqrt(const T &a, const T &mod) {
@@ -31,3 +33,5 @@ namespace math {
 		return x();
 	}
 }
+
+#pragma endregion discrete sqrt

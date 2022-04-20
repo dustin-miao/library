@@ -1,3 +1,5 @@
+#pragma region linear sieve
+
 namespace math {
 	pair<vector<int>, vector<int>> linear_sieve(int n) {
 		vector<int> leastFactor(n + 1, 0), primes;
@@ -12,3 +14,5 @@ namespace math {
 		return make_pair(leastFactor, primes);
 	}
 }
+
+#pragma endregion linear sieve

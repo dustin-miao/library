@@ -1,5 +1,7 @@
 #include "utility/mint.hpp"
 
+#pragma region binomial coefficients
+
 namespace math {
 	struct binomial_coefficients {
 		vector<mint> fact, inv_fact;
@@ -24,3 +26,5 @@ namespace math {
 		mint operator()(int n, int k) { return query(n, k); }
 	};
 }
+
+#pragma endregion binomial coefficients
