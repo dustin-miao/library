@@ -44,14 +44,16 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"math/inverse.hpp\"\nnamespace math {\n\ttemplate <typename\
-    \ T>\n\tT inverse(T a, T p) {\n\t\tT b = p, x = 1, y = 0;\n\t\twhile (a) {\n\t\
-    \t\tT q = b / a;\n\t\t\tswap(a, b %= a);\n\t\t\tswap(x, y -= q * x);\n\t\t}\n\t\
-    \tassert(b == 1);\n\t\treturn y < 0 ? y + p : y;\n\t}\n}\n"
-  code: "namespace math {\n\ttemplate <typename T>\n\tT inverse(T a, T p) {\n\t\t\
-    T b = p, x = 1, y = 0;\n\t\twhile (a) {\n\t\t\tT q = b / a;\n\t\t\tswap(a, b %=\
-    \ a);\n\t\t\tswap(x, y -= q * x);\n\t\t}\n\t\tassert(b == 1);\n\t\treturn y <\
-    \ 0 ? y + p : y;\n\t}\n}"
+  bundledCode: "#line 1 \"math/inverse.hpp\"\n#pragma region modulo inverse\n\nnamespace\
+    \ math {\n\ttemplate <typename T>\n\tT inverse(T a, T p) {\n\t\tT b = p, x = 1,\
+    \ y = 0;\n\t\twhile (a) {\n\t\t\tT q = b / a;\n\t\t\tswap(a, b %= a);\n\t\t\t\
+    swap(x, y -= q * x);\n\t\t}\n\t\tassert(b == 1);\n\t\treturn y < 0 ? y + p : y;\n\
+    \t}\n}\n\n#pragma endregion modulo inverse\n"
+  code: "#pragma region modulo inverse\n\nnamespace math {\n\ttemplate <typename T>\n\
+    \tT inverse(T a, T p) {\n\t\tT b = p, x = 1, y = 0;\n\t\twhile (a) {\n\t\t\tT\
+    \ q = b / a;\n\t\t\tswap(a, b %= a);\n\t\t\tswap(x, y -= q * x);\n\t\t}\n\t\t\
+    assert(b == 1);\n\t\treturn y < 0 ? y + p : y;\n\t}\n}\n\n#pragma endregion modulo\
+    \ inverse"
   dependsOn: []
   isVerificationFile: false
   path: math/inverse.hpp
@@ -60,7 +62,7 @@ data:
   - math/binomial-coefficients.hpp
   - math/discrete-sqrt.hpp
   - utility/mint.hpp
-  timestamp: '2022-04-19 10:05:32-07:00'
+  timestamp: '2022-04-20 11:24:42-07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/mint.power.test.cpp

@@ -17,11 +17,12 @@ data:
   bundledCode: "#line 1 \"verify/ext-gcd.aizu-greatest-common-divisor.test.cpp\"\n\
     #define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_B\"\
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#line 1 \"math/ext-gcd.hpp\"\
-    \nnamespace math {\n\ttemplate<typename T>\n\tT ext_gcd(T a, T b, T &x, T &y)\
-    \ {\n\t\tx = 1, y = 0;\n\t\tT x1 = 0, y1 = 1, a1 = a, b1 = b;\n\t\twhile (b1)\
-    \ {\n\t\t\tT q = a1 / b1;\n\t\t\ttie(x, x1) = make_tuple(x1, x - q * x1);\n\t\t\
-    \ttie(y, y1) = make_tuple(y1, y - q * y1);\n\t\t\ttie(a1, b1) = make_tuple(b1,\
-    \ a1 - q * b1);\n\t\t}\n\t\treturn a1;\n\t}\n}\n#line 7 \"verify/ext-gcd.aizu-greatest-common-divisor.test.cpp\"\
+    \n#pragma region extended gcd\n\nnamespace math {\n\ttemplate<typename T>\n\t\
+    T ext_gcd(T a, T b, T &x, T &y) {\n\t\tx = 1, y = 0;\n\t\tT x1 = 0, y1 = 1, a1\
+    \ = a, b1 = b;\n\t\twhile (b1) {\n\t\t\tT q = a1 / b1;\n\t\t\ttie(x, x1) = make_tuple(x1,\
+    \ x - q * x1);\n\t\t\ttie(y, y1) = make_tuple(y1, y - q * y1);\n\t\t\ttie(a1,\
+    \ b1) = make_tuple(b1, a1 - q * b1);\n\t\t}\n\t\treturn a1;\n\t}\n}\n\n#pragma\
+    \ endregion extended gcd\n#line 7 \"verify/ext-gcd.aizu-greatest-common-divisor.test.cpp\"\
     \n\nint main() {\n\tlong long A, B, X, Y;\n\tcin >> A >> B;\n\tcout << math::ext_gcd(A,\
     \ B, X, Y) << '\\n';\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_B\"\
@@ -33,7 +34,7 @@ data:
   isVerificationFile: true
   path: verify/ext-gcd.aizu-greatest-common-divisor.test.cpp
   requiredBy: []
-  timestamp: '2022-04-19 13:04:18-07:00'
+  timestamp: '2022-04-20 11:24:42-07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/ext-gcd.aizu-greatest-common-divisor.test.cpp

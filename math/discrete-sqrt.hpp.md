@@ -17,13 +17,14 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"math/inverse.hpp\"\nnamespace math {\n\ttemplate <typename\
-    \ T>\n\tT inverse(T a, T p) {\n\t\tT b = p, x = 1, y = 0;\n\t\twhile (a) {\n\t\
-    \t\tT q = b / a;\n\t\t\tswap(a, b %= a);\n\t\t\tswap(x, y -= q * x);\n\t\t}\n\t\
-    \tassert(b == 1);\n\t\treturn y < 0 ? y + p : y;\n\t}\n}\n#line 2 \"utility/mint.hpp\"\
-    \n\n#pragma region mint\n\ntemplate<typename T>\nclass Modular {\npublic:\n\t\
-    using Type = typename decay<decltype(T::value)>::type;\n\t\n\tconstexpr Modular()\
-    \ : value() {}\n\n\ttemplate<typename U>\n\tModular(const U &x) { value = normalize(x);\
+  bundledCode: "#line 1 \"math/inverse.hpp\"\n#pragma region modulo inverse\n\nnamespace\
+    \ math {\n\ttemplate <typename T>\n\tT inverse(T a, T p) {\n\t\tT b = p, x = 1,\
+    \ y = 0;\n\t\twhile (a) {\n\t\t\tT q = b / a;\n\t\t\tswap(a, b %= a);\n\t\t\t\
+    swap(x, y -= q * x);\n\t\t}\n\t\tassert(b == 1);\n\t\treturn y < 0 ? y + p : y;\n\
+    \t}\n}\n\n#pragma endregion modulo inverse\n#line 2 \"utility/mint.hpp\"\n\n#pragma\
+    \ region mint\n\ntemplate<typename T>\nclass Modular {\npublic:\n\tusing Type\
+    \ = typename decay<decltype(T::value)>::type;\n\t\n\tconstexpr Modular() : value()\
+    \ {}\n\n\ttemplate<typename U>\n\tModular(const U &x) { value = normalize(x);\
     \ }\n\n\ttemplate<typename U>\n\tstatic Type normalize(const U &x) {\n\t\tType\
     \ v;\n\t\tif (-mod() <= x && x < mod()) \n\t\t\tv = static_cast<Type>(x);\n\t\t\
     else \n\t\t\tv = static_cast<Type>(x % mod());\n\t\tif (v < 0) \n\t\t\tv += mod();\n\
@@ -98,33 +99,35 @@ data:
     \nModType &MOD = VarMod::value;\n\nusing mint = Modular<VarMod>;\n// */\n\n/*\n\
     constexpr int MOD = @@HERE@@;\n\nusing mint = Modular<integral_constant<decay<decltype(MOD)>::type,\
     \ MOD>>;\n*/\n\n#pragma endregion mint\n#line 2 \"math/discrete-sqrt.hpp\"\n\n\
-    namespace math {\n\ttemplate<typename T = long long>\n\tT discrete_sqrt(const\
-    \ T &a, const T &mod) {\n\t\tassert(0 <= a && a < mod);\n\t\tif (a < 2) \n\t\t\
-    \treturn a;\n\t\tMOD = mod;\n\t\tif (fast_pow(mint(a), (mod - 1) >> 1) != 1) \n\
-    \t\t\treturn -1;\n\t\tmint b = 1;\n\t\tfor (; fast_pow(b, (mod - 1) >> 1) == 1;\
-    \ b++);\n\t\tT m = mod - 1, e = 0;\n\t\tfor (; m % 2 == 0; m >>= 1, e++);\n\t\t\
-    mint x = fast_pow(mint(a), (m - 1) >> 1), y = mint(a) * x * x, z = fast_pow(mint(b),\
-    \ m);\n\t\tx *= a;\n\t\twhile (y != 1) {\n\t\t\tT j = 0;\n\t\t\tmint t = y;\n\t\
-    \t\twhile (t != 1) {\n\t\t\t\tj += 1;\n\t\t\t\tt *= t;\n\t\t\t}\n\t\t\tz = fast_pow(z,\
-    \ T(1) << (e - j - 1));\n\t\t\tx *= z;\n\t\t\tz *= z;\n\t\t\ty *= z;\n\t\t\te\
-    \ = j;\n\t\t}\n\t\treturn x();\n\t}\n}\n"
-  code: "#include \"utility/mint.hpp\"\n\nnamespace math {\n\ttemplate<typename T\
-    \ = long long>\n\tT discrete_sqrt(const T &a, const T &mod) {\n\t\tassert(0 <=\
-    \ a && a < mod);\n\t\tif (a < 2) \n\t\t\treturn a;\n\t\tMOD = mod;\n\t\tif (fast_pow(mint(a),\
+    #pragma region discrete sqrt\n\nnamespace math {\n\ttemplate<typename T = long\
+    \ long>\n\tT discrete_sqrt(const T &a, const T &mod) {\n\t\tassert(0 <= a && a\
+    \ < mod);\n\t\tif (a < 2) \n\t\t\treturn a;\n\t\tMOD = mod;\n\t\tif (fast_pow(mint(a),\
     \ (mod - 1) >> 1) != 1) \n\t\t\treturn -1;\n\t\tmint b = 1;\n\t\tfor (; fast_pow(b,\
     \ (mod - 1) >> 1) == 1; b++);\n\t\tT m = mod - 1, e = 0;\n\t\tfor (; m % 2 ==\
     \ 0; m >>= 1, e++);\n\t\tmint x = fast_pow(mint(a), (m - 1) >> 1), y = mint(a)\
     \ * x * x, z = fast_pow(mint(b), m);\n\t\tx *= a;\n\t\twhile (y != 1) {\n\t\t\t\
     T j = 0;\n\t\t\tmint t = y;\n\t\t\twhile (t != 1) {\n\t\t\t\tj += 1;\n\t\t\t\t\
     t *= t;\n\t\t\t}\n\t\t\tz = fast_pow(z, T(1) << (e - j - 1));\n\t\t\tx *= z;\n\
-    \t\t\tz *= z;\n\t\t\ty *= z;\n\t\t\te = j;\n\t\t}\n\t\treturn x();\n\t}\n}\n"
+    \t\t\tz *= z;\n\t\t\ty *= z;\n\t\t\te = j;\n\t\t}\n\t\treturn x();\n\t}\n}\n\n\
+    #pragma endregion discrete sqrt\n"
+  code: "#include \"utility/mint.hpp\"\n\n#pragma region discrete sqrt\n\nnamespace\
+    \ math {\n\ttemplate<typename T = long long>\n\tT discrete_sqrt(const T &a, const\
+    \ T &mod) {\n\t\tassert(0 <= a && a < mod);\n\t\tif (a < 2) \n\t\t\treturn a;\n\
+    \t\tMOD = mod;\n\t\tif (fast_pow(mint(a), (mod - 1) >> 1) != 1) \n\t\t\treturn\
+    \ -1;\n\t\tmint b = 1;\n\t\tfor (; fast_pow(b, (mod - 1) >> 1) == 1; b++);\n\t\
+    \tT m = mod - 1, e = 0;\n\t\tfor (; m % 2 == 0; m >>= 1, e++);\n\t\tmint x = fast_pow(mint(a),\
+    \ (m - 1) >> 1), y = mint(a) * x * x, z = fast_pow(mint(b), m);\n\t\tx *= a;\n\
+    \t\twhile (y != 1) {\n\t\t\tT j = 0;\n\t\t\tmint t = y;\n\t\t\twhile (t != 1)\
+    \ {\n\t\t\t\tj += 1;\n\t\t\t\tt *= t;\n\t\t\t}\n\t\t\tz = fast_pow(z, T(1) <<\
+    \ (e - j - 1));\n\t\t\tx *= z;\n\t\t\tz *= z;\n\t\t\ty *= z;\n\t\t\te = j;\n\t\
+    \t}\n\t\treturn x();\n\t}\n}\n\n#pragma endregion discrete sqrt"
   dependsOn:
   - utility/mint.hpp
   - math/inverse.hpp
   isVerificationFile: false
   path: math/discrete-sqrt.hpp
   requiredBy: []
-  timestamp: '2022-04-19 12:19:19-07:00'
+  timestamp: '2022-04-20 11:24:42-07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/discrete-sqrt.yosupo-sqrt-mod.test.cpp
