@@ -18,6 +18,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: convolution/fast-fourier-transform.hpp
       title: Fast Fourier Transform
+    - icon: ':warning:'
+      path: convolution/mobius-transform.hpp
+      title: Mobius Transform
     - icon: ':heavy_check_mark:'
       path: convolution/reverse-bit-radix-sort.hpp
       title: Reverse Bit Radix Sort
@@ -27,6 +30,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: convolution/slow-fast-fourier-transform.hpp
       title: Slow Fast Fourier Transform
+    - icon: ':warning:'
+      path: convolution/zeta-transform.hpp
+      title: Zeta Transform
   - name: data-structure
     pages:
     - icon: ':heavy_check_mark:'
