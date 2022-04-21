@@ -61,6 +61,7 @@ h(k, s) &= \sum_{i = 0}^{k} z(\hat{f}(i, s) \cdot z(\hat{g}(k - i, s)\\
 $$
 
 Thus, the RHS now becomes
+
 $$
 \begin{align*}
 &= \mu\{h(|s|, s)\} \\
