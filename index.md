@@ -31,6 +31,9 @@ data:
       path: convolution/slow-fast-fourier-transform.hpp
       title: Slow Fast Fourier Transform
     - icon: ':warning:'
+      path: convolution/subset-convolution.hpp
+      title: Subset Convolution
+    - icon: ':warning:'
       path: convolution/zeta-transform.hpp
       title: Zeta Transform
   - name: data-structure
