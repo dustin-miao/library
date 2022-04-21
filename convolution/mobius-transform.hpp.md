@@ -9,11 +9,11 @@ data:
   attributes:
     links: []
   bundledCode: "#line 1 \"convolution/mobius-transform.hpp\"\nnamespace conv {\n\t\
-    template<typename T>\n\tvoid zeta_transform(vector<T> &a) {\n\t\tint n = 1;\n\t\
-    \twhile ((1 << n) < a.size()) \n\t\t\tn++;\n\t\tassert((1 << n) == a.size());\n\
+    template<typename T>\n\tvoid mobius_transform(vector<T> &a) {\n\t\tint n = 1;\n\
+    \t\twhile ((1 << n) < a.size()) \n\t\t\tn++;\n\t\tassert((1 << n) == a.size());\n\
     \t\tfor (int i = 0; i < n; i++)\n\t\t\tfor (int mask = 0; mask < (1 << n); mask++)\n\
     \t\t\t\tif (mask >> i & 1)\n\t\t\t\t\ta[mask] -= a[mask ^ (1 << i)];\n\t}\n}\n"
-  code: "namespace conv {\n\ttemplate<typename T>\n\tvoid zeta_transform(vector<T>\
+  code: "namespace conv {\n\ttemplate<typename T>\n\tvoid mobius_transform(vector<T>\
     \ &a) {\n\t\tint n = 1;\n\t\twhile ((1 << n) < a.size()) \n\t\t\tn++;\n\t\tassert((1\
     \ << n) == a.size());\n\t\tfor (int i = 0; i < n; i++)\n\t\t\tfor (int mask =\
     \ 0; mask < (1 << n); mask++)\n\t\t\t\tif (mask >> i & 1)\n\t\t\t\t\ta[mask] -=\
@@ -22,7 +22,7 @@ data:
   isVerificationFile: false
   path: convolution/mobius-transform.hpp
   requiredBy: []
-  timestamp: '2022-04-21 12:24:31-07:00'
+  timestamp: '2022-04-21 13:17:25-07:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: convolution/mobius-transform.hpp
