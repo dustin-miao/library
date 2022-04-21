@@ -6,6 +6,7 @@ documentation_of: //convolution/subset-convolution.hpp
 ## Subset Convolution
 
 The Subset convolution for two functions $f$ and $g$, both with domain $[0, 2^n)$, is defined as 
+
 $$
 (f \circ g)(s) = \sum_{s' \subseteq s} f(s')g(s \setminus s')
 $$
@@ -13,20 +14,25 @@ $$
 Subset convolution can be calculated for all $s \in [0, 2^n)$ in $\mathcal{O}(n^22^n)$ using a combination of [Zeta](https://dutinmeow.github.io/library/convolution/zeta-transform.hpp) and [Mobius](https://dutinmeow.github.io/library/convolution/mobius-transform.hpp) transforms. 
 
 Let $\hat{f}$ and $\hat{g}$ be defined as follows:
+
 $$
 \hat{f}(i, s) = \begin{cases} f(s) & \text{if } i = |s| \\ 0 & \text{otherwise} \end{cases}
 $$
+
 $$
 \hat{g}(i, s) = \begin{cases} g(s) & \text{if } i = |s| \\ 0 & \text{otherwise} \end{cases}
 $$
 
 We will prove the following theorem:
+
 $$
 (f \circ g)(s) = \mu\left\{\sum_{i = 0}^n \zeta\{\hat{f}(i, s)\} \cdot \zeta\{\hat{g}(|s| - i, s)\}\right\}, \forall s \in [0, 2^n)
 $$
+
 In other words, the Subset convolution of $f$ and $g$ is equal to the Mobius transform of the point products of the Zeta transforms of $\hat{f}$ and $\hat{g}$. 
 
 Define $p$ as follows:
+
 $$
 p(k, s) = \sum_{i = 0}^{k} \sum_{\substack{a \subseteq s \\ |a| = i}} \sum_{\substack{b \subseteq s \\ |b| = k - i \\ a \cup b = s}} f(a)g(b)
 $$

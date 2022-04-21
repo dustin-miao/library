@@ -6,6 +6,7 @@ documentation_of: //convolution/mobius-transform.hpp
 ## Mobius Transform
 
 The Mobius transform uses inclusion-exclusion over subsets, which undoes the [Zeta transform](https://dutinmeow.github.io/library/convolution/zeta-transform.hpp). It acts on some function $f$ with domain $s \in [0, 2^n)$ and is defined to be 
+
 $$
 \mu \{f(s)\} = \sum_{s' \subseteq s} (-1)^{|s \setminus s'|}f(s')
 $$
