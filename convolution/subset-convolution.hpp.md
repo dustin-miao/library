@@ -59,7 +59,7 @@ $$
 p(k, s) = \sum_{i = 0}^{k} \sum_{\substack{a \subseteq s \\ |a| = i}} \sum_{\substack{b \subseteq s \\ |b| = k - i \\ a \cup b = s}} f(a)g(b)
 $$
 
-We show that $(f \circ g)(s) = p(|s|, s)$:
+We show that $(f \circ g)(s) = p(\lvert s \rvert, s)$:
 
 $$
 \begin{align*} 
