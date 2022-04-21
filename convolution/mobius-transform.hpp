@@ -1,6 +1,6 @@
 namespace conv {
 	template<typename T>
-	void zeta_transform(vector<T> &a) {
+	void mobius_transform(vector<T> &a) {
 		int n = 1;
 		while ((1 << n) < a.size()) 
 			n++;
