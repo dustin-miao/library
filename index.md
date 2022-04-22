@@ -3,19 +3,19 @@ data:
   libraryCategories:
   - name: convolution
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: convolution/complex-convolution.hpp
       title: Complex Convolution
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: convolution/convolution-mod.hpp
       title: Convolution under Modulo
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: convolution/convolution.hpp
       title: Convolution
     - icon: ':warning:'
       path: convolution/cyclic-product.hpp
       title: Cyclic Product
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: convolution/fast-fourier-transform.hpp
       title: Fast Fourier Transform
     - icon: ':warning:'
@@ -192,7 +192,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: utility/mint.hpp
       title: Modular Int
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: utility/pi.hpp
       title: Pi
     - icon: ':heavy_check_mark:'
@@ -210,19 +210,19 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/chmin.aizu-min-max-sum.test.cpp
       title: verify/chmin.aizu-min-max-sum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/complex-convolution.aizu-naive-string-search.test.cpp
       title: verify/complex-convolution.aizu-naive-string-search.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/complex-convolution.aizu-string-search.test.cpp
       title: verify/complex-convolution.aizu-string-search.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/convolution-mod.yosupo-convolution-mod-1000000007.test.cpp
       title: verify/convolution-mod.yosupo-convolution-mod-1000000007.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/convolution-mod.yosupo-convolution.test.cpp
       title: verify/convolution-mod.yosupo-convolution.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/convolution.yosupo-frequency-table-of-tree-distances.test.cpp
       title: verify/convolution.yosupo-frequency-table-of-tree-distances.test.cpp
     - icon: ':heavy_check_mark:'

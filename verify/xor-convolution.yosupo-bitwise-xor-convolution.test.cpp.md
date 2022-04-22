@@ -18,7 +18,7 @@ data:
     , line 401, in update\n    self.update(self._resolve(pathlib.Path(included), included_from=path))\n\
     \  File \"/opt/hostedtoolcache/Python/3.10.4/x64/lib/python3.10/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 260, in _resolve\n    raise BundleErrorAt(path, -1, \"no such header\"\
-    )\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: fast-walsh-hadamand-transform.hpp:\
+    )\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: convolution/fast-walsh-hadamand-transform.hpp:\
     \ line -1: no such header\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/bitwise_xor_convolution\"\
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#include \"convolution/xor-convolution.hpp\"\
