@@ -100,7 +100,7 @@ public:
 		return *this;
 	}
 
-	Modular &operator/=(const Modular &other) { return *this *= Modular(inverse(other.value, mod())); }
+	Modular &operator/=(const Modular &other) { return *this *= Modular(math::inverse(other.value, mod())); }
 
 	template<typename U>
 	friend bool operator==(const Modular<U>& a, const Modular<U>& b);
