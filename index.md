@@ -3,21 +3,27 @@ data:
   libraryCategories:
   - name: convolution
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: convolution/complex-convolution.hpp
       title: Complex Convolution
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: convolution/convolution-mod.hpp
       title: Convolution under Modulo
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: convolution/convolution.hpp
       title: Convolution
     - icon: ':warning:'
       path: convolution/cyclic-product.hpp
       title: Cyclic Product
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: convolution/fast-fourier-transform.hpp
       title: Fast Fourier Transform
+    - icon: ':warning:'
+      path: convolution/fast-walsh-hadamard-transform.hpp
+      title: Fast Walsh-Hadamard Transform
+    - icon: ':warning:'
+      path: convolution/inverse-fast-walsh-hadamard-transform.hpp
+      title: Inverse Fast Walsh-Hadamard Transform
     - icon: ':warning:'
       path: convolution/mobius-transform.hpp
       title: Mobius Transform
@@ -33,6 +39,9 @@ data:
     - icon: ':warning:'
       path: convolution/subset-convolution.hpp
       title: Subset Convolution
+    - icon: ':warning:'
+      path: convolution/xor-convolution.hpp
+      title: Xor Convolution
     - icon: ':warning:'
       path: convolution/zeta-transform.hpp
       title: Zeta Transform
@@ -183,7 +192,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: utility/mint.hpp
       title: Modular Int
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: utility/pi.hpp
       title: Pi
     - icon: ':heavy_check_mark:'
@@ -201,19 +210,19 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/chmin.aizu-min-max-sum.test.cpp
       title: verify/chmin.aizu-min-max-sum.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/complex-convolution.aizu-naive-string-search.test.cpp
       title: verify/complex-convolution.aizu-naive-string-search.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/complex-convolution.aizu-string-search.test.cpp
       title: verify/complex-convolution.aizu-string-search.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/convolution-mod.yosupo-convolution-mod-1000000007.test.cpp
       title: verify/convolution-mod.yosupo-convolution-mod-1000000007.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/convolution-mod.yosupo-convolution.test.cpp
       title: verify/convolution-mod.yosupo-convolution.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/convolution.yosupo-frequency-table-of-tree-distances.test.cpp
       title: verify/convolution.yosupo-frequency-table-of-tree-distances.test.cpp
     - icon: ':heavy_check_mark:'
@@ -393,6 +402,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/union-find.yosupo-unionfind.test.cpp
       title: verify/union-find.yosupo-unionfind.test.cpp
+    - icon: ':x:'
+      path: verify/xor-convolution.yosupo-bitwise-xor-convolution.test.cpp
+      title: verify/xor-convolution.yosupo-bitwise-xor-convolution.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/y-combinator.aizu-greatest-common-denominator.test.cpp
       title: verify/y-combinator.aizu-greatest-common-denominator.test.cpp

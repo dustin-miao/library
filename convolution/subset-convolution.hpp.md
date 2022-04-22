@@ -8,16 +8,16 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: '#line 1 "convolution/subset-convolution.hpp"
-
-
-    '
-  code: ''
+  bundledCode: "#line 1 \"convolution/subset-convolution.hpp\"\nnamespace conv {\n\
+    \ttemplate<typename T>\n\tvector<T> subset_convolution(const vector<T> &a, const\
+    \ vector<T> &b) {\n\t\t\n\t}\n}\n"
+  code: "namespace conv {\n\ttemplate<typename T>\n\tvector<T> subset_convolution(const\
+    \ vector<T> &a, const vector<T> &b) {\n\t\t\n\t}\n}"
   dependsOn: []
   isVerificationFile: false
   path: convolution/subset-convolution.hpp
   requiredBy: []
-  timestamp: '2022-04-21 12:59:05-07:00'
+  timestamp: '2022-04-21 20:14:03-07:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: convolution/subset-convolution.hpp

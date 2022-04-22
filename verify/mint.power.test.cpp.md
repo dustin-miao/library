@@ -56,10 +56,10 @@ data:
     \treturn *this;\n\t}\n\n\ttemplate <typename U = T>\n\ttypename enable_if<!is_integral<typename\
     \ Modular<U>::Type>::value, Modular>::type \n\t&operator*=(const Modular &a) {\n\
     \t\tvalue = normalize(value * a.value);\n\t\treturn *this;\n\t}\n\n\tModular &operator/=(const\
-    \ Modular &other) { return *this *= Modular(inverse(other.value, mod())); }\n\n\
-    \ttemplate<typename U>\n\tfriend bool operator==(const Modular<U>& a, const Modular<U>&\
-    \ b);\n\n\ttemplate<typename U>\n\tfriend bool operator<(const Modular<U>& a,\
-    \ const Modular<U>& b);\n\n\ttemplate<typename U>\n\tfriend istream &operator>>(istream\
+    \ Modular &other) { return *this *= Modular(math::inverse(other.value, mod()));\
+    \ }\n\n\ttemplate<typename U>\n\tfriend bool operator==(const Modular<U>& a, const\
+    \ Modular<U>& b);\n\n\ttemplate<typename U>\n\tfriend bool operator<(const Modular<U>&\
+    \ a, const Modular<U>& b);\n\n\ttemplate<typename U>\n\tfriend istream &operator>>(istream\
     \ &is, Modular<U> &a);\n\nprivate:\n\tType value;\n};\n\ntemplate<typename T>\
     \ \nbool operator==(const Modular<T> &a, const Modular<T> &b) { return a.value\
     \ == b.value; }\n\ntemplate<typename T, typename U> \nbool operator==(const Modular<T>\
@@ -112,7 +112,7 @@ data:
   isVerificationFile: true
   path: verify/mint.power.test.cpp
   requiredBy: []
-  timestamp: '2022-04-20 11:24:42-07:00'
+  timestamp: '2022-04-21 20:14:03-07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/mint.power.test.cpp

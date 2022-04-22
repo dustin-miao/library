@@ -9,20 +9,18 @@ data:
   attributes:
     links: []
   bundledCode: "#line 1 \"convolution/zeta-transform.hpp\"\nnamespace conv {\n\ttemplate<typename\
-    \ T>\n\tvoid zeta_transform(vector<T> &a) {\n\t\tint n = 1;\n\t\twhile ((1 <<\
-    \ n) < a.size()) \n\t\t\tn++;\n\t\tassert((1 << n) == a.size());\n\t\tfor (int\
-    \ i = 0; i < n; i++)\n\t\t\tfor (int mask = 0; mask < (1 << n); mask++)\n\t\t\t\
-    \tif (mask >> i & 1)\n\t\t\t\t\ta[mask] += a[mask ^ (1 << i)];\n\t}\n}\n"
+    \ T>\n\tvoid zeta_transform(vector<T> &a, int n) {\n\t\tassert((1 << n) == a.size());\n\
+    \t\tfor (int i = 0; i < n; i++)\n\t\t\tfor (int mask = 0; mask < (1 << n); mask++)\n\
+    \t\t\t\tif (mask >> i & 1)\n\t\t\t\t\ta[mask] += a[mask ^ (1 << i)];\n\t}\n}\n"
   code: "namespace conv {\n\ttemplate<typename T>\n\tvoid zeta_transform(vector<T>\
-    \ &a) {\n\t\tint n = 1;\n\t\twhile ((1 << n) < a.size()) \n\t\t\tn++;\n\t\tassert((1\
-    \ << n) == a.size());\n\t\tfor (int i = 0; i < n; i++)\n\t\t\tfor (int mask =\
-    \ 0; mask < (1 << n); mask++)\n\t\t\t\tif (mask >> i & 1)\n\t\t\t\t\ta[mask] +=\
-    \ a[mask ^ (1 << i)];\n\t}\n}"
+    \ &a, int n) {\n\t\tassert((1 << n) == a.size());\n\t\tfor (int i = 0; i < n;\
+    \ i++)\n\t\t\tfor (int mask = 0; mask < (1 << n); mask++)\n\t\t\t\tif (mask >>\
+    \ i & 1)\n\t\t\t\t\ta[mask] += a[mask ^ (1 << i)];\n\t}\n}"
   dependsOn: []
   isVerificationFile: false
   path: convolution/zeta-transform.hpp
   requiredBy: []
-  timestamp: '2022-04-21 12:24:31-07:00'
+  timestamp: '2022-04-21 20:14:03-07:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: convolution/zeta-transform.hpp
