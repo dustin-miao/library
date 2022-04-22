@@ -1,30 +1,24 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: convolution/fast-walsh-hadamard-transform.hpp
     title: Fast Walsh-Hadamard Transform
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: convolution/inverse-fast-walsh-hadamard-transform.hpp
     title: Inverse Fast Walsh-Hadamard Transform
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/xor-convolution.yosupo-bitwise-xor-convolution.test.cpp
     title: verify/xor-convolution.yosupo-bitwise-xor-convolution.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"convolution/fast-walsh-hadamard-transform.hpp\"\n#pragma\
     \ region fast walsh hadamard transform\n\nnamespace conv {\n\ttemplate<typename\
-    \ T>\n\tvoid fast_walsh_hadamard_transform(vector<T> &a) {\n\t\tint n = a.size();\n\
-    \t\tfor (int i = 1; i < n; i <<= 1) {\n\t\t\tfor (int j = 0; j < n; j++) {\n\t\
-    \t\t\tif ((j & i) == 0) {\n\t\t\t\t\tT x = a[j], y = a[j | i];\n\t\t\t\t\ta[j]\
-    \ = x + y;\n\t\t\t\t\ta[j | i] = x - y;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}\n\n\
-    #pragma endregion fast walsh hadamard transform\n#line 1 \"convolution/fast-walsh-hadamard-transform.hpp\"\
-    \n#pragma region fast walsh hadamard transform\n\nnamespace conv {\n\ttemplate<typename\
     \ T>\n\tvoid fast_walsh_hadamard_transform(vector<T> &a) {\n\t\tint n = a.size();\n\
     \t\tfor (int i = 1; i < n; i <<= 1) {\n\t\t\tfor (int j = 0; j < n; j++) {\n\t\
     \t\t\tif ((j & i) == 0) {\n\t\t\t\t\tT x = a[j], y = a[j | i];\n\t\t\t\t\ta[j]\
@@ -36,7 +30,7 @@ data:
     \ {\n\t\t\tint n = a.size();\n\t\t\tfor (auto &x : a)\n\t\t\t\tx /= n;\n\t\t}\
     \ else {\n\t\t\tT t = T(1) / T(a.size());\n\t\t\tfor (auto &x : a)\n\t\t\t\tx\
     \ *= t;\n\t\t}\n\t}\n}\n\n#pragma endregion inverse fast walsh hadamard transform\n\
-    #line 3 \"convolution/xor-convolution.hpp\"\n\n#pragma region xor convolution\n\
+    #line 2 \"convolution/xor-convolution.hpp\"\n\n#pragma region xor convolution\n\
     \nnamespace conv {\n\ttemplate<typename T>\n\tvector<T> xor_convolution(const\
     \ vector<T> &a, const vector<T> &b) {\n\t\tvector<T> pa(a.begin(), a.end()), pb(b.begin(),\
     \ b.end());\n\t\tint n = 1;\n\t\twhile (n < a.size() + b.size()) \n\t\t\tn <<=\
@@ -44,22 +38,22 @@ data:
     \t\tfast_walsh_hadamard_transform(pb);\n\t\tfor (int i = 0; i < n; i++)\n\t\t\t\
     pa[i] *= pb[i];\n\t\tinverse_fast_walsh_hadamard_transform(pa);\n\t\treturn pa;\n\
     \t}\n}\n\n#pragma endregion xor convolution\n"
-  code: "#include \"convolution/fast-walsh-hadamard-transform.hpp\"\n#include \"convolution/inverse-fast-walsh-hadamard-transform.hpp\"\
-    \n\n#pragma region xor convolution\n\nnamespace conv {\n\ttemplate<typename T>\n\
-    \tvector<T> xor_convolution(const vector<T> &a, const vector<T> &b) {\n\t\tvector<T>\
-    \ pa(a.begin(), a.end()), pb(b.begin(), b.end());\n\t\tint n = 1;\n\t\twhile (n\
-    \ < a.size() + b.size()) \n\t\t\tn <<= 1;\n\t\tpa.resize(n), pb.resize(n);\n\t\
-    \tfast_walsh_hadamard_transform(pa);\n\t\tfast_walsh_hadamard_transform(pb);\n\
-    \t\tfor (int i = 0; i < n; i++)\n\t\t\tpa[i] *= pb[i];\n\t\tinverse_fast_walsh_hadamard_transform(pa);\n\
-    \t\treturn pa;\n\t}\n}\n\n#pragma endregion xor convolution"
+  code: "#include \"convolution/inverse-fast-walsh-hadamard-transform.hpp\"\n\n#pragma\
+    \ region xor convolution\n\nnamespace conv {\n\ttemplate<typename T>\n\tvector<T>\
+    \ xor_convolution(const vector<T> &a, const vector<T> &b) {\n\t\tvector<T> pa(a.begin(),\
+    \ a.end()), pb(b.begin(), b.end());\n\t\tint n = 1;\n\t\twhile (n < a.size() +\
+    \ b.size()) \n\t\t\tn <<= 1;\n\t\tpa.resize(n), pb.resize(n);\n\t\tfast_walsh_hadamard_transform(pa);\n\
+    \t\tfast_walsh_hadamard_transform(pb);\n\t\tfor (int i = 0; i < n; i++)\n\t\t\t\
+    pa[i] *= pb[i];\n\t\tinverse_fast_walsh_hadamard_transform(pa);\n\t\treturn pa;\n\
+    \t}\n}\n\n#pragma endregion xor convolution"
   dependsOn:
-  - convolution/fast-walsh-hadamard-transform.hpp
   - convolution/inverse-fast-walsh-hadamard-transform.hpp
+  - convolution/fast-walsh-hadamard-transform.hpp
   isVerificationFile: false
   path: convolution/xor-convolution.hpp
   requiredBy: []
-  timestamp: '2022-04-21 20:28:30-07:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2022-04-21 20:48:26-07:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/xor-convolution.yosupo-bitwise-xor-convolution.test.cpp
 documentation_of: convolution/xor-convolution.hpp

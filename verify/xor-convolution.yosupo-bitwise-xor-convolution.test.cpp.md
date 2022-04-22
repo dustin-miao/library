@@ -1,26 +1,26 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: convolution/fast-walsh-hadamard-transform.hpp
     title: Fast Walsh-Hadamard Transform
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: convolution/inverse-fast-walsh-hadamard-transform.hpp
     title: Inverse Fast Walsh-Hadamard Transform
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: convolution/xor-convolution.hpp
     title: Xor Convolution
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: math/inverse.hpp
     title: Modulo Inverse
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utility/mint.hpp
     title: Modular Int
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/bitwise_xor_convolution
@@ -34,12 +34,6 @@ data:
     \t\tfor (int i = 1; i < n; i <<= 1) {\n\t\t\tfor (int j = 0; j < n; j++) {\n\t\
     \t\t\tif ((j & i) == 0) {\n\t\t\t\t\tT x = a[j], y = a[j | i];\n\t\t\t\t\ta[j]\
     \ = x + y;\n\t\t\t\t\ta[j | i] = x - y;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}\n\n\
-    #pragma endregion fast walsh hadamard transform\n#line 1 \"convolution/fast-walsh-hadamard-transform.hpp\"\
-    \n#pragma region fast walsh hadamard transform\n\nnamespace conv {\n\ttemplate<typename\
-    \ T>\n\tvoid fast_walsh_hadamard_transform(vector<T> &a) {\n\t\tint n = a.size();\n\
-    \t\tfor (int i = 1; i < n; i <<= 1) {\n\t\t\tfor (int j = 0; j < n; j++) {\n\t\
-    \t\t\tif ((j & i) == 0) {\n\t\t\t\t\tT x = a[j], y = a[j | i];\n\t\t\t\t\ta[j]\
-    \ = x + y;\n\t\t\t\t\ta[j | i] = x - y;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}\n\n\
     #pragma endregion fast walsh hadamard transform\n#line 2 \"convolution/inverse-fast-walsh-hadamard-transform.hpp\"\
     \n\n#pragma region inverse fast walsh hadamard transform\n\nnamespace conv {\n\
     \ttemplate<typename T>\n\tvoid inverse_fast_walsh_hadamard_transform(vector<T>\
@@ -47,7 +41,7 @@ data:
     \ {\n\t\t\tint n = a.size();\n\t\t\tfor (auto &x : a)\n\t\t\t\tx /= n;\n\t\t}\
     \ else {\n\t\t\tT t = T(1) / T(a.size());\n\t\t\tfor (auto &x : a)\n\t\t\t\tx\
     \ *= t;\n\t\t}\n\t}\n}\n\n#pragma endregion inverse fast walsh hadamard transform\n\
-    #line 3 \"convolution/xor-convolution.hpp\"\n\n#pragma region xor convolution\n\
+    #line 2 \"convolution/xor-convolution.hpp\"\n\n#pragma region xor convolution\n\
     \nnamespace conv {\n\ttemplate<typename T>\n\tvector<T> xor_convolution(const\
     \ vector<T> &a, const vector<T> &b) {\n\t\tvector<T> pa(a.begin(), a.end()), pb(b.begin(),\
     \ b.end());\n\t\tint n = 1;\n\t\twhile (n < a.size() + b.size()) \n\t\t\tn <<=\
@@ -149,15 +143,15 @@ data:
     \ << '\\n';\n}"
   dependsOn:
   - convolution/xor-convolution.hpp
-  - convolution/fast-walsh-hadamard-transform.hpp
   - convolution/inverse-fast-walsh-hadamard-transform.hpp
+  - convolution/fast-walsh-hadamard-transform.hpp
   - utility/mint.hpp
   - math/inverse.hpp
   isVerificationFile: true
   path: verify/xor-convolution.yosupo-bitwise-xor-convolution.test.cpp
   requiredBy: []
-  timestamp: '2022-04-21 20:28:30-07:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-04-21 20:48:26-07:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/xor-convolution.yosupo-bitwise-xor-convolution.test.cpp
 layout: document

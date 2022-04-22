@@ -4,10 +4,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/discrete-sqrt.hpp
     title: Discrete Square Root
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: math/inverse.hpp
     title: Modulo Inverse
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utility/mint.hpp
     title: Modular Int
   _extendedRequiredBy: []

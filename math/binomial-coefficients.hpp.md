@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: math/inverse.hpp
     title: Modulo Inverse
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utility/mint.hpp
     title: Modular Int
   _extendedRequiredBy: []

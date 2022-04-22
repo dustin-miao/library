@@ -18,10 +18,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: convolution/fast-fourier-transform.hpp
       title: Fast Fourier Transform
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: convolution/fast-walsh-hadamard-transform.hpp
       title: Fast Walsh-Hadamard Transform
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: convolution/inverse-fast-walsh-hadamard-transform.hpp
       title: Inverse Fast Walsh-Hadamard Transform
     - icon: ':warning:'
@@ -39,7 +39,7 @@ data:
     - icon: ':warning:'
       path: convolution/subset-convolution.hpp
       title: Subset Convolution
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: convolution/xor-convolution.hpp
       title: Xor Convolution
     - icon: ':warning:'
@@ -155,7 +155,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/ext-gcd.hpp
       title: Extended GCD
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: math/inverse.hpp
       title: Modulo Inverse
     - icon: ':warning:'
@@ -189,7 +189,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: utility/floor-div.hpp
       title: Floor Division
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: utility/mint.hpp
       title: Modular Int
     - icon: ':heavy_check_mark:'
@@ -402,7 +402,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/union-find.yosupo-unionfind.test.cpp
       title: verify/union-find.yosupo-unionfind.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/xor-convolution.yosupo-bitwise-xor-convolution.test.cpp
       title: verify/xor-convolution.yosupo-bitwise-xor-convolution.test.cpp
     - icon: ':heavy_check_mark:'
