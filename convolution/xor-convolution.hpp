@@ -1,4 +1,3 @@
-#include "convolution/fast-walsh-hadamard-transform.hpp"
 #include "convolution/inverse-fast-walsh-hadamard-transform.hpp"
 
 #pragma region xor convolution
