@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: math/inverse.hpp
     title: Modulo Inverse
   _extendedRequiredBy:
@@ -33,9 +33,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/sparse-segment-tree.yosupo-point-set-range-composite.test.cpp
     title: verify/sparse-segment-tree.yosupo-point-set-range-composite.test.cpp
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: verify/xor-convolution.yosupo-bitwise-xor-convolution.test.cpp
+    title: verify/xor-convolution.yosupo-bitwise-xor-convolution.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"math/inverse.hpp\"\n#pragma region modulo inverse\n\nnamespace\
@@ -205,10 +208,11 @@ data:
   - math/binomial-coefficients.hpp
   - math/discrete-sqrt.hpp
   timestamp: '2022-04-21 20:14:03-07:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/mint.power.test.cpp
   - verify/mint.yosupo-A+B.test.cpp
+  - verify/xor-convolution.yosupo-bitwise-xor-convolution.test.cpp
   - verify/lazy-segment-tree.yosupo-range-affine-range-sum.test.cpp
   - verify/sparse-segment-tree.yosupo-point-set-range-composite.test.cpp
   - verify/recursive-segment-tree.yosupo-point-set-range-composite.test.cpp

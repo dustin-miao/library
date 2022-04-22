@@ -18,10 +18,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: convolution/fast-fourier-transform.hpp
       title: Fast Fourier Transform
-    - icon: ':warning:'
+    - icon: ':x:'
       path: convolution/fast-walsh-hadamard-transform.hpp
       title: Fast Walsh-Hadamard Transform
-    - icon: ':warning:'
+    - icon: ':x:'
       path: convolution/inverse-fast-walsh-hadamard-transform.hpp
       title: Inverse Fast Walsh-Hadamard Transform
     - icon: ':warning:'
@@ -39,7 +39,7 @@ data:
     - icon: ':warning:'
       path: convolution/subset-convolution.hpp
       title: Subset Convolution
-    - icon: ':warning:'
+    - icon: ':x:'
       path: convolution/xor-convolution.hpp
       title: Xor Convolution
     - icon: ':warning:'
@@ -155,7 +155,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/ext-gcd.hpp
       title: Extended GCD
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: math/inverse.hpp
       title: Modulo Inverse
     - icon: ':warning:'
@@ -189,7 +189,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: utility/floor-div.hpp
       title: Floor Division
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: utility/mint.hpp
       title: Modular Int
     - icon: ':heavy_check_mark:'

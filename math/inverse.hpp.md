@@ -11,7 +11,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/discrete-sqrt.hpp
     title: Discrete Square Root
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utility/mint.hpp
     title: Modular Int
   _extendedVerifiedWith:
@@ -39,9 +39,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/sparse-segment-tree.yosupo-point-set-range-composite.test.cpp
     title: verify/sparse-segment-tree.yosupo-point-set-range-composite.test.cpp
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: verify/xor-convolution.yosupo-bitwise-xor-convolution.test.cpp
+    title: verify/xor-convolution.yosupo-bitwise-xor-convolution.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"math/inverse.hpp\"\n#pragma region modulo inverse\n\nnamespace\
@@ -63,10 +66,11 @@ data:
   - math/discrete-sqrt.hpp
   - utility/mint.hpp
   timestamp: '2022-04-20 11:24:42-07:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/mint.power.test.cpp
   - verify/mint.yosupo-A+B.test.cpp
+  - verify/xor-convolution.yosupo-bitwise-xor-convolution.test.cpp
   - verify/lazy-segment-tree.yosupo-range-affine-range-sum.test.cpp
   - verify/discrete-log.yosupo-discrete-logarithm.test.cpp
   - verify/sparse-segment-tree.yosupo-point-set-range-composite.test.cpp
