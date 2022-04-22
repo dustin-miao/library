@@ -1,4 +1,4 @@
-#include "convolution/fast-walsh-hadamand-transform.hpp"
+#include "convolution/fast-walsh-hadamard-transform.hpp"
 
 #pragma region inverse fast walsh hadamard transform
 
