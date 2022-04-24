@@ -6,13 +6,13 @@ class sparse_segment_tree : public segment_tree_template {
 	using segment_tree_template::apply;
 
 protected:
-	int n;
+	long long n;
 
 	struct node {
 		T v;
-		int l, r;
+		long long l, r;
 		node() = default;
-		node(T _v, int _l, int _r) : v(_v), l(_l), r(_r) {}
+		node(T _v, long long _l, long long _r) : v(_v), l(_l), r(_r) {}
 	};
 
 	int root;
@@ -24,12 +24,12 @@ protected:
 	}
 
 private:
-	void update(int i, T v, int t, int tl, int tr) {
+	void update(long long i, T v, int t, long long tl, long long tr) {
 		if (tl == tr) {
 			apply(tree[t].v, v);
 			return;
 		}
-		int tm = (tl + tr) / 2;
+		long long tm = (tl + tr) / 2;
 		if (i <= tm) {
 			if (tree[t].l == -1)
 				tree[t].l = new_node();
@@ -43,12 +43,12 @@ private:
 			tree[t].r == -1 ? default_value : tree[tree[t].r].v);
 	}
 
-	T query(int l, int r, int t, int tl, int tr) {
+	T query(long long l, long long r, int t, long long tl, long long tr) {
 		if (r < tl || tr < l)
 			return default_value;
 		if (l <= tl && tr <= r)
 			return tree[t].v;
-		int tm = (tl + tr) / 2;
+		long long tm = (tl + tr) / 2;
 		return merge(tree[t].l == -1 ? default_value : query(l, r, tree[t].l, tl, tm), 
 			tree[t].r == -1 ? default_value : query(l, r, tree[t].r, tm + 1, tr));
 	}
@@ -56,7 +56,7 @@ private:
 public:
 	sparse_segment_tree() = default;
 
-	sparse_segment_tree(int _n) { init(_n); }
+	sparse_segment_tree(long long _n) { init(_n); }
 
 	void init(int _n) {
 		n = _n;
@@ -67,7 +67,7 @@ public:
 
 	void clear() { tree.clear(); }
 
-	void update(int i, T v) { update(i, v, root, 0, n - 1); }
+	void update(long long i, T v) { update(i, v, root, 0, n - 1); }
 
-	T query(int l, int r) { return query(l, r, root, 0, n - 1); }
+	T query(long long l, long long r) { return query(l, r, root, 0, n - 1); }
 };
