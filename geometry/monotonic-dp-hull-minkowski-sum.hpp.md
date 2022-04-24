@@ -80,33 +80,29 @@ data:
     \n\tvoid clear() { points.clear(); prev_x = LLONG_MIN, prev_y = 1; }\n\n\tint\
     \ size() const { return points.size(); }\n};\n#line 2 \"geometry/monotonic-dp-hull-minkowski-sum.hpp\"\
     \n\nmonotonic_dp_hull minkowski_sum(const monotonic_dp_hull &h1, const monotonic_dp_hull\
-    \ &h2) {\n    assert(h1.size() > 0 && h2.size() > 0);\n    monotonic_dp_hull sum;\n\
-    \    for (int i = 0, j = 0; i < h1.size() - 1 || j < h2.size() - 1;) {\n\t\tcout\
-    \ << i << ' ' << j << '\\n';\n        sum.insert(h1.points[i] + h2.points[j]);\n\
-    \        if (i == h1.size() - 1) {\n            j++;\n            continue;\n\
-    \        }\n        if (j == h2.size() - 1) {\n            i++;\n            continue;\n\
-    \        }\n \n        auto d1 = h1.points[i + 1] - h1.points[i];\n        auto\
-    \ d2 = h2.points[j + 1] - h2.points[j];\n        if ((d2 ^ d1) > 0)\n        \
-    \    i++;\n        else\n            j++;\n    }\n    sum.insert(h1.points.back()\
-    \ + h2.points.back());\n    return sum;\n}\n"
+    \ &h2) {\n\tassert(h1.size() > 0 && h2.size() > 0);\n\tmonotonic_dp_hull sum;\n\
+    \tfor (int i = 0, j = 0; i < h1.size() - 1 || j < h2.size() - 1;) {\n\t\tsum.insert(h1.points[i]\
+    \ + h2.points[j]);\n\t\tif (i == h1.size() - 1) {\n\t\t\tj++;\n\t\t\tcontinue;\n\
+    \t\t}\n\t\tif (j == h2.size() - 1) {\n\t\t\ti++;\n\t\t\tcontinue;\n\t\t}\n \n\t\
+    \tauto d1 = h1.points[i + 1] - h1.points[i];\n\t\tauto d2 = h2.points[j + 1] -\
+    \ h2.points[j];\n\t\tif ((d2 ^ d1) > 0)\n\t\t\ti++;\n\t\telse\n\t\t\tj++;\n\t\
+    }\n\tsum.insert(h1.points.back() + h2.points.back());\n\treturn sum;\n}\n"
   code: "#include \"geometry/monotonic-dp-hull.hpp\"\n\nmonotonic_dp_hull minkowski_sum(const\
-    \ monotonic_dp_hull &h1, const monotonic_dp_hull &h2) {\n    assert(h1.size()\
-    \ > 0 && h2.size() > 0);\n    monotonic_dp_hull sum;\n    for (int i = 0, j =\
-    \ 0; i < h1.size() - 1 || j < h2.size() - 1;) {\n\t\tcout << i << ' ' << j <<\
-    \ '\\n';\n        sum.insert(h1.points[i] + h2.points[j]);\n        if (i == h1.size()\
-    \ - 1) {\n            j++;\n            continue;\n        }\n        if (j ==\
-    \ h2.size() - 1) {\n            i++;\n            continue;\n        }\n \n  \
-    \      auto d1 = h1.points[i + 1] - h1.points[i];\n        auto d2 = h2.points[j\
-    \ + 1] - h2.points[j];\n        if ((d2 ^ d1) > 0)\n            i++;\n       \
-    \ else\n            j++;\n    }\n    sum.insert(h1.points.back() + h2.points.back());\n\
-    \    return sum;\n}"
+    \ monotonic_dp_hull &h1, const monotonic_dp_hull &h2) {\n\tassert(h1.size() >\
+    \ 0 && h2.size() > 0);\n\tmonotonic_dp_hull sum;\n\tfor (int i = 0, j = 0; i <\
+    \ h1.size() - 1 || j < h2.size() - 1;) {\n\t\tsum.insert(h1.points[i] + h2.points[j]);\n\
+    \t\tif (i == h1.size() - 1) {\n\t\t\tj++;\n\t\t\tcontinue;\n\t\t}\n\t\tif (j ==\
+    \ h2.size() - 1) {\n\t\t\ti++;\n\t\t\tcontinue;\n\t\t}\n \n\t\tauto d1 = h1.points[i\
+    \ + 1] - h1.points[i];\n\t\tauto d2 = h2.points[j + 1] - h2.points[j];\n\t\tif\
+    \ ((d2 ^ d1) > 0)\n\t\t\ti++;\n\t\telse\n\t\t\tj++;\n\t}\n\tsum.insert(h1.points.back()\
+    \ + h2.points.back());\n\treturn sum;\n}"
   dependsOn:
   - geometry/monotonic-dp-hull.hpp
   - geometry/point.hpp
   isVerificationFile: false
   path: geometry/monotonic-dp-hull-minkowski-sum.hpp
   requiredBy: []
-  timestamp: '2022-04-11 14:16:34-07:00'
+  timestamp: '2022-04-24 16:17:38-07:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: geometry/monotonic-dp-hull-minkowski-sum.hpp
