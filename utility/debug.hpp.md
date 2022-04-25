@@ -53,19 +53,28 @@ data:
     \ &m) {\n\tos << '[';\n\tif (m.size()) {\n\t\tos << '(' << m.begin()->first <<\
     \ \" : \" << m.begin()->second << ')';\n\t\tfor (auto i = ++m.begin(); i != m.end();\
     \ i++)\n\t\t\tos << \", \" << '(' << i->first << \" : \" << i->second << ')';\n\
-    \t}\n\treturn os << ']';\n}\n\n#define dbg1(a) \t\t\t\t\t\t\t\t\t\t\t\\\n\tif\
-    \ ((#a)[0] == '\\\"') {\t\t\t\t\t\t\t\t\t\\\n\t\tif ((#a) == \"\\\"_h1\\\"\")\t\
-    \t\t\t\t\t\t\t\\\n\t\t\tcerr << \"--------------------------------\\n\";\t\\\n\
-    \t\telse if ((#a) == \"\\\"_h2\\\"\")\t\t\t\t\t\t\t\\\n\t\t\tcerr << \"================================\\\
-    n\";\t\\\n\t\telse if ((#a) == \"\\\"_h3\\\"\")\t\t\t\t\t\t\t\\\n\t\t\tcerr <<\
-    \ \"\u2261\u2261\u2261\u2261\u2261\u2261\u2261\u2261\u2261\u2261\u2261\u2261\u2261\
+    \t}\n\treturn os << ']';\n}\n\nmap<char, string> _dbg_dict {\n\t{'1', \"--------------------------------\"\
+    },\n\t{'2', \"================================\"},\n\t{'3', \"\u2261\u2261\u2261\
     \u2261\u2261\u2261\u2261\u2261\u2261\u2261\u2261\u2261\u2261\u2261\u2261\u2261\
-    \u2261\u2261\u2261\u2261\u2261\u2261\\n\";\t\\\n\t\telse if ((#a) == \"\\\"_h4\\\
-    \"\")\t\t\t\t\t\t\t\\\n\t\t\tcerr << \"################################\\n\";\t\
-    \\\n\t\telse \t\t\t\t\t\t\t\t\t\t\t\t\\\n\t\t\tcerr << a;\t\t\t\t\t\t\t\t\t\t\\\
-    \n\t} else {\t\t\t\t\t\t\t\t\t\t\t\t\\\n\t\tcerr << #a << \" = \" << a << '\\\
-    n';\t\t\t\t\t\\\n\t}\n#define dbg2(a, b) dbg1(a) dbg1(b)\n#define dbg3(a, b, c)\
-    \ dbg1(a) dbg2(b, c)\n#define dbg4(a, b, c, d) dbg1(a) dbg3(b, c, d)\n#define\
+    \u2261\u2261\u2261\u2261\u2261\u2261\u2261\u2261\u2261\u2261\u2261\u2261\u2261\
+    \u2261\u2261\u2261\"},\n\t{'4', \"################################\"},\n\t{'*',\
+    \ \"********************************\"},\n\t{'_', \"_\"},\n\t{'<', \"<!---- \"\
+    },\n\t{'>', \" ----!>\"},\n\t{'(', \"(!==== \"},\n\t{')', \"==== !)\"},\n\t{'[',\
+    \ \"[!\u2261\u2261\u2261\u2261 \"},\n\t{']', \" \u2261\u2261\u2261\u2261!]\"},\n\
+    \t{'{', \"{!#### \"},\n\t{'}', \" ####!}\"},\n\t{'c', \"checkpoint \\n\"},\n\t\
+    {'l', \"line \\n\"}\n};\n\n#define dbg1(a) \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\
+    \t\t\\\n\t{\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\\\n\t\tif ((#a)[0] ==\
+    \ '\\\"') {\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\\\n\t\t\tstring s = string(a);\t\
+    \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\\\n\t\t\tint n = s.size();\t\t\t\t\t\t\t\t\t\t\t\
+    \t\t\t\t\t\t\\\n\t\t\tfor (int i = 0; i < n; i++) {\t\t\t\t\t\t\t\t\t\t\t\t\t\t\
+    \\\n\t\t\t\tif (i < n - 1 && s[i] == '_' && _dbg_dict.find(s[i + 1]) != _dbg_dict.end())\t\
+    \\\n\t\t\t\t\tcout << _dbg_dict[s[++i]];\t\t\t\t\t\t\t\t\t\t\t\t\t\\\n\t\t\t\t\
+    else\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\\\n\t\t\t\t\tcout << a[i];\t\t\t\t\t\
+    \t\t\t\t\t\t\t\t\t\t\t\\\n\t\t\t}\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\\\n\
+    \t\t} else {\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\\\n\t\t\tcerr << #a << \"\
+    \ = \" << a << '\\n';\t\t\t\t\t\t\t\t\t\t\t\t\t\\\n\t\t}\t\t\t\t\t\t\t\t\t\t\t\
+    \t\t\t\t\t\t\t\t\t\t\t\\\n\t}\n#define dbg2(a, b) dbg1(a) dbg1(b)\n#define dbg3(a,\
+    \ b, c) dbg1(a) dbg2(b, c)\n#define dbg4(a, b, c, d) dbg1(a) dbg3(b, c, d)\n#define\
     \ dbg5(a, b, c, d, e) dbg1(a) dbg4(b, c, d, e)\n#define dbg6(a, b, c, d, e, f)\
     \ dbg1(a) dbg5(b, c, d, e, f)\n#define dbg7(a, b, c, d, e, f, g) dbg1(a) dbg6(b,\
     \ c, d, e, f, g)\n#define dbg8(a, b, c, d, e, f, g, h) dbg1(a) dbg7(b, c, d, e,\
@@ -82,8 +91,8 @@ data:
     \ e, f, g, h, i, j, k, l, m, n, o, p)\n#define get_dbg(_1, _2, _3, _4, _5, _6,\
     \ _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, NAME, ...) NAME\n#define dbg(...)\
     \ get_dbg(__VA_ARGS__, dbg16, dbg15, dbg14, dbg13, dbg12, dbg11, dbg10, dbg9,\
-    \ dbg8, dbg7, dbg6, dbg5, dbg4, dbg3, dbg2, dbg1)(__VA_ARGS__)\n#else\n#define\
-    \ dbg(...) \n#endif\n#pragma endregion debug\n"
+    \ dbg8, \\\n\tdbg7, dbg6, dbg5, dbg4, dbg3, dbg2, dbg1)(__VA_ARGS__)\n#else\n\
+    #define dbg(...) \n#endif\n\n#pragma endregion debug\n"
   code: "#pragma region debug\n\n#ifndef NDEBUG\ntemplate<typename T1, typename T2>\n\
     ostream &operator<<(ostream &os, const pair<T1, T2> &p) {\n\treturn os << '('\
     \ << p.first << \", \" << p.second << ')';\n}\n\ntemplate<typename T1, typename\
@@ -129,19 +138,28 @@ data:
     \tif (m.size()) {\n\t\tos << '(' << m.begin()->first << \" : \" << m.begin()->second\
     \ << ')';\n\t\tfor (auto i = ++m.begin(); i != m.end(); i++)\n\t\t\tos << \",\
     \ \" << '(' << i->first << \" : \" << i->second << ')';\n\t}\n\treturn os << ']';\n\
-    }\n\n#define dbg1(a) \t\t\t\t\t\t\t\t\t\t\t\\\n\tif ((#a)[0] == '\\\"') {\t\t\t\
-    \t\t\t\t\t\t\\\n\t\tif ((#a) == \"\\\"_h1\\\"\")\t\t\t\t\t\t\t\t\\\n\t\t\tcerr\
-    \ << \"--------------------------------\\n\";\t\\\n\t\telse if ((#a) == \"\\\"\
-    _h2\\\"\")\t\t\t\t\t\t\t\\\n\t\t\tcerr << \"================================\\\
-    n\";\t\\\n\t\telse if ((#a) == \"\\\"_h3\\\"\")\t\t\t\t\t\t\t\\\n\t\t\tcerr <<\
-    \ \"\u2261\u2261\u2261\u2261\u2261\u2261\u2261\u2261\u2261\u2261\u2261\u2261\u2261\
+    }\n\nmap<char, string> _dbg_dict {\n\t{'1', \"--------------------------------\"\
+    },\n\t{'2', \"================================\"},\n\t{'3', \"\u2261\u2261\u2261\
     \u2261\u2261\u2261\u2261\u2261\u2261\u2261\u2261\u2261\u2261\u2261\u2261\u2261\
-    \u2261\u2261\u2261\u2261\u2261\u2261\\n\";\t\\\n\t\telse if ((#a) == \"\\\"_h4\\\
-    \"\")\t\t\t\t\t\t\t\\\n\t\t\tcerr << \"################################\\n\";\t\
-    \\\n\t\telse \t\t\t\t\t\t\t\t\t\t\t\t\\\n\t\t\tcerr << a;\t\t\t\t\t\t\t\t\t\t\\\
-    \n\t} else {\t\t\t\t\t\t\t\t\t\t\t\t\\\n\t\tcerr << #a << \" = \" << a << '\\\
-    n';\t\t\t\t\t\\\n\t}\n#define dbg2(a, b) dbg1(a) dbg1(b)\n#define dbg3(a, b, c)\
-    \ dbg1(a) dbg2(b, c)\n#define dbg4(a, b, c, d) dbg1(a) dbg3(b, c, d)\n#define\
+    \u2261\u2261\u2261\u2261\u2261\u2261\u2261\u2261\u2261\u2261\u2261\u2261\u2261\
+    \u2261\u2261\u2261\"},\n\t{'4', \"################################\"},\n\t{'*',\
+    \ \"********************************\"},\n\t{'_', \"_\"},\n\t{'<', \"<!---- \"\
+    },\n\t{'>', \" ----!>\"},\n\t{'(', \"(!==== \"},\n\t{')', \"==== !)\"},\n\t{'[',\
+    \ \"[!\u2261\u2261\u2261\u2261 \"},\n\t{']', \" \u2261\u2261\u2261\u2261!]\"},\n\
+    \t{'{', \"{!#### \"},\n\t{'}', \" ####!}\"},\n\t{'c', \"checkpoint \\n\"},\n\t\
+    {'l', \"line \\n\"}\n};\n\n#define dbg1(a) \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\
+    \t\t\\\n\t{\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\\\n\t\tif ((#a)[0] ==\
+    \ '\\\"') {\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\\\n\t\t\tstring s = string(a);\t\
+    \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\\\n\t\t\tint n = s.size();\t\t\t\t\t\t\t\t\t\t\t\
+    \t\t\t\t\t\t\\\n\t\t\tfor (int i = 0; i < n; i++) {\t\t\t\t\t\t\t\t\t\t\t\t\t\t\
+    \\\n\t\t\t\tif (i < n - 1 && s[i] == '_' && _dbg_dict.find(s[i + 1]) != _dbg_dict.end())\t\
+    \\\n\t\t\t\t\tcout << _dbg_dict[s[++i]];\t\t\t\t\t\t\t\t\t\t\t\t\t\\\n\t\t\t\t\
+    else\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\\\n\t\t\t\t\tcout << a[i];\t\t\t\t\t\
+    \t\t\t\t\t\t\t\t\t\t\t\\\n\t\t\t}\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\\\n\
+    \t\t} else {\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\\\n\t\t\tcerr << #a << \"\
+    \ = \" << a << '\\n';\t\t\t\t\t\t\t\t\t\t\t\t\t\\\n\t\t}\t\t\t\t\t\t\t\t\t\t\t\
+    \t\t\t\t\t\t\t\t\t\t\t\\\n\t}\n#define dbg2(a, b) dbg1(a) dbg1(b)\n#define dbg3(a,\
+    \ b, c) dbg1(a) dbg2(b, c)\n#define dbg4(a, b, c, d) dbg1(a) dbg3(b, c, d)\n#define\
     \ dbg5(a, b, c, d, e) dbg1(a) dbg4(b, c, d, e)\n#define dbg6(a, b, c, d, e, f)\
     \ dbg1(a) dbg5(b, c, d, e, f)\n#define dbg7(a, b, c, d, e, f, g) dbg1(a) dbg6(b,\
     \ c, d, e, f, g)\n#define dbg8(a, b, c, d, e, f, g, h) dbg1(a) dbg7(b, c, d, e,\
@@ -158,13 +176,13 @@ data:
     \ e, f, g, h, i, j, k, l, m, n, o, p)\n#define get_dbg(_1, _2, _3, _4, _5, _6,\
     \ _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, NAME, ...) NAME\n#define dbg(...)\
     \ get_dbg(__VA_ARGS__, dbg16, dbg15, dbg14, dbg13, dbg12, dbg11, dbg10, dbg9,\
-    \ dbg8, dbg7, dbg6, dbg5, dbg4, dbg3, dbg2, dbg1)(__VA_ARGS__)\n#else\n#define\
-    \ dbg(...) \n#endif\n#pragma endregion debug"
+    \ dbg8, \\\n\tdbg7, dbg6, dbg5, dbg4, dbg3, dbg2, dbg1)(__VA_ARGS__)\n#else\n\
+    #define dbg(...) \n#endif\n\n#pragma endregion debug"
   dependsOn: []
   isVerificationFile: false
   path: utility/debug.hpp
   requiredBy: []
-  timestamp: '2022-04-24 16:17:38-07:00'
+  timestamp: '2022-04-25 10:27:14-07:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: utility/debug.hpp
