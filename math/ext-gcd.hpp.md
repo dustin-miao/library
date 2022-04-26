@@ -12,9 +12,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/ext-gcd.aizu-greatest-common-divisor.test.cpp
     title: verify/ext-gcd.aizu-greatest-common-divisor.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/ext-gcd.yosupo-a+b.test.cpp
-    title: verify/ext-gcd.yosupo-a+b.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -41,7 +38,6 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/ext-gcd.aizu-extended-euclid-algorithm.test.cpp
-  - verify/ext-gcd.yosupo-a+b.test.cpp
   - verify/ext-gcd.aizu-greatest-common-divisor.test.cpp
 documentation_of: math/ext-gcd.hpp
 layout: document

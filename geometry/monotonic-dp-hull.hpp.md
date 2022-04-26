@@ -8,10 +8,13 @@ data:
   - icon: ':warning:'
     path: geometry/monotonic-dp-hull-minkowski-sum.hpp
     title: Minkowski Sum for Monotonic DP Hull
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/monotonic-dp-hull.yosupo-a+b.test.cpp
+    title: verify/monotonic-dp-hull.yosupo-a+b.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"geometry/point.hpp\"\n#pragma region point\n\nnamespace\
@@ -67,41 +70,41 @@ data:
     \ return p * norm(q) + norm(p) * q; }\n}\n\n#pragma endregion point\n#line 2 \"\
     geometry/monotonic-dp-hull.hpp\"\n\nstruct monotonic_dp_hull {\n\tlong long prev_x\
     \ = LLONG_MIN, prev_y = 1;\n\tdeque<geo::point<long long>> points;\n \n\tvoid\
-    \ insert(const geo::point<long long> &p) {\n\t\tassert(points.empty() || p.x >=\
-    \ points.back().x);\n\t\tif (!points.empty() && p.x == points.back().x) {\n\t\t\
-    \tif (p.y <= points.back().y)\n\t\t\t\treturn;\n\t\t\tpoints.pop_back();\n\t\t\
-    }\n\t\twhile (size() >= 2 && ((points.back() - p) ^ (points[size() - 2] - points.back()))\
-    \ <= 0)\n\t\t\tpoints.pop_back();\n\t\tpoints.push_back(p);\n\t}\n\n\tvoid insert(long\
-    \ long a, long long b) { insert(geo::point(a, b)); }\n\n\tlong long query(long\
-    \ long x, long long y = 1) {\n\t\tassert(size() > 0);\n\t\tassert(prev_x == LLONG_MIN\
-    \ || x * prev_y >= prev_x * y);\n\t\tprev_x = x, prev_y = y;\n\t\twhile (size()\
-    \ >= 2 && x * (points[1].x - points[0].x) >= (points[0].y - points[1].y) * y)\n\
-    \t\t\tpoints.pop_front();\n\t\treturn points[0].x * x + points[0].y * y;\n\t}\n\
-    \n\tvoid clear() { points.clear(); prev_x = LLONG_MIN, prev_y = 1; }\n\n\tint\
-    \ size() const { return points.size(); }\n};\n"
+    \ add(const geo::point<long long> &p) {\n\t\tassert(points.empty() || p.x >= points.back().x);\n\
+    \t\tif (!points.empty() && p.x == points.back().x) {\n\t\t\tif (p.y <= points.back().y)\n\
+    \t\t\t\treturn;\n\t\t\tpoints.pop_back();\n\t\t}\n\t\twhile (size() >= 2 && ((points.back()\
+    \ - p) ^ (points[size() - 2] - points.back())) <= 0)\n\t\t\tpoints.pop_back();\n\
+    \t\tpoints.push_back(p);\n\t}\n\n\tvoid add(long long m, long long b) { add(geo::point(m,\
+    \ b)); }\n\n\tlong long query(long long x, long long y = 1) {\n\t\tassert(size()\
+    \ > 0);\n\t\tassert(prev_x == LLONG_MIN || x * prev_y >= prev_x * y);\n\t\tprev_x\
+    \ = x, prev_y = y;\n\t\twhile (size() >= 2 && x * (points[1].x - points[0].x)\
+    \ >= (points[0].y - points[1].y) * y)\n\t\t\tpoints.pop_front();\n\t\treturn points[0].x\
+    \ * x + points[0].y * y;\n\t}\n\n\tvoid clear() { points.clear(); prev_x = LLONG_MIN,\
+    \ prev_y = 1; }\n\n\tint size() const { return points.size(); }\n};\n"
   code: "#include \"geometry/point.hpp\"\n\nstruct monotonic_dp_hull {\n\tlong long\
     \ prev_x = LLONG_MIN, prev_y = 1;\n\tdeque<geo::point<long long>> points;\n \n\
-    \tvoid insert(const geo::point<long long> &p) {\n\t\tassert(points.empty() ||\
-    \ p.x >= points.back().x);\n\t\tif (!points.empty() && p.x == points.back().x)\
-    \ {\n\t\t\tif (p.y <= points.back().y)\n\t\t\t\treturn;\n\t\t\tpoints.pop_back();\n\
+    \tvoid add(const geo::point<long long> &p) {\n\t\tassert(points.empty() || p.x\
+    \ >= points.back().x);\n\t\tif (!points.empty() && p.x == points.back().x) {\n\
+    \t\t\tif (p.y <= points.back().y)\n\t\t\t\treturn;\n\t\t\tpoints.pop_back();\n\
     \t\t}\n\t\twhile (size() >= 2 && ((points.back() - p) ^ (points[size() - 2] -\
     \ points.back())) <= 0)\n\t\t\tpoints.pop_back();\n\t\tpoints.push_back(p);\n\t\
-    }\n\n\tvoid insert(long long a, long long b) { insert(geo::point(a, b)); }\n\n\
-    \tlong long query(long long x, long long y = 1) {\n\t\tassert(size() > 0);\n\t\
-    \tassert(prev_x == LLONG_MIN || x * prev_y >= prev_x * y);\n\t\tprev_x = x, prev_y\
-    \ = y;\n\t\twhile (size() >= 2 && x * (points[1].x - points[0].x) >= (points[0].y\
-    \ - points[1].y) * y)\n\t\t\tpoints.pop_front();\n\t\treturn points[0].x * x +\
-    \ points[0].y * y;\n\t}\n\n\tvoid clear() { points.clear(); prev_x = LLONG_MIN,\
-    \ prev_y = 1; }\n\n\tint size() const { return points.size(); }\n};"
+    }\n\n\tvoid add(long long m, long long b) { add(geo::point(m, b)); }\n\n\tlong\
+    \ long query(long long x, long long y = 1) {\n\t\tassert(size() > 0);\n\t\tassert(prev_x\
+    \ == LLONG_MIN || x * prev_y >= prev_x * y);\n\t\tprev_x = x, prev_y = y;\n\t\t\
+    while (size() >= 2 && x * (points[1].x - points[0].x) >= (points[0].y - points[1].y)\
+    \ * y)\n\t\t\tpoints.pop_front();\n\t\treturn points[0].x * x + points[0].y *\
+    \ y;\n\t}\n\n\tvoid clear() { points.clear(); prev_x = LLONG_MIN, prev_y = 1;\
+    \ }\n\n\tint size() const { return points.size(); }\n};"
   dependsOn:
   - geometry/point.hpp
   isVerificationFile: false
   path: geometry/monotonic-dp-hull.hpp
   requiredBy:
   - geometry/monotonic-dp-hull-minkowski-sum.hpp
-  timestamp: '2022-04-11 14:16:34-07:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2022-04-26 08:22:31-07:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/monotonic-dp-hull.yosupo-a+b.test.cpp
 documentation_of: geometry/monotonic-dp-hull.hpp
 layout: document
 title: Monotonic DP Hull
@@ -110,3 +113,5 @@ title: Monotonic DP Hull
 ## Monotonic DP Hull
 
 Verified with [CSES - Monster Game I](https://cses.fi/problemset/task/2084/). [Working code](https://cses.fi/paste/9d47222cb4a2db1f3a24a7/).
+
+Watch out for overflow from the cross product (use long doubles).

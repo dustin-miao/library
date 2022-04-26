@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: geometry/monotonic-dp-hull.hpp
     title: Monotonic DP Hull
   - icon: ':heavy_check_mark:'
@@ -67,26 +67,26 @@ data:
     \ return p * norm(q) + norm(p) * q; }\n}\n\n#pragma endregion point\n#line 2 \"\
     geometry/monotonic-dp-hull.hpp\"\n\nstruct monotonic_dp_hull {\n\tlong long prev_x\
     \ = LLONG_MIN, prev_y = 1;\n\tdeque<geo::point<long long>> points;\n \n\tvoid\
-    \ insert(const geo::point<long long> &p) {\n\t\tassert(points.empty() || p.x >=\
-    \ points.back().x);\n\t\tif (!points.empty() && p.x == points.back().x) {\n\t\t\
-    \tif (p.y <= points.back().y)\n\t\t\t\treturn;\n\t\t\tpoints.pop_back();\n\t\t\
-    }\n\t\twhile (size() >= 2 && ((points.back() - p) ^ (points[size() - 2] - points.back()))\
-    \ <= 0)\n\t\t\tpoints.pop_back();\n\t\tpoints.push_back(p);\n\t}\n\n\tvoid insert(long\
-    \ long a, long long b) { insert(geo::point(a, b)); }\n\n\tlong long query(long\
-    \ long x, long long y = 1) {\n\t\tassert(size() > 0);\n\t\tassert(prev_x == LLONG_MIN\
-    \ || x * prev_y >= prev_x * y);\n\t\tprev_x = x, prev_y = y;\n\t\twhile (size()\
-    \ >= 2 && x * (points[1].x - points[0].x) >= (points[0].y - points[1].y) * y)\n\
-    \t\t\tpoints.pop_front();\n\t\treturn points[0].x * x + points[0].y * y;\n\t}\n\
-    \n\tvoid clear() { points.clear(); prev_x = LLONG_MIN, prev_y = 1; }\n\n\tint\
-    \ size() const { return points.size(); }\n};\n#line 2 \"geometry/monotonic-dp-hull-minkowski-sum.hpp\"\
-    \n\nmonotonic_dp_hull minkowski_sum(const monotonic_dp_hull &h1, const monotonic_dp_hull\
-    \ &h2) {\n\tassert(h1.size() > 0 && h2.size() > 0);\n\tmonotonic_dp_hull sum;\n\
-    \tfor (int i = 0, j = 0; i < h1.size() - 1 || j < h2.size() - 1;) {\n\t\tsum.insert(h1.points[i]\
-    \ + h2.points[j]);\n\t\tif (i == h1.size() - 1) {\n\t\t\tj++;\n\t\t\tcontinue;\n\
-    \t\t}\n\t\tif (j == h2.size() - 1) {\n\t\t\ti++;\n\t\t\tcontinue;\n\t\t}\n \n\t\
-    \tauto d1 = h1.points[i + 1] - h1.points[i];\n\t\tauto d2 = h2.points[j + 1] -\
-    \ h2.points[j];\n\t\tif ((d2 ^ d1) > 0)\n\t\t\ti++;\n\t\telse\n\t\t\tj++;\n\t\
-    }\n\tsum.insert(h1.points.back() + h2.points.back());\n\treturn sum;\n}\n"
+    \ add(const geo::point<long long> &p) {\n\t\tassert(points.empty() || p.x >= points.back().x);\n\
+    \t\tif (!points.empty() && p.x == points.back().x) {\n\t\t\tif (p.y <= points.back().y)\n\
+    \t\t\t\treturn;\n\t\t\tpoints.pop_back();\n\t\t}\n\t\twhile (size() >= 2 && ((points.back()\
+    \ - p) ^ (points[size() - 2] - points.back())) <= 0)\n\t\t\tpoints.pop_back();\n\
+    \t\tpoints.push_back(p);\n\t}\n\n\tvoid add(long long m, long long b) { add(geo::point(m,\
+    \ b)); }\n\n\tlong long query(long long x, long long y = 1) {\n\t\tassert(size()\
+    \ > 0);\n\t\tassert(prev_x == LLONG_MIN || x * prev_y >= prev_x * y);\n\t\tprev_x\
+    \ = x, prev_y = y;\n\t\twhile (size() >= 2 && x * (points[1].x - points[0].x)\
+    \ >= (points[0].y - points[1].y) * y)\n\t\t\tpoints.pop_front();\n\t\treturn points[0].x\
+    \ * x + points[0].y * y;\n\t}\n\n\tvoid clear() { points.clear(); prev_x = LLONG_MIN,\
+    \ prev_y = 1; }\n\n\tint size() const { return points.size(); }\n};\n#line 2 \"\
+    geometry/monotonic-dp-hull-minkowski-sum.hpp\"\n\nmonotonic_dp_hull minkowski_sum(const\
+    \ monotonic_dp_hull &h1, const monotonic_dp_hull &h2) {\n\tassert(h1.size() >\
+    \ 0 && h2.size() > 0);\n\tmonotonic_dp_hull sum;\n\tfor (int i = 0, j = 0; i <\
+    \ h1.size() - 1 || j < h2.size() - 1;) {\n\t\tsum.insert(h1.points[i] + h2.points[j]);\n\
+    \t\tif (i == h1.size() - 1) {\n\t\t\tj++;\n\t\t\tcontinue;\n\t\t}\n\t\tif (j ==\
+    \ h2.size() - 1) {\n\t\t\ti++;\n\t\t\tcontinue;\n\t\t}\n \n\t\tauto d1 = h1.points[i\
+    \ + 1] - h1.points[i];\n\t\tauto d2 = h2.points[j + 1] - h2.points[j];\n\t\tif\
+    \ ((d2 ^ d1) > 0)\n\t\t\ti++;\n\t\telse\n\t\t\tj++;\n\t}\n\tsum.insert(h1.points.back()\
+    \ + h2.points.back());\n\treturn sum;\n}\n"
   code: "#include \"geometry/monotonic-dp-hull.hpp\"\n\nmonotonic_dp_hull minkowski_sum(const\
     \ monotonic_dp_hull &h1, const monotonic_dp_hull &h2) {\n\tassert(h1.size() >\
     \ 0 && h2.size() > 0);\n\tmonotonic_dp_hull sum;\n\tfor (int i = 0, j = 0; i <\
@@ -102,7 +102,7 @@ data:
   isVerificationFile: false
   path: geometry/monotonic-dp-hull-minkowski-sum.hpp
   requiredBy: []
-  timestamp: '2022-04-24 16:17:38-07:00'
+  timestamp: '2022-04-26 08:22:31-07:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: geometry/monotonic-dp-hull-minkowski-sum.hpp

@@ -66,9 +66,6 @@ data:
       path: data-structure/lazy-segment-tree.hpp
       title: Lazy Segment Tree
     - icon: ':heavy_check_mark:'
-      path: data-structure/line-container.hpp
-      title: Line Container
-    - icon: ':heavy_check_mark:'
       path: data-structure/ordered-set.hpp
       title: Ordered Set
     - icon: ':heavy_check_mark:'
@@ -106,10 +103,13 @@ data:
     - icon: ':warning:'
       path: geometry/convex-hull.hpp
       title: Convex Hull
+    - icon: ':heavy_check_mark:'
+      path: geometry/line-container.hpp
+      title: Line Container
     - icon: ':warning:'
       path: geometry/monotonic-dp-hull-minkowski-sum.hpp
       title: Minkowski Sum for Monotonic DP Hull
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: geometry/monotonic-dp-hull.hpp
       title: Monotonic DP Hull
     - icon: ':heavy_check_mark:'
@@ -167,8 +167,11 @@ data:
   - name: random
     pages:
     - icon: ':heavy_check_mark:'
-      path: random/mersenne_twister.hpp
+      path: random/mersenne-twister.hpp
       title: Mersenne Twister
+    - icon: ':heavy_check_mark:'
+      path: random/random-vector.hpp
+      title: Randomized Vector
   - name: utility
     pages:
     - icon: ':heavy_check_mark:'
@@ -246,7 +249,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/ext-gcd.aizu-greatest-common-divisor.test.cpp
       title: verify/ext-gcd.aizu-greatest-common-divisor.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/ext-gcd.yosupo-a+b.test.cpp
       title: verify/ext-gcd.yosupo-a+b.test.cpp
     - icon: ':heavy_check_mark:'
@@ -300,7 +303,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/lazy-segment-tree.yosupo-range-affine-range-sum.test.cpp
       title: verify/lazy-segment-tree.yosupo-range-affine-range-sum.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/line-container.yosupo-line-add-get-min.test.cpp
       title: verify/line-container.yosupo-line-add-get-min.test.cpp
     - icon: ':heavy_check_mark:'
@@ -312,6 +315,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/mint.yosupo-A+B.test.cpp
       title: verify/mint.yosupo-A+B.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/monotonic-dp-hull.yosupo-a+b.test.cpp
+      title: verify/monotonic-dp-hull.yosupo-a+b.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/ordered-set.aizu-K-average-ranges.test.cpp
       title: verify/ordered-set.aizu-K-average-ranges.test.cpp

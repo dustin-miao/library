@@ -3,15 +3,15 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
-    path: data-structure/line-container.hpp
+    path: geometry/line-container.hpp
     title: Line Container
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/floor-div.yosupo-many-a+b.test.cpp
     title: verify/floor-div.yosupo-many-a+b.test.cpp
   - icon: ':heavy_check_mark:'
-    path: verify/line-container.yosupo-line-add-get-min.test.cpp
-    title: verify/line-container.yosupo-line-add-get-min.test.cpp
+    path: verify/monotonic-dp-hull.yosupo-a+b.test.cpp
+    title: verify/monotonic-dp-hull.yosupo-a+b.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -25,12 +25,12 @@ data:
   isVerificationFile: false
   path: utility/floor-div.hpp
   requiredBy:
-  - data-structure/line-container.hpp
+  - geometry/line-container.hpp
   timestamp: '2022-02-06 21:17:29-08:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/floor-div.yosupo-many-a+b.test.cpp
-  - verify/line-container.yosupo-line-add-get-min.test.cpp
+  - verify/monotonic-dp-hull.yosupo-a+b.test.cpp
 documentation_of: utility/floor-div.hpp
 layout: document
 title: Floor Division

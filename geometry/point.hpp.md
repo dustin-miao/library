@@ -8,10 +8,13 @@ data:
   - icon: ':warning:'
     path: geometry/monotonic-dp-hull-minkowski-sum.hpp
     title: Minkowski Sum for Monotonic DP Hull
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: geometry/monotonic-dp-hull.hpp
     title: Monotonic DP Hull
   _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/monotonic-dp-hull.yosupo-a+b.test.cpp
+    title: verify/monotonic-dp-hull.yosupo-a+b.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/point.aizu-counter-clockwise.test.cpp
     title: verify/point.aizu-counter-clockwise.test.cpp
@@ -139,6 +142,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/point.aizu-projection.test.cpp
+  - verify/monotonic-dp-hull.yosupo-a+b.test.cpp
   - verify/point.aizu-parallel-orthagonal.test.cpp
   - verify/point.aizu-counter-clockwise.test.cpp
 documentation_of: geometry/point.hpp
