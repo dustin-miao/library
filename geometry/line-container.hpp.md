@@ -7,6 +7,9 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: verify/line-container.yosupo-line-add-get-min.test.cpp
+    title: verify/line-container.yosupo-line-add-get-min.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/monotonic-dp-hull.yosupo-a+b.test.cpp
     title: verify/monotonic-dp-hull.yosupo-a+b.test.cpp
   _isVerificationFailed: false
@@ -43,16 +46,17 @@ data:
     \ (x != begin() && isect(--x, y)) \n            isect(x, y = erase(y));\n    \
     \    while ((y = x) != begin() && (--x)->p >= y->p) \n            isect(x, erase(y));\n\
     \    }\n\n    long long query(long long x) {\n        assert(!empty());\n    \
-    \    auto l = *lower_bound(x);\n        return l.m * x + l.b;\n    }\n};\n"
+    \    auto l = *lower_bound(x);\n        return l.m * x + l.b;\n    }\n};"
   dependsOn:
   - utility/floor-div.hpp
   isVerificationFile: false
   path: geometry/line-container.hpp
   requiredBy: []
-  timestamp: '2022-04-26 08:22:31-07:00'
+  timestamp: '2022-04-26 08:28:02-07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/monotonic-dp-hull.yosupo-a+b.test.cpp
+  - verify/line-container.yosupo-line-add-get-min.test.cpp
 documentation_of: geometry/line-container.hpp
 layout: document
 title: Line Container

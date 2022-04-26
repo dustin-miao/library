@@ -249,7 +249,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/ext-gcd.aizu-greatest-common-divisor.test.cpp
       title: verify/ext-gcd.aizu-greatest-common-divisor.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/ext-gcd.yosupo-a+b.test.cpp
       title: verify/ext-gcd.yosupo-a+b.test.cpp
     - icon: ':heavy_check_mark:'
@@ -303,7 +303,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/lazy-segment-tree.yosupo-range-affine-range-sum.test.cpp
       title: verify/lazy-segment-tree.yosupo-range-affine-range-sum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/line-container.yosupo-line-add-get-min.test.cpp
       title: verify/line-container.yosupo-line-add-get-min.test.cpp
     - icon: ':heavy_check_mark:'

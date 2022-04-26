@@ -1,34 +1,53 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: math/ext-gcd.hpp
+    title: Extended GCD
+  - icon: ':heavy_check_mark:'
+    path: random/mersenne-twister.hpp
+    title: Mersenne Twister
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
-  attributes: {}
-  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.4/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
-    , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
-    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.10.4/x64/lib/python3.10/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
-    , line 187, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.10.4/x64/lib/python3.10/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
-    , line 401, in update\n    self.update(self._resolve(pathlib.Path(included), included_from=path))\n\
-    \  File \"/opt/hostedtoolcache/Python/3.10.4/x64/lib/python3.10/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
-    , line 260, in _resolve\n    raise BundleErrorAt(path, -1, \"no such header\"\
-    )\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: random/mersenne_twister.hpp:\
-    \ line -1: no such header\n"
+  _verificationStatusIcon: ':heavy_check_mark:'
+  attributes:
+    '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: https://judge.yosupo.jp/problem/aplusb
+    links:
+    - https://judge.yosupo.jp/problem/aplusb
+  bundledCode: "#line 1 \"verify/ext-gcd.yosupo-a+b.test.cpp\"\n#define PROBLEM \"\
+    https://judge.yosupo.jp/problem/aplusb\"\n\n#include <bits/stdc++.h>\nusing namespace\
+    \ std;\n\n#line 1 \"math/ext-gcd.hpp\"\n#pragma region extended gcd\n\nnamespace\
+    \ math {\n\ttemplate<typename T>\n\tT ext_gcd(T a, T b, T &x, T &y) {\n\t\tx =\
+    \ 1, y = 0;\n\t\tT x1 = 0, y1 = 1, a1 = a, b1 = b;\n\t\twhile (b1) {\n\t\t\tT\
+    \ q = a1 / b1;\n\t\t\ttie(x, x1) = make_tuple(x1, x - q * x1);\n\t\t\ttie(y, y1)\
+    \ = make_tuple(y1, y - q * y1);\n\t\t\ttie(a1, b1) = make_tuple(b1, a1 - q * b1);\n\
+    \t\t}\n\t\treturn a1;\n\t}\n}\n\n#pragma endregion extended gcd\n#line 1 \"random/mersenne-twister.hpp\"\
+    \nmt19937 _rng(chrono::steady_clock::now().time_since_epoch().count());\n\ntemplate<typename\
+    \ T = int>\ntypename enable_if<is_integral<T>::value, T>::type rng(T l, T r) {\
+    \ return uniform_int_distribution<T>(l, r)(_rng); }\n#line 8 \"verify/ext-gcd.yosupo-a+b.test.cpp\"\
+    \n\nint main() {\n\tint T = 2e5;\n\twhile (T--) {\n\t\tlong long A = rng<long\
+    \ long>(1, 1e6);\n\t\tlong long B = rng<long long>(1, 1e6);\n\t\tlong long X,\
+    \ Y;\n\t\tauto G = math::ext_gcd(A, B, X, Y);\n\t\tassert(G == __gcd(A, B));\n\
+    \t\tassert(A * X + B * Y == G);\n\t}\n\n\tlong long A, B;\n\tcin >> A >> B;\n\t\
+    cout << A + B << '\\n';\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/aplusb\"\n\n#include <bits/stdc++.h>\n\
-    using namespace std;\n\n#include \"math/ext-gcd.hpp\"\n#include \"random/mersenne_twister.hpp\"\
+    using namespace std;\n\n#include \"math/ext-gcd.hpp\"\n#include \"random/mersenne-twister.hpp\"\
     \n\nint main() {\n\tint T = 2e5;\n\twhile (T--) {\n\t\tlong long A = rng<long\
     \ long>(1, 1e6);\n\t\tlong long B = rng<long long>(1, 1e6);\n\t\tlong long X,\
     \ Y;\n\t\tauto G = math::ext_gcd(A, B, X, Y);\n\t\tassert(G == __gcd(A, B));\n\
     \t\tassert(A * X + B * Y == G);\n\t}\n\n\tlong long A, B;\n\tcin >> A >> B;\n\t\
     cout << A + B << '\\n';\n}"
-  dependsOn: []
+  dependsOn:
+  - math/ext-gcd.hpp
+  - random/mersenne-twister.hpp
   isVerificationFile: true
   path: verify/ext-gcd.yosupo-a+b.test.cpp
   requiredBy: []
-  timestamp: '1970-01-01 00:00:00+00:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-04-26 08:28:02-07:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/ext-gcd.yosupo-a+b.test.cpp
 layout: document
