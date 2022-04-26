@@ -4,7 +4,7 @@ struct monotonic_dp_hull {
 	long long prev_x = LLONG_MIN, prev_y = 1;
 	deque<geo::point<long long>> points;
  
-	void insert(const geo::point<long long> &p) {
+	void add(const geo::point<long long> &p) {
 		assert(points.empty() || p.x >= points.back().x);
 		if (!points.empty() && p.x == points.back().x) {
 			if (p.y <= points.back().y)
@@ -16,7 +16,7 @@ struct monotonic_dp_hull {
 		points.push_back(p);
 	}
 
-	void insert(long long a, long long b) { insert(geo::point(a, b)); }
+	void add(long long m, long long b) { add(geo::point(m, b)); }
 
 	long long query(long long x, long long y = 1) {
 		assert(size() > 0);

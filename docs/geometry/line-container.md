@@ -1,6 +1,6 @@
 ---
 title: Line Container
-documentation_of: //data-structure/line-container.hpp
+documentation_of: //geometry/line-container.hpp
 ---
 
 ## Line Container

@@ -7,16 +7,13 @@ struct line_container_line {
 };
 
 class line_container : multiset<line_container_line, less<>> {
-    // for doubles, use inf = 1/.0
-    static const long long INF = LLONG_MAX;
-
     bool isect(iterator x, iterator y) {
         if (y == end()) {
-			x->p = INF;
+			x->p = LLONG_MAX;
 			return false;
 		}
         if (x->m == y->m)
-            x->p = x->b > y->b ? INF : -INF;
+            x->p = x->b > y->b ? LLONG_MAX : LLONG_MIN;
         else
             x->p = floor_div(y->b - x->b, x->m - y->m);
         return x->p >= y->p;
