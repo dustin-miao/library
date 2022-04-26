@@ -3,7 +3,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "data-structure/line-container.hpp"
+#include "geometry/line-container.hpp"
 
 int main() {
 	int N, Q;
