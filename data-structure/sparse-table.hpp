@@ -1,3 +1,5 @@
+#pragma region sparse_table
+
 template<typename T>
 class sparse_table {
 	int n, logn;
@@ -25,3 +27,5 @@ public:
 		return min(table[k][l], table[k][r - (1 << k) + 1]);
 	}
 };
+
+#pragma endregion sparse_table

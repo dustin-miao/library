@@ -1,5 +1,7 @@
 #include "data-structure/sparse-table.hpp"
 
+#pragma region fast_lca
+
 class fast_lca {
 	sparse_table<pair<int, int>> st;
 	vector<int> pos;
@@ -50,3 +52,5 @@ public:
 
 	int operator()(int u, int v) { return query(u, v); }
 };
+
+#pragma endregion fast_lca

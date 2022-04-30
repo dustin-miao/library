@@ -1,3 +1,5 @@
+#pragma region find_cycle
+
 vector<pair<int, int>> find_cycle(const vector<vector<int>> &G, bool directed) {
 	int n = G.size();
 	vector<int> idx(n, -1);
@@ -92,3 +94,5 @@ vector<pair<int, int>> find_cycle(const vector<vector<pair<int, T>>> &G, bool di
 	}
 	return vector<pair<int, int>>{};
 }
+
+#pragma endregion find_cycle

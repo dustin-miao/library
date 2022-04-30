@@ -1,3 +1,5 @@
+#pragma region topo_sort
+
 vector<int> topo_sort(const vector<vector<int>> &G) {
 	int n = G.size();
 	vector<bool> vis(n, false);
@@ -18,3 +20,5 @@ vector<int> topo_sort(const vector<vector<int>> &G) {
 	reverse(ord.begin(), ord.end());
 	return ord;
 }
+
+#pragma endregion topo_sort

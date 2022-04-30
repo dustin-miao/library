@@ -1,5 +1,7 @@
 #include "utility/pi.hpp"
 
+#pragma region fast_fourier_transform
+
 namespace conv {
 	template<typename T>
 	typename enable_if<is_floating_point<T>::value, void>::type
@@ -36,3 +38,5 @@ namespace conv {
 		}
 	}
 }
+
+#pragma endregion fast_fourier_transform

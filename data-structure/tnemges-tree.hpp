@@ -1,3 +1,5 @@
+#pragma region tnemges_tree
+
 template<typename T>
 class tnemges_tree {
 protected:
@@ -32,3 +34,5 @@ public:
 
 	T operator[](int i) { return query(i); }
 };
+
+#pragma endregion tnemges_tree

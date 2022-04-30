@@ -1,3 +1,5 @@
+#pragma region chmax
+
 template<typename T>
 bool chmax(T &a, T b) {
 	if (a < b) {
@@ -6,3 +8,5 @@ bool chmax(T &a, T b) {
 	}
 	return false;
 }
+
+#pragma endregion chmax

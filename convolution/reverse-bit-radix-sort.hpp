@@ -1,3 +1,5 @@
+#pragma region reverse_bit_radix_sort
+
 template<typename T>
 void reverse_bit_radix_sort(vector<T> &a) {
 	int n = a.size();
@@ -10,3 +12,5 @@ void reverse_bit_radix_sort(vector<T> &a) {
 			swap(a[i], a[j]);
 	}
 }
+
+#pragma endregion reverse_bit_radix_sort

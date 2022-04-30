@@ -1,3 +1,5 @@
+#pragma region mobius_transform
+
 namespace conv {
 	template<typename T>
 	void mobius_transform(vector<T> &a, int n) {
@@ -8,3 +10,5 @@ namespace conv {
 					a[mask] -= a[mask ^ (1 << i)];
 	}
 }
+
+#pragma endregion mobius_transform

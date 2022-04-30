@@ -1,5 +1,7 @@
 #include "geometry/point.hpp"
 
+#pragma region monotonic_dp_hull
+
 struct monotonic_dp_hull {
 	long long prev_x = LLONG_MIN, prev_y = 1;
 	deque<geo::point<long long>> points;
@@ -31,3 +33,5 @@ struct monotonic_dp_hull {
 
 	int size() const { return points.size(); }
 };
+
+#pragma endregion monotonic_dp_hull

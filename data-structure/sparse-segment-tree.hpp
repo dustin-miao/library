@@ -1,3 +1,5 @@
+#pragma region sparse_segment_tree
+
 template<class segment_tree_template>
 class sparse_segment_tree : public segment_tree_template {
 	using T = typename segment_tree_template::type;
@@ -71,3 +73,5 @@ public:
 
 	T query(long long l, long long r) { return query(l, r, root, 0, n - 1); }
 };
+
+#pragma endregion sparse_segment_tree

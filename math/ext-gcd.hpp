@@ -1,4 +1,4 @@
-#pragma region extended gcd
+#pragma region extended_gcd
 
 namespace math {
 	template<typename T>
@@ -15,4 +15,4 @@ namespace math {
 	}
 }
 
-#pragma endregion extended gcd
+#pragma endregion extended_gcd

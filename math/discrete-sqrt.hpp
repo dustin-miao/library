@@ -1,6 +1,6 @@
 #include "utility/mint.hpp"
 
-#pragma region discrete sqrt
+#pragma region discrete_sqrt
 
 namespace math {
 	template<typename T = long long>
@@ -34,4 +34,4 @@ namespace math {
 	}
 }
 
-#pragma endregion discrete sqrt
+#pragma endregion discrete_sqrt

@@ -1,4 +1,4 @@
-#pragma region fast set
+#pragma region fast_set
 
 struct custom_hash {
     static uint64_t splitmix64(uint64_t x) {
@@ -38,4 +38,4 @@ using fast_map = gp_hash_table<K, V, custom_hash>;
 template <class K>
 using fast_set = gp_hash_table<K, null_type, custom_hash>;
 
-#pragma endregion fast set
+#pragma endregion fast_set

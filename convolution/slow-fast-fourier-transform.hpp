@@ -1,6 +1,8 @@
 #include "utility/pi.hpp"
 #include "convolution/reverse-bit-radix-sort.hpp"
 
+#pragma region slow_fast_fourier_transform
+
 namespace conv {
 	template<typename T> 
 	typename enable_if<is_floating_point<T>::value, void>::type
@@ -44,3 +46,5 @@ namespace conv {
 			a[i] /= n;
 	}
 }
+
+#pragma endregion slow_fast_fourier_transform

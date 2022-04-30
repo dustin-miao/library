@@ -1,5 +1,7 @@
 #include "utility/chmin.hpp"
 
+#pragma region floyd_warshall
+
 template<typename T>
 void floyd_warshall(vector<vector<T>> &G, const T dval) {
 	int n = G.size();
@@ -18,3 +20,5 @@ void floyd_warshall(vector<vector<T>> &G, const T dval) {
 		}
 	}
 }
+
+#pragma endregion floyd_warshall

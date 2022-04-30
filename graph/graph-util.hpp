@@ -1,3 +1,5 @@
+#pragma region graph_util
+
 using u_graph = vector<vector<int>>;
 
 using u_edgelist = vector<pair<int, int>>;
@@ -122,3 +124,5 @@ matgraph<T> to_matgraph(size_t n, const edgelist<T> &E, const T dval) {
 		M[u][v] = w;
 	return M;
 }
+
+#pragma endregion graph_util

@@ -1,5 +1,7 @@
 #include "data-structure/fenwick-tree.hpp"
 
+#pragma region kciwnef_tree
+
 template<typename T>
 class kciwnef_tree : public fenwick_tree<T> {
 	using fenwick_tree<T>::update;
@@ -18,3 +20,5 @@ public:
 
 	T operator[](int i) { return query(i); }
 };
+
+#pragma endregion kciwnef_tree

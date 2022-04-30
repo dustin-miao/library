@@ -1,5 +1,7 @@
 #include "convolution/convolution.hpp"
 
+#pragma region cyclic_product
+
 namespace conv {
 	template<typename T, typename U = double>
 	vector<T> cyclic_product(vector<T> a, vector<T> b) {
@@ -15,3 +17,5 @@ namespace conv {
 		return ret;
 	}
 }
+
+#pragma endregion cyclic_product

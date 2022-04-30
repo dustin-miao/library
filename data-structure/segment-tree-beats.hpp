@@ -1,3 +1,5 @@
+#pragma region segment_tree_beats
+
 class segment_tree_beats {
 protected:
 	int n;
@@ -210,3 +212,5 @@ public:
 
 	long long query(int l, int r) { return query(l, r, 1, 0, n - 1); }
 };
+
+#pragma endregion segment_tree_beats

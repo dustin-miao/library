@@ -1,5 +1,7 @@
 #include "utility/chmin.hpp"
 
+#pragma region prim
+
 template<class T>
 vector<vector<pair<int, T>>> prim(const vector<vector<pair<int, T>>> &G) {
 	int n = G.size();
@@ -31,3 +33,5 @@ vector<vector<pair<int, T>>> prim(const vector<vector<pair<int, T>>> &G) {
 	}
 	return mst;
 }
+
+#pragma endregion prim

@@ -1,7 +1,7 @@
 #include "data-structure/fast-set.hpp"
 #include "math/inverse.hpp"
 
-#pragma region discrete log
+#pragma region discrete_log
 
 namespace math {
 	template<typename T = long long>
@@ -39,4 +39,4 @@ namespace math {
 	}
 }
 
-#pragma endregion discrete log
+#pragma endregion discrete_log

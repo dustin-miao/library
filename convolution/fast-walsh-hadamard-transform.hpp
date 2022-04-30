@@ -1,4 +1,4 @@
-#pragma region fast walsh hadamard transform
+#pragma region fast_walsh_hadamard_transform
 
 namespace conv {
 	template<typename T>
@@ -16,4 +16,4 @@ namespace conv {
 	}
 }
 
-#pragma endregion fast walsh hadamard transform
+#pragma endregion fast_walsh_hadamard_transform

@@ -1,5 +1,7 @@
 #include "convolution/slow-fast-fourier-transform.hpp"
 
+#pragma region slow_convolution
+
 namespace conv {
 	template<typename T, typename U = double>
 	vector<T> slow_convolution(const vector<T> &a, const vector<T> &b) {
@@ -22,3 +24,5 @@ namespace conv {
 		return ret;
 	}
 }
+
+#pragma endregion slow_convolution

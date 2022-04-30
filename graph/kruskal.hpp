@@ -1,5 +1,7 @@
 #include "data-structure/union-find.hpp"
 
+#pragma region kruskal
+
 template<class T>
 vector<vector<pair<int, T>>> kruskal(int n, vector<tuple<int, int, T>> E) {
 	vector<vector<pair<int, T>>> mst(n);
@@ -21,3 +23,5 @@ vector<vector<pair<int, T>>> kruskal(int n, vector<tuple<int, int, T>> E) {
 	}
 	return mst;
 }
+
+#pragma endregion kruskal

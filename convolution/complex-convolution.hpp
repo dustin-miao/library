@@ -1,5 +1,7 @@
 #include "convolution/fast-fourier-transform.hpp"
 
+#pragma region complex_convolution
+
 namespace conv {
 	template<typename T, typename U = double>
 	typename enable_if<is_floating_point<T>::value, vector<complex<T>>>::type
@@ -28,3 +30,5 @@ namespace conv {
 		return ret;
 	}
 }
+
+#pragma endregion complex_convolution

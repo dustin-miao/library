@@ -1,4 +1,4 @@
-#pragma region linear sieve
+#pragma region linear_sieve
 
 namespace math {
 	pair<vector<int>, vector<int>> linear_sieve(int n) {
@@ -15,4 +15,4 @@ namespace math {
 	}
 }
 
-#pragma endregion linear sieve
+#pragma endregion linear_sieve

@@ -213,7 +213,7 @@ using mint = Modular<VarMod>;
 // */
 
 /*
-constexpr int MOD = @@HERE@@;
+constexpr int MOD = HERE;
 
 using mint = Modular<integral_constant<decay<decltype(MOD)>::type, MOD>>;
 */

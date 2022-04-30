@@ -1,3 +1,5 @@
+#pragma region fenwick_tree
+
 template<typename T>
 class fenwick_tree {
 	int n;
@@ -27,3 +29,5 @@ public:
 
 	T query(int l, int r) { return query(r) - query(l - 1); }
 };
+
+#pragma endregion fenwick_tree

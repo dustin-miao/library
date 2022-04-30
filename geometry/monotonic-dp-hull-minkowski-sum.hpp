@@ -1,5 +1,7 @@
 #include "geometry/monotonic-dp-hull.hpp"
 
+#pragma region monotonic_dp_hull_minkowski_sum
+
 monotonic_dp_hull minkowski_sum(const monotonic_dp_hull &h1, const monotonic_dp_hull &h2) {
 	assert(h1.size() > 0 && h2.size() > 0);
 	monotonic_dp_hull sum;
@@ -24,3 +26,5 @@ monotonic_dp_hull minkowski_sum(const monotonic_dp_hull &h1, const monotonic_dp_
 	sum.insert(h1.points.back() + h2.points.back());
 	return sum;
 }
+
+#pragma endregion monotonic_dp_hull_minkowski_sum

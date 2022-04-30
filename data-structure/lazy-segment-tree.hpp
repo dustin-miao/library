@@ -1,3 +1,5 @@
+#pragma region lazy_segment_tree
+
 template<class segment_tree_template>
 class lazy_segment_tree : public segment_tree_template {
 	using T = typename segment_tree_template::node_type;
@@ -61,3 +63,5 @@ public:
 
 	T query(int l, int r) { return query(l, r, 1, 0, n - 1); }
 };
+
+#pragma endregion lazy_segment_tree

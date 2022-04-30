@@ -1,3 +1,5 @@
+#pragma region segment_tree
+
 template<class segment_tree_template>
 class segment_tree : public segment_tree_template {
 	using T = typename segment_tree_template::type;
@@ -37,3 +39,5 @@ public:
 
 	T operator[](int i) { return tree[i += n]; }
 };
+
+#pragma endregion segment_tree

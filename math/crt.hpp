@@ -1,6 +1,6 @@
 #include "math/ext-gcd.hpp"
 
-#pragma region chinese remainder theorem
+#pragma region chinese_remainder_theorem
 
 namespace math {
 	template<typename T>
@@ -19,4 +19,4 @@ namespace math {
 	}
 }
 
-#pragma endregion chinese remainder theorem
+#pragma endregion chinese_remainder_theorem

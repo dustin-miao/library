@@ -1,5 +1,7 @@
 #include "data-structure/union-find.hpp"
 
+#pragma region union_find_2d
+
 struct union_find_2d {
 	int n, m;
 	union_find dsu;
@@ -18,3 +20,4 @@ struct union_find_2d {
 	bool merge(int ui, int uj, int vi, int vj) { return dsu.merge(ui * m + uj, vi * m + vj); }
 };
 
+#pragma endregion union_find_2d

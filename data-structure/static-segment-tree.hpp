@@ -1,3 +1,5 @@
+#pragma region sta_segment_tree
+
 class sta_segment_tree {
 	using T = long long;
 
@@ -39,3 +41,5 @@ public:
 
 	T operator[](int i) { return tree[i + n]; }
 };
+
+#pragma endregion sta_segment_tree

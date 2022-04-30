@@ -1,3 +1,5 @@
+#pragma region union_find
+
 struct union_find {
     vector<int> par, siz;
 
@@ -34,3 +36,5 @@ struct union_find {
 
     int size(int u) { return siz[find(u)]; }
 };
+
+#pragma endregion union_find

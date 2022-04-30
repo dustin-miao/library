@@ -1,6 +1,6 @@
 #include "utility/mint.hpp"
 
-#pragma region binomial coefficients
+#pragma region binomial_coefficients
 
 namespace math {
 	struct binomial_coefficients {
@@ -27,4 +27,4 @@ namespace math {
 	};
 }
 
-#pragma endregion binomial coefficients
+#pragma endregion binomial_coefficients

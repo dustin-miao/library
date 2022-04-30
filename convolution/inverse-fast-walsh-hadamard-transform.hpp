@@ -1,6 +1,6 @@
 #include "convolution/fast-walsh-hadamard-transform.hpp"
 
-#pragma region inverse fast walsh hadamard transform
+#pragma region inverse_fast_walsh_hadamard_transform
 
 namespace conv {
 	template<typename T>
@@ -18,4 +18,4 @@ namespace conv {
 	}
 }
 
-#pragma endregion inverse fast walsh hadamard transform
+#pragma endregion inverse_fast_walsh_hadamard_transform

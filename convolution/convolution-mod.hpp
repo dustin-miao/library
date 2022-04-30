@@ -1,5 +1,7 @@
 #include "convolution/fast-fourier-transform.hpp"
 
+#pragma region convolution_mod
+
 namespace conv {
 	template<typename T, typename U = double>
 	vector<T> convolution_mod(const vector<T> &a, const vector<T> &b, int mod) {
@@ -35,3 +37,5 @@ namespace conv {
 		return ret;
 	}
 }
+
+#pragma endregion convolution_mod
