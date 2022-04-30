@@ -1,26 +1,26 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: convolution/fast-walsh-hadamard-transform.hpp
     title: Fast Walsh-Hadamard Transform
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: convolution/inverse-fast-walsh-hadamard-transform.hpp
     title: Inverse Fast Walsh-Hadamard Transform
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: convolution/xor-convolution.hpp
     title: Xor Convolution
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: math/inverse.hpp
     title: Modulo Inverse
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utility/mint.hpp
     title: Modular Int
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/bitwise_xor_convolution
@@ -151,7 +151,7 @@ data:
   path: verify/xor-convolution.yosupo-bitwise-xor-convolution.test.cpp
   requiredBy: []
   timestamp: '2022-04-29 22:36:50-07:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/xor-convolution.yosupo-bitwise-xor-convolution.test.cpp
 layout: document

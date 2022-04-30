@@ -15,12 +15,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/lazy-segment-tree.aizu-RSQ-and-RUQ.test.cpp
     title: verify/lazy-segment-tree.aizu-RSQ-and-RUQ.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/lazy-segment-tree.yosupo-range-affine-range-sum.test.cpp
     title: verify/lazy-segment-tree.yosupo-range-affine-range-sum.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"data-structure/lazy-segment-tree.hpp\"\n#pragma region lazy_segment_tree\n\
@@ -76,7 +76,7 @@ data:
   path: data-structure/lazy-segment-tree.hpp
   requiredBy: []
   timestamp: '2022-04-29 22:36:50-07:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/lazy-segment-tree.aizu-RMQ-and-RUQ.test.cpp
   - verify/lazy-segment-tree.aizu-RSQ-and-RUQ.test.cpp

@@ -9,12 +9,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/fast-lca.yosupo-lowest-common-ancestor.test.cpp
     title: verify/fast-lca.yosupo-lowest-common-ancestor.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/sparse-table.yosupo-static-rmq.test.cpp
     title: verify/sparse-table.yosupo-static-rmq.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"data-structure/sparse-table.hpp\"\n#pragma region sparse_table\n\
@@ -44,7 +44,7 @@ data:
   requiredBy:
   - data-structure/fast-lca.hpp
   timestamp: '2022-04-29 22:36:50-07:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/sparse-table.yosupo-static-rmq.test.cpp
   - verify/fast-lca.yosupo-lowest-common-ancestor.test.cpp

@@ -18,28 +18,28 @@ data:
     - icon: ':heavy_check_mark:'
       path: convolution/fast-fourier-transform.hpp
       title: Fast Fourier Transform
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: convolution/fast-walsh-hadamard-transform.hpp
       title: Fast Walsh-Hadamard Transform
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: convolution/inverse-fast-walsh-hadamard-transform.hpp
       title: Inverse Fast Walsh-Hadamard Transform
     - icon: ':warning:'
       path: convolution/mobius-transform.hpp
       title: Mobius Transform
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: convolution/reverse-bit-radix-sort.hpp
       title: Reverse Bit Radix Sort
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: convolution/slow-convolution.hpp
       title: Slow Convolution
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: convolution/slow-fast-fourier-transform.hpp
       title: Slow Fast Fourier Transform
     - icon: ':warning:'
       path: convolution/subset-convolution.hpp
       title: Subset Convolution
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: convolution/xor-convolution.hpp
       title: Xor Convolution
     - icon: ':warning:'
@@ -62,40 +62,40 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/kciwnef-tree.hpp
       title: Kciwnef Tree
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/lazy-segment-tree.hpp
       title: Lazy Segment Tree
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/ordered-set.hpp
       title: Ordered Set
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/recursive-segment-tree.hpp
       title: Recursive Segment Tree
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/segment-tree-beats.hpp
       title: Segment Tree Beats
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/segment-tree.hpp
       title: Segment Tree
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/sparse-segment-tree.hpp
       title: Sparse Segment Tree
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/sparse-table.hpp
       title: Sparse Table
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/static-general-segment-tree.hpp
       title: Static General Segment Tree
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/static-segment-tree.hpp
       title: Static Segment Tree
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/tnemges-tree.hpp
       title: Tnemges Tree
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/union-find-2d.hpp
       title: Union Find 2d
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/union-find.hpp
       title: Union Find
   - name: geometry
@@ -103,16 +103,16 @@ data:
     - icon: ':warning:'
       path: geometry/convex-hull.hpp
       title: Convex Hull
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: geometry/line-container.hpp
       title: Line Container
     - icon: ':warning:'
       path: geometry/monotonic-dp-hull-minkowski-sum.hpp
       title: Minkowski Sum for Monotonic DP Hull
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: geometry/monotonic-dp-hull.hpp
       title: Monotonic DP Hull
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: geometry/point.hpp
       title: Point
   - name: graph
@@ -132,10 +132,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/kruskal.hpp
       title: Kruskal's Algorithm
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph/prim.hpp
       title: Prim's Algorithm
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph/topo-sort.hpp
       title: Topological Sort
   - name: math
@@ -155,7 +155,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/ext-gcd.hpp
       title: Extended GCD
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: math/inverse.hpp
       title: Modulo Inverse
     - icon: ':warning:'
@@ -166,10 +166,10 @@ data:
       title: Matrix
   - name: random
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: random/mersenne-twister.hpp
       title: Mersenne Twister
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: random/random-vector.hpp
       title: Randomized Vector
   - name: utility
@@ -180,7 +180,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: utility/chmax.hpp
       title: Chmax
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: utility/chmin.hpp
       title: Chmin
     - icon: ':warning:'
@@ -189,16 +189,16 @@ data:
     - icon: ':heavy_check_mark:'
       path: utility/fast-pow.hpp
       title: Binary Exponentiation
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: utility/floor-div.hpp
       title: Floor Division
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: utility/mint.hpp
       title: Modular Int
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: utility/pi.hpp
       title: Pi
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: utility/y-combinator.hpp
       title: Y-Combinator
   verificationCategories:
@@ -300,31 +300,31 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/lazy-segment-tree.aizu-RSQ-and-RUQ.test.cpp
       title: verify/lazy-segment-tree.aizu-RSQ-and-RUQ.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/lazy-segment-tree.yosupo-range-affine-range-sum.test.cpp
       title: verify/lazy-segment-tree.yosupo-range-affine-range-sum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/line-container.yosupo-line-add-get-min.test.cpp
       title: verify/line-container.yosupo-line-add-get-min.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/matrix.aizu-fibonacci-number.test.cpp
       title: verify/matrix.aizu-fibonacci-number.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/mint.power.test.cpp
       title: verify/mint.power.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/mint.yosupo-A+B.test.cpp
       title: verify/mint.yosupo-A+B.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/monotonic-dp-hull.yosupo-a+b.test.cpp
       title: verify/monotonic-dp-hull.yosupo-a+b.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/ordered-set.aizu-K-average-ranges.test.cpp
       title: verify/ordered-set.aizu-K-average-ranges.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/ordered-set.aizu-the-number-of-inversions.test.cpp
       title: verify/ordered-set.aizu-the-number-of-inversions.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/ordered-set.aizu-unique.test.cpp
       title: verify/ordered-set.aizu-unique.test.cpp
     - icon: ':heavy_check_mark:'
@@ -336,82 +336,82 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/point.aizu-projection.test.cpp
       title: verify/point.aizu-projection.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/prim.aizu-minimum-spanning-tree.test.cpp
       title: verify/prim.aizu-minimum-spanning-tree.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/recursive-segment-tree.aizu-range-minimum-query.test.cpp
       title: verify/recursive-segment-tree.aizu-range-minimum-query.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/recursive-segment-tree.aizu-range-sum-query.test.cpp
       title: verify/recursive-segment-tree.aizu-range-sum-query.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/recursive-segment-tree.yosupo-point-add-range-sum.test.cpp
       title: verify/recursive-segment-tree.yosupo-point-add-range-sum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/recursive-segment-tree.yosupo-point-set-range-composite.test.cpp
       title: verify/recursive-segment-tree.yosupo-point-set-range-composite.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/segment-tree-beats.yosupo-range-chmin-chmax-range-sum.test.cpp
       title: verify/segment-tree-beats.yosupo-range-chmin-chmax-range-sum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/segment-tree.aizu-range-minimum-query.test.cpp
       title: verify/segment-tree.aizu-range-minimum-query.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/segment-tree.aizu-range-sum-query.test.cpp
       title: verify/segment-tree.aizu-range-sum-query.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/segment-tree.yosupo-point-add-range-sum.test.cpp
       title: verify/segment-tree.yosupo-point-add-range-sum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/slow-convolution.yosupo-frequency-table-of-tree-distances.test.cpp
       title: verify/slow-convolution.yosupo-frequency-table-of-tree-distances.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/sparse-segment-tree.aizu-range-minimum-query.test.cpp
       title: verify/sparse-segment-tree.aizu-range-minimum-query.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/sparse-segment-tree.aizu-range-sum-query.test.cpp
       title: verify/sparse-segment-tree.aizu-range-sum-query.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/sparse-segment-tree.aizu-the-number-of-inversions.test.cpp
       title: verify/sparse-segment-tree.aizu-the-number-of-inversions.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/sparse-segment-tree.yosupo-point-add-range-sum.test.cpp
       title: verify/sparse-segment-tree.yosupo-point-add-range-sum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/sparse-segment-tree.yosupo-point-set-range-composite.test.cpp
       title: verify/sparse-segment-tree.yosupo-point-set-range-composite.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/sparse-table.yosupo-static-rmq.test.cpp
       title: verify/sparse-table.yosupo-static-rmq.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/static-general-segment-tree.yosupo-point-add-range-sum.test.cpp
       title: verify/static-general-segment-tree.yosupo-point-add-range-sum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/static-segment-tree.yosupo-point-add-range-sum.test.cpp
       title: verify/static-segment-tree.yosupo-point-add-range-sum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/tnemges-tree.aizu-point-add-query.test.cpp
       title: verify/tnemges-tree.aizu-point-add-query.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/topo-sort.topological-sort.test.cpp
       title: verify/topo-sort.topological-sort.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/union-find-2d.aizu-disjoint-union.test.cpp
       title: verify/union-find-2d.aizu-disjoint-union.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/union-find-2d.yosupo-unionfind.test.cpp
       title: verify/union-find-2d.yosupo-unionfind.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/union-find.aizu-disjoint-union.test.cpp
       title: verify/union-find.aizu-disjoint-union.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/union-find.yosupo-unionfind.test.cpp
       title: verify/union-find.yosupo-unionfind.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/xor-convolution.yosupo-bitwise-xor-convolution.test.cpp
       title: verify/xor-convolution.yosupo-bitwise-xor-convolution.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/y-combinator.aizu-greatest-common-denominator.test.cpp
       title: verify/y-combinator.aizu-greatest-common-denominator.test.cpp
 layout: toppage

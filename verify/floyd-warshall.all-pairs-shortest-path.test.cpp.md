@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/floyd-warshall.hpp
     title: Floyd-Warshall Algorithm
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utility/chmin.hpp
     title: Chmin
   _extendedRequiredBy: []

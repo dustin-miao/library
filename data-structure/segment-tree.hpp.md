@@ -3,18 +3,18 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/segment-tree.aizu-range-minimum-query.test.cpp
     title: verify/segment-tree.aizu-range-minimum-query.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/segment-tree.aizu-range-sum-query.test.cpp
     title: verify/segment-tree.aizu-range-sum-query.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/segment-tree.yosupo-point-add-range-sum.test.cpp
     title: verify/segment-tree.yosupo-point-add-range-sum.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"data-structure/segment-tree.hpp\"\n#pragma region segment_tree\n\
@@ -48,7 +48,7 @@ data:
   path: data-structure/segment-tree.hpp
   requiredBy: []
   timestamp: '2022-04-29 22:36:50-07:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/segment-tree.aizu-range-sum-query.test.cpp
   - verify/segment-tree.yosupo-point-add-range-sum.test.cpp

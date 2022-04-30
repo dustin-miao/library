@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: data-structure/fast-lca.hpp
     title: Fast Lowest Common Ancestor
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/sparse-table.hpp
     title: Sparse Table
   _extendedRequiredBy: []

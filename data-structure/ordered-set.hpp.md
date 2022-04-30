@@ -3,18 +3,18 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/ordered-set.aizu-K-average-ranges.test.cpp
     title: verify/ordered-set.aizu-K-average-ranges.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/ordered-set.aizu-the-number-of-inversions.test.cpp
     title: verify/ordered-set.aizu-the-number-of-inversions.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/ordered-set.aizu-unique.test.cpp
     title: verify/ordered-set.aizu-unique.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: '#line 1 "data-structure/ordered-set.hpp"
@@ -68,7 +68,7 @@ data:
   path: data-structure/ordered-set.hpp
   requiredBy: []
   timestamp: '2022-04-29 22:36:50-07:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/ordered-set.aizu-unique.test.cpp
   - verify/ordered-set.aizu-the-number-of-inversions.test.cpp

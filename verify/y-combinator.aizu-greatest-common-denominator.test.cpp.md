@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: utility/y-combinator.hpp
     title: Y-Combinator
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_B
@@ -19,7 +19,7 @@ data:
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#line 1 \"utility/y-combinator.hpp\"\
     \n#pragma region y_combinator\n\ntemplate<class Fun>\nclass y_combinator_result\
     \ {\n\tFun fun_;\npublic:\n\ttemplate<class T>\n\texplicit y_combinator_result(T\
-    \ &&fun): fun_(std::forward<T>(fun)) {}\n\n\ttemplate<class ...Args>\n\tdecltype(auto)\
+    \ &&fun) : fun_(std::forward<T>(fun)) {}\n\n\ttemplate<class ...Args>\n\tdecltype(auto)\
     \ operator()(Args &&...args) {\n\t\treturn fun_(std::ref(*this), std::forward<Args>(args)...);\n\
     \t}\n};\n\ntemplate<class Fun>\ndecltype(auto) y_combinator(Fun &&fun) {\n\treturn\
     \ y_combinator_result<std::decay_t<Fun>>(std::forward<Fun>(fun));\n}\n\n#pragma\
@@ -37,8 +37,8 @@ data:
   isVerificationFile: true
   path: verify/y-combinator.aizu-greatest-common-denominator.test.cpp
   requiredBy: []
-  timestamp: '2022-04-29 22:36:50-07:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-04-29 22:55:40-07:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/y-combinator.aizu-greatest-common-denominator.test.cpp
 layout: document

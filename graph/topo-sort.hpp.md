@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/topo-sort.topological-sort.test.cpp
     title: verify/topo-sort.topological-sort.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"graph/topo-sort.hpp\"\n#pragma region topo_sort\n\nvector<int>\
@@ -30,7 +30,7 @@ data:
   path: graph/topo-sort.hpp
   requiredBy: []
   timestamp: '2022-04-29 22:36:50-07:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/topo-sort.topological-sort.test.cpp
 documentation_of: graph/topo-sort.hpp

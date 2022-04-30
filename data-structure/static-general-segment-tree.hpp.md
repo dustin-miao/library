@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/static-general-segment-tree.yosupo-point-add-range-sum.test.cpp
     title: verify/static-general-segment-tree.yosupo-point-add-range-sum.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"data-structure/static-general-segment-tree.hpp\"\n#pragma\
@@ -43,7 +43,7 @@ data:
   path: data-structure/static-general-segment-tree.hpp
   requiredBy: []
   timestamp: '2022-04-29 22:36:50-07:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/static-general-segment-tree.yosupo-point-add-range-sum.test.cpp
 documentation_of: data-structure/static-general-segment-tree.hpp

@@ -7,7 +7,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/discrete-log.hpp
     title: Discrete Logarithm
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: math/inverse.hpp
     title: Modulo Inverse
   _extendedRequiredBy: []

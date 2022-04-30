@@ -1,23 +1,23 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: convolution/reverse-bit-radix-sort.hpp
     title: Reverse Bit Radix Sort
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: convolution/slow-convolution.hpp
     title: Slow Convolution
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: convolution/slow-fast-fourier-transform.hpp
     title: Slow Fast Fourier Transform
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utility/pi.hpp
     title: Pi
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/frequency_table_of_tree_distance
@@ -124,7 +124,7 @@ data:
   path: verify/slow-convolution.yosupo-frequency-table-of-tree-distances.test.cpp
   requiredBy: []
   timestamp: '2022-04-29 22:36:50-07:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/slow-convolution.yosupo-frequency-table-of-tree-distances.test.cpp
 layout: document

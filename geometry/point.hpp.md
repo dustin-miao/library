@@ -8,11 +8,11 @@ data:
   - icon: ':warning:'
     path: geometry/monotonic-dp-hull-minkowski-sum.hpp
     title: Minkowski Sum for Monotonic DP Hull
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: geometry/monotonic-dp-hull.hpp
     title: Monotonic DP Hull
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/monotonic-dp-hull.yosupo-a+b.test.cpp
     title: verify/monotonic-dp-hull.yosupo-a+b.test.cpp
   - icon: ':heavy_check_mark:'
@@ -24,9 +24,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/point.aizu-projection.test.cpp
     title: verify/point.aizu-projection.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"geometry/point.hpp\"\n#pragma region point\n\nnamespace\
@@ -139,7 +139,7 @@ data:
   - geometry/convex-hull.hpp
   - geometry/monotonic-dp-hull-minkowski-sum.hpp
   timestamp: '2022-04-11 13:05:03-07:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/point.aizu-counter-clockwise.test.cpp
   - verify/monotonic-dp-hull.yosupo-a+b.test.cpp

@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: utility/chmax.hpp
     title: Chmax
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utility/chmin.hpp
     title: Chmin
   _extendedRequiredBy: []
