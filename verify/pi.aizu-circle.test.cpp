@@ -8,5 +8,5 @@ using namespace std;
 int main() {
 	long double r;
 	cin >> r;
-	cout << fixed << setprecision(10) << PI * r * r << ' ' << 2 * PI * r << '\n';
+	cout << fixed << setprecision(6) << PI * r * r << ' ' << 2 * PI * r << '\n';
 }
