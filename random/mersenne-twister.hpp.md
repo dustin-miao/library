@@ -2,11 +2,11 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: random/random-vector.hpp
     title: Randomized Vector
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/cyclic-product.yosupo-a+b.test.cpp
     title: verify/cyclic-product.yosupo-a+b.test.cpp
   - icon: ':heavy_check_mark:'
@@ -15,9 +15,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/monotonic-dp-hull.yosupo-a+b.test.cpp
     title: verify/monotonic-dp-hull.yosupo-a+b.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: '#line 1 "random/mersenne-twister.hpp"
@@ -56,7 +56,7 @@ data:
   requiredBy:
   - random/random-vector.hpp
   timestamp: '2022-04-29 22:36:50-07:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/monotonic-dp-hull.yosupo-a+b.test.cpp
   - verify/cyclic-product.yosupo-a+b.test.cpp

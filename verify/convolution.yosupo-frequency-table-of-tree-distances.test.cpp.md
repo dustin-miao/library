@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: convolution/convolution.hpp
     title: Convolution
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: convolution/fast-fourier-transform.hpp
     title: Fast Fourier Transform
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utility/pi.hpp
     title: Pi
   _extendedRequiredBy: []

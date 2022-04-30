@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: random/mersenne-twister.hpp
     title: Mersenne Twister
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/cyclic-product.yosupo-a+b.test.cpp
     title: verify/cyclic-product.yosupo-a+b.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/monotonic-dp-hull.yosupo-a+b.test.cpp
     title: verify/monotonic-dp-hull.yosupo-a+b.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"random/mersenne-twister.hpp\"\n#pragma region rng\n\nmt19937\
@@ -35,7 +35,7 @@ data:
   path: random/random-vector.hpp
   requiredBy: []
   timestamp: '2022-04-29 22:36:50-07:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/monotonic-dp-hull.yosupo-a+b.test.cpp
   - verify/cyclic-product.yosupo-a+b.test.cpp

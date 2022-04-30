@@ -1,35 +1,38 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: convolution/convolution.hpp
     title: Convolution
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: convolution/cyclic-product.hpp
     title: Cyclic Product
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: convolution/fast-fourier-transform.hpp
     title: Fast Fourier Transform
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: random/mersenne-twister.hpp
     title: Mersenne Twister
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: random/random-vector.hpp
     title: Randomized Vector
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utility/pi.hpp
     title: Pi
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    links: []
-  bundledCode: "#line 1 \"verify/cyclic-product.yosupo-a+b.test.cpp\"\n#include <bits/stdc++.h>\n\
-    using namespace std;\n\n#line 1 \"utility/pi.hpp\"\n#pragma region Pi\n\nconst\
-    \ double PI = acos(-1);\n\n#pragma endregion Pi\n#line 2 \"convolution/fast-fourier-transform.hpp\"\
+    PROBLEM: https://judge.yosupo.jp/problem/aplusb
+    links:
+    - https://judge.yosupo.jp/problem/aplusb
+  bundledCode: "#line 1 \"verify/cyclic-product.yosupo-a+b.test.cpp\"\n#define PROBLEM\
+    \ \"https://judge.yosupo.jp/problem/aplusb\"\n\n#include <bits/stdc++.h>\nusing\
+    \ namespace std;\n\n#line 1 \"utility/pi.hpp\"\n#pragma region Pi\n\nconst double\
+    \ PI = acos(-1);\n\n#pragma endregion Pi\n#line 2 \"convolution/fast-fourier-transform.hpp\"\
     \n\n#pragma region fast_fourier_transform\n\nnamespace conv {\n\ttemplate<typename\
     \ T>\n\ttypename enable_if<is_floating_point<T>::value, void>::type\n\tfast_fourier_transform(vector<complex<T>>\
     \ &a) {\n\t\tint n = a.size(), logn = 31 - __builtin_clz(n);\n\t\t\n\t\tvector<int>\
@@ -68,17 +71,18 @@ data:
     \ endregion rng\n#line 2 \"random/random-vector.hpp\"\n\n#pragma region rng_vector\n\
     \ntemplate<typename T>\ntypename enable_if<is_integral<T>::value, vector<T>>::type\
     \ rng_vector(int n, T l, T r) {\n\tvector<T> v(n);\n\tfor (auto &a : v)\n\t\t\
-    a = rng(l, r);\n\treturn v;\n}\n\n#pragma endregion rng_vector\n#line 6 \"verify/cyclic-product.yosupo-a+b.test.cpp\"\
+    a = rng(l, r);\n\treturn v;\n}\n\n#pragma endregion rng_vector\n#line 8 \"verify/cyclic-product.yosupo-a+b.test.cpp\"\
     \n\nconst int N = 5e4;\n\nint main() { \n\t{\n\t\tvector<long long> A = rng_vector<long\
     \ long>(N, 1, 1e5);\n\t\tvector<long long> B = rng_vector<long long>(N, 1, 1e5);\n\
     \t\tauto C = conv::cyclic_product(A, B);\n\t\tB.insert(B.end(), B.begin(), B.end());\n\
     \t\tfor (int i = 0; i < N; i++) {\n\t\t\tlong long cur = 0;\n\t\t\tfor (int j\
     \ = 0; j < N; j++)\n\t\t\t\tcur += A[j] * B[i + j];\n\t\t\tassert(cur == C[i]);\n\
     \t\t}\n\t}\n\n\tint A, B;\n\tcin >> A >> B;\n\tcout << A + B << '\\n';\n}\n"
-  code: "#include <bits/stdc++.h>\nusing namespace std;\n\n#include \"convolution/cyclic-product.hpp\"\
-    \n#include \"random/random-vector.hpp\"\n\nconst int N = 5e4;\n\nint main() {\
-    \ \n\t{\n\t\tvector<long long> A = rng_vector<long long>(N, 1, 1e5);\n\t\tvector<long\
-    \ long> B = rng_vector<long long>(N, 1, 1e5);\n\t\tauto C = conv::cyclic_product(A,\
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/aplusb\"\n\n#include <bits/stdc++.h>\n\
+    using namespace std;\n\n#include \"convolution/cyclic-product.hpp\"\n#include\
+    \ \"random/random-vector.hpp\"\n\nconst int N = 5e4;\n\nint main() { \n\t{\n\t\
+    \tvector<long long> A = rng_vector<long long>(N, 1, 1e5);\n\t\tvector<long long>\
+    \ B = rng_vector<long long>(N, 1, 1e5);\n\t\tauto C = conv::cyclic_product(A,\
     \ B);\n\t\tB.insert(B.end(), B.begin(), B.end());\n\t\tfor (int i = 0; i < N;\
     \ i++) {\n\t\t\tlong long cur = 0;\n\t\t\tfor (int j = 0; j < N; j++)\n\t\t\t\t\
     cur += A[j] * B[i + j];\n\t\t\tassert(cur == C[i]);\n\t\t}\n\t}\n\n\tint A, B;\n\
@@ -93,8 +97,8 @@ data:
   isVerificationFile: true
   path: verify/cyclic-product.yosupo-a+b.test.cpp
   requiredBy: []
-  timestamp: '2022-04-30 12:48:23-07:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-04-30 13:05:31-07:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/cyclic-product.yosupo-a+b.test.cpp
 layout: document

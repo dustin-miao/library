@@ -1,23 +1,23 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: convolution/convolution.hpp
     title: Convolution
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: convolution/fast-fourier-transform.hpp
     title: Fast Fourier Transform
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utility/pi.hpp
     title: Pi
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/cyclic-product.yosupo-a+b.test.cpp
     title: verify/cyclic-product.yosupo-a+b.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"utility/pi.hpp\"\n#pragma region Pi\n\nconst double PI =\
@@ -69,7 +69,7 @@ data:
   path: convolution/cyclic-product.hpp
   requiredBy: []
   timestamp: '2022-04-29 22:36:50-07:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/cyclic-product.yosupo-a+b.test.cpp
 documentation_of: convolution/cyclic-product.hpp

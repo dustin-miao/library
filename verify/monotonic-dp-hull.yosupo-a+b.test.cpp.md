@@ -10,10 +10,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: geometry/point.hpp
     title: Point
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: random/mersenne-twister.hpp
     title: Mersenne Twister
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: random/random-vector.hpp
     title: Randomized Vector
   - icon: ':heavy_check_mark:'
