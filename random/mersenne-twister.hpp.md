@@ -2,19 +2,22 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: random/random-vector.hpp
     title: Randomized Vector
   _extendedVerifiedWith:
+  - icon: ':x:'
+    path: verify/cyclic-product.yosupo-a+b.test.cpp
+    title: verify/cyclic-product.yosupo-a+b.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/ext-gcd.yosupo-a+b.test.cpp
     title: verify/ext-gcd.yosupo-a+b.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/monotonic-dp-hull.yosupo-a+b.test.cpp
     title: verify/monotonic-dp-hull.yosupo-a+b.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: '#line 1 "random/mersenne-twister.hpp"
@@ -53,9 +56,10 @@ data:
   requiredBy:
   - random/random-vector.hpp
   timestamp: '2022-04-29 22:36:50-07:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/monotonic-dp-hull.yosupo-a+b.test.cpp
+  - verify/cyclic-product.yosupo-a+b.test.cpp
   - verify/ext-gcd.yosupo-a+b.test.cpp
 documentation_of: random/mersenne-twister.hpp
 layout: document

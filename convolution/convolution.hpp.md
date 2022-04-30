@@ -1,23 +1,26 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: convolution/fast-fourier-transform.hpp
     title: Fast Fourier Transform
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utility/pi.hpp
     title: Pi
   _extendedRequiredBy:
-  - icon: ':warning:'
+  - icon: ':x:'
     path: convolution/cyclic-product.hpp
     title: Cyclic Product
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/convolution.yosupo-frequency-table-of-tree-distances.test.cpp
     title: verify/convolution.yosupo-frequency-table-of-tree-distances.test.cpp
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: verify/cyclic-product.yosupo-a+b.test.cpp
+    title: verify/cyclic-product.yosupo-a+b.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"utility/pi.hpp\"\n#pragma region Pi\n\nconst double PI =\
@@ -68,9 +71,10 @@ data:
   requiredBy:
   - convolution/cyclic-product.hpp
   timestamp: '2022-04-29 22:36:50-07:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/convolution.yosupo-frequency-table-of-tree-distances.test.cpp
+  - verify/cyclic-product.yosupo-a+b.test.cpp
 documentation_of: convolution/convolution.hpp
 layout: document
 title: Convolution

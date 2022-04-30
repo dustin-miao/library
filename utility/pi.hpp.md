@@ -8,13 +8,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: convolution/convolution-mod.hpp
     title: Convolution under Modulo
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: convolution/convolution.hpp
     title: Convolution
-  - icon: ':warning:'
+  - icon: ':x:'
     path: convolution/cyclic-product.hpp
     title: Cyclic Product
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: convolution/fast-fourier-transform.hpp
     title: Fast Fourier Transform
   - icon: ':heavy_check_mark:'
@@ -39,12 +39,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/convolution.yosupo-frequency-table-of-tree-distances.test.cpp
     title: verify/convolution.yosupo-frequency-table-of-tree-distances.test.cpp
+  - icon: ':x:'
+    path: verify/cyclic-product.yosupo-a+b.test.cpp
+    title: verify/cyclic-product.yosupo-a+b.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/slow-convolution.yosupo-frequency-table-of-tree-distances.test.cpp
     title: verify/slow-convolution.yosupo-frequency-table-of-tree-distances.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: '#line 1 "utility/pi.hpp"
@@ -77,13 +80,14 @@ data:
   - convolution/cyclic-product.hpp
   - convolution/convolution-mod.hpp
   timestamp: '2022-04-29 22:36:50-07:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/convolution.yosupo-frequency-table-of-tree-distances.test.cpp
   - verify/complex-convolution.aizu-naive-string-search.test.cpp
   - verify/convolution-mod.yosupo-convolution.test.cpp
   - verify/convolution-mod.yosupo-convolution-mod-1000000007.test.cpp
   - verify/slow-convolution.yosupo-frequency-table-of-tree-distances.test.cpp
+  - verify/cyclic-product.yosupo-a+b.test.cpp
   - verify/complex-convolution.aizu-string-search.test.cpp
 documentation_of: utility/pi.hpp
 layout: document

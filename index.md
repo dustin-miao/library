@@ -9,13 +9,13 @@ data:
     - icon: ':heavy_check_mark:'
       path: convolution/convolution-mod.hpp
       title: Convolution under Modulo
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: convolution/convolution.hpp
       title: Convolution
-    - icon: ':warning:'
+    - icon: ':x:'
       path: convolution/cyclic-product.hpp
       title: Cyclic Product
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: convolution/fast-fourier-transform.hpp
       title: Fast Fourier Transform
     - icon: ':heavy_check_mark:'
@@ -166,10 +166,10 @@ data:
       title: Matrix
   - name: random
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: random/mersenne-twister.hpp
       title: Mersenne Twister
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: random/random-vector.hpp
       title: Randomized Vector
   - name: utility
@@ -195,7 +195,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: utility/mint.hpp
       title: Modular Int
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: utility/pi.hpp
       title: Pi
     - icon: ':heavy_check_mark:'
@@ -231,6 +231,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/cycle-finding.yosupo-cycle-detection.test.cpp
       title: verify/cycle-finding.yosupo-cycle-detection.test.cpp
+    - icon: ':x:'
+      path: verify/cyclic-product.yosupo-a+b.test.cpp
+      title: verify/cyclic-product.yosupo-a+b.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/dijkstra.aizu-shortest-path.test.cpp
       title: verify/dijkstra.aizu-shortest-path.test.cpp

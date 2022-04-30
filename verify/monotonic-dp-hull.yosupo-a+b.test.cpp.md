@@ -10,10 +10,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: geometry/point.hpp
     title: Point
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: random/mersenne-twister.hpp
     title: Mersenne Twister
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: random/random-vector.hpp
     title: Randomized Vector
   - icon: ':heavy_check_mark:'
@@ -121,25 +121,27 @@ data:
     \ntemplate<typename T>\ntypename enable_if<is_integral<T>::value, vector<T>>::type\
     \ rng_vector(int n, T l, T r) {\n\tvector<T> v(n);\n\tfor (auto &a : v)\n\t\t\
     a = rng(l, r);\n\treturn v;\n}\n\n#pragma endregion rng_vector\n#line 9 \"verify/monotonic-dp-hull.yosupo-a+b.test.cpp\"\
-    \n\nint main() {\n\tint T = 2e5;\n\tauto slope = rng_vector<long long>(T, -1e6,\
-    \ 1e6), intercept = rng_vector<long long>(T, -1e9, 1e9);\n\tauto x_coord = rng_vector<long\
-    \ long>(5 * T, -1e6, 1e6);\n\n\tsort(slope.begin(), slope.end());\n\tsort(x_coord.begin(),\
-    \ x_coord.end());\n\n\tline_container lc;\n\tmonotonic_dp_hull mdh;\n\tfor (int\
-    \ tc = 0; tc < T; tc++) {\n\t\tlc.add(slope[tc], intercept[tc]);\n\t\tmdh.add(slope[tc],\
-    \ intercept[tc]);\n\t\tfor (int i = tc * 5; i < (tc + 1) * 5; i++) \n\t\t\tassert(lc.query(x_coord[i])\
-    \ == mdh.query(x_coord[i]));\n\t}\n\n\tlong long A, B;\n\tcin >> A >> B;\n\tcout\
-    \ << A + B << '\\n';\n}\n"
+    \n\nint main() {\n\t{\n\t\tint T = 2e5;\n\t\tauto slope = rng_vector<long long>(T,\
+    \ -1e6, 1e6), intercept = rng_vector<long long>(T, -1e9, 1e9);\n\t\tauto x_coord\
+    \ = rng_vector<long long>(5 * T, -1e6, 1e6);\n\n\t\tsort(slope.begin(), slope.end());\n\
+    \t\tsort(x_coord.begin(), x_coord.end());\n\n\t\tline_container lc;\n\t\tmonotonic_dp_hull\
+    \ mdh;\n\t\tfor (int tc = 0; tc < T; tc++) {\n\t\t\tlc.add(slope[tc], intercept[tc]);\n\
+    \t\t\tmdh.add(slope[tc], intercept[tc]);\n\t\t\tfor (int i = tc * 5; i < (tc +\
+    \ 1) * 5; i++) \n\t\t\t\tassert(lc.query(x_coord[i]) == mdh.query(x_coord[i]));\n\
+    \t\t}\n\t}\n\n\tlong long A, B;\n\tcin >> A >> B;\n\tcout << A + B << '\\n';\n\
+    }\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/aplusb\"\n\n#include <bits/stdc++.h>\n\
     using namespace std;\n\n#include \"geometry/line-container.hpp\"\n#include \"\
     geometry/monotonic-dp-hull.hpp\"\n#include \"random/random-vector.hpp\"\n\nint\
-    \ main() {\n\tint T = 2e5;\n\tauto slope = rng_vector<long long>(T, -1e6, 1e6),\
-    \ intercept = rng_vector<long long>(T, -1e9, 1e9);\n\tauto x_coord = rng_vector<long\
-    \ long>(5 * T, -1e6, 1e6);\n\n\tsort(slope.begin(), slope.end());\n\tsort(x_coord.begin(),\
-    \ x_coord.end());\n\n\tline_container lc;\n\tmonotonic_dp_hull mdh;\n\tfor (int\
-    \ tc = 0; tc < T; tc++) {\n\t\tlc.add(slope[tc], intercept[tc]);\n\t\tmdh.add(slope[tc],\
-    \ intercept[tc]);\n\t\tfor (int i = tc * 5; i < (tc + 1) * 5; i++) \n\t\t\tassert(lc.query(x_coord[i])\
-    \ == mdh.query(x_coord[i]));\n\t}\n\n\tlong long A, B;\n\tcin >> A >> B;\n\tcout\
-    \ << A + B << '\\n';\n}"
+    \ main() {\n\t{\n\t\tint T = 2e5;\n\t\tauto slope = rng_vector<long long>(T, -1e6,\
+    \ 1e6), intercept = rng_vector<long long>(T, -1e9, 1e9);\n\t\tauto x_coord = rng_vector<long\
+    \ long>(5 * T, -1e6, 1e6);\n\n\t\tsort(slope.begin(), slope.end());\n\t\tsort(x_coord.begin(),\
+    \ x_coord.end());\n\n\t\tline_container lc;\n\t\tmonotonic_dp_hull mdh;\n\t\t\
+    for (int tc = 0; tc < T; tc++) {\n\t\t\tlc.add(slope[tc], intercept[tc]);\n\t\t\
+    \tmdh.add(slope[tc], intercept[tc]);\n\t\t\tfor (int i = tc * 5; i < (tc + 1)\
+    \ * 5; i++) \n\t\t\t\tassert(lc.query(x_coord[i]) == mdh.query(x_coord[i]));\n\
+    \t\t}\n\t}\n\n\tlong long A, B;\n\tcin >> A >> B;\n\tcout << A + B << '\\n';\n\
+    }"
   dependsOn:
   - geometry/line-container.hpp
   - utility/floor-div.hpp
@@ -150,7 +152,7 @@ data:
   isVerificationFile: true
   path: verify/monotonic-dp-hull.yosupo-a+b.test.cpp
   requiredBy: []
-  timestamp: '2022-04-29 22:36:50-07:00'
+  timestamp: '2022-04-30 12:48:23-07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/monotonic-dp-hull.yosupo-a+b.test.cpp

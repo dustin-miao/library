@@ -4,24 +4,32 @@ data:
   - icon: ':question:'
     path: convolution/convolution.hpp
     title: Convolution
+  - icon: ':x:'
+    path: convolution/cyclic-product.hpp
+    title: Cyclic Product
   - icon: ':question:'
     path: convolution/fast-fourier-transform.hpp
     title: Fast Fourier Transform
   - icon: ':question:'
+    path: random/mersenne-twister.hpp
+    title: Mersenne Twister
+  - icon: ':question:'
+    path: random/random-vector.hpp
+    title: Randomized Vector
+  - icon: ':question:'
     path: utility/pi.hpp
     title: Pi
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':x:'
-    path: verify/cyclic-product.yosupo-a+b.test.cpp
-    title: verify/cyclic-product.yosupo-a+b.test.cpp
+  _extendedVerifiedWith: []
   _isVerificationFailed: true
-  _pathExtension: hpp
+  _pathExtension: cpp
   _verificationStatusIcon: ':x:'
   attributes:
+    '*NOT_SPECIAL_COMMENTS*': ''
     links: []
-  bundledCode: "#line 1 \"utility/pi.hpp\"\n#pragma region Pi\n\nconst double PI =\
-    \ acos(-1);\n\n#pragma endregion Pi\n#line 2 \"convolution/fast-fourier-transform.hpp\"\
+  bundledCode: "#line 1 \"verify/cyclic-product.yosupo-a+b.test.cpp\"\n#include <bits/stdc++.h>\n\
+    using namespace std;\n\n#line 1 \"utility/pi.hpp\"\n#pragma region Pi\n\nconst\
+    \ double PI = acos(-1);\n\n#pragma endregion Pi\n#line 2 \"convolution/fast-fourier-transform.hpp\"\
     \n\n#pragma region fast_fourier_transform\n\nnamespace conv {\n\ttemplate<typename\
     \ T>\n\ttypename enable_if<is_floating_point<T>::value, void>::type\n\tfast_fourier_transform(vector<complex<T>>\
     \ &a) {\n\t\tint n = a.size(), logn = 31 - __builtin_clz(n);\n\t\t\n\t\tvector<int>\
@@ -53,28 +61,45 @@ data:
     \t\treverse(a.begin(), a.end());\n\t\ta.resize(2 * n);\n\t\tb.insert(b.end(),\
     \ b.begin(), b.end());\n\t\tauto c = convolution<T, U>(a, b);\n\t\tvector<T> ret(n);\n\
     \t\tfor (int i = 0; i < n; i++)\n\t\t\tret[i] = c[i + n - 1];\n\t\treturn ret;\n\
-    \t}\n}\n\n#pragma endregion cyclic_product\n"
-  code: "#include \"convolution/convolution.hpp\"\n\n#pragma region cyclic_product\n\
-    \nnamespace conv {\n\ttemplate<typename T, typename U = double>\n\tvector<T> cyclic_product(vector<T>\
-    \ a, vector<T> b) {\n\t\tassert(a.size() == b.size());\n\t\tint n = a.size();\n\
-    \t\treverse(a.begin(), a.end());\n\t\ta.resize(2 * n);\n\t\tb.insert(b.end(),\
-    \ b.begin(), b.end());\n\t\tauto c = convolution<T, U>(a, b);\n\t\tvector<T> ret(n);\n\
-    \t\tfor (int i = 0; i < n; i++)\n\t\t\tret[i] = c[i + n - 1];\n\t\treturn ret;\n\
-    \t}\n}\n\n#pragma endregion cyclic_product"
+    \t}\n}\n\n#pragma endregion cyclic_product\n#line 1 \"random/mersenne-twister.hpp\"\
+    \n#pragma region rng\n\nmt19937 _rng(chrono::steady_clock::now().time_since_epoch().count());\n\
+    \ntemplate<typename T = int>\ntypename enable_if<is_integral<T>::value, T>::type\
+    \ rng(T l, T r) { return uniform_int_distribution<T>(l, r)(_rng); }\n\n#pragma\
+    \ endregion rng\n#line 2 \"random/random-vector.hpp\"\n\n#pragma region rng_vector\n\
+    \ntemplate<typename T>\ntypename enable_if<is_integral<T>::value, vector<T>>::type\
+    \ rng_vector(int n, T l, T r) {\n\tvector<T> v(n);\n\tfor (auto &a : v)\n\t\t\
+    a = rng(l, r);\n\treturn v;\n}\n\n#pragma endregion rng_vector\n#line 6 \"verify/cyclic-product.yosupo-a+b.test.cpp\"\
+    \n\nconst int N = 5e4;\n\nint main() { \n\t{\n\t\tvector<long long> A = rng_vector<long\
+    \ long>(N, 1, 1e5);\n\t\tvector<long long> B = rng_vector<long long>(N, 1, 1e5);\n\
+    \t\tauto C = conv::cyclic_product(A, B);\n\t\tB.insert(B.end(), B.begin(), B.end());\n\
+    \t\tfor (int i = 0; i < N; i++) {\n\t\t\tlong long cur = 0;\n\t\t\tfor (int j\
+    \ = 0; j < N; j++)\n\t\t\t\tcur += A[j] * B[i + j];\n\t\t\tassert(cur == C[i]);\n\
+    \t\t}\n\t}\n\n\tint A, B;\n\tcin >> A >> B;\n\tcout << A + B << '\\n';\n}\n"
+  code: "#include <bits/stdc++.h>\nusing namespace std;\n\n#include \"convolution/cyclic-product.hpp\"\
+    \n#include \"random/random-vector.hpp\"\n\nconst int N = 5e4;\n\nint main() {\
+    \ \n\t{\n\t\tvector<long long> A = rng_vector<long long>(N, 1, 1e5);\n\t\tvector<long\
+    \ long> B = rng_vector<long long>(N, 1, 1e5);\n\t\tauto C = conv::cyclic_product(A,\
+    \ B);\n\t\tB.insert(B.end(), B.begin(), B.end());\n\t\tfor (int i = 0; i < N;\
+    \ i++) {\n\t\t\tlong long cur = 0;\n\t\t\tfor (int j = 0; j < N; j++)\n\t\t\t\t\
+    cur += A[j] * B[i + j];\n\t\t\tassert(cur == C[i]);\n\t\t}\n\t}\n\n\tint A, B;\n\
+    \tcin >> A >> B;\n\tcout << A + B << '\\n';\n}"
   dependsOn:
+  - convolution/cyclic-product.hpp
   - convolution/convolution.hpp
   - convolution/fast-fourier-transform.hpp
   - utility/pi.hpp
-  isVerificationFile: false
-  path: convolution/cyclic-product.hpp
+  - random/random-vector.hpp
+  - random/mersenne-twister.hpp
+  isVerificationFile: true
+  path: verify/cyclic-product.yosupo-a+b.test.cpp
   requiredBy: []
-  timestamp: '2022-04-29 22:36:50-07:00'
-  verificationStatus: LIBRARY_ALL_WA
-  verifiedWith:
-  - verify/cyclic-product.yosupo-a+b.test.cpp
-documentation_of: convolution/cyclic-product.hpp
+  timestamp: '2022-04-30 12:48:23-07:00'
+  verificationStatus: TEST_WRONG_ANSWER
+  verifiedWith: []
+documentation_of: verify/cyclic-product.yosupo-a+b.test.cpp
 layout: document
-title: Cyclic Product
+redirect_from:
+- /verify/verify/cyclic-product.yosupo-a+b.test.cpp
+- /verify/verify/cyclic-product.yosupo-a+b.test.cpp.html
+title: verify/cyclic-product.yosupo-a+b.test.cpp
 ---
-
-## Cyclic Product
