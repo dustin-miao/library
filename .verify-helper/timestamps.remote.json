@@ -37,6 +37,7 @@
 "verify/matrix.aizu-fibonacci-number.test.cpp": "2022-04-17 17:46:30 -0700",
 "verify/mint.power.test.cpp": "2022-04-30 10:59:16 -0700",
 "verify/mint.yosupo-A+B.test.cpp": "2022-04-30 10:59:16 -0700",
+"verify/monotonic-dp-hull-minkowski-sum.yosupo-a+b.test.cpp": "2022-04-30 13:42:54 -0700",
 "verify/monotonic-dp-hull.yosupo-a+b.test.cpp": "2022-04-30 12:48:23 -0700",
 "verify/ordered-set.aizu-K-average-ranges.test.cpp": "2022-04-29 22:36:50 -0700",
 "verify/ordered-set.aizu-the-number-of-inversions.test.cpp": "2022-04-29 22:36:50 -0700",
