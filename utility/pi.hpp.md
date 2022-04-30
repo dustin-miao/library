@@ -42,15 +42,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/cyclic-product.yosupo-a+b.test.cpp
     title: verify/cyclic-product.yosupo-a+b.test.cpp
-  - icon: ':x:'
-    path: verify/pi.aizu-circle.test.cpp
-    title: verify/pi.aizu-circle.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/slow-convolution.yosupo-frequency-table-of-tree-distances.test.cpp
     title: verify/slow-convolution.yosupo-frequency-table-of-tree-distances.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: '#line 1 "utility/pi.hpp"
@@ -83,7 +80,7 @@ data:
   - convolution/cyclic-product.hpp
   - convolution/convolution-mod.hpp
   timestamp: '2022-04-29 22:36:50-07:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/convolution.yosupo-frequency-table-of-tree-distances.test.cpp
   - verify/complex-convolution.aizu-naive-string-search.test.cpp
@@ -91,7 +88,6 @@ data:
   - verify/convolution-mod.yosupo-convolution-mod-1000000007.test.cpp
   - verify/slow-convolution.yosupo-frequency-table-of-tree-distances.test.cpp
   - verify/cyclic-product.yosupo-a+b.test.cpp
-  - verify/pi.aizu-circle.test.cpp
   - verify/complex-convolution.aizu-string-search.test.cpp
 documentation_of: utility/pi.hpp
 layout: document
