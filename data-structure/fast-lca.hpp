@@ -14,7 +14,7 @@ public:
 		int n = tree.size();
 		vector<vector<int>> _tree(n);
 		for (int u = 0; u < n; u++)
-			for (auto [v, w] : tree)
+			for (auto [v, w] : tree[u])
 				_tree[u].push_back(v);
 		init(_tree, s); 
 	}

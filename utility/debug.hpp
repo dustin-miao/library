@@ -49,10 +49,8 @@ ostream &operator<<(ostream &os, stack<T> s) {
 			s.pop();
 		}
 		os << v[n - 1];
-		for (int i = n - 2; i >= 0; i--) { 
+		for (int i = n - 2; i >= 0; i--) 
 			os << ", " << v[i];
-			
-		}
 	}
 	return os << "]>";
 }
@@ -68,9 +66,8 @@ ostream &operator<<(ostream &os, queue<T> q) {
 			q.pop();
 		}
 		os << v[n - 1];
-		for (int i = n - 2; i >= 0; i--) { 
+		for (int i = n - 2; i >= 0; i--) 
 			os << ", " << v[i];
-		}
 	}
 	return os << "]>";
 }
@@ -156,25 +153,22 @@ map<char, string> _dbg_dict {
 	{']', " ≡≡≡≡!]"},
 	{'{', "{!#### "},
 	{'}', " ####!}"},
-	{'c', "checkpoint \n"},
-	{'l', "line \n"}
+	{'c', "checkpoint "},
+	{'l', "line "},
+	{'n', "\n"},
+	{'t', "\t"}
 };
 
-#define dbg1(a) 																				\
-	{																							\
-		if ((#a)[0] == '\"') {																	\
-			string s = string(a);																\
-			int n = s.size();																	\
-			for (int i = 0; i < n; i++) {														\
-				if (i < n - 1 && s[i] == '_' && _dbg_dict.find(s[i + 1]) != _dbg_dict.end())	\
-					cout << _dbg_dict[s[++i]];													\
-				else																			\
-					cout << a[i];																\
-			}																					\
-		} else {																				\
-			cerr << #a << " = " << a << '\n';													\
-		}																						\
-	}
+template<typename T>
+void _dbg_print(string var, const T &a) { cerr << var << " = " << a << '\n'; }
+
+void _dbg_print(string var, const char *a) {
+	int n = strlen(a);
+	for (int i = 0; i < n; i++) 
+		cerr << (i < n - 1 && a[i] == '_' && _dbg_dict.find(a[i + 1]) != _dbg_dict.end() ? _dbg_dict[a[++i]] : string(1, a[i]));
+}
+
+#define dbg1(a) _dbg_print(#a, a);
 #define dbg2(a, b) dbg1(a) dbg1(b)
 #define dbg3(a, b, c) dbg1(a) dbg2(b, c)
 #define dbg4(a, b, c, d) dbg1(a) dbg3(b, c, d)
@@ -194,7 +188,7 @@ map<char, string> _dbg_dict {
 #define dbg(...) get_dbg(__VA_ARGS__, dbg16, dbg15, dbg14, dbg13, dbg12, dbg11, dbg10, dbg9, dbg8, \
 	dbg7, dbg6, dbg5, dbg4, dbg3, dbg2, dbg1)(__VA_ARGS__)
 #else
-#define dbg(...) 
+#define dbg(...)
 #endif
 
 #pragma endregion debug
