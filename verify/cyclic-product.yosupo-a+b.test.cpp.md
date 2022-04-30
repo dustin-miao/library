@@ -16,7 +16,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: random/random-vector.hpp
     title: Randomized Vector
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utility/pi.hpp
     title: Pi
   _extendedRequiredBy: []

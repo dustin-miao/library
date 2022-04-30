@@ -195,7 +195,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: utility/mint.hpp
       title: Modular Int
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: utility/pi.hpp
       title: Pi
     - icon: ':heavy_check_mark:'
@@ -330,6 +330,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/ordered-set.aizu-unique.test.cpp
       title: verify/ordered-set.aizu-unique.test.cpp
+    - icon: ':x:'
+      path: verify/pi.aizu-circle.test.cpp
+      title: verify/pi.aizu-circle.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/point.aizu-counter-clockwise.test.cpp
       title: verify/point.aizu-counter-clockwise.test.cpp
