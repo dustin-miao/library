@@ -1,4 +1,4 @@
-#pragma region modulo inverse
+#pragma region modular_inverse
 
 namespace math {
 	template <typename T>
@@ -14,4 +14,4 @@ namespace math {
 	}
 }
 
-#pragma endregion modulo inverse
+#pragma endregion modular_inverse
