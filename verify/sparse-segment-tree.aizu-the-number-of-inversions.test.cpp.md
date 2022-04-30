@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: data-structure/sparse-segment-tree.hpp
     title: Sparse Segment Tree
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_5_D
@@ -17,8 +17,9 @@ data:
   bundledCode: "#line 1 \"verify/sparse-segment-tree.aizu-the-number-of-inversions.test.cpp\"\
     \n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_5_D\"\
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#line 1 \"data-structure/sparse-segment-tree.hpp\"\
-    \ntemplate<class segment_tree_template>\nclass sparse_segment_tree : public segment_tree_template\
-    \ {\n\tusing T = typename segment_tree_template::type;\n\tusing segment_tree_template::default_value;\n\
+    \n#pragma region sparse_segment_tree\n\ntemplate<class segment_tree_template>\n\
+    class sparse_segment_tree : public segment_tree_template {\n\tusing T = typename\
+    \ segment_tree_template::type;\n\tusing segment_tree_template::default_value;\n\
     \tusing segment_tree_template::merge;\n\tusing segment_tree_template::apply;\n\
     \nprotected:\n\tlong long n;\n\n\tstruct node {\n\t\tT v;\n\t\tlong long l, r;\n\
     \t\tnode() = default;\n\t\tnode(T _v, long long _l, long long _r) : v(_v), l(_l),\
@@ -41,8 +42,8 @@ data:
     \t}\n\n\tvoid reserve(int _n) { tree.reserve(_n); }\n\n\tvoid clear() { tree.clear();\
     \ }\n\n\tvoid update(long long i, T v) { update(i, v, root, 0, n - 1); }\n\n\t\
     T query(long long l, long long r) { return query(l, r, root, 0, n - 1); }\n};\n\
-    #line 7 \"verify/sparse-segment-tree.aizu-the-number-of-inversions.test.cpp\"\n\
-    \nconst int MAX = 1e9 + 5;\n\nint main() {\n\tint N;\n\tcin >> N;\n\n\tstruct\
+    \n#pragma endregion sparse_segment_tree\n#line 7 \"verify/sparse-segment-tree.aizu-the-number-of-inversions.test.cpp\"\
+    \n\nconst int MAX = 1e9 + 5;\n\nint main() {\n\tint N;\n\tcin >> N;\n\n\tstruct\
     \ segment_tree_template {\n\t\tusing type = int;\n\t\tconst type default_value\
     \ = 0;\n\t\ttype merge(type a, type b) { return a + b; }\n\t\tvoid apply(type\
     \ &a, type b) { a += b; }\n\t};\n\n\tlong long ans = 0;\n\tsparse_segment_tree<segment_tree_template>\
@@ -63,8 +64,8 @@ data:
   isVerificationFile: true
   path: verify/sparse-segment-tree.aizu-the-number-of-inversions.test.cpp
   requiredBy: []
-  timestamp: '2022-04-24 16:17:38-07:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-04-29 22:36:50-07:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/sparse-segment-tree.aizu-the-number-of-inversions.test.cpp
 layout: document

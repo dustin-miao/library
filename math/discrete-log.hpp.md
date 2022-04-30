@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: data-structure/fast-set.hpp
     title: Fast Set
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: math/inverse.hpp
     title: Modulo Inverse
   _extendedRequiredBy: []
@@ -17,7 +17,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"data-structure/fast-set.hpp\"\n#pragma region fast set\n\
+  bundledCode: "#line 1 \"data-structure/fast-set.hpp\"\n#pragma region fast_set\n\
     \nstruct custom_hash {\n    static uint64_t splitmix64(uint64_t x) {\n       \
     \ x += 0x9e3779b97f4a7c15;\n        x = (x ^ (x >> 30)) * 0xbf58476d1ce4e5b9;\n\
     \        x = (x ^ (x >> 27)) * 0x94d049bb133111eb;\n        return x ^ (x >> 31);\n\
@@ -33,12 +33,12 @@ data:
     \t}\n};\n\n#include <ext/pb_ds/assoc_container.hpp>\nusing namespace __gnu_pbds;\n\
     \ntemplate <class K, class V>\nusing fast_map = gp_hash_table<K, V, custom_hash>;\n\
     \ntemplate <class K>\nusing fast_set = gp_hash_table<K, null_type, custom_hash>;\n\
-    \n#pragma endregion fast set\n#line 1 \"math/inverse.hpp\"\n#pragma region modulo\
+    \n#pragma endregion fast_set\n#line 1 \"math/inverse.hpp\"\n#pragma region modulo\
     \ inverse\n\nnamespace math {\n\ttemplate <typename T>\n\tT inverse(T a, T p)\
     \ {\n\t\tT b = p, x = 1, y = 0;\n\t\twhile (a) {\n\t\t\tT q = b / a;\n\t\t\tswap(a,\
     \ b %= a);\n\t\t\tswap(x, y -= q * x);\n\t\t}\n\t\tassert(b == 1);\n\t\treturn\
     \ y < 0 ? y + p : y;\n\t}\n}\n\n#pragma endregion modulo inverse\n#line 3 \"math/discrete-log.hpp\"\
-    \n\n#pragma region discrete log\n\nnamespace math {\n\ttemplate<typename T = long\
+    \n\n#pragma region discrete_log\n\nnamespace math {\n\ttemplate<typename T = long\
     \ long>\n\tT discrete_log(T a, T b, T mod) {\n\t\tif ((a %= mod) < 0) \n\t\t\t\
     a += mod;\n\t\tif ((b %= mod) < 0) \n\t\t\tb += mod;\n\t\tT f, g, r = 1 % mod;\n\
     \t\tfor (f = 0; (g = __gcd(a, mod)) > 1; f++) {\n\t\t\tif (b % g) \n\t\t\t\treturn\
@@ -49,9 +49,9 @@ data:
     \ = k;\n\t\t\tak = ak * a % mod;\n\t\t}\n\t\tT iak = inverse(ak, mod);\n\t\tfor\
     \ (T i = 0; i < k; i++) {\n\t\t\tif (baby.find(b) != baby.end()) \n\t\t\t\treturn\
     \ f + i * k + baby[b];\n\t\t\tb = b * iak % mod;\n\t\t}\n\t\treturn -1;\n\t}\n\
-    }\n\n#pragma endregion discrete log\n"
+    }\n\n#pragma endregion discrete_log\n"
   code: "#include \"data-structure/fast-set.hpp\"\n#include \"math/inverse.hpp\"\n\
-    \n#pragma region discrete log\n\nnamespace math {\n\ttemplate<typename T = long\
+    \n#pragma region discrete_log\n\nnamespace math {\n\ttemplate<typename T = long\
     \ long>\n\tT discrete_log(T a, T b, T mod) {\n\t\tif ((a %= mod) < 0) \n\t\t\t\
     a += mod;\n\t\tif ((b %= mod) < 0) \n\t\t\tb += mod;\n\t\tT f, g, r = 1 % mod;\n\
     \t\tfor (f = 0; (g = __gcd(a, mod)) > 1; f++) {\n\t\t\tif (b % g) \n\t\t\t\treturn\
@@ -62,14 +62,14 @@ data:
     \ = k;\n\t\t\tak = ak * a % mod;\n\t\t}\n\t\tT iak = inverse(ak, mod);\n\t\tfor\
     \ (T i = 0; i < k; i++) {\n\t\t\tif (baby.find(b) != baby.end()) \n\t\t\t\treturn\
     \ f + i * k + baby[b];\n\t\t\tb = b * iak % mod;\n\t\t}\n\t\treturn -1;\n\t}\n\
-    }\n\n#pragma endregion discrete log"
+    }\n\n#pragma endregion discrete_log"
   dependsOn:
   - data-structure/fast-set.hpp
   - math/inverse.hpp
   isVerificationFile: false
   path: math/discrete-log.hpp
   requiredBy: []
-  timestamp: '2022-04-20 11:24:42-07:00'
+  timestamp: '2022-04-29 22:36:50-07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/discrete-log.yosupo-discrete-logarithm.test.cpp

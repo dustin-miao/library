@@ -20,27 +20,28 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"data-structure/fenwick-tree.hpp\"\ntemplate<typename T>\n\
-    class fenwick_tree {\n\tint n;\n\tvector<T> tree;\n\npublic:\n\tfenwick_tree()\
-    \ = default;\n\n\tfenwick_tree(int _n) { init(_n); }\n\n\tvoid init(int _n) {\n\
-    \t\tn = _n;\n\t\ttree.assign(n + 1, T());\n\t}\n\n\tvoid update(int i, T v) {\n\
-    \t\tfor (i++; i <= n; i += i & -i)\n\t\t\ttree[i] += v;\n\t}\n\n\tT query(int\
-    \ i) {\n\t\tT ret = T();\n\t\tfor (i++; i; i -= i & -i)\n\t\t\tret += tree[i];\n\
-    \t\treturn ret;\n\t}\n\n\tT query(int l, int r) { return query(r) - query(l -\
-    \ 1); }\n};\n"
-  code: "template<typename T>\nclass fenwick_tree {\n\tint n;\n\tvector<T> tree;\n\
-    \npublic:\n\tfenwick_tree() = default;\n\n\tfenwick_tree(int _n) { init(_n); }\n\
+  bundledCode: "#line 1 \"data-structure/fenwick-tree.hpp\"\n#pragma region fenwick_tree\n\
+    \ntemplate<typename T>\nclass fenwick_tree {\n\tint n;\n\tvector<T> tree;\n\n\
+    public:\n\tfenwick_tree() = default;\n\n\tfenwick_tree(int _n) { init(_n); }\n\
     \n\tvoid init(int _n) {\n\t\tn = _n;\n\t\ttree.assign(n + 1, T());\n\t}\n\n\t\
     void update(int i, T v) {\n\t\tfor (i++; i <= n; i += i & -i)\n\t\t\ttree[i] +=\
     \ v;\n\t}\n\n\tT query(int i) {\n\t\tT ret = T();\n\t\tfor (i++; i; i -= i & -i)\n\
     \t\t\tret += tree[i];\n\t\treturn ret;\n\t}\n\n\tT query(int l, int r) { return\
-    \ query(r) - query(l - 1); }\n};\n"
+    \ query(r) - query(l - 1); }\n};\n\n#pragma endregion fenwick_tree\n"
+  code: "#pragma region fenwick_tree\n\ntemplate<typename T>\nclass fenwick_tree {\n\
+    \tint n;\n\tvector<T> tree;\n\npublic:\n\tfenwick_tree() = default;\n\n\tfenwick_tree(int\
+    \ _n) { init(_n); }\n\n\tvoid init(int _n) {\n\t\tn = _n;\n\t\ttree.assign(n +\
+    \ 1, T());\n\t}\n\n\tvoid update(int i, T v) {\n\t\tfor (i++; i <= n; i += i &\
+    \ -i)\n\t\t\ttree[i] += v;\n\t}\n\n\tT query(int i) {\n\t\tT ret = T();\n\t\t\
+    for (i++; i; i -= i & -i)\n\t\t\tret += tree[i];\n\t\treturn ret;\n\t}\n\n\tT\
+    \ query(int l, int r) { return query(r) - query(l - 1); }\n};\n\n#pragma endregion\
+    \ fenwick_tree"
   dependsOn: []
   isVerificationFile: false
   path: data-structure/fenwick-tree.hpp
   requiredBy:
   - data-structure/kciwnef-tree.hpp
-  timestamp: '2022-04-09 15:55:38-07:00'
+  timestamp: '2022-04-29 22:36:50-07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/fenwick-tree.aizu-range-sum-query.test.cpp

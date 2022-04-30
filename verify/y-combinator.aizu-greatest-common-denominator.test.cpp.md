@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: utility/y-combinator.hpp
     title: Y-Combinator
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_B
@@ -17,15 +17,14 @@ data:
   bundledCode: "#line 1 \"verify/y-combinator.aizu-greatest-common-denominator.test.cpp\"\
     \n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_B\"\
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#line 1 \"utility/y-combinator.hpp\"\
-    \nnamespace std {\n\t// http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0200r0.html\n\
-    \ttemplate<class Fun>\n\tclass y_combinator_result {\n\t\tFun fun_;\n\tpublic:\n\
-    \t\ttemplate<class T>\n\t\texplicit y_combinator_result(T &&fun): fun_(std::forward<T>(fun))\
-    \ {}\n\n\t\ttemplate<class ...Args>\n\t\tdecltype(auto) operator()(Args &&...args)\
-    \ {\n\t\t\treturn fun_(std::ref(*this), std::forward<Args>(args)...);\n\t\t}\n\
-    \t};\n\n\ttemplate<class Fun>\n\tdecltype(auto) y_combinator(Fun &&fun) {\n\t\t\
-    return y_combinator_result<std::decay_t<Fun>>(std::forward<Fun>(fun));\n\t}\n\
-    }\n#line 7 \"verify/y-combinator.aizu-greatest-common-denominator.test.cpp\"\n\
-    \nint main() {\n\tlong long A, B;\n\tcin >> A >> B;\n\n\tauto gcd_test = y_combinator([](auto\
+    \n#pragma region y_combinator\n\ntemplate<class Fun>\nclass y_combinator_result\
+    \ {\n\tFun fun_;\npublic:\n\ttemplate<class T>\n\texplicit y_combinator_result(T\
+    \ &&fun): fun_(std::forward<T>(fun)) {}\n\n\ttemplate<class ...Args>\n\tdecltype(auto)\
+    \ operator()(Args &&...args) {\n\t\treturn fun_(std::ref(*this), std::forward<Args>(args)...);\n\
+    \t}\n};\n\ntemplate<class Fun>\ndecltype(auto) y_combinator(Fun &&fun) {\n\treturn\
+    \ y_combinator_result<std::decay_t<Fun>>(std::forward<Fun>(fun));\n}\n\n#pragma\
+    \ endregion y_combinator\n#line 7 \"verify/y-combinator.aizu-greatest-common-denominator.test.cpp\"\
+    \n\nint main() {\n\tlong long A, B;\n\tcin >> A >> B;\n\n\tauto gcd_test = y_combinator([](auto\
     \ gcd_test, long long a, long long b) -> long long { \n\t\treturn b == 0 ? a :\
     \ gcd_test(b, a % b); \n\t});\n\t\n\tcout << gcd_test(A, B) << endl;\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_B\"\
@@ -38,8 +37,8 @@ data:
   isVerificationFile: true
   path: verify/y-combinator.aizu-greatest-common-denominator.test.cpp
   requiredBy: []
-  timestamp: '2022-04-19 13:38:39-07:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-04-29 22:36:50-07:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/y-combinator.aizu-greatest-common-denominator.test.cpp
 layout: document

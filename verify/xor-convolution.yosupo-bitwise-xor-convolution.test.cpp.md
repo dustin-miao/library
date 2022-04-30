@@ -1,26 +1,26 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: convolution/fast-walsh-hadamard-transform.hpp
     title: Fast Walsh-Hadamard Transform
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: convolution/inverse-fast-walsh-hadamard-transform.hpp
     title: Inverse Fast Walsh-Hadamard Transform
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: convolution/xor-convolution.hpp
     title: Xor Convolution
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: math/inverse.hpp
     title: Modulo Inverse
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utility/mint.hpp
     title: Modular Int
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/bitwise_xor_convolution
@@ -29,26 +29,26 @@ data:
   bundledCode: "#line 1 \"verify/xor-convolution.yosupo-bitwise-xor-convolution.test.cpp\"\
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/bitwise_xor_convolution\"\n\
     \n#include <bits/stdc++.h>\nusing namespace std;\n\n#line 1 \"convolution/fast-walsh-hadamard-transform.hpp\"\
-    \n#pragma region fast walsh hadamard transform\n\nnamespace conv {\n\ttemplate<typename\
+    \n#pragma region fast_walsh_hadamard_transform\n\nnamespace conv {\n\ttemplate<typename\
     \ T>\n\tvoid fast_walsh_hadamard_transform(vector<T> &a) {\n\t\tint n = a.size();\n\
     \t\tfor (int i = 1; i < n; i <<= 1) {\n\t\t\tfor (int j = 0; j < n; j++) {\n\t\
     \t\t\tif ((j & i) == 0) {\n\t\t\t\t\tT x = a[j], y = a[j | i];\n\t\t\t\t\ta[j]\
     \ = x + y;\n\t\t\t\t\ta[j | i] = x - y;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}\n\n\
-    #pragma endregion fast walsh hadamard transform\n#line 2 \"convolution/inverse-fast-walsh-hadamard-transform.hpp\"\
-    \n\n#pragma region inverse fast walsh hadamard transform\n\nnamespace conv {\n\
+    #pragma endregion fast_walsh_hadamard_transform\n#line 2 \"convolution/inverse-fast-walsh-hadamard-transform.hpp\"\
+    \n\n#pragma region inverse_fast_walsh_hadamard_transform\n\nnamespace conv {\n\
     \ttemplate<typename T>\n\tvoid inverse_fast_walsh_hadamard_transform(vector<T>\
     \ &a) {\n\t\tfast_walsh_hadamard_transform<T>(a);\n\t\tif constexpr (is_integral<T>::value)\
     \ {\n\t\t\tint n = a.size();\n\t\t\tfor (auto &x : a)\n\t\t\t\tx /= n;\n\t\t}\
     \ else {\n\t\t\tT t = T(1) / T(a.size());\n\t\t\tfor (auto &x : a)\n\t\t\t\tx\
-    \ *= t;\n\t\t}\n\t}\n}\n\n#pragma endregion inverse fast walsh hadamard transform\n\
-    #line 2 \"convolution/xor-convolution.hpp\"\n\n#pragma region xor convolution\n\
+    \ *= t;\n\t\t}\n\t}\n}\n\n#pragma endregion inverse_fast_walsh_hadamard_transform\n\
+    #line 2 \"convolution/xor-convolution.hpp\"\n\n#pragma region xor_convolution\n\
     \nnamespace conv {\n\ttemplate<typename T>\n\tvector<T> xor_convolution(const\
     \ vector<T> &a, const vector<T> &b) {\n\t\tvector<T> pa(a.begin(), a.end()), pb(b.begin(),\
     \ b.end());\n\t\tint n = 1;\n\t\twhile (n < a.size() + b.size()) \n\t\t\tn <<=\
     \ 1;\n\t\tpa.resize(n), pb.resize(n);\n\t\tfast_walsh_hadamard_transform(pa);\n\
     \t\tfast_walsh_hadamard_transform(pb);\n\t\tfor (int i = 0; i < n; i++)\n\t\t\t\
     pa[i] *= pb[i];\n\t\tinverse_fast_walsh_hadamard_transform(pa);\n\t\treturn pa;\n\
-    \t}\n}\n\n#pragma endregion xor convolution\n#line 1 \"math/inverse.hpp\"\n#pragma\
+    \t}\n}\n\n#pragma endregion xor_convolution\n#line 1 \"math/inverse.hpp\"\n#pragma\
     \ region modulo inverse\n\nnamespace math {\n\ttemplate <typename T>\n\tT inverse(T\
     \ a, T p) {\n\t\tT b = p, x = 1, y = 0;\n\t\twhile (a) {\n\t\t\tT q = b / a;\n\
     \t\t\tswap(a, b %= a);\n\t\t\tswap(x, y -= q * x);\n\t\t}\n\t\tassert(b == 1);\n\
@@ -128,7 +128,7 @@ data:
     \ x;\n\ta.value = Modular<T>::normalize(x);\n\treturn is;\n}\n\n// /*\nusing ModType\
     \ = int;\n\nstruct VarMod { static ModType value; };\n\nModType VarMod::value;\n\
     \nModType &MOD = VarMod::value;\n\nusing mint = Modular<VarMod>;\n// */\n\n/*\n\
-    constexpr int MOD = @@HERE@@;\n\nusing mint = Modular<integral_constant<decay<decltype(MOD)>::type,\
+    constexpr int MOD = HERE;\n\nusing mint = Modular<integral_constant<decay<decltype(MOD)>::type,\
     \ MOD>>;\n*/\n\n#pragma endregion mint\n#line 8 \"verify/xor-convolution.yosupo-bitwise-xor-convolution.test.cpp\"\
     \n\nint main() {\n\tMOD = 998244353;\n\n\tint N;\n\tcin >> N;\n\tvector<mint>\
     \ A(1 << N), B(1 << N);\n\tfor (auto &a : A)\n\t\tcin >> a;\n\tfor (auto &b :\
@@ -150,8 +150,8 @@ data:
   isVerificationFile: true
   path: verify/xor-convolution.yosupo-bitwise-xor-convolution.test.cpp
   requiredBy: []
-  timestamp: '2022-04-21 20:48:26-07:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-04-29 22:36:50-07:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/xor-convolution.yosupo-bitwise-xor-convolution.test.cpp
 layout: document

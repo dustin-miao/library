@@ -11,7 +11,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/discrete-sqrt.hpp
     title: Discrete Square Root
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utility/mint.hpp
     title: Modular Int
   _extendedVerifiedWith:
@@ -24,27 +24,27 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/general-segment-tree.yosupo-point-set-range-composite.test.cpp
     title: verify/general-segment-tree.yosupo-point-set-range-composite.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/lazy-segment-tree.yosupo-range-affine-range-sum.test.cpp
     title: verify/lazy-segment-tree.yosupo-range-affine-range-sum.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/mint.power.test.cpp
     title: verify/mint.power.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/mint.yosupo-A+B.test.cpp
     title: verify/mint.yosupo-A+B.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/recursive-segment-tree.yosupo-point-set-range-composite.test.cpp
     title: verify/recursive-segment-tree.yosupo-point-set-range-composite.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/sparse-segment-tree.yosupo-point-set-range-composite.test.cpp
     title: verify/sparse-segment-tree.yosupo-point-set-range-composite.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/xor-convolution.yosupo-bitwise-xor-convolution.test.cpp
     title: verify/xor-convolution.yosupo-bitwise-xor-convolution.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"math/inverse.hpp\"\n#pragma region modulo inverse\n\nnamespace\
@@ -66,7 +66,7 @@ data:
   - math/binomial-coefficients.hpp
   - utility/mint.hpp
   timestamp: '2022-04-20 11:24:42-07:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/general-segment-tree.yosupo-point-set-range-composite.test.cpp
   - verify/sparse-segment-tree.yosupo-point-set-range-composite.test.cpp

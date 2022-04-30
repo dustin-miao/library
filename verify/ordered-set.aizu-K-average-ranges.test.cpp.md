@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: data-structure/ordered-set.hpp
     title: Ordered Set
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=3117
@@ -17,10 +17,11 @@ data:
   bundledCode: "#line 1 \"verify/ordered-set.aizu-K-average-ranges.test.cpp\"\n#define\
     \ PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=3117\"\n\
     \n#include <bits/stdc++.h>\nusing namespace std;\n\n#line 1 \"data-structure/ordered-set.hpp\"\
-    \n#include <ext/pb_ds/assoc_container.hpp>\n#include <ext/pb_ds/tree_policy.hpp>\n\
-    using namespace __gnu_pbds;\n\ntemplate <class K, class V>\nusing ordered_map\
-    \ = tree<K, V, less<K>, rb_tree_tag, tree_order_statistics_node_update>;\n\ntemplate\
-    \ <class K>\nusing ordered_set = ordered_map<K, null_type>;\n#line 7 \"verify/ordered-set.aizu-K-average-ranges.test.cpp\"\
+    \n#pragma region ordered_set\n\n#include <ext/pb_ds/assoc_container.hpp>\n#include\
+    \ <ext/pb_ds/tree_policy.hpp>\nusing namespace __gnu_pbds;\n\ntemplate <class\
+    \ K, class V>\nusing ordered_map = tree<K, V, less<K>, rb_tree_tag, tree_order_statistics_node_update>;\n\
+    \ntemplate <class K>\nusing ordered_set = ordered_map<K, null_type>;\n\n#pragma\
+    \ endregion ordered_set\n#line 7 \"verify/ordered-set.aizu-K-average-ranges.test.cpp\"\
     \n\nint main() {\n\tint N;\n\tlong long K;\n\tcin >> N >> K;\n\tvector<long long>\
     \ A(N);\n\tfor (auto &a : A) {\n\t\tcin >> a;\n\t\ta -= K;\n\t}\n\n\tordered_set<pair<long\
     \ long, int>> S;\n\tlong long sum = 0, ans = 0;\n\tS.insert(make_pair(sum, -1));\n\
@@ -40,8 +41,8 @@ data:
   isVerificationFile: true
   path: verify/ordered-set.aizu-K-average-ranges.test.cpp
   requiredBy: []
-  timestamp: '2022-04-15 10:43:39-07:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-04-29 22:36:50-07:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/ordered-set.aizu-K-average-ranges.test.cpp
 layout: document

@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: math/inverse.hpp
     title: Modulo Inverse
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utility/mint.hpp
     title: Modular Int
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/aplusb
@@ -98,7 +98,7 @@ data:
     \ x;\n\ta.value = Modular<T>::normalize(x);\n\treturn is;\n}\n\n// /*\nusing ModType\
     \ = int;\n\nstruct VarMod { static ModType value; };\n\nModType VarMod::value;\n\
     \nModType &MOD = VarMod::value;\n\nusing mint = Modular<VarMod>;\n// */\n\n/*\n\
-    constexpr int MOD = @@HERE@@;\n\nusing mint = Modular<integral_constant<decay<decltype(MOD)>::type,\
+    constexpr int MOD = HERE;\n\nusing mint = Modular<integral_constant<decay<decltype(MOD)>::type,\
     \ MOD>>;\n*/\n\n#pragma endregion mint\n#line 7 \"verify/mint.yosupo-A+B.test.cpp\"\
     \n\nint main() {\n\tMOD = 2e9 + 1;\n\tmint a, b;\n\tcin >> a >> b;\n\tcout <<\
     \ a + b << '\\n';\n}\n"
@@ -111,8 +111,8 @@ data:
   isVerificationFile: true
   path: verify/mint.yosupo-A+B.test.cpp
   requiredBy: []
-  timestamp: '2022-04-21 20:14:03-07:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-04-29 22:36:50-07:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/mint.yosupo-A+B.test.cpp
 layout: document

@@ -3,33 +3,22 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/segment-tree.aizu-range-minimum-query.test.cpp
     title: verify/segment-tree.aizu-range-minimum-query.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/segment-tree.aizu-range-sum-query.test.cpp
     title: verify/segment-tree.aizu-range-sum-query.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/segment-tree.yosupo-point-add-range-sum.test.cpp
     title: verify/segment-tree.yosupo-point-add-range-sum.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"data-structure/segment-tree.hpp\"\ntemplate<class segment_tree_template>\n\
-    class segment_tree : public segment_tree_template {\n\tusing T = typename segment_tree_template::type;\n\
-    \tusing segment_tree_template::default_value;\n\tusing segment_tree_template::merge;\n\
-    \tusing segment_tree_template::apply;\n\nprotected:\n\tint n;\n\tvector<T> tree;\n\
-    \npublic:\n\tsegment_tree() = default;\n\n\tsegment_tree(int _n) { init(_n); }\n\
-    \n\tvoid init(int _n) {\n\t\tn = _n;\n\t\ttree.assign(n * 2, default_value);\n\
-    \t}\n\n\tvoid update(int i, T v) {\n\t\tfor (apply(tree[i += n], v); i >>= 1;)\n\
-    \t\t\ttree[i] = merge(tree[i << 1], tree[i << 1 | 1]);\n\t}\n\n\tT query(int l,\
-    \ int r) {\n\t\tT ret = default_value;\n\t\tfor (l += n, r += n + 1; l < r; l\
-    \ >>= 1, r >>= 1) {\n\t\t\tif (l & 1) \n\t\t\t\tret = merge(ret, tree[l++]);\n\
-    \t\t\tif (r & 1) \n\t\t\t\tret = merge(ret, tree[--r]);\n\t\t}\n\t\treturn ret;\n\
-    \t}\n\n\tT operator[](int i) { return tree[i += n]; }\n};\n"
-  code: "template<class segment_tree_template>\nclass segment_tree : public segment_tree_template\
+  bundledCode: "#line 1 \"data-structure/segment-tree.hpp\"\n#pragma region segment_tree\n\
+    \ntemplate<class segment_tree_template>\nclass segment_tree : public segment_tree_template\
     \ {\n\tusing T = typename segment_tree_template::type;\n\tusing segment_tree_template::default_value;\n\
     \tusing segment_tree_template::merge;\n\tusing segment_tree_template::apply;\n\
     \nprotected:\n\tint n;\n\tvector<T> tree;\n\npublic:\n\tsegment_tree() = default;\n\
@@ -40,13 +29,26 @@ data:
     \t\tfor (l += n, r += n + 1; l < r; l >>= 1, r >>= 1) {\n\t\t\tif (l & 1) \n\t\
     \t\t\tret = merge(ret, tree[l++]);\n\t\t\tif (r & 1) \n\t\t\t\tret = merge(ret,\
     \ tree[--r]);\n\t\t}\n\t\treturn ret;\n\t}\n\n\tT operator[](int i) { return tree[i\
-    \ += n]; }\n};"
+    \ += n]; }\n};\n\n#pragma endregion segment_tree\n"
+  code: "#pragma region segment_tree\n\ntemplate<class segment_tree_template>\nclass\
+    \ segment_tree : public segment_tree_template {\n\tusing T = typename segment_tree_template::type;\n\
+    \tusing segment_tree_template::default_value;\n\tusing segment_tree_template::merge;\n\
+    \tusing segment_tree_template::apply;\n\nprotected:\n\tint n;\n\tvector<T> tree;\n\
+    \npublic:\n\tsegment_tree() = default;\n\n\tsegment_tree(int _n) { init(_n); }\n\
+    \n\tvoid init(int _n) {\n\t\tn = _n;\n\t\ttree.assign(n * 2, default_value);\n\
+    \t}\n\n\tvoid update(int i, T v) {\n\t\tfor (apply(tree[i += n], v); i >>= 1;)\n\
+    \t\t\ttree[i] = merge(tree[i << 1], tree[i << 1 | 1]);\n\t}\n\n\tT query(int l,\
+    \ int r) {\n\t\tT ret = default_value;\n\t\tfor (l += n, r += n + 1; l < r; l\
+    \ >>= 1, r >>= 1) {\n\t\t\tif (l & 1) \n\t\t\t\tret = merge(ret, tree[l++]);\n\
+    \t\t\tif (r & 1) \n\t\t\t\tret = merge(ret, tree[--r]);\n\t\t}\n\t\treturn ret;\n\
+    \t}\n\n\tT operator[](int i) { return tree[i += n]; }\n};\n\n#pragma endregion\
+    \ segment_tree"
   dependsOn: []
   isVerificationFile: false
   path: data-structure/segment-tree.hpp
   requiredBy: []
-  timestamp: '2022-04-09 15:55:38-07:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2022-04-29 22:36:50-07:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - verify/segment-tree.aizu-range-sum-query.test.cpp
   - verify/segment-tree.yosupo-point-add-range-sum.test.cpp

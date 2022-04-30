@@ -7,7 +7,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: convolution/fast-fourier-transform.hpp
     title: Fast Fourier Transform
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utility/pi.hpp
     title: Pi
   _extendedRequiredBy: []
@@ -23,8 +23,9 @@ data:
   bundledCode: "#line 1 \"verify/complex-convolution.aizu-string-search.test.cpp\"\
     \n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_B\"\
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#line 1 \"utility/pi.hpp\"\
-    \nconst double PI = acos(-1);\n#line 2 \"convolution/fast-fourier-transform.hpp\"\
-    \n\nnamespace conv {\n\ttemplate<typename T>\n\ttypename enable_if<is_floating_point<T>::value,\
+    \n#pragma region Pi\n\nconst double PI = acos(-1);\n\n#pragma endregion Pi\n#line\
+    \ 2 \"convolution/fast-fourier-transform.hpp\"\n\n#pragma region fast_fourier_transform\n\
+    \nnamespace conv {\n\ttemplate<typename T>\n\ttypename enable_if<is_floating_point<T>::value,\
     \ void>::type\n\tfast_fourier_transform(vector<complex<T>> &a) {\n\t\tint n =\
     \ a.size(), logn = 31 - __builtin_clz(n);\n\t\t\n\t\tvector<int> rev(n);\n\t\t\
     rev[0] = 0;\n\t\tfor (int i = 1; i < n; i++) {\n\t\t\trev[i] = (rev[i >> 1] >>\
@@ -36,9 +37,10 @@ data:
     \ * z;\n\t\t\t}\n\t\t}\n\n\t\tfor (int l = 1; l < n; l <<= 1) {\n\t\t\tfor (int\
     \ i = 0; i < n; i += (l << 1)) {\n\t\t\t\tfor (int j = 0; j < l; j++) {\n\t\t\t\
     \t\tauto z = root[j + l] * a[i + j + l];\n\t\t\t\t\ta[i + j + l] = a[i + j] -\
-    \ z;\n\t\t\t\t\ta[i + j] += z;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}\n#line 2 \"\
-    convolution/complex-convolution.hpp\"\n\nnamespace conv {\n\ttemplate<typename\
-    \ T, typename U = double>\n\ttypename enable_if<is_floating_point<T>::value, vector<complex<T>>>::type\n\
+    \ z;\n\t\t\t\t\ta[i + j] += z;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}\n\n#pragma endregion\
+    \ fast_fourier_transform\n#line 2 \"convolution/complex-convolution.hpp\"\n\n\
+    #pragma region complex_convolution\n\nnamespace conv {\n\ttemplate<typename T,\
+    \ typename U = double>\n\ttypename enable_if<is_floating_point<T>::value, vector<complex<T>>>::type\n\
     \tcomplex_convolution(const vector<complex<T>> &a, const vector<complex<T>> &b)\
     \ {\n\t\tint n = 1;\n\t\twhile (n < a.size() + b.size()) \n\t\t\tn <<= 1;\n\t\t\
     vector<complex<U>> pa(n), pb(n);\n\t\tfor (int i = 0; i < a.size(); i++)\n\t\t\
@@ -49,7 +51,7 @@ data:
     \ + 1, c.end());\n\t\tfast_fourier_transform(c);\n\n\t\tn = a.size() + b.size()\
     \ - 1;\n\t\tvector<complex<T>> ret(n);\n\t\tfor (int i = 0; i < n; i++)\n\t\t\t\
     ret[i] = complex<T>(static_cast<T>(c[i].real()), static_cast<T>(c[i].imag()));\n\
-    \t\treturn ret;\n\t}\n}\n#line 7 \"verify/complex-convolution.aizu-string-search.test.cpp\"\
+    \t\treturn ret;\n\t}\n}\n\n#pragma endregion complex_convolution\n#line 7 \"verify/complex-convolution.aizu-string-search.test.cpp\"\
     \n\nconst double EPS = 0.005;\n\nint main() {\n\tstring P, T;\n\tcin >> T >> P;\n\
     \tint n = T.size(), m = P.size();\n\tvector<complex<double>> a(n), b(m);\n\tfor\
     \ (int i = 0; i < n; i++) {\n\t\tchar c = T[i];\n\t\tdouble the = 2 * PI * ('0'\
@@ -79,7 +81,7 @@ data:
   isVerificationFile: true
   path: verify/complex-convolution.aizu-string-search.test.cpp
   requiredBy: []
-  timestamp: '2022-04-21 20:20:05-07:00'
+  timestamp: '2022-04-29 22:36:50-07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/complex-convolution.aizu-string-search.test.cpp

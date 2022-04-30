@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: math/inverse.hpp
     title: Modulo Inverse
   _extendedRequiredBy:
@@ -18,27 +18,27 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/general-segment-tree.yosupo-point-set-range-composite.test.cpp
     title: verify/general-segment-tree.yosupo-point-set-range-composite.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/lazy-segment-tree.yosupo-range-affine-range-sum.test.cpp
     title: verify/lazy-segment-tree.yosupo-range-affine-range-sum.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/mint.power.test.cpp
     title: verify/mint.power.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/mint.yosupo-A+B.test.cpp
     title: verify/mint.yosupo-A+B.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/recursive-segment-tree.yosupo-point-set-range-composite.test.cpp
     title: verify/recursive-segment-tree.yosupo-point-set-range-composite.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/sparse-segment-tree.yosupo-point-set-range-composite.test.cpp
     title: verify/sparse-segment-tree.yosupo-point-set-range-composite.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/xor-convolution.yosupo-bitwise-xor-convolution.test.cpp
     title: verify/xor-convolution.yosupo-bitwise-xor-convolution.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"math/inverse.hpp\"\n#pragma region modulo inverse\n\nnamespace\
@@ -121,7 +121,7 @@ data:
     \ x;\n\ta.value = Modular<T>::normalize(x);\n\treturn is;\n}\n\n// /*\nusing ModType\
     \ = int;\n\nstruct VarMod { static ModType value; };\n\nModType VarMod::value;\n\
     \nModType &MOD = VarMod::value;\n\nusing mint = Modular<VarMod>;\n// */\n\n/*\n\
-    constexpr int MOD = @@HERE@@;\n\nusing mint = Modular<integral_constant<decay<decltype(MOD)>::type,\
+    constexpr int MOD = HERE;\n\nusing mint = Modular<integral_constant<decay<decltype(MOD)>::type,\
     \ MOD>>;\n*/\n\n#pragma endregion mint\n"
   code: "#include \"math/inverse.hpp\"\n\n#pragma region mint\n\ntemplate<typename\
     \ T>\nclass Modular {\npublic:\n\tusing Type = typename decay<decltype(T::value)>::type;\n\
@@ -198,7 +198,7 @@ data:
     \ x;\n\ta.value = Modular<T>::normalize(x);\n\treturn is;\n}\n\n// /*\nusing ModType\
     \ = int;\n\nstruct VarMod { static ModType value; };\n\nModType VarMod::value;\n\
     \nModType &MOD = VarMod::value;\n\nusing mint = Modular<VarMod>;\n// */\n\n/*\n\
-    constexpr int MOD = @@HERE@@;\n\nusing mint = Modular<integral_constant<decay<decltype(MOD)>::type,\
+    constexpr int MOD = HERE;\n\nusing mint = Modular<integral_constant<decay<decltype(MOD)>::type,\
     \ MOD>>;\n*/\n\n#pragma endregion mint"
   dependsOn:
   - math/inverse.hpp
@@ -207,8 +207,8 @@ data:
   requiredBy:
   - math/discrete-sqrt.hpp
   - math/binomial-coefficients.hpp
-  timestamp: '2022-04-21 20:14:03-07:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2022-04-29 22:36:50-07:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/general-segment-tree.yosupo-point-set-range-composite.test.cpp
   - verify/sparse-segment-tree.yosupo-point-set-range-composite.test.cpp

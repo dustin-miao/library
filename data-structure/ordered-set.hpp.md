@@ -3,21 +3,24 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/ordered-set.aizu-K-average-ranges.test.cpp
     title: verify/ordered-set.aizu-K-average-ranges.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/ordered-set.aizu-the-number-of-inversions.test.cpp
     title: verify/ordered-set.aizu-the-number-of-inversions.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/ordered-set.aizu-unique.test.cpp
     title: verify/ordered-set.aizu-unique.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: '#line 1 "data-structure/ordered-set.hpp"
+
+    #pragma region ordered_set
+
 
     #include <ext/pb_ds/assoc_container.hpp>
 
@@ -35,8 +38,14 @@ data:
 
     using ordered_set = ordered_map<K, null_type>;
 
+
+    #pragma endregion ordered_set
+
     '
-  code: '#include <ext/pb_ds/assoc_container.hpp>
+  code: '#pragma region ordered_set
+
+
+    #include <ext/pb_ds/assoc_container.hpp>
 
     #include <ext/pb_ds/tree_policy.hpp>
 
@@ -50,13 +59,16 @@ data:
 
     template <class K>
 
-    using ordered_set = ordered_map<K, null_type>;'
+    using ordered_set = ordered_map<K, null_type>;
+
+
+    #pragma endregion ordered_set'
   dependsOn: []
   isVerificationFile: false
   path: data-structure/ordered-set.hpp
   requiredBy: []
-  timestamp: '2022-04-15 10:43:39-07:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2022-04-29 22:36:50-07:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - verify/ordered-set.aizu-unique.test.cpp
   - verify/ordered-set.aizu-the-number-of-inversions.test.cpp

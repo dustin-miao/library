@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: data-structure/sparse-segment-tree.hpp
     title: Sparse Segment Tree
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: math/inverse.hpp
     title: Modulo Inverse
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utility/mint.hpp
     title: Modular Int
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/point_set_range_composite
@@ -102,10 +102,11 @@ data:
     \ x;\n\ta.value = Modular<T>::normalize(x);\n\treturn is;\n}\n\n// /*\nusing ModType\
     \ = int;\n\nstruct VarMod { static ModType value; };\n\nModType VarMod::value;\n\
     \nModType &MOD = VarMod::value;\n\nusing mint = Modular<VarMod>;\n// */\n\n/*\n\
-    constexpr int MOD = @@HERE@@;\n\nusing mint = Modular<integral_constant<decay<decltype(MOD)>::type,\
+    constexpr int MOD = HERE;\n\nusing mint = Modular<integral_constant<decay<decltype(MOD)>::type,\
     \ MOD>>;\n*/\n\n#pragma endregion mint\n#line 1 \"data-structure/sparse-segment-tree.hpp\"\
-    \ntemplate<class segment_tree_template>\nclass sparse_segment_tree : public segment_tree_template\
-    \ {\n\tusing T = typename segment_tree_template::type;\n\tusing segment_tree_template::default_value;\n\
+    \n#pragma region sparse_segment_tree\n\ntemplate<class segment_tree_template>\n\
+    class sparse_segment_tree : public segment_tree_template {\n\tusing T = typename\
+    \ segment_tree_template::type;\n\tusing segment_tree_template::default_value;\n\
     \tusing segment_tree_template::merge;\n\tusing segment_tree_template::apply;\n\
     \nprotected:\n\tlong long n;\n\n\tstruct node {\n\t\tT v;\n\t\tlong long l, r;\n\
     \t\tnode() = default;\n\t\tnode(T _v, long long _l, long long _r) : v(_v), l(_l),\
@@ -128,7 +129,7 @@ data:
     \t}\n\n\tvoid reserve(int _n) { tree.reserve(_n); }\n\n\tvoid clear() { tree.clear();\
     \ }\n\n\tvoid update(long long i, T v) { update(i, v, root, 0, n - 1); }\n\n\t\
     T query(long long l, long long r) { return query(l, r, root, 0, n - 1); }\n};\n\
-    #line 8 \"verify/sparse-segment-tree.yosupo-point-set-range-composite.test.cpp\"\
+    \n#pragma endregion sparse_segment_tree\n#line 8 \"verify/sparse-segment-tree.yosupo-point-set-range-composite.test.cpp\"\
     \n\nint main() {\n\tMOD = 998244353;\n\n\tint N, Q;\n\tcin >> N >> Q;\n\n\tstruct\
     \ segment_tree_template {\n\t\tstruct node { mint a, b; };\n\t\tusing type = node;\n\
     \t\tconst type default_value = {1, 0};\n\t\tvoid apply(type &a, type b) { a =\
@@ -160,8 +161,8 @@ data:
   isVerificationFile: true
   path: verify/sparse-segment-tree.yosupo-point-set-range-composite.test.cpp
   requiredBy: []
-  timestamp: '2022-04-24 16:17:38-07:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-04-29 22:36:50-07:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/sparse-segment-tree.yosupo-point-set-range-composite.test.cpp
 layout: document

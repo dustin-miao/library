@@ -1,6 +1,12 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':warning:'
+    path: convolution/mobius-transform.hpp
+    title: Mobius Transform
+  - icon: ':warning:'
+    path: convolution/zeta-transform.hpp
+    title: Zeta Transform
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -8,16 +14,31 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"convolution/subset-convolution.hpp\"\nnamespace conv {\n\
-    \ttemplate<typename T>\n\tvector<T> subset_convolution(const vector<T> &a, const\
-    \ vector<T> &b) {\n\t\t\n\t}\n}\n"
-  code: "namespace conv {\n\ttemplate<typename T>\n\tvector<T> subset_convolution(const\
-    \ vector<T> &a, const vector<T> &b) {\n\t\t\n\t}\n}"
-  dependsOn: []
+  bundledCode: "#line 1 \"convolution/zeta-transform.hpp\"\n#pragma region zeta_transform\n\
+    \nnamespace conv {\n\ttemplate<typename T>\n\tvoid zeta_transform(vector<T> &a,\
+    \ int n) {\n\t\tassert((1 << n) == a.size());\n\t\tfor (int i = 0; i < n; i++)\n\
+    \t\t\tfor (int mask = 0; mask < (1 << n); mask++)\n\t\t\t\tif (mask >> i & 1)\n\
+    \t\t\t\t\ta[mask] += a[mask ^ (1 << i)];\n\t}\n}\n\n#pragma endregion zeta_transform\n\
+    #line 1 \"convolution/mobius-transform.hpp\"\n#pragma region mobius_transform\n\
+    \nnamespace conv {\n\ttemplate<typename T>\n\tvoid mobius_transform(vector<T>\
+    \ &a, int n) {\n\t\tassert((1 << n) == a.size());\n\t\tfor (int i = 0; i < n;\
+    \ i++)\n\t\t\tfor (int mask = 0; mask < (1 << n); mask++)\n\t\t\t\tif (mask >>\
+    \ i & 1)\n\t\t\t\t\ta[mask] -= a[mask ^ (1 << i)];\n\t}\n}\n\n#pragma endregion\
+    \ mobius_transform\n#line 3 \"convolution/subset-convolution.hpp\"\n\n#pragma\
+    \ region subset_convolution\n\nnamespace conv {\n\ttemplate<typename T>\n\tvector<T>\
+    \ subset_convolution(const vector<T> &a, const vector<T> &b) {\n\t\t\n\t}\n}\n\
+    \n#pragma endregion subset_convolution\n"
+  code: "#include \"convolution/zeta-transform.hpp\"\n#include \"convolution/mobius-transform.hpp\"\
+    \n\n#pragma region subset_convolution\n\nnamespace conv {\n\ttemplate<typename\
+    \ T>\n\tvector<T> subset_convolution(const vector<T> &a, const vector<T> &b) {\n\
+    \t\t\n\t}\n}\n\n#pragma endregion subset_convolution"
+  dependsOn:
+  - convolution/zeta-transform.hpp
+  - convolution/mobius-transform.hpp
   isVerificationFile: false
   path: convolution/subset-convolution.hpp
   requiredBy: []
-  timestamp: '2022-04-21 20:14:03-07:00'
+  timestamp: '2022-04-29 22:36:50-07:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: convolution/subset-convolution.hpp

@@ -7,7 +7,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: convolution/fast-fourier-transform.hpp
     title: Fast Fourier Transform
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utility/pi.hpp
     title: Pi
   _extendedRequiredBy: []
@@ -23,8 +23,9 @@ data:
   bundledCode: "#line 1 \"verify/convolution.yosupo-frequency-table-of-tree-distances.test.cpp\"\
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/frequency_table_of_tree_distance\"\
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#line 1 \"utility/pi.hpp\"\
-    \nconst double PI = acos(-1);\n#line 2 \"convolution/fast-fourier-transform.hpp\"\
-    \n\nnamespace conv {\n\ttemplate<typename T>\n\ttypename enable_if<is_floating_point<T>::value,\
+    \n#pragma region Pi\n\nconst double PI = acos(-1);\n\n#pragma endregion Pi\n#line\
+    \ 2 \"convolution/fast-fourier-transform.hpp\"\n\n#pragma region fast_fourier_transform\n\
+    \nnamespace conv {\n\ttemplate<typename T>\n\ttypename enable_if<is_floating_point<T>::value,\
     \ void>::type\n\tfast_fourier_transform(vector<complex<T>> &a) {\n\t\tint n =\
     \ a.size(), logn = 31 - __builtin_clz(n);\n\t\t\n\t\tvector<int> rev(n);\n\t\t\
     rev[0] = 0;\n\t\tfor (int i = 1; i < n; i++) {\n\t\t\trev[i] = (rev[i >> 1] >>\
@@ -36,18 +37,19 @@ data:
     \ * z;\n\t\t\t}\n\t\t}\n\n\t\tfor (int l = 1; l < n; l <<= 1) {\n\t\t\tfor (int\
     \ i = 0; i < n; i += (l << 1)) {\n\t\t\t\tfor (int j = 0; j < l; j++) {\n\t\t\t\
     \t\tauto z = root[j + l] * a[i + j + l];\n\t\t\t\t\ta[i + j + l] = a[i + j] -\
-    \ z;\n\t\t\t\t\ta[i + j] += z;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}\n#line 2 \"\
-    convolution/convolution.hpp\"\n\nnamespace conv {\n\ttemplate<typename T, typename\
-    \ U = double>\n\tvector<T> convolution(const vector<T> &a, const vector<T> &b)\
-    \ {\n\t\tint n = 1;\n\t\twhile (n < a.size() + b.size()) \n\t\t\tn <<= 1;\n\t\t\
-    vector<complex<U>> c(n);\n\t\tfor (int i = 0; i < a.size(); i++)\n\t\t\tc[i] =\
-    \ static_cast<U>(a[i]);\n\t\tfor (int i = 0; i < b.size(); i++)\n\t\t\tc[i] =\
-    \ {c[i].real(), static_cast<U>(b[i])};\n\t\tfast_fourier_transform(c);\n\n\t\t\
-    vector<complex<U>> d(n);\n\t\tfor (int i = 0, j; i < n; i++) {\n\t\t\tj = (n -\
-    \ i) & (n - 1);\n\t\t\td[i] = (c[j] * c[j] - conj(c[i] * c[i])) * complex<U>{0,\
-    \ -0.25 / n};\n\t\t}\n\t\tfast_fourier_transform(d);\n\n\t\tn = a.size() + b.size()\
-    \ - 1;\n\t\tvector<T> ret(n);\n\t\tfor (int i = 0; i < n; i++)\n\t\t\tret[i] =\
-    \ static_cast<T>(d[i].real() + 0.5);\n\t\treturn ret;\n\t}\n}\n#line 7 \"verify/convolution.yosupo-frequency-table-of-tree-distances.test.cpp\"\
+    \ z;\n\t\t\t\t\ta[i + j] += z;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}\n\n#pragma endregion\
+    \ fast_fourier_transform\n#line 2 \"convolution/convolution.hpp\"\n\n#pragma region\
+    \ convolution\n\nnamespace conv {\n\ttemplate<typename T, typename U = double>\n\
+    \tvector<T> convolution(const vector<T> &a, const vector<T> &b) {\n\t\tint n =\
+    \ 1;\n\t\twhile (n < a.size() + b.size()) \n\t\t\tn <<= 1;\n\t\tvector<complex<U>>\
+    \ c(n);\n\t\tfor (int i = 0; i < a.size(); i++)\n\t\t\tc[i] = static_cast<U>(a[i]);\n\
+    \t\tfor (int i = 0; i < b.size(); i++)\n\t\t\tc[i] = {c[i].real(), static_cast<U>(b[i])};\n\
+    \t\tfast_fourier_transform(c);\n\n\t\tvector<complex<U>> d(n);\n\t\tfor (int i\
+    \ = 0, j; i < n; i++) {\n\t\t\tj = (n - i) & (n - 1);\n\t\t\td[i] = (c[j] * c[j]\
+    \ - conj(c[i] * c[i])) * complex<U>{0, -0.25 / n};\n\t\t}\n\t\tfast_fourier_transform(d);\n\
+    \n\t\tn = a.size() + b.size() - 1;\n\t\tvector<T> ret(n);\n\t\tfor (int i = 0;\
+    \ i < n; i++)\n\t\t\tret[i] = static_cast<T>(d[i].real() + 0.5);\n\t\treturn ret;\n\
+    \t}\n}\n\n#pragma endregion convolution\n#line 7 \"verify/convolution.yosupo-frequency-table-of-tree-distances.test.cpp\"\
     \n\nint main() {\n\tint N;\n\tcin >> N;\n\tvector<vector<int>> T(N);\n\tfor (int\
     \ i = 1; i < N; i++) {\n\t\tint u, v;\n\t\tcin >> u >> v;\n\t\tT[u].push_back(v);\n\
     \t\tT[v].push_back(u);\n\t}\n\n\tvector<long long> weight(N), ans(2 * N, 0);\n\
@@ -111,7 +113,7 @@ data:
   isVerificationFile: true
   path: verify/convolution.yosupo-frequency-table-of-tree-distances.test.cpp
   requiredBy: []
-  timestamp: '2022-04-21 20:20:05-07:00'
+  timestamp: '2022-04-29 22:36:50-07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/convolution.yosupo-frequency-table-of-tree-distances.test.cpp

@@ -4,10 +4,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: data-structure/general-segment-tree.hpp
     title: General Segment Tree
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: math/inverse.hpp
     title: Modulo Inverse
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utility/mint.hpp
     title: Modular Int
   _extendedRequiredBy: []
@@ -102,20 +102,21 @@ data:
     \ x;\n\ta.value = Modular<T>::normalize(x);\n\treturn is;\n}\n\n// /*\nusing ModType\
     \ = int;\n\nstruct VarMod { static ModType value; };\n\nModType VarMod::value;\n\
     \nModType &MOD = VarMod::value;\n\nusing mint = Modular<VarMod>;\n// */\n\n/*\n\
-    constexpr int MOD = @@HERE@@;\n\nusing mint = Modular<integral_constant<decay<decltype(MOD)>::type,\
+    constexpr int MOD = HERE;\n\nusing mint = Modular<integral_constant<decay<decltype(MOD)>::type,\
     \ MOD>>;\n*/\n\n#pragma endregion mint\n#line 1 \"data-structure/general-segment-tree.hpp\"\
-    \ntemplate<class segment_tree_template>\nclass gen_segment_tree : public segment_tree_template\
-    \ {\n\tusing T = typename segment_tree_template::type;\n\tusing segment_tree_template::default_value;\n\
-    \tusing segment_tree_template::merge;\n\tusing segment_tree_template::apply;\n\
-    \nprotected:\n\tint n;\n\tvector<T> tree;\n\npublic:\n\tgen_segment_tree() = default;\n\
-    \n\tgen_segment_tree(int _n) { init(_n); }\n\n\tvoid init(int _n) {\n\t\tfor (n\
-    \ = 1; n < _n; n *= 2);\n\t\ttree.assign(n * 2, default_value);\n\t}\n\n\tvoid\
-    \ update(int i, T v) {\n\t\tfor (apply(tree[i += n], v); i >>= 1;)\n\t\t\ttree[i]\
-    \ = merge(tree[i << 1], tree[i << 1 | 1]);\n\t}\n\n\tT query(int l, int r) {\n\
-    \t\tT lret = default_value, rret = default_value;\n\t\tfor (l += n, r += n + 1;\
-    \ l < r; l >>= 1, r >>= 1) {\n\t\t\tif (l & 1) \n\t\t\t\tlret = merge(lret, tree[l++]);\n\
-    \t\t\tif (r & 1) \n\t\t\t\trret = merge(tree[--r], rret);\n\t\t}\n\t\treturn merge(lret,\
-    \ rret);\n\t}\n\n\tT operator[](int i) { return tree[i + n]; }\n};\n#line 8 \"\
+    \n#pragma region gen_segment_tree\n\ntemplate<class segment_tree_template>\nclass\
+    \ gen_segment_tree : public segment_tree_template {\n\tusing T = typename segment_tree_template::type;\n\
+    \tusing segment_tree_template::default_value;\n\tusing segment_tree_template::merge;\n\
+    \tusing segment_tree_template::apply;\n\nprotected:\n\tint n;\n\tvector<T> tree;\n\
+    \npublic:\n\tgen_segment_tree() = default;\n\n\tgen_segment_tree(int _n) { init(_n);\
+    \ }\n\n\tvoid init(int _n) {\n\t\tfor (n = 1; n < _n; n *= 2);\n\t\ttree.assign(n\
+    \ * 2, default_value);\n\t}\n\n\tvoid update(int i, T v) {\n\t\tfor (apply(tree[i\
+    \ += n], v); i >>= 1;)\n\t\t\ttree[i] = merge(tree[i << 1], tree[i << 1 | 1]);\n\
+    \t}\n\n\tT query(int l, int r) {\n\t\tT lret = default_value, rret = default_value;\n\
+    \t\tfor (l += n, r += n + 1; l < r; l >>= 1, r >>= 1) {\n\t\t\tif (l & 1) \n\t\
+    \t\t\tlret = merge(lret, tree[l++]);\n\t\t\tif (r & 1) \n\t\t\t\trret = merge(tree[--r],\
+    \ rret);\n\t\t}\n\t\treturn merge(lret, rret);\n\t}\n\n\tT operator[](int i) {\
+    \ return tree[i + n]; }\n};\n\n#pragma endregion gen_segment_tree\n#line 8 \"\
     verify/general-segment-tree.yosupo-point-set-range-composite.test.cpp\"\n\nint\
     \ main() {\n\tMOD = 998244353;\n\n\tint N, Q;\n\tcin >> N >> Q;\n\n\tstruct segment_tree_template\
     \ {\n\t\tstruct node { mint a, b; };\n\t\tusing type = node;\n\t\tconst type default_value\
@@ -147,7 +148,7 @@ data:
   isVerificationFile: true
   path: verify/general-segment-tree.yosupo-point-set-range-composite.test.cpp
   requiredBy: []
-  timestamp: '2022-04-21 20:14:03-07:00'
+  timestamp: '2022-04-29 22:36:50-07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/general-segment-tree.yosupo-point-set-range-composite.test.cpp

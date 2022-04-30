@@ -17,12 +17,12 @@ data:
   bundledCode: "#line 1 \"verify/ext-gcd.aizu-extended-euclid-algorithm.test.cpp\"\
     \n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_E\"\
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#line 1 \"math/ext-gcd.hpp\"\
-    \n#pragma region extended gcd\n\nnamespace math {\n\ttemplate<typename T>\n\t\
+    \n#pragma region extended_gcd\n\nnamespace math {\n\ttemplate<typename T>\n\t\
     T ext_gcd(T a, T b, T &x, T &y) {\n\t\tx = 1, y = 0;\n\t\tT x1 = 0, y1 = 1, a1\
     \ = a, b1 = b;\n\t\twhile (b1) {\n\t\t\tT q = a1 / b1;\n\t\t\ttie(x, x1) = make_tuple(x1,\
     \ x - q * x1);\n\t\t\ttie(y, y1) = make_tuple(y1, y - q * y1);\n\t\t\ttie(a1,\
     \ b1) = make_tuple(b1, a1 - q * b1);\n\t\t}\n\t\treturn a1;\n\t}\n}\n\n#pragma\
-    \ endregion extended gcd\n#line 7 \"verify/ext-gcd.aizu-extended-euclid-algorithm.test.cpp\"\
+    \ endregion extended_gcd\n#line 7 \"verify/ext-gcd.aizu-extended-euclid-algorithm.test.cpp\"\
     \n\nint main() {\n\tlong long a, b;\n\tcin >> a >> b;\n\tlong long x, y;\n\tmath::ext_gcd(a,\
     \ b, x, y);\n\tcout << x << ' ' << y << '\\n';\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_E\"\
@@ -34,7 +34,7 @@ data:
   isVerificationFile: true
   path: verify/ext-gcd.aizu-extended-euclid-algorithm.test.cpp
   requiredBy: []
-  timestamp: '2022-04-20 11:24:42-07:00'
+  timestamp: '2022-04-29 22:36:50-07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/ext-gcd.aizu-extended-euclid-algorithm.test.cpp

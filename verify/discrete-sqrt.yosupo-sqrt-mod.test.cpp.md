@@ -4,10 +4,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/discrete-sqrt.hpp
     title: Discrete Square Root
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: math/inverse.hpp
     title: Modulo Inverse
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utility/mint.hpp
     title: Modular Int
   _extendedRequiredBy: []
@@ -102,9 +102,9 @@ data:
     \ x;\n\ta.value = Modular<T>::normalize(x);\n\treturn is;\n}\n\n// /*\nusing ModType\
     \ = int;\n\nstruct VarMod { static ModType value; };\n\nModType VarMod::value;\n\
     \nModType &MOD = VarMod::value;\n\nusing mint = Modular<VarMod>;\n// */\n\n/*\n\
-    constexpr int MOD = @@HERE@@;\n\nusing mint = Modular<integral_constant<decay<decltype(MOD)>::type,\
+    constexpr int MOD = HERE;\n\nusing mint = Modular<integral_constant<decay<decltype(MOD)>::type,\
     \ MOD>>;\n*/\n\n#pragma endregion mint\n#line 2 \"math/discrete-sqrt.hpp\"\n\n\
-    #pragma region discrete sqrt\n\nnamespace math {\n\ttemplate<typename T = long\
+    #pragma region discrete_sqrt\n\nnamespace math {\n\ttemplate<typename T = long\
     \ long>\n\tT discrete_sqrt(const T &a, const T &mod) {\n\t\tassert(0 <= a && a\
     \ < mod);\n\t\tif (a < 2) \n\t\t\treturn a;\n\t\tMOD = mod;\n\t\tif (fast_pow(mint(a),\
     \ (mod - 1) >> 1) != 1) \n\t\t\treturn -1;\n\t\tmint b = 1;\n\t\tfor (; fast_pow(b,\
@@ -114,7 +114,7 @@ data:
     T j = 0;\n\t\t\tmint t = y;\n\t\t\twhile (t != 1) {\n\t\t\t\tj += 1;\n\t\t\t\t\
     t *= t;\n\t\t\t}\n\t\t\tz = fast_pow(z, T(1) << (e - j - 1));\n\t\t\tx *= z;\n\
     \t\t\tz *= z;\n\t\t\ty *= z;\n\t\t\te = j;\n\t\t}\n\t\treturn x();\n\t}\n}\n\n\
-    #pragma endregion discrete sqrt\n#line 7 \"verify/discrete-sqrt.yosupo-sqrt-mod.test.cpp\"\
+    #pragma endregion discrete_sqrt\n#line 7 \"verify/discrete-sqrt.yosupo-sqrt-mod.test.cpp\"\
     \n\nint main() {\n\tint TC;\n\tcin >> TC;\n\twhile (TC--) {\n\t\tlong long A,\
     \ mod;\n\t\tcin >> A >> mod;\n\t\tcout << math::discrete_sqrt(A, mod) << '\\n';\n\
     \t}\n}\n"
@@ -130,7 +130,7 @@ data:
   isVerificationFile: true
   path: verify/discrete-sqrt.yosupo-sqrt-mod.test.cpp
   requiredBy: []
-  timestamp: '2022-04-21 20:14:03-07:00'
+  timestamp: '2022-04-29 22:36:50-07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/discrete-sqrt.yosupo-sqrt-mod.test.cpp

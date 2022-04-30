@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: convolution/fast-fourier-transform.hpp
     title: Fast Fourier Transform
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utility/pi.hpp
     title: Pi
   _extendedRequiredBy: []
@@ -20,8 +20,9 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"utility/pi.hpp\"\nconst double PI = acos(-1);\n#line 2 \"\
-    convolution/fast-fourier-transform.hpp\"\n\nnamespace conv {\n\ttemplate<typename\
+  bundledCode: "#line 1 \"utility/pi.hpp\"\n#pragma region Pi\n\nconst double PI =\
+    \ acos(-1);\n\n#pragma endregion Pi\n#line 2 \"convolution/fast-fourier-transform.hpp\"\
+    \n\n#pragma region fast_fourier_transform\n\nnamespace conv {\n\ttemplate<typename\
     \ T>\n\ttypename enable_if<is_floating_point<T>::value, void>::type\n\tfast_fourier_transform(vector<complex<T>>\
     \ &a) {\n\t\tint n = a.size(), logn = 31 - __builtin_clz(n);\n\t\t\n\t\tvector<int>\
     \ rev(n);\n\t\trev[0] = 0;\n\t\tfor (int i = 1; i < n; i++) {\n\t\t\trev[i] =\
@@ -34,8 +35,22 @@ data:
     \ l <<= 1) {\n\t\t\tfor (int i = 0; i < n; i += (l << 1)) {\n\t\t\t\tfor (int\
     \ j = 0; j < l; j++) {\n\t\t\t\t\tauto z = root[j + l] * a[i + j + l];\n\t\t\t\
     \t\ta[i + j + l] = a[i + j] - z;\n\t\t\t\t\ta[i + j] += z;\n\t\t\t\t}\n\t\t\t\
-    }\n\t\t}\n\t}\n}\n#line 2 \"convolution/complex-convolution.hpp\"\n\nnamespace\
-    \ conv {\n\ttemplate<typename T, typename U = double>\n\ttypename enable_if<is_floating_point<T>::value,\
+    }\n\t\t}\n\t}\n}\n\n#pragma endregion fast_fourier_transform\n#line 2 \"convolution/complex-convolution.hpp\"\
+    \n\n#pragma region complex_convolution\n\nnamespace conv {\n\ttemplate<typename\
+    \ T, typename U = double>\n\ttypename enable_if<is_floating_point<T>::value, vector<complex<T>>>::type\n\
+    \tcomplex_convolution(const vector<complex<T>> &a, const vector<complex<T>> &b)\
+    \ {\n\t\tint n = 1;\n\t\twhile (n < a.size() + b.size()) \n\t\t\tn <<= 1;\n\t\t\
+    vector<complex<U>> pa(n), pb(n);\n\t\tfor (int i = 0; i < a.size(); i++)\n\t\t\
+    \tpa[i] = complex<U>(a[i].real(), a[i].imag());\n\t\tfor (int i = 0; i < b.size();\
+    \ i++)\n\t\t\tpb[i] = complex<U>(b[i].real(), b[i].imag());\n\n\t\tfast_fourier_transform(pa);\n\
+    \t\tfast_fourier_transform(pb);\n\t\tvector<complex<U>> c(n);\n\t\tfor (int i\
+    \ = 0; i < n; i++) \n\t\t\tc[i] = pa[i] * pb[i] / static_cast<U>(n);\n\t\treverse(c.begin()\
+    \ + 1, c.end());\n\t\tfast_fourier_transform(c);\n\n\t\tn = a.size() + b.size()\
+    \ - 1;\n\t\tvector<complex<T>> ret(n);\n\t\tfor (int i = 0; i < n; i++)\n\t\t\t\
+    ret[i] = complex<T>(static_cast<T>(c[i].real()), static_cast<T>(c[i].imag()));\n\
+    \t\treturn ret;\n\t}\n}\n\n#pragma endregion complex_convolution\n"
+  code: "#include \"convolution/fast-fourier-transform.hpp\"\n\n#pragma region complex_convolution\n\
+    \nnamespace conv {\n\ttemplate<typename T, typename U = double>\n\ttypename enable_if<is_floating_point<T>::value,\
     \ vector<complex<T>>>::type\n\tcomplex_convolution(const vector<complex<T>> &a,\
     \ const vector<complex<T>> &b) {\n\t\tint n = 1;\n\t\twhile (n < a.size() + b.size())\
     \ \n\t\t\tn <<= 1;\n\t\tvector<complex<U>> pa(n), pb(n);\n\t\tfor (int i = 0;\
@@ -46,27 +61,14 @@ data:
     \t\treverse(c.begin() + 1, c.end());\n\t\tfast_fourier_transform(c);\n\n\t\tn\
     \ = a.size() + b.size() - 1;\n\t\tvector<complex<T>> ret(n);\n\t\tfor (int i =\
     \ 0; i < n; i++)\n\t\t\tret[i] = complex<T>(static_cast<T>(c[i].real()), static_cast<T>(c[i].imag()));\n\
-    \t\treturn ret;\n\t}\n}\n"
-  code: "#include \"convolution/fast-fourier-transform.hpp\"\n\nnamespace conv {\n\
-    \ttemplate<typename T, typename U = double>\n\ttypename enable_if<is_floating_point<T>::value,\
-    \ vector<complex<T>>>::type\n\tcomplex_convolution(const vector<complex<T>> &a,\
-    \ const vector<complex<T>> &b) {\n\t\tint n = 1;\n\t\twhile (n < a.size() + b.size())\
-    \ \n\t\t\tn <<= 1;\n\t\tvector<complex<U>> pa(n), pb(n);\n\t\tfor (int i = 0;\
-    \ i < a.size(); i++)\n\t\t\tpa[i] = complex<U>(a[i].real(), a[i].imag());\n\t\t\
-    for (int i = 0; i < b.size(); i++)\n\t\t\tpb[i] = complex<U>(b[i].real(), b[i].imag());\n\
-    \n\t\tfast_fourier_transform(pa);\n\t\tfast_fourier_transform(pb);\n\t\tvector<complex<U>>\
-    \ c(n);\n\t\tfor (int i = 0; i < n; i++) \n\t\t\tc[i] = pa[i] * pb[i] / static_cast<U>(n);\n\
-    \t\treverse(c.begin() + 1, c.end());\n\t\tfast_fourier_transform(c);\n\n\t\tn\
-    \ = a.size() + b.size() - 1;\n\t\tvector<complex<T>> ret(n);\n\t\tfor (int i =\
-    \ 0; i < n; i++)\n\t\t\tret[i] = complex<T>(static_cast<T>(c[i].real()), static_cast<T>(c[i].imag()));\n\
-    \t\treturn ret;\n\t}\n}"
+    \t\treturn ret;\n\t}\n}\n\n#pragma endregion complex_convolution"
   dependsOn:
   - convolution/fast-fourier-transform.hpp
   - utility/pi.hpp
   isVerificationFile: false
   path: convolution/complex-convolution.hpp
   requiredBy: []
-  timestamp: '2022-04-21 20:20:05-07:00'
+  timestamp: '2022-04-29 22:36:50-07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/complex-convolution.aizu-naive-string-search.test.cpp

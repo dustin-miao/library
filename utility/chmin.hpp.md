@@ -8,7 +8,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/floyd-warshall.hpp
     title: Floyd-Warshall Algorithm
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/prim.hpp
     title: Prim's Algorithm
   _extendedVerifiedWith:
@@ -27,19 +27,20 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/floyd-warshall.all-pairs-shortest-path.test.cpp
     title: verify/floyd-warshall.all-pairs-shortest-path.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/prim.aizu-minimum-spanning-tree.test.cpp
     title: verify/prim.aizu-minimum-spanning-tree.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"utility/chmin.hpp\"\ntemplate<typename T>\nbool chmin(T\
-    \ &a, T b) {\n\tif (a > b) {\n\t\ta = b;\n\t\treturn true;\n\t}\n\treturn false;\n\
-    }\n"
-  code: "template<typename T>\nbool chmin(T &a, T b) {\n\tif (a > b) {\n\t\ta = b;\n\
-    \t\treturn true;\n\t}\n\treturn false;\n}"
+  bundledCode: "#line 1 \"utility/chmin.hpp\"\n#pragma region chmin\n\ntemplate<typename\
+    \ T>\nbool chmin(T &a, T b) {\n\tif (a > b) {\n\t\ta = b;\n\t\treturn true;\n\t\
+    }\n\treturn false;\n}\n\n#pragma endregion chmin\n"
+  code: "#pragma region chmin\n\ntemplate<typename T>\nbool chmin(T &a, T b) {\n\t\
+    if (a > b) {\n\t\ta = b;\n\t\treturn true;\n\t}\n\treturn false;\n}\n\n#pragma\
+    \ endregion chmin"
   dependsOn: []
   isVerificationFile: false
   path: utility/chmin.hpp
@@ -47,8 +48,8 @@ data:
   - graph/prim.hpp
   - graph/dijkstra.hpp
   - graph/floyd-warshall.hpp
-  timestamp: '2022-02-04 21:19:28-08:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2022-04-29 22:36:50-07:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/prim.aizu-minimum-spanning-tree.test.cpp
   - verify/chmin.aizu-min-max-sum.test.cpp

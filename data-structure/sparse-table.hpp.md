@@ -9,25 +9,16 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/fast-lca.yosupo-lowest-common-ancestor.test.cpp
     title: verify/fast-lca.yosupo-lowest-common-ancestor.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/sparse-table.yosupo-static-rmq.test.cpp
     title: verify/sparse-table.yosupo-static-rmq.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"data-structure/sparse-table.hpp\"\ntemplate<typename T>\n\
-    class sparse_table {\n\tint n, logn;\n\tvector<vector<T>> table;\n\npublic:\n\t\
-    sparse_table() = default;\n\n\ttemplate<typename I>\n\tsparse_table(I l, I r)\
-    \ { init(l, r); }\n\n\ttemplate<typename I>\n\tvoid init(I l, I r) {\n\t\tn =\
-    \ distance(l, r);\n\t\tlogn = 32 - __builtin_clz(n);\n\t\ttable.assign(logn, vector<T>(n));\n\
-    \t\tcopy(l, r, table[0].begin());\n\t\tfor (int k = 1; k < logn; k++)\n\t\t\t\
-    for (int i = 0; i + (1 << k) <= n; i++)\n\t\t\t\ttable[k][i] = min(table[k - 1][i],\
-    \ table[k - 1][i + (1 << (k - 1))]);\n\t}\n\n\tT query(int l, int r) {\n\t\tint\
-    \ k = 31 - __builtin_clz(r - l + 1);\n\t\treturn min(table[k][l], table[k][r -\
-    \ (1 << k) + 1]);\n\t}\n};\n"
-  code: "template<typename T>\nclass sparse_table {\n\tint n, logn;\n\tvector<vector<T>>\
+  bundledCode: "#line 1 \"data-structure/sparse-table.hpp\"\n#pragma region sparse_table\n\
+    \ntemplate<typename T>\nclass sparse_table {\n\tint n, logn;\n\tvector<vector<T>>\
     \ table;\n\npublic:\n\tsparse_table() = default;\n\n\ttemplate<typename I>\n\t\
     sparse_table(I l, I r) { init(l, r); }\n\n\ttemplate<typename I>\n\tvoid init(I\
     \ l, I r) {\n\t\tn = distance(l, r);\n\t\tlogn = 32 - __builtin_clz(n);\n\t\t\
@@ -35,14 +26,25 @@ data:
     \ (int k = 1; k < logn; k++)\n\t\t\tfor (int i = 0; i + (1 << k) <= n; i++)\n\t\
     \t\t\ttable[k][i] = min(table[k - 1][i], table[k - 1][i + (1 << (k - 1))]);\n\t\
     }\n\n\tT query(int l, int r) {\n\t\tint k = 31 - __builtin_clz(r - l + 1);\n\t\
-    \treturn min(table[k][l], table[k][r - (1 << k) + 1]);\n\t}\n};"
+    \treturn min(table[k][l], table[k][r - (1 << k) + 1]);\n\t}\n};\n\n#pragma endregion\
+    \ sparse_table\n"
+  code: "#pragma region sparse_table\n\ntemplate<typename T>\nclass sparse_table {\n\
+    \tint n, logn;\n\tvector<vector<T>> table;\n\npublic:\n\tsparse_table() = default;\n\
+    \n\ttemplate<typename I>\n\tsparse_table(I l, I r) { init(l, r); }\n\n\ttemplate<typename\
+    \ I>\n\tvoid init(I l, I r) {\n\t\tn = distance(l, r);\n\t\tlogn = 32 - __builtin_clz(n);\n\
+    \t\ttable.assign(logn, vector<T>(n));\n\t\tcopy(l, r, table[0].begin());\n\t\t\
+    for (int k = 1; k < logn; k++)\n\t\t\tfor (int i = 0; i + (1 << k) <= n; i++)\n\
+    \t\t\t\ttable[k][i] = min(table[k - 1][i], table[k - 1][i + (1 << (k - 1))]);\n\
+    \t}\n\n\tT query(int l, int r) {\n\t\tint k = 31 - __builtin_clz(r - l + 1);\n\
+    \t\treturn min(table[k][l], table[k][r - (1 << k) + 1]);\n\t}\n};\n\n#pragma endregion\
+    \ sparse_table"
   dependsOn: []
   isVerificationFile: false
   path: data-structure/sparse-table.hpp
   requiredBy:
   - data-structure/fast-lca.hpp
-  timestamp: '2022-04-11 08:59:21-07:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2022-04-29 22:36:50-07:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/sparse-table.yosupo-static-rmq.test.cpp
   - verify/fast-lca.yosupo-lowest-common-ancestor.test.cpp

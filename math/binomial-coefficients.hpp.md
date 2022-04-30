@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: math/inverse.hpp
     title: Modulo Inverse
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utility/mint.hpp
     title: Modular Int
   _extendedRequiredBy: []
@@ -94,9 +94,9 @@ data:
     \ x;\n\ta.value = Modular<T>::normalize(x);\n\treturn is;\n}\n\n// /*\nusing ModType\
     \ = int;\n\nstruct VarMod { static ModType value; };\n\nModType VarMod::value;\n\
     \nModType &MOD = VarMod::value;\n\nusing mint = Modular<VarMod>;\n// */\n\n/*\n\
-    constexpr int MOD = @@HERE@@;\n\nusing mint = Modular<integral_constant<decay<decltype(MOD)>::type,\
+    constexpr int MOD = HERE;\n\nusing mint = Modular<integral_constant<decay<decltype(MOD)>::type,\
     \ MOD>>;\n*/\n\n#pragma endregion mint\n#line 2 \"math/binomial-coefficients.hpp\"\
-    \n\n#pragma region binomial coefficients\n\nnamespace math {\n\tstruct binomial_coefficients\
+    \n\n#pragma region binomial_coefficients\n\nnamespace math {\n\tstruct binomial_coefficients\
     \ {\n\t\tvector<mint> fact, inv_fact;\n\n\t\tbinomial_coefficients() = default;\n\
     \n\t\tbinomial_coefficients(int n) { init(n); }\n\n\t\tvoid init(int n) {\n\t\t\
     \tfact.resize(n + 1);\n\t\t\tfact[0] = 1;\n\t\t\tinv_fact.resize(n + 1);\n\t\t\
@@ -104,8 +104,8 @@ data:
     \ - 1] * i;\n\t\t\t\tinv_fact[i] = 1 / fact[i];\n\t\t\t}\n\t\t}\n\n\t\tmint query(int\
     \ n, int k) { return (0 <= K && K <= N ? fact[n] * inv_fact[k] * inv_fact[n -\
     \ k] : 0); }\n\n\t\tmint operator()(int n, int k) { return query(n, k); }\n\t\
-    };\n}\n\n#pragma endregion binomial coefficients\n"
-  code: "#include \"utility/mint.hpp\"\n\n#pragma region binomial coefficients\n\n\
+    };\n}\n\n#pragma endregion binomial_coefficients\n"
+  code: "#include \"utility/mint.hpp\"\n\n#pragma region binomial_coefficients\n\n\
     namespace math {\n\tstruct binomial_coefficients {\n\t\tvector<mint> fact, inv_fact;\n\
     \n\t\tbinomial_coefficients() = default;\n\n\t\tbinomial_coefficients(int n) {\
     \ init(n); }\n\n\t\tvoid init(int n) {\n\t\t\tfact.resize(n + 1);\n\t\t\tfact[0]\
@@ -113,14 +113,14 @@ data:
     \ i = 1; i <= n; i++) {\n\t\t\t\tfact[i] = fact[i - 1] * i;\n\t\t\t\tinv_fact[i]\
     \ = 1 / fact[i];\n\t\t\t}\n\t\t}\n\n\t\tmint query(int n, int k) { return (0 <=\
     \ K && K <= N ? fact[n] * inv_fact[k] * inv_fact[n - k] : 0); }\n\n\t\tmint operator()(int\
-    \ n, int k) { return query(n, k); }\n\t};\n}\n\n#pragma endregion binomial coefficients"
+    \ n, int k) { return query(n, k); }\n\t};\n}\n\n#pragma endregion binomial_coefficients"
   dependsOn:
   - utility/mint.hpp
   - math/inverse.hpp
   isVerificationFile: false
   path: math/binomial-coefficients.hpp
   requiredBy: []
-  timestamp: '2022-04-21 20:14:03-07:00'
+  timestamp: '2022-04-29 22:36:50-07:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: math/binomial-coefficients.hpp
