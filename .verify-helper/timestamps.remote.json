@@ -8,6 +8,7 @@
 "verify/convolution-mod.yosupo-convolution.test.cpp": "2022-04-29 22:36:50 -0700",
 "verify/convolution.yosupo-frequency-table-of-tree-distances.test.cpp": "2022-04-29 22:36:50 -0700",
 "verify/cycle-finding.yosupo-cycle-detection.test.cpp": "2022-04-29 22:36:50 -0700",
+"verify/cyclic-product.yosupo-a+b.test.cpp": "2022-04-30 13:05:31 -0700",
 "verify/dijkstra.aizu-shortest-path.test.cpp": "2022-04-29 22:36:50 -0700",
 "verify/dijkstra.aizu-single-source-shortest-path.test.cpp": "2022-04-29 22:36:50 -0700",
 "verify/discrete-log.yosupo-discrete-logarithm.test.cpp": "2022-04-30 10:59:16 -0700",
