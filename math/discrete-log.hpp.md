@@ -33,11 +33,11 @@ data:
     \t}\n};\n\n#include <ext/pb_ds/assoc_container.hpp>\nusing namespace __gnu_pbds;\n\
     \ntemplate <class K, class V>\nusing fast_map = gp_hash_table<K, V, custom_hash>;\n\
     \ntemplate <class K>\nusing fast_set = gp_hash_table<K, null_type, custom_hash>;\n\
-    \n#pragma endregion fast_set\n#line 1 \"math/inverse.hpp\"\n#pragma region modulo\
-    \ inverse\n\nnamespace math {\n\ttemplate <typename T>\n\tT inverse(T a, T p)\
-    \ {\n\t\tT b = p, x = 1, y = 0;\n\t\twhile (a) {\n\t\t\tT q = b / a;\n\t\t\tswap(a,\
-    \ b %= a);\n\t\t\tswap(x, y -= q * x);\n\t\t}\n\t\tassert(b == 1);\n\t\treturn\
-    \ y < 0 ? y + p : y;\n\t}\n}\n\n#pragma endregion modulo inverse\n#line 3 \"math/discrete-log.hpp\"\
+    \n#pragma endregion fast_set\n#line 1 \"math/inverse.hpp\"\n#pragma region modular_inverse\n\
+    \nnamespace math {\n\ttemplate <typename T>\n\tT inverse(T a, T p) {\n\t\tT b\
+    \ = p, x = 1, y = 0;\n\t\twhile (a) {\n\t\t\tT q = b / a;\n\t\t\tswap(a, b %=\
+    \ a);\n\t\t\tswap(x, y -= q * x);\n\t\t}\n\t\tassert(b == 1);\n\t\treturn y <\
+    \ 0 ? y + p : y;\n\t}\n}\n\n#pragma endregion modular_inverse\n#line 3 \"math/discrete-log.hpp\"\
     \n\n#pragma region discrete_log\n\nnamespace math {\n\ttemplate<typename T = long\
     \ long>\n\tT discrete_log(T a, T b, T mod) {\n\t\tif ((a %= mod) < 0) \n\t\t\t\
     a += mod;\n\t\tif ((b %= mod) < 0) \n\t\t\tb += mod;\n\t\tT f, g, r = 1 % mod;\n\
@@ -69,7 +69,7 @@ data:
   isVerificationFile: false
   path: math/discrete-log.hpp
   requiredBy: []
-  timestamp: '2022-04-29 22:36:50-07:00'
+  timestamp: '2022-04-30 10:59:16-07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/discrete-log.yosupo-discrete-logarithm.test.cpp

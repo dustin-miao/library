@@ -49,10 +49,10 @@ data:
     \t\tfast_walsh_hadamard_transform(pb);\n\t\tfor (int i = 0; i < n; i++)\n\t\t\t\
     pa[i] *= pb[i];\n\t\tinverse_fast_walsh_hadamard_transform(pa);\n\t\treturn pa;\n\
     \t}\n}\n\n#pragma endregion xor_convolution\n#line 1 \"math/inverse.hpp\"\n#pragma\
-    \ region modulo inverse\n\nnamespace math {\n\ttemplate <typename T>\n\tT inverse(T\
+    \ region modular_inverse\n\nnamespace math {\n\ttemplate <typename T>\n\tT inverse(T\
     \ a, T p) {\n\t\tT b = p, x = 1, y = 0;\n\t\twhile (a) {\n\t\t\tT q = b / a;\n\
     \t\t\tswap(a, b %= a);\n\t\t\tswap(x, y -= q * x);\n\t\t}\n\t\tassert(b == 1);\n\
-    \t\treturn y < 0 ? y + p : y;\n\t}\n}\n\n#pragma endregion modulo inverse\n#line\
+    \t\treturn y < 0 ? y + p : y;\n\t}\n}\n\n#pragma endregion modular_inverse\n#line\
     \ 2 \"utility/mint.hpp\"\n\n#pragma region mint\n\ntemplate<typename T>\nclass\
     \ Modular {\npublic:\n\tusing Type = typename decay<decltype(T::value)>::type;\n\
     \t\n\tconstexpr Modular() : value() {}\n\n\ttemplate<typename U>\n\tModular(const\
@@ -150,7 +150,7 @@ data:
   isVerificationFile: true
   path: verify/xor-convolution.yosupo-bitwise-xor-convolution.test.cpp
   requiredBy: []
-  timestamp: '2022-04-29 22:36:50-07:00'
+  timestamp: '2022-04-30 10:59:16-07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/xor-convolution.yosupo-bitwise-xor-convolution.test.cpp

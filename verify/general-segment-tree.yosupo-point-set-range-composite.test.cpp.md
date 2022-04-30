@@ -23,12 +23,12 @@ data:
   bundledCode: "#line 1 \"verify/general-segment-tree.yosupo-point-set-range-composite.test.cpp\"\
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/point_set_range_composite\"\
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#line 1 \"math/inverse.hpp\"\
-    \n#pragma region modulo inverse\n\nnamespace math {\n\ttemplate <typename T>\n\
+    \n#pragma region modular_inverse\n\nnamespace math {\n\ttemplate <typename T>\n\
     \tT inverse(T a, T p) {\n\t\tT b = p, x = 1, y = 0;\n\t\twhile (a) {\n\t\t\tT\
     \ q = b / a;\n\t\t\tswap(a, b %= a);\n\t\t\tswap(x, y -= q * x);\n\t\t}\n\t\t\
-    assert(b == 1);\n\t\treturn y < 0 ? y + p : y;\n\t}\n}\n\n#pragma endregion modulo\
-    \ inverse\n#line 2 \"utility/mint.hpp\"\n\n#pragma region mint\n\ntemplate<typename\
-    \ T>\nclass Modular {\npublic:\n\tusing Type = typename decay<decltype(T::value)>::type;\n\
+    assert(b == 1);\n\t\treturn y < 0 ? y + p : y;\n\t}\n}\n\n#pragma endregion modular_inverse\n\
+    #line 2 \"utility/mint.hpp\"\n\n#pragma region mint\n\ntemplate<typename T>\n\
+    class Modular {\npublic:\n\tusing Type = typename decay<decltype(T::value)>::type;\n\
     \t\n\tconstexpr Modular() : value() {}\n\n\ttemplate<typename U>\n\tModular(const\
     \ U &x) { value = normalize(x); }\n\n\ttemplate<typename U>\n\tstatic Type normalize(const\
     \ U &x) {\n\t\tType v;\n\t\tif (-mod() <= x && x < mod()) \n\t\t\tv = static_cast<Type>(x);\n\
@@ -148,7 +148,7 @@ data:
   isVerificationFile: true
   path: verify/general-segment-tree.yosupo-point-set-range-composite.test.cpp
   requiredBy: []
-  timestamp: '2022-04-29 22:36:50-07:00'
+  timestamp: '2022-04-30 10:59:16-07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/general-segment-tree.yosupo-point-set-range-composite.test.cpp

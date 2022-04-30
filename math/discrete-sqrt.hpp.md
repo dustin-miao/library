@@ -17,14 +17,14 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"math/inverse.hpp\"\n#pragma region modulo inverse\n\nnamespace\
+  bundledCode: "#line 1 \"math/inverse.hpp\"\n#pragma region modular_inverse\n\nnamespace\
     \ math {\n\ttemplate <typename T>\n\tT inverse(T a, T p) {\n\t\tT b = p, x = 1,\
     \ y = 0;\n\t\twhile (a) {\n\t\t\tT q = b / a;\n\t\t\tswap(a, b %= a);\n\t\t\t\
     swap(x, y -= q * x);\n\t\t}\n\t\tassert(b == 1);\n\t\treturn y < 0 ? y + p : y;\n\
-    \t}\n}\n\n#pragma endregion modulo inverse\n#line 2 \"utility/mint.hpp\"\n\n#pragma\
-    \ region mint\n\ntemplate<typename T>\nclass Modular {\npublic:\n\tusing Type\
-    \ = typename decay<decltype(T::value)>::type;\n\t\n\tconstexpr Modular() : value()\
-    \ {}\n\n\ttemplate<typename U>\n\tModular(const U &x) { value = normalize(x);\
+    \t}\n}\n\n#pragma endregion modular_inverse\n#line 2 \"utility/mint.hpp\"\n\n\
+    #pragma region mint\n\ntemplate<typename T>\nclass Modular {\npublic:\n\tusing\
+    \ Type = typename decay<decltype(T::value)>::type;\n\t\n\tconstexpr Modular()\
+    \ : value() {}\n\n\ttemplate<typename U>\n\tModular(const U &x) { value = normalize(x);\
     \ }\n\n\ttemplate<typename U>\n\tstatic Type normalize(const U &x) {\n\t\tType\
     \ v;\n\t\tif (-mod() <= x && x < mod()) \n\t\t\tv = static_cast<Type>(x);\n\t\t\
     else \n\t\t\tv = static_cast<Type>(x % mod());\n\t\tif (v < 0) \n\t\t\tv += mod();\n\
@@ -127,7 +127,7 @@ data:
   isVerificationFile: false
   path: math/discrete-sqrt.hpp
   requiredBy: []
-  timestamp: '2022-04-29 22:36:50-07:00'
+  timestamp: '2022-04-30 10:59:16-07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/discrete-sqrt.yosupo-sqrt-mod.test.cpp
