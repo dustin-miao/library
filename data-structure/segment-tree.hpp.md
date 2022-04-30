@@ -48,9 +48,9 @@ data:
   timestamp: '2022-04-09 15:55:38-07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/segment-tree.aizu-range-minimum-query.test.cpp
   - verify/segment-tree.aizu-range-sum-query.test.cpp
   - verify/segment-tree.yosupo-point-add-range-sum.test.cpp
+  - verify/segment-tree.aizu-range-minimum-query.test.cpp
 documentation_of: data-structure/segment-tree.hpp
 layout: document
 title: Segment Tree

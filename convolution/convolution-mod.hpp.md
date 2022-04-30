@@ -75,8 +75,8 @@ data:
   timestamp: '2022-04-21 20:20:05-07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/convolution-mod.yosupo-convolution-mod-1000000007.test.cpp
   - verify/convolution-mod.yosupo-convolution.test.cpp
+  - verify/convolution-mod.yosupo-convolution-mod-1000000007.test.cpp
 documentation_of: convolution/convolution-mod.hpp
 layout: document
 title: Convolution under Modulo

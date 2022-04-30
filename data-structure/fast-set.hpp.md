@@ -58,8 +58,8 @@ data:
   timestamp: '2022-04-19 10:23:34-07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/discrete-log.yosupo-discrete-logarithm.test.cpp
   - verify/cycle-finding.yosupo-cycle-detection.test.cpp
+  - verify/discrete-log.yosupo-discrete-logarithm.test.cpp
 documentation_of: data-structure/fast-set.hpp
 layout: document
 title: Fast Set

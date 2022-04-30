@@ -33,7 +33,7 @@ data:
     \ = default;\n\n\tfast_lca(const vector<vector<int>> &tree, int s = 0) { init(tree,\
     \ s); }\n\n\ttemplate<typename T>\n\tfast_lca(const vector<vector<pair<int, T>>>\
     \ &tree, int s = 0) { \n\t\tint n = tree.size();\n\t\tvector<vector<int>> _tree(n);\n\
-    \t\tfor (int u = 0; u < n; u++)\n\t\t\tfor (auto [v, w] : tree)\n\t\t\t\t_tree[u].push_back(v);\n\
+    \t\tfor (int u = 0; u < n; u++)\n\t\t\tfor (auto [v, w] : tree[u])\n\t\t\t\t_tree[u].push_back(v);\n\
     \t\tinit(_tree, s); \n\t}\n\n\tvoid init(const vector<vector<int>> &tree, int\
     \ s = 0) {\n\t\tint n = tree.size();\n\t\tpos.resize(n);\n\t\tvector<pair<int,\
     \ int>> A;\n\t\tA.reserve(2 * n);\n\n\t\tconst auto dfs = [&](const auto &self,\
@@ -60,7 +60,7 @@ data:
   isVerificationFile: true
   path: verify/fast-lca.yosupo-lowest-common-ancestor.test.cpp
   requiredBy: []
-  timestamp: '2022-04-11 08:59:21-07:00'
+  timestamp: '2022-04-29 21:52:37-07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/fast-lca.yosupo-lowest-common-ancestor.test.cpp

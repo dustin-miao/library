@@ -28,7 +28,7 @@ data:
     \ = default;\n\n\tfast_lca(const vector<vector<int>> &tree, int s = 0) { init(tree,\
     \ s); }\n\n\ttemplate<typename T>\n\tfast_lca(const vector<vector<pair<int, T>>>\
     \ &tree, int s = 0) { \n\t\tint n = tree.size();\n\t\tvector<vector<int>> _tree(n);\n\
-    \t\tfor (int u = 0; u < n; u++)\n\t\t\tfor (auto [v, w] : tree)\n\t\t\t\t_tree[u].push_back(v);\n\
+    \t\tfor (int u = 0; u < n; u++)\n\t\t\tfor (auto [v, w] : tree[u])\n\t\t\t\t_tree[u].push_back(v);\n\
     \t\tinit(_tree, s); \n\t}\n\n\tvoid init(const vector<vector<int>> &tree, int\
     \ s = 0) {\n\t\tint n = tree.size();\n\t\tpos.resize(n);\n\t\tvector<pair<int,\
     \ int>> A;\n\t\tA.reserve(2 * n);\n\n\t\tconst auto dfs = [&](const auto &self,\
@@ -44,11 +44,11 @@ data:
     \ vector<vector<int>> &tree, int s = 0) { init(tree, s); }\n\n\ttemplate<typename\
     \ T>\n\tfast_lca(const vector<vector<pair<int, T>>> &tree, int s = 0) { \n\t\t\
     int n = tree.size();\n\t\tvector<vector<int>> _tree(n);\n\t\tfor (int u = 0; u\
-    \ < n; u++)\n\t\t\tfor (auto [v, w] : tree)\n\t\t\t\t_tree[u].push_back(v);\n\t\
-    \tinit(_tree, s); \n\t}\n\n\tvoid init(const vector<vector<int>> &tree, int s\
-    \ = 0) {\n\t\tint n = tree.size();\n\t\tpos.resize(n);\n\t\tvector<pair<int, int>>\
-    \ A;\n\t\tA.reserve(2 * n);\n\n\t\tconst auto dfs = [&](const auto &self, int\
-    \ u, int d = 0, int p = -1) -> void {\n\t\t\tpos[u] = A.size();\n\t\t\tA.emplace_back(d,\
+    \ < n; u++)\n\t\t\tfor (auto [v, w] : tree[u])\n\t\t\t\t_tree[u].push_back(v);\n\
+    \t\tinit(_tree, s); \n\t}\n\n\tvoid init(const vector<vector<int>> &tree, int\
+    \ s = 0) {\n\t\tint n = tree.size();\n\t\tpos.resize(n);\n\t\tvector<pair<int,\
+    \ int>> A;\n\t\tA.reserve(2 * n);\n\n\t\tconst auto dfs = [&](const auto &self,\
+    \ int u, int d = 0, int p = -1) -> void {\n\t\t\tpos[u] = A.size();\n\t\t\tA.emplace_back(d,\
     \ u);\n\t\t\tfor (int v : tree[u]) {\n\t\t\t\tif (v == p)\n\t\t\t\t\tcontinue;\n\
     \t\t\t\tself(self, v, d + 1, u);\n\t\t\t\tA.emplace_back(d, u);\n\t\t\t}\n\t\t\
     };\n\n\t\tdfs(dfs, s);\n\n\t\tst.init(A.begin(), A.end());\n\t}\n\n\tint query(int\
@@ -60,7 +60,7 @@ data:
   isVerificationFile: false
   path: data-structure/fast-lca.hpp
   requiredBy: []
-  timestamp: '2022-04-11 08:59:21-07:00'
+  timestamp: '2022-04-29 21:52:37-07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/fast-lca.yosupo-lowest-common-ancestor.test.cpp

@@ -136,15 +136,15 @@ data:
   path: geometry/point.hpp
   requiredBy:
   - geometry/monotonic-dp-hull.hpp
-  - geometry/monotonic-dp-hull-minkowski-sum.hpp
   - geometry/convex-hull.hpp
+  - geometry/monotonic-dp-hull-minkowski-sum.hpp
   timestamp: '2022-04-11 13:05:03-07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/point.aizu-projection.test.cpp
+  - verify/point.aizu-counter-clockwise.test.cpp
   - verify/monotonic-dp-hull.yosupo-a+b.test.cpp
   - verify/point.aizu-parallel-orthagonal.test.cpp
-  - verify/point.aizu-counter-clockwise.test.cpp
+  - verify/point.aizu-projection.test.cpp
 documentation_of: geometry/point.hpp
 layout: document
 title: Point

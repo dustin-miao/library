@@ -44,8 +44,8 @@ data:
   timestamp: '2022-04-11 08:59:21-07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/fast-lca.yosupo-lowest-common-ancestor.test.cpp
   - verify/sparse-table.yosupo-static-rmq.test.cpp
+  - verify/fast-lca.yosupo-lowest-common-ancestor.test.cpp
 documentation_of: data-structure/sparse-table.hpp
 layout: document
 title: Sparse Table

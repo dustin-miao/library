@@ -61,22 +61,22 @@ data:
   isVerificationFile: false
   path: math/inverse.hpp
   requiredBy:
+  - math/discrete-sqrt.hpp
   - math/discrete-log.hpp
   - math/binomial-coefficients.hpp
-  - math/discrete-sqrt.hpp
   - utility/mint.hpp
   timestamp: '2022-04-20 11:24:42-07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/mint.power.test.cpp
-  - verify/mint.yosupo-A+B.test.cpp
-  - verify/xor-convolution.yosupo-bitwise-xor-convolution.test.cpp
-  - verify/lazy-segment-tree.yosupo-range-affine-range-sum.test.cpp
-  - verify/discrete-log.yosupo-discrete-logarithm.test.cpp
+  - verify/general-segment-tree.yosupo-point-set-range-composite.test.cpp
   - verify/sparse-segment-tree.yosupo-point-set-range-composite.test.cpp
   - verify/recursive-segment-tree.yosupo-point-set-range-composite.test.cpp
+  - verify/mint.yosupo-A+B.test.cpp
+  - verify/discrete-log.yosupo-discrete-logarithm.test.cpp
+  - verify/xor-convolution.yosupo-bitwise-xor-convolution.test.cpp
+  - verify/lazy-segment-tree.yosupo-range-affine-range-sum.test.cpp
+  - verify/mint.power.test.cpp
   - verify/discrete-sqrt.yosupo-sqrt-mod.test.cpp
-  - verify/general-segment-tree.yosupo-point-set-range-composite.test.cpp
 documentation_of: math/inverse.hpp
 layout: document
 title: Modulo Inverse
