@@ -5,10 +5,13 @@ data:
     path: geometry/point.hpp
     title: Point
   _extendedRequiredBy:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: geometry/monotonic-dp-hull-minkowski-sum.hpp
     title: Minkowski Sum for Monotonic DP Hull
   _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/monotonic-dp-hull-minkowski-sum.yosupo-a+b.test.cpp
+    title: verify/monotonic-dp-hull-minkowski-sum.yosupo-a+b.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/monotonic-dp-hull.yosupo-a+b.test.cpp
     title: verify/monotonic-dp-hull.yosupo-a+b.test.cpp
@@ -106,6 +109,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/monotonic-dp-hull.yosupo-a+b.test.cpp
+  - verify/monotonic-dp-hull-minkowski-sum.yosupo-a+b.test.cpp
 documentation_of: geometry/monotonic-dp-hull.hpp
 layout: document
 title: Monotonic DP Hull

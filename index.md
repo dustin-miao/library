@@ -106,7 +106,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: geometry/line-container.hpp
       title: Line Container
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: geometry/monotonic-dp-hull-minkowski-sum.hpp
       title: Minkowski Sum for Monotonic DP Hull
     - icon: ':heavy_check_mark:'
@@ -318,6 +318,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/mint.yosupo-A+B.test.cpp
       title: verify/mint.yosupo-A+B.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/monotonic-dp-hull-minkowski-sum.yosupo-a+b.test.cpp
+      title: verify/monotonic-dp-hull-minkowski-sum.yosupo-a+b.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/monotonic-dp-hull.yosupo-a+b.test.cpp
       title: verify/monotonic-dp-hull.yosupo-a+b.test.cpp

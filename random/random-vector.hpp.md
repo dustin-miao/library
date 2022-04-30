@@ -10,6 +10,9 @@ data:
     path: verify/cyclic-product.yosupo-a+b.test.cpp
     title: verify/cyclic-product.yosupo-a+b.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/monotonic-dp-hull-minkowski-sum.yosupo-a+b.test.cpp
+    title: verify/monotonic-dp-hull-minkowski-sum.yosupo-a+b.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/monotonic-dp-hull.yosupo-a+b.test.cpp
     title: verify/monotonic-dp-hull.yosupo-a+b.test.cpp
   _isVerificationFailed: false
@@ -38,6 +41,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/monotonic-dp-hull.yosupo-a+b.test.cpp
+  - verify/monotonic-dp-hull-minkowski-sum.yosupo-a+b.test.cpp
   - verify/cyclic-product.yosupo-a+b.test.cpp
 documentation_of: random/random-vector.hpp
 layout: document

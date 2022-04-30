@@ -8,10 +8,13 @@ data:
     path: geometry/point.hpp
     title: Point
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/monotonic-dp-hull-minkowski-sum.yosupo-a+b.test.cpp
+    title: verify/monotonic-dp-hull-minkowski-sum.yosupo-a+b.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"geometry/point.hpp\"\n#pragma region point\n\nnamespace\
@@ -82,22 +85,22 @@ data:
     #line 2 \"geometry/monotonic-dp-hull-minkowski-sum.hpp\"\n\n#pragma region monotonic_dp_hull_minkowski_sum\n\
     \nmonotonic_dp_hull minkowski_sum(const monotonic_dp_hull &h1, const monotonic_dp_hull\
     \ &h2) {\n\tassert(h1.size() > 0 && h2.size() > 0);\n\tmonotonic_dp_hull sum;\n\
-    \tfor (int i = 0, j = 0; i < h1.size() - 1 || j < h2.size() - 1;) {\n\t\tsum.insert(h1.points[i]\
+    \tfor (int i = 0, j = 0; i < h1.size() - 1 || j < h2.size() - 1;) {\n\t\tsum.add(h1.points[i]\
     \ + h2.points[j]);\n\t\tif (i == h1.size() - 1) {\n\t\t\tj++;\n\t\t\tcontinue;\n\
     \t\t}\n\t\tif (j == h2.size() - 1) {\n\t\t\ti++;\n\t\t\tcontinue;\n\t\t}\n \n\t\
     \tauto d1 = h1.points[i + 1] - h1.points[i];\n\t\tauto d2 = h2.points[j + 1] -\
     \ h2.points[j];\n\t\tif ((d2 ^ d1) > 0)\n\t\t\ti++;\n\t\telse\n\t\t\tj++;\n\t\
-    }\n\tsum.insert(h1.points.back() + h2.points.back());\n\treturn sum;\n}\n\n#pragma\
+    }\n\tsum.add(h1.points.back() + h2.points.back());\n\treturn sum;\n}\n\n#pragma\
     \ endregion monotonic_dp_hull_minkowski_sum\n"
   code: "#include \"geometry/monotonic-dp-hull.hpp\"\n\n#pragma region monotonic_dp_hull_minkowski_sum\n\
     \nmonotonic_dp_hull minkowski_sum(const monotonic_dp_hull &h1, const monotonic_dp_hull\
     \ &h2) {\n\tassert(h1.size() > 0 && h2.size() > 0);\n\tmonotonic_dp_hull sum;\n\
-    \tfor (int i = 0, j = 0; i < h1.size() - 1 || j < h2.size() - 1;) {\n\t\tsum.insert(h1.points[i]\
+    \tfor (int i = 0, j = 0; i < h1.size() - 1 || j < h2.size() - 1;) {\n\t\tsum.add(h1.points[i]\
     \ + h2.points[j]);\n\t\tif (i == h1.size() - 1) {\n\t\t\tj++;\n\t\t\tcontinue;\n\
     \t\t}\n\t\tif (j == h2.size() - 1) {\n\t\t\ti++;\n\t\t\tcontinue;\n\t\t}\n \n\t\
     \tauto d1 = h1.points[i + 1] - h1.points[i];\n\t\tauto d2 = h2.points[j + 1] -\
     \ h2.points[j];\n\t\tif ((d2 ^ d1) > 0)\n\t\t\ti++;\n\t\telse\n\t\t\tj++;\n\t\
-    }\n\tsum.insert(h1.points.back() + h2.points.back());\n\treturn sum;\n}\n\n#pragma\
+    }\n\tsum.add(h1.points.back() + h2.points.back());\n\treturn sum;\n}\n\n#pragma\
     \ endregion monotonic_dp_hull_minkowski_sum"
   dependsOn:
   - geometry/monotonic-dp-hull.hpp
@@ -105,9 +108,10 @@ data:
   isVerificationFile: false
   path: geometry/monotonic-dp-hull-minkowski-sum.hpp
   requiredBy: []
-  timestamp: '2022-04-29 22:36:50-07:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2022-04-30 13:42:54-07:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/monotonic-dp-hull-minkowski-sum.yosupo-a+b.test.cpp
 documentation_of: geometry/monotonic-dp-hull-minkowski-sum.hpp
 layout: document
 title: Minkowski Sum for Monotonic DP Hull
