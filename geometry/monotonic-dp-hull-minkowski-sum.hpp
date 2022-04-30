@@ -6,7 +6,7 @@ monotonic_dp_hull minkowski_sum(const monotonic_dp_hull &h1, const monotonic_dp_
 	assert(h1.size() > 0 && h2.size() > 0);
 	monotonic_dp_hull sum;
 	for (int i = 0, j = 0; i < h1.size() - 1 || j < h2.size() - 1;) {
-		sum.insert(h1.points[i] + h2.points[j]);
+		sum.add(h1.points[i] + h2.points[j]);
 		if (i == h1.size() - 1) {
 			j++;
 			continue;
@@ -23,7 +23,7 @@ monotonic_dp_hull minkowski_sum(const monotonic_dp_hull &h1, const monotonic_dp_
 		else
 			j++;
 	}
-	sum.insert(h1.points.back() + h2.points.back());
+	sum.add(h1.points.back() + h2.points.back());
 	return sum;
 }
 
