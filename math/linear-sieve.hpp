@@ -8,7 +8,7 @@ namespace math {
 				leastFactor[i] = i;
 				primes.push_back(i);
 			}
-			for (int j = 0; j < primes.size() && primes[j] <= leastFactor[i] && i * primes[j] <= N; j++)
+			for (int j = 0; j < primes.size() && primes[j] <= leastFactor[i] && i * primes[j] <= n; j++)
 				leastFactor[i * primes[j]] = primes[j];
 		}
 		return make_pair(leastFactor, primes);
