@@ -6,7 +6,7 @@ using namespace std;
 #include "utility/y-combinator.hpp"
 
 int main() {
-	long long A, B;
+	long long A, B; 
 	cin >> A >> B;
 
 	auto gcd_test = y_combinator([](auto gcd_test, long long a, long long b) -> long long { 
