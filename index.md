@@ -218,6 +218,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: utility/pi.hpp
       title: Pi
+    - icon: ':x:'
+      path: utility/prefix-sum.hpp
+      title: Prefix Sum
     - icon: ':heavy_check_mark:'
       path: utility/y-combinator.hpp
       title: Y-Combinator
@@ -365,6 +368,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/point.aizu-projection.test.cpp
       title: verify/point.aizu-projection.test.cpp
+    - icon: ':x:'
+      path: verify/prefix-sum.yosupo-static-range-sum.test.cpp
+      title: verify/prefix-sum.yosupo-static-range-sum.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/prim.aizu-minimum-spanning-tree.test.cpp
       title: verify/prim.aizu-minimum-spanning-tree.test.cpp
