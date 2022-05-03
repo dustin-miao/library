@@ -1,5 +1,8 @@
 #pragma region fast_pow
 
+#ifndef FAST_POW_HPP
+#define FAST_POW_HPP
+
 template<typename T, typename U>
 T fast_pow(T a, U b) { 
 	T ret = 1; 
@@ -21,5 +24,7 @@ T fast_pow(T a, U b, const S &mod) {
 	} 
 	return ret; 
 }
+
+#endif
 
 #pragma endregion fast_pow

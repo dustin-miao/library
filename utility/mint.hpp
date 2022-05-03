@@ -2,6 +2,9 @@
 
 #pragma region mint
 
+#ifndef MINT_HPP
+#define MINT_HPP
+
 template<typename T>
 class Modular {
 public:
@@ -217,5 +220,7 @@ constexpr int MOD = HERE;
 
 using mint = Modular<integral_constant<decay<decltype(MOD)>::type, MOD>>;
 */
+
+#endif
 
 #pragma endregion mint
