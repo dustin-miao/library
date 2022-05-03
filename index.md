@@ -175,6 +175,23 @@ data:
     - icon: ':heavy_check_mark:'
       path: random/random-vector.hpp
       title: Randomized Vector
+  - name: tree
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: tree/depth.hpp
+      title: tree/depth.hpp
+    - icon: ':heavy_check_mark:'
+      path: tree/diameter.hpp
+      title: tree/diameter.hpp
+    - icon: ':heavy_check_mark:'
+      path: tree/distance.hpp
+      title: tree/distance.hpp
+    - icon: ':heavy_check_mark:'
+      path: tree/parent.hpp
+      title: tree/parent.hpp
+    - icon: ':heavy_check_mark:'
+      path: tree/unweight.hpp
+      title: tree/unweight.hpp
   - name: utility
     pages:
     - icon: ':heavy_check_mark:'
@@ -237,6 +254,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/cyclic-product.yosupo-a+b.test.cpp
       title: verify/cyclic-product.yosupo-a+b.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/diameter.yosupo-tree-diameter.test.cpp
+      title: verify/diameter.yosupo-tree-diameter.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/dijkstra.aizu-shortest-path.test.cpp
       title: verify/dijkstra.aizu-shortest-path.test.cpp
