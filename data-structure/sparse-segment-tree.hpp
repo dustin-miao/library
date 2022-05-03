@@ -12,9 +12,9 @@ protected:
 
 	struct node {
 		T v;
-		long long l, r;
+		int l, r;
 		node() = default;
-		node(T _v, long long _l, long long _r) : v(_v), l(_l), r(_r) {}
+		node(T _v, int  _l, int _r) : v(_v), l(_l), r(_r) {}
 	};
 
 	int root;
