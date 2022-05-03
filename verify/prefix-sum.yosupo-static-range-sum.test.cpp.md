@@ -23,19 +23,19 @@ data:
     \tint N, Q;\n\tcin >> N >> Q;\n\tvector<long long> A(N);\n\tfor (auto &a : A)\n\
     \t\tcin >> a;\n\tauto P = prefix_sum(A);\n\twhile (Q--) {\n\t\tint l, r;\n\t\t\
     cin >> l >> r;\n\t\tcout << P[r - 1] - (l == 0 ? 0 : P[l - 1]) << '\\n';\n\t}\n\
-    }\n"
+    } \n"
   code: "#define PROBLM \"https://judge.yosupo.jp/problem/static_range_sum\"\n\n#include\
     \ <bits/stdc++.h>\nusing namespace std;\n\n#include \"utility/prefix-sum.hpp\"\
     \n\nint main() {\n\tint N, Q;\n\tcin >> N >> Q;\n\tvector<long long> A(N);\n\t\
     for (auto &a : A)\n\t\tcin >> a;\n\tauto P = prefix_sum(A);\n\twhile (Q--) {\n\
     \t\tint l, r;\n\t\tcin >> l >> r;\n\t\tcout << P[r - 1] - (l == 0 ? 0 : P[l -\
-    \ 1]) << '\\n';\n\t}\n}"
+    \ 1]) << '\\n';\n\t}\n} "
   dependsOn:
   - utility/prefix-sum.hpp
   isVerificationFile: true
   path: verify/prefix-sum.yosupo-static-range-sum.test.cpp
   requiredBy: []
-  timestamp: '2022-05-03 15:18:46-07:00'
+  timestamp: '2022-05-03 15:23:53-07:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/prefix-sum.yosupo-static-range-sum.test.cpp
