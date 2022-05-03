@@ -1,5 +1,8 @@
 #pragma region y_combinator
 
+#ifndef Y_COMBINATOR_HPP
+#define Y_COMBINATOR_HPP
+
 template<class Fun>
 class y_combinator_result {
 	Fun fun_;
@@ -17,5 +20,7 @@ template<class Fun>
 decltype(auto) y_combinator(Fun &&fun) {
 	return y_combinator_result<std::decay_t<Fun>>(std::forward<Fun>(fun));
 }
+
+#endif
 
 #pragma endregion y_combinator
