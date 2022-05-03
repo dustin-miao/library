@@ -77,6 +77,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/segment-tree.hpp
       title: Segment Tree
+    - icon: ':warning:'
+      path: data-structure/sparse-binary-trie.hpp
+      title: Sparse Binary Trie
     - icon: ':heavy_check_mark:'
       path: data-structure/sparse-segment-tree.hpp
       title: Sparse Segment Tree
