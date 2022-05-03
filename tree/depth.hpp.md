@@ -7,7 +7,7 @@ data:
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: tree/diameter.hpp
-    title: tree/diameter.hpp
+    title: Diameter
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/diameter.yosupo-tree-diameter.test.cpp
@@ -51,8 +51,7 @@ data:
   - verify/diameter.yosupo-tree-diameter.test.cpp
 documentation_of: tree/depth.hpp
 layout: document
-redirect_from:
-- /library/tree/depth.hpp
-- /library/tree/depth.hpp.html
-title: tree/depth.hpp
+title: Depth
 ---
+
+## Tree Depth

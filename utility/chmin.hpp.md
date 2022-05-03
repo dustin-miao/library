@@ -35,12 +35,13 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"utility/chmin.hpp\"\n#pragma region chmin\n\ntemplate<typename\
+  bundledCode: "#line 1 \"utility/chmin.hpp\"\n#pragma region chmin\n\n#ifndef CHMIN_HPP\n\
+    #define CHMIN_HPP\n\ntemplate<typename T>\nbool chmin(T &a, T b) {\n\tif (a >\
+    \ b) {\n\t\ta = b;\n\t\treturn true;\n\t}\n\treturn false;\n}\n\n#endif\n\n#pragma\
+    \ endregion chmin\n"
+  code: "#pragma region chmin\n\n#ifndef CHMIN_HPP\n#define CHMIN_HPP\n\ntemplate<typename\
     \ T>\nbool chmin(T &a, T b) {\n\tif (a > b) {\n\t\ta = b;\n\t\treturn true;\n\t\
-    }\n\treturn false;\n}\n\n#pragma endregion chmin\n"
-  code: "#pragma region chmin\n\ntemplate<typename T>\nbool chmin(T &a, T b) {\n\t\
-    if (a > b) {\n\t\ta = b;\n\t\treturn true;\n\t}\n\treturn false;\n}\n\n#pragma\
-    \ endregion chmin"
+    }\n\treturn false;\n}\n\n#endif\n\n#pragma endregion chmin"
   dependsOn: []
   isVerificationFile: false
   path: utility/chmin.hpp
@@ -48,7 +49,7 @@ data:
   - graph/prim.hpp
   - graph/dijkstra.hpp
   - graph/floyd-warshall.hpp
-  timestamp: '2022-04-29 22:36:50-07:00'
+  timestamp: '2022-05-03 13:27:25-07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/prim.aizu-minimum-spanning-tree.test.cpp

@@ -4,16 +4,16 @@ data:
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: tree/depth.hpp
-    title: tree/depth.hpp
+    title: Depth
   - icon: ':heavy_check_mark:'
     path: tree/diameter.hpp
-    title: tree/diameter.hpp
+    title: Diameter
   - icon: ':heavy_check_mark:'
     path: tree/distance.hpp
-    title: tree/distance.hpp
+    title: Distance
   - icon: ':heavy_check_mark:'
     path: tree/parent.hpp
-    title: tree/parent.hpp
+    title: Parent
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/diameter.yosupo-tree-diameter.test.cpp

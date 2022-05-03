@@ -20,9 +20,10 @@ data:
   bundledCode: "#line 1 \"verify/dijkstra.aizu-shortest-path.test.cpp\"\n#define PROBLEM\
     \ \"https://judge.yosupo.jp/problem/shortest_path\"\n\n#include <bits/stdc++.h>\n\
     using namespace std;\n\n#line 1 \"utility/chmin.hpp\"\n#pragma region chmin\n\n\
-    template<typename T>\nbool chmin(T &a, T b) {\n\tif (a > b) {\n\t\ta = b;\n\t\t\
-    return true;\n\t}\n\treturn false;\n}\n\n#pragma endregion chmin\n#line 2 \"graph/dijkstra.hpp\"\
-    \n\n#pragma region dijkstra\n\ntemplate<typename T>\npair<vector<long long>, vector<int>>\
+    #ifndef CHMIN_HPP\n#define CHMIN_HPP\n\ntemplate<typename T>\nbool chmin(T &a,\
+    \ T b) {\n\tif (a > b) {\n\t\ta = b;\n\t\treturn true;\n\t}\n\treturn false;\n\
+    }\n\n#endif\n\n#pragma endregion chmin\n#line 2 \"graph/dijkstra.hpp\"\n\n#pragma\
+    \ region dijkstra\n\ntemplate<typename T>\npair<vector<long long>, vector<int>>\
     \ dijkstra(const vector<vector<pair<int, T>>> &G, int s) {\n\tint n = G.size();\n\
     \tpriority_queue<pair<T, int>, vector<pair<T, int>>, greater<pair<T, int>>> pq;\n\
     \tvector<T> dis(n, numeric_limits<T>::max());\n\tvector<int> par(n, -1);\n\n\t\
@@ -55,7 +56,7 @@ data:
   isVerificationFile: true
   path: verify/dijkstra.aizu-shortest-path.test.cpp
   requiredBy: []
-  timestamp: '2022-04-29 22:36:50-07:00'
+  timestamp: '2022-05-03 13:27:25-07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/dijkstra.aizu-shortest-path.test.cpp

@@ -17,10 +17,11 @@ data:
   bundledCode: "#line 1 \"verify/ceil-div.yosupo-many-a+b.test.cpp\"\n#define PROBLEM\
     \ \"https://judge.yosupo.jp/problem/many_aplusb\"\n\n#include <bits/stdc++.h>\n\
     using namespace std;\n\n#line 1 \"utility/ceil-div.hpp\"\n#pragma region ceil_div\n\
-    \ntemplate<typename T>\nT ceil_div(T a, T b) { \n\treturn a / b + ((a ^ b) > 0\
-    \ && a % b); \n} \n\n#pragma endregion ceil_div\n#line 7 \"verify/ceil-div.yosupo-many-a+b.test.cpp\"\
-    \n\nint main() {\n\tint TC;\n\tcin >> TC;\n\twhile (TC--) {\n\t\tlong long a,\
-    \ b;\n\t\tcin >> a >> b;\n\t\tcout << a + b << '\\n';\n\t\tassert(b == 0 || ceil_div(a,\
+    \n#ifndef CEIL_DIV_HPP\n#define CEIL_DIV_HPP\n\ntemplate<typename T>\nT ceil_div(T\
+    \ a, T b) { \n\treturn a / b + ((a ^ b) > 0 && a % b); \n} \n\n#endif\n\n#pragma\
+    \ endregion ceil_div\n#line 7 \"verify/ceil-div.yosupo-many-a+b.test.cpp\"\n\n\
+    int main() {\n\tint TC;\n\tcin >> TC;\n\twhile (TC--) {\n\t\tlong long a, b;\n\
+    \t\tcin >> a >> b;\n\t\tcout << a + b << '\\n';\n\t\tassert(b == 0 || ceil_div(a,\
     \ b) == (a % b == 0 ? a / b : a / b + 1));\n\t}\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/many_aplusb\"\n\n#include\
     \ <bits/stdc++.h>\nusing namespace std;\n\n#include \"utility/ceil-div.hpp\"\n\
@@ -32,7 +33,7 @@ data:
   isVerificationFile: true
   path: verify/ceil-div.yosupo-many-a+b.test.cpp
   requiredBy: []
-  timestamp: '2022-04-29 22:36:50-07:00'
+  timestamp: '2022-05-03 13:27:25-07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/ceil-div.yosupo-many-a+b.test.cpp

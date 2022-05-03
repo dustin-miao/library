@@ -20,17 +20,19 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"utility/floor-div.hpp\"\n#pragma region floor_div\n\ntemplate<typename\
-    \ T>\nT floor_div(T a, T b) { \n\treturn a / b - ((a ^ b) < 0 && a % b); \n}\n\
-    \n#pragma endregion floor_div\n"
-  code: "#pragma region floor_div\n\ntemplate<typename T>\nT floor_div(T a, T b) {\
-    \ \n\treturn a / b - ((a ^ b) < 0 && a % b); \n}\n\n#pragma endregion floor_div"
+  bundledCode: "#line 1 \"utility/floor-div.hpp\"\n#pragma region floor_div\n\n#ifndef\
+    \ FLOOR_DIV_HPP\n#define FLOOR_DIV_HPP\n\ntemplate<typename T>\nT floor_div(T\
+    \ a, T b) { \n\treturn a / b - ((a ^ b) < 0 && a % b); \n}\n\n#endif\n\n#pragma\
+    \ endregion floor_div\n"
+  code: "#pragma region floor_div\n\n#ifndef FLOOR_DIV_HPP\n#define FLOOR_DIV_HPP\n\
+    \ntemplate<typename T>\nT floor_div(T a, T b) { \n\treturn a / b - ((a ^ b) <\
+    \ 0 && a % b); \n}\n\n#endif\n\n#pragma endregion floor_div"
   dependsOn: []
   isVerificationFile: false
   path: utility/floor-div.hpp
   requiredBy:
   - geometry/line-container.hpp
-  timestamp: '2022-04-29 22:36:50-07:00'
+  timestamp: '2022-05-03 13:27:25-07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/monotonic-dp-hull.yosupo-a+b.test.cpp

@@ -3,10 +3,10 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: tree/depth.hpp
-    title: tree/depth.hpp
+    title: Depth
   - icon: ':heavy_check_mark:'
     path: tree/distance.hpp
-    title: tree/distance.hpp
+    title: Distance
   - icon: ':heavy_check_mark:'
     path: utility/y-combinator.hpp
     title: Y-Combinator
@@ -83,8 +83,7 @@ data:
   - verify/diameter.yosupo-tree-diameter.test.cpp
 documentation_of: tree/diameter.hpp
 layout: document
-redirect_from:
-- /library/tree/diameter.hpp
-- /library/tree/diameter.hpp.html
-title: tree/diameter.hpp
+title: Diameter
 ---
+
+## Tree Diameter

@@ -103,13 +103,15 @@ data:
     \ + 1] - h1.points[i];\n\t\tauto d2 = h2.points[j + 1] - h2.points[j];\n\t\tif\
     \ ((d2 ^ d1) > 0)\n\t\t\ti++;\n\t\telse\n\t\t\tj++;\n\t}\n\tsum.add(h1.points.back()\
     \ + h2.points.back());\n\treturn sum;\n}\n\n#pragma endregion monotonic_dp_hull_minkowski_sum\n\
-    #line 1 \"random/mersenne-twister.hpp\"\n#pragma region rng\n\nmt19937 _rng(chrono::steady_clock::now().time_since_epoch().count());\n\
+    #line 1 \"random/mersenne-twister.hpp\"\n#pragma region rng\n\n#ifndef MERSENNE_TWISTER_HPP\n\
+    #define MERSENNE_TWISTER_HPP\n\nmt19937 _rng(chrono::steady_clock::now().time_since_epoch().count());\n\
     \ntemplate<typename T = int>\ntypename enable_if<is_integral<T>::value, T>::type\
-    \ rng(T l, T r) { return uniform_int_distribution<T>(l, r)(_rng); }\n\n#pragma\
-    \ endregion rng\n#line 2 \"random/random-vector.hpp\"\n\n#pragma region rng_vector\n\
-    \ntemplate<typename T>\ntypename enable_if<is_integral<T>::value, vector<T>>::type\
-    \ rng_vector(int n, T l, T r) {\n\tvector<T> v(n);\n\tfor (auto &a : v)\n\t\t\
-    a = rng(l, r);\n\treturn v;\n}\n\n#pragma endregion rng_vector\n#line 8 \"verify/monotonic-dp-hull-minkowski-sum.yosupo-a+b.test.cpp\"\
+    \ rng(T l, T r) { return uniform_int_distribution<T>(l, r)(_rng); }\n\n#endif\n\
+    \n#pragma endregion rng\n#line 2 \"random/random-vector.hpp\"\n\n#pragma region\
+    \ rng_vector\n\n#ifndef RNG_VECTOR_HPP\n#define RNG_VECTOR_HPP\n\ntemplate<typename\
+    \ T>\ntypename enable_if<is_integral<T>::value, vector<T>>::type rng_vector(int\
+    \ n, T l, T r) {\n\tvector<T> v(n);\n\tfor (auto &a : v)\n\t\ta = rng(l, r);\n\
+    \treturn v;\n}\n\n#endif\n\n#pragma endregion rng_vector\n#line 8 \"verify/monotonic-dp-hull-minkowski-sum.yosupo-a+b.test.cpp\"\
     \n\nint main() {\n\t{\n\t\tint T = 1e6;\n\t\tauto slope1 = rng_vector<long long>(T,\
     \ -1e6, 1e6), intercept1 = rng_vector<long long>(T, -1e9, 1e9);\n\t\tauto slope2\
     \ = rng_vector<long long>(T, -1e6, 1e6), intercept2 = rng_vector<long long>(T,\
@@ -143,7 +145,7 @@ data:
   isVerificationFile: true
   path: verify/monotonic-dp-hull-minkowski-sum.yosupo-a+b.test.cpp
   requiredBy: []
-  timestamp: '2022-04-30 13:42:54-07:00'
+  timestamp: '2022-05-03 13:32:14-07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/monotonic-dp-hull-minkowski-sum.yosupo-a+b.test.cpp

@@ -17,10 +17,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: convolution/fast-fourier-transform.hpp
     title: Fast Fourier Transform
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: convolution/slow-convolution.hpp
     title: Slow Convolution
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: convolution/slow-fast-fourier-transform.hpp
     title: Slow Fast Fourier Transform
   _extendedVerifiedWith:
@@ -42,12 +42,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/cyclic-product.yosupo-a+b.test.cpp
     title: verify/cyclic-product.yosupo-a+b.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/slow-convolution.yosupo-frequency-table-of-tree-distances.test.cpp
     title: verify/slow-convolution.yosupo-frequency-table-of-tree-distances.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: '#line 1 "utility/pi.hpp"
@@ -55,7 +55,15 @@ data:
     #pragma region Pi
 
 
+    #ifndef PI_HPP
+
+    #define PI_HPP
+
+
     const double PI = acos(-1);
+
+
+    #endif
 
 
     #pragma endregion Pi
@@ -64,7 +72,15 @@ data:
   code: '#pragma region Pi
 
 
+    #ifndef PI_HPP
+
+    #define PI_HPP
+
+
     const double PI = acos(-1);
+
+
+    #endif
 
 
     #pragma endregion Pi'
@@ -79,8 +95,8 @@ data:
   - convolution/slow-fast-fourier-transform.hpp
   - convolution/cyclic-product.hpp
   - convolution/convolution-mod.hpp
-  timestamp: '2022-04-29 22:36:50-07:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2022-05-03 13:27:25-07:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/convolution.yosupo-frequency-table-of-tree-distances.test.cpp
   - verify/complex-convolution.aizu-naive-string-search.test.cpp

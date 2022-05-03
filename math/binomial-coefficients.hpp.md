@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: math/inverse.hpp
     title: Modulo Inverse
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utility/mint.hpp
     title: Modular Int
   _extendedRequiredBy: []
@@ -19,14 +19,14 @@ data:
     \ y = 0;\n\t\twhile (a) {\n\t\t\tT q = b / a;\n\t\t\tswap(a, b %= a);\n\t\t\t\
     swap(x, y -= q * x);\n\t\t}\n\t\tassert(b == 1);\n\t\treturn y < 0 ? y + p : y;\n\
     \t}\n}\n\n#pragma endregion modular_inverse\n#line 2 \"utility/mint.hpp\"\n\n\
-    #pragma region mint\n\ntemplate<typename T>\nclass Modular {\npublic:\n\tusing\
-    \ Type = typename decay<decltype(T::value)>::type;\n\t\n\tconstexpr Modular()\
-    \ : value() {}\n\n\ttemplate<typename U>\n\tModular(const U &x) { value = normalize(x);\
-    \ }\n\n\ttemplate<typename U>\n\tstatic Type normalize(const U &x) {\n\t\tType\
-    \ v;\n\t\tif (-mod() <= x && x < mod()) \n\t\t\tv = static_cast<Type>(x);\n\t\t\
-    else \n\t\t\tv = static_cast<Type>(x % mod());\n\t\tif (v < 0) \n\t\t\tv += mod();\n\
-    \t\treturn v;\n\t}\n\n\tconst Type &operator()() const { return value; }\n\n\t\
-    template<typename U>\n\texplicit operator U() const { return static_cast<U>(value);\
+    #pragma region mint\n\n#ifndef MINT_HPP\n#define MINT_HPP\n\ntemplate<typename\
+    \ T>\nclass Modular {\npublic:\n\tusing Type = typename decay<decltype(T::value)>::type;\n\
+    \t\n\tconstexpr Modular() : value() {}\n\n\ttemplate<typename U>\n\tModular(const\
+    \ U &x) { value = normalize(x); }\n\n\ttemplate<typename U>\n\tstatic Type normalize(const\
+    \ U &x) {\n\t\tType v;\n\t\tif (-mod() <= x && x < mod()) \n\t\t\tv = static_cast<Type>(x);\n\
+    \t\telse \n\t\t\tv = static_cast<Type>(x % mod());\n\t\tif (v < 0) \n\t\t\tv +=\
+    \ mod();\n\t\treturn v;\n\t}\n\n\tconst Type &operator()() const { return value;\
+    \ }\n\n\ttemplate<typename U>\n\texplicit operator U() const { return static_cast<U>(value);\
     \ }\n\n\tconstexpr static Type mod() { return T::value; }\n\n\tModular &operator+=(const\
     \ Modular &a) { \n\t\tif ((value += a.value) >= mod()) \n\t\t\tvalue -= mod();\
     \ \n\t\treturn *this; \n\t}\n\n\tModular &operator-=(const Modular &a) { \n\t\t\
@@ -95,7 +95,7 @@ data:
     \ = int;\n\nstruct VarMod { static ModType value; };\n\nModType VarMod::value;\n\
     \nModType &MOD = VarMod::value;\n\nusing mint = Modular<VarMod>;\n// */\n\n/*\n\
     constexpr int MOD = HERE;\n\nusing mint = Modular<integral_constant<decay<decltype(MOD)>::type,\
-    \ MOD>>;\n*/\n\n#pragma endregion mint\n#line 2 \"math/binomial-coefficients.hpp\"\
+    \ MOD>>;\n*/\n\n#endif\n\n#pragma endregion mint\n#line 2 \"math/binomial-coefficients.hpp\"\
     \n\n#pragma region binomial_coefficients\n\nnamespace math {\n\tstruct binomial_coefficients\
     \ {\n\t\tvector<mint> fact, inv_fact;\n\n\t\tbinomial_coefficients() = default;\n\
     \n\t\tbinomial_coefficients(int n) { init(n); }\n\n\t\tvoid init(int n) {\n\t\t\
@@ -120,7 +120,7 @@ data:
   isVerificationFile: false
   path: math/binomial-coefficients.hpp
   requiredBy: []
-  timestamp: '2022-04-30 10:59:16-07:00'
+  timestamp: '2022-05-03 13:27:25-07:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: math/binomial-coefficients.hpp

@@ -28,6 +28,11 @@ data:
     #pragma region rng
 
 
+    #ifndef MERSENNE_TWISTER_HPP
+
+    #define MERSENNE_TWISTER_HPP
+
+
     mt19937 _rng(chrono::steady_clock::now().time_since_epoch().count());
 
 
@@ -35,6 +40,9 @@ data:
 
     typename enable_if<is_integral<T>::value, T>::type rng(T l, T r) { return uniform_int_distribution<T>(l,
     r)(_rng); }
+
+
+    #endif
 
 
     #pragma endregion rng
@@ -43,6 +51,11 @@ data:
   code: '#pragma region rng
 
 
+    #ifndef MERSENNE_TWISTER_HPP
+
+    #define MERSENNE_TWISTER_HPP
+
+
     mt19937 _rng(chrono::steady_clock::now().time_since_epoch().count());
 
 
@@ -52,13 +65,16 @@ data:
     r)(_rng); }
 
 
+    #endif
+
+
     #pragma endregion rng'
   dependsOn: []
   isVerificationFile: false
   path: random/mersenne-twister.hpp
   requiredBy:
   - random/random-vector.hpp
-  timestamp: '2022-04-29 22:36:50-07:00'
+  timestamp: '2022-05-03 13:32:14-07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/monotonic-dp-hull.yosupo-a+b.test.cpp

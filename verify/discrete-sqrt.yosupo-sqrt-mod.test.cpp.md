@@ -4,10 +4,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/discrete-sqrt.hpp
     title: Discrete Square Root
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: math/inverse.hpp
     title: Modulo Inverse
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utility/mint.hpp
     title: Modular Int
   _extendedRequiredBy: []
@@ -27,14 +27,14 @@ data:
     \ = p, x = 1, y = 0;\n\t\twhile (a) {\n\t\t\tT q = b / a;\n\t\t\tswap(a, b %=\
     \ a);\n\t\t\tswap(x, y -= q * x);\n\t\t}\n\t\tassert(b == 1);\n\t\treturn y <\
     \ 0 ? y + p : y;\n\t}\n}\n\n#pragma endregion modular_inverse\n#line 2 \"utility/mint.hpp\"\
-    \n\n#pragma region mint\n\ntemplate<typename T>\nclass Modular {\npublic:\n\t\
-    using Type = typename decay<decltype(T::value)>::type;\n\t\n\tconstexpr Modular()\
-    \ : value() {}\n\n\ttemplate<typename U>\n\tModular(const U &x) { value = normalize(x);\
-    \ }\n\n\ttemplate<typename U>\n\tstatic Type normalize(const U &x) {\n\t\tType\
-    \ v;\n\t\tif (-mod() <= x && x < mod()) \n\t\t\tv = static_cast<Type>(x);\n\t\t\
-    else \n\t\t\tv = static_cast<Type>(x % mod());\n\t\tif (v < 0) \n\t\t\tv += mod();\n\
-    \t\treturn v;\n\t}\n\n\tconst Type &operator()() const { return value; }\n\n\t\
-    template<typename U>\n\texplicit operator U() const { return static_cast<U>(value);\
+    \n\n#pragma region mint\n\n#ifndef MINT_HPP\n#define MINT_HPP\n\ntemplate<typename\
+    \ T>\nclass Modular {\npublic:\n\tusing Type = typename decay<decltype(T::value)>::type;\n\
+    \t\n\tconstexpr Modular() : value() {}\n\n\ttemplate<typename U>\n\tModular(const\
+    \ U &x) { value = normalize(x); }\n\n\ttemplate<typename U>\n\tstatic Type normalize(const\
+    \ U &x) {\n\t\tType v;\n\t\tif (-mod() <= x && x < mod()) \n\t\t\tv = static_cast<Type>(x);\n\
+    \t\telse \n\t\t\tv = static_cast<Type>(x % mod());\n\t\tif (v < 0) \n\t\t\tv +=\
+    \ mod();\n\t\treturn v;\n\t}\n\n\tconst Type &operator()() const { return value;\
+    \ }\n\n\ttemplate<typename U>\n\texplicit operator U() const { return static_cast<U>(value);\
     \ }\n\n\tconstexpr static Type mod() { return T::value; }\n\n\tModular &operator+=(const\
     \ Modular &a) { \n\t\tif ((value += a.value) >= mod()) \n\t\t\tvalue -= mod();\
     \ \n\t\treturn *this; \n\t}\n\n\tModular &operator-=(const Modular &a) { \n\t\t\
@@ -103,10 +103,10 @@ data:
     \ = int;\n\nstruct VarMod { static ModType value; };\n\nModType VarMod::value;\n\
     \nModType &MOD = VarMod::value;\n\nusing mint = Modular<VarMod>;\n// */\n\n/*\n\
     constexpr int MOD = HERE;\n\nusing mint = Modular<integral_constant<decay<decltype(MOD)>::type,\
-    \ MOD>>;\n*/\n\n#pragma endregion mint\n#line 2 \"math/discrete-sqrt.hpp\"\n\n\
-    #pragma region discrete_sqrt\n\nnamespace math {\n\ttemplate<typename T = long\
-    \ long>\n\tT discrete_sqrt(const T &a, const T &mod) {\n\t\tassert(0 <= a && a\
-    \ < mod);\n\t\tif (a < 2) \n\t\t\treturn a;\n\t\tMOD = mod;\n\t\tif (fast_pow(mint(a),\
+    \ MOD>>;\n*/\n\n#endif\n\n#pragma endregion mint\n#line 2 \"math/discrete-sqrt.hpp\"\
+    \n\n#pragma region discrete_sqrt\n\nnamespace math {\n\ttemplate<typename T =\
+    \ long long>\n\tT discrete_sqrt(const T &a, const T &mod) {\n\t\tassert(0 <= a\
+    \ && a < mod);\n\t\tif (a < 2) \n\t\t\treturn a;\n\t\tMOD = mod;\n\t\tif (fast_pow(mint(a),\
     \ (mod - 1) >> 1) != 1) \n\t\t\treturn -1;\n\t\tmint b = 1;\n\t\tfor (; fast_pow(b,\
     \ (mod - 1) >> 1) == 1; b++);\n\t\tT m = mod - 1, e = 0;\n\t\tfor (; m % 2 ==\
     \ 0; m >>= 1, e++);\n\t\tmint x = fast_pow(mint(a), (m - 1) >> 1), y = mint(a)\
@@ -130,7 +130,7 @@ data:
   isVerificationFile: true
   path: verify/discrete-sqrt.yosupo-sqrt-mod.test.cpp
   requiredBy: []
-  timestamp: '2022-04-30 10:59:16-07:00'
+  timestamp: '2022-05-03 13:27:25-07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/discrete-sqrt.yosupo-sqrt-mod.test.cpp

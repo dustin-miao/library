@@ -4,10 +4,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: data-structure/lazy-segment-tree.hpp
     title: Lazy Segment Tree
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: math/inverse.hpp
     title: Modulo Inverse
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utility/mint.hpp
     title: Modular Int
   _extendedRequiredBy: []
@@ -27,28 +27,29 @@ data:
     \tT inverse(T a, T p) {\n\t\tT b = p, x = 1, y = 0;\n\t\twhile (a) {\n\t\t\tT\
     \ q = b / a;\n\t\t\tswap(a, b %= a);\n\t\t\tswap(x, y -= q * x);\n\t\t}\n\t\t\
     assert(b == 1);\n\t\treturn y < 0 ? y + p : y;\n\t}\n}\n\n#pragma endregion modular_inverse\n\
-    #line 2 \"utility/mint.hpp\"\n\n#pragma region mint\n\ntemplate<typename T>\n\
-    class Modular {\npublic:\n\tusing Type = typename decay<decltype(T::value)>::type;\n\
-    \t\n\tconstexpr Modular() : value() {}\n\n\ttemplate<typename U>\n\tModular(const\
-    \ U &x) { value = normalize(x); }\n\n\ttemplate<typename U>\n\tstatic Type normalize(const\
-    \ U &x) {\n\t\tType v;\n\t\tif (-mod() <= x && x < mod()) \n\t\t\tv = static_cast<Type>(x);\n\
-    \t\telse \n\t\t\tv = static_cast<Type>(x % mod());\n\t\tif (v < 0) \n\t\t\tv +=\
-    \ mod();\n\t\treturn v;\n\t}\n\n\tconst Type &operator()() const { return value;\
-    \ }\n\n\ttemplate<typename U>\n\texplicit operator U() const { return static_cast<U>(value);\
-    \ }\n\n\tconstexpr static Type mod() { return T::value; }\n\n\tModular &operator+=(const\
-    \ Modular &a) { \n\t\tif ((value += a.value) >= mod()) \n\t\t\tvalue -= mod();\
-    \ \n\t\treturn *this; \n\t}\n\n\tModular &operator-=(const Modular &a) { \n\t\t\
-    if ((value -= a.value) < 0) \n\t\t\tvalue += mod(); \n\t\treturn *this; \n\t}\n\
-    \n\ttemplate<typename U> \n\tModular &operator+=(const U &other) { return *this\
-    \ += Modular(other); }\n\n\ttemplate<typename U> \n\tModular &operator-=(const\
-    \ U &other) { return *this -= Modular(other); }\n\n\tModular &operator++() { return\
-    \ *this += 1; }\n\n\tModular &operator--() { return *this -= 1; }\n\n\tModular\
-    \ operator++(int) { \n\t\tModular result(*this); \n\t\t*this += 1; \n\t\treturn\
-    \ result; \n\t}\n\n\tModular operator--(int) { \n\t\tModular result(*this);\n\t\
-    \t*this -= 1; \n\t\treturn result; \n\t}\n\n\tModular operator-() const { return\
-    \ Modular(-value); }\n\n\ttemplate<typename U = T>\n\ttypename enable_if<is_same<typename\
-    \ Modular<U>::Type, int>::value, Modular>::type\n\t&operator*=(const Modular &a)\
-    \ {\n#ifdef _WIN32\n\t\tuint64_t x = static_cast<int64_t>(value) * static_cast<int64_t>(a.value);\n\
+    #line 2 \"utility/mint.hpp\"\n\n#pragma region mint\n\n#ifndef MINT_HPP\n#define\
+    \ MINT_HPP\n\ntemplate<typename T>\nclass Modular {\npublic:\n\tusing Type = typename\
+    \ decay<decltype(T::value)>::type;\n\t\n\tconstexpr Modular() : value() {}\n\n\
+    \ttemplate<typename U>\n\tModular(const U &x) { value = normalize(x); }\n\n\t\
+    template<typename U>\n\tstatic Type normalize(const U &x) {\n\t\tType v;\n\t\t\
+    if (-mod() <= x && x < mod()) \n\t\t\tv = static_cast<Type>(x);\n\t\telse \n\t\
+    \t\tv = static_cast<Type>(x % mod());\n\t\tif (v < 0) \n\t\t\tv += mod();\n\t\t\
+    return v;\n\t}\n\n\tconst Type &operator()() const { return value; }\n\n\ttemplate<typename\
+    \ U>\n\texplicit operator U() const { return static_cast<U>(value); }\n\n\tconstexpr\
+    \ static Type mod() { return T::value; }\n\n\tModular &operator+=(const Modular\
+    \ &a) { \n\t\tif ((value += a.value) >= mod()) \n\t\t\tvalue -= mod(); \n\t\t\
+    return *this; \n\t}\n\n\tModular &operator-=(const Modular &a) { \n\t\tif ((value\
+    \ -= a.value) < 0) \n\t\t\tvalue += mod(); \n\t\treturn *this; \n\t}\n\n\ttemplate<typename\
+    \ U> \n\tModular &operator+=(const U &other) { return *this += Modular(other);\
+    \ }\n\n\ttemplate<typename U> \n\tModular &operator-=(const U &other) { return\
+    \ *this -= Modular(other); }\n\n\tModular &operator++() { return *this += 1; }\n\
+    \n\tModular &operator--() { return *this -= 1; }\n\n\tModular operator++(int)\
+    \ { \n\t\tModular result(*this); \n\t\t*this += 1; \n\t\treturn result; \n\t}\n\
+    \n\tModular operator--(int) { \n\t\tModular result(*this);\n\t\t*this -= 1; \n\
+    \t\treturn result; \n\t}\n\n\tModular operator-() const { return Modular(-value);\
+    \ }\n\n\ttemplate<typename U = T>\n\ttypename enable_if<is_same<typename Modular<U>::Type,\
+    \ int>::value, Modular>::type\n\t&operator*=(const Modular &a) {\n#ifdef _WIN32\n\
+    \t\tuint64_t x = static_cast<int64_t>(value) * static_cast<int64_t>(a.value);\n\
     \t\tuint32_t xh = static_cast<uint32_t>(x >> 32), xl = static_cast<uint32_t>(x),\
     \ d, m;\n\t\tasm(\n\t\t\t\"divl %4; \\n\\t\"\n\t\t\t: \"=a\" (d), \"=d\" (m)\n\
     \t\t\t: \"d\" (xh), \"a\" (xl), \"r\" (mod())\n\t\t);\n\t\tvalue = m;\n#else\n\
@@ -103,7 +104,7 @@ data:
     \ = int;\n\nstruct VarMod { static ModType value; };\n\nModType VarMod::value;\n\
     \nModType &MOD = VarMod::value;\n\nusing mint = Modular<VarMod>;\n// */\n\n/*\n\
     constexpr int MOD = HERE;\n\nusing mint = Modular<integral_constant<decay<decltype(MOD)>::type,\
-    \ MOD>>;\n*/\n\n#pragma endregion mint\n#line 1 \"data-structure/lazy-segment-tree.hpp\"\
+    \ MOD>>;\n*/\n\n#endif\n\n#pragma endregion mint\n#line 1 \"data-structure/lazy-segment-tree.hpp\"\
     \n#pragma region lazy_segment_tree\n\ntemplate<class segment_tree_template>\n\
     class lazy_segment_tree : public segment_tree_template {\n\tusing T = typename\
     \ segment_tree_template::node_type;\n\tusing L = typename segment_tree_template::lazy_type;\n\
@@ -163,7 +164,7 @@ data:
   isVerificationFile: true
   path: verify/lazy-segment-tree.yosupo-range-affine-range-sum.test.cpp
   requiredBy: []
-  timestamp: '2022-04-30 10:59:16-07:00'
+  timestamp: '2022-05-03 13:27:25-07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/lazy-segment-tree.yosupo-range-affine-range-sum.test.cpp

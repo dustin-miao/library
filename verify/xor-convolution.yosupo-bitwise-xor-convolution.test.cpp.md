@@ -1,26 +1,26 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: convolution/fast-walsh-hadamard-transform.hpp
     title: Fast Walsh-Hadamard Transform
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: convolution/inverse-fast-walsh-hadamard-transform.hpp
     title: Inverse Fast Walsh-Hadamard Transform
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: convolution/xor-convolution.hpp
     title: Xor Convolution
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: math/inverse.hpp
     title: Modulo Inverse
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utility/mint.hpp
     title: Modular Int
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/bitwise_xor_convolution
@@ -53,8 +53,8 @@ data:
     \ a, T p) {\n\t\tT b = p, x = 1, y = 0;\n\t\twhile (a) {\n\t\t\tT q = b / a;\n\
     \t\t\tswap(a, b %= a);\n\t\t\tswap(x, y -= q * x);\n\t\t}\n\t\tassert(b == 1);\n\
     \t\treturn y < 0 ? y + p : y;\n\t}\n}\n\n#pragma endregion modular_inverse\n#line\
-    \ 2 \"utility/mint.hpp\"\n\n#pragma region mint\n\ntemplate<typename T>\nclass\
-    \ Modular {\npublic:\n\tusing Type = typename decay<decltype(T::value)>::type;\n\
+    \ 2 \"utility/mint.hpp\"\n\n#pragma region mint\n\n#ifndef MINT_HPP\n#define MINT_HPP\n\
+    \ntemplate<typename T>\nclass Modular {\npublic:\n\tusing Type = typename decay<decltype(T::value)>::type;\n\
     \t\n\tconstexpr Modular() : value() {}\n\n\ttemplate<typename U>\n\tModular(const\
     \ U &x) { value = normalize(x); }\n\n\ttemplate<typename U>\n\tstatic Type normalize(const\
     \ U &x) {\n\t\tType v;\n\t\tif (-mod() <= x && x < mod()) \n\t\t\tv = static_cast<Type>(x);\n\
@@ -129,7 +129,7 @@ data:
     \ = int;\n\nstruct VarMod { static ModType value; };\n\nModType VarMod::value;\n\
     \nModType &MOD = VarMod::value;\n\nusing mint = Modular<VarMod>;\n// */\n\n/*\n\
     constexpr int MOD = HERE;\n\nusing mint = Modular<integral_constant<decay<decltype(MOD)>::type,\
-    \ MOD>>;\n*/\n\n#pragma endregion mint\n#line 8 \"verify/xor-convolution.yosupo-bitwise-xor-convolution.test.cpp\"\
+    \ MOD>>;\n*/\n\n#endif\n\n#pragma endregion mint\n#line 8 \"verify/xor-convolution.yosupo-bitwise-xor-convolution.test.cpp\"\
     \n\nint main() {\n\tMOD = 998244353;\n\n\tint N;\n\tcin >> N;\n\tvector<mint>\
     \ A(1 << N), B(1 << N);\n\tfor (auto &a : A)\n\t\tcin >> a;\n\tfor (auto &b :\
     \ B)\n\t\tcin >> b;\n\tauto C = conv::xor_convolution(A, B);\n\tfor (int i = 0;\
@@ -150,8 +150,8 @@ data:
   isVerificationFile: true
   path: verify/xor-convolution.yosupo-bitwise-xor-convolution.test.cpp
   requiredBy: []
-  timestamp: '2022-04-30 10:59:16-07:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-05-03 13:27:25-07:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/xor-convolution.yosupo-bitwise-xor-convolution.test.cpp
 layout: document

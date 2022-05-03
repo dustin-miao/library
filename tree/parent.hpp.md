@@ -48,8 +48,7 @@ data:
   - verify/diameter.yosupo-tree-diameter.test.cpp
 documentation_of: tree/parent.hpp
 layout: document
-redirect_from:
-- /library/tree/parent.hpp
-- /library/tree/parent.hpp.html
-title: tree/parent.hpp
+title: Parent
 ---
+
+## Tree Parent

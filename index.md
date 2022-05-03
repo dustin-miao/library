@@ -18,28 +18,28 @@ data:
     - icon: ':heavy_check_mark:'
       path: convolution/fast-fourier-transform.hpp
       title: Fast Fourier Transform
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: convolution/fast-walsh-hadamard-transform.hpp
       title: Fast Walsh-Hadamard Transform
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: convolution/inverse-fast-walsh-hadamard-transform.hpp
       title: Inverse Fast Walsh-Hadamard Transform
     - icon: ':warning:'
       path: convolution/mobius-transform.hpp
       title: Mobius Transform
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: convolution/reverse-bit-radix-sort.hpp
       title: Reverse Bit Radix Sort
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: convolution/slow-convolution.hpp
       title: Slow Convolution
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: convolution/slow-fast-fourier-transform.hpp
       title: Slow Fast Fourier Transform
     - icon: ':warning:'
       path: convolution/subset-convolution.hpp
       title: Subset Convolution
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: convolution/xor-convolution.hpp
       title: Xor Convolution
     - icon: ':warning:'
@@ -80,7 +80,7 @@ data:
     - icon: ':warning:'
       path: data-structure/sparse-binary-trie.hpp
       title: Sparse Binary Trie
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: data-structure/sparse-segment-tree.hpp
       title: Sparse Segment Tree
     - icon: ':heavy_check_mark:'
@@ -158,7 +158,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/ext-gcd.hpp
       title: Extended GCD
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: math/inverse.hpp
       title: Modulo Inverse
     - icon: ':warning:'
@@ -179,19 +179,19 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: tree/depth.hpp
-      title: tree/depth.hpp
+      title: Depth
     - icon: ':heavy_check_mark:'
       path: tree/diameter.hpp
-      title: tree/diameter.hpp
+      title: Diameter
     - icon: ':heavy_check_mark:'
       path: tree/distance.hpp
-      title: tree/distance.hpp
+      title: Distance
     - icon: ':heavy_check_mark:'
       path: tree/parent.hpp
-      title: tree/parent.hpp
+      title: Parent
     - icon: ':heavy_check_mark:'
       path: tree/unweight.hpp
-      title: tree/unweight.hpp
+      title: Unweight
   - name: utility
     pages:
     - icon: ':heavy_check_mark:'
@@ -212,10 +212,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: utility/floor-div.hpp
       title: Floor Division
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: utility/mint.hpp
       title: Modular Int
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: utility/pi.hpp
       title: Pi
     - icon: ':heavy_check_mark:'
@@ -392,7 +392,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/segment-tree.yosupo-point-add-range-sum.test.cpp
       title: verify/segment-tree.yosupo-point-add-range-sum.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/slow-convolution.yosupo-frequency-table-of-tree-distances.test.cpp
       title: verify/slow-convolution.yosupo-frequency-table-of-tree-distances.test.cpp
     - icon: ':heavy_check_mark:'
@@ -407,7 +407,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/sparse-segment-tree.yosupo-point-add-range-sum.test.cpp
       title: verify/sparse-segment-tree.yosupo-point-add-range-sum.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/sparse-segment-tree.yosupo-point-set-range-composite.test.cpp
       title: verify/sparse-segment-tree.yosupo-point-set-range-composite.test.cpp
     - icon: ':heavy_check_mark:'
@@ -437,7 +437,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/union-find.yosupo-unionfind.test.cpp
       title: verify/union-find.yosupo-unionfind.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/xor-convolution.yosupo-bitwise-xor-convolution.test.cpp
       title: verify/xor-convolution.yosupo-bitwise-xor-convolution.test.cpp
     - icon: ':heavy_check_mark:'

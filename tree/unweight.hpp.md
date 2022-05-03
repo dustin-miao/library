@@ -33,8 +33,7 @@ data:
   - verify/diameter.yosupo-tree-diameter.test.cpp
 documentation_of: tree/unweight.hpp
 layout: document
-redirect_from:
-- /library/tree/unweight.hpp
-- /library/tree/unweight.hpp.html
-title: tree/unweight.hpp
+title: Unweight
 ---
+
+## Tree Unweight
