@@ -218,7 +218,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: utility/pi.hpp
       title: Pi
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: utility/prefix-sum.hpp
       title: Prefix Sum
     - icon: ':heavy_check_mark:'
@@ -368,7 +368,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/point.aizu-projection.test.cpp
       title: verify/point.aizu-projection.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/prefix-sum.yosupo-static-range-sum.test.cpp
       title: verify/prefix-sum.yosupo-static-range-sum.test.cpp
     - icon: ':heavy_check_mark:'

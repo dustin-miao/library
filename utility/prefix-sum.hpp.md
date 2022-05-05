@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/prefix-sum.yosupo-static-range-sum.test.cpp
     title: verify/prefix-sum.yosupo-static-range-sum.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"utility/prefix-sum.hpp\"\n#pragma region prefix_sum\n\n\
@@ -24,7 +24,7 @@ data:
   path: utility/prefix-sum.hpp
   requiredBy: []
   timestamp: '2022-05-03 15:18:46-07:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/prefix-sum.yosupo-static-range-sum.test.cpp
 documentation_of: utility/prefix-sum.hpp
