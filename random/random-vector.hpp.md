@@ -15,6 +15,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/monotonic-dp-hull.yosupo-a+b.test.cpp
     title: verify/monotonic-dp-hull.yosupo-a+b.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/zip.yosupo-a+b.test.cpp
+    title: verify/zip.yosupo-a+b.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -41,6 +44,7 @@ data:
   timestamp: '2022-05-03 13:32:14-07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/zip.yosupo-a+b.test.cpp
   - verify/monotonic-dp-hull.yosupo-a+b.test.cpp
   - verify/monotonic-dp-hull-minkowski-sum.yosupo-a+b.test.cpp
   - verify/cyclic-product.yosupo-a+b.test.cpp

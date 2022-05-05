@@ -221,6 +221,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: utility/y-combinator.hpp
       title: Y-Combinator
+    - icon: ':heavy_check_mark:'
+      path: utility/zip.hpp
+      title: Zip
   verificationCategories:
   - name: verify
     pages:
@@ -446,6 +449,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/y-combinator.aizu-greatest-common-denominator.test.cpp
       title: verify/y-combinator.aizu-greatest-common-denominator.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/zip.yosupo-a+b.test.cpp
+      title: verify/zip.yosupo-a+b.test.cpp
 layout: toppage
 ---
 [![Dutinmeow](https://img.shields.io/endpoint?url=https%3A%2F%2Fatcoder-badges.now.sh%2Fapi%2Fatcoder%2Fjson%2FNyaan)](https://atcoder.jp/users/dutinmeow)
