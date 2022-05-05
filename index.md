@@ -129,9 +129,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/floyd-warshall.hpp
       title: Floyd-Warshall Algorithm
-    - icon: ':warning:'
-      path: graph/graph-util.hpp
-      title: Graph Utility
     - icon: ':heavy_check_mark:'
       path: graph/kruskal.hpp
       title: Kruskal's Algorithm
