@@ -1,9 +1,9 @@
-// unfinished
-
-#include <bits/stdc++.h>
-using namespace std;
-
 #include "geometry/point.hpp"
+
+#pragma region convex_hull
+
+#ifndef CONVEX_HULL_HPP
+#define CONVEX_HULL_HPP
 
 namespace geo {
 	template<typename T>
@@ -21,6 +21,6 @@ namespace geo {
 	}
 }
 
-int main() {
+#endif
 
-}
+#pragma endregion convex_hull

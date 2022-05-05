@@ -2,6 +2,9 @@
 
 #pragma region monotonic_dp_hull
 
+#ifndef MONOTONIC_DP_HULL_HPP
+#define MONOTONIC_DP_HULL_HPP
+
 struct monotonic_dp_hull {
 	long long prev_x = LLONG_MIN, prev_y = 1;
 	deque<geo::point<long long>> points;
@@ -33,5 +36,7 @@ struct monotonic_dp_hull {
 
 	int size() const { return points.size(); }
 };
+
+#endif
 
 #pragma endregion monotonic_dp_hull

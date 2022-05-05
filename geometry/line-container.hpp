@@ -2,6 +2,9 @@
 
 #pragma region line_container
 
+#ifndef LINE_CONTAINER_HPP
+#define LINE_CONTAINER_HPP
+
 struct line_container_line {
     mutable long long m, b, p;
     bool operator<(const line_container_line &o) const { return m < o.m; }
@@ -38,5 +41,7 @@ public:
         return l.m * x + l.b;
     }
 };
+
+#endif
 
 #pragma endregion line_container

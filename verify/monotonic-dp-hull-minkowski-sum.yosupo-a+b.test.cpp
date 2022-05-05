@@ -3,6 +3,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+#include "geometry/monotonic-dp-hull.hpp"
 #include "geometry/monotonic-dp-hull-minkowski-sum.hpp"
 #include "random/random-vector.hpp"
 

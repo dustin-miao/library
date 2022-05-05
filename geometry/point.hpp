@@ -1,5 +1,8 @@
 #pragma region point
 
+#ifndef POINT_HPP
+#define POINT_HPP
+
 namespace geo {
 	const double EPS = 1e-9;
 
@@ -120,5 +123,7 @@ namespace geo {
 	template<typename T>
 	auto bisector(const point<T> &p, const point<T> &q) { return p * norm(q) + norm(p) * q; }
 }
+
+#endif
 
 #pragma endregion point
