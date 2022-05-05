@@ -2,6 +2,9 @@
 
 #pragma region prim
 
+#ifndef PRIM_HPP
+#define PRIM_HPP
+
 template<class T>
 vector<vector<pair<int, T>>> prim(const vector<vector<pair<int, T>>> &G) {
 	int n = G.size();
@@ -33,5 +36,7 @@ vector<vector<pair<int, T>>> prim(const vector<vector<pair<int, T>>> &G) {
 	}
 	return mst;
 }
+
+#endif
 
 #pragma endregion prim

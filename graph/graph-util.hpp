@@ -1,5 +1,8 @@
 #pragma region graph_util
 
+#ifndef GRAPH_UTIL_HPP
+#define GRAPH_UTIL_HPP
+
 using u_graph = vector<vector<int>>;
 
 using u_edgelist = vector<pair<int, int>>;
@@ -124,5 +127,7 @@ matgraph<T> to_matgraph(size_t n, const edgelist<T> &E, const T dval) {
 		M[u][v] = w;
 	return M;
 }
+
+#endif
 
 #pragma endregion graph_util

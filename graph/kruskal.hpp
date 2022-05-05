@@ -2,6 +2,9 @@
 
 #pragma region kruskal
 
+#ifndef KRUSKAL_HPP
+#define KRUSKAL_HPP
+
 template<class T>
 vector<vector<pair<int, T>>> kruskal(int n, vector<tuple<int, int, T>> E) {
 	vector<vector<pair<int, T>>> mst(n);
@@ -23,5 +26,7 @@ vector<vector<pair<int, T>>> kruskal(int n, vector<tuple<int, int, T>> E) {
 	}
 	return mst;
 }
+
+#endif
 
 #pragma endregion kruskal

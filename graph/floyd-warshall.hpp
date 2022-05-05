@@ -2,6 +2,9 @@
 
 #pragma region floyd_warshall
 
+#ifndef FLOYD_WARSHALL_HPP
+#define FLOYD_WARSHALL_HPP
+
 template<typename T>
 void floyd_warshall(vector<vector<T>> &G, const T dval) {
 	int n = G.size();
@@ -20,5 +23,7 @@ void floyd_warshall(vector<vector<T>> &G, const T dval) {
 		}
 	}
 }
+
+#endif
 
 #pragma endregion floyd_warshall

@@ -2,6 +2,9 @@
 
 #pragma region dijkstra
 
+#ifndef DIJKSTRA_HPP
+#define DIJKSTRA_HPP
+
 template<typename T>
 pair<vector<long long>, vector<int>> dijkstra(const vector<vector<pair<int, T>>> &G, int s) {
 	int n = G.size();
@@ -24,5 +27,7 @@ pair<vector<long long>, vector<int>> dijkstra(const vector<vector<pair<int, T>>>
 	}
 	return {dis, par};
 }
+
+#endif
 
 #pragma endregion dijkstra
