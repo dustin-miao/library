@@ -66,6 +66,9 @@ data:
       path: data-structure/lazy-segment-tree.hpp
       title: Lazy Segment Tree
     - icon: ':heavy_check_mark:'
+      path: data-structure/minimum-queue.hpp
+      title: Minimum Queue
+    - icon: ':heavy_check_mark:'
       path: data-structure/ordered-set.hpp
       title: Ordered Set
     - icon: ':heavy_check_mark:'
@@ -338,6 +341,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/matrix.aizu-fibonacci-number.test.cpp
       title: verify/matrix.aizu-fibonacci-number.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/minimum-queue.aizu-sliding-minimum-elements.test.cpp
+      title: verify/minimum-queue.aizu-sliding-minimum-elements.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/mint.power.test.cpp
       title: verify/mint.power.test.cpp
