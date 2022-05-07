@@ -12,12 +12,18 @@ data:
     path: tree/distance.hpp
     title: Distance
   - icon: ':heavy_check_mark:'
+    path: tree/euler-tour.hpp
+    title: Euler Tour
+  - icon: ':heavy_check_mark:'
     path: tree/parent.hpp
     title: Parent
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/diameter.yosupo-tree-diameter.test.cpp
     title: verify/diameter.yosupo-tree-diameter.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/euler-tour.yosupo-vertex-add-subtree-sum.test.cpp
+    title: verify/euler-tour.yosupo-vertex-add-subtree-sum.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/y-combinator.aizu-greatest-common-denominator.test.cpp
     title: verify/y-combinator.aizu-greatest-common-denominator.test.cpp
@@ -48,12 +54,14 @@ data:
   - tree/diameter.hpp
   - tree/distance.hpp
   - tree/parent.hpp
+  - tree/euler-tour.hpp
   - tree/depth.hpp
   timestamp: '2022-05-03 13:22:51-07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/y-combinator.aizu-greatest-common-denominator.test.cpp
   - verify/diameter.yosupo-tree-diameter.test.cpp
+  - verify/euler-tour.yosupo-vertex-add-subtree-sum.test.cpp
 documentation_of: utility/y-combinator.hpp
 layout: document
 title: Y-Combinator

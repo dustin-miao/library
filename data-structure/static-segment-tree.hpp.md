@@ -4,6 +4,9 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: verify/euler-tour.yosupo-vertex-add-subtree-sum.test.cpp
+    title: verify/euler-tour.yosupo-vertex-add-subtree-sum.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/static-segment-tree.yosupo-point-add-range-sum.test.cpp
     title: verify/static-segment-tree.yosupo-point-add-range-sum.test.cpp
   _isVerificationFailed: false
@@ -44,6 +47,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/static-segment-tree.yosupo-point-add-range-sum.test.cpp
+  - verify/euler-tour.yosupo-vertex-add-subtree-sum.test.cpp
 documentation_of: data-structure/static-segment-tree.hpp
 layout: document
 title: Static Segment Tree

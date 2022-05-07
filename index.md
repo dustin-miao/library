@@ -186,7 +186,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: tree/distance.hpp
       title: Distance
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: tree/euler-tour.hpp
       title: Euler Tour
     - icon: ':heavy_check_mark:'
@@ -278,7 +278,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/discrete-sqrt.yosupo-sqrt-mod.test.cpp
       title: verify/discrete-sqrt.yosupo-sqrt-mod.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/euler-tour.yosupo-vertex-add-subtree-sum.test.cpp
       title: verify/euler-tour.yosupo-vertex-add-subtree-sum.test.cpp
     - icon: ':heavy_check_mark:'

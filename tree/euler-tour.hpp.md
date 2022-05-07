@@ -1,23 +1,36 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: utility/y-combinator.hpp
+    title: Y-Combinator
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/euler-tour.yosupo-vertex-add-subtree-sum.test.cpp
+    title: verify/euler-tour.yosupo-vertex-add-subtree-sum.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.4/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
-    , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
-    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.10.4/x64/lib/python3.10/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
-    , line 187, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.10.4/x64/lib/python3.10/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
-    , line 401, in update\n    self.update(self._resolve(pathlib.Path(included), included_from=path))\n\
-    \  File \"/opt/hostedtoolcache/Python/3.10.4/x64/lib/python3.10/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
-    , line 260, in _resolve\n    raise BundleErrorAt(path, -1, \"no such header\"\
-    )\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: utility/y-combinator:\
-    \ line -1: no such header\n"
-  code: "#include \"utility/y-combinator\"\n\n#pragma region euler_tour\n\n#ifndef\
+  bundledCode: "#line 1 \"utility/y-combinator.hpp\"\n#pragma region y_combinator\n\
+    \n#ifndef Y_COMBINATOR_HPP\n#define Y_COMBINATOR_HPP\n\ntemplate<class Fun>\n\
+    class y_combinator_result {\n\tFun fun_;\npublic:\n\ttemplate<class T>\n\texplicit\
+    \ y_combinator_result(T &&fun) : fun_(std::forward<T>(fun)) {}\n\n\ttemplate<class\
+    \ ...Args>\n\tdecltype(auto) operator()(Args &&...args) {\n\t\treturn fun_(std::ref(*this),\
+    \ std::forward<Args>(args)...);\n\t}\n};\n\ntemplate<class Fun>\ndecltype(auto)\
+    \ y_combinator(Fun &&fun) {\n\treturn y_combinator_result<std::decay_t<Fun>>(std::forward<Fun>(fun));\n\
+    }\n\n#endif\n\n#pragma endregion y_combinator\n#line 2 \"tree/euler-tour.hpp\"\
+    \n\n#pragma region euler_tour\n\n#ifndef EULER_TOUR_HPP\n#define EULER_TOUR_HPP\n\
+    \nnamespace tree {\n\tpair<vector<int>, vector<int>> euler_tour(const vector<vector<int>>\
+    \ &tree, int s = 0) {\n\t\tint n = tree.size();\n\t\tvector<int> ltime(n), rtime(n);\n\
+    \t\tint time = -1;\n\n\t\tauto dfs = y_combinator([&](auto dfs, int u, int p =\
+    \ -1) -> void {\n\t\t\tltime[u] = ++time;\n\t\t\tfor (int v : tree[u]) {\n\t\t\
+    \t\tif (v == p)\n\t\t\t\t\tcontinue;\n\t\t\t\tdfs(v, u);\n\t\t\t}\n\t\t\trtime[u]\
+    \ = time;\n\t\t});\n\n\t\tdfs(s);\n\t\treturn make_pair(ltime, rtime);\n\t}\n\
+    }\n\n#endif\n\n#pragma endregion euler_tour\n"
+  code: "#include \"utility/y-combinator.hpp\"\n\n#pragma region euler_tour\n\n#ifndef\
     \ EULER_TOUR_HPP\n#define EULER_TOUR_HPP\n\nnamespace tree {\n\tpair<vector<int>,\
     \ vector<int>> euler_tour(const vector<vector<int>> &tree, int s = 0) {\n\t\t\
     int n = tree.size();\n\t\tvector<int> ltime(n), rtime(n);\n\t\tint time = -1;\n\
@@ -26,13 +39,15 @@ data:
     \t\t\tcontinue;\n\t\t\t\tdfs(v, u);\n\t\t\t}\n\t\t\trtime[u] = time;\n\t\t});\n\
     \n\t\tdfs(s);\n\t\treturn make_pair(ltime, rtime);\n\t}\n}\n\n#endif\n\n#pragma\
     \ endregion euler_tour"
-  dependsOn: []
+  dependsOn:
+  - utility/y-combinator.hpp
   isVerificationFile: false
   path: tree/euler-tour.hpp
   requiredBy: []
-  timestamp: '1970-01-01 00:00:00+00:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2022-05-06 20:02:47-07:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/euler-tour.yosupo-vertex-add-subtree-sum.test.cpp
 documentation_of: tree/euler-tour.hpp
 layout: document
 title: Euler Tour
