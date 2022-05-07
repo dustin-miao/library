@@ -58,6 +58,7 @@
 "verify/segment-tree.aizu-range-minimum-query.test.cpp": "2022-04-29 22:36:50 -0700",
 "verify/segment-tree.aizu-range-sum-query.test.cpp": "2022-04-29 22:36:50 -0700",
 "verify/segment-tree.yosupo-point-add-range-sum.test.cpp": "2022-04-29 22:36:50 -0700",
+"verify/sliding-window-aggregate.yosupo-queue-operate-all-composite.test.cpp": "2022-05-06 22:55:08 -0700",
 "verify/slow-convolution.yosupo-frequency-table-of-tree-distances.test.cpp": "2022-05-03 13:27:25 -0700",
 "verify/sparse-segment-tree.aizu-range-minimum-query.test.cpp": "2022-05-03 12:34:00 -0700",
 "verify/sparse-segment-tree.aizu-range-sum-query.test.cpp": "2022-05-03 12:34:00 -0700",
