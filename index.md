@@ -467,7 +467,7 @@ data:
 layout: toppage
 ---
 [![Dutinmeow](https://img.shields.io/endpoint?url=https%3A%2F%2Fatcoder-badges.now.sh%2Fapi%2Fatcoder%2Fjson%2Fdutinmeow)](https://atcoder.jp/users/dutinmeow)
-[![Dutinmeow](https://img.shields.io/endpoint?url=https%3A%2F%2Fatcoder-badges.now.sh%2Fapi%2Fcodeforces%2Fjson%2Fdutin )] (https://codeforces.com/profile/dutin)
+[![Dutinmeow](https://img.shields.io/endpoint?url=https%3A%2F%2Fatcoder-badges.now.sh%2Fapi%2Fcodeforces%2Fjson%2Fdutin)](https://codeforces.com/profile/dutin)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/dutinmeow/library?style=flat-square)
 
 This library is a collection of data structures and algorithms for competitive programming. 
