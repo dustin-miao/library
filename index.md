@@ -80,6 +80,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/segment-tree.hpp
       title: Segment Tree
+    - icon: ':heavy_check_mark:'
+      path: data-structure/sliding-window-aggregate.hpp
+      title: Sliding Window Aggregate
     - icon: ':warning:'
       path: data-structure/sparse-binary-trie.hpp
       title: Sparse Binary Trie
@@ -410,6 +413,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/segment-tree.yosupo-point-add-range-sum.test.cpp
       title: verify/segment-tree.yosupo-point-add-range-sum.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/sliding-window-aggregate.yosupo-queue-operate-all-composite.test.cpp
+      title: verify/sliding-window-aggregate.yosupo-queue-operate-all-composite.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/slow-convolution.yosupo-frequency-table-of-tree-distances.test.cpp
       title: verify/slow-convolution.yosupo-frequency-table-of-tree-distances.test.cpp

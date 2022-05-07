@@ -37,6 +37,9 @@ data:
     path: verify/recursive-segment-tree.yosupo-point-set-range-composite.test.cpp
     title: verify/recursive-segment-tree.yosupo-point-set-range-composite.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/sliding-window-aggregate.yosupo-queue-operate-all-composite.test.cpp
+    title: verify/sliding-window-aggregate.yosupo-queue-operate-all-composite.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/sparse-segment-tree.yosupo-point-set-range-composite.test.cpp
     title: verify/sparse-segment-tree.yosupo-point-set-range-composite.test.cpp
   - icon: ':heavy_check_mark:'
@@ -70,6 +73,7 @@ data:
   verifiedWith:
   - verify/general-segment-tree.yosupo-point-set-range-composite.test.cpp
   - verify/sparse-segment-tree.yosupo-point-set-range-composite.test.cpp
+  - verify/sliding-window-aggregate.yosupo-queue-operate-all-composite.test.cpp
   - verify/recursive-segment-tree.yosupo-point-set-range-composite.test.cpp
   - verify/mint.yosupo-A+B.test.cpp
   - verify/discrete-log.yosupo-discrete-logarithm.test.cpp
