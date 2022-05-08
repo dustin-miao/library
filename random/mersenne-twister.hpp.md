@@ -19,6 +19,12 @@ data:
     path: verify/monotonic-dp-hull.yosupo-a+b.test.cpp
     title: verify/monotonic-dp-hull.yosupo-a+b.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/wavelet-tree.yosupo-a+b.test.cpp
+    title: verify/wavelet-tree.yosupo-a+b.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/wavelet-tree.yosupo-a+b.test.cpp
+    title: verify/wavelet-tree.yosupo-a+b.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/zip.yosupo-a+b.test.cpp
     title: verify/zip.yosupo-a+b.test.cpp
   - icon: ':heavy_check_mark:'
@@ -86,6 +92,8 @@ data:
   - verify/zip.yosupo-a+b.test.cpp
   - verify/zip.yosupo-a+b.test.cpp
   - verify/monotonic-dp-hull.yosupo-a+b.test.cpp
+  - verify/wavelet-tree.yosupo-a+b.test.cpp
+  - verify/wavelet-tree.yosupo-a+b.test.cpp
   - verify/monotonic-dp-hull-minkowski-sum.yosupo-a+b.test.cpp
   - verify/cyclic-product.yosupo-a+b.test.cpp
   - verify/ext-gcd.yosupo-a+b.test.cpp

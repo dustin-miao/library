@@ -107,6 +107,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/union-find.hpp
       title: Union Find
+    - icon: ':heavy_check_mark:'
+      path: data-structure/wavelet-tree.hpp
+      title: Wavelet Tree
   - name: geometry
     pages:
     - icon: ':warning:'
@@ -461,6 +464,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/union-find.yosupo-unionfind.test.cpp
       title: verify/union-find.yosupo-unionfind.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/wavelet-tree.yosupo-a+b.test.cpp
+      title: verify/wavelet-tree.yosupo-a+b.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/wavelet-tree.yosupo-range-kth-largest.test.cpp
+      title: verify/wavelet-tree.yosupo-range-kth-largest.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/xor-convolution.yosupo-bitwise-xor-convolution.test.cpp
       title: verify/xor-convolution.yosupo-bitwise-xor-convolution.test.cpp
