@@ -14,7 +14,7 @@ int main() {
 		cin >> u >> v >> w;
 		E.emplace_back(u, v, w);
 	}
-	auto T = kruskal(N, E);
+	auto T = graph::kruskal(N, E);
 	long long ans = 0;
 	for (int u = 0; u < N; u++)
 		for (auto [v, w] : T[u])

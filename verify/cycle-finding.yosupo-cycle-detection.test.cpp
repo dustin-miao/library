@@ -18,7 +18,7 @@ int main() {
 		id[make_pair(u, v)].push_back(i);
 	}
 
-	auto cycle = find_cycle(G, true);
+	auto cycle = graph::find_cycle(G, true);
 
 	if (cycle.empty()) {
 		cout << -1 << '\n';

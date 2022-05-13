@@ -15,7 +15,7 @@ int main() {
 		G[u].emplace_back(v, w);
 	}
 	
-	auto [dis, par] = dijkstra(G, S);
+	auto [dis, par] = graph::dijkstra(G, S);
 
 	for (int i = 0; i < N; i++) {
 		if (par[i] == -1)

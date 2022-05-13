@@ -15,7 +15,7 @@ int main() {
 		G[u][v] = w;
 	}
 
-	floyd_warshall(G, LLONG_MAX); 
+	graph::floyd_warshall(G, LLONG_MAX); 
 
 	bool cycle = false;
 	for (int i = 0; i < N; i++)

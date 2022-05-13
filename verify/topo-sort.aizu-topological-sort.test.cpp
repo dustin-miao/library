@@ -14,7 +14,7 @@ int main() {
 		cin >> u >> v;
 		G[u].push_back(v);
 	}
-	auto ord = topo_sort(G);
+	auto ord = graph::topo_sort(G);
 	for (int u : ord)
 		cout << u << '\n';
 }

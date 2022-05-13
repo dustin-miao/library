@@ -15,7 +15,7 @@ int main() {
 		G[u].emplace_back(v, w);
 		G[v].emplace_back(u, w);
 	}
-	auto T = prim(G);
+	auto T = graph::prim(G);
 	long long ans = 0;
 	for (int u = 0; u < N; u++)
 		for (auto [v, w] : T[u])
