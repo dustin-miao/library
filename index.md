@@ -135,7 +135,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/dijkstra.hpp
       title: Dijkstra's Algorithm
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: graph/edmonds-karp.hpp
       title: Edmonds-Karp Algorithm
     - icon: ':heavy_check_mark:'
@@ -287,6 +287,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/discrete-sqrt.yosupo-sqrt-mod.test.cpp
       title: verify/discrete-sqrt.yosupo-sqrt-mod.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/edmonds-karp.aizu-maximum-flow.test.cpp
+      title: verify/edmonds-karp.aizu-maximum-flow.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/euler-tour.yosupo-vertex-add-subtree-sum.test.cpp
       title: verify/euler-tour.yosupo-vertex-add-subtree-sum.test.cpp
