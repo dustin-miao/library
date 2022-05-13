@@ -14,6 +14,7 @@
 "verify/dijkstra.yosupo-shortest-path.test.cpp": "2022-05-13 08:32:57 -0700",
 "verify/discrete-log.yosupo-discrete-logarithm.test.cpp": "2022-04-30 10:59:16 -0700",
 "verify/discrete-sqrt.yosupo-sqrt-mod.test.cpp": "2022-05-03 13:27:25 -0700",
+"verify/edmonds-karp.aizu-maximum-flow.test.cpp": "2022-05-13 08:53:25 -0700",
 "verify/euler-tour.yosupo-vertex-add-subtree-sum.test.cpp": "2022-05-06 20:02:47 -0700",
 "verify/ext-gcd.aizu-extended-euclid-algorithm.test.cpp": "2022-04-29 22:36:50 -0700",
 "verify/ext-gcd.aizu-greatest-common-divisor.test.cpp": "2022-04-29 22:36:50 -0700",
