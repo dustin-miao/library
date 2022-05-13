@@ -6,15 +6,15 @@ data:
     path: math/discrete-log.hpp
     title: Discrete Logarithm
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/cycle-finding.yosupo-cycle-detection.test.cpp
     title: verify/cycle-finding.yosupo-cycle-detection.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/discrete-log.yosupo-discrete-logarithm.test.cpp
     title: verify/discrete-log.yosupo-discrete-logarithm.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"data-structure/fast-set.hpp\"\n#pragma region fast_set\n\
@@ -56,7 +56,7 @@ data:
   requiredBy:
   - math/discrete-log.hpp
   timestamp: '2022-04-29 22:36:50-07:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/discrete-log.yosupo-discrete-logarithm.test.cpp
   - verify/cycle-finding.yosupo-cycle-detection.test.cpp

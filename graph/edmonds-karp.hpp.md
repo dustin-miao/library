@@ -8,16 +8,40 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: '#line 1 "graph/edmonds-karp.hpp"
-
-
-    '
-  code: ''
+  bundledCode: "#line 1 \"graph/edmonds-karp.hpp\"\n#pragma region graph_flow_edmonds_karp\n\
+    \n#ifndef EDMONDS_KARP_HPP\n#define EDMONDS_KARP_HPP\n\ntemplate<typename T>\n\
+    T edmonds_karp(const vector<vector<pair<int, T>> &G, int s, int t) {\n\tint n\
+    \ = G.size();\n\tT flow = 0, mx = numeric_limits<T>::max();\n\tvector<vector<T>>\
+    \ cap(n, vector<T>(n));\n\tvector<int> par(n);\n\n\twhile (true) {\n\t\tqueue<pair<int,\
+    \ T>> q;\n\t\tfill(par.begin(), par.end(), -1);\n\t\tT nflow = 0;\n\n\t\tq.emplace(s,\
+    \ mx)\n\t\tpar[s] = s;\n\t\twhile (!q.empty()) {\n\t\t\tauto [u, f] = q.front();\
+    \ q.pop();\n\t\t\tfor (int v : G[u]) {\n\t\t\t\tif (par[v] == -1 && cap[u][v])\
+    \ {\n\t\t\t\t\tpar[v] = u;\n\t\t\t\t\tif (v == t) {\n\t\t\t\t\t\tnflow = min(f,\
+    \ cap[u][v]);\n\t\t\t\t\t\tgoto bfs_end\n\t\t\t\t\t} else {\n\t\t\t\t\t\tq.emplace(v,\
+    \ min(f, cap[u][v]));\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\t\n\t\tbfs_end:\n\
+    \n\t\tif (nflow == 0)\n\t\t\tbreak;\n\t\tflow += nflow;\n\t\tfor (int u = t; u\
+    \ != s; u = par[u]) {\n\t\t\tcap[par[u]][u] -= nflow;\n\t\t\tcap[u][par[u]] -=\
+    \ nflow;\n\t\t}\n\t}\n\t\n\treturn flow;\n}\n\n\n#endif \n\n#pragma endregion\
+    \ graph_flow_edmonds_karp\n"
+  code: "#pragma region graph_flow_edmonds_karp\n\n#ifndef EDMONDS_KARP_HPP\n#define\
+    \ EDMONDS_KARP_HPP\n\ntemplate<typename T>\nT edmonds_karp(const vector<vector<pair<int,\
+    \ T>> &G, int s, int t) {\n\tint n = G.size();\n\tT flow = 0, mx = numeric_limits<T>::max();\n\
+    \tvector<vector<T>> cap(n, vector<T>(n));\n\tvector<int> par(n);\n\n\twhile (true)\
+    \ {\n\t\tqueue<pair<int, T>> q;\n\t\tfill(par.begin(), par.end(), -1);\n\t\tT\
+    \ nflow = 0;\n\n\t\tq.emplace(s, mx)\n\t\tpar[s] = s;\n\t\twhile (!q.empty())\
+    \ {\n\t\t\tauto [u, f] = q.front(); q.pop();\n\t\t\tfor (int v : G[u]) {\n\t\t\
+    \t\tif (par[v] == -1 && cap[u][v]) {\n\t\t\t\t\tpar[v] = u;\n\t\t\t\t\tif (v ==\
+    \ t) {\n\t\t\t\t\t\tnflow = min(f, cap[u][v]);\n\t\t\t\t\t\tgoto bfs_end\n\t\t\
+    \t\t\t} else {\n\t\t\t\t\t\tq.emplace(v, min(f, cap[u][v]));\n\t\t\t\t\t}\n\t\t\
+    \t\t}\n\t\t\t}\n\t\t}\n\t\t\n\t\tbfs_end:\n\n\t\tif (nflow == 0)\n\t\t\tbreak;\n\
+    \t\tflow += nflow;\n\t\tfor (int u = t; u != s; u = par[u]) {\n\t\t\tcap[par[u]][u]\
+    \ -= nflow;\n\t\t\tcap[u][par[u]] -= nflow;\n\t\t}\n\t}\n\t\n\treturn flow;\n\
+    }\n\n\n#endif \n\n#pragma endregion graph_flow_edmonds_karp"
   dependsOn: []
   isVerificationFile: false
   path: graph/edmonds-karp.hpp
   requiredBy: []
-  timestamp: '2022-05-13 08:14:05-07:00'
+  timestamp: '2022-05-13 08:32:57-07:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: graph/edmonds-karp.hpp

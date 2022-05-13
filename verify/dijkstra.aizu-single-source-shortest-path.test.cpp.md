@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/dijkstra.hpp
     title: Dijkstra's Algorithm
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utility/chmin.hpp
     title: Chmin
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A
@@ -36,7 +36,7 @@ data:
     verify/dijkstra.aizu-single-source-shortest-path.test.cpp\"\n\nint main() {\n\t\
     int N, M, S;\n\tcin >> N >> M >> S;\n\tvector<vector<pair<int, long long>>> G(N);\n\
     \tfor (int i = 0; i < M; i++) {\n\t\tint u, v; long long w;\n\t\tcin >> u >> v\
-    \ >> w;\n\t\tG[u].emplace_back(v, w);\n\t}\n\t\n\tauto [dis, par] = dijkstra(G,\
+    \ >> w;\n\t\tG[u].emplace_back(v, w);\n\t}\n\t\n\tauto [dis, par] = graph::dijkstra(G,\
     \ S);\n\n\tfor (int i = 0; i < N; i++) {\n\t\tif (par[i] == -1)\n\t\t\tcout <<\
     \ \"INF\\n\";\n\t\telse \n\t\t\tcout << dis[i] << '\\n';\n\t}\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A\"\
@@ -44,17 +44,17 @@ data:
     \n\nint main() {\n\tint N, M, S;\n\tcin >> N >> M >> S;\n\tvector<vector<pair<int,\
     \ long long>>> G(N);\n\tfor (int i = 0; i < M; i++) {\n\t\tint u, v; long long\
     \ w;\n\t\tcin >> u >> v >> w;\n\t\tG[u].emplace_back(v, w);\n\t}\n\t\n\tauto [dis,\
-    \ par] = dijkstra(G, S);\n\n\tfor (int i = 0; i < N; i++) {\n\t\tif (par[i] ==\
-    \ -1)\n\t\t\tcout << \"INF\\n\";\n\t\telse \n\t\t\tcout << dis[i] << '\\n';\n\t\
-    }\n}"
+    \ par] = graph::dijkstra(G, S);\n\n\tfor (int i = 0; i < N; i++) {\n\t\tif (par[i]\
+    \ == -1)\n\t\t\tcout << \"INF\\n\";\n\t\telse \n\t\t\tcout << dis[i] << '\\n';\n\
+    \t}\n}"
   dependsOn:
   - graph/dijkstra.hpp
   - utility/chmin.hpp
   isVerificationFile: true
   path: verify/dijkstra.aizu-single-source-shortest-path.test.cpp
   requiredBy: []
-  timestamp: '2022-05-13 08:14:05-07:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-05-13 08:32:57-07:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/dijkstra.aizu-single-source-shortest-path.test.cpp
 layout: document

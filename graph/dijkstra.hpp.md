@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utility/chmin.hpp
     title: Chmin
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
-    path: verify/dijkstra.aizu-shortest-path.test.cpp
-    title: verify/dijkstra.aizu-shortest-path.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/dijkstra.aizu-single-source-shortest-path.test.cpp
     title: verify/dijkstra.aizu-single-source-shortest-path.test.cpp
-  _isVerificationFailed: true
+  - icon: ':heavy_check_mark:'
+    path: verify/dijkstra.yosupo-shortest-path.test.cpp
+    title: verify/dijkstra.yosupo-shortest-path.test.cpp
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"utility/chmin.hpp\"\n#pragma region chmin\n\n#ifndef CHMIN_HPP\n\
@@ -48,10 +48,10 @@ data:
   path: graph/dijkstra.hpp
   requiredBy: []
   timestamp: '2022-05-13 08:14:05-07:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/dijkstra.aizu-shortest-path.test.cpp
   - verify/dijkstra.aizu-single-source-shortest-path.test.cpp
+  - verify/dijkstra.yosupo-shortest-path.test.cpp
 documentation_of: graph/dijkstra.hpp
 layout: document
 title: Dijkstra's Algorithm

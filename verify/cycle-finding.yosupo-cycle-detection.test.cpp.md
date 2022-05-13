@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/fast-set.hpp
     title: Fast Set
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/cycle-finding.hpp
     title: Cycle Finding
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/cycle_detection
@@ -70,18 +70,19 @@ data:
     \n\nint main() {\n\tint N, M;\n\tcin >> N >> M;\n\tvector<vector<int>> G(N);\n\
     \tfast_map<pair<int, int>, vector<int>> id;\n\tfor (int i = 0; i < M; i++) {\n\
     \t\tint u, v;\n\t\tcin >> u >> v;\n\t\tG[u].push_back(v);\n\t\tid[make_pair(u,\
-    \ v)].push_back(i);\n\t}\n\n\tauto cycle = find_cycle(G, true);\n\n\tif (cycle.empty())\
-    \ {\n\t\tcout << -1 << '\\n';\n\t} else {\n\t\tcout << cycle.size() << '\\n';\n\
-    \t\tfor (auto [u, v] : cycle) {\n\t\t\tauto &vec = id[make_pair(u, v)];\n\t\t\t\
-    cout << vec.back() << '\\n';\n\t\t\tvec.pop_back();\n\t\t}\n\t}\n}\n"
+    \ v)].push_back(i);\n\t}\n\n\tauto cycle = graph::find_cycle(G, true);\n\n\tif\
+    \ (cycle.empty()) {\n\t\tcout << -1 << '\\n';\n\t} else {\n\t\tcout << cycle.size()\
+    \ << '\\n';\n\t\tfor (auto [u, v] : cycle) {\n\t\t\tauto &vec = id[make_pair(u,\
+    \ v)];\n\t\t\tcout << vec.back() << '\\n';\n\t\t\tvec.pop_back();\n\t\t}\n\t}\n\
+    }\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/cycle_detection\"\n\n#include\
     \ <bits/stdc++.h>\nusing namespace std;\n\n#include \"data-structure/fast-set.hpp\"\
     \n#include \"graph/cycle-finding.hpp\"\n\nint main() {\n\tint N, M;\n\tcin >>\
     \ N >> M;\n\tvector<vector<int>> G(N);\n\tfast_map<pair<int, int>, vector<int>>\
     \ id;\n\tfor (int i = 0; i < M; i++) {\n\t\tint u, v;\n\t\tcin >> u >> v;\n\t\t\
     G[u].push_back(v);\n\t\tid[make_pair(u, v)].push_back(i);\n\t}\n\n\tauto cycle\
-    \ = find_cycle(G, true);\n\n\tif (cycle.empty()) {\n\t\tcout << -1 << '\\n';\n\
-    \t} else {\n\t\tcout << cycle.size() << '\\n';\n\t\tfor (auto [u, v] : cycle)\
+    \ = graph::find_cycle(G, true);\n\n\tif (cycle.empty()) {\n\t\tcout << -1 << '\\\
+    n';\n\t} else {\n\t\tcout << cycle.size() << '\\n';\n\t\tfor (auto [u, v] : cycle)\
     \ {\n\t\t\tauto &vec = id[make_pair(u, v)];\n\t\t\tcout << vec.back() << '\\n';\n\
     \t\t\tvec.pop_back();\n\t\t}\n\t}\n}"
   dependsOn:
@@ -90,8 +91,8 @@ data:
   isVerificationFile: true
   path: verify/cycle-finding.yosupo-cycle-detection.test.cpp
   requiredBy: []
-  timestamp: '2022-05-13 08:14:05-07:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-05-13 08:32:57-07:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/cycle-finding.yosupo-cycle-detection.test.cpp
 layout: document

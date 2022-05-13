@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/union-find.hpp
     title: Union Find
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/kruskal.hpp
     title: Kruskal's Algorithm
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_A
@@ -42,14 +42,14 @@ data:
     \ kruskal\n#line 7 \"verify/kruskal.aizu-minimum-spanning-tree.test.cpp\"\n\n\
     int main() {\n\tint N, M;\n\tcin >> N >> M;\n\tvector<tuple<int, int, long long>>\
     \ E;\n\tfor (int i = 0; i < M; i++) {\n\t\tint u, v; long long w;\n\t\tcin >>\
-    \ u >> v >> w;\n\t\tE.emplace_back(u, v, w);\n\t}\n\tauto T = kruskal(N, E);\n\
-    \tlong long ans = 0;\n\tfor (int u = 0; u < N; u++)\n\t\tfor (auto [v, w] : T[u])\n\
-    \t\t\tans += w;\n\tcout << ans / 2 << '\\n';\n}\n"
+    \ u >> v >> w;\n\t\tE.emplace_back(u, v, w);\n\t}\n\tauto T = graph::kruskal(N,\
+    \ E);\n\tlong long ans = 0;\n\tfor (int u = 0; u < N; u++)\n\t\tfor (auto [v,\
+    \ w] : T[u])\n\t\t\tans += w;\n\tcout << ans / 2 << '\\n';\n}\n"
   code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_A\"\
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#include \"graph/kruskal.hpp\"\
     \n\nint main() {\n\tint N, M;\n\tcin >> N >> M;\n\tvector<tuple<int, int, long\
     \ long>> E;\n\tfor (int i = 0; i < M; i++) {\n\t\tint u, v; long long w;\n\t\t\
-    cin >> u >> v >> w;\n\t\tE.emplace_back(u, v, w);\n\t}\n\tauto T = kruskal(N,\
+    cin >> u >> v >> w;\n\t\tE.emplace_back(u, v, w);\n\t}\n\tauto T = graph::kruskal(N,\
     \ E);\n\tlong long ans = 0;\n\tfor (int u = 0; u < N; u++)\n\t\tfor (auto [v,\
     \ w] : T[u])\n\t\t\tans += w;\n\tcout << ans / 2 << '\\n';\n}"
   dependsOn:
@@ -58,8 +58,8 @@ data:
   isVerificationFile: true
   path: verify/kruskal.aizu-minimum-spanning-tree.test.cpp
   requiredBy: []
-  timestamp: '2022-05-13 08:14:05-07:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-05-13 08:32:57-07:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/kruskal.aizu-minimum-spanning-tree.test.cpp
 layout: document

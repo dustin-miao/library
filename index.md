@@ -50,7 +50,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/fast-lca.hpp
       title: Fast Lowest Common Ancestor
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/fast-set.hpp
       title: Fast Set
     - icon: ':heavy_check_mark:'
@@ -104,7 +104,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/union-find-2d.hpp
       title: Union Find 2d
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/union-find.hpp
       title: Union Find
     - icon: ':heavy_check_mark:'
@@ -129,25 +129,25 @@ data:
       title: Point
   - name: graph
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph/cycle-finding.hpp
       title: Cycle Finding
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph/dijkstra.hpp
       title: Dijkstra's Algorithm
     - icon: ':warning:'
       path: graph/edmonds-karp.hpp
       title: Edmonds-Karp Algorithm
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph/floyd-warshall.hpp
       title: Floyd-Warshall Algorithm
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph/kruskal.hpp
       title: Kruskal's Algorithm
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph/prim.hpp
       title: Prim's Algorithm
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph/topo-sort.hpp
       title: Topological Sort
   - name: math
@@ -212,7 +212,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: utility/chmax.hpp
       title: Chmax
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: utility/chmin.hpp
       title: Chmin
     - icon: ':warning:'
@@ -266,7 +266,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/convolution.yosupo-frequency-table-of-tree-distances.test.cpp
       title: verify/convolution.yosupo-frequency-table-of-tree-distances.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/cycle-finding.yosupo-cycle-detection.test.cpp
       title: verify/cycle-finding.yosupo-cycle-detection.test.cpp
     - icon: ':heavy_check_mark:'
@@ -275,12 +275,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/diameter.yosupo-tree-diameter.test.cpp
       title: verify/diameter.yosupo-tree-diameter.test.cpp
-    - icon: ':x:'
-      path: verify/dijkstra.aizu-shortest-path.test.cpp
-      title: verify/dijkstra.aizu-shortest-path.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/dijkstra.aizu-single-source-shortest-path.test.cpp
       title: verify/dijkstra.aizu-single-source-shortest-path.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/dijkstra.yosupo-shortest-path.test.cpp
+      title: verify/dijkstra.yosupo-shortest-path.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/discrete-log.yosupo-discrete-logarithm.test.cpp
       title: verify/discrete-log.yosupo-discrete-logarithm.test.cpp
@@ -314,9 +314,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/floor-div.yosupo-many-a+b.test.cpp
       title: verify/floor-div.yosupo-many-a+b.test.cpp
-    - icon: ':x:'
-      path: verify/floyd-warshall.all-pairs-shortest-path.test.cpp
-      title: verify/floyd-warshall.all-pairs-shortest-path.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/floyd-warshall.aizu-all-pairs-shortest-path.test.cpp
+      title: verify/floyd-warshall.aizu-all-pairs-shortest-path.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/general-segment-tree.aizu-range-minimum-query.test.cpp
       title: verify/general-segment-tree.aizu-range-minimum-query.test.cpp
@@ -332,7 +332,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/kciwnef-tree.aizu-point-add-query.test.cpp
       title: verify/kciwnef-tree.aizu-point-add-query.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/kruskal.aizu-minimum-spanning-tree.test.cpp
       title: verify/kruskal.aizu-minimum-spanning-tree.test.cpp
     - icon: ':heavy_check_mark:'
@@ -392,7 +392,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/prefix-sum.yosupo-static-range-sum.test.cpp
       title: verify/prefix-sum.yosupo-static-range-sum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/prim.aizu-minimum-spanning-tree.test.cpp
       title: verify/prim.aizu-minimum-spanning-tree.test.cpp
     - icon: ':heavy_check_mark:'
@@ -452,9 +452,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/tnemges-tree.aizu-point-add-query.test.cpp
       title: verify/tnemges-tree.aizu-point-add-query.test.cpp
-    - icon: ':x:'
-      path: verify/topo-sort.topological-sort.test.cpp
-      title: verify/topo-sort.topological-sort.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/topo-sort.aizu-topological-sort.test.cpp
+      title: verify/topo-sort.aizu-topological-sort.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/union-find-2d.aizu-disjoint-union.test.cpp
       title: verify/union-find-2d.aizu-disjoint-union.test.cpp
