@@ -72,8 +72,8 @@ data:
   timestamp: '2022-05-03 13:27:25-07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/complex-convolution.aizu-naive-string-search.test.cpp
   - verify/complex-convolution.aizu-string-search.test.cpp
+  - verify/complex-convolution.aizu-naive-string-search.test.cpp
 documentation_of: convolution/complex-convolution.hpp
 layout: document
 title: Complex Convolution

@@ -112,8 +112,8 @@ data:
   timestamp: '2022-05-05 15:11:34-07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/monotonic-dp-hull.yosupo-a+b.test.cpp
   - verify/monotonic-dp-hull-minkowski-sum.yosupo-a+b.test.cpp
+  - verify/monotonic-dp-hull.yosupo-a+b.test.cpp
 documentation_of: geometry/monotonic-dp-hull.hpp
 layout: document
 title: Monotonic DP Hull

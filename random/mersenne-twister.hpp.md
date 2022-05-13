@@ -91,12 +91,12 @@ data:
   verifiedWith:
   - verify/zip.yosupo-a+b.test.cpp
   - verify/zip.yosupo-a+b.test.cpp
-  - verify/monotonic-dp-hull.yosupo-a+b.test.cpp
-  - verify/wavelet-tree.yosupo-a+b.test.cpp
-  - verify/wavelet-tree.yosupo-a+b.test.cpp
   - verify/monotonic-dp-hull-minkowski-sum.yosupo-a+b.test.cpp
-  - verify/cyclic-product.yosupo-a+b.test.cpp
   - verify/ext-gcd.yosupo-a+b.test.cpp
+  - verify/wavelet-tree.yosupo-a+b.test.cpp
+  - verify/wavelet-tree.yosupo-a+b.test.cpp
+  - verify/cyclic-product.yosupo-a+b.test.cpp
+  - verify/monotonic-dp-hull.yosupo-a+b.test.cpp
 documentation_of: random/mersenne-twister.hpp
 layout: document
 title: Mersenne Twister

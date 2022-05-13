@@ -60,8 +60,8 @@ data:
   timestamp: '2022-05-05 15:11:34-07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/monotonic-dp-hull.yosupo-a+b.test.cpp
   - verify/line-container.yosupo-line-add-get-min.test.cpp
+  - verify/monotonic-dp-hull.yosupo-a+b.test.cpp
 documentation_of: geometry/line-container.hpp
 layout: document
 title: Line Container

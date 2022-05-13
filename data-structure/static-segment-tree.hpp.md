@@ -46,8 +46,8 @@ data:
   timestamp: '2022-04-29 22:36:50-07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/static-segment-tree.yosupo-point-add-range-sum.test.cpp
   - verify/euler-tour.yosupo-vertex-add-subtree-sum.test.cpp
+  - verify/static-segment-tree.yosupo-point-add-range-sum.test.cpp
 documentation_of: data-structure/static-segment-tree.hpp
 layout: document
 title: Static Segment Tree

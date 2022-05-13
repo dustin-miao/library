@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/floyd-warshall.hpp
     title: Floyd-Warshall Algorithm
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utility/chmin.hpp
     title: Chmin
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_C
@@ -24,13 +24,14 @@ data:
     \ T>\nbool chmin(T &a, T b) {\n\tif (a > b) {\n\t\ta = b;\n\t\treturn true;\n\t\
     }\n\treturn false;\n}\n\n#endif\n\n#pragma endregion chmin\n#line 2 \"graph/floyd-warshall.hpp\"\
     \n\n#pragma region floyd_warshall\n\n#ifndef FLOYD_WARSHALL_HPP\n#define FLOYD_WARSHALL_HPP\n\
-    \ntemplate<typename T>\nvoid floyd_warshall(vector<vector<T>> &G, const T dval)\
-    \ {\n\tint n = G.size();\n\tfor (int i = 0; i < n; i++)\n\t\tG[i][i] = 0;\n\t\
-    for (int k = 0; k < n; k++) {\n\t\tfor (int i = 0; i < n; i++) {\n\t\t\tfor (int\
-    \ j = 0; j < n; j++) {\n\t\t\t\tif (G[i][k] != dval && G[k][j] != dval) {\n\t\t\
-    \t\t\tif (G[i][j] == dval)\n\t\t\t\t\t\tG[i][j] = G[i][k] + G[k][j];\n\t\t\t\t\
-    \telse \n\t\t\t\t\t\tchmin(G[i][j], G[i][k] + G[k][j]);\n\t\t\t\t}\n\t\t\t}\n\t\
-    \t}\n\t}\n}\n\n#endif\n\n#pragma endregion floyd_warshall\n#line 7 \"verify/floyd-warshall.all-pairs-shortest-path.test.cpp\"\
+    \nnamespace graph {\n\ttemplate<typename T>\n\tvoid floyd_warshall(vector<vector<T>>\
+    \ &G, const T dval) {\n\t\tint n = G.size();\n\t\tfor (int i = 0; i < n; i++)\n\
+    \t\t\tG[i][i] = 0;\n\t\tfor (int k = 0; k < n; k++) {\n\t\t\tfor (int i = 0; i\
+    \ < n; i++) {\n\t\t\t\tfor (int j = 0; j < n; j++) {\n\t\t\t\t\tif (G[i][k] !=\
+    \ dval && G[k][j] != dval) {\n\t\t\t\t\t\tif (G[i][j] == dval)\n\t\t\t\t\t\t\t\
+    G[i][j] = G[i][k] + G[k][j];\n\t\t\t\t\t\telse \n\t\t\t\t\t\t\tchmin(G[i][j],\
+    \ G[i][k] + G[k][j]);\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}\n\n#endif\n\
+    \n#pragma endregion floyd_warshall\n#line 7 \"verify/floyd-warshall.all-pairs-shortest-path.test.cpp\"\
     \n\nint main() {\n\tint N, M;\n\tcin >> N >> M;\n\tvector<vector<long long>> G(N,\
     \ vector<long long>(N, LLONG_MAX));\n\tfor (int i = 0; i < M; i++) {\n\t\tint\
     \ u, v; long long w;\n\t\tcin >> u >> v >> w;\n\t\tG[u][v] = w;\n\t}\n\n\tfloyd_warshall(G,\
@@ -57,8 +58,8 @@ data:
   isVerificationFile: true
   path: verify/floyd-warshall.all-pairs-shortest-path.test.cpp
   requiredBy: []
-  timestamp: '2022-05-05 12:57:09-07:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-05-13 08:14:05-07:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/floyd-warshall.all-pairs-shortest-path.test.cpp
 layout: document

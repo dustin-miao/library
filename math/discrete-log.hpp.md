@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: data-structure/fast-set.hpp
     title: Fast Set
   - icon: ':heavy_check_mark:'

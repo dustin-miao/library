@@ -48,10 +48,10 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/zip.yosupo-a+b.test.cpp
-  - verify/monotonic-dp-hull.yosupo-a+b.test.cpp
-  - verify/wavelet-tree.yosupo-a+b.test.cpp
   - verify/monotonic-dp-hull-minkowski-sum.yosupo-a+b.test.cpp
+  - verify/wavelet-tree.yosupo-a+b.test.cpp
   - verify/cyclic-product.yosupo-a+b.test.cpp
+  - verify/monotonic-dp-hull.yosupo-a+b.test.cpp
 documentation_of: random/random-vector.hpp
 layout: document
 title: Randomized Vector

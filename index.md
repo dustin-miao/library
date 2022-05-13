@@ -50,7 +50,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/fast-lca.hpp
       title: Fast Lowest Common Ancestor
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: data-structure/fast-set.hpp
       title: Fast Set
     - icon: ':heavy_check_mark:'
@@ -104,7 +104,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/union-find-2d.hpp
       title: Union Find 2d
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: data-structure/union-find.hpp
       title: Union Find
     - icon: ':heavy_check_mark:'
@@ -129,22 +129,25 @@ data:
       title: Point
   - name: graph
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: graph/cycle-finding.hpp
       title: Cycle Finding
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: graph/dijkstra.hpp
       title: Dijkstra's Algorithm
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
+      path: graph/edmonds-karp.hpp
+      title: Edmonds-Karp Algorithm
+    - icon: ':x:'
       path: graph/floyd-warshall.hpp
       title: Floyd-Warshall Algorithm
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: graph/kruskal.hpp
       title: Kruskal's Algorithm
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: graph/prim.hpp
       title: Prim's Algorithm
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: graph/topo-sort.hpp
       title: Topological Sort
   - name: math
@@ -209,7 +212,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: utility/chmax.hpp
       title: Chmax
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: utility/chmin.hpp
       title: Chmin
     - icon: ':warning:'
@@ -263,7 +266,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/convolution.yosupo-frequency-table-of-tree-distances.test.cpp
       title: verify/convolution.yosupo-frequency-table-of-tree-distances.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/cycle-finding.yosupo-cycle-detection.test.cpp
       title: verify/cycle-finding.yosupo-cycle-detection.test.cpp
     - icon: ':heavy_check_mark:'
@@ -272,10 +275,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/diameter.yosupo-tree-diameter.test.cpp
       title: verify/diameter.yosupo-tree-diameter.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/dijkstra.aizu-shortest-path.test.cpp
       title: verify/dijkstra.aizu-shortest-path.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/dijkstra.aizu-single-source-shortest-path.test.cpp
       title: verify/dijkstra.aizu-single-source-shortest-path.test.cpp
     - icon: ':heavy_check_mark:'
@@ -311,7 +314,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/floor-div.yosupo-many-a+b.test.cpp
       title: verify/floor-div.yosupo-many-a+b.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/floyd-warshall.all-pairs-shortest-path.test.cpp
       title: verify/floyd-warshall.all-pairs-shortest-path.test.cpp
     - icon: ':heavy_check_mark:'
@@ -329,7 +332,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/kciwnef-tree.aizu-point-add-query.test.cpp
       title: verify/kciwnef-tree.aizu-point-add-query.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/kruskal.aizu-minimum-spanning-tree.test.cpp
       title: verify/kruskal.aizu-minimum-spanning-tree.test.cpp
     - icon: ':heavy_check_mark:'
@@ -389,7 +392,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/prefix-sum.yosupo-static-range-sum.test.cpp
       title: verify/prefix-sum.yosupo-static-range-sum.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/prim.aizu-minimum-spanning-tree.test.cpp
       title: verify/prim.aizu-minimum-spanning-tree.test.cpp
     - icon: ':heavy_check_mark:'
@@ -449,7 +452,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/tnemges-tree.aizu-point-add-query.test.cpp
       title: verify/tnemges-tree.aizu-point-add-query.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/topo-sort.topological-sort.test.cpp
       title: verify/topo-sort.topological-sort.test.cpp
     - icon: ':heavy_check_mark:'

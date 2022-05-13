@@ -5,11 +5,11 @@ data:
   - icon: ':heavy_check_mark:'
     path: data-structure/union-find-2d.hpp
     title: Union Find 2d
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/kruskal.hpp
     title: Kruskal's Algorithm
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/kruskal.aizu-minimum-spanning-tree.test.cpp
     title: verify/kruskal.aizu-minimum-spanning-tree.test.cpp
   - icon: ':heavy_check_mark:'
@@ -24,9 +24,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/union-find.yosupo-unionfind.test.cpp
     title: verify/union-find.yosupo-unionfind.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"data-structure/union-find.hpp\"\n#pragma region union_find\n\
@@ -58,13 +58,13 @@ data:
   - data-structure/union-find-2d.hpp
   - graph/kruskal.hpp
   timestamp: '2022-04-29 22:36:50-07:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/kruskal.aizu-minimum-spanning-tree.test.cpp
-  - verify/union-find.aizu-disjoint-union.test.cpp
   - verify/union-find-2d.aizu-disjoint-union.test.cpp
-  - verify/union-find-2d.yosupo-unionfind.test.cpp
   - verify/union-find.yosupo-unionfind.test.cpp
+  - verify/union-find-2d.yosupo-unionfind.test.cpp
+  - verify/union-find.aizu-disjoint-union.test.cpp
 documentation_of: data-structure/union-find.hpp
 layout: document
 title: Union Find
