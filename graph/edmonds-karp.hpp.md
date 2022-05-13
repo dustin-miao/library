@@ -71,8 +71,8 @@ Define the residual capacity $r$ of some edge $e$ as $c(e) - f(e)$. For every ed
 
 If exists a positively weighted path in $G'$ from $s$ to $t$, let the edges in the path be $P = \{e_1, e_2, \cdots, e_k\}$, and let $m = \min_{e \in P}r(e)$. For each edge $e \in P$, increase the flow of $e$ by $m$ and decrease the flow of the inverse edge by $m$. Repeat this process until a path does not exist. 
 
-A path can be found in $\mathcal{O}(|E|)$ time using DFS or BFS, so if the capacities are integral then the total complexity is $\mathcal{O}(|E|F)$, where $F$ is the maximum flow.
+A path can be found in $\mathcal{O}(\lvert E \rvert)$ time using DFS or BFS, so if the capacities are integral then the total complexity is $\mathcal{O}(\lvert E \rvert F)$, where $F$ is the maximum flow.
 
 ## Edmonds-Karp Algorithm
 
-An implementation of the Ford-Fulkerson Method that uses BFS to find the paths. The algorithm runs in $\mathcal{O}(|V||E|^2)$.
+An implementation of the Ford-Fulkerson Method that uses BFS to find the paths. The algorithm runs in $\mathcal{O}(\lvert V \rvert \lvert E \rvert ^ 2)$.
