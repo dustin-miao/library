@@ -181,6 +181,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: random/mersenne-twister.hpp
       title: Mersenne Twister
+    - icon: ':warning:'
+      path: random/random-double.hpp
+      title: Random Double
     - icon: ':heavy_check_mark:'
       path: random/random-vector.hpp
       title: Randomized Vector
