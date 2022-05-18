@@ -4,10 +4,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/ext-gcd.hpp
     title: Extended GCD
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: random/mersenne-twister.hpp
     title: Mersenne Twister
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: random/random-int.hpp
     title: Random Integer
   _extendedRequiredBy: []

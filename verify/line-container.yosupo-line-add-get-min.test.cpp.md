@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: geometry/line-container.hpp
     title: Line Container
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utility/floor-div.hpp
     title: Floor Division
   _extendedRequiredBy: []

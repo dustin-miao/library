@@ -1,32 +1,32 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: geometry/line-container.hpp
     title: Line Container
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: geometry/monotonic-dp-hull.hpp
     title: Monotonic DP Hull
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: geometry/point.hpp
     title: Point
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: random/mersenne-twister.hpp
     title: Mersenne Twister
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: random/random-int-vector.hpp
     title: Random Integer Vector
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: random/random-int.hpp
     title: Random Integer
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utility/floor-div.hpp
     title: Floor Division
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/aplusb
@@ -133,26 +133,26 @@ data:
     \ (auto &a : v)\n\t\t\ta = rint(l, r);\n\t\treturn v;\n\t}\n}\n\n#endif\n\n#pragma\
     \ endregion rng_int_vector\n#line 9 \"verify/monotonic-dp-hull.yosupo-a+b.test.cpp\"\
     \n\nint main() {\n\t{\n\t\tint T = 2e5;\n\t\tauto slope = rng::rivec<long long>(T,\
-    \ -1e6, 1e6), intercept = rng_verng::rivecctor<long long>(T, -1e9, 1e9);\n\t\t\
-    auto x_coord = rng::rivec<long long>(5 * T, -1e6, 1e6);\n\n\t\tsort(slope.begin(),\
-    \ slope.end());\n\t\tsort(x_coord.begin(), x_coord.end());\n\n\t\tline_container\
-    \ lc;\n\t\tmonotonic_dp_hull mdh;\n\t\tfor (int tc = 0; tc < T; tc++) {\n\t\t\t\
-    lc.add(slope[tc], intercept[tc]);\n\t\t\tmdh.add(slope[tc], intercept[tc]);\n\t\
-    \t\tfor (int i = tc * 5; i < (tc + 1) * 5; i++) \n\t\t\t\tassert(lc.query(x_coord[i])\
-    \ == mdh.query(x_coord[i]));\n\t\t}\n\t}\n\n\tlong long A, B;\n\tcin >> A >> B;\n\
-    \tcout << A + B << '\\n';\n}\n"
+    \ -1e6, 1e6), intercept = rng::rivec<long long>(T, -1e9, 1e9);\n\t\tauto x_coord\
+    \ = rng::rivec<long long>(5 * T, -1e6, 1e6);\n\n\t\tsort(slope.begin(), slope.end());\n\
+    \t\tsort(x_coord.begin(), x_coord.end());\n\n\t\tline_container lc;\n\t\tmonotonic_dp_hull\
+    \ mdh;\n\t\tfor (int tc = 0; tc < T; tc++) {\n\t\t\tlc.add(slope[tc], intercept[tc]);\n\
+    \t\t\tmdh.add(slope[tc], intercept[tc]);\n\t\t\tfor (int i = tc * 5; i < (tc +\
+    \ 1) * 5; i++) \n\t\t\t\tassert(lc.query(x_coord[i]) == mdh.query(x_coord[i]));\n\
+    \t\t}\n\t}\n\n\tlong long A, B;\n\tcin >> A >> B;\n\tcout << A + B << '\\n';\n\
+    }\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/aplusb\"\n\n#include <bits/stdc++.h>\n\
     using namespace std;\n\n#include \"geometry/line-container.hpp\"\n#include \"\
     geometry/monotonic-dp-hull.hpp\"\n#include \"random/random-int-vector.hpp\"\n\n\
     int main() {\n\t{\n\t\tint T = 2e5;\n\t\tauto slope = rng::rivec<long long>(T,\
-    \ -1e6, 1e6), intercept = rng_verng::rivecctor<long long>(T, -1e9, 1e9);\n\t\t\
-    auto x_coord = rng::rivec<long long>(5 * T, -1e6, 1e6);\n\n\t\tsort(slope.begin(),\
-    \ slope.end());\n\t\tsort(x_coord.begin(), x_coord.end());\n\n\t\tline_container\
-    \ lc;\n\t\tmonotonic_dp_hull mdh;\n\t\tfor (int tc = 0; tc < T; tc++) {\n\t\t\t\
-    lc.add(slope[tc], intercept[tc]);\n\t\t\tmdh.add(slope[tc], intercept[tc]);\n\t\
-    \t\tfor (int i = tc * 5; i < (tc + 1) * 5; i++) \n\t\t\t\tassert(lc.query(x_coord[i])\
-    \ == mdh.query(x_coord[i]));\n\t\t}\n\t}\n\n\tlong long A, B;\n\tcin >> A >> B;\n\
-    \tcout << A + B << '\\n';\n}"
+    \ -1e6, 1e6), intercept = rng::rivec<long long>(T, -1e9, 1e9);\n\t\tauto x_coord\
+    \ = rng::rivec<long long>(5 * T, -1e6, 1e6);\n\n\t\tsort(slope.begin(), slope.end());\n\
+    \t\tsort(x_coord.begin(), x_coord.end());\n\n\t\tline_container lc;\n\t\tmonotonic_dp_hull\
+    \ mdh;\n\t\tfor (int tc = 0; tc < T; tc++) {\n\t\t\tlc.add(slope[tc], intercept[tc]);\n\
+    \t\t\tmdh.add(slope[tc], intercept[tc]);\n\t\t\tfor (int i = tc * 5; i < (tc +\
+    \ 1) * 5; i++) \n\t\t\t\tassert(lc.query(x_coord[i]) == mdh.query(x_coord[i]));\n\
+    \t\t}\n\t}\n\n\tlong long A, B;\n\tcin >> A >> B;\n\tcout << A + B << '\\n';\n\
+    }"
   dependsOn:
   - geometry/line-container.hpp
   - utility/floor-div.hpp
@@ -164,8 +164,8 @@ data:
   isVerificationFile: true
   path: verify/monotonic-dp-hull.yosupo-a+b.test.cpp
   requiredBy: []
-  timestamp: '2022-05-18 09:15:37-07:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-05-18 09:19:50-07:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/monotonic-dp-hull.yosupo-a+b.test.cpp
 layout: document

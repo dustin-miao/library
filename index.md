@@ -115,16 +115,16 @@ data:
     - icon: ':warning:'
       path: geometry/convex-hull.hpp
       title: Convex Hull
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: geometry/line-container.hpp
       title: Line Container
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: geometry/monotonic-dp-hull-minkowski-sum.hpp
       title: Minkowski Sum for Monotonic DP Hull
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: geometry/monotonic-dp-hull.hpp
       title: Monotonic DP Hull
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: geometry/point.hpp
       title: Point
   - name: graph
@@ -178,16 +178,16 @@ data:
       title: Matrix
   - name: random
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: random/mersenne-twister.hpp
       title: Mersenne Twister
     - icon: ':warning:'
       path: random/random-float.hpp
       title: Random Float
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: random/random-int-vector.hpp
       title: Random Integer Vector
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: random/random-int.hpp
       title: Random Integer
   - name: string
@@ -235,7 +235,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: utility/fast-pow.hpp
       title: Binary Exponentiation
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: utility/floor-div.hpp
       title: Floor Division
     - icon: ':heavy_check_mark:'
@@ -382,10 +382,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/mint.yosupo-A+B.test.cpp
       title: verify/mint.yosupo-A+B.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/monotonic-dp-hull-minkowski-sum.yosupo-a+b.test.cpp
       title: verify/monotonic-dp-hull-minkowski-sum.yosupo-a+b.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/monotonic-dp-hull.yosupo-a+b.test.cpp
       title: verify/monotonic-dp-hull.yosupo-a+b.test.cpp
     - icon: ':heavy_check_mark:'

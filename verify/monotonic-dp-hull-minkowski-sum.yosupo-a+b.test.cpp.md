@@ -1,29 +1,29 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: geometry/monotonic-dp-hull-minkowski-sum.hpp
     title: Minkowski Sum for Monotonic DP Hull
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: geometry/monotonic-dp-hull.hpp
     title: Monotonic DP Hull
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: geometry/point.hpp
     title: Point
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: random/mersenne-twister.hpp
     title: Mersenne Twister
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: random/random-int-vector.hpp
     title: Random Integer Vector
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: random/random-int.hpp
     title: Random Integer
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/aplusb
@@ -194,7 +194,7 @@ data:
     \ slope2.end());\n\t\tmonotonic_dp_hull a, b;\n\t\tfor (int i = 0; i < T; i++)\n\
     \t\t\ta.add(slope1[i], intercept1[i]);\n\t\tfor (int i = 0; i < T; i++)\n\t\t\t\
     b.add(slope2[i], intercept2[i]);\n\t\tmonotonic_dp_hull c = minkowski_sum(a, b);\n\
-    \n\t\tauto x_coord = rng_vector<long long>(T, -1e6, 1e6);\n\t\tsort(x_coord.begin(),\
+    \n\t\tauto x_coord = rng::rivec<long long>(T, -1e6, 1e6);\n\t\tsort(x_coord.begin(),\
     \ x_coord.end());\n\n\t\tfor (int x : x_coord)\n\t\t\tassert(c.query(x) == a.query(x)\
     \ + b.query(x));\n\t}\n\n\tint A, B;\n\tcin >> A >> B;\n\tcout << A + B << '\\\
     n';\n}\n"
@@ -208,7 +208,7 @@ data:
     \ slope2.end());\n\t\tmonotonic_dp_hull a, b;\n\t\tfor (int i = 0; i < T; i++)\n\
     \t\t\ta.add(slope1[i], intercept1[i]);\n\t\tfor (int i = 0; i < T; i++)\n\t\t\t\
     b.add(slope2[i], intercept2[i]);\n\t\tmonotonic_dp_hull c = minkowski_sum(a, b);\n\
-    \n\t\tauto x_coord = rng_vector<long long>(T, -1e6, 1e6);\n\t\tsort(x_coord.begin(),\
+    \n\t\tauto x_coord = rng::rivec<long long>(T, -1e6, 1e6);\n\t\tsort(x_coord.begin(),\
     \ x_coord.end());\n\n\t\tfor (int x : x_coord)\n\t\t\tassert(c.query(x) == a.query(x)\
     \ + b.query(x));\n\t}\n\n\tint A, B;\n\tcin >> A >> B;\n\tcout << A + B << '\\\
     n';\n}"
@@ -222,8 +222,8 @@ data:
   isVerificationFile: true
   path: verify/monotonic-dp-hull-minkowski-sum.yosupo-a+b.test.cpp
   requiredBy: []
-  timestamp: '2022-05-18 09:09:46-07:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-05-18 09:19:50-07:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/monotonic-dp-hull-minkowski-sum.yosupo-a+b.test.cpp
 layout: document

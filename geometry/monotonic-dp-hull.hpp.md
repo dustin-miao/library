@@ -1,23 +1,23 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: geometry/point.hpp
     title: Point
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: geometry/monotonic-dp-hull-minkowski-sum.hpp
     title: Minkowski Sum for Monotonic DP Hull
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/monotonic-dp-hull-minkowski-sum.yosupo-a+b.test.cpp
     title: verify/monotonic-dp-hull-minkowski-sum.yosupo-a+b.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/monotonic-dp-hull.yosupo-a+b.test.cpp
     title: verify/monotonic-dp-hull.yosupo-a+b.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"geometry/point.hpp\"\n#pragma region point\n\n#ifndef POINT_HPP\n\
@@ -110,7 +110,7 @@ data:
   requiredBy:
   - geometry/monotonic-dp-hull-minkowski-sum.hpp
   timestamp: '2022-05-05 15:11:34-07:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/monotonic-dp-hull-minkowski-sum.yosupo-a+b.test.cpp
   - verify/monotonic-dp-hull.yosupo-a+b.test.cpp

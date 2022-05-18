@@ -1,16 +1,16 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: random/mersenne-twister.hpp
     title: Mersenne Twister
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: random/random-int-vector.hpp
     title: Random Integer Vector
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: random/random-int.hpp
     title: Random Integer
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: random/random-int.hpp
     title: Random Integer
   - icon: ':heavy_check_mark:'
