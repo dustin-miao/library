@@ -10,8 +10,8 @@ int main() {
 	{
 		int T = 2e5;
 		while (T--) {
-			long long A = rng::rint(1, 1e6);
-			long long B = rng::rint(1, 1e6);
+			long long A = rng::rint<long long>(1, 1e6);
+			long long B = rng::rint<long long>(1, 1e6);
 			long long X, Y;
 			auto G = math::ext_gcd(A, B, X, Y);
 			assert(G == __gcd(A, B));

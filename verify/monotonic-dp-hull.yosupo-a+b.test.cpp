@@ -5,7 +5,7 @@ using namespace std;
 
 #include "geometry/line-container.hpp"
 #include "geometry/monotonic-dp-hull.hpp"
-#include "random/rng-int-vector.hpp"
+#include "random/random-int-vector.hpp"
 
 int main() {
 	{
