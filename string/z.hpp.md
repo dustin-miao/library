@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/z.yosupo-z-algorithm.test.cpp
+    title: verify/z.yosupo-z-algorithm.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"string/z.hpp\"\n#pragma region str_z\n\n#ifndef STR_Z_HPP\n\
@@ -27,8 +30,9 @@ data:
   path: string/z.hpp
   requiredBy: []
   timestamp: '2022-05-18 09:19:50-07:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/z.yosupo-z-algorithm.test.cpp
 documentation_of: string/z.hpp
 layout: document
 redirect_from:
