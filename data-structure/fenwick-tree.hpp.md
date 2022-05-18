@@ -45,8 +45,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/fenwick-tree.aizu-range-sum-query.test.cpp
-  - verify/kciwnef-tree.aizu-point-add-query.test.cpp
   - verify/fenwick-tree.yosupo-point-add-range-sum.test.cpp
+  - verify/kciwnef-tree.aizu-point-add-query.test.cpp
 documentation_of: data-structure/fenwick-tree.hpp
 layout: document
 title: Fenwick Tree

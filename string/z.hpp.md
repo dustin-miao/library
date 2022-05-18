@@ -4,6 +4,9 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: verify/z.aizu-string-search.test.cpp
+    title: verify/z.aizu-string-search.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/z.yosupo-z-algorithm.test.cpp
     title: verify/z.yosupo-z-algorithm.test.cpp
   _isVerificationFailed: false
@@ -33,6 +36,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/z.yosupo-z-algorithm.test.cpp
+  - verify/z.aizu-string-search.test.cpp
 documentation_of: string/z.hpp
 layout: document
 redirect_from:

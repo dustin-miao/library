@@ -497,6 +497,9 @@ data:
       path: verify/y-combinator.aizu-greatest-common-denominator.test.cpp
       title: verify/y-combinator.aizu-greatest-common-denominator.test.cpp
     - icon: ':heavy_check_mark:'
+      path: verify/z.aizu-string-search.test.cpp
+      title: verify/z.aizu-string-search.test.cpp
+    - icon: ':heavy_check_mark:'
       path: verify/z.yosupo-z-algorithm.test.cpp
       title: verify/z.yosupo-z-algorithm.test.cpp
     - icon: ':heavy_check_mark:'

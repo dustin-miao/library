@@ -41,8 +41,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/ext-gcd.aizu-extended-euclid-algorithm.test.cpp
-  - verify/ext-gcd.yosupo-a+b.test.cpp
   - verify/ext-gcd.aizu-greatest-common-divisor.test.cpp
+  - verify/ext-gcd.yosupo-a+b.test.cpp
 documentation_of: math/ext-gcd.hpp
 layout: document
 title: Extended GCD

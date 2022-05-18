@@ -61,10 +61,10 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/kruskal.aizu-minimum-spanning-tree.test.cpp
-  - verify/union-find-2d.aizu-disjoint-union.test.cpp
-  - verify/union-find.yosupo-unionfind.test.cpp
-  - verify/union-find-2d.yosupo-unionfind.test.cpp
   - verify/union-find.aizu-disjoint-union.test.cpp
+  - verify/union-find.yosupo-unionfind.test.cpp
+  - verify/union-find-2d.aizu-disjoint-union.test.cpp
+  - verify/union-find-2d.yosupo-unionfind.test.cpp
 documentation_of: data-structure/union-find.hpp
 layout: document
 title: Union Find

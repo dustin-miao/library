@@ -73,8 +73,8 @@ data:
   timestamp: '2022-05-03 13:27:25-07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/convolution.yosupo-frequency-table-of-tree-distances.test.cpp
   - verify/cyclic-product.yosupo-a+b.test.cpp
+  - verify/convolution.yosupo-frequency-table-of-tree-distances.test.cpp
 documentation_of: convolution/convolution.hpp
 layout: document
 title: Convolution

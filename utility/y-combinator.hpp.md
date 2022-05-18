@@ -52,10 +52,10 @@ data:
   path: utility/y-combinator.hpp
   requiredBy:
   - tree/diameter.hpp
-  - tree/parent.hpp
-  - tree/euler-tour.hpp
   - tree/depth.hpp
   - tree/distance.hpp
+  - tree/parent.hpp
+  - tree/euler-tour.hpp
   timestamp: '2022-05-03 13:22:51-07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
