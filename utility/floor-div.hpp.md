@@ -12,9 +12,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/line-container.yosupo-line-add-get-min.test.cpp
     title: verify/line-container.yosupo-line-add-get-min.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/monotonic-dp-hull.yosupo-a+b.test.cpp
-    title: verify/monotonic-dp-hull.yosupo-a+b.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -37,7 +34,6 @@ data:
   verifiedWith:
   - verify/floor-div.yosupo-many-a+b.test.cpp
   - verify/line-container.yosupo-line-add-get-min.test.cpp
-  - verify/monotonic-dp-hull.yosupo-a+b.test.cpp
 documentation_of: utility/floor-div.hpp
 layout: document
 title: Floor Division

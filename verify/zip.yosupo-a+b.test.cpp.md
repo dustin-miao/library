@@ -1,15 +1,18 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: random/mersenne-twister.hpp
     title: Mersenne Twister
-  - icon: ':heavy_check_mark:'
-    path: random/mersenne-twister.hpp
-    title: Mersenne Twister
-  - icon: ':heavy_check_mark:'
-    path: random/random-vector.hpp
-    title: Randomized Vector
+  - icon: ':question:'
+    path: random/random-int-vector.hpp
+    title: Random Integer Vector
+  - icon: ':question:'
+    path: random/random-int.hpp
+    title: Random Integer
+  - icon: ':question:'
+    path: random/random-int.hpp
+    title: Random Integer
   - icon: ':heavy_check_mark:'
     path: utility/zip.hpp
     title: Zip
@@ -57,40 +60,47 @@ data:
     private:\n\t\ttuple<T...> m_args;\n\t};\n}\n\ntemplate<typename ...T>\nauto zip(T\
     \ &&...t) { return zip_internal::zipper<T ...>{forward<T>(t)...}; }\n\n#endif\n\
     \n#pragma endregion zip\n#line 1 \"random/mersenne-twister.hpp\"\n#pragma region\
-    \ rng\n\n#ifndef MERSENNE_TWISTER_HPP\n#define MERSENNE_TWISTER_HPP\n\nmt19937\
-    \ _rng(chrono::steady_clock::now().time_since_epoch().count());\n\ntemplate<typename\
-    \ T = int>\ntypename enable_if<is_integral<T>::value, T>::type rng(T l, T r) {\
-    \ return uniform_int_distribution<T>(l, r)(_rng); }\n\n#endif\n\n#pragma endregion\
-    \ rng\n#line 1 \"random/mersenne-twister.hpp\"\n#pragma region rng\n\n#ifndef\
-    \ MERSENNE_TWISTER_HPP\n#define MERSENNE_TWISTER_HPP\n\nmt19937 _rng(chrono::steady_clock::now().time_since_epoch().count());\n\
-    \ntemplate<typename T = int>\ntypename enable_if<is_integral<T>::value, T>::type\
-    \ rng(T l, T r) { return uniform_int_distribution<T>(l, r)(_rng); }\n\n#endif\n\
-    \n#pragma endregion rng\n#line 2 \"random/random-vector.hpp\"\n\n#pragma region\
-    \ rng_vector\n\n#ifndef RNG_VECTOR_HPP\n#define RNG_VECTOR_HPP\n\ntemplate<typename\
-    \ T>\ntypename enable_if<is_integral<T>::value, vector<T>>::type rng_vector(int\
-    \ n, T l, T r) {\n\tvector<T> v(n);\n\tfor (auto &a : v)\n\t\ta = rng(l, r);\n\
-    \treturn v;\n}\n\n#endif\n\n#pragma endregion rng_vector\n#line 9 \"verify/zip.yosupo-a+b.test.cpp\"\
-    \n\nint main() {\n\t{\n\t\tint N = rng<int>(1e5, 1e6);\n\t\tvector<int> A = rng_vector<int>(N,\
-    \ 0, 1e9), B = rng_vector<int>(N, 0, 1e9), C(N);\n\t\tfor (auto &&[a, b, c] :\
+    \ mersenne_twister\n\n#ifndef MERSENNE_TWISTER_HPP\n#define MERSENNE_TWISTER_HPP\n\
+    \nnamespace rng {\n\tmt19937 mst(chrono::steady_clock::now().time_since_epoch().count());\n\
+    }\n\n#endif\n\n#pragma endregion mersenne_twister\n#line 2 \"random/random-int.hpp\"\
+    \n\n#pragma region rng_int\n\n#ifndef RANDOM_INT_HPP\n#define RANDOM_INT_HPP\n\
+    \nnamespace rng {\n\ttemplate<typename T = int>\n\ttypename enable_if<is_integral<T>::value,\
+    \ T>::type \n\trint(T l, T r) { return uniform_int_distribution<T>(l, r)(mst);\
+    \ }\n}\n\n#endif\n\n#pragma endregion rng_int\n#line 1 \"random/mersenne-twister.hpp\"\
+    \n#pragma region mersenne_twister\n\n#ifndef MERSENNE_TWISTER_HPP\n#define MERSENNE_TWISTER_HPP\n\
+    \nnamespace rng {\n\tmt19937 mst(chrono::steady_clock::now().time_since_epoch().count());\n\
+    }\n\n#endif\n\n#pragma endregion mersenne_twister\n#line 2 \"random/random-int.hpp\"\
+    \n\n#pragma region rng_int\n\n#ifndef RANDOM_INT_HPP\n#define RANDOM_INT_HPP\n\
+    \nnamespace rng {\n\ttemplate<typename T = int>\n\ttypename enable_if<is_integral<T>::value,\
+    \ T>::type \n\trint(T l, T r) { return uniform_int_distribution<T>(l, r)(mst);\
+    \ }\n}\n\n#endif\n\n#pragma endregion rng_int\n#line 2 \"random/random-int-vector.hpp\"\
+    \n\n#pragma region rng_int_vector\n\n#ifndef RNG_VECTOR_HPP\n#define RNG_VECTOR_HPP\n\
+    \nnamespace rng {\n\ttemplate<typename T>\n\ttypename enable_if<is_integral<T>::value,\
+    \ vector<T>>::type \n\trivec(int n, T l, T r) {\n\t\tvector<T> v(n);\n\t\tfor\
+    \ (auto &a : v)\n\t\t\ta = rint(l, r);\n\t\treturn v;\n\t}\n}\n\n#endif\n\n#pragma\
+    \ endregion rng_int_vector\n#line 9 \"verify/zip.yosupo-a+b.test.cpp\"\n\nint\
+    \ main() {\n\t{\n\t\tint N = rng::rint<int>(1e5, 1e6);\n\t\tvector<int> A = rng::rivec<int>(N,\
+    \ 0, 1e9), B = rng::rivec<int>(N, 0, 1e9), C(N);\n\t\tfor (auto &&[a, b, c] :\
     \ zip(A, B, C)) \n\t\t\tc = a + b;\n\t\tfor (int i = 0; i < N; i++)\n\t\t\tassert(C[i]\
     \ == A[i] + B[i]);\n\t}\n\n\tint A, B;\n\tcin >> A >> B;\n\tcout << A + B << '\\\
     n';\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/aplusb\"\n\n#include <bits/stdc++.h>\n\
-    using namespace std;\n\n#include \"utility/zip.hpp\"\n#include \"random/mersenne-twister.hpp\"\
-    \n#include \"random/random-vector.hpp\"\n\nint main() {\n\t{\n\t\tint N = rng<int>(1e5,\
-    \ 1e6);\n\t\tvector<int> A = rng_vector<int>(N, 0, 1e9), B = rng_vector<int>(N,\
-    \ 0, 1e9), C(N);\n\t\tfor (auto &&[a, b, c] : zip(A, B, C)) \n\t\t\tc = a + b;\n\
-    \t\tfor (int i = 0; i < N; i++)\n\t\t\tassert(C[i] == A[i] + B[i]);\n\t}\n\n\t\
-    int A, B;\n\tcin >> A >> B;\n\tcout << A + B << '\\n';\n}"
+    using namespace std;\n\n#include \"utility/zip.hpp\"\n#include \"random/random-int.hpp\"\
+    \n#include \"random/random-int-vector.hpp\"\n\nint main() {\n\t{\n\t\tint N =\
+    \ rng::rint<int>(1e5, 1e6);\n\t\tvector<int> A = rng::rivec<int>(N, 0, 1e9), B\
+    \ = rng::rivec<int>(N, 0, 1e9), C(N);\n\t\tfor (auto &&[a, b, c] : zip(A, B, C))\
+    \ \n\t\t\tc = a + b;\n\t\tfor (int i = 0; i < N; i++)\n\t\t\tassert(C[i] == A[i]\
+    \ + B[i]);\n\t}\n\n\tint A, B;\n\tcin >> A >> B;\n\tcout << A + B << '\\n';\n}"
   dependsOn:
   - utility/zip.hpp
+  - random/random-int.hpp
   - random/mersenne-twister.hpp
-  - random/random-vector.hpp
-  - random/mersenne-twister.hpp
+  - random/random-int-vector.hpp
+  - random/random-int.hpp
   isVerificationFile: true
   path: verify/zip.yosupo-a+b.test.cpp
   requiredBy: []
-  timestamp: '2022-05-05 15:07:22-07:00'
+  timestamp: '2022-05-18 09:09:46-07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/zip.yosupo-a+b.test.cpp

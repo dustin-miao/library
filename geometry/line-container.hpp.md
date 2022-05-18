@@ -9,9 +9,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/line-container.yosupo-line-add-get-min.test.cpp
     title: verify/line-container.yosupo-line-add-get-min.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/monotonic-dp-hull.yosupo-a+b.test.cpp
-    title: verify/monotonic-dp-hull.yosupo-a+b.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -61,7 +58,6 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/line-container.yosupo-line-add-get-min.test.cpp
-  - verify/monotonic-dp-hull.yosupo-a+b.test.cpp
 documentation_of: geometry/line-container.hpp
 layout: document
 title: Line Container

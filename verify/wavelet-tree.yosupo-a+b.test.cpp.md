@@ -4,15 +4,18 @@ data:
   - icon: ':heavy_check_mark:'
     path: data-structure/wavelet-tree.hpp
     title: Wavelet Tree
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: random/mersenne-twister.hpp
     title: Mersenne Twister
-  - icon: ':heavy_check_mark:'
-    path: random/mersenne-twister.hpp
-    title: Mersenne Twister
-  - icon: ':heavy_check_mark:'
-    path: random/random-vector.hpp
-    title: Randomized Vector
+  - icon: ':question:'
+    path: random/random-int-vector.hpp
+    title: Random Integer Vector
+  - icon: ':question:'
+    path: random/random-int.hpp
+    title: Random Integer
+  - icon: ':question:'
+    path: random/random-int.hpp
+    title: Random Integer
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -55,54 +58,63 @@ data:
     \ + 1, r + 1, k + 1, 1, vlb, vrb); }\n\n\tint cnt_leq(int l, int r, int k) { return\
     \ cnt_leq(l + 1, r + 1, k, 1, vlb, vrb); }\n\n\tint cnt_eq(int l, int r, int k)\
     \ { return cnt_eq(l + 1, r + 1, k, 1, vlb, vrb); }\n};\n\n#endif \n\n#pragma endregion\
-    \ wavelet_tree\n#line 1 \"random/mersenne-twister.hpp\"\n#pragma region rng\n\n\
-    #ifndef MERSENNE_TWISTER_HPP\n#define MERSENNE_TWISTER_HPP\n\nmt19937 _rng(chrono::steady_clock::now().time_since_epoch().count());\n\
-    \ntemplate<typename T = int>\ntypename enable_if<is_integral<T>::value, T>::type\
-    \ rng(T l, T r) { return uniform_int_distribution<T>(l, r)(_rng); }\n\n#endif\n\
-    \n#pragma endregion rng\n#line 1 \"random/mersenne-twister.hpp\"\n#pragma region\
-    \ rng\n\n#ifndef MERSENNE_TWISTER_HPP\n#define MERSENNE_TWISTER_HPP\n\nmt19937\
-    \ _rng(chrono::steady_clock::now().time_since_epoch().count());\n\ntemplate<typename\
-    \ T = int>\ntypename enable_if<is_integral<T>::value, T>::type rng(T l, T r) {\
-    \ return uniform_int_distribution<T>(l, r)(_rng); }\n\n#endif\n\n#pragma endregion\
-    \ rng\n#line 2 \"random/random-vector.hpp\"\n\n#pragma region rng_vector\n\n#ifndef\
-    \ RNG_VECTOR_HPP\n#define RNG_VECTOR_HPP\n\ntemplate<typename T>\ntypename enable_if<is_integral<T>::value,\
-    \ vector<T>>::type rng_vector(int n, T l, T r) {\n\tvector<T> v(n);\n\tfor (auto\
-    \ &a : v)\n\t\ta = rng(l, r);\n\treturn v;\n}\n\n#endif\n\n#pragma endregion rng_vector\n\
-    #line 9 \"verify/wavelet-tree.yosupo-a+b.test.cpp\"\n\nint main() {\n\t{\n\t\t\
-    int N = 10000, L = 300, Q = 10000;\n\t\tvector<int> A = rng_vector(N, 0, L);\n\
-    \t\tvector<int> B(A);\n\t\twavelet_tree wt(B.begin(), B.end(), 0, L);\n\t\twhile\
-    \ (Q--) {\n\t\t\tint t = rng(0, 1);\n\t\t\tif (t == 0) {\n\t\t\t\tint l = rng(0,\
-    \ N - 1), r = rng(0, N - 1), k = rng(0, L);\n\t\t\t\tif (r < l)\n\t\t\t\t\tswap(l,\
-    \ r);\n\t\t\t\tint ret = 0;\n\t\t\t\tfor (int i = l; i <= r; i++)\n\t\t\t\t\t\
-    if (A[i] <= k)\n\t\t\t\t\t\tret++;\n\t\t\t\tassert(ret == wt.cnt_leq(l, r, k));\n\
-    \t\t\t} else if (t == 1) {\n\t\t\t\tint l = rng(0, N - 1), r = rng(0, N - 1),\
-    \ k = rng(0, L);\n\t\t\t\tif (r < l)\n\t\t\t\t\tswap(l, r);\n\t\t\t\tint ret =\
-    \ 0;\n\t\t\t\tfor (int i = l; i <= r; i++)\n\t\t\t\t\tif (A[i] == k)\n\t\t\t\t\
-    \t\tret++;\n\t\t\t\tassert(ret == wt.cnt_eq(l, r, k));\n\t\t\t}\n\t\t}\n\t}\n\n\
-    \tint A, B;\n\tcin >> A >> B;\n\tcout << A + B << '\\n';\n}\n"
+    \ wavelet_tree\n#line 1 \"random/mersenne-twister.hpp\"\n#pragma region mersenne_twister\n\
+    \n#ifndef MERSENNE_TWISTER_HPP\n#define MERSENNE_TWISTER_HPP\n\nnamespace rng\
+    \ {\n\tmt19937 mst(chrono::steady_clock::now().time_since_epoch().count());\n\
+    }\n\n#endif\n\n#pragma endregion mersenne_twister\n#line 2 \"random/random-int.hpp\"\
+    \n\n#pragma region rng_int\n\n#ifndef RANDOM_INT_HPP\n#define RANDOM_INT_HPP\n\
+    \nnamespace rng {\n\ttemplate<typename T = int>\n\ttypename enable_if<is_integral<T>::value,\
+    \ T>::type \n\trint(T l, T r) { return uniform_int_distribution<T>(l, r)(mst);\
+    \ }\n}\n\n#endif\n\n#pragma endregion rng_int\n#line 1 \"random/mersenne-twister.hpp\"\
+    \n#pragma region mersenne_twister\n\n#ifndef MERSENNE_TWISTER_HPP\n#define MERSENNE_TWISTER_HPP\n\
+    \nnamespace rng {\n\tmt19937 mst(chrono::steady_clock::now().time_since_epoch().count());\n\
+    }\n\n#endif\n\n#pragma endregion mersenne_twister\n#line 2 \"random/random-int.hpp\"\
+    \n\n#pragma region rng_int\n\n#ifndef RANDOM_INT_HPP\n#define RANDOM_INT_HPP\n\
+    \nnamespace rng {\n\ttemplate<typename T = int>\n\ttypename enable_if<is_integral<T>::value,\
+    \ T>::type \n\trint(T l, T r) { return uniform_int_distribution<T>(l, r)(mst);\
+    \ }\n}\n\n#endif\n\n#pragma endregion rng_int\n#line 2 \"random/random-int-vector.hpp\"\
+    \n\n#pragma region rng_int_vector\n\n#ifndef RNG_VECTOR_HPP\n#define RNG_VECTOR_HPP\n\
+    \nnamespace rng {\n\ttemplate<typename T>\n\ttypename enable_if<is_integral<T>::value,\
+    \ vector<T>>::type \n\trivec(int n, T l, T r) {\n\t\tvector<T> v(n);\n\t\tfor\
+    \ (auto &a : v)\n\t\t\ta = rint(l, r);\n\t\treturn v;\n\t}\n}\n\n#endif\n\n#pragma\
+    \ endregion rng_int_vector\n#line 9 \"verify/wavelet-tree.yosupo-a+b.test.cpp\"\
+    \n\nint main() {\n\t{\n\t\tint N = 10000, L = 300, Q = 10000;\n\t\tvector<int>\
+    \ A = rng::rivec(N, 0, L);\n\t\tvector<int> B(A);\n\t\twavelet_tree wt(B.begin(),\
+    \ B.end(), 0, L);\n\t\twhile (Q--) {\n\t\t\tint t = rng::rint(0, 1);\n\t\t\tif\
+    \ (t == 0) {\n\t\t\t\tint l = rng::rint(0, N - 1), r = rng::rint(0, N - 1), k\
+    \ = rng::rint(0, L);\n\t\t\t\tif (r < l)\n\t\t\t\t\tswap(l, r);\n\t\t\t\tint ret\
+    \ = 0;\n\t\t\t\tfor (int i = l; i <= r; i++)\n\t\t\t\t\tif (A[i] <= k)\n\t\t\t\
+    \t\t\tret++;\n\t\t\t\tassert(ret == wt.cnt_leq(l, r, k));\n\t\t\t} else if (t\
+    \ == 1) {\n\t\t\t\tint l = rng::rint(0, N - 1), r = rng::rint(0, N - 1), k = rng::rint(0,\
+    \ L);\n\t\t\t\tif (r < l)\n\t\t\t\t\tswap(l, r);\n\t\t\t\tint ret = 0;\n\t\t\t\
+    \tfor (int i = l; i <= r; i++)\n\t\t\t\t\tif (A[i] == k)\n\t\t\t\t\t\tret++;\n\
+    \t\t\t\tassert(ret == wt.cnt_eq(l, r, k));\n\t\t\t}\n\t\t}\n\t}\n\n\tint A, B;\n\
+    \tcin >> A >> B;\n\tcout << A + B << '\\n';\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/aplusb\"\n\n#include <bits/stdc++.h>\n\
     using namespace std;\n\n#include \"data-structure/wavelet-tree.hpp\"\n#include\
-    \ \"random/mersenne-twister.hpp\"\n#include \"random/random-vector.hpp\"\n\nint\
-    \ main() {\n\t{\n\t\tint N = 10000, L = 300, Q = 10000;\n\t\tvector<int> A = rng_vector(N,\
+    \ \"random/random-int.hpp\"\n#include \"random/random-int-vector.hpp\"\n\nint\
+    \ main() {\n\t{\n\t\tint N = 10000, L = 300, Q = 10000;\n\t\tvector<int> A = rng::rivec(N,\
     \ 0, L);\n\t\tvector<int> B(A);\n\t\twavelet_tree wt(B.begin(), B.end(), 0, L);\n\
-    \t\twhile (Q--) {\n\t\t\tint t = rng(0, 1);\n\t\t\tif (t == 0) {\n\t\t\t\tint\
-    \ l = rng(0, N - 1), r = rng(0, N - 1), k = rng(0, L);\n\t\t\t\tif (r < l)\n\t\
-    \t\t\t\tswap(l, r);\n\t\t\t\tint ret = 0;\n\t\t\t\tfor (int i = l; i <= r; i++)\n\
-    \t\t\t\t\tif (A[i] <= k)\n\t\t\t\t\t\tret++;\n\t\t\t\tassert(ret == wt.cnt_leq(l,\
-    \ r, k));\n\t\t\t} else if (t == 1) {\n\t\t\t\tint l = rng(0, N - 1), r = rng(0,\
-    \ N - 1), k = rng(0, L);\n\t\t\t\tif (r < l)\n\t\t\t\t\tswap(l, r);\n\t\t\t\t\
-    int ret = 0;\n\t\t\t\tfor (int i = l; i <= r; i++)\n\t\t\t\t\tif (A[i] == k)\n\
-    \t\t\t\t\t\tret++;\n\t\t\t\tassert(ret == wt.cnt_eq(l, r, k));\n\t\t\t}\n\t\t\
-    }\n\t}\n\n\tint A, B;\n\tcin >> A >> B;\n\tcout << A + B << '\\n';\n}"
+    \t\twhile (Q--) {\n\t\t\tint t = rng::rint(0, 1);\n\t\t\tif (t == 0) {\n\t\t\t\
+    \tint l = rng::rint(0, N - 1), r = rng::rint(0, N - 1), k = rng::rint(0, L);\n\
+    \t\t\t\tif (r < l)\n\t\t\t\t\tswap(l, r);\n\t\t\t\tint ret = 0;\n\t\t\t\tfor (int\
+    \ i = l; i <= r; i++)\n\t\t\t\t\tif (A[i] <= k)\n\t\t\t\t\t\tret++;\n\t\t\t\t\
+    assert(ret == wt.cnt_leq(l, r, k));\n\t\t\t} else if (t == 1) {\n\t\t\t\tint l\
+    \ = rng::rint(0, N - 1), r = rng::rint(0, N - 1), k = rng::rint(0, L);\n\t\t\t\
+    \tif (r < l)\n\t\t\t\t\tswap(l, r);\n\t\t\t\tint ret = 0;\n\t\t\t\tfor (int i\
+    \ = l; i <= r; i++)\n\t\t\t\t\tif (A[i] == k)\n\t\t\t\t\t\tret++;\n\t\t\t\tassert(ret\
+    \ == wt.cnt_eq(l, r, k));\n\t\t\t}\n\t\t}\n\t}\n\n\tint A, B;\n\tcin >> A >> B;\n\
+    \tcout << A + B << '\\n';\n}"
   dependsOn:
   - data-structure/wavelet-tree.hpp
+  - random/random-int.hpp
   - random/mersenne-twister.hpp
-  - random/random-vector.hpp
-  - random/mersenne-twister.hpp
+  - random/random-int-vector.hpp
+  - random/random-int.hpp
   isVerificationFile: true
   path: verify/wavelet-tree.yosupo-a+b.test.cpp
   requiredBy: []
-  timestamp: '2022-05-07 19:56:49-07:00'
+  timestamp: '2022-05-18 09:09:46-07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/wavelet-tree.yosupo-a+b.test.cpp

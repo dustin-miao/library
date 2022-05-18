@@ -1,26 +1,29 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: geometry/monotonic-dp-hull-minkowski-sum.hpp
     title: Minkowski Sum for Monotonic DP Hull
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: geometry/monotonic-dp-hull.hpp
     title: Monotonic DP Hull
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: geometry/point.hpp
     title: Point
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: random/mersenne-twister.hpp
     title: Mersenne Twister
-  - icon: ':heavy_check_mark:'
-    path: random/random-vector.hpp
-    title: Randomized Vector
+  - icon: ':question:'
+    path: random/random-int-vector.hpp
+    title: Random Integer Vector
+  - icon: ':question:'
+    path: random/random-int.hpp
+    title: Random Integer
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/aplusb
@@ -171,18 +174,22 @@ data:
     \ + 1] - h1.points[i];\n\t\tauto d2 = h2.points[j + 1] - h2.points[j];\n\t\tif\
     \ ((d2 ^ d1) > 0)\n\t\t\ti++;\n\t\telse\n\t\t\tj++;\n\t}\n\tsum.add(h1.points.back()\
     \ + h2.points.back());\n\treturn sum;\n}\n\n#endif\n\n#pragma endregion monotonic_dp_hull_minkowski_sum\n\
-    #line 1 \"random/mersenne-twister.hpp\"\n#pragma region rng\n\n#ifndef MERSENNE_TWISTER_HPP\n\
-    #define MERSENNE_TWISTER_HPP\n\nmt19937 _rng(chrono::steady_clock::now().time_since_epoch().count());\n\
-    \ntemplate<typename T = int>\ntypename enable_if<is_integral<T>::value, T>::type\
-    \ rng(T l, T r) { return uniform_int_distribution<T>(l, r)(_rng); }\n\n#endif\n\
-    \n#pragma endregion rng\n#line 2 \"random/random-vector.hpp\"\n\n#pragma region\
-    \ rng_vector\n\n#ifndef RNG_VECTOR_HPP\n#define RNG_VECTOR_HPP\n\ntemplate<typename\
-    \ T>\ntypename enable_if<is_integral<T>::value, vector<T>>::type rng_vector(int\
-    \ n, T l, T r) {\n\tvector<T> v(n);\n\tfor (auto &a : v)\n\t\ta = rng(l, r);\n\
-    \treturn v;\n}\n\n#endif\n\n#pragma endregion rng_vector\n#line 9 \"verify/monotonic-dp-hull-minkowski-sum.yosupo-a+b.test.cpp\"\
-    \n\nint main() {\n\t{\n\t\tint T = 1e6;\n\t\tauto slope1 = rng_vector<long long>(T,\
-    \ -1e6, 1e6), intercept1 = rng_vector<long long>(T, -1e9, 1e9);\n\t\tauto slope2\
-    \ = rng_vector<long long>(T, -1e6, 1e6), intercept2 = rng_vector<long long>(T,\
+    #line 1 \"random/mersenne-twister.hpp\"\n#pragma region mersenne_twister\n\n#ifndef\
+    \ MERSENNE_TWISTER_HPP\n#define MERSENNE_TWISTER_HPP\n\nnamespace rng {\n\tmt19937\
+    \ mst(chrono::steady_clock::now().time_since_epoch().count());\n}\n\n#endif\n\n\
+    #pragma endregion mersenne_twister\n#line 2 \"random/random-int.hpp\"\n\n#pragma\
+    \ region rng_int\n\n#ifndef RANDOM_INT_HPP\n#define RANDOM_INT_HPP\n\nnamespace\
+    \ rng {\n\ttemplate<typename T = int>\n\ttypename enable_if<is_integral<T>::value,\
+    \ T>::type \n\trint(T l, T r) { return uniform_int_distribution<T>(l, r)(mst);\
+    \ }\n}\n\n#endif\n\n#pragma endregion rng_int\n#line 2 \"random/random-int-vector.hpp\"\
+    \n\n#pragma region rng_int_vector\n\n#ifndef RNG_VECTOR_HPP\n#define RNG_VECTOR_HPP\n\
+    \nnamespace rng {\n\ttemplate<typename T>\n\ttypename enable_if<is_integral<T>::value,\
+    \ vector<T>>::type \n\trivec(int n, T l, T r) {\n\t\tvector<T> v(n);\n\t\tfor\
+    \ (auto &a : v)\n\t\t\ta = rint(l, r);\n\t\treturn v;\n\t}\n}\n\n#endif\n\n#pragma\
+    \ endregion rng_int_vector\n#line 9 \"verify/monotonic-dp-hull-minkowski-sum.yosupo-a+b.test.cpp\"\
+    \n\nint main() {\n\t{\n\t\tint T = 1e6;\n\t\tauto slope1 = rng::rivec<long long>(T,\
+    \ -1e6, 1e6), intercept1 = rng::rivec<long long>(T, -1e9, 1e9);\n\t\tauto slope2\
+    \ = rng::rivec<long long>(T, -1e6, 1e6), intercept2 = rng::rivec<long long>(T,\
     \ -1e9, 1e9);\n\t\tsort(slope1.begin(), slope1.end());\n\t\tsort(slope2.begin(),\
     \ slope2.end());\n\t\tmonotonic_dp_hull a, b;\n\t\tfor (int i = 0; i < T; i++)\n\
     \t\t\ta.add(slope1[i], intercept1[i]);\n\t\tfor (int i = 0; i < T; i++)\n\t\t\t\
@@ -193,10 +200,10 @@ data:
     n';\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/aplusb\"\n\n#include <bits/stdc++.h>\n\
     using namespace std;\n\n#include \"geometry/monotonic-dp-hull.hpp\"\n#include\
-    \ \"geometry/monotonic-dp-hull-minkowski-sum.hpp\"\n#include \"random/random-vector.hpp\"\
-    \n\nint main() {\n\t{\n\t\tint T = 1e6;\n\t\tauto slope1 = rng_vector<long long>(T,\
-    \ -1e6, 1e6), intercept1 = rng_vector<long long>(T, -1e9, 1e9);\n\t\tauto slope2\
-    \ = rng_vector<long long>(T, -1e6, 1e6), intercept2 = rng_vector<long long>(T,\
+    \ \"geometry/monotonic-dp-hull-minkowski-sum.hpp\"\n#include \"random/random-int-vector.hpp\"\
+    \n\nint main() {\n\t{\n\t\tint T = 1e6;\n\t\tauto slope1 = rng::rivec<long long>(T,\
+    \ -1e6, 1e6), intercept1 = rng::rivec<long long>(T, -1e9, 1e9);\n\t\tauto slope2\
+    \ = rng::rivec<long long>(T, -1e6, 1e6), intercept2 = rng::rivec<long long>(T,\
     \ -1e9, 1e9);\n\t\tsort(slope1.begin(), slope1.end());\n\t\tsort(slope2.begin(),\
     \ slope2.end());\n\t\tmonotonic_dp_hull a, b;\n\t\tfor (int i = 0; i < T; i++)\n\
     \t\t\ta.add(slope1[i], intercept1[i]);\n\t\tfor (int i = 0; i < T; i++)\n\t\t\t\
@@ -209,13 +216,14 @@ data:
   - geometry/monotonic-dp-hull.hpp
   - geometry/point.hpp
   - geometry/monotonic-dp-hull-minkowski-sum.hpp
-  - random/random-vector.hpp
+  - random/random-int-vector.hpp
+  - random/random-int.hpp
   - random/mersenne-twister.hpp
   isVerificationFile: true
   path: verify/monotonic-dp-hull-minkowski-sum.yosupo-a+b.test.cpp
   requiredBy: []
-  timestamp: '2022-05-05 15:11:34-07:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-05-18 09:09:46-07:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/monotonic-dp-hull-minkowski-sum.yosupo-a+b.test.cpp
 layout: document

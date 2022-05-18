@@ -10,12 +10,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: convolution/fast-fourier-transform.hpp
     title: Fast Fourier Transform
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: random/mersenne-twister.hpp
     title: Mersenne Twister
-  - icon: ':heavy_check_mark:'
-    path: random/random-vector.hpp
-    title: Randomized Vector
+  - icon: ':question:'
+    path: random/random-int-vector.hpp
+    title: Random Integer Vector
+  - icon: ':question:'
+    path: random/random-int.hpp
+    title: Random Integer
   - icon: ':heavy_check_mark:'
     path: utility/pi.hpp
     title: Pi
@@ -66,26 +69,29 @@ data:
     \t\tauto c = convolution<T, U>(a, b);\n\t\tvector<T> ret(n);\n\t\tfor (int i =\
     \ 0; i < n; i++)\n\t\t\tret[i] = c[i + n - 1];\n\t\treturn ret;\n\t}\n}\n\n#pragma\
     \ endregion cyclic_product\n#line 1 \"random/mersenne-twister.hpp\"\n#pragma region\
-    \ rng\n\n#ifndef MERSENNE_TWISTER_HPP\n#define MERSENNE_TWISTER_HPP\n\nmt19937\
-    \ _rng(chrono::steady_clock::now().time_since_epoch().count());\n\ntemplate<typename\
-    \ T = int>\ntypename enable_if<is_integral<T>::value, T>::type rng(T l, T r) {\
-    \ return uniform_int_distribution<T>(l, r)(_rng); }\n\n#endif\n\n#pragma endregion\
-    \ rng\n#line 2 \"random/random-vector.hpp\"\n\n#pragma region rng_vector\n\n#ifndef\
-    \ RNG_VECTOR_HPP\n#define RNG_VECTOR_HPP\n\ntemplate<typename T>\ntypename enable_if<is_integral<T>::value,\
-    \ vector<T>>::type rng_vector(int n, T l, T r) {\n\tvector<T> v(n);\n\tfor (auto\
-    \ &a : v)\n\t\ta = rng(l, r);\n\treturn v;\n}\n\n#endif\n\n#pragma endregion rng_vector\n\
-    #line 8 \"verify/cyclic-product.yosupo-a+b.test.cpp\"\n\nconst int N = 5e4;\n\n\
-    int main() { \n\t{\n\t\tvector<long long> A = rng_vector<long long>(N, 1, 1e5);\n\
-    \t\tvector<long long> B = rng_vector<long long>(N, 1, 1e5);\n\t\tauto C = conv::cyclic_product(A,\
-    \ B);\n\t\tB.insert(B.end(), B.begin(), B.end());\n\t\tfor (int i = 0; i < N;\
-    \ i++) {\n\t\t\tlong long cur = 0;\n\t\t\tfor (int j = 0; j < N; j++)\n\t\t\t\t\
-    cur += A[j] * B[i + j];\n\t\t\tassert(cur == C[i]);\n\t\t}\n\t}\n\n\tint A, B;\n\
-    \tcin >> A >> B;\n\tcout << A + B << '\\n';\n}\n"
+    \ mersenne_twister\n\n#ifndef MERSENNE_TWISTER_HPP\n#define MERSENNE_TWISTER_HPP\n\
+    \nnamespace rng {\n\tmt19937 mst(chrono::steady_clock::now().time_since_epoch().count());\n\
+    }\n\n#endif\n\n#pragma endregion mersenne_twister\n#line 2 \"random/random-int.hpp\"\
+    \n\n#pragma region rng_int\n\n#ifndef RANDOM_INT_HPP\n#define RANDOM_INT_HPP\n\
+    \nnamespace rng {\n\ttemplate<typename T = int>\n\ttypename enable_if<is_integral<T>::value,\
+    \ T>::type \n\trint(T l, T r) { return uniform_int_distribution<T>(l, r)(mst);\
+    \ }\n}\n\n#endif\n\n#pragma endregion rng_int\n#line 2 \"random/random-int-vector.hpp\"\
+    \n\n#pragma region rng_int_vector\n\n#ifndef RNG_VECTOR_HPP\n#define RNG_VECTOR_HPP\n\
+    \nnamespace rng {\n\ttemplate<typename T>\n\ttypename enable_if<is_integral<T>::value,\
+    \ vector<T>>::type \n\trivec(int n, T l, T r) {\n\t\tvector<T> v(n);\n\t\tfor\
+    \ (auto &a : v)\n\t\t\ta = rint(l, r);\n\t\treturn v;\n\t}\n}\n\n#endif\n\n#pragma\
+    \ endregion rng_int_vector\n#line 8 \"verify/cyclic-product.yosupo-a+b.test.cpp\"\
+    \n\nconst int N = 5e4;\n\nint main() { \n\t{\n\t\tvector<long long> A = rng::rivec<long\
+    \ long>(N, 1, 1e5);\n\t\tvector<long long> B = rng::rivec<long long>(N, 1, 1e5);\n\
+    \t\tauto C = conv::cyclic_product(A, B);\n\t\tB.insert(B.end(), B.begin(), B.end());\n\
+    \t\tfor (int i = 0; i < N; i++) {\n\t\t\tlong long cur = 0;\n\t\t\tfor (int j\
+    \ = 0; j < N; j++)\n\t\t\t\tcur += A[j] * B[i + j];\n\t\t\tassert(cur == C[i]);\n\
+    \t\t}\n\t}\n\n\tint A, B;\n\tcin >> A >> B;\n\tcout << A + B << '\\n';\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/aplusb\"\n\n#include <bits/stdc++.h>\n\
     using namespace std;\n\n#include \"convolution/cyclic-product.hpp\"\n#include\
-    \ \"random/random-vector.hpp\"\n\nconst int N = 5e4;\n\nint main() { \n\t{\n\t\
-    \tvector<long long> A = rng_vector<long long>(N, 1, 1e5);\n\t\tvector<long long>\
-    \ B = rng_vector<long long>(N, 1, 1e5);\n\t\tauto C = conv::cyclic_product(A,\
+    \ \"random/random-int-vector.hpp\"\n\nconst int N = 5e4;\n\nint main() { \n\t\
+    {\n\t\tvector<long long> A = rng::rivec<long long>(N, 1, 1e5);\n\t\tvector<long\
+    \ long> B = rng::rivec<long long>(N, 1, 1e5);\n\t\tauto C = conv::cyclic_product(A,\
     \ B);\n\t\tB.insert(B.end(), B.begin(), B.end());\n\t\tfor (int i = 0; i < N;\
     \ i++) {\n\t\t\tlong long cur = 0;\n\t\t\tfor (int j = 0; j < N; j++)\n\t\t\t\t\
     cur += A[j] * B[i + j];\n\t\t\tassert(cur == C[i]);\n\t\t}\n\t}\n\n\tint A, B;\n\
@@ -95,12 +101,13 @@ data:
   - convolution/convolution.hpp
   - convolution/fast-fourier-transform.hpp
   - utility/pi.hpp
-  - random/random-vector.hpp
+  - random/random-int-vector.hpp
+  - random/random-int.hpp
   - random/mersenne-twister.hpp
   isVerificationFile: true
   path: verify/cyclic-product.yosupo-a+b.test.cpp
   requiredBy: []
-  timestamp: '2022-05-03 13:32:14-07:00'
+  timestamp: '2022-05-18 09:09:46-07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/cyclic-product.yosupo-a+b.test.cpp

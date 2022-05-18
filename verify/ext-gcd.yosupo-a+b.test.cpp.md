@@ -1,17 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: math/ext-gcd.hpp
     title: Extended GCD
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: random/mersenne-twister.hpp
     title: Mersenne Twister
+  - icon: ':question:'
+    path: random/random-int.hpp
+    title: Random Integer
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/aplusb
@@ -25,31 +28,34 @@ data:
     \ q = a1 / b1;\n\t\t\ttie(x, x1) = make_tuple(x1, x - q * x1);\n\t\t\ttie(y, y1)\
     \ = make_tuple(y1, y - q * y1);\n\t\t\ttie(a1, b1) = make_tuple(b1, a1 - q * b1);\n\
     \t\t}\n\t\treturn a1;\n\t}\n}\n\n#pragma endregion extended_gcd\n#line 1 \"random/mersenne-twister.hpp\"\
-    \n#pragma region rng\n\n#ifndef MERSENNE_TWISTER_HPP\n#define MERSENNE_TWISTER_HPP\n\
-    \nmt19937 _rng(chrono::steady_clock::now().time_since_epoch().count());\n\ntemplate<typename\
-    \ T = int>\ntypename enable_if<is_integral<T>::value, T>::type rng(T l, T r) {\
-    \ return uniform_int_distribution<T>(l, r)(_rng); }\n\n#endif\n\n#pragma endregion\
-    \ rng\n#line 8 \"verify/ext-gcd.yosupo-a+b.test.cpp\"\n\nint main() {\n\t{\n\t\
-    \tint T = 2e5;\n\t\twhile (T--) {\n\t\t\tlong long A = rng<long long>(1, 1e6);\n\
-    \t\t\tlong long B = rng<long long>(1, 1e6);\n\t\t\tlong long X, Y;\n\t\t\tauto\
-    \ G = math::ext_gcd(A, B, X, Y);\n\t\t\tassert(G == __gcd(A, B));\n\t\t\tassert(A\
-    \ * X + B * Y == G);\n\t\t}\n\t}\n\n\tlong long A, B;\n\tcin >> A >> B;\n\tcout\
-    \ << A + B << '\\n';\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/aplusb\"\n\n#include <bits/stdc++.h>\n\
-    using namespace std;\n\n#include \"math/ext-gcd.hpp\"\n#include \"random/mersenne-twister.hpp\"\
+    \n#pragma region mersenne_twister\n\n#ifndef MERSENNE_TWISTER_HPP\n#define MERSENNE_TWISTER_HPP\n\
+    \nnamespace rng {\n\tmt19937 mst(chrono::steady_clock::now().time_since_epoch().count());\n\
+    }\n\n#endif\n\n#pragma endregion mersenne_twister\n#line 2 \"random/random-int.hpp\"\
+    \n\n#pragma region rng_int\n\n#ifndef RANDOM_INT_HPP\n#define RANDOM_INT_HPP\n\
+    \nnamespace rng {\n\ttemplate<typename T = int>\n\ttypename enable_if<is_integral<T>::value,\
+    \ T>::type \n\trint(T l, T r) { return uniform_int_distribution<T>(l, r)(mst);\
+    \ }\n}\n\n#endif\n\n#pragma endregion rng_int\n#line 8 \"verify/ext-gcd.yosupo-a+b.test.cpp\"\
     \n\nint main() {\n\t{\n\t\tint T = 2e5;\n\t\twhile (T--) {\n\t\t\tlong long A\
-    \ = rng<long long>(1, 1e6);\n\t\t\tlong long B = rng<long long>(1, 1e6);\n\t\t\
-    \tlong long X, Y;\n\t\t\tauto G = math::ext_gcd(A, B, X, Y);\n\t\t\tassert(G ==\
-    \ __gcd(A, B));\n\t\t\tassert(A * X + B * Y == G);\n\t\t}\n\t}\n\n\tlong long\
-    \ A, B;\n\tcin >> A >> B;\n\tcout << A + B << '\\n';\n}"
+    \ = rng::rint(1, 1e6);\n\t\t\tlong long B = rng::rint(1, 1e6);\n\t\t\tlong long\
+    \ X, Y;\n\t\t\tauto G = math::ext_gcd(A, B, X, Y);\n\t\t\tassert(G == __gcd(A,\
+    \ B));\n\t\t\tassert(A * X + B * Y == G);\n\t\t}\n\t}\n\n\tlong long A, B;\n\t\
+    cin >> A >> B;\n\tcout << A + B << '\\n';\n}\n"
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/aplusb\"\n\n#include <bits/stdc++.h>\n\
+    using namespace std;\n\n#include \"math/ext-gcd.hpp\"\n#include \"random/random-int.hpp\"\
+    \n\nint main() {\n\t{\n\t\tint T = 2e5;\n\t\twhile (T--) {\n\t\t\tlong long A\
+    \ = rng::rint(1, 1e6);\n\t\t\tlong long B = rng::rint(1, 1e6);\n\t\t\tlong long\
+    \ X, Y;\n\t\t\tauto G = math::ext_gcd(A, B, X, Y);\n\t\t\tassert(G == __gcd(A,\
+    \ B));\n\t\t\tassert(A * X + B * Y == G);\n\t\t}\n\t}\n\n\tlong long A, B;\n\t\
+    cin >> A >> B;\n\tcout << A + B << '\\n';\n}"
   dependsOn:
   - math/ext-gcd.hpp
+  - random/random-int.hpp
   - random/mersenne-twister.hpp
   isVerificationFile: true
   path: verify/ext-gcd.yosupo-a+b.test.cpp
   requiredBy: []
-  timestamp: '2022-05-03 13:32:14-07:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-05-18 09:09:46-07:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/ext-gcd.yosupo-a+b.test.cpp
 layout: document

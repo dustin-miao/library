@@ -118,13 +118,13 @@ data:
     - icon: ':heavy_check_mark:'
       path: geometry/line-container.hpp
       title: Line Container
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: geometry/monotonic-dp-hull-minkowski-sum.hpp
       title: Minkowski Sum for Monotonic DP Hull
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: geometry/monotonic-dp-hull.hpp
       title: Monotonic DP Hull
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: geometry/point.hpp
       title: Point
   - name: graph
@@ -164,7 +164,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/discrete-sqrt.hpp
       title: Discrete Square Root
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: math/ext-gcd.hpp
       title: Extended GCD
     - icon: ':heavy_check_mark:'
@@ -178,15 +178,18 @@ data:
       title: Matrix
   - name: random
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: random/mersenne-twister.hpp
       title: Mersenne Twister
     - icon: ':warning:'
-      path: random/random-double.hpp
-      title: Random Double
-    - icon: ':heavy_check_mark:'
-      path: random/random-vector.hpp
-      title: Randomized Vector
+      path: random/random-float.hpp
+      title: Random Float
+    - icon: ':question:'
+      path: random/random-int-vector.hpp
+      title: Random Integer Vector
+    - icon: ':question:'
+      path: random/random-int.hpp
+      title: Random Integer
   - name: tree
     pages:
     - icon: ':heavy_check_mark:'
@@ -302,7 +305,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/ext-gcd.aizu-greatest-common-divisor.test.cpp
       title: verify/ext-gcd.aizu-greatest-common-divisor.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/ext-gcd.yosupo-a+b.test.cpp
       title: verify/ext-gcd.yosupo-a+b.test.cpp
     - icon: ':heavy_check_mark:'
@@ -371,10 +374,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/mint.yosupo-A+B.test.cpp
       title: verify/mint.yosupo-A+B.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/monotonic-dp-hull-minkowski-sum.yosupo-a+b.test.cpp
       title: verify/monotonic-dp-hull-minkowski-sum.yosupo-a+b.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/monotonic-dp-hull.yosupo-a+b.test.cpp
       title: verify/monotonic-dp-hull.yosupo-a+b.test.cpp
     - icon: ':heavy_check_mark:'
