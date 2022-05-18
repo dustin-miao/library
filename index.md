@@ -115,7 +115,7 @@ data:
     - icon: ':warning:'
       path: geometry/convex-hull.hpp
       title: Convex Hull
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: geometry/line-container.hpp
       title: Line Container
     - icon: ':x:'
@@ -164,7 +164,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/discrete-sqrt.hpp
       title: Discrete Square Root
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: math/ext-gcd.hpp
       title: Extended GCD
     - icon: ':heavy_check_mark:'
@@ -190,6 +190,14 @@ data:
     - icon: ':question:'
       path: random/random-int.hpp
       title: Random Integer
+  - name: string
+    pages:
+    - icon: ':warning:'
+      path: string/pi.hpp
+      title: string/pi.hpp
+    - icon: ':warning:'
+      path: string/z.hpp
+      title: string/z.hpp
   - name: tree
     pages:
     - icon: ':heavy_check_mark:'
@@ -227,7 +235,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: utility/fast-pow.hpp
       title: Binary Exponentiation
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: utility/floor-div.hpp
       title: Floor Division
     - icon: ':heavy_check_mark:'
@@ -305,7 +313,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/ext-gcd.aizu-greatest-common-divisor.test.cpp
       title: verify/ext-gcd.aizu-greatest-common-divisor.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/ext-gcd.yosupo-a+b.test.cpp
       title: verify/ext-gcd.yosupo-a+b.test.cpp
     - icon: ':heavy_check_mark:'

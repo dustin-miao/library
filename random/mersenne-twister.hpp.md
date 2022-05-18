@@ -15,12 +15,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/cyclic-product.yosupo-a+b.test.cpp
     title: verify/cyclic-product.yosupo-a+b.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/ext-gcd.yosupo-a+b.test.cpp
     title: verify/ext-gcd.yosupo-a+b.test.cpp
   - icon: ':x:'
     path: verify/monotonic-dp-hull-minkowski-sum.yosupo-a+b.test.cpp
     title: verify/monotonic-dp-hull-minkowski-sum.yosupo-a+b.test.cpp
+  - icon: ':x:'
+    path: verify/monotonic-dp-hull.yosupo-a+b.test.cpp
+    title: verify/monotonic-dp-hull.yosupo-a+b.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/wavelet-tree.yosupo-a+b.test.cpp
     title: verify/wavelet-tree.yosupo-a+b.test.cpp
@@ -54,6 +57,7 @@ data:
   - verify/ext-gcd.yosupo-a+b.test.cpp
   - verify/wavelet-tree.yosupo-a+b.test.cpp
   - verify/cyclic-product.yosupo-a+b.test.cpp
+  - verify/monotonic-dp-hull.yosupo-a+b.test.cpp
 documentation_of: random/mersenne-twister.hpp
 layout: document
 title: Mersenne Twister

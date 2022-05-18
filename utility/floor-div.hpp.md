@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: geometry/line-container.hpp
     title: Line Container
   _extendedVerifiedWith:
@@ -12,9 +12,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/line-container.yosupo-line-add-get-min.test.cpp
     title: verify/line-container.yosupo-line-add-get-min.test.cpp
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: verify/monotonic-dp-hull.yosupo-a+b.test.cpp
+    title: verify/monotonic-dp-hull.yosupo-a+b.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"utility/floor-div.hpp\"\n#pragma region floor_div\n\n#ifndef\
@@ -30,10 +33,11 @@ data:
   requiredBy:
   - geometry/line-container.hpp
   timestamp: '2022-05-03 13:27:25-07:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/floor-div.yosupo-many-a+b.test.cpp
   - verify/line-container.yosupo-line-add-get-min.test.cpp
+  - verify/monotonic-dp-hull.yosupo-a+b.test.cpp
 documentation_of: utility/floor-div.hpp
 layout: document
 title: Floor Division

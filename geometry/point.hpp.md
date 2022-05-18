@@ -15,6 +15,9 @@ data:
   - icon: ':x:'
     path: verify/monotonic-dp-hull-minkowski-sum.yosupo-a+b.test.cpp
     title: verify/monotonic-dp-hull-minkowski-sum.yosupo-a+b.test.cpp
+  - icon: ':x:'
+    path: verify/monotonic-dp-hull.yosupo-a+b.test.cpp
+    title: verify/monotonic-dp-hull.yosupo-a+b.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/point.aizu-counter-clockwise.test.cpp
     title: verify/point.aizu-counter-clockwise.test.cpp
@@ -145,6 +148,7 @@ data:
   - verify/monotonic-dp-hull-minkowski-sum.yosupo-a+b.test.cpp
   - verify/point.aizu-counter-clockwise.test.cpp
   - verify/point.aizu-parallel-orthagonal.test.cpp
+  - verify/monotonic-dp-hull.yosupo-a+b.test.cpp
   - verify/point.aizu-projection.test.cpp
 documentation_of: geometry/point.hpp
 layout: document

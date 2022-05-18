@@ -12,12 +12,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/ext-gcd.aizu-greatest-common-divisor.test.cpp
     title: verify/ext-gcd.aizu-greatest-common-divisor.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/ext-gcd.yosupo-a+b.test.cpp
     title: verify/ext-gcd.yosupo-a+b.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"math/ext-gcd.hpp\"\n#pragma region extended_gcd\n\nnamespace\
@@ -38,7 +38,7 @@ data:
   requiredBy:
   - math/crt.hpp
   timestamp: '2022-04-29 22:36:50-07:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/ext-gcd.aizu-extended-euclid-algorithm.test.cpp
   - verify/ext-gcd.yosupo-a+b.test.cpp

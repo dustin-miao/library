@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: math/ext-gcd.hpp
     title: Extended GCD
   - icon: ':question:'
@@ -12,9 +12,9 @@ data:
     title: Random Integer
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/aplusb
@@ -36,17 +36,17 @@ data:
     \ T>::type \n\trint(T l, T r) { return uniform_int_distribution<T>(l, r)(mst);\
     \ }\n}\n\n#endif\n\n#pragma endregion rng_int\n#line 8 \"verify/ext-gcd.yosupo-a+b.test.cpp\"\
     \n\nint main() {\n\t{\n\t\tint T = 2e5;\n\t\twhile (T--) {\n\t\t\tlong long A\
-    \ = rng::rint(1, 1e6);\n\t\t\tlong long B = rng::rint(1, 1e6);\n\t\t\tlong long\
-    \ X, Y;\n\t\t\tauto G = math::ext_gcd(A, B, X, Y);\n\t\t\tassert(G == __gcd(A,\
-    \ B));\n\t\t\tassert(A * X + B * Y == G);\n\t\t}\n\t}\n\n\tlong long A, B;\n\t\
-    cin >> A >> B;\n\tcout << A + B << '\\n';\n}\n"
+    \ = rng::rint<long long>(1, 1e6);\n\t\t\tlong long B = rng::rint<long long>(1,\
+    \ 1e6);\n\t\t\tlong long X, Y;\n\t\t\tauto G = math::ext_gcd(A, B, X, Y);\n\t\t\
+    \tassert(G == __gcd(A, B));\n\t\t\tassert(A * X + B * Y == G);\n\t\t}\n\t}\n\n\
+    \tlong long A, B;\n\tcin >> A >> B;\n\tcout << A + B << '\\n';\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/aplusb\"\n\n#include <bits/stdc++.h>\n\
     using namespace std;\n\n#include \"math/ext-gcd.hpp\"\n#include \"random/random-int.hpp\"\
     \n\nint main() {\n\t{\n\t\tint T = 2e5;\n\t\twhile (T--) {\n\t\t\tlong long A\
-    \ = rng::rint(1, 1e6);\n\t\t\tlong long B = rng::rint(1, 1e6);\n\t\t\tlong long\
-    \ X, Y;\n\t\t\tauto G = math::ext_gcd(A, B, X, Y);\n\t\t\tassert(G == __gcd(A,\
-    \ B));\n\t\t\tassert(A * X + B * Y == G);\n\t\t}\n\t}\n\n\tlong long A, B;\n\t\
-    cin >> A >> B;\n\tcout << A + B << '\\n';\n}"
+    \ = rng::rint<long long>(1, 1e6);\n\t\t\tlong long B = rng::rint<long long>(1,\
+    \ 1e6);\n\t\t\tlong long X, Y;\n\t\t\tauto G = math::ext_gcd(A, B, X, Y);\n\t\t\
+    \tassert(G == __gcd(A, B));\n\t\t\tassert(A * X + B * Y == G);\n\t\t}\n\t}\n\n\
+    \tlong long A, B;\n\tcin >> A >> B;\n\tcout << A + B << '\\n';\n}"
   dependsOn:
   - math/ext-gcd.hpp
   - random/random-int.hpp
@@ -54,8 +54,8 @@ data:
   isVerificationFile: true
   path: verify/ext-gcd.yosupo-a+b.test.cpp
   requiredBy: []
-  timestamp: '2022-05-18 09:09:46-07:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-05-18 09:15:37-07:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/ext-gcd.yosupo-a+b.test.cpp
 layout: document

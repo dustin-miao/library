@@ -12,6 +12,9 @@ data:
   - icon: ':x:'
     path: verify/monotonic-dp-hull-minkowski-sum.yosupo-a+b.test.cpp
     title: verify/monotonic-dp-hull-minkowski-sum.yosupo-a+b.test.cpp
+  - icon: ':x:'
+    path: verify/monotonic-dp-hull.yosupo-a+b.test.cpp
+    title: verify/monotonic-dp-hull.yosupo-a+b.test.cpp
   _isVerificationFailed: true
   _pathExtension: hpp
   _verificationStatusIcon: ':x:'
@@ -110,6 +113,7 @@ data:
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - verify/monotonic-dp-hull-minkowski-sum.yosupo-a+b.test.cpp
+  - verify/monotonic-dp-hull.yosupo-a+b.test.cpp
 documentation_of: geometry/monotonic-dp-hull.hpp
 layout: document
 title: Monotonic DP Hull
