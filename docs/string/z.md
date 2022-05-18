@@ -1,6 +1,6 @@
 ---
 title: Z Function
-documentation_of: //random/z.hpp
+documentation_of: //string/z.hpp
 ---
 
 ## Z Function

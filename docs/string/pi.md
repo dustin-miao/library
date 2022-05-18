@@ -1,6 +1,6 @@
 ---
 title: Pi Function
-documentation_of: //random/pi.hpp
+documentation_of: //string/pi.hpp
 ---
 
 ## Pi Function
