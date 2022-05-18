@@ -4,13 +4,13 @@
 using namespace std;
 
 #include "utility/zip.hpp"
-#include "random/mersenne-twister.hpp"
-#include "random/random-vector.hpp"
+#include "random/random-int.hpp"
+#include "random/random-int-vector.hpp"
 
 int main() {
 	{
-		int N = rng<int>(1e5, 1e6);
-		vector<int> A = rng_vector<int>(N, 0, 1e9), B = rng_vector<int>(N, 0, 1e9), C(N);
+		int N = rng::rint<int>(1e5, 1e6);
+		vector<int> A = rng::rivec<int>(N, 0, 1e9), B = rng::rivec<int>(N, 0, 1e9), C(N);
 		for (auto &&[a, b, c] : zip(A, B, C)) 
 			c = a + b;
 		for (int i = 0; i < N; i++)

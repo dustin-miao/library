@@ -4,14 +4,14 @@
 using namespace std;
 
 #include "convolution/cyclic-product.hpp"
-#include "random/random-vector.hpp"
+#include "random/random-int-vector.hpp"
 
 const int N = 5e4;
 
 int main() { 
 	{
-		vector<long long> A = rng_vector<long long>(N, 1, 1e5);
-		vector<long long> B = rng_vector<long long>(N, 1, 1e5);
+		vector<long long> A = rng::rivec<long long>(N, 1, 1e5);
+		vector<long long> B = rng::rivec<long long>(N, 1, 1e5);
 		auto C = conv::cyclic_product(A, B);
 		B.insert(B.end(), B.begin(), B.end());
 		for (int i = 0; i < N; i++) {

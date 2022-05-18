@@ -4,14 +4,14 @@
 using namespace std;
 
 #include "math/ext-gcd.hpp"
-#include "random/mersenne-twister.hpp"
+#include "random/random-int.hpp"
 
 int main() {
 	{
 		int T = 2e5;
 		while (T--) {
-			long long A = rng<long long>(1, 1e6);
-			long long B = rng<long long>(1, 1e6);
+			long long A = rng::rint(1, 1e6);
+			long long B = rng::rint(1, 1e6);
 			long long X, Y;
 			auto G = math::ext_gcd(A, B, X, Y);
 			assert(G == __gcd(A, B));

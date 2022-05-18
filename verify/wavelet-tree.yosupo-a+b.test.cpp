@@ -4,19 +4,19 @@
 using namespace std;
 
 #include "data-structure/wavelet-tree.hpp"
-#include "random/mersenne-twister.hpp"
-#include "random/random-vector.hpp"
+#include "random/random-int.hpp"
+#include "random/random-int-vector.hpp"
 
 int main() {
 	{
 		int N = 10000, L = 300, Q = 10000;
-		vector<int> A = rng_vector(N, 0, L);
+		vector<int> A = rng::rivec(N, 0, L);
 		vector<int> B(A);
 		wavelet_tree wt(B.begin(), B.end(), 0, L);
 		while (Q--) {
-			int t = rng(0, 1);
+			int t = rng::rint(0, 1);
 			if (t == 0) {
-				int l = rng(0, N - 1), r = rng(0, N - 1), k = rng(0, L);
+				int l = rng::rint(0, N - 1), r = rng::rint(0, N - 1), k = rng::rint(0, L);
 				if (r < l)
 					swap(l, r);
 				int ret = 0;
@@ -25,7 +25,7 @@ int main() {
 						ret++;
 				assert(ret == wt.cnt_leq(l, r, k));
 			} else if (t == 1) {
-				int l = rng(0, N - 1), r = rng(0, N - 1), k = rng(0, L);
+				int l = rng::rint(0, N - 1), r = rng::rint(0, N - 1), k = rng::rint(0, L);
 				if (r < l)
 					swap(l, r);
 				int ret = 0;

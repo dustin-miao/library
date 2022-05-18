@@ -5,13 +5,13 @@ using namespace std;
 
 #include "geometry/line-container.hpp"
 #include "geometry/monotonic-dp-hull.hpp"
-#include "random/random-vector.hpp"
+#include "random/rng-int-vector.hpp"
 
 int main() {
 	{
 		int T = 2e5;
-		auto slope = rng_vector<long long>(T, -1e6, 1e6), intercept = rng_vector<long long>(T, -1e9, 1e9);
-		auto x_coord = rng_vector<long long>(5 * T, -1e6, 1e6);
+		auto slope = rng::rivec<long long>(T, -1e6, 1e6), intercept = rng_verng::rivecctor<long long>(T, -1e9, 1e9);
+		auto x_coord = rng::rivec<long long>(5 * T, -1e6, 1e6);
 
 		sort(slope.begin(), slope.end());
 		sort(x_coord.begin(), x_coord.end());
