@@ -56,10 +56,10 @@ data:
   timestamp: '2022-05-18 09:09:46-07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/cyclic-product.yosupo-a+b.test.cpp
-  - verify/wavelet-tree.yosupo-a+b.test.cpp
-  - verify/monotonic-dp-hull-minkowski-sum.yosupo-a+b.test.cpp
   - verify/zip.yosupo-a+b.test.cpp
+  - verify/monotonic-dp-hull-minkowski-sum.yosupo-a+b.test.cpp
+  - verify/wavelet-tree.yosupo-a+b.test.cpp
+  - verify/cyclic-product.yosupo-a+b.test.cpp
   - verify/monotonic-dp-hull.yosupo-a+b.test.cpp
 documentation_of: random/random-int-vector.hpp
 layout: document

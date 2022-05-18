@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: string/z.hpp
-    title: string/z.hpp
+    title: Z Function
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false

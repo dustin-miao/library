@@ -39,8 +39,7 @@ data:
   - verify/z.aizu-string-search.test.cpp
 documentation_of: string/z.hpp
 layout: document
-redirect_from:
-- /library/string/z.hpp
-- /library/string/z.hpp.html
-title: string/z.hpp
+title: Z Function
 ---
+
+## Z Function

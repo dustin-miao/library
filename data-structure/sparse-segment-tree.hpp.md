@@ -83,9 +83,9 @@ data:
   verifiedWith:
   - verify/sparse-segment-tree.aizu-the-number-of-inversions.test.cpp
   - verify/sparse-segment-tree.yosupo-point-add-range-sum.test.cpp
+  - verify/sparse-segment-tree.yosupo-point-set-range-composite.test.cpp
   - verify/sparse-segment-tree.aizu-range-sum-query.test.cpp
   - verify/sparse-segment-tree.aizu-range-minimum-query.test.cpp
-  - verify/sparse-segment-tree.yosupo-point-set-range-composite.test.cpp
 documentation_of: data-structure/sparse-segment-tree.hpp
 layout: document
 title: Sparse Segment Tree

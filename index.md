@@ -194,10 +194,10 @@ data:
     pages:
     - icon: ':warning:'
       path: string/pi.hpp
-      title: string/pi.hpp
+      title: Pi Function
     - icon: ':heavy_check_mark:'
       path: string/z.hpp
-      title: string/z.hpp
+      title: Z Function
   - name: tree
     pages:
     - icon: ':heavy_check_mark:'

@@ -34,8 +34,8 @@ data:
   isVerificationFile: false
   path: convolution/fast-walsh-hadamard-transform.hpp
   requiredBy:
-  - convolution/xor-convolution.hpp
   - convolution/inverse-fast-walsh-hadamard-transform.hpp
+  - convolution/xor-convolution.hpp
   timestamp: '2022-04-29 22:36:50-07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

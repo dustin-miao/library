@@ -29,8 +29,7 @@ data:
   verifiedWith: []
 documentation_of: string/pi.hpp
 layout: document
-redirect_from:
-- /library/string/pi.hpp
-- /library/string/pi.hpp.html
-title: string/pi.hpp
+title: Pi Function
 ---
+
+## Pi Function

@@ -35,8 +35,8 @@ data:
   timestamp: '2022-05-03 13:27:25-07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/line-container.yosupo-line-add-get-min.test.cpp
   - verify/floor-div.yosupo-many-a+b.test.cpp
+  - verify/line-container.yosupo-line-add-get-min.test.cpp
   - verify/monotonic-dp-hull.yosupo-a+b.test.cpp
 documentation_of: utility/floor-div.hpp
 layout: document

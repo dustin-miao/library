@@ -71,8 +71,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/ordered-set.aizu-the-number-of-inversions.test.cpp
-  - verify/ordered-set.aizu-unique.test.cpp
   - verify/ordered-set.aizu-K-average-ranges.test.cpp
+  - verify/ordered-set.aizu-unique.test.cpp
 documentation_of: data-structure/ordered-set.hpp
 layout: document
 title: Ordered Set

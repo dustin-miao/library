@@ -28,8 +28,8 @@ data:
   timestamp: '2022-05-03 13:27:25-07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/chmin.aizu-min-max-sum.test.cpp
   - verify/chmax.aizu-min-max-sum.test.cpp
+  - verify/chmin.aizu-min-max-sum.test.cpp
 documentation_of: utility/chmax.hpp
 layout: document
 title: Chmax

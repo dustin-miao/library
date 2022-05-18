@@ -52,12 +52,12 @@ data:
   timestamp: '2022-05-03 13:27:25-07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/prim.aizu-minimum-spanning-tree.test.cpp
-  - verify/floyd-warshall.aizu-all-pairs-shortest-path.test.cpp
-  - verify/chmin.aizu-min-max-sum.test.cpp
   - verify/chmax.aizu-min-max-sum.test.cpp
   - verify/dijkstra.aizu-single-source-shortest-path.test.cpp
+  - verify/chmin.aizu-min-max-sum.test.cpp
   - verify/dijkstra.yosupo-shortest-path.test.cpp
+  - verify/prim.aizu-minimum-spanning-tree.test.cpp
+  - verify/floyd-warshall.aizu-all-pairs-shortest-path.test.cpp
 documentation_of: utility/chmin.hpp
 layout: document
 title: Chmin

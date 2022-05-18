@@ -82,8 +82,8 @@ data:
   timestamp: '2022-05-07 19:56:49-07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/wavelet-tree.yosupo-a+b.test.cpp
   - verify/wavelet-tree.yosupo-range-kth-largest.test.cpp
+  - verify/wavelet-tree.yosupo-a+b.test.cpp
 documentation_of: data-structure/wavelet-tree.hpp
 layout: document
 title: Wavelet Tree
