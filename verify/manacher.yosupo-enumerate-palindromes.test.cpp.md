@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: string/manacher.hpp
-    title: string/manacher.hpp
+    title: Manacher's Algorithm
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false

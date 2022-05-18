@@ -194,7 +194,7 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: string/manacher.hpp
-      title: string/manacher.hpp
+      title: Manacher's Algorithm
     - icon: ':heavy_check_mark:'
       path: string/pi.hpp
       title: Pi Function

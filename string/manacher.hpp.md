@@ -47,8 +47,7 @@ data:
   - verify/manacher.yosupo-enumerate-palindromes.test.cpp
 documentation_of: string/manacher.hpp
 layout: document
-redirect_from:
-- /library/string/manacher.hpp
-- /library/string/manacher.hpp.html
-title: string/manacher.hpp
+title: Manacher's Algorithm
 ---
+
+## Manacher's Algorithm
