@@ -193,6 +193,9 @@ data:
   - name: string
     pages:
     - icon: ':heavy_check_mark:'
+      path: string/manacher.hpp
+      title: string/manacher.hpp
+    - icon: ':heavy_check_mark:'
       path: string/pi.hpp
       title: Pi Function
     - icon: ':heavy_check_mark:'
@@ -370,6 +373,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/line-container.yosupo-line-add-get-min.test.cpp
       title: verify/line-container.yosupo-line-add-get-min.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/manacher.yosupo-enumerate-palindromes.test.cpp
+      title: verify/manacher.yosupo-enumerate-palindromes.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/matrix.aizu-fibonacci-number.test.cpp
       title: verify/matrix.aizu-fibonacci-number.test.cpp
