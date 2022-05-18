@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/pi.aizu-string-search.test.cpp
+    title: verify/pi.aizu-string-search.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"string/pi.hpp\"\n#pragma region str_pi\n\n#ifndef STR_PI_HPP\n\
@@ -25,8 +28,9 @@ data:
   path: string/pi.hpp
   requiredBy: []
   timestamp: '2022-05-18 09:19:50-07:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/pi.aizu-string-search.test.cpp
 documentation_of: string/pi.hpp
 layout: document
 title: Pi Function

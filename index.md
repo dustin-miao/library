@@ -192,7 +192,7 @@ data:
       title: Random Integer
   - name: string
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: string/pi.hpp
       title: Pi Function
     - icon: ':heavy_check_mark:'
@@ -397,6 +397,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/ordered-set.aizu-unique.test.cpp
       title: verify/ordered-set.aizu-unique.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/pi.aizu-string-search.test.cpp
+      title: verify/pi.aizu-string-search.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/point.aizu-counter-clockwise.test.cpp
       title: verify/point.aizu-counter-clockwise.test.cpp
