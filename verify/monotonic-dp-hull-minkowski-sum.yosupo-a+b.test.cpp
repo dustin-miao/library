@@ -21,7 +21,7 @@ int main() {
 			b.add(slope2[i], intercept2[i]);
 		monotonic_dp_hull c = minkowski_sum(a, b);
 
-		auto x_coord = rng_vector<long long>(T, -1e6, 1e6);
+		auto x_coord = rng::rivec<long long>(T, -1e6, 1e6);
 		sort(x_coord.begin(), x_coord.end());
 
 		for (int x : x_coord)

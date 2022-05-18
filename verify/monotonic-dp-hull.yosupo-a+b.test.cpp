@@ -10,7 +10,7 @@ using namespace std;
 int main() {
 	{
 		int T = 2e5;
-		auto slope = rng::rivec<long long>(T, -1e6, 1e6), intercept = rng_verng::rivecctor<long long>(T, -1e9, 1e9);
+		auto slope = rng::rivec<long long>(T, -1e6, 1e6), intercept = rng::rivec<long long>(T, -1e9, 1e9);
 		auto x_coord = rng::rivec<long long>(5 * T, -1e6, 1e6);
 
 		sort(slope.begin(), slope.end());
