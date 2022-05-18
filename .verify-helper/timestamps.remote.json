@@ -18,6 +18,7 @@
 "verify/euler-tour.yosupo-vertex-add-subtree-sum.test.cpp": "2022-05-06 20:02:47 -0700",
 "verify/ext-gcd.aizu-extended-euclid-algorithm.test.cpp": "2022-04-29 22:36:50 -0700",
 "verify/ext-gcd.aizu-greatest-common-divisor.test.cpp": "2022-04-29 22:36:50 -0700",
+"verify/ext-gcd.yosupo-a+b.test.cpp": "2022-05-18 09:15:37 -0700",
 "verify/fast-lca.yosupo-lowest-common-ancestor.test.cpp": "2022-04-29 22:36:50 -0700",
 "verify/fast-pow.aizu-power.test.cpp": "2022-05-03 13:27:25 -0700",
 "verify/fenwick-tree.aizu-range-sum-query.test.cpp": "2022-04-29 22:36:50 -0700",
