@@ -79,6 +79,7 @@
 "verify/wavelet-tree.yosupo-range-kth-largest.test.cpp": "2022-05-07 19:56:49 -0700",
 "verify/xor-convolution.yosupo-bitwise-xor-convolution.test.cpp": "2022-05-03 13:27:25 -0700",
 "verify/y-combinator.aizu-greatest-common-denominator.test.cpp": "2022-05-03 13:50:28 -0700",
+"verify/z.aizu-string-search.test.cpp": "2022-05-18 09:44:32 -0700",
 "verify/z.yosupo-z-algorithm.test.cpp": "2022-05-18 09:24:47 -0700",
 "verify/zip.yosupo-a+b.test.cpp": "2022-05-18 09:09:46 -0700"
 }
