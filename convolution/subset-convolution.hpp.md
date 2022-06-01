@@ -38,7 +38,7 @@ data:
   isVerificationFile: false
   path: convolution/subset-convolution.hpp
   requiredBy: []
-  timestamp: '2022-04-29 22:36:50-07:00'
+  timestamp: '2022-06-01 12:55:53-07:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: convolution/subset-convolution.hpp

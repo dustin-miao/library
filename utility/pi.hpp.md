@@ -23,6 +23,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: convolution/slow-fast-fourier-transform.hpp
     title: Slow Fast Fourier Transform
+  - icon: ':question:'
+    path: poly/polynomial.hpp
+    title: Polynomial
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/complex-convolution.aizu-naive-string-search.test.cpp
@@ -43,11 +46,56 @@ data:
     path: verify/cyclic-product.yosupo-a+b.test.cpp
     title: verify/cyclic-product.yosupo-a+b.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/polynomial-yosupo-division-of-polynomials.test.cpp
+    title: verify/polynomial-yosupo-division-of-polynomials.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/polynomial.yosupo-composition-of-formal-power-series.test.cpp
+    title: verify/polynomial.yosupo-composition-of-formal-power-series.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/polynomial.yosupo-convolution-mod-1000000007.test.cpp
+    title: verify/polynomial.yosupo-convolution-mod-1000000007.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/polynomial.yosupo-convolution.test.cpp
+    title: verify/polynomial.yosupo-convolution.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/polynomial.yosupo-exp-of-formal-power-series.test.cpp
+    title: verify/polynomial.yosupo-exp-of-formal-power-series.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/polynomial.yosupo-find-linear-recurrence.test.cpp
+    title: verify/polynomial.yosupo-find-linear-recurrence.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/polynomial.yosupo-inv-of-formal-power-series.test.cpp
+    title: verify/polynomial.yosupo-inv-of-formal-power-series.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/polynomial.yosupo-inv-of-polynomials.test.cpp
+    title: verify/polynomial.yosupo-inv-of-polynomials.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/polynomial.yosupo-kth-term-of-linearly-recurrent-sequence.test.cpp
+    title: verify/polynomial.yosupo-kth-term-of-linearly-recurrent-sequence.test.cpp
+  - icon: ':x:'
+    path: verify/polynomial.yosupo-log-of-formal-power-series.test.cpp
+    title: verify/polynomial.yosupo-log-of-formal-power-series.test.cpp
+  - icon: ':x:'
+    path: verify/polynomial.yosupo-multipoint-evaluation.test.cpp
+    title: verify/polynomial.yosupo-multipoint-evaluation.test.cpp
+  - icon: ':x:'
+    path: verify/polynomial.yosupo-polynomial-interpolation.test.cpp
+    title: verify/polynomial.yosupo-polynomial-interpolation.test.cpp
+  - icon: ':x:'
+    path: verify/polynomial.yosupo-polynomial-taylor-shift.test.cpp
+    title: verify/polynomial.yosupo-polynomial-taylor-shift.test.cpp
+  - icon: ':x:'
+    path: verify/polynomial.yosupo-pow-of-formal-power-series.test.cpp
+    title: verify/polynomial.yosupo-pow-of-formal-power-series.test.cpp
+  - icon: ':x:'
+    path: verify/polynomial.yosupo-sqrt-of-formal-power-series.test.cpp
+    title: verify/polynomial.yosupo-sqrt-of-formal-power-series.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/slow-convolution.yosupo-frequency-table-of-tree-distances.test.cpp
     title: verify/slow-convolution.yosupo-frequency-table-of-tree-distances.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: '#line 1 "utility/pi.hpp"
@@ -88,23 +136,39 @@ data:
   isVerificationFile: false
   path: utility/pi.hpp
   requiredBy:
-  - convolution/convolution.hpp
-  - convolution/cyclic-product.hpp
-  - convolution/convolution-mod.hpp
   - convolution/complex-convolution.hpp
-  - convolution/slow-fast-fourier-transform.hpp
-  - convolution/fast-fourier-transform.hpp
+  - convolution/convolution.hpp
+  - convolution/convolution-mod.hpp
   - convolution/slow-convolution.hpp
+  - convolution/fast-fourier-transform.hpp
+  - convolution/slow-fast-fourier-transform.hpp
+  - convolution/cyclic-product.hpp
+  - poly/polynomial.hpp
   timestamp: '2022-05-03 13:27:25-07:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - verify/convolution.yosupo-frequency-table-of-tree-distances.test.cpp
-  - verify/convolution-mod.yosupo-convolution.test.cpp
-  - verify/complex-convolution.aizu-string-search.test.cpp
-  - verify/complex-convolution.aizu-naive-string-search.test.cpp
-  - verify/cyclic-product.yosupo-a+b.test.cpp
-  - verify/slow-convolution.yosupo-frequency-table-of-tree-distances.test.cpp
+  - verify/polynomial-yosupo-division-of-polynomials.test.cpp
+  - verify/polynomial.yosupo-log-of-formal-power-series.test.cpp
+  - verify/polynomial.yosupo-convolution.test.cpp
+  - verify/polynomial.yosupo-pow-of-formal-power-series.test.cpp
+  - verify/polynomial.yosupo-kth-term-of-linearly-recurrent-sequence.test.cpp
   - verify/convolution-mod.yosupo-convolution-mod-1000000007.test.cpp
+  - verify/polynomial.yosupo-multipoint-evaluation.test.cpp
+  - verify/polynomial.yosupo-find-linear-recurrence.test.cpp
+  - verify/polynomial.yosupo-inv-of-formal-power-series.test.cpp
+  - verify/complex-convolution.aizu-string-search.test.cpp
+  - verify/cyclic-product.yosupo-a+b.test.cpp
+  - verify/convolution-mod.yosupo-convolution.test.cpp
+  - verify/convolution.yosupo-frequency-table-of-tree-distances.test.cpp
+  - verify/polynomial.yosupo-convolution-mod-1000000007.test.cpp
+  - verify/polynomial.yosupo-polynomial-interpolation.test.cpp
+  - verify/complex-convolution.aizu-naive-string-search.test.cpp
+  - verify/polynomial.yosupo-inv-of-polynomials.test.cpp
+  - verify/polynomial.yosupo-composition-of-formal-power-series.test.cpp
+  - verify/polynomial.yosupo-exp-of-formal-power-series.test.cpp
+  - verify/polynomial.yosupo-sqrt-of-formal-power-series.test.cpp
+  - verify/polynomial.yosupo-polynomial-taylor-shift.test.cpp
+  - verify/slow-convolution.yosupo-frequency-table-of-tree-distances.test.cpp
 documentation_of: utility/pi.hpp
 layout: document
 title: Pi

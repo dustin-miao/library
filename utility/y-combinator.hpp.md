@@ -52,16 +52,16 @@ data:
   path: utility/y-combinator.hpp
   requiredBy:
   - tree/diameter.hpp
-  - tree/parent.hpp
   - tree/euler-tour.hpp
   - tree/depth.hpp
   - tree/distance.hpp
+  - tree/parent.hpp
   timestamp: '2022-05-03 13:22:51-07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/euler-tour.yosupo-vertex-add-subtree-sum.test.cpp
   - verify/y-combinator.aizu-greatest-common-denominator.test.cpp
   - verify/diameter.yosupo-tree-diameter.test.cpp
+  - verify/euler-tour.yosupo-vertex-add-subtree-sum.test.cpp
 documentation_of: utility/y-combinator.hpp
 layout: document
 title: Y-Combinator

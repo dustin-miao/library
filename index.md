@@ -176,6 +176,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/matrix.hpp
       title: Matrix
+  - name: poly
+    pages:
+    - icon: ':question:'
+      path: poly/polynomial.hpp
+      title: Polynomial
   - name: random
     pages:
     - icon: ':heavy_check_mark:'
@@ -244,7 +249,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: utility/mint.hpp
       title: Modular Int
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: utility/pi.hpp
       title: Pi
     - icon: ':heavy_check_mark:'
@@ -415,6 +420,51 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/point.aizu-projection.test.cpp
       title: verify/point.aizu-projection.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/polynomial-yosupo-division-of-polynomials.test.cpp
+      title: verify/polynomial-yosupo-division-of-polynomials.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/polynomial.yosupo-composition-of-formal-power-series.test.cpp
+      title: verify/polynomial.yosupo-composition-of-formal-power-series.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/polynomial.yosupo-convolution-mod-1000000007.test.cpp
+      title: verify/polynomial.yosupo-convolution-mod-1000000007.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/polynomial.yosupo-convolution.test.cpp
+      title: verify/polynomial.yosupo-convolution.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/polynomial.yosupo-exp-of-formal-power-series.test.cpp
+      title: verify/polynomial.yosupo-exp-of-formal-power-series.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/polynomial.yosupo-find-linear-recurrence.test.cpp
+      title: verify/polynomial.yosupo-find-linear-recurrence.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/polynomial.yosupo-inv-of-formal-power-series.test.cpp
+      title: verify/polynomial.yosupo-inv-of-formal-power-series.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/polynomial.yosupo-inv-of-polynomials.test.cpp
+      title: verify/polynomial.yosupo-inv-of-polynomials.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/polynomial.yosupo-kth-term-of-linearly-recurrent-sequence.test.cpp
+      title: verify/polynomial.yosupo-kth-term-of-linearly-recurrent-sequence.test.cpp
+    - icon: ':x:'
+      path: verify/polynomial.yosupo-log-of-formal-power-series.test.cpp
+      title: verify/polynomial.yosupo-log-of-formal-power-series.test.cpp
+    - icon: ':x:'
+      path: verify/polynomial.yosupo-multipoint-evaluation.test.cpp
+      title: verify/polynomial.yosupo-multipoint-evaluation.test.cpp
+    - icon: ':x:'
+      path: verify/polynomial.yosupo-polynomial-interpolation.test.cpp
+      title: verify/polynomial.yosupo-polynomial-interpolation.test.cpp
+    - icon: ':x:'
+      path: verify/polynomial.yosupo-polynomial-taylor-shift.test.cpp
+      title: verify/polynomial.yosupo-polynomial-taylor-shift.test.cpp
+    - icon: ':x:'
+      path: verify/polynomial.yosupo-pow-of-formal-power-series.test.cpp
+      title: verify/polynomial.yosupo-pow-of-formal-power-series.test.cpp
+    - icon: ':x:'
+      path: verify/polynomial.yosupo-sqrt-of-formal-power-series.test.cpp
+      title: verify/polynomial.yosupo-sqrt-of-formal-power-series.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/prefix-sum.yosupo-static-range-sum.test.cpp
       title: verify/prefix-sum.yosupo-static-range-sum.test.cpp
