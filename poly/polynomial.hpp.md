@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utility/pi.hpp
     title: Pi
   _extendedRequiredBy: []
@@ -36,24 +36,24 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/polynomial.yosupo-log-of-formal-power-series.test.cpp
     title: verify/polynomial.yosupo-log-of-formal-power-series.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/polynomial.yosupo-multipoint-evaluation.test.cpp
     title: verify/polynomial.yosupo-multipoint-evaluation.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/polynomial.yosupo-polynomial-interpolation.test.cpp
     title: verify/polynomial.yosupo-polynomial-interpolation.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/polynomial.yosupo-polynomial-taylor-shift.test.cpp
     title: verify/polynomial.yosupo-polynomial-taylor-shift.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/polynomial.yosupo-pow-of-formal-power-series.test.cpp
     title: verify/polynomial.yosupo-pow-of-formal-power-series.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/polynomial.yosupo-sqrt-of-formal-power-series.test.cpp
     title: verify/polynomial.yosupo-sqrt-of-formal-power-series.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"utility/pi.hpp\"\n#pragma region Pi\n\n#ifndef PI_HPP\n\
@@ -183,14 +183,14 @@ data:
     \ polynomial &t) const { return polynomial(*this) *= t; }\n\n\t\tpolynomial reverse(int\
     \ n) const {\n\t\t\tauto res = coef;\n\t\t\tres.resize(max(n, (int)res.size()));\n\
     \t\t\treturn vector<T>(res.rbegin(), res.rbegin() + n);\n\t\t}\n\n\t\tpolynomial\
-    \ reverse() const { return reverse(deg() + 1); }\n\n\t\tint size() { return coef.size();\
-    \ }\n\n\tprivate:\n\t\tpair<polynomial, polynomial> slow_division(const polynomial\
-    \ &b) const {\n\t\t\tvector<T> A(coef);\n\t\t\tvector<T> res;\n\t\t\twhile (A.size()\
-    \ >= b.coef.size()) {\n\t\t\t\tres.push_back(A.back() / b.coef.back());\n\t\t\t\
-    \tif (res.back() != T(0))\n\t\t\t\t\tfor (int i = 0; i < b.coef.size(); i++)\n\
-    \t\t\t\t\t\tA[A.size() - i - 1] -= res.back() * b.coef[b.coef.size() - i - 1];\n\
-    \t\t\t\tA.pop_back();\n\t\t\t}\n\t\t\tstd::reverse(res.begin(), res.end());\n\t\
-    \t\treturn {res, A};\n\t\t}\n\n\tpublic:\n\t\tpair<polynomial, polynomial> hint_division(polynomial\
+    \ reverse() const { return reverse(deg() + 1); }\n\n\t\tint size() const { return\
+    \ coef.size(); }\n\n\tprivate:\n\t\tpair<polynomial, polynomial> slow_division(const\
+    \ polynomial &b) const {\n\t\t\tvector<T> A(coef);\n\t\t\tvector<T> res;\n\t\t\
+    \twhile (A.size() >= b.coef.size()) {\n\t\t\t\tres.push_back(A.back() / b.coef.back());\n\
+    \t\t\t\tif (res.back() != T(0))\n\t\t\t\t\tfor (int i = 0; i < b.coef.size();\
+    \ i++)\n\t\t\t\t\t\tA[A.size() - i - 1] -= res.back() * b.coef[b.coef.size() -\
+    \ i - 1];\n\t\t\t\tA.pop_back();\n\t\t\t}\n\t\t\tstd::reverse(res.begin(), res.end());\n\
+    \t\t\treturn {res, A};\n\t\t}\n\n\tpublic:\n\t\tpair<polynomial, polynomial> hint_division(polynomial\
     \ const &b, polynomial const &binv) const {\n\t\t\tassert(!b.is_zero());\n\t\t\
     \tif (deg() < b.deg())\n\t\t\t\treturn {polynomial{0}, *this};\n\t\t\tint d =\
     \ deg() - b.deg();\n\t\t\tif (min(d, b.deg()) < MAX_B)\n\t\t\t\treturn slow_division(b);\n\
@@ -432,8 +432,11 @@ data:
     \ >= 0) {\n\t\t\t\tans += (AB0.modulo_k(n - r * q) * rfact<T>(r) * B1p[r]).multiply_k(r\
     \ * q).modulo_k(n);\n\t\t\t\tr--;\n\t\t\t\tif (r >= 0)\n\t\t\t\t\tAB0 = ((AB0\
     \ * Bd).integral() + A[r] * fact<T>(r)).modulo_k(n);\n\t\t\t}\n\t\t\treturn ans;\n\
-    \t\t}\n\t};\n\n\tstatic auto operator * (const auto& a, const polynomial<auto>&\
-    \ b) { return b * a; }\n}\n\n#endif\n\n#pragma endregion polynomial\n"
+    \t\t}\n\t};\n\n\tstatic auto operator*(const auto &a, const polynomial<auto> &b)\
+    \ { return b * a; }\n\n\tostream &operator<<(ostream &os, const polynomial<auto>\
+    \ &p) {\n\t\tos << '[';\n\t\tif (p.size()) {\n\t\t\tos << p[0];\n\t\t\tfor (int\
+    \ i = 1; i < p.size(); i++)\n\t\t\t\tos << \", \" << p[i];\n\t\t}\n\t\treturn\
+    \ os << ']';\n\t}\n}\n\n#endif\n\n#pragma endregion polynomial\n"
   code: "#include \"utility/pi.hpp\"\n\n#pragma region polynomial\n\n#ifndef POLYNOMIAL_HPP\n\
     #define POLYNOMIAL_HPP\n\nnamespace poly {\n\tnamespace polynomial_internal {\n\
     \t\tconst int MAX_N = 1 << 24; \t\t// maximum size of polynomial, power of 2\n\
@@ -559,14 +562,14 @@ data:
     \ polynomial &t) const { return polynomial(*this) *= t; }\n\n\t\tpolynomial reverse(int\
     \ n) const {\n\t\t\tauto res = coef;\n\t\t\tres.resize(max(n, (int)res.size()));\n\
     \t\t\treturn vector<T>(res.rbegin(), res.rbegin() + n);\n\t\t}\n\n\t\tpolynomial\
-    \ reverse() const { return reverse(deg() + 1); }\n\n\t\tint size() { return coef.size();\
-    \ }\n\n\tprivate:\n\t\tpair<polynomial, polynomial> slow_division(const polynomial\
-    \ &b) const {\n\t\t\tvector<T> A(coef);\n\t\t\tvector<T> res;\n\t\t\twhile (A.size()\
-    \ >= b.coef.size()) {\n\t\t\t\tres.push_back(A.back() / b.coef.back());\n\t\t\t\
-    \tif (res.back() != T(0))\n\t\t\t\t\tfor (int i = 0; i < b.coef.size(); i++)\n\
-    \t\t\t\t\t\tA[A.size() - i - 1] -= res.back() * b.coef[b.coef.size() - i - 1];\n\
-    \t\t\t\tA.pop_back();\n\t\t\t}\n\t\t\tstd::reverse(res.begin(), res.end());\n\t\
-    \t\treturn {res, A};\n\t\t}\n\n\tpublic:\n\t\tpair<polynomial, polynomial> hint_division(polynomial\
+    \ reverse() const { return reverse(deg() + 1); }\n\n\t\tint size() const { return\
+    \ coef.size(); }\n\n\tprivate:\n\t\tpair<polynomial, polynomial> slow_division(const\
+    \ polynomial &b) const {\n\t\t\tvector<T> A(coef);\n\t\t\tvector<T> res;\n\t\t\
+    \twhile (A.size() >= b.coef.size()) {\n\t\t\t\tres.push_back(A.back() / b.coef.back());\n\
+    \t\t\t\tif (res.back() != T(0))\n\t\t\t\t\tfor (int i = 0; i < b.coef.size();\
+    \ i++)\n\t\t\t\t\t\tA[A.size() - i - 1] -= res.back() * b.coef[b.coef.size() -\
+    \ i - 1];\n\t\t\t\tA.pop_back();\n\t\t\t}\n\t\t\tstd::reverse(res.begin(), res.end());\n\
+    \t\t\treturn {res, A};\n\t\t}\n\n\tpublic:\n\t\tpair<polynomial, polynomial> hint_division(polynomial\
     \ const &b, polynomial const &binv) const {\n\t\t\tassert(!b.is_zero());\n\t\t\
     \tif (deg() < b.deg())\n\t\t\t\treturn {polynomial{0}, *this};\n\t\t\tint d =\
     \ deg() - b.deg();\n\t\t\tif (min(d, b.deg()) < MAX_B)\n\t\t\t\treturn slow_division(b);\n\
@@ -808,15 +811,18 @@ data:
     \ >= 0) {\n\t\t\t\tans += (AB0.modulo_k(n - r * q) * rfact<T>(r) * B1p[r]).multiply_k(r\
     \ * q).modulo_k(n);\n\t\t\t\tr--;\n\t\t\t\tif (r >= 0)\n\t\t\t\t\tAB0 = ((AB0\
     \ * Bd).integral() + A[r] * fact<T>(r)).modulo_k(n);\n\t\t\t}\n\t\t\treturn ans;\n\
-    \t\t}\n\t};\n\n\tstatic auto operator * (const auto& a, const polynomial<auto>&\
-    \ b) { return b * a; }\n}\n\n#endif\n\n#pragma endregion polynomial"
+    \t\t}\n\t};\n\n\tstatic auto operator*(const auto &a, const polynomial<auto> &b)\
+    \ { return b * a; }\n\n\tostream &operator<<(ostream &os, const polynomial<auto>\
+    \ &p) {\n\t\tos << '[';\n\t\tif (p.size()) {\n\t\t\tos << p[0];\n\t\t\tfor (int\
+    \ i = 1; i < p.size(); i++)\n\t\t\t\tos << \", \" << p[i];\n\t\t}\n\t\treturn\
+    \ os << ']';\n\t}\n}\n\n#endif\n\n#pragma endregion polynomial"
   dependsOn:
   - utility/pi.hpp
   isVerificationFile: false
   path: poly/polynomial.hpp
   requiredBy: []
-  timestamp: '2022-06-01 12:50:00-07:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2022-06-01 15:13:28-07:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/polynomial.yosupo-inv-of-formal-power-series.test.cpp
   - verify/polynomial.yosupo-sqrt-of-formal-power-series.test.cpp

@@ -23,7 +23,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: convolution/slow-fast-fourier-transform.hpp
     title: Slow Fast Fourier Transform
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: poly/polynomial.hpp
     title: Polynomial
   _extendedVerifiedWith:
@@ -75,27 +75,27 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/polynomial.yosupo-log-of-formal-power-series.test.cpp
     title: verify/polynomial.yosupo-log-of-formal-power-series.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/polynomial.yosupo-multipoint-evaluation.test.cpp
     title: verify/polynomial.yosupo-multipoint-evaluation.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/polynomial.yosupo-polynomial-interpolation.test.cpp
     title: verify/polynomial.yosupo-polynomial-interpolation.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/polynomial.yosupo-polynomial-taylor-shift.test.cpp
     title: verify/polynomial.yosupo-polynomial-taylor-shift.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/polynomial.yosupo-pow-of-formal-power-series.test.cpp
     title: verify/polynomial.yosupo-pow-of-formal-power-series.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/polynomial.yosupo-sqrt-of-formal-power-series.test.cpp
     title: verify/polynomial.yosupo-sqrt-of-formal-power-series.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/slow-convolution.yosupo-frequency-table-of-tree-distances.test.cpp
     title: verify/slow-convolution.yosupo-frequency-table-of-tree-distances.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: '#line 1 "utility/pi.hpp"
@@ -145,7 +145,7 @@ data:
   - convolution/convolution.hpp
   - convolution/fast-fourier-transform.hpp
   timestamp: '2022-05-03 13:27:25-07:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/cyclic-product.yosupo-a+b.test.cpp
   - verify/polynomial.yosupo-inv-of-formal-power-series.test.cpp

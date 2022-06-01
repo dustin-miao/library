@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: poly/polynomial.hpp
     title: Polynomial
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utility/pi.hpp
     title: Pi
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/polynomial_interpolation
@@ -146,14 +146,14 @@ data:
     \ polynomial &t) const { return polynomial(*this) *= t; }\n\n\t\tpolynomial reverse(int\
     \ n) const {\n\t\t\tauto res = coef;\n\t\t\tres.resize(max(n, (int)res.size()));\n\
     \t\t\treturn vector<T>(res.rbegin(), res.rbegin() + n);\n\t\t}\n\n\t\tpolynomial\
-    \ reverse() const { return reverse(deg() + 1); }\n\n\t\tint size() { return coef.size();\
-    \ }\n\n\tprivate:\n\t\tpair<polynomial, polynomial> slow_division(const polynomial\
-    \ &b) const {\n\t\t\tvector<T> A(coef);\n\t\t\tvector<T> res;\n\t\t\twhile (A.size()\
-    \ >= b.coef.size()) {\n\t\t\t\tres.push_back(A.back() / b.coef.back());\n\t\t\t\
-    \tif (res.back() != T(0))\n\t\t\t\t\tfor (int i = 0; i < b.coef.size(); i++)\n\
-    \t\t\t\t\t\tA[A.size() - i - 1] -= res.back() * b.coef[b.coef.size() - i - 1];\n\
-    \t\t\t\tA.pop_back();\n\t\t\t}\n\t\t\tstd::reverse(res.begin(), res.end());\n\t\
-    \t\treturn {res, A};\n\t\t}\n\n\tpublic:\n\t\tpair<polynomial, polynomial> hint_division(polynomial\
+    \ reverse() const { return reverse(deg() + 1); }\n\n\t\tint size() const { return\
+    \ coef.size(); }\n\n\tprivate:\n\t\tpair<polynomial, polynomial> slow_division(const\
+    \ polynomial &b) const {\n\t\t\tvector<T> A(coef);\n\t\t\tvector<T> res;\n\t\t\
+    \twhile (A.size() >= b.coef.size()) {\n\t\t\t\tres.push_back(A.back() / b.coef.back());\n\
+    \t\t\t\tif (res.back() != T(0))\n\t\t\t\t\tfor (int i = 0; i < b.coef.size();\
+    \ i++)\n\t\t\t\t\t\tA[A.size() - i - 1] -= res.back() * b.coef[b.coef.size() -\
+    \ i - 1];\n\t\t\t\tA.pop_back();\n\t\t\t}\n\t\t\tstd::reverse(res.begin(), res.end());\n\
+    \t\t\treturn {res, A};\n\t\t}\n\n\tpublic:\n\t\tpair<polynomial, polynomial> hint_division(polynomial\
     \ const &b, polynomial const &binv) const {\n\t\t\tassert(!b.is_zero());\n\t\t\
     \tif (deg() < b.deg())\n\t\t\t\treturn {polynomial{0}, *this};\n\t\t\tint d =\
     \ deg() - b.deg();\n\t\t\tif (min(d, b.deg()) < MAX_B)\n\t\t\t\treturn slow_division(b);\n\
@@ -395,10 +395,12 @@ data:
     \ >= 0) {\n\t\t\t\tans += (AB0.modulo_k(n - r * q) * rfact<T>(r) * B1p[r]).multiply_k(r\
     \ * q).modulo_k(n);\n\t\t\t\tr--;\n\t\t\t\tif (r >= 0)\n\t\t\t\t\tAB0 = ((AB0\
     \ * Bd).integral() + A[r] * fact<T>(r)).modulo_k(n);\n\t\t\t}\n\t\t\treturn ans;\n\
-    \t\t}\n\t};\n\n\tstatic auto operator * (const auto& a, const polynomial<auto>&\
-    \ b) { return b * a; }\n}\n\n#endif\n\n#pragma endregion polynomial\n#line 7 \"\
-    verify/polynomial.yosupo-polynomial-interpolation.test.cpp\"\n\nusing namespace\
-    \ poly;\n\nconst int MOD = 998244353;\nusing mint = polynomial_internal::Modular<MOD>;\n\
+    \t\t}\n\t};\n\n\tstatic auto operator*(const auto &a, const polynomial<auto> &b)\
+    \ { return b * a; }\n\n\tostream &operator<<(ostream &os, const polynomial<auto>\
+    \ &p) {\n\t\tos << '[';\n\t\tif (p.size()) {\n\t\t\tos << p[0];\n\t\t\tfor (int\
+    \ i = 1; i < p.size(); i++)\n\t\t\t\tos << \", \" << p[i];\n\t\t}\n\t\treturn\
+    \ os << ']';\n\t}\n}\n\n#endif\n\n#pragma endregion polynomial\n#line 7 \"verify/polynomial.yosupo-polynomial-interpolation.test.cpp\"\
+    \n\nusing namespace poly;\n\nconst int MOD = 998244353;\nusing mint = polynomial_internal::Modular<MOD>;\n\
     \nint main() {\n\tint N;\n\tcin >> N;\n\tvector<mint> X(N), Y(N);\n\tfor (auto\
     \ &x : X)\n\t\tcin >> x;\n\tfor (auto &y : Y)\n\t\tcin >> y;\n\t\n\tpolynomial<mint>\
     \ P = polynomial<mint>::interpolate(X, Y);\n\tfor (int i = 0; i < N; i++)\n\t\t\
@@ -416,8 +418,8 @@ data:
   isVerificationFile: true
   path: verify/polynomial.yosupo-polynomial-interpolation.test.cpp
   requiredBy: []
-  timestamp: '2022-06-01 15:05:50-07:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-06-01 15:13:28-07:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/polynomial.yosupo-polynomial-interpolation.test.cpp
 layout: document
