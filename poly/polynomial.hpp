@@ -70,6 +70,7 @@ namespace poly {
 
 			long long rem() const { return 2 * value > mod ? value - mod : value; }
 
+			/*
 			optional<Modular> sqrt() const {
 				static Modular y;
 
@@ -100,6 +101,36 @@ namespace poly {
 					if (x.b != Modular(0))
 						return x.b.inv();
 				}
+			}*/
+
+			optional<Modular> sqrt() const {
+				assert(0 <= value && value < mod);
+				if (value < 2) 
+					return value;
+				if (fast_pow(Modular(value), (mod - 1) >> 1) != 1) 
+					return nullopt;
+				Modular b = 1;
+				for (; fast_pow(b, (mod - 1) >> 1) == 1; b += 1);
+				int m = mod - 1, e = 0;
+				for (; m % 2 == 0; m >>= 1, e++);
+				Modular x = fast_pow(Modular(value), (m - 1) >> 1);
+				Modular y = Modular(value) * x * x;
+				Modular z = fast_pow(Modular(b), m);
+				x *= value;
+				while (y != 1) {
+					int j = 0;
+					Modular t = y;
+					while (t != Modular(1)) {
+						j += 1;
+						t *= t;
+					}
+					z = fast_pow(z, 1 << (e - j - 1));
+					x *= z;
+					z *= z;
+					y *= z;
+					e = j;
+				}
+				return int(x);
 			}
 
 			template<int _mod>
@@ -940,7 +971,7 @@ namespace poly {
 		polynomial inv(int n) const {
 			auto Q = modulo_k(n);
 			if (n == 1)
-				return Q[0].inv();
+				return Q.is_zero() ? 0 : Q[0].inv();
 			auto [P0, P1] = Q.mulx(-1).bisect();
 			int N = fast_fourier_transform::common_size((n + 1) / 2, (n + 1) / 2);
 
