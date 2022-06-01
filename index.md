@@ -178,7 +178,7 @@ data:
       title: Matrix
   - name: poly
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: poly/polynomial.hpp
       title: Polynomial
   - name: random
@@ -249,7 +249,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: utility/mint.hpp
       title: Modular Int
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: utility/pi.hpp
       title: Pi
     - icon: ':heavy_check_mark:'
@@ -453,7 +453,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/polynomial.yosupo-multipoint-evaluation.test.cpp
       title: verify/polynomial.yosupo-multipoint-evaluation.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/polynomial.yosupo-polynomial-interpolation.test.cpp
       title: verify/polynomial.yosupo-polynomial-interpolation.test.cpp
     - icon: ':heavy_check_mark:'

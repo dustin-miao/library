@@ -1,26 +1,26 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: poly/polynomial.hpp
     title: Polynomial
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utility/pi.hpp
     title: Pi
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.yosupo.jp/problem/multipoint_evaluation
+    PROBLEM: https://judge.yosupo.jp/problem/polynomial_interpolation
     links:
-    - https://judge.yosupo.jp/problem/multipoint_evaluation
+    - https://judge.yosupo.jp/problem/polynomial_interpolation
   bundledCode: "#line 1 \"verify/polynomial.yosupo-polynomial-interpolation.test.cpp\"\
-    \n#define PROBLEM \"https://judge.yosupo.jp/problem/multipoint_evaluation\"\n\n\
-    #include <bits/stdc++.h>\nusing namespace std;\n\n#line 1 \"utility/pi.hpp\"\n\
-    #pragma region Pi\n\n#ifndef PI_HPP\n#define PI_HPP\n\nconst double PI = acos(-1);\n\
+    \n#define PROBLEM \"https://judge.yosupo.jp/problem/polynomial_interpolation\"\
+    \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#line 1 \"utility/pi.hpp\"\
+    \n#pragma region Pi\n\n#ifndef PI_HPP\n#define PI_HPP\n\nconst double PI = acos(-1);\n\
     \n#endif\n\n#pragma endregion Pi\n#line 2 \"poly/polynomial.hpp\"\n\n#pragma region\
     \ polynomial\n\n#ifndef POLYNOMIAL_HPP\n#define POLYNOMIAL_HPP\n\nnamespace poly\
     \ {\n\tnamespace polynomial_internal {\n\t\tconst int MAX_N = 1 << 24; \t\t//\
@@ -403,7 +403,7 @@ data:
     \ &x : X)\n\t\tcin >> x;\n\tfor (auto &y : Y)\n\t\tcin >> y;\n\t\n\tpolynomial<mint>\
     \ P = polynomial<mint>::interpolate(X, Y);\n\tfor (int i = 0; i < N; i++)\n\t\t\
     cout << (i < P.size() ? P[i] : 0) << ' ';\n\tcout << '\\n';\n} \n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/multipoint_evaluation\"\
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/polynomial_interpolation\"\
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#include \"poly/polynomial.hpp\"\
     \n\nusing namespace poly;\n\nconst int MOD = 998244353;\nusing mint = polynomial_internal::Modular<MOD>;\n\
     \nint main() {\n\tint N;\n\tcin >> N;\n\tvector<mint> X(N), Y(N);\n\tfor (auto\
@@ -416,8 +416,8 @@ data:
   isVerificationFile: true
   path: verify/polynomial.yosupo-polynomial-interpolation.test.cpp
   requiredBy: []
-  timestamp: '2022-06-01 14:53:07-07:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-06-01 15:05:50-07:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/polynomial.yosupo-polynomial-interpolation.test.cpp
 layout: document
