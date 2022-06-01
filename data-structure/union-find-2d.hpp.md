@@ -50,8 +50,8 @@ data:
   timestamp: '2022-04-29 22:36:50-07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/union-find-2d.yosupo-unionfind.test.cpp
   - verify/union-find-2d.aizu-disjoint-union.test.cpp
+  - verify/union-find-2d.yosupo-unionfind.test.cpp
 documentation_of: data-structure/union-find-2d.hpp
 layout: document
 title: Union Find 2d

@@ -9,9 +9,9 @@ data:
     title: Pi
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/sqrt_of_formal_power_series
@@ -403,7 +403,7 @@ data:
     \ A)\n\t\tcin >> a;\n\t\n\tpolynomial<mint> P(A);\n\tauto Q = P.sqrt(N);\n\tif\
     \ (Q) {\n\t\tauto R = Q.value();\n\t\tfor (int i = 0; i < N; i++)\n\t\t\tcout\
     \ << (i < R.size() ? R[i] : 0) << ' ';\n\t\tcout << '\\n';\n\t} else {\n\t\tcout\
-    \ << -1 << '\\n';\n\t}\n}\n"
+    \ << -1 << '\\n';\n\t}\n} \n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/sqrt_of_formal_power_series\"\
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#include \"poly/polynomial.hpp\"\
     \n\nusing namespace poly;\n\nconst int MOD = 998244353;\nusing mint = polynomial_internal::Modular<MOD>;\n\
@@ -411,15 +411,15 @@ data:
     \ A)\n\t\tcin >> a;\n\t\n\tpolynomial<mint> P(A);\n\tauto Q = P.sqrt(N);\n\tif\
     \ (Q) {\n\t\tauto R = Q.value();\n\t\tfor (int i = 0; i < N; i++)\n\t\t\tcout\
     \ << (i < R.size() ? R[i] : 0) << ' ';\n\t\tcout << '\\n';\n\t} else {\n\t\tcout\
-    \ << -1 << '\\n';\n\t}\n}"
+    \ << -1 << '\\n';\n\t}\n} "
   dependsOn:
   - poly/polynomial.hpp
   - utility/pi.hpp
   isVerificationFile: true
   path: verify/polynomial.yosupo-sqrt-of-formal-power-series.test.cpp
   requiredBy: []
-  timestamp: '2022-06-01 12:50:00-07:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-06-01 14:53:07-07:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/polynomial.yosupo-sqrt-of-formal-power-series.test.cpp
 layout: document

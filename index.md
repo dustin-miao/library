@@ -447,22 +447,22 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/polynomial.yosupo-kth-term-of-linearly-recurrent-sequence.test.cpp
       title: verify/polynomial.yosupo-kth-term-of-linearly-recurrent-sequence.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/polynomial.yosupo-log-of-formal-power-series.test.cpp
       title: verify/polynomial.yosupo-log-of-formal-power-series.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/polynomial.yosupo-multipoint-evaluation.test.cpp
       title: verify/polynomial.yosupo-multipoint-evaluation.test.cpp
     - icon: ':x:'
       path: verify/polynomial.yosupo-polynomial-interpolation.test.cpp
       title: verify/polynomial.yosupo-polynomial-interpolation.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/polynomial.yosupo-polynomial-taylor-shift.test.cpp
       title: verify/polynomial.yosupo-polynomial-taylor-shift.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/polynomial.yosupo-pow-of-formal-power-series.test.cpp
       title: verify/polynomial.yosupo-pow-of-formal-power-series.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/polynomial.yosupo-sqrt-of-formal-power-series.test.cpp
       title: verify/polynomial.yosupo-sqrt-of-formal-power-series.test.cpp
     - icon: ':heavy_check_mark:'

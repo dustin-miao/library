@@ -33,22 +33,22 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/polynomial.yosupo-kth-term-of-linearly-recurrent-sequence.test.cpp
     title: verify/polynomial.yosupo-kth-term-of-linearly-recurrent-sequence.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/polynomial.yosupo-log-of-formal-power-series.test.cpp
     title: verify/polynomial.yosupo-log-of-formal-power-series.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/polynomial.yosupo-multipoint-evaluation.test.cpp
     title: verify/polynomial.yosupo-multipoint-evaluation.test.cpp
   - icon: ':x:'
     path: verify/polynomial.yosupo-polynomial-interpolation.test.cpp
     title: verify/polynomial.yosupo-polynomial-interpolation.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/polynomial.yosupo-polynomial-taylor-shift.test.cpp
     title: verify/polynomial.yosupo-polynomial-taylor-shift.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/polynomial.yosupo-pow-of-formal-power-series.test.cpp
     title: verify/polynomial.yosupo-pow-of-formal-power-series.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/polynomial.yosupo-sqrt-of-formal-power-series.test.cpp
     title: verify/polynomial.yosupo-sqrt-of-formal-power-series.test.cpp
   _isVerificationFailed: true
@@ -818,21 +818,21 @@ data:
   timestamp: '2022-06-01 12:50:00-07:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - verify/polynomial-yosupo-division-of-polynomials.test.cpp
-  - verify/polynomial.yosupo-log-of-formal-power-series.test.cpp
-  - verify/polynomial.yosupo-convolution.test.cpp
-  - verify/polynomial.yosupo-pow-of-formal-power-series.test.cpp
-  - verify/polynomial.yosupo-kth-term-of-linearly-recurrent-sequence.test.cpp
-  - verify/polynomial.yosupo-multipoint-evaluation.test.cpp
-  - verify/polynomial.yosupo-find-linear-recurrence.test.cpp
   - verify/polynomial.yosupo-inv-of-formal-power-series.test.cpp
-  - verify/polynomial.yosupo-convolution-mod-1000000007.test.cpp
+  - verify/polynomial.yosupo-sqrt-of-formal-power-series.test.cpp
+  - verify/polynomial.yosupo-pow-of-formal-power-series.test.cpp
   - verify/polynomial.yosupo-polynomial-interpolation.test.cpp
+  - verify/polynomial-yosupo-division-of-polynomials.test.cpp
+  - verify/polynomial.yosupo-multipoint-evaluation.test.cpp
+  - verify/polynomial.yosupo-convolution.test.cpp
+  - verify/polynomial.yosupo-kth-term-of-linearly-recurrent-sequence.test.cpp
+  - verify/polynomial.yosupo-find-linear-recurrence.test.cpp
   - verify/polynomial.yosupo-inv-of-polynomials.test.cpp
   - verify/polynomial.yosupo-composition-of-formal-power-series.test.cpp
-  - verify/polynomial.yosupo-exp-of-formal-power-series.test.cpp
-  - verify/polynomial.yosupo-sqrt-of-formal-power-series.test.cpp
+  - verify/polynomial.yosupo-log-of-formal-power-series.test.cpp
   - verify/polynomial.yosupo-polynomial-taylor-shift.test.cpp
+  - verify/polynomial.yosupo-convolution-mod-1000000007.test.cpp
+  - verify/polynomial.yosupo-exp-of-formal-power-series.test.cpp
 documentation_of: poly/polynomial.hpp
 layout: document
 title: Polynomial

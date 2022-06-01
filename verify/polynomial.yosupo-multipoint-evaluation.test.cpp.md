@@ -9,9 +9,9 @@ data:
     title: Pi
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/multipoint_evaluation
@@ -402,22 +402,22 @@ data:
     \nint main() {\n\tint N, M;\n\tcin >> N >> M;\n\tvector<mint> A(N), X(M);\n\t\
     for (auto &a : A)\n\t\tcin >> a;\n\tfor (auto &x : X)\n\t\tcin >> x;\n\t\n\tpolynomial<mint>\
     \ P(A);\n\tauto Y = P.eval(X);\n\tfor (int i = 0; i < M; i++)\n\t\tcout << Y[i]\
-    \ << ' ';\n\tcout << '\\n';\n}\n"
+    \ << ' ';\n\tcout << '\\n';\n} \n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/multipoint_evaluation\"\
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#include \"poly/polynomial.hpp\"\
     \n\nusing namespace poly;\n\nconst int MOD = 998244353;\nusing mint = polynomial_internal::Modular<MOD>;\n\
     \nint main() {\n\tint N, M;\n\tcin >> N >> M;\n\tvector<mint> A(N), X(M);\n\t\
     for (auto &a : A)\n\t\tcin >> a;\n\tfor (auto &x : X)\n\t\tcin >> x;\n\t\n\tpolynomial<mint>\
     \ P(A);\n\tauto Y = P.eval(X);\n\tfor (int i = 0; i < M; i++)\n\t\tcout << Y[i]\
-    \ << ' ';\n\tcout << '\\n';\n}"
+    \ << ' ';\n\tcout << '\\n';\n} "
   dependsOn:
   - poly/polynomial.hpp
   - utility/pi.hpp
   isVerificationFile: true
   path: verify/polynomial.yosupo-multipoint-evaluation.test.cpp
   requiredBy: []
-  timestamp: '2022-06-01 12:50:00-07:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-06-01 14:53:07-07:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/polynomial.yosupo-multipoint-evaluation.test.cpp
 layout: document

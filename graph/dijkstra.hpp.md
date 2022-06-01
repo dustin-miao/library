@@ -50,8 +50,8 @@ data:
   timestamp: '2022-05-13 08:14:05-07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/dijkstra.yosupo-shortest-path.test.cpp
   - verify/dijkstra.aizu-single-source-shortest-path.test.cpp
+  - verify/dijkstra.yosupo-shortest-path.test.cpp
 documentation_of: graph/dijkstra.hpp
 layout: document
 title: Dijkstra's Algorithm

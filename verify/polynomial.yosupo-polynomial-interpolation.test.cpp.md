@@ -402,21 +402,21 @@ data:
     \nint main() {\n\tint N;\n\tcin >> N;\n\tvector<mint> X(N), Y(N);\n\tfor (auto\
     \ &x : X)\n\t\tcin >> x;\n\tfor (auto &y : Y)\n\t\tcin >> y;\n\t\n\tpolynomial<mint>\
     \ P = polynomial<mint>::interpolate(X, Y);\n\tfor (int i = 0; i < N; i++)\n\t\t\
-    cout << (i < P.size() ? P[i] : 0) << ' ';\n\tcout << '\\n';\n}\n"
+    cout << (i < P.size() ? P[i] : 0) << ' ';\n\tcout << '\\n';\n} \n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/multipoint_evaluation\"\
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#include \"poly/polynomial.hpp\"\
     \n\nusing namespace poly;\n\nconst int MOD = 998244353;\nusing mint = polynomial_internal::Modular<MOD>;\n\
     \nint main() {\n\tint N;\n\tcin >> N;\n\tvector<mint> X(N), Y(N);\n\tfor (auto\
     \ &x : X)\n\t\tcin >> x;\n\tfor (auto &y : Y)\n\t\tcin >> y;\n\t\n\tpolynomial<mint>\
     \ P = polynomial<mint>::interpolate(X, Y);\n\tfor (int i = 0; i < N; i++)\n\t\t\
-    cout << (i < P.size() ? P[i] : 0) << ' ';\n\tcout << '\\n';\n}"
+    cout << (i < P.size() ? P[i] : 0) << ' ';\n\tcout << '\\n';\n} "
   dependsOn:
   - poly/polynomial.hpp
   - utility/pi.hpp
   isVerificationFile: true
   path: verify/polynomial.yosupo-polynomial-interpolation.test.cpp
   requiredBy: []
-  timestamp: '2022-06-01 12:50:00-07:00'
+  timestamp: '2022-06-01 14:53:07-07:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/polynomial.yosupo-polynomial-interpolation.test.cpp
