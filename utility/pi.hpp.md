@@ -75,13 +75,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/polynomial.yosupo-log-of-formal-power-series.test.cpp
     title: verify/polynomial.yosupo-log-of-formal-power-series.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/polynomial.yosupo-multipoint-evaluation.test.cpp
     title: verify/polynomial.yosupo-multipoint-evaluation.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/polynomial.yosupo-polynomial-interpolation.test.cpp
     title: verify/polynomial.yosupo-polynomial-interpolation.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/polynomial.yosupo-polynomial-taylor-shift.test.cpp
     title: verify/polynomial.yosupo-polynomial-taylor-shift.test.cpp
   - icon: ':x:'

@@ -47,57 +47,68 @@ data:
     \ &t) const { return value == t.value; }\n\n\t\t\tbool operator!=(const Modular\
     \ &t) const { return value != t.value; }\n\n\t\t\texplicit operator int() const\
     \ { return value; }\n\n\t\t\tlong long rem() const { return 2 * value > mod ?\
-    \ value - mod : value; }\n\n\t\t\toptional<Modular> sqrt() const {\n\t\t\t\tstatic\
-    \ Modular y;\n\n\t\t\t\ty = *this;\n\t\t\t\tif (value == 0)\n\t\t\t\t\treturn\
-    \ 0;\n\t\t\t\telse if (fast_pow(y, (mod - 1) / 2) != Modular(1))\n\t\t\t\t\treturn\
-    \ nullopt;\n\t\t\t\twhile (true) {\n\t\t\t\t\tModular z = mst();\n\t\t\t\t\tif\
-    \ (z * z == *this)\n\t\t\t\t\t\treturn z;\n\n\t\t\t\t\tstruct lin {\n\t\t\t\t\t\
-    \tModular a, b;\n\n\t\t\t\t\t\tlin(Modular a, Modular b = 0): a(a), b(b) {}\n\n\
-    \t\t\t\t\t\tlin operator*(const lin& t) {\n\t\t\t\t\t\t\treturn {\n\t\t\t\t\t\t\
-    \t\ta * t.a + b * t.b * y,\n\t\t\t\t\t\t\t\ta * t.b + b * t.a\n\t\t\t\t\t\t\t\
-    };\n\t\t\t\t\t\t}\n\t\t\t\t\t} x(z, 1);\n\n\t\t\t\t\tx = fast_pow(x, (mod - 1)\
-    \ / 2);\n\t\t\t\t\tif (x.b != Modular(0))\n\t\t\t\t\t\treturn x.b.inv();\n\t\t\
-    \t\t}\n\t\t\t}\n\n\t\t\ttemplate<int _mod>\n\t\t\tfriend istream &operator>>(istream\
-    \ &is, Modular<_mod> &t);\n\t\t};\n\n\t\ttemplate<int mod>\n\t\tistream &operator>>(istream\
-    \ &is, Modular<mod> &t) {\n\t\t\tint x;\n\t\t\tis >> x;\n\t\t\tt.value = x % mod;\n\
-    \t\t\treturn is;\n\t\t}\n\n\t\ttemplate<int mod>\n\t\tostream &operator<<(ostream\
-    \ &os, const Modular<mod> &t) {\n\t\t\treturn os << int(t);\n\t\t}\n\n\t\ttemplate<typename\
-    \ T>\n\t\tT fact(int n) {\n\t\t\tstatic array<T, MAX_N> F;\n\t\t\tstatic bool\
-    \ init = false;\n\n\t\t\tif (!init) {\n\t\t\t\tF[0] = T(1);\n\t\t\t\tfor (int\
-    \ i = 1; i < MAX_N; i++)\n\t\t\t\t\tF[i] = F[i - 1] * T(i);\n\t\t\t\tinit = true;\n\
-    \t\t\t}\n\t\t\treturn F[n];\n\t\t}\n\n\t\ttemplate<typename T>\n\t\tT rfact(int\
-    \ n) {\n\t\t\tstatic array<T, MAX_N> F;\n\t\t\tstatic bool init = false;\n\n\t\
-    \t\tif (!init) {\n\t\t\t\tF[MAX_N - 1] = T(1) / fact<T>(MAX_N - 1);\n\t\t\t\t\
-    for (int i = MAX_N - 2; i >= 0; i--)\n\t\t\t\t\tF[i] = F[i + 1] * T(i + 1);\n\t\
-    \t\t\tinit = true;\n\t\t\t}\n\t\t\treturn F[n];\n\t\t}\n\n\t\tnamespace fast_fourier_transform\
-    \ {\n\t\t\tusing type = double;\n\n\t\t\tcomplex<double> w[MAX_N];\n\t\t\tint\
-    \ bitr[MAX_N];\n\n\t\t\tvoid init_fast_fourier_transform() {\n\t\t\t\tstatic bool\
-    \ init = false;\n\n\t\t\t\tif (!init) {\n\t\t\t\t\tfor (int i = 1; i < MAX_N;\
-    \ i *= 2) {\n\t\t\t\t\t\tint ti = i / 2;\n\t\t\t\t\t\tfor (int j = 0; j < i; j++)\
-    \ {\n\t\t\t\t\t\t\ttype ang = PI * j / i;\n\t\t\t\t\t\t\tw[i + j] = complex<type>(cos(ang),\
-    \ sin(ang));\n\t\t\t\t\t\t\tif (ti)\n\t\t\t\t\t\t\t\tbitr[i + j] = 2 * bitr[ti\
-    \ + j % ti] + (j >= ti);\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t\tinit = true;\n\
-    \t\t\t\t}\n\t\t\t}\n\n\t\t\tvoid fast_fourier_transform(auto &a, int n) {\n\t\t\
-    \t\tinit_fast_fourier_transform();\n\t\t\t\tif (n == 1)\n\t\t\t\t\treturn;\n\t\
-    \t\t\tint hn = n / 2;\n\t\t\t\tfor (int i = 0; i < n; i++) {\n\t\t\t\t\tint ti\
-    \ = 2 * bitr[hn + i % hn] + (i > hn);\n\t\t\t\t\tif (i < ti)\n\t\t\t\t\t\tswap(a[i],\
-    \ a[ti]);\n\t\t\t\t}\n\t\t\t\tfor (int i = 1; i < n; i *= 2) {\n\t\t\t\t\tfor\
-    \ (int j = 0; j < n; j += 2 * i) {\n\t\t\t\t\t\tfor (int k = j; k < j + i; k++)\
-    \ {\n\t\t\t\t\t\t\tauto t = a[k + i] * w[i + k - j];\n\t\t\t\t\t\t\ta[k + i] =\
-    \ a[k] - t;\n\t\t\t\t\t\t\ta[k] += t;\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\
-    \t\t\t}\n\n\t\t\tvoid slow_polynomial_multiply(vector<auto> &a, const vector<auto>\
-    \ &b) {\n\t\t\t\tif (a.empty() || b.empty()) {\n\t\t\t\t\ta.clear();\n\t\t\t\t\
-    } else {\n\t\t\t\t\tint n = a.size();\n\t\t\t\t\tint m = b.size();\n\t\t\t\t\t\
-    a.resize(n + m - 1);\n\t\t\t\t\tfor (int k = n + m - 2; k >= 0; k--) {\n\t\t\t\
-    \t\t\ta[k] *= b[0];\n\t\t\t\t\t\tfor (int j = max(k - n + 1, 1); j < min(k + 1,\
-    \ m); j++)\n\t\t\t\t\t\t\ta[k] += a[k - j] * b[j];\n\t\t\t\t\t}\n\t\t\t\t}\n\t\
-    \t\t}\n\n\t\t\ttemplate<int mod>\n\t\t\tclass discrete_fourier_transform {\n\t\
-    \t\t\tstatic constexpr int split = 1 << 15;\n\t\t\t\tvector<complex<type>> A;\n\
-    \n\t\t\tpublic:\n\t\t\t\tdiscrete_fourier_transform(vector<Modular<mod>> const\
-    \ &a, int n): A(n) {\n\t\t\t\t\tfor (int i = 0; i < min(n, (int)a.size()); i++)\n\
-    \t\t\t\t\t\tA[i] = complex<type>(a[i].rem() % split, a[i].rem() / split);\n\t\t\
-    \t\t\tif (n)\n\t\t\t\t\t\tfast_fourier_transform(A, n);\n\t\t\t\t}\n\n\t\t\t\t\
-    auto operator*(discrete_fourier_transform const &B) {\n\t\t\t\t\tassert(A.size()\
+    \ value - mod : value; }\n\n\t\t\t/*\n\t\t\toptional<Modular> sqrt() const {\n\
+    \t\t\t\tstatic Modular y;\n\n\t\t\t\ty = *this;\n\t\t\t\tif (value == 0)\n\t\t\
+    \t\t\treturn 0;\n\t\t\t\telse if (fast_pow(y, (mod - 1) / 2) != Modular(1))\n\t\
+    \t\t\t\treturn nullopt;\n\t\t\t\twhile (true) {\n\t\t\t\t\tModular z = mst();\n\
+    \t\t\t\t\tif (z * z == *this)\n\t\t\t\t\t\treturn z;\n\n\t\t\t\t\tstruct lin {\n\
+    \t\t\t\t\t\tModular a, b;\n\n\t\t\t\t\t\tlin(Modular a, Modular b = 0): a(a),\
+    \ b(b) {}\n\n\t\t\t\t\t\tlin operator*(const lin& t) {\n\t\t\t\t\t\t\treturn {\n\
+    \t\t\t\t\t\t\t\ta * t.a + b * t.b * y,\n\t\t\t\t\t\t\t\ta * t.b + b * t.a\n\t\t\
+    \t\t\t\t\t};\n\t\t\t\t\t\t}\n\t\t\t\t\t} x(z, 1);\n\n\t\t\t\t\tx = fast_pow(x,\
+    \ (mod - 1) / 2);\n\t\t\t\t\tif (x.b != Modular(0))\n\t\t\t\t\t\treturn x.b.inv();\n\
+    \t\t\t\t}\n\t\t\t}*/\n\n\t\t\toptional<Modular> sqrt() const {\n\t\t\t\tassert(0\
+    \ <= value && value < mod);\n\t\t\t\tif (value < 2) \n\t\t\t\t\treturn value;\n\
+    \t\t\t\tif (fast_pow(Modular(value), (mod - 1) >> 1) != 1) \n\t\t\t\t\treturn\
+    \ nullopt;\n\t\t\t\tModular b = 1;\n\t\t\t\tfor (; fast_pow(b, (mod - 1) >> 1)\
+    \ == 1; b += 1);\n\t\t\t\tint m = mod - 1, e = 0;\n\t\t\t\tfor (; m % 2 == 0;\
+    \ m >>= 1, e++);\n\t\t\t\tModular x = fast_pow(Modular(value), (m - 1) >> 1);\n\
+    \t\t\t\tModular y = Modular(value) * x * x;\n\t\t\t\tModular z = fast_pow(Modular(b),\
+    \ m);\n\t\t\t\tx *= value;\n\t\t\t\twhile (y != 1) {\n\t\t\t\t\tint j = 0;\n\t\
+    \t\t\t\tModular t = y;\n\t\t\t\t\twhile (t != Modular(1)) {\n\t\t\t\t\t\tj +=\
+    \ 1;\n\t\t\t\t\t\tt *= t;\n\t\t\t\t\t}\n\t\t\t\t\tz = fast_pow(z, 1 << (e - j\
+    \ - 1));\n\t\t\t\t\tx *= z;\n\t\t\t\t\tz *= z;\n\t\t\t\t\ty *= z;\n\t\t\t\t\t\
+    e = j;\n\t\t\t\t}\n\t\t\t\treturn int(x);\n\t\t\t}\n\n\t\t\ttemplate<int _mod>\n\
+    \t\t\tfriend istream &operator>>(istream &is, Modular<_mod> &t);\n\t\t};\n\n\t\
+    \ttemplate<int mod>\n\t\tistream &operator>>(istream &is, Modular<mod> &t) {\n\
+    \t\t\tint x;\n\t\t\tis >> x;\n\t\t\tt.value = x % mod;\n\t\t\treturn is;\n\t\t\
+    }\n\n\t\ttemplate<int mod>\n\t\tostream &operator<<(ostream &os, const Modular<mod>\
+    \ &t) {\n\t\t\treturn os << int(t);\n\t\t}\n\n\t\ttemplate<typename T>\n\t\tT\
+    \ fact(int n) {\n\t\t\tstatic array<T, MAX_N> F;\n\t\t\tstatic bool init = false;\n\
+    \n\t\t\tif (!init) {\n\t\t\t\tF[0] = T(1);\n\t\t\t\tfor (int i = 1; i < MAX_N;\
+    \ i++)\n\t\t\t\t\tF[i] = F[i - 1] * T(i);\n\t\t\t\tinit = true;\n\t\t\t}\n\t\t\
+    \treturn F[n];\n\t\t}\n\n\t\ttemplate<typename T>\n\t\tT rfact(int n) {\n\t\t\t\
+    static array<T, MAX_N> F;\n\t\t\tstatic bool init = false;\n\n\t\t\tif (!init)\
+    \ {\n\t\t\t\tF[MAX_N - 1] = T(1) / fact<T>(MAX_N - 1);\n\t\t\t\tfor (int i = MAX_N\
+    \ - 2; i >= 0; i--)\n\t\t\t\t\tF[i] = F[i + 1] * T(i + 1);\n\t\t\t\tinit = true;\n\
+    \t\t\t}\n\t\t\treturn F[n];\n\t\t}\n\n\t\tnamespace fast_fourier_transform {\n\
+    \t\t\tusing type = double;\n\n\t\t\tcomplex<double> w[MAX_N];\n\t\t\tint bitr[MAX_N];\n\
+    \n\t\t\tvoid init_fast_fourier_transform() {\n\t\t\t\tstatic bool init = false;\n\
+    \n\t\t\t\tif (!init) {\n\t\t\t\t\tfor (int i = 1; i < MAX_N; i *= 2) {\n\t\t\t\
+    \t\t\tint ti = i / 2;\n\t\t\t\t\t\tfor (int j = 0; j < i; j++) {\n\t\t\t\t\t\t\
+    \ttype ang = PI * j / i;\n\t\t\t\t\t\t\tw[i + j] = complex<type>(cos(ang), sin(ang));\n\
+    \t\t\t\t\t\t\tif (ti)\n\t\t\t\t\t\t\t\tbitr[i + j] = 2 * bitr[ti + j % ti] + (j\
+    \ >= ti);\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t\tinit = true;\n\t\t\t\t}\n\t\t\
+    \t}\n\n\t\t\tvoid fast_fourier_transform(auto &a, int n) {\n\t\t\t\tinit_fast_fourier_transform();\n\
+    \t\t\t\tif (n == 1)\n\t\t\t\t\treturn;\n\t\t\t\tint hn = n / 2;\n\t\t\t\tfor (int\
+    \ i = 0; i < n; i++) {\n\t\t\t\t\tint ti = 2 * bitr[hn + i % hn] + (i > hn);\n\
+    \t\t\t\t\tif (i < ti)\n\t\t\t\t\t\tswap(a[i], a[ti]);\n\t\t\t\t}\n\t\t\t\tfor\
+    \ (int i = 1; i < n; i *= 2) {\n\t\t\t\t\tfor (int j = 0; j < n; j += 2 * i) {\n\
+    \t\t\t\t\t\tfor (int k = j; k < j + i; k++) {\n\t\t\t\t\t\t\tauto t = a[k + i]\
+    \ * w[i + k - j];\n\t\t\t\t\t\t\ta[k + i] = a[k] - t;\n\t\t\t\t\t\t\ta[k] += t;\n\
+    \t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\n\t\t\tvoid slow_polynomial_multiply(vector<auto>\
+    \ &a, const vector<auto> &b) {\n\t\t\t\tif (a.empty() || b.empty()) {\n\t\t\t\t\
+    \ta.clear();\n\t\t\t\t} else {\n\t\t\t\t\tint n = a.size();\n\t\t\t\t\tint m =\
+    \ b.size();\n\t\t\t\t\ta.resize(n + m - 1);\n\t\t\t\t\tfor (int k = n + m - 2;\
+    \ k >= 0; k--) {\n\t\t\t\t\t\ta[k] *= b[0];\n\t\t\t\t\t\tfor (int j = max(k -\
+    \ n + 1, 1); j < min(k + 1, m); j++)\n\t\t\t\t\t\t\ta[k] += a[k - j] * b[j];\n\
+    \t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\n\t\t\ttemplate<int mod>\n\t\t\tclass discrete_fourier_transform\
+    \ {\n\t\t\t\tstatic constexpr int split = 1 << 15;\n\t\t\t\tvector<complex<type>>\
+    \ A;\n\n\t\t\tpublic:\n\t\t\t\tdiscrete_fourier_transform(vector<Modular<mod>>\
+    \ const &a, int n): A(n) {\n\t\t\t\t\tfor (int i = 0; i < min(n, (int)a.size());\
+    \ i++)\n\t\t\t\t\t\tA[i] = complex<type>(a[i].rem() % split, a[i].rem() / split);\n\
+    \t\t\t\t\tif (n)\n\t\t\t\t\t\tfast_fourier_transform(A, n);\n\t\t\t\t}\n\n\t\t\
+    \t\tauto operator*(discrete_fourier_transform const &B) {\n\t\t\t\t\tassert(A.size()\
     \ == B.A.size());\n\t\t\t\t\tint n = A.size();\n\t\t\t\t\tif (n == 0)\n\t\t\t\t\
     \t\treturn vector<Modular<mod>>();\n\n\t\t\t\t\tvector<complex<type>> C(n), D(n);\n\
     \t\t\t\t\tfor (int i = 0; i < n; i++) {\n\t\t\t\t\t\tC[i] = A[i] * (B[i] + conj(B[(n\
@@ -361,9 +372,9 @@ data:
     \ * P1f).multiply_k(1);\n\t\t\t\tQ = polynomial(Q0f * Q0f) - polynomial(Q1f *\
     \ Q1f).multiply_k(1);\n\t\t\t\tk /= 2;\n\t\t\t}\n\t\t\treturn (P * Q.inv(Q.deg()\
     \ + 1))[k];\n\t\t}\n\n\t\tpolynomial inv(int n) const {\n\t\t\tauto Q = modulo_k(n);\n\
-    \t\t\tif (n == 1)\n\t\t\t\treturn Q[0].inv();\n\t\t\tauto [P0, P1] = Q.mulx(-1).bisect();\n\
-    \t\t\tint N = fast_fourier_transform::common_size((n + 1) / 2, (n + 1) / 2);\n\
-    \n\t\t\tauto P0f = fast_fourier_transform::discrete_fourier_transform(P0.coef,\
+    \t\t\tif (n == 1)\n\t\t\t\treturn Q.is_zero() ? 0 : Q[0].inv();\n\t\t\tauto [P0,\
+    \ P1] = Q.mulx(-1).bisect();\n\t\t\tint N = fast_fourier_transform::common_size((n\
+    \ + 1) / 2, (n + 1) / 2);\n\n\t\t\tauto P0f = fast_fourier_transform::discrete_fourier_transform(P0.coef,\
     \ N);\n\t\t\tauto P1f = fast_fourier_transform::discrete_fourier_transform(P1.coef,\
     \ N);\n\n\t\t\tauto TTf = fast_fourier_transform::discrete_fourier_transform((\n\
     \t\t\t\tpolynomial(P0f * P0f) - polynomial(P1f * P1f).multiply_k(1)\n\t\t\t).inv((n\
@@ -420,7 +431,7 @@ data:
   isVerificationFile: true
   path: verify/polynomial.yosupo-kth-term-of-linearly-recurrent-sequence.test.cpp
   requiredBy: []
-  timestamp: '2022-06-01 15:13:28-07:00'
+  timestamp: '2022-06-01 15:52:51-07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/polynomial.yosupo-kth-term-of-linearly-recurrent-sequence.test.cpp
