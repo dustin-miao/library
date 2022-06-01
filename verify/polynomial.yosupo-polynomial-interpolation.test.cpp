@@ -23,4 +23,4 @@ int main() {
 	for (int i = 0; i < N; i++)
 		cout << (i < P.size() ? P[i] : 0) << ' ';
 	cout << '\n';
-}
+} 

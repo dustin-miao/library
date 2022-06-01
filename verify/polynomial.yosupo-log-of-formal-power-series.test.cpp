@@ -22,4 +22,4 @@ int main() {
 	for (int i = 0; i < N; i++)
 		cout << (i < Q.size() ? Q[i] : 0) << ' ';
 	cout << '\n';
-}
+} 
