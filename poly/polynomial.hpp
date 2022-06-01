@@ -359,7 +359,7 @@ namespace poly {
 
 		polynomial reverse() const { return reverse(deg() + 1); }
 
-		int size() { return coef.size(); }
+		int size() const { return coef.size(); }
 
 	private:
 		pair<polynomial, polynomial> slow_division(const polynomial &b) const {
@@ -1014,7 +1014,17 @@ namespace poly {
 		}
 	};
 
-	static auto operator * (const auto& a, const polynomial<auto>& b) { return b * a; }
+	static auto operator*(const auto &a, const polynomial<auto> &b) { return b * a; }
+
+	ostream &operator<<(ostream &os, const polynomial<auto> &p) {
+		os << '[';
+		if (p.size()) {
+			os << p[0];
+			for (int i = 1; i < p.size(); i++)
+				os << ", " << p[i];
+		}
+		return os << ']';
+	}
 }
 
 #endif
