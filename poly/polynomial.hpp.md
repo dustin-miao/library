@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utility/pi.hpp
     title: Pi
   _extendedRequiredBy: []
@@ -45,15 +45,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/polynomial.yosupo-polynomial-taylor-shift.test.cpp
     title: verify/polynomial.yosupo-polynomial-taylor-shift.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/polynomial.yosupo-pow-of-formal-power-series.test.cpp
     title: verify/polynomial.yosupo-pow-of-formal-power-series.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/polynomial.yosupo-sqrt-of-formal-power-series.test.cpp
     title: verify/polynomial.yosupo-sqrt-of-formal-power-series.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"utility/pi.hpp\"\n#pragma region Pi\n\n#ifndef PI_HPP\n\
@@ -844,7 +844,7 @@ data:
   path: poly/polynomial.hpp
   requiredBy: []
   timestamp: '2022-06-01 15:52:51-07:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/polynomial.yosupo-inv-of-formal-power-series.test.cpp
   - verify/polynomial.yosupo-sqrt-of-formal-power-series.test.cpp

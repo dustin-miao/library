@@ -19,7 +19,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: random/random-int.hpp
     title: Random Integer
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utility/pi.hpp
     title: Pi
   _extendedRequiredBy: []
