@@ -29,6 +29,7 @@
 "verify/general-segment-tree.aizu-range-sum-query.test.cpp": "2022-04-29 22:36:50 -0700",
 "verify/general-segment-tree.yosupo-point-add-range-sum.test.cpp": "2022-04-29 22:36:50 -0700",
 "verify/general-segment-tree.yosupo-point-set-range-composite.test.cpp": "2022-05-03 13:27:25 -0700",
+"verify/hash.aizu-string-search.test.cpp": "2022-06-05 10:11:54 -0700",
 "verify/kciwnef-tree.aizu-point-add-query.test.cpp": "2022-04-29 22:36:50 -0700",
 "verify/kruskal.aizu-minimum-spanning-tree.test.cpp": "2022-05-13 08:32:57 -0700",
 "verify/lazy-segment-tree.aizu-RMQ-and-RAQ.test.cpp": "2022-04-29 22:36:50 -0700",
