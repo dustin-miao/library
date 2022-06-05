@@ -198,6 +198,9 @@ data:
   - name: string
     pages:
     - icon: ':heavy_check_mark:'
+      path: string/hash.hpp
+      title: String Hash
+    - icon: ':heavy_check_mark:'
       path: string/manacher.hpp
       title: Manacher's Algorithm
     - icon: ':heavy_check_mark:'
@@ -354,6 +357,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/general-segment-tree.yosupo-point-set-range-composite.test.cpp
       title: verify/general-segment-tree.yosupo-point-set-range-composite.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/hash.aizu-string-search.test.cpp
+      title: verify/hash.aizu-string-search.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/kciwnef-tree.aizu-point-add-query.test.cpp
       title: verify/kciwnef-tree.aizu-point-add-query.test.cpp

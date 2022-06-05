@@ -846,21 +846,21 @@ data:
   timestamp: '2022-06-01 15:52:51-07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/polynomial.yosupo-inv-of-formal-power-series.test.cpp
-  - verify/polynomial.yosupo-sqrt-of-formal-power-series.test.cpp
-  - verify/polynomial.yosupo-pow-of-formal-power-series.test.cpp
-  - verify/polynomial.yosupo-polynomial-interpolation.test.cpp
   - verify/polynomial-yosupo-division-of-polynomials.test.cpp
-  - verify/polynomial.yosupo-multipoint-evaluation.test.cpp
+  - verify/polynomial.yosupo-log-of-formal-power-series.test.cpp
   - verify/polynomial.yosupo-convolution.test.cpp
+  - verify/polynomial.yosupo-pow-of-formal-power-series.test.cpp
   - verify/polynomial.yosupo-kth-term-of-linearly-recurrent-sequence.test.cpp
+  - verify/polynomial.yosupo-multipoint-evaluation.test.cpp
   - verify/polynomial.yosupo-find-linear-recurrence.test.cpp
+  - verify/polynomial.yosupo-inv-of-formal-power-series.test.cpp
+  - verify/polynomial.yosupo-convolution-mod-1000000007.test.cpp
+  - verify/polynomial.yosupo-polynomial-interpolation.test.cpp
   - verify/polynomial.yosupo-inv-of-polynomials.test.cpp
   - verify/polynomial.yosupo-composition-of-formal-power-series.test.cpp
-  - verify/polynomial.yosupo-log-of-formal-power-series.test.cpp
-  - verify/polynomial.yosupo-polynomial-taylor-shift.test.cpp
-  - verify/polynomial.yosupo-convolution-mod-1000000007.test.cpp
   - verify/polynomial.yosupo-exp-of-formal-power-series.test.cpp
+  - verify/polynomial.yosupo-sqrt-of-formal-power-series.test.cpp
+  - verify/polynomial.yosupo-polynomial-taylor-shift.test.cpp
 documentation_of: poly/polynomial.hpp
 layout: document
 title: Polynomial

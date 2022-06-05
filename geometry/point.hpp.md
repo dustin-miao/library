@@ -147,9 +147,9 @@ data:
   verifiedWith:
   - verify/monotonic-dp-hull-minkowski-sum.yosupo-a+b.test.cpp
   - verify/point.aizu-parallel-orthagonal.test.cpp
-  - verify/monotonic-dp-hull.yosupo-a+b.test.cpp
   - verify/point.aizu-projection.test.cpp
   - verify/point.aizu-counter-clockwise.test.cpp
+  - verify/monotonic-dp-hull.yosupo-a+b.test.cpp
 documentation_of: geometry/point.hpp
 layout: document
 title: Point

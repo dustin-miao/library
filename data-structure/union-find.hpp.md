@@ -60,11 +60,11 @@ data:
   timestamp: '2022-04-29 22:36:50-07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/kruskal.aizu-minimum-spanning-tree.test.cpp
   - verify/union-find.aizu-disjoint-union.test.cpp
-  - verify/union-find.yosupo-unionfind.test.cpp
-  - verify/union-find-2d.aizu-disjoint-union.test.cpp
   - verify/union-find-2d.yosupo-unionfind.test.cpp
+  - verify/union-find.yosupo-unionfind.test.cpp
+  - verify/kruskal.aizu-minimum-spanning-tree.test.cpp
+  - verify/union-find-2d.aizu-disjoint-union.test.cpp
 documentation_of: data-structure/union-find.hpp
 layout: document
 title: Union Find
