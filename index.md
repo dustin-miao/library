@@ -83,9 +83,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/sliding-window-aggregate.hpp
       title: Sliding Window Aggregate
-    - icon: ':warning:'
-      path: data-structure/sparse-binary-trie.hpp
-      title: Sparse Binary Trie
     - icon: ':heavy_check_mark:'
       path: data-structure/sparse-segment-tree.hpp
       title: Sparse Segment Tree
@@ -112,9 +109,6 @@ data:
       title: Wavelet Tree
   - name: geometry
     pages:
-    - icon: ':warning:'
-      path: geometry/convex-hull.hpp
-      title: Convex Hull
     - icon: ':heavy_check_mark:'
       path: geometry/line-container.hpp
       title: Line Container

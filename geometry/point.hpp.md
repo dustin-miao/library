@@ -2,9 +2,6 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':warning:'
-    path: geometry/convex-hull.hpp
-    title: Convex Hull
   - icon: ':heavy_check_mark:'
     path: geometry/monotonic-dp-hull-minkowski-sum.hpp
     title: Minkowski Sum for Monotonic DP Hull
@@ -141,7 +138,6 @@ data:
   requiredBy:
   - geometry/monotonic-dp-hull-minkowski-sum.hpp
   - geometry/monotonic-dp-hull.hpp
-  - geometry/convex-hull.hpp
   timestamp: '2022-05-05 15:11:34-07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
